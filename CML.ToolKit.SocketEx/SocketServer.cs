@@ -26,7 +26,7 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 服务重启间隔
         /// </summary>
-        private int m_restartSecs = 5;
+        private int m_reStartSecs = 5;
         /// <summary>
         /// 发送失败重发次数
         /// </summary>
@@ -52,8 +52,8 @@ namespace CML.ToolKit.SocketEx
         /// </summary>
         public int RestartTime
         {
-            get => m_restartSecs;
-            set => m_restartSecs = value > 1 ? value : 1;
+            get => m_reStartSecs;
+            set => m_reStartSecs = value > 1 ? value : 1;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace CML.ToolKit.SocketEx
         }
         #endregion
 
-        #region 构造函数
+        #region 构造/析构函数
         /// <summary>
         /// 构造服务端对象
         /// </summary>
@@ -99,7 +99,7 @@ namespace CML.ToolKit.SocketEx
         /// 获取消息委托
         /// </summary>
         /// <param name="message"></param>
-        public delegate void ReceiveMessageHandle(ModMessage message);
+        public delegate void ReceiveMessageHandle(ModServerMessage message);
         /// <summary>
         /// 获取消息事件
         /// </summary>
@@ -117,18 +117,18 @@ namespace CML.ToolKit.SocketEx
         {
             if (!IPAddress.TryParse(ip, out IPAddress address))
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, "IP格式错误"));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, "IP格式错误"));
                 return false;
             }
             if (port < 0 || port > 65535)
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, "端口范围错误"));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, "端口范围错误"));
                 return false;
             }
 
             m_ipEndPoint = new IPEndPoint(address, port);
 
-            ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, "服务初始化成功"));
+            ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "服务初始化成功"));
             return true;
         }
 
@@ -141,24 +141,26 @@ namespace CML.ToolKit.SocketEx
             //判断服务是否打开
             if (IsServerOpen)
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, "服务已运行"));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, "服务已运行"));
                 return false;
             }
-
-            //释放资源
-            CloseSocketConnect();
 
             //是否第一次启动
             if (m_lastCloseTime != ISDefault.DefDateTime)
             {
-                while (m_lastCloseTime.AddSeconds(m_restartSecs) > DateTime.Now)
+                while (m_lastCloseTime.AddSeconds(m_reStartSecs) > DateTime.Now)
                 {
-                    int waitTime = (int)(m_lastCloseTime.AddSeconds(m_restartSecs) - DateTime.Now).TotalSeconds + 1;
+                    int waitTime = (int)(m_lastCloseTime.AddSeconds(m_reStartSecs) - DateTime.Now).TotalSeconds + 1;
 
-                    ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.System, $"服务重启倒数: {waitTime}秒"));
+                    ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.System, $"服务重启倒数: {waitTime}秒"));
 
                     Thread.Sleep(1000);
                 }
+            }
+            else
+            {
+                //释放资源
+                CloseSocketConnect();
             }
 
             m_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -170,15 +172,15 @@ namespace CML.ToolKit.SocketEx
             }
             catch (Exception ex)
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, "服务启动失败: " + ex.Message));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, "服务启动失败: " + ex.Message));
                 return false;
             }
 
             m_socket.Listen(30);
-            ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, "服务打开成功"));
+            ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "服务打开成功"));
 
             ThreadPool.QueueUserWorkItem(new WaitCallback(this.AcceptClientConnect), m_socket);
-            ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, "开启监听服务"));
+            ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "开启监听服务"));
 
             return true;
         }
@@ -191,7 +193,7 @@ namespace CML.ToolKit.SocketEx
         {
             if (!IsServerOpen)
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, "服务未开启"));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, "服务未开启"));
                 return false;
             }
 
@@ -202,7 +204,7 @@ namespace CML.ToolKit.SocketEx
             IsServerOpen = false;
             m_lastCloseTime = DateTime.Now;
 
-            ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, "服务关闭成功"));
+            ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "服务关闭成功"));
             return true;
         }
 
@@ -226,12 +228,12 @@ namespace CML.ToolKit.SocketEx
 
             if (string.IsNullOrEmpty(strErrMsg))
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, "消息群发成功"));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "消息群发成功"));
                 return true;
             }
             else
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, strErrMsg));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, strErrMsg));
                 return false;
             }
         }
@@ -248,12 +250,12 @@ namespace CML.ToolKit.SocketEx
 
             if (result.IsSuccess)
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, "消息发送成功"));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "消息发送成功"));
                 return true;
             }
             else
             {
-                ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Error, result.Result));
+                ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, result.Result));
                 return false;
             }
         }
@@ -286,7 +288,7 @@ namespace CML.ToolKit.SocketEx
                     {
                         ModClient client = new ModClient(proxSocket);
                         m_clientList.Add(client);
-                        ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, $"<{client.GUID}>新客户端连接"));
+                        ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, $"<{client.GUID}>新客户端连接"));
 
                         ThreadPool.QueueUserWorkItem(new WaitCallback(ReceiveMsg), client);
                     }
@@ -386,7 +388,7 @@ namespace CML.ToolKit.SocketEx
                 catch
                 {
                     //客户端异常退出
-                    ReceiveMessage?.Invoke(new ModMessage(client, EMsgType.Error, "客户端异常退出"));
+                    ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Error, "客户端异常退出"));
                     return;
                 }
 
@@ -409,16 +411,16 @@ namespace CML.ToolKit.SocketEx
             //心跳包
             if (message.Contains(ISCommand.CmdClientHB))
             {
-                ReceiveMessage?.Invoke(new ModMessage(client, EMsgType.Infomation, "收到心跳包"));
+                ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Infomation, "收到心跳包"));
 
                 if (SendMsg(client.Socket, ISCommand.CmdServerHB, m_reSendTimes, true).IsSuccess)
                 {
-                    ReceiveMessage?.Invoke(new ModMessage(client, EMsgType.Infomation, "回应心跳包成功"));
+                    ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Infomation, "回应心跳包成功"));
                     client.SetHBTime();
                 }
                 else
                 {
-                    ReceiveMessage?.Invoke(new ModMessage(client, EMsgType.Error, "回应心跳包失败"));
+                    ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Error, "回应心跳包失败"));
                     m_clientList.Remove(client);
                     return false;
                 }
@@ -431,7 +433,7 @@ namespace CML.ToolKit.SocketEx
                 Match match = regex.Match(message);
                 if (match.Success)
                 {
-                    ReceiveMessage?.Invoke(new ModMessage(null, EMsgType.Infomation, $"<{client.GUID}>获得客户端名称: {match.Groups[1].Value}"));
+                    ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, $"<{client.GUID}>获得客户端名称: {match.Groups[1].Value}"));
                     client.Name = match.Groups[1].Value;
                 }
 
@@ -446,7 +448,7 @@ namespace CML.ToolKit.SocketEx
 
                 while (match.Success)
                 {
-                    ReceiveMessage?.Invoke(new ModMessage(client, EMsgType.Infomation, $"收到客户端消息: {match.Groups[1].Value}"));
+                    ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Infomation, $"收到客户端消息: {match.Groups[1].Value}"));
                     match = match.NextMatch();
                 }
             }

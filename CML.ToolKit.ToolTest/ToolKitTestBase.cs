@@ -4,12 +4,18 @@ namespace CML.ToolKit.ToolTest
 {
     /// <summary>
     /// 测试类基类
+    /// 【请重载 TestClassName 属性】
     /// 【请重载 ExecuteTest() 方法】
     /// </summary>
     internal class ToolKitTestBase
     {
         /// <summary>
-        /// 执行测试【请重载本方法】
+        /// 测试类名【请重载此属性】
+        /// </summary>
+        public virtual string TestClassName => $"请重载 ToolKitTestBase 类 TestClassName 属性";
+
+        /// <summary>
+        /// 执行测试【请重载此方法】
         /// </summary>
         public virtual void ExecuteTest()
         {

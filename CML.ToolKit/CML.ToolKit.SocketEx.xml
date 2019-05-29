@@ -127,37 +127,59 @@
             <param name="timeOut">超时时间</param>
             <returns>是否超时</returns>
         </member>
-        <member name="T:CML.ToolKit.SocketEx.ModMessage">
-            <summary>
-            信息模型
-            </summary>
-        </member>
-        <member name="P:CML.ToolKit.SocketEx.ModMessage.Client">
-            <summary>
-            客户端
-            </summary>
-        </member>
-        <member name="P:CML.ToolKit.SocketEx.ModMessage.MsgType">
+        <member name="P:CML.ToolKit.SocketEx.ModClientMessage.MsgType">
             <summary>
             消息类型
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.ModMessage.Message">
+        <member name="P:CML.ToolKit.SocketEx.ModClientMessage.Message">
             <summary>
             消息内容
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.ModMessage.Source">
-            <summary>
-            信息源
-            </summary>
-        </member>
-        <member name="P:CML.ToolKit.SocketEx.ModMessage.IsEmptyMsg">
+        <member name="P:CML.ToolKit.SocketEx.ModClientMessage.IsEmptyMsg">
             <summary>
             空消息标记
             </summary>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.ModMessage.#ctor(CML.ToolKit.SocketEx.ModClient,CML.ToolKit.SocketEx.EMsgType,System.String)">
+        <member name="M:CML.ToolKit.SocketEx.ModClientMessage.#ctor(CML.ToolKit.SocketEx.EMsgType,System.String)">
+            <summary>
+            构造Socket信息对象
+            </summary>
+            <param name="msgType">消息类型</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="T:CML.ToolKit.SocketEx.ModServerMessage">
+            <summary>
+            信息模型
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModServerMessage.Client">
+            <summary>
+            客户端
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModServerMessage.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModServerMessage.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModServerMessage.Source">
+            <summary>
+            信息源
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModServerMessage.IsEmptyMsg">
+            <summary>
+            空消息标记
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.ModServerMessage.#ctor(CML.ToolKit.SocketEx.ModClient,CML.ToolKit.SocketEx.EMsgType,System.String)">
             <summary>
             构造Socket信息对象
             </summary>
@@ -193,6 +215,158 @@
             <param name="isSuccess">结果状态</param>
             <param name="result">结果内容</param>
         </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_ipEndPoint">
+            <summary>
+            服务端网络终端
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_socket">
+            <summary>
+            客户端套接字
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_reStartSecs">
+            <summary>
+            重连间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_connectSecs">
+            <summary>
+            连接间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_heartBeatSecs">
+            <summary>
+            心跳间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_reSendTimes">
+            <summary>
+            发送失败重发次数
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_lastCloseTime">
+            <summary>
+            上次连接结束时间
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_thread">
+            <summary>
+            通讯线程
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_isThreadStop">
+            <summary>
+            线程停止标志
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_isConnectiong">
+            <summary>
+            正在连接标志
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.IsConnected">
+            <summary>
+            是否已经连接
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.RestartTime">
+            <summary>
+            重连间隔时间[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.ConnectTime">
+            <summary>
+            连接间隔时间(≥重连间隔时间)[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.HeartBeatTime">
+            <summary>
+            心跳间隔时间[默认值:60|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.ReSendTimes">
+            <summary>
+            发送失败重发次数[默认值:3|范围:0-10|单位:次]
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.#ctor">
+            <summary>
+            构造服务端对象
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.Finalize">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.SocketEx.SocketClient.ReceiveMessageHandle">
+            <summary>
+            获取消息委托
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="E:CML.ToolKit.SocketEx.SocketClient.ReceiveMessage">
+            <summary>
+            获取消息事件
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.InitClient(System.String,System.Int32)">
+            <summary>
+            初始化客户端
+            </summary>
+            <param name="ip">服务端IP地址</param>
+            <param name="port">服务占用端口</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.ConnectToServer">
+            <summary>
+            连接服务器
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CloseFromServer">
+            <summary>
+            关闭连接
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.SendMessage(System.String)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="message">消息内容</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CloseSocketConnect">
+            <summary>
+            关闭套接字连接
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.SendMsg(System.Net.Sockets.Socket,System.String,System.Int32,System.Boolean)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="socket">套接字</param>
+            <param name="message">消息内容</param>
+            <param name="reSend">重发次数</param>
+            <param name="innerMsg">内部消息标志</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.ReceiveMsg(System.Object)">
+            <summary>
+            接收消息
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.AnalyseMsg(CML.ToolKit.SocketEx.ModClient,System.String)">
+            <summary>
+            解析消息内容
+            </summary>
+            <param name="client">客户端</param>
+            <param name="message">消息内容</param>
+        </member>
         <member name="T:CML.ToolKit.SocketEx.SocketServer">
             <summary>
             Socket服务端类
@@ -208,7 +382,7 @@
             服务端套接字
             </summary>
         </member>
-        <member name="F:CML.ToolKit.SocketEx.SocketServer.m_restartSecs">
+        <member name="F:CML.ToolKit.SocketEx.SocketServer.m_reStartSecs">
             <summary>
             服务重启间隔
             </summary>

@@ -1,20 +1,16 @@
 ﻿using CML.ToolKit.SocketEx;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CML.ToolKit.ToolTest
 {
     /// <summary>
-    /// Socket工具包测试类
+    /// Socket服务端测试类
     /// </summary>
-    internal class SocketExTest : ToolKitTestBase
+    internal class SocketServerTest : ToolKitTestBase
     {
         /// <summary>
-        /// 测试类实例
+        /// 测试类名
         /// </summary>
-        public static ToolKitTestBase Instance => new SocketExTest();
+        public override string TestClassName => "SocketServer";
 
         /// <summary>
         /// 执行测试
@@ -36,7 +32,7 @@ namespace CML.ToolKit.ToolTest
         /// 接受服务端消息
         /// </summary>
         /// <param name="msg"></param>
-        private void Server_ReceiveMessage(ModMessage msg)
+        private void Server_ReceiveMessage(ModServerMessage msg)
         {
             switch (msg.MsgType)
             {
