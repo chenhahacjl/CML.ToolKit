@@ -179,7 +179,36 @@ namespace CML.ToolKit.SocketEx
             m_socket.Listen(30);
             ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "服务打开成功"));
 
-            ThreadPool.QueueUserWorkItem(new WaitCallback(this.AcceptClientConnect), m_socket);
+            ThreadPool.QueueUserWorkItem(new WaitCallback((socket) =>
+            {
+                Socket socketServer = socket as Socket;
+
+                while (true)
+                {
+                    if (!IsServerOpen) break;
+
+                    try
+                    {
+                        Socket proxSocket = null;
+
+                        try
+                        {
+                            proxSocket = socketServer.Accept();
+                        }
+                        catch { continue; }
+
+                        if (SendMsg(proxSocket, ISCommand.CmdGetPcName, m_reSendTimes, true).IsSuccess)
+                        {
+                            ModClient client = new ModClient(proxSocket);
+                            m_clientList.Add(client);
+                            ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, $"<{client.GUID}>新客户端连接"));
+
+                            ThreadPool.QueueUserWorkItem(new WaitCallback(ReceiveMsg), client);
+                        }
+                    }
+                    catch { }
+                }
+            }), m_socket);
             ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, "开启监听服务"));
 
             return true;
@@ -262,41 +291,6 @@ namespace CML.ToolKit.SocketEx
         #endregion
 
         #region 私有方法
-        /// <summary>
-        /// 接受用户端连接
-        /// </summary>
-        /// <param name="socket">套接字</param>
-        private void AcceptClientConnect(object socket)
-        {
-            Socket socketServer = socket as Socket;
-
-            while (true)
-            {
-                if (!IsServerOpen) break;
-
-                try
-                {
-                    Socket proxSocket = null;
-
-                    try
-                    {
-                        proxSocket = socketServer.Accept();
-                    }
-                    catch { continue; }
-
-                    if (SendMsg(proxSocket, ISCommand.CmdGetPcName, m_reSendTimes, true).IsSuccess)
-                    {
-                        ModClient client = new ModClient(proxSocket);
-                        m_clientList.Add(client);
-                        ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Infomation, $"<{client.GUID}>新客户端连接"));
-
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(ReceiveMsg), client);
-                    }
-                }
-                catch { }
-            }
-        }
-
         /// <summary>
         /// 关闭套接字连接
         /// </summary>

@@ -250,6 +250,16 @@
             上次连接结束时间
             </summary>
         </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_hbStartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_hbEndTime">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="F:CML.ToolKit.SocketEx.SocketClient.m_thread">
             <summary>
             通讯线程
@@ -344,11 +354,10 @@
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.SendMsg(System.Net.Sockets.Socket,System.String,System.Int32,System.Boolean)">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.SendMsg(System.String,System.Int32,System.Boolean)">
             <summary>
             发送消息
             </summary>
-            <param name="socket">套接字</param>
             <param name="message">消息内容</param>
             <param name="reSend">重发次数</param>
             <param name="innerMsg">内部消息标志</param>
@@ -360,11 +369,10 @@
             </summary>
             <param name="obj"></param>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.AnalyseMsg(CML.ToolKit.SocketEx.ModClient,System.String)">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.AnalyseMsg(System.String)">
             <summary>
             解析消息内容
             </summary>
-            <param name="client">客户端</param>
             <param name="message">消息内容</param>
         </member>
         <member name="T:CML.ToolKit.SocketEx.SocketServer">
@@ -477,12 +485,6 @@
             <param name="message">消息内容</param>
             <param name="guid">客户端ID</param>
             <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.AcceptClientConnect(System.Object)">
-            <summary>
-            接受用户端连接
-            </summary>
-            <param name="socket">套接字</param>
         </member>
         <member name="M:CML.ToolKit.SocketEx.SocketServer.CloseSocketConnect">
             <summary>
