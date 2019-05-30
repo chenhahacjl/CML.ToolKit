@@ -1,4 +1,5 @@
 ﻿using CML.ToolKit.SocketEx;
+using System.Threading;
 
 namespace CML.ToolKit.ToolTest
 {
@@ -17,15 +18,32 @@ namespace CML.ToolKit.ToolTest
         /// </summary>
         public override void ExecuteTest()
         {
+            //测试时间
+            int testTimeSecs = 60 * 60;
+
             SocketServer server = new SocketServer()
             {
-                ReSendTimes = 5,
-                RestartTime = 5
+                CP_HeartBeatCheckTime = 5,
+                CP_ReSendTimes = 5,
+                CP_RestartTime = 5,
+                CP_IsOpenHeartBeatCheck = false
             };
 
-            server.ReceiveMessage += Server_ReceiveMessage;
-            server.InitServer("127.0.0.1", 9696);
-            server.StartServer();
+            server.CE_ReceiveMessage += Server_ReceiveMessage;
+            server.CF_InitServer("127.0.0.1", 9696);
+            server.CF_StartServer();
+
+            PrintLn(MsgType.INFO, $"等待服务启动！");
+            Thread.Sleep(2000);
+
+            PrintLn(MsgType.INFO, $"测试时间{testTimeSecs}秒！");
+            while (testTimeSecs-- > 0 && server.CP_IsServerOpen)
+            {
+                //server.CF_SendMessage("Send To Client");
+                Thread.Sleep(1000);
+            }
+
+            server.CF_StopServer();
         }
 
         /// <summary>
@@ -37,19 +55,19 @@ namespace CML.ToolKit.ToolTest
             switch (msg.MsgType)
             {
                 case EMsgType.Infomation:
-                    if (msg.Client == null)
+                    if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
                         PrintLn(MsgType.INFO, $"{msg.Message}");
                     else
                         PrintLn(MsgType.INFO, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
                     break;
                 case EMsgType.System:
-                    if (msg.Client == null)
+                    if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
                         PrintLn(MsgType.WARN, $"{msg.Message}");
                     else
                         PrintLn(MsgType.WARN, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
                     break;
                 case EMsgType.Error:
-                    if (msg.Client == null)
+                    if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
                         PrintLn(MsgType.ERROR, $"{msg.Message}");
                     else
                         PrintLn(MsgType.ERROR, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");

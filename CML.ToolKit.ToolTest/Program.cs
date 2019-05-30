@@ -32,6 +32,15 @@ namespace CML.ToolKit.ToolTest
                 }
                 Console.WriteLine("[Q]退出测试\n");
 
+                if (args.Length == 1 && int.TryParse(args[0], out int index) && index >= 1 && index <= testClassTypes.Count)
+                {
+                    Console.WriteLine($"请选择: {index}");
+
+                    ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[index - 1], true);
+                    toolKitTest.ExecuteTest();
+                    Console.WriteLine($"[{toolKitTest.TestClassName}]测试结束！\n");
+                }
+
                 while (true)
                 {
                     Console.Write("请选择: ");
@@ -41,7 +50,7 @@ namespace CML.ToolKit.ToolTest
                     {
                         break;
                     }
-                    else if (!int.TryParse(cmd, out int index) || index < 1 || index > testClassTypes.Count)
+                    else if (!int.TryParse(cmd, out index) || index < 1 || index > testClassTypes.Count)
                     {
                         Console.WriteLine("输入命令错误！\n");
                     }

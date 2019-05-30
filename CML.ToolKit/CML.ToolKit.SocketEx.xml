@@ -36,12 +36,22 @@
         </member>
         <member name="P:CML.ToolKit.SocketEx.ISCommand.CmdClientHB">
             <summary>
-            客户端发送心跳包
+            客户端心跳包命令
             </summary>
         </member>
         <member name="P:CML.ToolKit.SocketEx.ISCommand.CmdServerHB">
             <summary>
-            服务端发送心跳包
+            服务端心跳包命令
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ISCommand.CmdClientNeedShutdown">
+            <summary>
+            客户端自主下线命令
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ISCommand.CmdClientRequShutdown">
+            <summary>
+            客户端强制下线命令
             </summary>
         </member>
         <member name="T:CML.ToolKit.SocketEx.ISMessage">
@@ -240,6 +250,11 @@
             心跳间隔时间
             </summary>
         </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_heartBeatSkipTimes">
+            <summary>
+            心跳开始跳过次数
+            </summary>
+        </member>
         <member name="F:CML.ToolKit.SocketEx.SocketClient.m_reSendTimes">
             <summary>
             发送失败重发次数
@@ -250,14 +265,14 @@
             上次连接结束时间
             </summary>
         </member>
-        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_hbStartTime">
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_hbSendTime">
             <summary>
-            
+            发送心跳时间
             </summary>
         </member>
-        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_hbEndTime">
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_hbReceiveTime">
             <summary>
-            
+            接收心跳时间
             </summary>
         </member>
         <member name="F:CML.ToolKit.SocketEx.SocketClient.m_thread">
@@ -275,27 +290,37 @@
             正在连接标志
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketClient.IsConnected">
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_IsConnected">
             <summary>
             是否已经连接
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketClient.RestartTime">
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_IsAutoReConnect">
+            <summary>
+            是否自动重连接
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_RestartTime">
             <summary>
             重连间隔时间[默认值:5|最小值:1|单位:秒]
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketClient.ConnectTime">
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_ConnectTime">
             <summary>
             连接间隔时间(≥重连间隔时间)[默认值:5|最小值:1|单位:秒]
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketClient.HeartBeatTime">
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_HeartBeatTime">
             <summary>
             心跳间隔时间[默认值:60|最小值:1|单位:秒]
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketClient.ReSendTimes">
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_HeartBeatSkipTimes">
+            <summary>
+            心跳开始跳过次数[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_ReSendTimes">
             <summary>
             发送失败重发次数[默认值:3|范围:0-10|单位:次]
             </summary>
@@ -316,12 +341,12 @@
             </summary>
             <param name="message"></param>
         </member>
-        <member name="E:CML.ToolKit.SocketEx.SocketClient.ReceiveMessage">
+        <member name="E:CML.ToolKit.SocketEx.SocketClient.CE_ReceiveMessage">
             <summary>
             获取消息事件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.InitClient(System.String,System.Int32)">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_InitClient(System.String,System.Int32)">
             <summary>
             初始化客户端
             </summary>
@@ -329,24 +354,39 @@
             <param name="port">服务占用端口</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.ConnectToServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_ConnectToServer">
             <summary>
             连接服务器
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.CloseFromServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_CloseClient">
             <summary>
             关闭连接
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.SendMessage(System.String)">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_SendMessage(System.String)">
             <summary>
             发送消息
             </summary>
             <param name="message">消息内容</param>
             <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.ConnectThread">
+            <summary>
+            服务器连接线程
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.ReceiveThread">
+            <summary>
+            消息接收线程
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.HeartBeatThread">
+            <summary>
+            心跳线程
+            </summary>
         </member>
         <member name="M:CML.ToolKit.SocketEx.SocketClient.CloseSocketConnect">
             <summary>
@@ -362,12 +402,6 @@
             <param name="reSend">重发次数</param>
             <param name="innerMsg">内部消息标志</param>
             <returns></returns>
-        </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.ReceiveMsg(System.Object)">
-            <summary>
-            接收消息
-            </summary>
-            <param name="obj"></param>
         </member>
         <member name="M:CML.ToolKit.SocketEx.SocketClient.AnalyseMsg(System.String)">
             <summary>
@@ -395,6 +429,11 @@
             服务重启间隔
             </summary>
         </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketServer.m_heartBeatCheckSecs">
+            <summary>
+            心跳检测间隔时间
+            </summary>
+        </member>
         <member name="F:CML.ToolKit.SocketEx.SocketServer.m_reSendTimes">
             <summary>
             发送失败重发次数
@@ -410,22 +449,37 @@
             客户端列表
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketServer.IsServerOpen">
+        <member name="F:CML.ToolKit.SocketEx.SocketServer.m_isThreadStop">
+            <summary>
+            线程停止标志
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_IsServerOpen">
             <summary>
             服务状态
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketServer.RestartTime">
+        <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_RestartTime">
             <summary>
             服务重启间隔[默认值:5|最小值:1|单位:秒]
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketServer.ReSendTimes">
+        <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_ReSendTimes">
             <summary>
             发送失败重发次数[默认值:3|范围:0-10|单位:次]
             </summary>
         </member>
-        <member name="P:CML.ToolKit.SocketEx.SocketServer.ClientList">
+        <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_IsOpenHeartBeatCheck">
+            <summary>
+            是否开启心跳间隔检测
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_HeartBeatCheckTime">
+            <summary>
+            心跳间隔检测时间[默认值:60|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_ClientList">
             <summary>
             客户端列表
             </summary>
@@ -446,12 +500,12 @@
             </summary>
             <param name="message"></param>
         </member>
-        <member name="E:CML.ToolKit.SocketEx.SocketServer.ReceiveMessage">
+        <member name="E:CML.ToolKit.SocketEx.SocketServer.CE_ReceiveMessage">
             <summary>
             获取消息事件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.InitServer(System.String,System.Int32)">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_InitServer(System.String,System.Int32)">
             <summary>
             初始化服务
             </summary>
@@ -459,32 +513,37 @@
             <param name="port">服务占用端口</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.StartServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_StartServer">
             <summary>
             开启服务
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.StopServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_StopServer">
             <summary>
             停止服务
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.SendMessage(System.String)">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_SendMessage(System.String)">
             <summary>
             群体发送消息
             </summary>
             <param name="message">消息内容</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.SendMessage(System.String,System.Guid)">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_SendMessage(System.String,System.Guid)">
             <summary>
             单独发送消息
             </summary>
             <param name="message">消息内容</param>
             <param name="guid">客户端ID</param>
             <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.HeartBeatThread">
+            <summary>
+            心跳包监控
+            </summary>
         </member>
         <member name="M:CML.ToolKit.SocketEx.SocketServer.CloseSocketConnect">
             <summary>
@@ -507,6 +566,13 @@
             接收消息
             </summary>
             <param name="obj"></param>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.ExitClient(CML.ToolKit.SocketEx.ModClient)">
+            <summary>
+            关闭客户端连接
+            </summary>
+            <param name="client">客户端</param>
+            <returns>执行结果</returns>
         </member>
         <member name="M:CML.ToolKit.SocketEx.SocketServer.AnalyseMsg(CML.ToolKit.SocketEx.ModClient,System.String)">
             <summary>

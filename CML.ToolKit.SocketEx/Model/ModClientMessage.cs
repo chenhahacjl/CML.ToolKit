@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CML.ToolKit.SocketEx
 {
-    public class ModClientMessage
+    public struct ModClientMessage
     {
         #region 公共属性
         /// <summary>

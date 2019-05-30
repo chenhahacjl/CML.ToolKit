@@ -33,6 +33,10 @@ namespace CML.ToolKit.SocketEx
         /// </summary>
         private int m_heartBeatSecs = 60;
         /// <summary>
+        /// 心跳开始跳过次数
+        /// </summary>
+        private int m_heartBeatSkipTimes = 5;
+        /// <summary>
         /// 发送失败重发次数
         /// </summary>
         private int m_reSendTimes = 3;
@@ -41,13 +45,13 @@ namespace CML.ToolKit.SocketEx
         /// </summary>
         private DateTime m_lastCloseTime = ISDefault.DefDateTime;
         /// <summary>
-        /// 
+        /// 发送心跳时间
         /// </summary>
-        private DateTime m_hbStartTime = ISDefault.DefDateTime;
+        private DateTime m_hbSendTime = ISDefault.DefDateTime;
         /// <summary>
-        /// 
+        /// 接收心跳时间
         /// </summary>
-        private DateTime m_hbEndTime = ISDefault.DefDateTime;
+        private DateTime m_hbReceiveTime = ISDefault.DefDateTime;
         /// <summary>
         /// 通讯线程
         /// </summary>
@@ -66,12 +70,17 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 是否已经连接
         /// </summary>
-        public bool IsConnected { get; private set; }
+        public bool CP_IsConnected { get; private set; }
+
+        /// <summary>
+        /// 是否自动重连接
+        /// </summary>
+        public bool CP_IsAutoReConnect { get; set; } = true;
 
         /// <summary>
         /// 重连间隔时间[默认值:5|最小值:1|单位:秒]
         /// </summary>
-        public int RestartTime
+        public int CP_RestartTime
         {
             get => m_reStartSecs;
             set => m_reStartSecs = value > 1 ? value : 1;
@@ -80,7 +89,7 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 连接间隔时间(≥重连间隔时间)[默认值:5|最小值:1|单位:秒]
         /// </summary>
-        public int ConnectTime
+        public int CP_ConnectTime
         {
             get => m_connectSecs;
             set => m_connectSecs = value < m_reStartSecs ? value : value > 1 ? value : 1;
@@ -89,16 +98,25 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 心跳间隔时间[默认值:60|最小值:1|单位:秒]
         /// </summary>
-        public int HeartBeatTime
+        public int CP_HeartBeatTime
         {
             get => m_heartBeatSecs;
             set => m_heartBeatSecs = value > 1 ? value : 1;
         }
 
         /// <summary>
+        /// 心跳开始跳过次数[默认值:5|最小值:1|单位:秒]
+        /// </summary>
+        public int CP_HeartBeatSkipTimes
+        {
+            get => m_heartBeatSkipTimes;
+            set => m_heartBeatSkipTimes = value > 1 ? value : 1;
+        }
+
+        /// <summary>
         /// 发送失败重发次数[默认值:3|范围:0-10|单位:次]
         /// </summary>
-        public int ReSendTimes
+        public int CP_ReSendTimes
         {
             get => m_reSendTimes;
             set => m_reSendTimes = value < 0 ? 0 : value > 10 ? 10 : value;
@@ -116,6 +134,15 @@ namespace CML.ToolKit.SocketEx
         /// </summary>
         ~SocketClient()
         {
+            if (CP_IsConnected)
+            {
+                //发送下线命令
+                SendMsg(ISCommand.CmdClientNeedShutdown, m_reSendTimes, true);
+            }
+
+            //通知线程停止
+            m_isThreadStop = true;
+
             CloseSocketConnect();
         }
         #endregion
@@ -129,7 +156,7 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 获取消息事件
         /// </summary>
-        public event ReceiveMessageHandle ReceiveMessage;
+        public event ReceiveMessageHandle CE_ReceiveMessage;
         #endregion
 
         #region 公共方法
@@ -139,22 +166,22 @@ namespace CML.ToolKit.SocketEx
         /// <param name="ip">服务端IP地址</param>
         /// <param name="port">服务占用端口</param>
         /// <returns>执行结果</returns>
-        public bool InitClient(string ip, int port)
+        public bool CF_InitClient(string ip, int port)
         {
             if (!IPAddress.TryParse(ip, out IPAddress address))
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "IP格式错误"));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "IP格式错误"));
                 return false;
             }
             if (port < 0 || port > 65535)
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "端口范围错误"));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "端口范围错误"));
                 return false;
             }
 
             m_ipEndPoint = new IPEndPoint(address, port);
 
-            ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "客户端初始化成功"));
+            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "客户端初始化成功"));
             return true;
         }
 
@@ -162,148 +189,27 @@ namespace CML.ToolKit.SocketEx
         /// 连接服务器
         /// </summary>
         /// <returns>执行结果</returns>
-        public bool ConnectToServer()
+        public bool CF_ConnectToServer()
         {
             //判断服务是否打开
-            if (IsConnected)
+            if (CP_IsConnected)
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "已连接到服务器"));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "已连接到服务器"));
                 return false;
             }
 
+            //是否正在连接
             if (m_isConnectiong)
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "正在连接到服务器"));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "正在连接到服务器"));
                 return false;
             }
 
-            m_thread = new Thread(() =>
-            {
-                while (true)
-                {
-                    //是否接收到停止标志
-                    if (m_isThreadStop) { break; }
-
-                    //是否第一次启动
-                    if (m_lastCloseTime != ISDefault.DefDateTime)
-                    {
-                        while (m_lastCloseTime.AddSeconds(m_reStartSecs) > DateTime.Now)
-                        {
-                            int waitTime = (int)(m_lastCloseTime.AddSeconds(m_reStartSecs) - DateTime.Now).TotalSeconds + 1;
-
-                            ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, $"服务重启倒数: {waitTime}秒"));
-
-                            Thread.Sleep(1000);
-                        }
-                    }
-                    else
-                    {
-                        //释放资源
-                        CloseSocketConnect();
-                    }
-
-                    //开始连接服务器
-                    m_isConnectiong = true;
-
-                    m_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                    try
-                    {
-                        m_socket.Connect(m_ipEndPoint);
-                        IsConnected = true;
-
-                        ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "成功连接到服务端"));
-
-                        Thread receiveMessage = new Thread(() =>
-                        {
-                            while (true)
-                            {
-                                if (m_isThreadStop) { break; }
-
-                                if (IsConnected)
-                                {
-                                    try
-                                    {
-                                        byte[] receiveData = new byte[1024 * 1024];
-                                        int dataLength = m_socket.Receive(receiveData);
-
-                                        if (dataLength > 0)
-                                        {
-                                            string message = Encoding.UTF8.GetString(receiveData, 0, dataLength);
-
-                                            if (!AnalyseMsg(message))
-                                                break;
-                                        }
-                                    }
-                                    catch
-                                    {
-                                        //LostConnect();
-
-                                        ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "与服务端失去连接"));
-                                        break;
-                                    }
-                                }
-                                else { break; }
-                            }
-
-                            ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "退出接收线程"));
-                        });
-                        receiveMessage.IsBackground = true;
-                        receiveMessage.Start();
-
-                        ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "开启接收线程"));
-
-                        Thread heartBeat = new Thread(() =>
-                        {
-                            while (true)
-                            {
-                                if (m_isThreadStop) break;
-
-                                if (IsConnected && SendMsg("[_HEART_BEAT_CLIENT_]", m_reSendTimes, true).IsSuccess)
-                                {
-                                    this.m_hbStartTime = DateTime.Now;
-
-                                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "成功发送心跳包"));
-                                }
-                                else
-                                {
-                                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "心跳包发送失败"));
-                                    break;
-                                }
-
-                                Thread.Sleep(m_heartBeatSecs * 1000);
-
-                                if ((m_hbEndTime >= m_hbStartTime && (m_hbEndTime - m_hbStartTime).TotalSeconds > m_heartBeatSecs) ||
-                                    m_hbEndTime < m_hbStartTime)
-                                {
-                                    // LostConnect();
-
-                                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "未收到服务端心跳回复"));
-                                    break;
-                                }
-                            }
-
-                            ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "退出心跳线程"));
-                        });
-                        heartBeat.IsBackground = true;
-                        heartBeat.Start();
-
-                        ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "开启心跳线程"));
-                    }
-                    catch
-                    {
-                        ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "服务端连接失败"));
-                    }
-
-                    Thread.Sleep(m_connectSecs * 1000);
-
-                }
-            })
-            { IsBackground = true };
-
+            m_isThreadStop = false;
+            m_thread = new Thread(ConnectThread) { IsBackground = true };
             m_thread.Start();
-            ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "开启连接线程"));
 
+            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "开启连接线程"));
             return true;
         }
 
@@ -311,19 +217,22 @@ namespace CML.ToolKit.SocketEx
         /// 关闭连接
         /// </summary>
         /// <returns>执行结果</returns>
-        public bool CloseFromServer()
+        public bool CF_CloseClient()
         {
-            if (!IsConnected)
+            if (!CP_IsConnected)
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "未连接到服务器"));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "未连接到服务器"));
                 return false;
             }
 
+            //发送下线命令
+            SendMsg(ISCommand.CmdClientNeedShutdown, m_reSendTimes, true);
+
+            //通知线程停止
+            m_isThreadStop = true;
+
             //关闭Socket连接
             CloseSocketConnect();
-
-            //记录关闭信息
-            m_lastCloseTime = DateTime.Now;
 
             return true;
         }
@@ -333,20 +242,210 @@ namespace CML.ToolKit.SocketEx
         /// </summary>
         /// <param name="message">消息内容</param>
         /// <returns>执行结果</returns>
-        public bool SendMessage(string message)
+        public bool CF_SendMessage(string message)
         {
             ModResult<string> result = SendMsg(message, m_reSendTimes);
 
             if (result.IsSuccess)
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "消息发送成功"));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "消息发送成功"));
                 return true;
             }
             else
             {
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, result.Result));
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, result.Result));
                 return false;
             }
+        }
+        #endregion
+
+        #region 线程方法
+        /// <summary>
+        /// 服务器连接线程
+        /// </summary>
+        private void ConnectThread()
+        {
+            while (true)
+            {
+                //是否接收到停止标志
+                if (m_isThreadStop) { break; }
+
+                //是否第一次启动
+                if (m_lastCloseTime != ISDefault.DefDateTime)
+                {
+                    //释放资源
+                    CloseSocketConnect();
+
+                    //等待重启
+                    while (m_lastCloseTime.AddSeconds(m_reStartSecs) > DateTime.Now)
+                    {
+                        int waitTime = (int)(m_lastCloseTime.AddSeconds(m_reStartSecs) - DateTime.Now).TotalSeconds + 1;
+
+                        CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, $"服务重启倒数: {waitTime}秒"));
+
+                        Thread.Sleep(1000);
+                    }
+                }
+
+                //开始连接服务器
+                m_isConnectiong = true;
+                m_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                try
+                {
+                    //连接服务器
+                    m_socket.Connect(m_ipEndPoint);
+
+                    CP_IsConnected = true;
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "成功连接到服务端"));
+
+                    //消息接收线程
+                    new Thread(ReceiveThread) { IsBackground = true }.Start();
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "成功开启消息接收线程"));
+
+                    //心跳线程
+                    new Thread(HeartBeatThread) { IsBackground = true }.Start();
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "成功开启心跳线程"));
+
+                    m_isConnectiong = false;
+                }
+                catch
+                {
+                    CP_IsConnected = false;
+                    m_isConnectiong = false;
+
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "服务端连接失败"));
+                }
+
+                //等待失去连接
+                while (CP_IsConnected) { Thread.Sleep(1000); }
+
+                //自动重连
+                if (CP_IsAutoReConnect)
+                {
+                    for (int i = 0; i < m_connectSecs; i++)
+                    {
+                        //是否接收到停止标志
+                        if (m_isThreadStop) break;
+
+                        //每次等待1秒
+                        CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, $"等待{m_connectSecs - i}秒重新连接"));
+                        Thread.Sleep(1000);
+                    }
+                }
+                else { break; }
+            }
+
+            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "已关闭客户端连接"));
+        }
+
+        /// <summary>
+        /// 消息接收线程
+        /// </summary>
+        private void ReceiveThread()
+        {
+            while (true)
+            {
+                //是否接收到停止标志
+                if (m_isThreadStop) { break; }
+                //是否失去连接
+                if (!CP_IsConnected) { break; }
+
+                try
+                {
+                    byte[] receiveData = new byte[1024 * 1024];
+                    int dataLength = m_socket.Receive(receiveData);
+
+                    if (dataLength > 0)
+                    {
+                        string message = Encoding.UTF8.GetString(receiveData, 0, dataLength);
+
+                        if (!AnalyseMsg(message))
+                        {
+                            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "消息解析失败: " + message));
+                            break;
+                        }
+                    }
+                }
+                catch
+                {
+                    if (CP_IsConnected)
+                    {
+                        CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "与服务端失去连接"));
+                    }
+
+                    break;
+                }
+            }
+
+            //记录关闭信息
+            m_lastCloseTime = DateTime.Now;
+
+            //设置标志位
+            CP_IsConnected = false;
+            m_isConnectiong = false;
+
+            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "退出消息接收线程"));
+        }
+
+        /// <summary>
+        /// 心跳线程
+        /// </summary>
+        private void HeartBeatThread()
+        {
+            //跳过次数
+            int count = m_heartBeatSkipTimes;
+
+            while (true)
+            {
+                //是否接收到停止标志
+                if (m_isThreadStop) { break; }
+                //是否失去连接
+                if (!CP_IsConnected) { break; }
+
+                if (CP_IsConnected && SendMsg(ISCommand.CmdClientHB, m_reSendTimes, true).IsSuccess)
+                {
+                    m_hbSendTime = DateTime.Now;
+
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "成功发送心跳包"));
+                }
+                else
+                {
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "心跳包发送失败"));
+                    break;
+                }
+
+                int times = m_heartBeatSecs;
+                while (times-- > 0)
+                {
+                    //是否接收到停止标志
+                    if (m_isThreadStop) { break; }
+                    //是否失去连接
+                    if (!CP_IsConnected) { break; }
+
+                    Thread.Sleep(1000);
+                }
+
+                if (--count < 0)
+                {
+                    if ((m_hbReceiveTime >= m_hbSendTime && (m_hbReceiveTime - m_hbSendTime).TotalSeconds > m_heartBeatSecs) ||
+                        m_hbReceiveTime < m_hbSendTime)
+                    {
+                        CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "未收到服务端心跳回复"));
+                        break;
+                    }
+                }
+                else
+                {
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "跳过心跳检测"));
+                }
+            }
+
+            //设置标志位
+            CP_IsConnected = false;
+            m_isConnectiong = false;
+
+            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "退出心跳线程"));
         }
         #endregion
 
@@ -388,6 +487,9 @@ namespace CML.ToolKit.SocketEx
         /// <returns></returns>
         private ModResult<string> SendMsg(string message, int reSend, bool innerMsg = false)
         {
+            //是否连接服务器
+            if (!CP_IsConnected) { return new ModResult<string>(false, "未连接到服务器"); }
+            //Socket是否为空
             if (m_socket == null) { return new ModResult<string>(false, "Socket为空"); }
 
             string sendMsg = message;
@@ -419,41 +521,9 @@ namespace CML.ToolKit.SocketEx
 
             return result;
         }
+        #endregion
 
-        /// <summary>
-        /// 接收消息
-        /// </summary>
-        /// <param name="obj"></param>
-        private void ReceiveMsg(object obj)
-        {
-            ModClient client = (ModClient)obj;
-            byte[] data = new byte[1024 * 1024];
-
-            while (true)
-            {
-                if (!IsConnected) break;
-
-                int dataLength;
-                try
-                {
-                    dataLength = client.Socket.Receive(data, 0, data.Length, SocketFlags.None);
-                }
-                catch
-                {
-                    //客户端异常退出
-                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "客户端异常退出"));
-                    return;
-                }
-
-                if (dataLength <= 0) { return; }
-
-                string message = Encoding.UTF8.GetString(data, 0, dataLength);
-
-                if (!AnalyseMsg(message))
-                    break;
-            }
-        }
-
+        #region 消息解析
         /// <summary>
         /// 解析消息内容
         /// </summary>
@@ -461,36 +531,43 @@ namespace CML.ToolKit.SocketEx
         private bool AnalyseMsg(string message)
         {
             //心跳包
-            if (message.Contains("[_SERVER_HEART_BEAT_]"))
+            if (message.Contains(ISCommand.CmdServerHB))
             {
-                this.m_hbEndTime = DateTime.Now;
-
-                ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "收到心跳包"));
+                m_hbReceiveTime = DateTime.Now;
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到心跳包"));
             }
 
             //PC名称
-            if (message.Contains("[_GET_PC_NAME_]"))
+            if (message.Contains(ISCommand.CmdGetPcName))
             {
-                String PCInfo = Environment.UserDomainName + "/" + Environment.UserName;
-                if (SendMsg("[_PC_NAME_START_]" + PCInfo + "[_PC_NAME_END_]", ReSendTimes, true).IsSuccess)
+                string PCInfo = Environment.UserDomainName + "/" + Environment.UserName;
+                if (SendMsg(ISMessage.MsgPcNameStart + PCInfo + ISMessage.MsgPcNameEnd, CP_ReSendTimes, true).IsSuccess)
                 {
-                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "回复本机名称成功"));
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "回复本机名称成功"));
                 }
                 else
                 {
-                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "回复本机名称失败"));
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "回复本机名称失败"));
                     return false;
                 }
             }
 
-            if (message.Contains("[_MSG_START_]") && message.Contains("[_MSG_END_]"))
+            //强制下线命令
+            if (message.Contains(ISCommand.CmdClientRequShutdown))
             {
-                Regex regex = new Regex("\\[_MSG_START_\\](.+?)\\[_MSG_END_\\]");
+                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到服务端强制下线命令"));
+                CF_CloseClient();
+            }
+
+            //消息
+            if (message.Contains(ISMessage.MsgNormalStart) && message.Contains(ISMessage.MsgNormalEnd))
+            {
+                Regex regex = new Regex(ISRegex.RegMsgNormal);
                 Match match = regex.Match(message);
 
                 while (match.Success)
                 {
-                    ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "接收消息: " + match.Groups[1].Value));
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "接收消息: " + match.Groups[1].Value));
 
                     match = match.NextMatch();
                 }
@@ -498,6 +575,6 @@ namespace CML.ToolKit.SocketEx
 
             return true;
         }
-        #endregion
+        #endregion 
     }
 }
