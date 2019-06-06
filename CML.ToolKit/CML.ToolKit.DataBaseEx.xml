@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.ToolKit.DataBaseEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.ToolKit.DataBaseEx.DataBase">
+            <summary>
+            数据库功能帮助类
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.DataBase.m_iDataBase">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.DataBase.m_iConn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.DataBase.m_iCmd">
+            <summary>
+            数据库执行命令
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.DataBase.m_isInitDataBase">
+            <summary>
+            数据库初始化标志
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.DataBase.CP_ConnectionType">
+            <summary>
+            连接数据库类型
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.DataBase.CP_ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.DataBase.CP_IsAutoCloseConn">
+            <summary>
+            是否自动关闭数据库连接(默认开启自动关闭)
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.#ctor">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.#ctor(CML.ToolKit.DataBaseEx.EDataBaseType,System.String)">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_InitDataBase">
+            <summary>
+            初始化数据库（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_OpenConnect">
+            <summary>
+            打开数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_CloseConnect">
+            <summary>
+            关闭数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_ExecuteQuery(System.String,CML.ToolKit.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行查询语句，返回DataTable（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_ExecuteNonQuery(System.String,CML.ToolKit.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_ExecuteTransaction(System.Collections.Generic.List{CML.ToolKit.DataBaseEx.ModTransactionParameter})">
+            <summary>
+            执行多条SQL语句，实现数据库事务（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="lstParameters">事务执行参数</param>
+            <returns>是否提交成功</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.DataBase.CF_GetSingleObject(System.String,CML.ToolKit.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.IDataBase">
+            <summary>
+            数据库接口
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.IDataBase.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.IDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.IDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.IDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.IDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.IDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.IDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.MySqlDataBase">
+            <summary>
+            MYSQL 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.MySqlDataBase.ConnectionString">
+            <summary>
+            MYSQL 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.OracleDataBase">
+            <summary>
+            ORACLE 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.OracleDataBase.ConnectionString">
+            <summary>
+            ORACLE 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.EDataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.EDataBaseType.NONE">
+            <summary>
+            未选择数据库
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.EDataBaseType.MYSQL">
+            <summary>
+            MYSQL数据库
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.EDataBaseType.ORACLE">
+            <summary>
+            ORACLE数据库
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.DataBaseEx.EDataBaseType.SQLSERVER">
+            <summary>
+            SQL SERVER数据库
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.ModDataParameter">
+            <summary>
+            数据传输参数模型
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.ModDataParameter.Name">
+            <summary>
+            参数名
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.ModDataParameter.Value">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.ModDataParameter.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.ModTransactionParameter">
+            <summary>
+            事务执行参数模型
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.ModTransactionParameter.#ctor(System.String,CML.ToolKit.DataBaseEx.ModDataParameter[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数</param>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.ModTransactionParameter.Sql">
+            <summary>
+            SQL语句
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.ModTransactionParameter.Parameters">
+            <summary>
+            SQL语句中的参数
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.DataBaseEx.SqlServerDataBase">
+            <summary>
+            SQL SERVER 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.SqlServerDataBase.ConnectionString">
+            <summary>
+            SQL SERVER 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.SqlServerDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.SqlServerDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.SqlServerDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.SqlServerDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.SqlServerDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.SqlServerDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+    </members>
+</doc>

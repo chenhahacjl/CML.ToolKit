@@ -32,7 +32,7 @@ namespace CML.ToolKit.ToolTest
 
             client.CE_ReceiveMessage += Client_ReceiveMessage;
             client.CF_InitClient("127.0.0.1", 9696);
-            client.CF_ConnectToServer();
+            client.CF_StartConnection();
 
             PrintLn(MsgType.INFO, $"等待连接服务器！");
             Thread.Sleep(2000);
@@ -44,7 +44,7 @@ namespace CML.ToolKit.ToolTest
                 Thread.Sleep(1000);
             }
 
-            client.CF_CloseClient();
+            client.CF_StopConnection();
         }
 
         private void Client_ReceiveMessage(ModClientMessage msg)

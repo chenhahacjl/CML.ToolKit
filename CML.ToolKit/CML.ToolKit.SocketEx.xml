@@ -354,13 +354,13 @@
             <param name="port">服务占用端口</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_ConnectToServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_StartConnection">
             <summary>
-            连接服务器
+            打开连接
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_CloseClient">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.CF_StopConnection">
             <summary>
             关闭连接
             </summary>
@@ -513,13 +513,13 @@
             <param name="port">服务占用端口</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_StartServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_StartService">
             <summary>
             开启服务
             </summary>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_StopServer">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.CF_StopService">
             <summary>
             停止服务
             </summary>

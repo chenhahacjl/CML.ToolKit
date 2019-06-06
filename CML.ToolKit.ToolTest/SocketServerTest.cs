@@ -31,7 +31,7 @@ namespace CML.ToolKit.ToolTest
 
             server.CE_ReceiveMessage += Server_ReceiveMessage;
             server.CF_InitServer("127.0.0.1", 9696);
-            server.CF_StartServer();
+            server.CF_StartService();
 
             PrintLn(MsgType.INFO, $"等待服务启动！");
             Thread.Sleep(2000);
@@ -43,7 +43,7 @@ namespace CML.ToolKit.ToolTest
                 Thread.Sleep(1000);
             }
 
-            server.CF_StopServer();
+            server.CF_StopService();
         }
 
         /// <summary>

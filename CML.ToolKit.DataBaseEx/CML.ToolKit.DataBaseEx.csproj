@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C7CC715-6C3F-4394-B520-DE5EECAB80C6}</ProjectGuid>
+    <ProjectGuid>{0DD24B2D-B3E0-421E-B1AC-DA675C37A9E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CML.ToolKit.ControlEx</RootNamespace>
-    <AssemblyName>CML.ToolKit.ControlEx</AssemblyName>
+    <RootNamespace>CML.ToolKit.DataBaseEx</RootNamespace>
+    <AssemblyName>CML.ToolKit.DataBaseEx</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\CML.ToolKit\CML.ToolKit.ControlEx.xml</DocumentationFile>
+    <DocumentationFile>..\CML.ToolKit\CML.ToolKit.DataBaseEx.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,13 +30,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\CML.ToolKit\CML.ToolKit.ControlEx.xml</DocumentationFile>
+    <DocumentationFile>..\CML.ToolKit\CML.ToolKit.DataBaseEx.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>Lib\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,18 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormShowControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormShowControl.Designer.cs">
-      <DependentUpon>FormShowControl.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="DatabaseBase\IDatabase.cs" />
+    <Compile Include="DatabaseBase\MySqlDataBase.cs" />
+    <Compile Include="DatabaseBase\OracleDataBase.cs" />
+    <Compile Include="Enum\EDataBaseType.cs" />
+    <Compile Include="Model\ModDataParameter.cs" />
+    <Compile Include="Model\ModTransactionParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="FormShowControl.resx">
-      <DependentUpon>FormShowControl.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="DatabaseBase\SqlServerDataBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

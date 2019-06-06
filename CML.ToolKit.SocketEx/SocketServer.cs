@@ -158,7 +158,7 @@ namespace CML.ToolKit.SocketEx
         /// 开启服务
         /// </summary>
         /// <returns>执行结果</returns>
-        public bool CF_StartServer()
+        public bool CF_StartService()
         {
             //判断服务是否打开
             if (CP_IsServerOpen)
@@ -214,7 +214,7 @@ namespace CML.ToolKit.SocketEx
         /// 停止服务
         /// </summary>
         /// <returns>执行结果</returns>
-        public bool CF_StopServer()
+        public bool CF_StopService()
         {
             if (!CP_IsServerOpen)
             {

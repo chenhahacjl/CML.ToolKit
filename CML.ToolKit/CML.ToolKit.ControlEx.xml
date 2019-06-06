@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.ToolKit.ControlEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.ToolKit.ControlEx.FormShowControl">
+            <summary>
+            控件展示窗体
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.FormShowControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ControlEx.FormShowControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.FormShowControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.FormShowControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -186,10 +186,10 @@ namespace CML.ToolKit.SocketEx
         }
 
         /// <summary>
-        /// 连接服务器
+        /// 打开连接
         /// </summary>
         /// <returns>执行结果</returns>
-        public bool CF_ConnectToServer()
+        public bool CF_StartConnection()
         {
             //判断服务是否打开
             if (CP_IsConnected)
@@ -217,7 +217,7 @@ namespace CML.ToolKit.SocketEx
         /// 关闭连接
         /// </summary>
         /// <returns>执行结果</returns>
-        public bool CF_CloseClient()
+        public bool CF_StopConnection()
         {
             if (!CP_IsConnected)
             {
@@ -556,7 +556,7 @@ namespace CML.ToolKit.SocketEx
             if (message.Contains(ISCommand.CmdClientRequShutdown))
             {
                 CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到服务端强制下线命令"));
-                CF_CloseClient();
+                CF_StopConnection();
             }
 
             //消息
