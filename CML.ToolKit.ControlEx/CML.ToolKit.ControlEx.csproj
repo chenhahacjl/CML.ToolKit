@@ -44,6 +44,100 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlBase\ShapeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBase\TextBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\ButtonEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\ButtonEx.Designer.cs">
+      <DependentUpon>ButtonEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlOriginal\ChartCurve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\ChartCurve.Designer.cs">
+      <DependentUpon>ChartCurve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlExpand\CheckBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\FormMoveTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\FormMoveTool.Designer.cs">
+      <DependentUpon>FormMoveTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlOriginal\LanternAlarm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\LanternAlarm.Designer.cs">
+      <DependentUpon>LanternAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlOriginal\LanternRound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\LanternRound.Designer.cs">
+      <DependentUpon>LanternRound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlOriginal\ShapeDiamond.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\ShapeRectangle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlOriginal\ShapeRound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\TextBoxEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\TextBoxEx.Designer.cs">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAuxiliary\FormDgvColumnVisibility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlAuxiliary\FormDgvColumnVisibility.Designer.cs">
+      <DependentUpon>FormDgvColumnVisibility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAuxiliary\FormDgvRowCheckSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlAuxiliary\FormDgvRowCheckSelect.Designer.cs">
+      <DependentUpon>FormDgvRowCheckSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlForm\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlForm\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlForm\FormValueInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlForm\FormValueInput.Designer.cs">
+      <DependentUpon>FormValueInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auxiliary\Operate\ChartOperate.cs" />
+    <Compile Include="Auxiliary\Operate\DataGridViewOperate.cs" />
+    <Compile Include="Auxiliary\Operate\IniFileOperate.cs" />
+    <Compile Include="Auxiliary\Operate\InvokeOperate.cs" />
+    <Compile Include="Auxiliary\Enum\ChartEnum.cs" />
+    <Compile Include="Auxiliary\Enum\FormLoginEnum.cs" />
+    <Compile Include="Auxiliary\Enum\ShapeEnum.cs" />
+    <Compile Include="Auxiliary\Enum\TextBoxEnum.cs" />
+    <Compile Include="Auxiliary\Model\ChartModel.cs" />
+    <Compile Include="Auxiliary\Model\FormLoginModel.cs" />
     <Compile Include="FormShowControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -51,10 +145,49 @@
       <DependentUpon>FormShowControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ControlExpand\ButtonEx.resx">
+      <DependentUpon>ButtonEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlOriginal\ChartCurve.resx">
+      <DependentUpon>ChartCurve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlOriginal\FormMoveTool.resx">
+      <DependentUpon>FormMoveTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlOriginal\LanternAlarm.resx">
+      <DependentUpon>LanternAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlOriginal\LanternRound.resx">
+      <DependentUpon>LanternRound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlExpand\TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlAuxiliary\FormDgvColumnVisibility.resx">
+      <DependentUpon>FormDgvColumnVisibility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlAuxiliary\FormDgvRowCheckSelect.resx">
+      <DependentUpon>FormDgvRowCheckSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlForm\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlForm\FormValueInput.resx">
+      <DependentUpon>FormValueInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormShowControl.resx">
       <DependentUpon>FormShowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

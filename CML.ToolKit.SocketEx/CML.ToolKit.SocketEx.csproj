@@ -43,18 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\EMsgType.cs" />
-    <Compile Include="InternalStatic\ISCommand.cs" />
-    <Compile Include="InternalStatic\ISMessage.cs" />
-    <Compile Include="InternalStatic\ISRegex.cs" />
-    <Compile Include="Model\ModClient.cs" />
-    <Compile Include="Model\ModClientMessage.cs" />
-    <Compile Include="Model\ModServerMessage.cs" />
-    <Compile Include="Model\ModResult.cs" />
+    <Compile Include="Auxiliary\Enum\EMsgType.cs" />
+    <Compile Include="Auxiliary\InternalStatic\ISCommand.cs" />
+    <Compile Include="Auxiliary\InternalStatic\ISMessage.cs" />
+    <Compile Include="Auxiliary\InternalStatic\ISRegex.cs" />
+    <Compile Include="Auxiliary\Model\ModClient.cs" />
+    <Compile Include="Auxiliary\Model\ModClientMessage.cs" />
+    <Compile Include="Auxiliary\Model\ModServerMessage.cs" />
+    <Compile Include="Auxiliary\Model\ModResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocketClient.cs" />
     <Compile Include="SocketServer.cs" />
-    <Compile Include="InternalStatic\ISDefault.cs" />
+    <Compile Include="Auxiliary\InternalStatic\ISDefault.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

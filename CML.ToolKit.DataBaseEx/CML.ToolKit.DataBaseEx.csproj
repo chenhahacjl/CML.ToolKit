@@ -49,14 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
-    <Compile Include="DatabaseBase\IDatabase.cs" />
-    <Compile Include="DatabaseBase\MySqlDataBase.cs" />
-    <Compile Include="DatabaseBase\OracleDataBase.cs" />
-    <Compile Include="Enum\EDataBaseType.cs" />
-    <Compile Include="Model\ModDataParameter.cs" />
-    <Compile Include="Model\ModTransactionParameter.cs" />
+    <Compile Include="Auxiliary\DatabaseBase\IDatabase.cs" />
+    <Compile Include="Auxiliary\DatabaseBase\MySqlDataBase.cs" />
+    <Compile Include="Auxiliary\DatabaseBase\OracleDataBase.cs" />
+    <Compile Include="Auxiliary\Enum\EDataBaseType.cs" />
+    <Compile Include="Auxiliary\Model\ModDataParameter.cs" />
+    <Compile Include="Auxiliary\Model\ModTransactionParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DatabaseBase\SqlServerDataBase.cs" />
+    <Compile Include="Auxiliary\DatabaseBase\SqlServerDataBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

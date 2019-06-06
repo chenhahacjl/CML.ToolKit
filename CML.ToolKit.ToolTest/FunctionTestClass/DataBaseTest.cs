@@ -4,7 +4,7 @@ using System;
 namespace CML.ToolKit.ToolTest
 {
     /// <summary>
-    /// Socket客户端测试类
+    /// 数据库测试类
     /// </summary>
     class DataBaseTest : ToolKitTestBase
     {
