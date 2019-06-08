@@ -1,5 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
+using System.IO;
+using System.Reflection;
 
 namespace CML.ToolKit.DataBaseEx
 {
@@ -12,6 +15,20 @@ namespace CML.ToolKit.DataBaseEx
         /// MYSQL 数据库连接字符串
         /// </summary>
         public string ConnectionString { get; set; }
+
+        /// <summary>
+        /// 检测操作库文件是否存在(MySql.Data.dll)
+        /// </summary>
+        public MySqlDataBase()
+        {
+            string strCurDllDir = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
+            string strExDllPath = Path.Combine(strCurDllDir, "MySql.Data.dll");
+
+            if (!File.Exists(strExDllPath))
+            {
+                throw new Exception("缺少运行文件（MySql.Data.dll）！");
+            }
+        }
 
         /// <summary>
         /// 建立Connection对象

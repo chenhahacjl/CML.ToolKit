@@ -159,6 +159,11 @@
             MYSQL 数据库连接字符串
             </summary>
         </member>
+        <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.#ctor">
+            <summary>
+            检测操作库文件是否存在(MySql.Data.dll)
+            </summary>
+        </member>
         <member name="M:CML.ToolKit.DataBaseEx.MySqlDataBase.CreateConnection">
             <summary>
             建立Connection对象
@@ -206,6 +211,11 @@
         <member name="P:CML.ToolKit.DataBaseEx.OracleDataBase.ConnectionString">
             <summary>
             ORACLE 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.#ctor">
+            <summary>
+            检测操作库文件是否存在(Oracle.ManagedDataAccess.dll)
             </summary>
         </member>
         <member name="M:CML.ToolKit.DataBaseEx.OracleDataBase.CreateConnection">
