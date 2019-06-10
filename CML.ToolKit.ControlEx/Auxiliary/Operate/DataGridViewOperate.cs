@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CML.ToolKit.ConfigurationEx;
+using System;
 using System.Collections.Generic;
 
 namespace CML.ToolKit.ControlEx
@@ -17,7 +18,7 @@ namespace CML.ToolKit.ControlEx
         public static Dictionary<string, bool> LoadColumnVisibility(string cfgFile, string dgvName)
         {
             //读取配置
-            string strStatu = IniFileOperate.IniReadValue(cfgFile, "DataGridView", dgvName).Trim();
+            string strStatu = IniOperate.CF_ReadConfig(cfgFile, "DataGridView", dgvName).Trim();
 
             //转换为状态字典
             Dictionary<string, bool> result = new Dictionary<string, bool>();
@@ -56,7 +57,7 @@ namespace CML.ToolKit.ControlEx
             }
 
             //保存配置
-            IniFileOperate.IniWriteValue(cfgFile, "DataGridView", dgvName, result);
+            IniOperate.CF_WriteConfig(cfgFile, "DataGridView", dgvName, result);
         }
     }
 }

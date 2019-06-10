@@ -1683,28 +1683,6 @@
             <param name="dgvName">数据表名</param>
             <param name="visibility">数据列可见性</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.IniFileOperate">
-            <summary>
-            INI操作帮助类
-            </summary>
-        </member>
-        <member name="M:CML.ToolKit.ControlEx.IniFileOperate.IniWriteValue(System.String,System.String,System.String,System.String)">
-            <summary>
-            写入INI文件
-            </summary>
-            <param name="iniPath">文件路径</param>
-            <param name="section">节名</param>
-            <param name="key">键名</param>
-            <param name="value">键值</param>
-        </member>
-        <member name="M:CML.ToolKit.ControlEx.IniFileOperate.IniReadValue(System.String,System.String,System.String)">
-            <summary>
-            读出INI文件
-            </summary>
-            <param name="iniPath">文件路径</param>
-            <param name="Section">节名</param>
-            <param name="Key">键名</param> 
-        </member>
         <member name="T:CML.ToolKit.ControlEx.InvokeOperate">
             <summary>
             委托帮助类

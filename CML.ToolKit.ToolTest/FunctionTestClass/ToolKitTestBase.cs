@@ -19,7 +19,7 @@ namespace CML.ToolKit.ToolTest
         /// </summary>
         public virtual void ExecuteTest()
         {
-            PrintLn(MsgType.WARN, $"请重载 ToolKitTestBase 类 ExecuteTest() 方法");
+            PrintLn(MsgType.Warn, $"请重载 ToolKitTestBase 类 ExecuteTest() 方法");
         }
 
         /// <summary>
@@ -30,8 +30,9 @@ namespace CML.ToolKit.ToolTest
         protected void PrintLn(MsgType type, string msg)
         {
             Console.ForegroundColor =
-                type == MsgType.INFO ? ConsoleColor.White :
-                type == MsgType.WARN ? ConsoleColor.Yellow :
+                type == MsgType.Info ? ConsoleColor.White :
+                type == MsgType.Success ? ConsoleColor.Green :
+                type == MsgType.Warn ? ConsoleColor.Yellow :
                 ConsoleColor.Red;
             Console.WriteLine($"[{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}]{msg}");
             Console.ResetColor();
@@ -45,15 +46,19 @@ namespace CML.ToolKit.ToolTest
             /// <summary>
             /// 信息
             /// </summary>
-            INFO,
+            Info,
             /// <summary>
             /// 警告
             /// </summary>
-            WARN,
+            Success,
+            /// <summary>
+            /// 警告
+            /// </summary>
+            Warn,
             /// <summary>
             /// 错误
             /// </summary>
-            ERROR
+            Error
         }
     }
 }

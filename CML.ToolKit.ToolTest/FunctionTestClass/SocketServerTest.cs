@@ -33,10 +33,10 @@ namespace CML.ToolKit.ToolTest
             server.CF_InitServer("127.0.0.1", 9696);
             server.CF_StartService();
 
-            PrintLn(MsgType.INFO, $"等待服务启动！");
+            PrintLn(MsgType.Info, $"等待服务启动！");
             Thread.Sleep(2000);
 
-            PrintLn(MsgType.INFO, $"测试时间{testTimeSecs}秒！");
+            PrintLn(MsgType.Info, $"测试时间{testTimeSecs}秒！");
             while (testTimeSecs-- > 0 && server.CP_IsServerOpen)
             {
                 //server.CF_SendMessage("Send To Client");
@@ -56,21 +56,21 @@ namespace CML.ToolKit.ToolTest
             {
                 case EMsgType.Infomation:
                     if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
-                        PrintLn(MsgType.INFO, $"{msg.Message}");
+                        PrintLn(MsgType.Info, $"{msg.Message}");
                     else
-                        PrintLn(MsgType.INFO, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
+                        PrintLn(MsgType.Info, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
                     break;
                 case EMsgType.System:
                     if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
-                        PrintLn(MsgType.WARN, $"{msg.Message}");
+                        PrintLn(MsgType.Warn, $"{msg.Message}");
                     else
-                        PrintLn(MsgType.WARN, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
+                        PrintLn(MsgType.Warn, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
                     break;
                 case EMsgType.Error:
                     if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
-                        PrintLn(MsgType.ERROR, $"{msg.Message}");
+                        PrintLn(MsgType.Error, $"{msg.Message}");
                     else
-                        PrintLn(MsgType.ERROR, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
+                        PrintLn(MsgType.Error, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
                     break;
             }
         }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FunctionTestClass\ConfigurationTest.cs" />
     <Compile Include="FunctionTestClass\ControlTest.cs" />
     <Compile Include="FunctionTestClass\DataBaseTest.cs" />
     <Compile Include="Program.cs" />
@@ -51,6 +52,10 @@
     <Compile Include="FunctionTestClass\ToolKitTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CML.ToolKit.ConfigurationEx\CML.ToolKit.ConfigurationEx.csproj">
+      <Project>{e385a76c-003a-47e4-9e92-4ff0acad71f2}</Project>
+      <Name>CML.ToolKit.ConfigurationEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CML.ToolKit.ControlEx\CML.ToolKit.ControlEx.csproj">
       <Project>{7c7cc715-6c3f-4394-b520-de5eecab80c6}</Project>
       <Name>CML.ToolKit.ControlEx</Name>
@@ -58,6 +63,10 @@
     <ProjectReference Include="..\CML.ToolKit.DataBaseEx\CML.ToolKit.DataBaseEx.csproj">
       <Project>{0dd24b2d-b3e0-421e-b1ac-da675c37a9e3}</Project>
       <Name>CML.ToolKit.DataBaseEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CML.ToolKit.EncodeEx\CML.ToolKit.EncodeEx.csproj">
+      <Project>{f1321a4a-73b9-4ba1-8ee6-2b296e2e5ba1}</Project>
+      <Name>CML.ToolKit.EncodeEx</Name>
     </ProjectReference>
     <ProjectReference Include="..\CML.ToolKit.SocketEx\CML.ToolKit.SocketEx.csproj">
       <Project>{df5363ed-9271-424a-a813-e0e85dd635c8}</Project>
