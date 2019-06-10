@@ -53,10 +53,10 @@ namespace CML.ToolKit.ToolTest
                 PrintLn(MsgType.Error, $"写入值与读取值比对失败！");
             }
 
-            double value1 = Math.Round(new Random().NextDouble(), 5);
+            double value1 = Math.Round(new Random().NextDouble(), 10);
             PrintLn(MsgType.Info, $"生成随机小数: {value1}");
 
-            IniOperate.CF_WriteConfig(iniPath, "TestSection", "DoubleKey", value1.ToString());
+            IniOperate.CF_WriteConfig<double>(iniPath, "TestSection", "DoubleKey", value1);
             PrintLn(MsgType.Info, $"写入配置: TestSection->DoubleKey->{value1}");
 
             double result1 = IniOperate.CF_ReadConfig<double>(iniPath, "TestSection", "DoubleKey");
@@ -74,7 +74,7 @@ namespace CML.ToolKit.ToolTest
             ETest value2 = (ETest)new Random().Next(1, 6);
             PrintLn(MsgType.Info, $"生成随机枚举值: {value2}");
 
-            IniOperate.CF_WriteConfig(iniPath, "TestSection", "EnumKey", value2.ToString());
+            IniOperate.CF_WriteConfig<ETest>(iniPath, "TestSection", "EnumKey", value2);
             PrintLn(MsgType.Info, $"写入配置: TestSection->EnumKey->{value2}");
 
             ETest result2 = IniOperate.CF_ReadConfig<ETest>(iniPath, "TestSection", "EnumKey");
@@ -111,10 +111,10 @@ namespace CML.ToolKit.ToolTest
                 PrintLn(MsgType.Error, $"写入值与读取值比对失败！");
             }
 
-            value1 = Math.Round(new Random().NextDouble(), 5);
+            value1 = Math.Round(new Random().NextDouble(), 10);
             PrintLn(MsgType.Info, $"生成随机小数: {value1}");
 
-            iniOperate.CF_WriteConfig("TestSection", "DoubleKey", value1.ToString());
+            iniOperate.CF_WriteConfig("TestSection", "DoubleKey", value1);
             PrintLn(MsgType.Info, $"写入配置: TestSection->DoubleKey->{value1}");
 
             result1 = iniOperate.CF_ReadConfig<double>("TestSection", "DoubleKey");
@@ -132,7 +132,7 @@ namespace CML.ToolKit.ToolTest
             value2 = (ETest)new Random().Next(1, 6);
             PrintLn(MsgType.Info, $"生成随机枚举值: {value2}");
 
-            iniOperate.CF_WriteConfig("TestSection", "EnumKey", value2.ToString());
+            iniOperate.CF_WriteConfig("TestSection", "EnumKey", value2);
             PrintLn(MsgType.Info, $"写入配置: TestSection->EnumKey->{value2}");
 
             result2 = iniOperate.CF_ReadConfig<ETest>("TestSection", "EnumKey");

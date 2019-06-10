@@ -80,8 +80,8 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="iniPath">文件</param>
         /// <param name="section">节名</param>
         /// <param name="key">键名</param>
-        /// <param name="value">键值</param>
-        public static void CF_WriteConfig(string iniPath, string section, string key, string value)
+        /// <param name="strValue">键值</param>
+        public static void CF_WriteConfig(string iniPath, string section, string key, string strValue)
         {
             //创建文件夹
             if (!new FileInfo(iniPath).Directory.Exists)
@@ -90,7 +90,26 @@ namespace CML.ToolKit.ConfigurationEx
             }
 
             IniFile iniFile = new IniFile(iniPath);
-            iniFile.CF_WriteValue(section, key, value);
+            iniFile.CF_WriteValue(section, key, strValue);
+        }
+
+        /// <summary>
+        /// 写配置文件
+        /// </summary>
+        /// <param name="iniPath">文件</param>
+        /// <param name="section">节名</param>
+        /// <param name="key">键名</param>
+        /// <param name="value">键值</param>
+        public static void CF_WriteConfig<T>(string iniPath, string section, string key, T value)
+        {
+            //创建文件夹
+            if (!new FileInfo(iniPath).Directory.Exists)
+            {
+                new FileInfo(iniPath).Directory.Create();
+            }
+
+            IniFile iniFile = new IniFile(iniPath);
+            iniFile.CF_WriteValue(section, key, Convert.ToString(value));
         }
         #endregion
 
@@ -181,8 +200,8 @@ namespace CML.ToolKit.ConfigurationEx
         /// </summary>
         /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
-        /// <param name="value">键值</param>
-        public void CF_WriteConfig(string section, string key, string value)
+        /// <param name="strValue">键值</param>
+        public void CF_WriteConfig(string section, string key, string strValue)
         {
             //创建文件夹
             if (!new FileInfo(m_iniFile.CP_FilePath).Directory.Exists)
@@ -190,7 +209,24 @@ namespace CML.ToolKit.ConfigurationEx
                 new FileInfo(m_iniFile.CP_FilePath).Directory.Create();
             }
 
-            m_iniFile.CF_WriteValue(section, key, value);
+            m_iniFile.CF_WriteValue(section, key, strValue);
+        }
+
+        /// <summary>
+        /// 写配置文件
+        /// </summary>
+        /// <param name="section">节点名称</param>
+        /// <param name="key">键名</param>
+        /// <param name="value">键值</param>
+        public void CF_WriteConfig<T>(string section, string key, T value)
+        {
+            //创建文件夹
+            if (!new FileInfo(m_iniFile.CP_FilePath).Directory.Exists)
+            {
+                new FileInfo(m_iniFile.CP_FilePath).Directory.Create();
+            }
+
+            m_iniFile.CF_WriteValue(section, key, Convert.ToString(value));
         }
         #endregion
 
