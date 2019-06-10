@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace CML.ToolKit.ToolTest
 {
@@ -36,6 +37,27 @@ namespace CML.ToolKit.ToolTest
                 ConsoleColor.Red;
             Console.WriteLine($"[{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}]{msg}");
             Console.ResetColor();
+        }
+
+        ///<summary>
+        ///生成随机字符串 
+        ///</summary>
+        ///<param name="length">字符串的长度</param>
+        ///<returns>随机字符串</returns>
+        protected string GetRandomString(int length)
+        {
+            byte[] bts = new byte[4];
+            new RNGCryptoServiceProvider().GetBytes(bts);
+            Random r = new Random(BitConverter.ToInt32(bts, 0));
+
+            string result = null;
+            string model = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+            for (int i = 0; i < length; i++)
+            {
+                result += model.Substring(r.Next(0, model.Length - 1), 1);
+            }
+
+            return result;
         }
 
         /// <summary>

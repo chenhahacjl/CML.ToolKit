@@ -1,10 +1,12 @@
 ﻿using CML.ToolKit.ConfigurationEx;
 using System;
 using System.IO;
-using System.Security.Cryptography;
 
 namespace CML.ToolKit.ToolTest
 {
+    /// <summary>
+    /// 配置操作测试类
+    /// </summary>
     internal class ConfigurationTest : ToolKitTestBase
     {
         /// <summary>
@@ -41,7 +43,7 @@ namespace CML.ToolKit.ToolTest
 
             PrintLn(MsgType.Warn, "静态方法测试！");
 
-            string value0 = GetRandomString(10, true, true, true, true, "");
+            string value0 = GetRandomString(10);
             PrintLn(MsgType.Info, $"生成随机字符串: {value0}");
 
             IniOperate.CF_WriteConfig(iniPath, "TestSection", "StringKey", value0.ToString());
@@ -99,7 +101,7 @@ namespace CML.ToolKit.ToolTest
 
             IniOperate iniOperate = new IniOperate(iniPath);
 
-            value0 = GetRandomString(10, true, true, true, true, "");
+            value0 = GetRandomString(10);
             PrintLn(MsgType.Info, $"生成随机字符串: {value0}");
 
             iniOperate.CF_WriteConfig("TestSection", "StringKey", value0.ToString());
@@ -188,7 +190,7 @@ namespace CML.ToolKit.ToolTest
                 PrintLn(MsgType.Info, "存在注册表键值名称: HKEY_LOCAL_MACHINE\\SOFTWARE\\ItemTester\\");
             }
 
-            string value = GetRandomString(10, true, true, true, true, "");
+            string value = GetRandomString(10);
             PrintLn(MsgType.Info, $"生成随机字符串: {value}");
 
             if (RegOperate.CF_WriteRegeditKey(ERegDomain.LocalMachine, "SOFTWARE\\ItemTester\\", "RegTester", ERegValueKind.String, value))
@@ -229,36 +231,6 @@ namespace CML.ToolKit.ToolTest
             {
                 PrintLn(MsgType.Error, "删除注册表项失败: HKEY_LOCAL_MACHINE\\SOFTWARE\\ItemTester\\");
             }
-        }
-
-        ///<summary>
-        ///生成随机字符串 
-        ///</summary>
-        ///<param name="length">目标字符串的长度</param>
-        ///<param name="useNum">是否包含数字</param>
-        ///<param name="useLow">是否包含小写字母</param>
-        ///<param name="useUpp">是否包含大写字母</param>
-        ///<param name="useSpe">是否包含特殊字符</param>
-        ///<param name="custom">要包含的自定义字符，直接输入要包含的字符列表</param>
-        ///<returns>指定长度的随机字符串</returns>
-        public string GetRandomString(int length, bool useNum, bool useLow, bool useUpp, bool useSpe, string custom)
-        {
-            byte[] b = new byte[4];
-            new RNGCryptoServiceProvider().GetBytes(b);
-            Random r = new Random(BitConverter.ToInt32(b, 0));
-
-            string s = null, str = custom;
-            if (useNum == true) { str += "0123456789"; }
-            if (useLow == true) { str += "abcdefghijklmnopqrstuvwxyz"; }
-            if (useUpp == true) { str += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; }
-            if (useSpe == true) { str += "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"; }
-
-            for (int i = 0; i < length; i++)
-            {
-                s += str.Substring(r.Next(0, str.Length - 1), 1);
-            }
-
-            return s;
         }
 
         /// <summary>
