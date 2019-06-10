@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auxiliary\FileOperateBase\IniFile.cs" />
+    <Compile Include="Auxiliary\Enum\ERegDomain.cs" />
+    <Compile Include="Auxiliary\Enum\ERegValueKind.cs" />
+    <Compile Include="Auxiliary\FileBase\IniFile.cs" />
     <Compile Include="IniOperate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegOperate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
