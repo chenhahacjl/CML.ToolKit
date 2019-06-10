@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.ToolKit.ConfigurationEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.ToolKit.ConfigurationEx.ERegDomain">
+            <summary>
+            注册表基项静态域
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegDomain.ClassesRoot">
+            <summary>
+            对应于HKEY_CLASSES_ROOT主键
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegDomain.CurrentUser">
+            <summary>
+            对应于HKEY_CURRENT_USER主键
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegDomain.LocalMachine">
+            <summary>
+            对应于 HKEY_LOCAL_MACHINE主键
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegDomain.User">
+            <summary>
+            对应于 HKEY_USER主键
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegDomain.CurrentConfig">
+            <summary>
+            对应于HEKY_CURRENT_CONFIG主键
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegDomain.PerformanceData">
+            <summary>
+            对应于HKEY_PERFORMANCE_DATA主键
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.ConfigurationEx.ERegValueKind">
+            <summary>
+            注册表数据类型
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.Unknown">
+            <summary>
+            不受支持的注册表数据类型。
+            例如，不支持 Microsoft Win32 API 注册表数据类型 REG_RESOURCE_LIST，使用此值指定
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.String">
+            <summary>
+            以 Null 结尾的字符串。
+            此值与 Win32 API 注册表数据类型 REG_SZ 等效。
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.ExpandString">
+            <summary>
+            以 NULL 结尾的字符串，该字符串中包含对环境变量（如 %PATH%，当值被检索时，就会展开）的未展开的引用。
+            此值与 Win32 API注册表数据类型 REG_EXPAND_SZ 等效。
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.Binary">
+            <summary>
+            任意格式的二进制数据。
+            此值与 Win32 API 注册表数据类型 REG_BINARY 等效。
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.DWord">
+            <summary>
+            32 位二进制数。
+            此值与 Win32 API 注册表数据类型 REG_DWORD 等效。
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.MultiString">
+            <summary>
+            以 NULL 结尾的字符串数组，以两个空字符结束。
+            此值与 Win32 API 注册表数据类型 REG_MULTI_SZ 等效。
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.ERegValueKind.QWord">
+            <summary>
+            64 位二进制数。
+            此值与 Win32 API 注册表数据类型 REG_QWORD 等效。
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.ConfigurationEx.IniFile">
+            <summary>
+            INI文件操作基础类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniFile.WritePrivateProfileString(System.String,System.String,System.String,System.String)">
+            <summary>
+            写入INI文件
+            </summary>
+            <param name="section">节点名称[如[TypeName]]</param>
+            <param name="key">键名</param>
+            <param name="val">键值</param>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniFile.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            读取INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="def">键值</param>
+            <param name="retVal">StringBulider对象</param>
+            <param name="size">字节大小</param>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="P:CML.ToolKit.ConfigurationEx.IniFile.CP_FilePath">
+            <summary>
+            INI文件路径
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniFile.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="filePath">INI文件路径</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniFile.CF_WriteValue(System.String,System.String,System.String)">
+            <summary>
+            写入INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniFile.CF_ReadValue(System.String,System.String)">
+            <summary>
+            读出INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+        </member>
+        <member name="T:CML.ToolKit.ConfigurationEx.IniOperate">
+            <summary>
+            INI操作帮助类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_ReadConfig(System.String,System.String,System.String,System.String)">
+            <summary>
+            读取配置文件
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_ReadConfig``1(System.String,System.String,System.String,``0)">
+            <summary>
+            读取配置文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig(System.String,System.String,System.String,System.String)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="strValue">键值</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig``1(System.String,System.String,System.String,``0)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+        </member>
+        <member name="F:CML.ToolKit.ConfigurationEx.IniOperate.m_iniFile">
+            <summary>
+            INI文件操作基础类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iniPath">INI文件路径</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_ReadConfig(System.String,System.String,System.String)">
+            <summary>
+            读取配置文件
+            </summary>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_ReadConfig``1(System.String,System.String,``0)">
+            <summary>
+            读取配置文件
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig(System.String,System.String,System.String)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="strValue">键值</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig``1(System.String,System.String,``0)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+        </member>
+        <member name="T:CML.ToolKit.ConfigurationEx.RegOperate">
+            <summary>
+            注册表操作类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_CreateSubItem(CML.ToolKit.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            创建注册表项
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_ExistSubItem(CML.ToolKit.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            检测注册表项是否存在
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <returns>注册表项存在情况</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_DeleteSubItem(CML.ToolKit.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            删除注册表项
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <returns>执行情况</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_ExistRegeditKey(CML.ToolKit.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            检测注册表键值是否存在
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>注册表键值存在情况</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_WriteRegeditKey(CML.ToolKit.ConfigurationEx.ERegDomain,System.String,System.String,CML.ToolKit.ConfigurationEx.ERegValueKind,System.Object)">
+            <summary>
+            设置指定的键值内容
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <param name="valueKind">键值类型</param>
+            <param name="value">键值内容</param>
+            <returns>执行情况</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_ReadRegeditKey(CML.ToolKit.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            读取键值内容
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>键值内容</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.CF_DeleteRegeditKey(CML.ToolKit.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            删除键值
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.GetRegDomain(CML.ToolKit.ConfigurationEx.ERegDomain)">
+            <summary>
+            获取注册表基项域对应顶级节点
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <returns>对应顶级节点</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.GetRegValueKind(CML.ToolKit.ConfigurationEx.ERegValueKind)">
+            <summary>
+            获取注册表中对应值数据类型
+            </summary>
+            <param name="regValueKind">注册表数据类型</param>
+            <returns>对应数据类型</returns>
+        </member>
+        <member name="M:CML.ToolKit.ConfigurationEx.RegOperate.OpenSubKey(CML.ToolKit.ConfigurationEx.ERegDomain,System.String,System.Boolean)">
+            <summary>
+            打开注册表项节点
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="isWritable">是否需要节点Write访问权限</param>
+            <returns>若注册表节点存在，则返回节点，否则返回null</returns>
+        </member>
+    </members>
+</doc>

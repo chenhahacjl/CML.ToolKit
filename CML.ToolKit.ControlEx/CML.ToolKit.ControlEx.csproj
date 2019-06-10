@@ -131,7 +131,6 @@
     </Compile>
     <Compile Include="Auxiliary\Operate\ChartOperate.cs" />
     <Compile Include="Auxiliary\Operate\DataGridViewOperate.cs" />
-    <Compile Include="Auxiliary\Operate\InvokeOperate.cs" />
     <Compile Include="Auxiliary\Enum\ChartEnum.cs" />
     <Compile Include="Auxiliary\Enum\FormLoginEnum.cs" />
     <Compile Include="Auxiliary\Enum\ShapeEnum.cs" />
@@ -194,6 +193,10 @@
     <ProjectReference Include="..\CML.ToolKit.ConfigurationEx\CML.ToolKit.ConfigurationEx.csproj">
       <Project>{e385a76c-003a-47e4-9e92-4ff0acad71f2}</Project>
       <Name>CML.ToolKit.ConfigurationEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CML.ToolKit.ThreadEx\CML.ToolKit.ThreadEx.csproj">
+      <Project>{bf088da8-7063-42b7-8541-b346c20b6a87}</Project>
+      <Name>CML.ToolKit.ThreadEx</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

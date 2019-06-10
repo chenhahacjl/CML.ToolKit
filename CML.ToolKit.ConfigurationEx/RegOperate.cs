@@ -118,7 +118,7 @@ namespace CML.ToolKit.ConfigurationEx
             //判断注册表项是否存在
             if (CF_ExistSubItem(regDomain, subItem))
             {
-                ///打开注册表项
+                //打开注册表项
                 using (RegistryKey key = OpenSubKey(regDomain, subItem))
                 {
                     //键值集合

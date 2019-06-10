@@ -6,7 +6,7 @@ namespace CML.ToolKit.ControlEx
     /// <summary>
     /// 委托帮助类
     /// </summary>
-    internal static class InvokeOperate
+    public static class InvokeOperate
     {
         /// <summary>
         /// 多线程更新UI
