@@ -1,5 +1,5 @@
 ﻿using CML.ToolKit.EncodeEx;
-using System.Security.Cryptography;
+using System.Reflection;
 
 namespace CML.ToolKit.ToolTest
 {
@@ -21,7 +21,7 @@ namespace CML.ToolKit.ToolTest
             PrintLn(MsgType.Info, "开始DES加密解密测试！");
             DESEncryptTest();
 
-            PrintLn(MsgType.Info, "开始MD5编码测试！");
+            PrintLn(MsgType.Info, "开始MD5加密测试！");
             MD5EncodeTest();
         }
 
@@ -77,6 +77,9 @@ namespace CML.ToolKit.ToolTest
 
             PrintLn(MsgType.Info, "32位MD5（大写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester"));
             PrintLn(MsgType.Info, "32位MD5（小写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester", false));
+
+            PrintLn(MsgType.Info, "文件MD5（大写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location));
+            PrintLn(MsgType.Info, "文件MD5（小写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location, false));
         }
     }
 }

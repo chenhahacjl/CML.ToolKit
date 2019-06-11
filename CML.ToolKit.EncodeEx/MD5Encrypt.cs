@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -41,24 +42,58 @@ namespace CML.ToolKit.EncodeEx
         /// <returns>32位MD5值</returns>
         public static string MD5Encrypt32(string input, bool isUpper = true)
         {
-            string strMD5 = "";
-            using (MD5 md5 = MD5.Create())
+            byte[] byteMD5;
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
-                byte[] byteMD5 = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+                byteMD5 = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
+            }
 
-                for (int i = 0; i < byteMD5.Length; i++)
-                {
-                    strMD5 += byteMD5[i].ToString("X");
-                }
+            StringBuilder sbMD5 = new StringBuilder(32);
+            for (int i = 0; i < byteMD5.Length; i++)
+            {
+                _ = sbMD5.Append(byteMD5[i].ToString("X2"));
             }
 
             if (isUpper)
             {
-                return strMD5.Replace("-", "").ToUpper();
+                return sbMD5.Replace("-", "").ToString().ToUpper();
             }
             else
             {
-                return strMD5.Replace("-", "").ToLower();
+                return sbMD5.Replace("-", "").ToString().ToLower();
+            }
+        }
+
+        /// <summary>
+        /// 文件MD5加密
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="isUpper">大写输出</param>
+        /// <returns>文件MD5值</returns>
+        public static string MD5EncryptFile(string filePath, bool isUpper = true)
+        {
+            byte[] byteMD5;
+            using (FileStream fs = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            {
+                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                {
+                    byteMD5 = md5.ComputeHash(fs);
+                }
+            }
+
+            StringBuilder sbMD5 = new StringBuilder(32);
+            for (int i = 0; i < byteMD5.Length; i++)
+            {
+                _ = sbMD5.Append(byteMD5[i].ToString("X2"));
+            }
+
+            if (isUpper)
+            {
+                return sbMD5.Replace("-", "").ToString().ToUpper();
+            }
+            else
+            {
+                return sbMD5.Replace("-", "").ToString().ToLower();
             }
         }
     }

@@ -48,5 +48,13 @@
             <param name="isUpper">大写输出</param>
             <returns>32位MD5值</returns>
         </member>
+        <member name="M:CML.ToolKit.EncodeEx.MD5Encrypt.MD5EncryptFile(System.String,System.Boolean)">
+            <summary>
+            文件MD5加密
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="isUpper">大写输出</param>
+            <returns>文件MD5值</returns>
+        </member>
     </members>
 </doc>
