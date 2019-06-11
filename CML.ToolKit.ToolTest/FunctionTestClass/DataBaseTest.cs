@@ -28,11 +28,11 @@ namespace CML.ToolKit.ToolTest
             {
                 dataBase.CF_InitDataBase();
                 object count = dataBase.CF_GetSingleObject("SELECT COUNT(*) FROM T_AGING_RESULT_INFO");
-                PrintLn(MsgType.Info, $"一共有{count}组老化数据！");
+                PrintLogLn(MsgType.Info, $"一共有{count}组老化数据！");
             }
             catch (Exception ex)
             {
-                PrintLn(MsgType.Error, ex.Message);
+                PrintLogLn(MsgType.Error, ex.Message);
             }
         }
     }

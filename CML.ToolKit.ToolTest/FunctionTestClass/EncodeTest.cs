@@ -1,4 +1,5 @@
 ﻿using CML.ToolKit.EncodeEx;
+using System;
 using System.Reflection;
 
 namespace CML.ToolKit.ToolTest
@@ -18,11 +19,29 @@ namespace CML.ToolKit.ToolTest
         /// </summary>
         public override void ExecuteTest()
         {
-            PrintLn(MsgType.Info, "开始DES加密解密测试！");
-            DESEncryptTest();
+            PrintLog(MsgType.Warn, "是否执行DES加密解密测试(Y/N):");
+            if (Console.ReadKey(true).Key == ConsoleKey.Y)
+            {
+                PrintMsgLn(MsgType.Warn, "Y");
+                PrintLogLn(MsgType.Info, "开始DES加密解密测试！");
+                DESEncryptTest();
+            }
+            else
+            {
+                PrintMsgLn(MsgType.Warn, "N");
+            }
 
-            PrintLn(MsgType.Info, "开始MD5加密测试！");
-            MD5EncodeTest();
+            PrintLog(MsgType.Warn, "是否执行MD5加密测试(Y/N):");
+            if (Console.ReadKey(true).Key == ConsoleKey.Y)
+            {
+                PrintMsgLn(MsgType.Warn, "Y");
+                PrintLogLn(MsgType.Info, "开始MD5加密测试！");
+                MD5EncodeTest();
+            }
+            else
+            {
+                PrintMsgLn(MsgType.Warn, "N");
+            }
         }
 
         /// <summary>
@@ -31,39 +50,39 @@ namespace CML.ToolKit.ToolTest
         private void DESEncryptTest()
         {
             string input = GetRandomString(10);
-            PrintLn(MsgType.Info, $"待加密字符串: {input}");
+            PrintLogLn(MsgType.Info, $"待加密字符串: {input}");
             string key = GetRandomString(8);
-            PrintLn(MsgType.Info, $"加密密钥: {key}");
+            PrintLogLn(MsgType.Info, $"加密密钥: {key}");
             string iv = GetRandomString(8);
-            PrintLn(MsgType.Info, $"加密向量: {iv}");
+            PrintLogLn(MsgType.Info, $"加密向量: {iv}");
 
             string encode = DESEncrypt.CF_Encrypt(input, key, iv);
             if (encode.StartsWith("ERROR:"))
             {
-                PrintLn(MsgType.Error, $"加密字符串失败: {encode.Substring(6)}");
+                PrintLogLn(MsgType.Error, $"加密字符串失败: {encode.Substring(6)}");
             }
             else
             {
-                PrintLn(MsgType.Success, $"加密字符串成功: {encode}");
+                PrintLogLn(MsgType.Success, $"加密字符串成功: {encode}");
             }
 
             string decode = DESEncrypt.CF_Decrypt(encode, key, iv);
             if (decode.StartsWith("ERROR:"))
             {
-                PrintLn(MsgType.Error, $"解密字符串失败: {decode.Substring(6)}");
+                PrintLogLn(MsgType.Error, $"解密字符串失败: {decode.Substring(6)}");
             }
             else
             {
-                PrintLn(MsgType.Success, $"解密字符串成功: {decode}");
+                PrintLogLn(MsgType.Success, $"解密字符串成功: {decode}");
             }
 
             if (input == decode)
             {
-                PrintLn(MsgType.Success, "原字符串与解密字符串比对成功！");
+                PrintLogLn(MsgType.Success, "原字符串与解密字符串比对成功！");
             }
             else
             {
-                PrintLn(MsgType.Error, "原字符串与解密字符串比对失败！");
+                PrintLogLn(MsgType.Error, "原字符串与解密字符串比对失败！");
             }
         }
 
@@ -72,14 +91,14 @@ namespace CML.ToolKit.ToolTest
         /// </summary>
         private void MD5EncodeTest()
         {
-            PrintLn(MsgType.Info, "16位MD5（大写）: " + MD5Encrypt.MD5Encrypt16("MD5Tester"));
-            PrintLn(MsgType.Info, "16位MD5（小写）: " + MD5Encrypt.MD5Encrypt16("MD5Tester", false));
+            PrintLogLn(MsgType.Info, "16位MD5（大写）: " + MD5Encrypt.MD5Encrypt16("MD5Tester"));
+            PrintLogLn(MsgType.Info, "16位MD5（小写）: " + MD5Encrypt.MD5Encrypt16("MD5Tester", false));
 
-            PrintLn(MsgType.Info, "32位MD5（大写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester"));
-            PrintLn(MsgType.Info, "32位MD5（小写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester", false));
+            PrintLogLn(MsgType.Info, "32位MD5（大写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester"));
+            PrintLogLn(MsgType.Info, "32位MD5（小写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester", false));
 
-            PrintLn(MsgType.Info, "文件MD5（大写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location));
-            PrintLn(MsgType.Info, "文件MD5（小写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location, false));
+            PrintLogLn(MsgType.Info, "文件MD5（大写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location));
+            PrintLogLn(MsgType.Info, "文件MD5（小写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location, false));
         }
     }
 }

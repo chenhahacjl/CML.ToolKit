@@ -34,10 +34,10 @@ namespace CML.ToolKit.ToolTest
             client.CF_InitClient("127.0.0.1", 9696);
             client.CF_StartConnection();
 
-            PrintLn(MsgType.Info, $"等待连接服务器！");
+            PrintLogLn(MsgType.Info, $"等待连接服务器！");
             Thread.Sleep(2000);
 
-            PrintLn(MsgType.Info, $"测试时间{testTimeSecs}秒！");
+            PrintLogLn(MsgType.Info, $"测试时间{testTimeSecs}秒！");
             while (testTimeSecs-- > 0 && client.CP_IsConnected)
             {
                 client.CF_SendMessage("Send To Server");
@@ -52,13 +52,13 @@ namespace CML.ToolKit.ToolTest
             switch (msg.MsgType)
             {
                 case EMsgType.Infomation:
-                    PrintLn(MsgType.Info, $"{msg.Message}");
+                    PrintLogLn(MsgType.Info, $"{msg.Message}");
                     break;
                 case EMsgType.System:
-                    PrintLn(MsgType.Warn, $"{msg.Message}");
+                    PrintLogLn(MsgType.Warn, $"{msg.Message}");
                     break;
                 case EMsgType.Error:
-                    PrintLn(MsgType.Error, $"{msg.Message}");
+                    PrintLogLn(MsgType.Error, $"{msg.Message}");
                     break;
             }
         }

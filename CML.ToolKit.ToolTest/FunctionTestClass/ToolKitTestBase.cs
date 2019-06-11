@@ -20,7 +20,7 @@ namespace CML.ToolKit.ToolTest
         /// </summary>
         public virtual void ExecuteTest()
         {
-            PrintLn(MsgType.Warn, $"请重载 ToolKitTestBase 类 ExecuteTest() 方法");
+            PrintLogLn(MsgType.Warn, $"请重载 ToolKitTestBase 类 ExecuteTest() 方法");
         }
 
         /// <summary>
@@ -28,7 +28,23 @@ namespace CML.ToolKit.ToolTest
         /// </summary>
         /// <param name="type">消息类型</param>
         /// <param name="msg">消息内容</param>
-        protected void PrintLn(MsgType type, string msg)
+        protected void PrintLog(MsgType type, string msg)
+        {
+            Console.ForegroundColor =
+                type == MsgType.Info ? ConsoleColor.White :
+                type == MsgType.Success ? ConsoleColor.Green :
+                type == MsgType.Warn ? ConsoleColor.Yellow :
+                ConsoleColor.Red;
+            Console.Write($"[{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}]{msg}");
+            Console.ResetColor();
+        }
+
+        /// <summary>
+        /// 控制台打印消息（带换行）
+        /// </summary>
+        /// <param name="type">消息类型</param>
+        /// <param name="msg">消息内容</param>
+        protected void PrintLogLn(MsgType type, string msg)
         {
             Console.ForegroundColor =
                 type == MsgType.Info ? ConsoleColor.White :
@@ -36,6 +52,38 @@ namespace CML.ToolKit.ToolTest
                 type == MsgType.Warn ? ConsoleColor.Yellow :
                 ConsoleColor.Red;
             Console.WriteLine($"[{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}]{msg}");
+            Console.ResetColor();
+        }
+
+        /// <summary>
+        /// 控制台打印消息
+        /// </summary>
+        /// <param name="type">消息类型</param>
+        /// <param name="msg">消息内容</param>
+        protected void PrintMsg(MsgType type, string msg)
+        {
+            Console.ForegroundColor =
+                type == MsgType.Info ? ConsoleColor.White :
+                type == MsgType.Success ? ConsoleColor.Green :
+                type == MsgType.Warn ? ConsoleColor.Yellow :
+                ConsoleColor.Red;
+            Console.Write(msg);
+            Console.ResetColor();
+        }
+
+        /// <summary>
+        /// 控制台打印消息
+        /// </summary>
+        /// <param name="type">消息类型</param>
+        /// <param name="msg">消息内容</param>
+        protected void PrintMsgLn(MsgType type, string msg)
+        {
+            Console.ForegroundColor =
+                type == MsgType.Info ? ConsoleColor.White :
+                type == MsgType.Success ? ConsoleColor.Green :
+                type == MsgType.Warn ? ConsoleColor.Yellow :
+                ConsoleColor.Red;
+            Console.WriteLine(msg);
             Console.ResetColor();
         }
 
