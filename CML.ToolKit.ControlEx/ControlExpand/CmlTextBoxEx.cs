@@ -10,7 +10,7 @@ namespace CML.ToolKit.ControlEx
     /// </summary>
     [ToolboxItem(true)]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public partial class TextBoxEx : UserControl
+    public partial class CmlTextBoxEx : UserControl
     {
         #region 私有变量
         private int m_nUnitWidth = 0;
@@ -25,28 +25,28 @@ namespace CML.ToolKit.ControlEx
         /// 在文本框按键释放时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
-        [Category("EvtEvent"), Description("在文本框按键释放时发生")]
+        [Category("CmlEvent"), Description("在文本框按键释放时发生")]
         public new event KeyEventHandler KeyUp;
 
         /// <summary>
         /// 在文本框按键按下时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
-        [Category("EvtEvent"), Description("在文本框按键按下时发生")]
+        [Category("CmlEvent"), Description("在文本框按键按下时发生")]
         public new event KeyEventHandler KeyDown;
 
         /// <summary>
         /// 在内容改变时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
-        [Category("EvtEvent"), Description("在内容改变时发生")]
+        [Category("CmlEvent"), Description("在内容改变时发生")]
         public new event EventHandler TextChanged;
 
         /// <summary>
         /// 在单位单击时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
-        [Category("EvtEvent"), Description("在单位单击时发生")]
+        [Category("CmlEvent"), Description("在单位单击时发生")]
         public event EventHandler UnitClick;
         #endregion
 
@@ -449,7 +449,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public TextBoxEx()
+        public CmlTextBoxEx()
         {
             InitializeComponent();
 

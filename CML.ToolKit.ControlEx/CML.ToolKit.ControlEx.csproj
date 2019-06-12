@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -45,65 +46,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlAuxiliary\ControlDesignerEx.cs" />
+    <Compile Include="ControlBase\IDesignerControl.cs" />
     <Compile Include="ControlBase\ShapeBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ControlBase\TextBoxBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlExpand\ButtonEx.cs">
+    <Compile Include="ControlExpand\CmlButtonEx.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlExpand\ButtonEx.Designer.cs">
-      <DependentUpon>ButtonEx.cs</DependentUpon>
+    <Compile Include="ControlExpand\CmlButtonEx.Designer.cs">
+      <DependentUpon>CmlButtonEx.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlOriginal\ChartCurve.cs">
+    <Compile Include="ControlOriginal\CmlChartCurve.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\ChartCurve.Designer.cs">
-      <DependentUpon>ChartCurve.cs</DependentUpon>
+    <Compile Include="ControlOriginal\CmlChartCurve.Designer.cs">
+      <DependentUpon>CmlChartCurve.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlExpand\CheckBoxEx.cs">
+    <Compile Include="ControlExpand\CmlCheckBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlExpand\DataGridViewEx.cs">
+    <Compile Include="ControlExpand\CmlDataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\FormMoveTool.cs">
+    <Compile Include="ControlOriginal\CmlFormMoveTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\FormMoveTool.Designer.cs">
-      <DependentUpon>FormMoveTool.cs</DependentUpon>
+    <Compile Include="ControlOriginal\CmlFormMoveTool.Designer.cs">
+      <DependentUpon>CmlFormMoveTool.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlOriginal\LanternAlarm.cs">
+    <Compile Include="ControlOriginal\CmlLanternAlarm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\LanternAlarm.Designer.cs">
-      <DependentUpon>LanternAlarm.cs</DependentUpon>
+    <Compile Include="ControlOriginal\CmlLanternAlarm.Designer.cs">
+      <DependentUpon>CmlLanternAlarm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlOriginal\LanternRound.cs">
+    <Compile Include="ControlOriginal\CmlLanternRound.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\LanternRound.Designer.cs">
-      <DependentUpon>LanternRound.cs</DependentUpon>
+    <Compile Include="ControlOriginal\CmlLanternRound.Designer.cs">
+      <DependentUpon>CmlLanternRound.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlOriginal\ShapeDiamond.cs">
+    <Compile Include="ControlOriginal\CmlPanelTitle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\ShapeRectangle.cs">
+    <Compile Include="ControlOriginal\CmlShapeDiamond.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlOriginal\ShapeRound.cs">
+    <Compile Include="ControlOriginal\CmlShapeRectangle.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlExpand\TabControlEx.cs">
+    <Compile Include="ControlOriginal\CmlShapeRound.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ControlExpand\TextBoxEx.cs">
+    <Compile Include="ControlExpand\CmlTabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlExpand\CmlTextBoxEx.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlExpand\TextBoxEx.Designer.cs">
-      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    <Compile Include="ControlExpand\CmlTextBoxEx.Designer.cs">
+      <DependentUpon>CmlTextBoxEx.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlAuxiliary\FormDgvColumnVisibility.cs">
       <SubType>Form</SubType>
@@ -117,17 +123,17 @@
     <Compile Include="ControlAuxiliary\FormDgvRowCheckSelect.Designer.cs">
       <DependentUpon>FormDgvRowCheckSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlForm\FormLogin.cs">
+    <Compile Include="ControlForm\CmlFormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlForm\FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="ControlForm\CmlFormLogin.Designer.cs">
+      <DependentUpon>CmlFormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlForm\FormValueInput.cs">
+    <Compile Include="ControlForm\CmlFormValueInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlForm\FormValueInput.Designer.cs">
-      <DependentUpon>FormValueInput.cs</DependentUpon>
+    <Compile Include="ControlForm\CmlFormValueInput.Designer.cs">
+      <DependentUpon>CmlFormValueInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Auxiliary\Operate\ChartOperate.cs" />
     <Compile Include="Auxiliary\Operate\DataGridViewOperate.cs" />
@@ -151,23 +157,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlExpand\ButtonEx.resx">
-      <DependentUpon>ButtonEx.cs</DependentUpon>
+    <EmbeddedResource Include="ControlExpand\CmlButtonEx.resx">
+      <DependentUpon>CmlButtonEx.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlOriginal\ChartCurve.resx">
-      <DependentUpon>ChartCurve.cs</DependentUpon>
+    <EmbeddedResource Include="ControlOriginal\CmlChartCurve.resx">
+      <DependentUpon>CmlChartCurve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlOriginal\FormMoveTool.resx">
-      <DependentUpon>FormMoveTool.cs</DependentUpon>
+    <EmbeddedResource Include="ControlOriginal\CmlFormMoveTool.resx">
+      <DependentUpon>CmlFormMoveTool.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlOriginal\LanternAlarm.resx">
-      <DependentUpon>LanternAlarm.cs</DependentUpon>
+    <EmbeddedResource Include="ControlOriginal\CmlLanternAlarm.resx">
+      <DependentUpon>CmlLanternAlarm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlOriginal\LanternRound.resx">
-      <DependentUpon>LanternRound.cs</DependentUpon>
+    <EmbeddedResource Include="ControlOriginal\CmlLanternRound.resx">
+      <DependentUpon>CmlLanternRound.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlExpand\TextBoxEx.resx">
-      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    <EmbeddedResource Include="ControlExpand\CmlTextBoxEx.resx">
+      <DependentUpon>CmlTextBoxEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlAuxiliary\FormDgvColumnVisibility.resx">
       <DependentUpon>FormDgvColumnVisibility.cs</DependentUpon>
@@ -175,11 +181,11 @@
     <EmbeddedResource Include="ControlAuxiliary\FormDgvRowCheckSelect.resx">
       <DependentUpon>FormDgvRowCheckSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlForm\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="ControlForm\CmlFormLogin.resx">
+      <DependentUpon>CmlFormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlForm\FormValueInput.resx">
-      <DependentUpon>FormValueInput.cs</DependentUpon>
+    <EmbeddedResource Include="ControlForm\CmlFormValueInput.resx">
+      <DependentUpon>CmlFormValueInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShowControl.resx">
       <DependentUpon>FormShowControl.cs</DependentUpon>

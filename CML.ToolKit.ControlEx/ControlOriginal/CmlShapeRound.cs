@@ -11,7 +11,7 @@ namespace CML.ToolKit.ControlEx
     /// </summary>
     [ToolboxItem(true)]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public class ShapeRound : ShapeBase
+    public class CmlShapeRound : ShapeBase
     {
         #region 私有变量
         private int m_nRadius = 50;
@@ -52,7 +52,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public ShapeRound()
+        public CmlShapeRound()
         {
             //控件大小
             Width = Height = 100;

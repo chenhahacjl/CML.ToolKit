@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class FormLogin
+    partial class CmlFormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CmlFormLogin));
             this.picHead = new System.Windows.Forms.PictureBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.timerLoginIn = new System.Windows.Forms.Timer(this.components);
             this.timerFormShow = new System.Windows.Forms.Timer(this.components);
             this.timerFormClose = new System.Windows.Forms.Timer(this.components);
             this.lblLoginTip = new System.Windows.Forms.Label();
-            this.txtPassword = new CML.ToolKit.ControlEx.TextBoxEx();
-            this.txtUserName = new CML.ToolKit.ControlEx.TextBoxEx();
-            this.btnExit = new CML.ToolKit.ControlEx.ButtonEx();
-            this.btnLogin = new CML.ToolKit.ControlEx.ButtonEx();
+            this.txtPassword = new CML.ToolKit.ControlEx.CmlTextBoxEx();
+            this.txtUserName = new CML.ToolKit.ControlEx.CmlTextBoxEx();
+            this.btnExit = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.btnLogin = new CML.ToolKit.ControlEx.CmlButtonEx();
             ((System.ComponentModel.ISupportInitialize)(this.picHead)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,7 +180,7 @@
             this.btnLogin.Text = "登   录";
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
-            // FormLogin
+            // CmlFormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(424, 332);
@@ -199,7 +199,7 @@
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EvtFormLogin";
+            this.Text = "CmlFormLogin";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.Load += new System.EventHandler(this.FormLogin_Load);
@@ -214,10 +214,10 @@
         #endregion
         private System.Windows.Forms.PictureBox picHead;
         private System.Windows.Forms.Panel pnlLogo;
-        private ButtonEx btnLogin;
-        private ButtonEx btnExit;
-        private TextBoxEx txtUserName;
-        private TextBoxEx txtPassword;
+        private CmlButtonEx btnLogin;
+        private CmlButtonEx btnExit;
+        private CmlTextBoxEx txtUserName;
+        private CmlTextBoxEx txtPassword;
         private System.Windows.Forms.Timer timerLoginIn;
         private System.Windows.Forms.Timer timerFormShow;
         private System.Windows.Forms.Timer timerFormClose;

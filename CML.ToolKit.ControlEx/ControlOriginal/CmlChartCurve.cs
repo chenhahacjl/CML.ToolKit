@@ -16,7 +16,7 @@ namespace CML.ToolKit.ControlEx
     [ToolboxItem(true)]
     [DefaultEvent("OnCurveDoubleClick")]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public partial class ChartCurve : UserControl
+    public partial class CmlChartCurve : UserControl
     {
         #region 私有变量
         //运行变量
@@ -36,6 +36,7 @@ namespace CML.ToolKit.ControlEx
         private readonly StringFormat m_sfRight = new StringFormat();
         private readonly StringFormat m_sfDefault = new StringFormat();
         private readonly List<ModCurveItem> m_lstCurveItem = new List<ModCurveItem>();
+        private List<string> m_lstDateCustomer = new List<string>();
         private List<DateTime> m_lstDateTime = new List<DateTime>();
         private readonly List<ModMarkLine> m_lstMarkLine = new List<ModMarkLine>();
         private readonly List<ModMarkText> m_lstMarkText = new List<ModMarkText>();
@@ -67,24 +68,35 @@ namespace CML.ToolKit.ControlEx
         private Brush m_brushMarkText = new SolidBrush(Color.Yellow);
         private Color m_colorMoveLine = Color.White;
         private Pen m_PenMoveLine = new Pen(Color.White);
+        private bool m_isRenderTimeData = true;
+        private int m_nAbscissaTextInterval = 200;
         #endregion
 
         #region 委托方法
         /// <summary>
-        /// 曲线双击的委托方法
+        /// 曲线双击的委托方法（基于时间）
         /// </summary>
-        /// <param name="evtCurveChart">曲线控件信息</param>
+        /// <param name="chartCurve">曲线控件信息</param>
         /// <param name="index">数据的索引</param>
         /// <param name="dateTime">时间信息</param>
-        public delegate void CurveDoubleClick(ChartCurve evtCurveChart, int index, DateTime dateTime);
+        public delegate void CurveTimeDoubleClick(CmlChartCurve chartCurve, int index, DateTime dateTime);
+
+        /// <summary>
+        /// 曲线双击的委托方法（基于自定义字符串）
+        /// </summary>
+        /// <param name="chartCurve">曲线控件信息</param>
+        /// <param name="index">数据的索引</param>
+        /// <param name="customer">时间信息</param>
+        public delegate void CurveCustomerDoubleClick(CmlChartCurve chartCurve, int index, string customer);
 
         /// <summary>
         /// 当鼠标在曲线上移动的时候触发的委托方法
         /// </summary>
-        /// <param name="evtCurveChart">曲线控件信息</param>
+        /// <param name="chartCurve">曲线控件信息</param>
         /// <param name="x">横坐标x</param>
         /// <param name="y">横坐标y</param>
-        public delegate void CurveMouseMove(ChartCurve evtCurveChart, int x, int y);
+        public delegate void CurveMouseMove(CmlChartCurve chartCurve, int x, int y);
+
         #endregion
 
         #region 重写属性
@@ -469,6 +481,37 @@ namespace CML.ToolKit.ControlEx
         }
 
         /// <summary>
+        /// 获取或设置是否启用区间选择功能
+        /// </summary>
+        [Browsable(true), DefaultValue(true)]
+        [Category("CMLAttribute"), Description("获取或设置是否启用区间选择功能")]
+        public bool CP_IsAllowSelectSection { get; set; } = true;
+
+        /// <summary>
+        /// 获取或设置纵向虚线分隔距离(像素点)
+        /// </summary>
+        [Browsable(true), DefaultValue(200)]
+        [Category("CMLAttribute"), Description("获取或设置纵向虚线分隔距离(像素点)")]
+        public int CP_AbscissaTextInterval
+        {
+            get => m_nAbscissaTextInterval;
+            set
+            {
+                m_nAbscissaTextInterval = value;
+                base.Invalidate();
+                if (m_isShowTextInfomation)
+                {
+                    Image image = picChart.Image;
+                    if (image != null)
+                    {
+                        image.Dispose();
+                    }
+                    picChart.Image = GetBitmapFromString(Text);
+                }
+            }
+        }
+
+        /// <summary>
         /// 获取已添加曲线列表
         /// </summary>
         [Browsable(false)]
@@ -481,14 +524,21 @@ namespace CML.ToolKit.ControlEx
         /// 当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标
         /// </summary>
         [Browsable(true), DefaultValue(false)]
-        [Category("EvtEvent"), Description("当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标")]
-        public event CurveDoubleClick CE_OnCurveDoubleClick;
+        [Category("CmlEvent"), Description("当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标")]
+        public event CurveTimeDoubleClick CE_OnCurveTimeDoubleClick;
+
+        /// <summary>
+        /// 当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标
+        /// </summary>
+        [Browsable(true), DefaultValue(false)]
+        [Category("CmlEvent"), Description("当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标")]
+        public event CurveCustomerDoubleClick CE_OnCurveCustomerDoubleClick;
 
         /// <summary>
         /// 当鼠标在曲线上移动时触发，由此获取到鼠标的移动位置
         /// </summary>
         [Browsable(true), DefaultValue(false)]
-        [Category("EvtEvent"), Description("当鼠标在曲线上移动时触发，由此获取到鼠标的移动位置")]
+        [Category("CmlEvent"), Description("当鼠标在曲线上移动时触发，由此获取到鼠标的移动位置")]
         public event CurveMouseMove CE_OnCurveMouseMove;
         #endregion
 
@@ -581,14 +631,14 @@ namespace CML.ToolKit.ControlEx
 
             CalculateAuxiliaryPaintY();
 
-            for (int j = 0; j < m_lstAuxiliaryLine.Count; j++)
+            for (int i = 0; i < m_lstAuxiliaryLine.Count; i++)
             {
-                graphics.DrawLine(m_lstAuxiliaryLine[j].PenDash, 0f, m_lstAuxiliaryLine[j].PaintValue, (nWidth - 1), m_lstAuxiliaryLine[j].PaintValue);
+                graphics.DrawLine(m_lstAuxiliaryLine[i].PenDash, 0f, m_lstAuxiliaryLine[i].PaintValue, (nWidth - 1), m_lstAuxiliaryLine[i].PaintValue);
             }
 
-            for (int k = 200; k < nWidth; k += 200)
+            for (int i = m_nAbscissaTextInterval; i < nWidth; i += m_nAbscissaTextInterval)
             {
-                graphics.DrawLine(m_penCoordinateDash, k, nHeight - 40, k, 0);
+                graphics.DrawLine(m_penCoordinateDash, i, nHeight - 40, i, 0);
             }
 
             Rectangle rect = new Rectangle(0, 0, nWidth, nHeight);
@@ -909,9 +959,9 @@ namespace CML.ToolKit.ControlEx
             CalculateAuxiliaryPaintY();
 
             //绘制Y轴分段数值
-            for (int j = 1; j <= m_nSegmentCount; j++)
+            for (int i = 1; i <= m_nSegmentCount; i++)
             {
-                float value = (j * (m_fLeftLimitMax - m_fLeftLimitMin) / m_nSegmentCount + m_fLeftLimitMin);
+                float value = (i * (m_fLeftLimitMax - m_fLeftLimitMin) / m_nSegmentCount + m_fLeftLimitMin);
                 float num = ChartOperate.ComputePaintLocationY(m_fLeftLimitMax, m_fLeftLimitMin, (pnlAxis.Height - 60), value) + 20f;
 
                 if (IsNeedPaintDash(num))
@@ -921,21 +971,29 @@ namespace CML.ToolKit.ControlEx
             }
 
             //辅助线
-            for (int k = 0; k < m_lstAuxiliaryLine.Count; k++)
+            for (int i = 0; i < m_lstAuxiliaryLine.Count; i++)
             {
-                g.DrawLine(m_lstAuxiliaryLine[k].PenDash, 0f, m_lstAuxiliaryLine[k].PaintValue, (nWidth - 1), m_lstAuxiliaryLine[k].PaintValue);
+                g.DrawLine(m_lstAuxiliaryLine[i].PenDash, 0f, m_lstAuxiliaryLine[i].PaintValue, (nWidth - 1), m_lstAuxiliaryLine[i].PaintValue);
             }
 
             //绘制X轴时间
-            for (int l = 200; l < nWidth; l += 200)
+            for (int i = m_nAbscissaTextInterval; i < nWidth; i += m_nAbscissaTextInterval)
             {
-                g.DrawLine(m_penCoordinateDash, l, pnlAxis.Height - 38, l, 0);
-                if (m_lstDateTime != null)
+                g.DrawLine(m_penCoordinateDash, i, pnlAxis.Height - 38, i, 0);
+
+                int num = Convert.ToInt32(i / m_fDataScaleRender);
+                if (m_isRenderTimeData)
                 {
-                    int num2 = Convert.ToInt32(l / m_fDataScaleRender);
-                    if (num2 < m_lstDateTime.Count)
+                    if (num < m_lstDateTime.Count)
                     {
-                        g.DrawString(m_lstDateTime[num2].ToString(CP_DateTimeFormat), Font, m_brushCoordinate, new Rectangle(l - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
+                        g.DrawString(m_lstDateTime[num].ToString(CP_DateTimeFormat), Font, m_brushCoordinate, new Rectangle(i - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
+                    }
+                }
+                else
+                {
+                    if (num < m_lstDateCustomer.Count)
+                    {
+                        g.DrawString(m_lstDateCustomer[num], Font, m_brushCoordinate, new Rectangle(i - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
                     }
                 }
             }
@@ -1239,6 +1297,17 @@ namespace CML.ToolKit.ControlEx
         public void CF_SetDateTimes(DateTime[] times)
         {
             m_lstDateTime = new List<DateTime>(times);
+            m_isRenderTimeData = true;
+        }
+
+        /// <summary>
+        /// 设置X轴时间数组
+        /// </summary>
+        /// <param name="customers">自定义数组</param>
+        public void CF_SetDateCustomer(string[] customers)
+        {
+            m_lstDateCustomer = new List<string>(customers);
+            m_isRenderTimeData = true;
         }
 
         /// <summary>
@@ -1400,6 +1469,7 @@ namespace CML.ToolKit.ControlEx
             if (m_dicCurveItem.Count == 0)
             {
                 m_lstDateTime = new List<DateTime>(0);
+                m_lstDateCustomer = new List<string>();
             }
 
             CalculateCurveDataMax();
@@ -1422,6 +1492,7 @@ namespace CML.ToolKit.ControlEx
             if (m_dicCurveItem.Count == 0)
             {
                 m_lstDateTime = new List<DateTime>(0);
+                m_lstDateCustomer = new List<string>();
             }
 
             CalculateCurveDataMax();
@@ -1608,7 +1679,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 实例化一个默认的曲线控件
         /// </summary>
-        public ChartCurve()
+        public CmlChartCurve()
         {
             InitializeComponent();
 
@@ -1643,7 +1714,7 @@ namespace CML.ToolKit.ControlEx
         protected override void OnDockChanged(EventArgs e)
         {
             base.OnDockChanged(e);
-            EvtCurveChart_SizeChanged(this, e);
+            CurveChart_SizeChanged(this, e);
         }
 
         /// <summary>
@@ -1662,7 +1733,7 @@ namespace CML.ToolKit.ControlEx
         #endregion
 
         #region 窗体事件
-        private void EvtCurveChart_Load(object sender, EventArgs e)
+        private void CurveChart_Load(object sender, EventArgs e)
         {
             if (m_isShowTextInfomation)
             {
@@ -1676,7 +1747,7 @@ namespace CML.ToolKit.ControlEx
             }
         }
 
-        private void EvtCurveChart_MouseDown(object sender, MouseEventArgs e)
+        private void CurveChart_MouseDown(object sender, MouseEventArgs e)
         {
             foreach (KeyValuePair<string, ModCurveItem> keyValuePair in m_dicCurveItem)
             {
@@ -1689,7 +1760,7 @@ namespace CML.ToolKit.ControlEx
             }
         }
 
-        private void EvtCurveChart_MouseMove(object sender, MouseEventArgs e)
+        private void CurveChart_MouseMove(object sender, MouseEventArgs e)
         {
             foreach (KeyValuePair<string, ModCurveItem> keyValuePair in m_dicCurveItem)
             {
@@ -1703,7 +1774,7 @@ namespace CML.ToolKit.ControlEx
             Cursor = Cursors.Arrow;
         }
 
-        private void EvtCurveChart_SizeChanged(object sender, EventArgs e)
+        private void CurveChart_SizeChanged(object sender, EventArgs e)
         {
             if (m_isShowTextInfomation)
             {
@@ -1741,7 +1812,7 @@ namespace CML.ToolKit.ControlEx
                 m_nRowBetweenStartHeight = -1;
                 picChart.Invalidate();
             }
-            else
+            else if (CP_IsAllowSelectSection)
             {
                 m_IsMouseLeftDown = true;
                 m_nRowBetweenStart = Convert.ToInt32(((e.X >= 0) ? e.X : (65536 + e.X)) / m_fDataScaleRender);
@@ -1752,7 +1823,7 @@ namespace CML.ToolKit.ControlEx
 
         private void PicChart_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && CP_IsAllowSelectSection)
             {
                 ModMarkForeSection item = new ModMarkForeSection
                 {
@@ -1808,9 +1879,19 @@ namespace CML.ToolKit.ControlEx
             {
                 int num = Convert.ToInt32(((e.X >= 0) ? e.X : (65536 + e.X)) / m_fDataScaleRender);
 
-                if (num >= 0 && num < m_lstDateTime.Count)
+                if (m_isRenderTimeData)
                 {
-                    CE_OnCurveDoubleClick?.Invoke(this, num, m_lstDateTime[num]);
+                    if (num >= 0 && num < m_lstDateTime.Count)
+                    {
+                        CE_OnCurveTimeDoubleClick?.Invoke(this, num, m_lstDateTime[num]);
+                    }
+                }
+                else
+                {
+                    if (num >= 0 && num < m_lstDateCustomer.Count)
+                    {
+                        CE_OnCurveCustomerDoubleClick?.Invoke(this, num, m_lstDateCustomer[num]);
+                    }
                 }
             }
         }
@@ -1941,11 +2022,23 @@ namespace CML.ToolKit.ControlEx
 
                         //下方的时间提示
                         Rectangle rectangle = new Rectangle(m_ptMouseLocation.X - 50, pnlAxis.Height - 38, 100, 18);
-                        if (num < m_lstDateTime.Count)
+                        if (m_isRenderTimeData)
                         {
-                            graphics.FillRectangle(brush, rectangle);
-                            graphics.DrawRectangle(Pens.HotPink, rectangle);
-                            graphics.DrawString(m_lstDateTime[num].ToString("HH:mm:ss"), Font, Brushes.Cyan, rectangle, m_sfMain);
+                            if (num < m_lstDateTime.Count)
+                            {
+                                graphics.FillRectangle(brush, rectangle);
+                                graphics.DrawRectangle(Pens.HotPink, rectangle);
+                                graphics.DrawString(m_lstDateTime[num].ToString("HH:mm:ss"), Font, Brushes.Cyan, rectangle, m_sfMain);
+                            }
+                        }
+                        else
+                        {
+                            if (num < m_lstDateCustomer.Count)
+                            {
+                                graphics.FillRectangle(brush, rectangle);
+                                graphics.DrawRectangle(Pens.HotPink, rectangle);
+                                graphics.DrawString(m_lstDateCustomer[num], Font, Brushes.Cyan, rectangle, m_sfMain);
+                            }
                         }
                     }
                 }

@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class ChartCurve
+    partial class CmlChartCurve
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -64,17 +64,17 @@
             this.picChart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PicChart_MouseMove);
             this.picChart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PicChart_MouseUp);
             // 
-            // EvtChartCurve
+            // CmlChartCurve
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.Controls.Add(this.pnlAxis);
-            this.Name = "EvtChartCurve";
+            this.Name = "CmlChartCurve";
             this.Size = new System.Drawing.Size(852, 478);
-            this.Load += new System.EventHandler(this.EvtCurveChart_Load);
-            this.SizeChanged += new System.EventHandler(this.EvtCurveChart_SizeChanged);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EvtCurveChart_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EvtCurveChart_MouseMove);
+            this.Load += new System.EventHandler(this.CurveChart_Load);
+            this.SizeChanged += new System.EventHandler(this.CurveChart_SizeChanged);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CurveChart_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CurveChart_MouseMove);
             this.pnlAxis.ResumeLayout(false);
             this.pnlAxis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picChart)).EndInit();

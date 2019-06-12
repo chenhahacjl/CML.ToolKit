@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class LanternAlarm
+    partial class CmlFormMoveTool
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,12 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // EvtAlarmLantern
+            // CmlFormMoveTool
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Name = "EvtAlarmLantern";
-            this.Size = new System.Drawing.Size(100, 130);
+            this.Name = "CmlFormMoveTool";
+            this.Size = new System.Drawing.Size(200, 200);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CmlFormMoveTool_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CmlFormMoveTool_MouseMove);
             this.ResumeLayout(false);
 
         }

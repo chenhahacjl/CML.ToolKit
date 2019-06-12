@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.chksColumns = new System.Windows.Forms.CheckedListBox();
-            this.btnEnter = new CML.ToolKit.ControlEx.ButtonEx();
+            this.btnEnter = new CML.ToolKit.ControlEx.CmlButtonEx();
             this.pnlOperate = new System.Windows.Forms.Panel();
-            this.btnSelectNone = new CML.ToolKit.ControlEx.ButtonEx();
-            this.btnSelectAll = new CML.ToolKit.ControlEx.ButtonEx();
+            this.btnSelectNone = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.btnSelectAll = new CML.ToolKit.ControlEx.CmlButtonEx();
             this.pnlOperate.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +99,7 @@
             this.btnSelectAll.Text = "全选";
             this.btnSelectAll.Click += new System.EventHandler(this.BtnSelectAll_Click);
             // 
-            // EvtFormDgvColumnVisibility
+            // FormDgvColumnVisibility
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,11 +108,11 @@
             this.Controls.Add(this.pnlOperate);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EvtFormDgvColumnVisibility";
+            this.Name = "FormDgvColumnVisibility";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "数据列可见性选择";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EvtFormDgvColumnVisibility_FormClosing);
-            this.Shown += new System.EventHandler(this.EvtFormDgvColumnVisibility_Shown);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDgvColumnVisibility_FormClosing);
+            this.Shown += new System.EventHandler(this.FormDgvColumnVisibility_Shown);
             this.pnlOperate.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -121,9 +121,9 @@
         #endregion
 
         private System.Windows.Forms.CheckedListBox chksColumns;
-        private ButtonEx btnEnter;
+        private CmlButtonEx btnEnter;
         private System.Windows.Forms.Panel pnlOperate;
-        private ButtonEx btnSelectNone;
-        private ButtonEx btnSelectAll;
+        private CmlButtonEx btnSelectNone;
+        private CmlButtonEx btnSelectAll;
     }
 }

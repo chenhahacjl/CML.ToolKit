@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class LanternRound
+    partial class CmlLanternRound
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,11 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // EvtRoundLantern
+            // CmlRoundLantern
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Name = "EvtRoundLantern";
+            this.Name = "CmlRoundLantern";
             this.Size = new System.Drawing.Size(60, 60);
             this.ResumeLayout(false);
         }

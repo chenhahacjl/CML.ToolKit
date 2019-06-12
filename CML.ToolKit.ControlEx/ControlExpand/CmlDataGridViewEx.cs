@@ -11,8 +11,8 @@ namespace CML.ToolKit.ControlEx
     /// </summary>
     [ToolboxItem(true)]
     [DefaultEvent("CellContentClick")]
-    [DefaultBindingProperty("ConfigPath"), DefaultProperty("ConfigPath")]
-    public class DataGridViewEx : DataGridView
+    [DefaultBindingProperty("CP_ConfigPath"), DefaultProperty("CP_ConfigPath")]
+    public class CmlDataGridViewEx : DataGridView
     {
         #region 公共属性
         /// <summary>
@@ -27,7 +27,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public DataGridViewEx()
+        public CmlDataGridViewEx()
         {
             DefaultCellStyle.SelectionBackColor = Color.LightGray;
             DefaultCellStyle.SelectionForeColor = Color.Black;

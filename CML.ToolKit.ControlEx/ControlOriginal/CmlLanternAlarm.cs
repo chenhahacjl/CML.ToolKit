@@ -11,8 +11,8 @@ namespace CML.ToolKit.ControlEx
     /// 告警指示灯控件
     /// </summary>
     [ToolboxItem(true)]
-    [DefaultBindingProperty("LightColor"), DefaultProperty("LightColor")]
-    public partial class LanternAlarm : UserControl
+    [DefaultBindingProperty("CP_LightColor"), DefaultProperty("CP_LightColor")]
+    public partial class CmlLanternAlarm : UserControl
     {
         #region 私有变量
         private Color m_colorBottom = Color.DimGray;
@@ -121,7 +121,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public LanternAlarm()
+        public CmlLanternAlarm()
         {
             InitializeComponent();
 

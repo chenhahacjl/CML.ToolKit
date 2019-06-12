@@ -13,7 +13,7 @@ namespace CML.ToolKit.ControlEx
     [ToolboxItem(true)]
     [DefaultEvent("Click")]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public partial class ButtonEx : UserControl
+    public partial class CmlButtonEx : UserControl
     {
         #region 私有变量
         /// <summary>
@@ -219,7 +219,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public ButtonEx()
+        public CmlButtonEx()
         {
             InitializeComponent();
 

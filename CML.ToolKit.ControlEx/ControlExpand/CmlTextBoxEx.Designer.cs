@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class TextBoxEx
+    partial class CmlTextBoxEx
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -127,7 +127,7 @@
             this.lblTitleSplit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTitleSplit.Visible = false;
             // 
-            // EvtTextBox
+            // CmlTextBox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "EvtTextBox";
+            this.Name = "CmlTextBox";
             this.Size = new System.Drawing.Size(181, 24);
             this.Click += new System.EventHandler(this.UnitTextBox_Click);
             this.Resize += new System.EventHandler(this.UnitTextBox_Resize);

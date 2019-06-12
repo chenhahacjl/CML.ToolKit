@@ -4,6 +4,32 @@
         <name>CML.ToolKit.ControlEx</name>
     </assembly>
     <members>
+        <member name="T:CML.ToolKit.ControlEx.ControlDesignerEx">
+            <summary>
+            支持设计控件设计器
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ControlEx.ControlDesignerEx.m_designerControl">
+            <summary>
+            支持设计控件
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.ControlDesignerEx.Initialize(System.ComponentModel.IComponent)">
+            <summary>
+            初始化
+            </summary>
+            <param name="component">组件</param>
+        </member>
+        <member name="T:CML.ToolKit.ControlEx.IDesignerControl">
+            <summary>
+            支持设计控件接口
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.IDesignerControl.DesignerControl">
+            <summary>
+            获取支持设计控件
+            </summary>
+        </member>
         <member name="T:CML.ToolKit.ControlEx.ShapeBase">
             <summary>
             图形控件基类
@@ -174,305 +200,328 @@
             <param name="bUse">是否被使用</param>
             <returns>判断结果</returns>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ButtonEx">
+        <member name="T:CML.ToolKit.ControlEx.CmlButtonEx">
             <summary>
             按钮控件
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_stringFormat">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_stringFormat">
             <summary>
             字符串格式
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_cNewLine">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_cNewLine">
             <summary>
             换行字符
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_colorFore">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_colorFore">
             <summary>
             前景颜色、背景颜色、启用状态颜色、激活状态颜色
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_nRoundCorner">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_nRoundCorner">
             <summary>
             圆角半径
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_isSelected">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_isSelected">
             <summary>
             选中状态
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_isBorderVisiable">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_isBorderVisiable">
             <summary>
             边框显示状态
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_isMouseHorve">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_isMouseHorve">
             <summary>
             鼠标覆盖状态
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.m_isLeftMouseDown">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.m_isLeftMouseDown">
             <summary>
             是否为左键单击
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.BackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.BackColor">
             <summary>
             获取或设置控件的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.ForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.ForeColor">
             <summary>
             获取或设置当前控件的文本的颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.Text">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.Text">
             <summary>
             获取或设置当前控件的文本
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_NewLineChar">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_NewLineChar">
             <summary>
             获取或设置按钮文本换行符
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_OriginalColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_OriginalColor">
             <summary>
             获取或设置按钮的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_EnableColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_EnableColor">
             <summary>
             获取或设置按钮的启用色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_ActiveColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_ActiveColor">
             <summary>
             获取或设置按钮的活动色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_CornerRadius">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_CornerRadius">
             <summary>
             获取或设置按钮圆角半径
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_BorderVisiable">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_BorderVisiable">
             <summary>
             设置按钮的边框可见性
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_Selected">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_Selected">
             <summary>
             获取或设置按钮的选中状态
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ButtonEx.CP_CustomerInformation">
+        <member name="P:CML.ToolKit.ControlEx.CmlButtonEx.CP_CustomerInformation">
             <summary>
             获取或设置额外的信息
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             重绘界面的逻辑功能
             </summary>
             <param name="e">重绘的事件</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.OnMouseEnter(System.EventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.OnMouseEnter(System.EventArgs)">
             <summary>
             引发MouseEnter事件
             </summary>
             <param name="e">事件</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.OnMouseLeave(System.EventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.OnMouseLeave(System.EventArgs)">
             <summary>
             引发MouseLeave事件
             </summary>
             <param name="e">事件</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
             <summary>
             引发MouseDown事件
             </summary>
             <param name="e">事件</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
             <summary>
             引发MouseUp事件
             </summary>
             <param name="e"></param>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ButtonEx.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlButtonEx.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ButtonEx.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlButtonEx.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ChartCurve">
+        <member name="T:CML.ToolKit.ControlEx.CmlChartCurve">
             <summary>
             曲线图表控件
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ChartCurve.CurveDoubleClick">
+        <member name="T:CML.ToolKit.ControlEx.CmlChartCurve.CurveTimeDoubleClick">
             <summary>
-            曲线双击的委托方法
+            曲线双击的委托方法（基于时间）
             </summary>
-            <param name="evtCurveChart">曲线控件信息</param>
+            <param name="chartCurve">曲线控件信息</param>
             <param name="index">数据的索引</param>
             <param name="dateTime">时间信息</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ChartCurve.CurveMouseMove">
+        <member name="T:CML.ToolKit.ControlEx.CmlChartCurve.CurveCustomerDoubleClick">
+            <summary>
+            曲线双击的委托方法（基于自定义字符串）
+            </summary>
+            <param name="chartCurve">曲线控件信息</param>
+            <param name="index">数据的索引</param>
+            <param name="customer">时间信息</param>
+        </member>
+        <member name="T:CML.ToolKit.ControlEx.CmlChartCurve.CurveMouseMove">
             <summary>
             当鼠标在曲线上移动的时候触发的委托方法
             </summary>
-            <param name="evtCurveChart">曲线控件信息</param>
+            <param name="chartCurve">曲线控件信息</param>
             <param name="x">横坐标x</param>
             <param name="y">横坐标y</param>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.Text">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.Text">
             <summary>
             获取或设置当前控件的文本
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.BackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.BackColor">
             <summary>
             获取或设置控件的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.ForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.ForeColor">
             <summary>
             获取或设置控件的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ShowLegend">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ShowLegend">
             <summary>
             获取或设置图例显示状态
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ShowDataTip">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ShowDataTip">
             <summary>
             获取或设置数据提示框显示状态
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_RenderRightCoordinate">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_RenderRightCoordinate">
             <summary>
             获取或设置曲线控件是否显示右侧的坐标轴
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ValueSegment">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ValueSegment">
             <summary>
             获取或设置图形的纵轴分段数
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_DataTipWidth">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_DataTipWidth">
             <summary>
             获取或设置鼠标移动过程中提示信息的宽度
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ValueMaxLeft">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ValueMaxLeft">
             <summary>
             获取或设置图形的左纵坐标的最大值，该值必须大于最小值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ValueMinLeft">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ValueMinLeft">
             <summary>
             获取或设置图形的左纵坐标的最小值，该值必须小于最大值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ValueMaxRight">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ValueMaxRight">
             <summary>
             获取或设置图形的右纵坐标的最大值，该值必须大于最小值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_ValueMinRight">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_ValueMinRight">
             <summary>
             获取或设置图形的右纵坐标的最小值，该值必须小于最大值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_UnitLeft">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_UnitLeft">
             <summary>
             获取或设置左侧的单位显示的文本信息
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_UnitRight">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_UnitRight">
             <summary>
             获取或设置右侧的单位显示的文本信息
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_AxisLeftFormat">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_AxisLeftFormat">
             <summary>
             获取或设置左侧坐标轴数值的格式
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_AxisRightFormat">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_AxisRightFormat">
             <summary>
             获取或设置右侧坐标轴数值的格式
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_DateTimeFormat">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_DateTimeFormat">
             <summary>
             获取或设置时间显示的格式
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_CoordinateColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_CoordinateColor">
             <summary>
             获取或设置所有的实线坐标轴的颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_DashCoordinateColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_DashCoordinateColor">
             <summary>
             获取或设置所有的虚线坐标轴的颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_MarkLineColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_MarkLineColor">
             <summary>
             获取或设置所有的区间标记的线条颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_MarkTextColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_MarkTextColor">
             <summary>
             获取或设置所有的区间标记的文本颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_MoveLineColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_MoveLineColor">
             <summary>
             获取或设置鼠标移动过程中的提示线的颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ChartCurve.CP_CurveList">
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_IsAllowSelectSection">
+            <summary>
+            获取或设置是否启用区间选择功能
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_AbscissaTextInterval">
+            <summary>
+            获取或设置纵向虚线分隔距离(像素点)
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlChartCurve.CP_CurveList">
             <summary>
             获取已添加曲线列表
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.ChartCurve.CE_OnCurveDoubleClick">
+        <member name="E:CML.ToolKit.ControlEx.CmlChartCurve.CE_OnCurveTimeDoubleClick">
             <summary>
             当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.ChartCurve.CE_OnCurveMouseMove">
+        <member name="E:CML.ToolKit.ControlEx.CmlChartCurve.CE_OnCurveCustomerDoubleClick">
+            <summary>
+            当鼠标在曲线上双击时触发，由此获取到点击的数据的索引位置，时间坐标
+            </summary>
+        </member>
+        <member name="E:CML.ToolKit.ControlEx.CmlChartCurve.CE_OnCurveMouseMove">
             <summary>
             当鼠标在曲线上移动时触发，由此获取到鼠标的移动位置
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.AddAuxiliary(System.Single,System.Drawing.Color,System.Double,System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.AddAuxiliary(System.Single,System.Drawing.Color,System.Double,System.Boolean)">
             <summary>
             添加辅助线
             </summary>
@@ -481,14 +530,14 @@
             <param name="dLineThickness">辅助线宽度</param>
             <param name="isLeft">是否为左侧辅助线</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.GetBitmapFromString(System.String)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.GetBitmapFromString(System.String)">
             <summary>
             文字转图片
             </summary>
             <param name="text">转换文字</param>
             <returns></returns>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.PaintFromString(System.Drawing.Graphics,System.String,System.Int32,System.Int32)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.PaintFromString(System.Drawing.Graphics,System.String,System.Int32,System.Int32)">
             <summary>
             文字转图片
             </summary>
@@ -497,24 +546,24 @@
             <param name="nWidth">宽度</param>
             <param name="nHeight">高度</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.IsNeedPaintDash(System.Single)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.IsNeedPaintDash(System.Single)">
             <summary>
             是否需要绘制虚线
             </summary>
             <param name="fValue">数值</param>
             <returns>是否需要绘制虚线</returns>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CalculateAuxiliaryPaintY">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CalculateAuxiliaryPaintY">
             <summary>
             计算Y轴辅助线
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CalculateCurveDataMax">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CalculateCurveDataMax">
             <summary>
             计算数据最大值
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.DrawCoordinate(System.Drawing.Graphics,System.Boolean,System.Single,System.Single,System.Single,System.Single,System.Drawing.StringFormat,System.String)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.DrawCoordinate(System.Drawing.Graphics,System.Boolean,System.Single,System.Single,System.Single,System.Single,System.Drawing.StringFormat,System.String)">
             <summary>
             绘制坐标轴
             </summary>
@@ -527,7 +576,7 @@
             <param name="stringFormat">文本显示信息</param>
             <param name="strUnit">单位</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.DrawMarkForeSection(System.Drawing.Graphics,CML.ToolKit.ControlEx.ModMarkForeSection,System.Drawing.Font)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.DrawMarkForeSection(System.Drawing.Graphics,CML.ToolKit.ControlEx.ModMarkForeSection,System.Drawing.Font)">
             <summary>
             绘制前景选区
             </summary>
@@ -535,19 +584,19 @@
             <param name="markForeSection">前景选区</param>
             <param name="font">字体</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.PaintLegend(System.Drawing.Graphics)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.PaintLegend(System.Drawing.Graphics)">
             <summary>
             绘制图例
             </summary>
             <param name="g">绘图对象</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.PaintMain(System.Drawing.Graphics)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.PaintMain(System.Drawing.Graphics)">
             <summary>
             绘制图表坐标轴
             </summary>
             <param name="graphics">Graphics</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.GetRenderCurveMain(System.Drawing.Graphics,System.Int32,System.Int32)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.GetRenderCurveMain(System.Drawing.Graphics,System.Int32,System.Int32)">
             <summary>
             绘制图表数据
             </summary>
@@ -555,26 +604,26 @@
             <param name="nWidth">宽度</param>
             <param name="nHeight">高度</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetScrollPosition(System.Windows.Forms.ScrollEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetScrollPosition(System.Windows.Forms.ScrollEventArgs)">
             <summary>
             设置横向滚动条的位置信息
             </summary>
             <param name="e">滚动事件参数</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddLeftAuxiliary(System.Single)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddLeftAuxiliary(System.Single)">
             <summary>
             添加左侧辅助线
             </summary>
             <param name="value">辅助线所在位置数值</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddLeftAuxiliary(System.Single,System.Drawing.Color)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddLeftAuxiliary(System.Single,System.Drawing.Color)">
             <summary>
             添加左侧辅助线
             </summary>
             <param name="value">辅助线所在位置数值</param>
             <param name="lineColor">辅助线颜色</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddLeftAuxiliary(System.Single,System.Drawing.Color,System.Double)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddLeftAuxiliary(System.Single,System.Drawing.Color,System.Double)">
             <summary>
             添加左侧辅助线
             </summary>
@@ -582,20 +631,20 @@
             <param name="lineColor">辅助线颜色</param>
             <param name="lineThickness">辅助线宽度</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddRightAuxiliary(System.Single)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddRightAuxiliary(System.Single)">
             <summary>
             添加右侧辅助线
             </summary>
             <param name="value">辅助线所在位置数值</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddRightAuxiliary(System.Single,System.Drawing.Color)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddRightAuxiliary(System.Single,System.Drawing.Color)">
             <summary>
             添加右侧辅助线
             </summary>
             <param name="value">辅助线所在位置数值</param>
             <param name="lineColor">辅助线颜色</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddRightAuxiliary(System.Single,System.Drawing.Color,System.Double)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddRightAuxiliary(System.Single,System.Drawing.Color,System.Double)">
             <summary>
             添加右侧辅助线
             </summary>
@@ -603,88 +652,85 @@
             <param name="lineColor">辅助线颜色</param>
             <param name="lineThickness">辅助线宽度</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveAuxiliary(System.Double)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveAuxiliary(System.Double)">
             <summary>
             清除辅助线
             </summary>
             <param name="value">辅助线所在位置数值</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveAllAuxiliary">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveAllAuxiliary">
             <summary>
             清除所有辅助线
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddMarkLine(CML.ToolKit.ControlEx.ModMarkLine)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddMarkLine(CML.ToolKit.ControlEx.ModMarkLine)">
             <summary>
             添加标记直线
             </summary>
             <param name="markLine">标记直线信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveMarkLine(CML.ToolKit.ControlEx.ModMarkLine)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveMarkLine(CML.ToolKit.ControlEx.ModMarkLine)">
             <summary>
             清除标记直线
             </summary>
             <param name="markLine">标记直线信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveAllMarkLine">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveAllMarkLine">
             <summary>
             清除所有标记直线
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddMarkText(CML.ToolKit.ControlEx.ModMarkText)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddMarkText(CML.ToolKit.ControlEx.ModMarkText)">
             <summary>
             添加标记文本
             </summary>
             <param name="markText">标记文本信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveMarkText(CML.ToolKit.ControlEx.ModMarkText)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveMarkText(CML.ToolKit.ControlEx.ModMarkText)">
             <summary>
             清除标记文本
             </summary>
             <param name="markText">标记文本信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveAllMarkText">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveAllMarkText">
             <summary>
             清除所有标记文本
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetDateTimes(System.DateTime[])">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetDateTimes(System.DateTime[])">
             <summary>
             设置X轴时间数组
             </summary>
             <param name="times">时间数组</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetScaleByXAxis(System.Single)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetDateCustomer(System.String[])">
+            <summary>
+            设置X轴时间数组
+            </summary>
+            <param name="customers">自定义数组</param>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetScaleByXAxis(System.Single)">
             <summary>
             设置X轴缩放比例
             </summary>
             <param name="scale">缩放比例</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetLeftCurve(System.String,System.Single[])">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetLeftCurve(System.String,System.Single[])">
             <summary>
             添加左侧坐标轴曲线
             </summary>
             <param name="key">曲线标识</param>
             <param name="data">数据数组</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetLeftCurve(System.String,System.Single[],System.Drawing.Color)">
-            <summary>
-            添加左侧坐标轴曲线
-            </summary>
-            <param name="key">曲线标识</param>
-            <param name="data">数据数组</param>
-            <param name="lineColor">曲线颜色</param>
-        </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetLeftCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetLeftCurve(System.String,System.Single[],System.Drawing.Color)">
             <summary>
             添加左侧坐标轴曲线
             </summary>
             <param name="key">曲线标识</param>
             <param name="data">数据数组</param>
             <param name="lineColor">曲线颜色</param>
-            <param name="isSmooth">是否平滑曲线</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetLeftCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean,System.String)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetLeftCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean)">
             <summary>
             添加左侧坐标轴曲线
             </summary>
@@ -692,35 +738,10 @@
             <param name="data">数据数组</param>
             <param name="lineColor">曲线颜色</param>
             <param name="isSmooth">是否平滑曲线</param>
-            <param name="renderFormat">显示格式</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetRightCurve(System.String,System.Single[])">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetLeftCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean,System.String)">
             <summary>
-            添加右侧坐标轴曲线
-            </summary>
-            <param name="key">曲线标识</param>
-            <param name="data">数据数组</param>
-        </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetRightCurve(System.String,System.Single[],System.Drawing.Color)">
-            <summary>
-            添加右侧坐标轴曲线
-            </summary>
-            <param name="key">曲线标识</param>
-            <param name="data">数据数组</param>
-            <param name="lineColor">曲线颜色</param>
-        </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetRightCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean)">
-            <summary>
-            添加右侧坐标轴曲线
-            </summary>
-            <param name="key">曲线标识</param>
-            <param name="data">数据数组</param>
-            <param name="lineColor">曲线颜色</param>
-            <param name="isSmooth">是否平滑曲线</param>
-        </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetRightCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean,System.String)">
-            <summary>
-            添加右侧坐标轴曲线
+            添加左侧坐标轴曲线
             </summary>
             <param name="key">曲线标识</param>
             <param name="data">数据数组</param>
@@ -728,7 +749,41 @@
             <param name="isSmooth">是否平滑曲线</param>
             <param name="renderFormat">显示格式</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetCurve(System.String,System.Boolean,System.Single[],System.Drawing.Color,System.Single,System.Boolean,System.String)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetRightCurve(System.String,System.Single[])">
+            <summary>
+            添加右侧坐标轴曲线
+            </summary>
+            <param name="key">曲线标识</param>
+            <param name="data">数据数组</param>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetRightCurve(System.String,System.Single[],System.Drawing.Color)">
+            <summary>
+            添加右侧坐标轴曲线
+            </summary>
+            <param name="key">曲线标识</param>
+            <param name="data">数据数组</param>
+            <param name="lineColor">曲线颜色</param>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetRightCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean)">
+            <summary>
+            添加右侧坐标轴曲线
+            </summary>
+            <param name="key">曲线标识</param>
+            <param name="data">数据数组</param>
+            <param name="lineColor">曲线颜色</param>
+            <param name="isSmooth">是否平滑曲线</param>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetRightCurve(System.String,System.Single[],System.Drawing.Color,System.Boolean,System.String)">
+            <summary>
+            添加右侧坐标轴曲线
+            </summary>
+            <param name="key">曲线标识</param>
+            <param name="data">数据数组</param>
+            <param name="lineColor">曲线颜色</param>
+            <param name="isSmooth">是否平滑曲线</param>
+            <param name="renderFormat">显示格式</param>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetCurve(System.String,System.Boolean,System.Single[],System.Drawing.Color,System.Single,System.Boolean,System.String)">
             <summary>
             添加坐标轴曲线
             </summary>
@@ -740,700 +795,775 @@
             <param name="isSmooth">是否平滑曲线</param>
             <param name="renderFormat">显示格式</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveCurve(System.String)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveCurve(System.String)">
             <summary>
             删除坐标轴曲线
             </summary>
             <param name="key">曲线标识</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RemoveAllCurve">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RemoveAllCurve">
             <summary>
             删除所有坐标轴曲线
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetCurveVisible(System.String,System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetCurveVisible(System.String,System.Boolean)">
             <summary>
             设置曲线可见性
             </summary>
             <param name="key">曲线标识</param>
             <param name="visible">可见性</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetCurveVisible(System.String[],System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetCurveVisible(System.String[],System.Boolean)">
             <summary>
             设置曲线可见性
             </summary>
             <param name="keys">曲线标识集</param>
             <param name="visible">可见性</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_RenderCurveUI">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_RenderCurveUI">
             <summary>
             刷新图表
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SetCurveMousePosition(System.Int32,System.Int32)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SetCurveMousePosition(System.Int32,System.Int32)">
             <summary>
             设置曲线鼠标位置
             </summary>
             <param name="x">X</param>
             <param name="y">Y</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddMarkBackSection(CML.ToolKit.ControlEx.ModMarkBackSection)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddMarkBackSection(CML.ToolKit.ControlEx.ModMarkBackSection)">
             <summary>
             添加背景标记区间
             </summary>
             <param name="markBackSection">背景标记区间信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddMarkForeSection(CML.ToolKit.ControlEx.ModMarkForeSection)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddMarkForeSection(CML.ToolKit.ControlEx.ModMarkForeSection)">
             <summary>
             添加前景标记区间
             </summary>
             <param name="markForeSection">前景标记区间信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_AddMarkActiveSection(CML.ToolKit.ControlEx.ModMarkForeSection)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_AddMarkActiveSection(CML.ToolKit.ControlEx.ModMarkForeSection)">
             <summary>
             添加触发标记区间
             </summary>
             <param name="markActiveSection">前景标记区间信息</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.CF_SaveToBitmap">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.CF_SaveToBitmap">
             <summary>
             保存图片
             </summary>
             <returns>位图数据</returns>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.#ctor">
             <summary>
             实例化一个默认的曲线控件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.OnDockChanged(System.EventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.OnDockChanged(System.EventArgs)">
             <summary>
             引发 System.Windows.Forms.Control.DockChanged 事件。
             </summary>
             <param name="e">包含事件数据的 System.EventArgs。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             引发 System.Windows.Forms.Control.Paint 事件。
             </summary>
             <param name="e">包含事件数据的 System.Windows.Forms.PaintEventArgs。</param>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.ChartCurve.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlChartCurve.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ChartCurve.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlChartCurve.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.CheckBoxEx">
+        <member name="T:CML.ToolKit.ControlEx.CmlCheckBoxEx">
             <summary>
             复选框控件
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.CheckBoxEx.m_strCheckText">
+        <member name="F:CML.ToolKit.ControlEx.CmlCheckBoxEx.m_strCheckText">
             <summary>
             勾选时控件显示属性
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.CheckBoxEx.m_strUnCheckedText">
+        <member name="F:CML.ToolKit.ControlEx.CmlCheckBoxEx.m_strUnCheckedText">
             <summary>
             未勾选时控件显示属性
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_CheckedText">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_CheckedText">
             <summary>
             获取或设置选中状态下显示的文字
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_CheckedFont">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_CheckedFont">
             <summary>
             获取或设置选中状态下显示的字体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_CheckedForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_CheckedForeColor">
             <summary>
             设置或获取选中状态下的前景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_CheckedBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_CheckedBackColor">
             <summary>
             设置或获取选中状态下的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_UnCheckedText">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_UnCheckedText">
             <summary>
             获取或设置未选中状态下显示的文字
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_UnCheckedFont">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_UnCheckedFont">
             <summary>
             获取或设置未选中状态下显示的字体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_UnCheckedForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_UnCheckedForeColor">
             <summary>
             设置或获取未选中状态下的前景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.CP_UnCheckedBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.CP_UnCheckedBackColor">
             <summary>
             设置或获取未选中状态下的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.Text">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.Text">
             <summary>
             获取或设置与此控件关联的文本(隐藏属性)
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.Font">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.Font">
             <summary>
             获取或设置显示的文字的字体(隐藏属性)
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.ForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.ForeColor">
             <summary>
             设置或获取控件的前景色(隐藏属性)
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CheckBoxEx.BackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlCheckBoxEx.BackColor">
             <summary>
             设置或获取控件的背景色(隐藏属性)
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.CheckBoxEx.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlCheckBoxEx.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.CheckBoxEx.OnCheckedChanged(System.EventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlCheckBoxEx.OnCheckedChanged(System.EventArgs)">
             <summary>
             引发 System.Windows.Forms.CheckBox.CheckedChanged 事件。
             </summary>
             <param name="e">包含事件数据的 System.EventArgs。</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.DataGridViewEx">
+        <member name="T:CML.ToolKit.ControlEx.CmlDataGridViewEx">
             <summary>
             表格控件
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.DataGridViewEx.CP_ConfigPath">
+        <member name="P:CML.ToolKit.ControlEx.CmlDataGridViewEx.CP_ConfigPath">
             <summary>
             获取或设置配置文件路径
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.DataGridViewEx.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlDataGridViewEx.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.DataGridViewEx.OnCreateControl">
+        <member name="M:CML.ToolKit.ControlEx.CmlDataGridViewEx.OnCreateControl">
             <summary>
             控件创建事件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.DataGridViewEx.OnCellMouseClick(System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlDataGridViewEx.OnCellMouseClick(System.Windows.Forms.DataGridViewCellMouseEventArgs)">
             <summary>
             单元格鼠标单击事件
             </summary>
             <param name="e">事件数据</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.DataGridViewEx.OnCellMouseDoubleClick(System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlDataGridViewEx.OnCellMouseDoubleClick(System.Windows.Forms.DataGridViewCellMouseEventArgs)">
             <summary>
             单元格鼠标双击事件
             </summary>
             <param name="e">事件数据</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.FormMoveTool">
+        <member name="T:CML.ToolKit.ControlEx.CmlFormMoveTool">
             <summary>
             窗体移动工具
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormMoveTool.CP_Moveable">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormMoveTool.CP_Moveable">
             <summary>
             获取或设置按下移动状态
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormMoveTool.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormMoveTool.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormMoveTool.CreateParams">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormMoveTool.CreateParams">
             <summary>
             控件透明支持
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.FormMoveTool.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlFormMoveTool.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormMoveTool.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormMoveTool.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormMoveTool.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormMoveTool.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.LanternAlarm">
+        <member name="T:CML.ToolKit.ControlEx.CmlLanternAlarm">
             <summary>
             告警指示灯控件
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternAlarm.BackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternAlarm.BackColor">
             <summary>
             获取或设置控件的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternAlarm.CP_BottomColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternAlarm.CP_BottomColor">
             <summary>
             获取或设置底座的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternAlarm.CP_LightColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternAlarm.CP_LightColor">
             <summary>
             获取或设置报警灯颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternAlarm.CP_IsFlash">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternAlarm.CP_IsFlash">
             <summary>
             获取或设置信号灯闪烁状态
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternAlarm.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternAlarm.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternAlarm.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternAlarm.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             重绘控件的模型
             </summary>
             <param name="e">事件</param>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.LanternAlarm.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlLanternAlarm.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternAlarm.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternAlarm.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternAlarm.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternAlarm.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.LanternRound">
+        <member name="T:CML.ToolKit.ControlEx.CmlLanternRound">
             <summary>
             圆形指示灯控件
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternRound.Text">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternRound.Text">
             <summary>
             隐藏Text属性
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternRound.BackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternRound.BackColor">
             <summary>
             获取或设置控件的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternRound.CP_LanternColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternRound.CP_LanternColor">
             <summary>
             获取或设置灯信号的前景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternRound.CP_CenterColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternRound.CP_CenterColor">
             <summary>
             获取或设置中心点的颜色，当且仅当UseGradientColor属性为True时生效
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.LanternRound.CP_UseGradientColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlLanternRound.CP_UseGradientColor">
             <summary>
             获取或设置当前的灯信号是否启用渐变色的画刷
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternRound.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternRound.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternRound.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternRound.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             重绘控件的界面信息
             </summary>
             <param name="e">重绘事件</param>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.LanternRound.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlLanternRound.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternRound.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternRound.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.LanternRound.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlLanternRound.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ShapeDiamond">
+        <member name="T:CML.ToolKit.ControlEx.CmlPanelTitle">
+            <summary>
+            圆形指示灯控件
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ControlEx.CmlPanelTitle.m_ctlTitleLabel">
+            <summary>
+            标题Label控件
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ControlEx.CmlPanelTitle.m_ctlContainerPanel">
+            <summary>
+            容器Panel控件
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.ControlEx.CmlPanelTitle.m_ctlExternalPanel">
+            <summary>
+            外层Panel控件
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.Text">
+            <summary>
+            获取或设置当前控件的文本（隐藏属性）
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.Font">
+            <summary>
+            获取或设置控件显示的文字的字体（隐藏属性）
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.DesignerControl">
+            <summary>
+            获取支持设计控件
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_Title">
+            <summary>
+            获取或设置标题内容
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_TitleHeight">
+            <summary>
+            获取或设置标题高度（最小为10）
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_TitleFont">
+            <summary>
+            获取或设置标题字体
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_TitleAlignment">
+            <summary>
+            获取或设置标题文字对齐方式
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_TitleBackColor">
+            <summary>
+            获取或设置标题背景颜色
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_TitleForeColor">
+            <summary>
+            获取或设置标题字体颜色
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlPanelTitle.CP_BorderStyle">
+            <summary>
+            获取或设置边框样式
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.CmlPanelTitle.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.ControlEx.CmlShapeDiamond">
             <summary>
             菱形图形控件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeDiamond.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeDiamond.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeDiamond.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeDiamond.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             System.Windows.Forms.Control.Paint 事件。
             </summary>
             <param name="e">包含事件数据的 System.Windows.Forms.PaintEventArgs。</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ShapeRectangle">
+        <member name="T:CML.ToolKit.ControlEx.CmlShapeRectangle">
             <summary>
             长方形图形控件
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ShapeRectangle.CP_CornerRadius">
+        <member name="P:CML.ToolKit.ControlEx.CmlShapeRectangle.CP_CornerRadius">
             <summary>
             获取或设置圆角半径
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeRectangle.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeRectangle.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeRectangle.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeRectangle.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             System.Windows.Forms.Control.Paint 事件。
             </summary>
             <param name="e">包含事件数据的 System.Windows.Forms.PaintEventArgs。</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.ShapeRound">
+        <member name="T:CML.ToolKit.ControlEx.CmlShapeRound">
             <summary>
             圆形图形控件
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ShapeRound.Size">
+        <member name="P:CML.ToolKit.ControlEx.CmlShapeRound.Size">
             <summary>
             获取或设置控件的高度和宽度
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.ShapeRound.CP_Radius">
+        <member name="P:CML.ToolKit.ControlEx.CmlShapeRound.CP_Radius">
             <summary>
             获取或设置圆形半径
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeRound.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeRound.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeRound.OnPaint(System.Windows.Forms.PaintEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeRound.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             System.Windows.Forms.Control.Paint 事件。
             </summary>
             <param name="e">包含事件数据的 System.Windows.Forms.PaintEventArgs。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.ShapeRound.OnResize(System.EventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlShapeRound.OnResize(System.EventArgs)">
             <summary>
             引发 System.Windows.Forms.Control.Resize 事件。
             </summary>
             <param name="eventargs">包含事件数据的 System.EventArgs。</param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.TabControlEx">
+        <member name="T:CML.ToolKit.ControlEx.CmlTabControlEx">
             <summary>
             选项卡控件
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.TabControlEx.m_cNewLine">
+        <member name="F:CML.ToolKit.ControlEx.CmlTabControlEx.m_cNewLine">
             <summary>
             换行符
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.TabControlEx.m_colorSelectedBack">
+        <member name="F:CML.ToolKit.ControlEx.CmlTabControlEx.m_colorSelectedBack">
             <summary>
             选中项背景颜色
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.TabControlEx.m_colorSelectedBorder">
+        <member name="F:CML.ToolKit.ControlEx.CmlTabControlEx.m_colorSelectedBorder">
             <summary>
             选中项边框颜色
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.TabControlEx.m_colorsPageFore">
+        <member name="F:CML.ToolKit.ControlEx.CmlTabControlEx.m_colorsPageFore">
             <summary>
             标签页字体颜色
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.TabControlEx.m_colorsPageBack">
+        <member name="F:CML.ToolKit.ControlEx.CmlTabControlEx.m_colorsPageBack">
             <summary>
             标签页背景颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TabControlEx.CP_NewLineChar">
+        <member name="P:CML.ToolKit.ControlEx.CmlTabControlEx.CP_NewLineChar">
             <summary>
             获取或设置选项卡标题换行符
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TabControlEx.CP_SelectedBorderColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTabControlEx.CP_SelectedBorderColor">
             <summary>
             获取或设置被选中选项卡边框颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TabControlEx.CP_SelectedBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTabControlEx.CP_SelectedBackColor">
             <summary>
             获取或设置被选中选项卡背景颜色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TabControlEx.CP_TabPageBackColors">
+        <member name="P:CML.ToolKit.ControlEx.CmlTabControlEx.CP_TabPageBackColors">
             <summary>
             获取或设置选项卡标题背景颜色列表
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TabControlEx.CP_TabPageForeColors">
+        <member name="P:CML.ToolKit.ControlEx.CmlTabControlEx.CP_TabPageForeColors">
             <summary>
             获取或设置选项卡标题字体颜色列表
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TabControlEx.DrawMode">
+        <member name="P:CML.ToolKit.ControlEx.CmlTabControlEx.DrawMode">
             <summary>
             隐藏DrawMode属性
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TabControlEx.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlTabControlEx.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TabControlEx.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+        <member name="M:CML.ToolKit.ControlEx.CmlTabControlEx.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
             <summary>
             引发 System.Windows.Forms.TabControl.DrawItem 事件。
             </summary>
             <param name="e">为 DrawItem 事件提供数据。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TabControlEx.DrawTabItem(System.Drawing.Graphics)">
+        <member name="M:CML.ToolKit.ControlEx.CmlTabControlEx.DrawTabItem(System.Drawing.Graphics)">
             <summary>
             绘制选项卡标题
             </summary>
             <param name="g"></param>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.TextBoxEx">
+        <member name="T:CML.ToolKit.ControlEx.CmlTextBoxEx">
             <summary>
             单位显示文本框
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.TextBoxEx.KeyUp">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.KeyUp">
             <summary>
             在文本框按键释放时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.TextBoxEx.KeyDown">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.KeyDown">
             <summary>
             在文本框按键按下时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.TextBoxEx.TextChanged">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.TextChanged">
             <summary>
             在内容改变时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.TextBoxEx.UnitClick">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.UnitClick">
             <summary>
             在单位单击时发生
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.BackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.BackColor">
             <summary>
             设置或获取控件的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.ForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.ForeColor">
             <summary>
             设置或获取控件的前景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.Font">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Font">
             <summary>
             设置或获取控件显示的文字的字体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.Text">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Text">
             <summary>
             获取或设置与此关联的文本
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_CanTextFocus">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_CanTextFocus">
             <summary>
             获取或设置文本框获得焦点状态
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_Alignment">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Alignment">
             <summary>
             获取或设置控件显示的文本的对齐方式
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_Length">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Length">
             <summary>
             获取或设置输入数据长度
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_PasswordChar">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_PasswordChar">
             <summary>
             获取或设置与此关联的密码掩码字符
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_DisableBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_DisableBackColor">
             <summary>
             设置或获取禁用时的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_ReadOnlyBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_ReadOnlyBackColor">
             <summary>
             设置或获取只读时的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_Title">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Title">
             <summary>
             获取或设置控件显示的标题
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_TitleAlignment">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_TitleAlignment">
             <summary>
             获取或设置控件显示的标题的对齐方式
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_TitleWidth">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_TitleWidth">
             <summary>
             获取或设置控件显示的标题宽度
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_TitleFont">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_TitleFont">
             <summary>
             获取或设置控件显示的标题字体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_TitleForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_TitleForeColor">
             <summary>
             设置或获取标题的前景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_TitleBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_TitleBackColor">
             <summary>
             设置或获取标题的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_Unit">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Unit">
             <summary>
             获取或设置控件显示的单位
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_UnitAlignment">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_UnitAlignment">
             <summary>
             获取或设置控件显示的单位的对齐方式
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_UnitWidth">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_UnitWidth">
             <summary>
             获取或设置控件显示的单位宽度
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_UnitFont">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_UnitFont">
             <summary>
             获取或设置控件显示的单位字体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_UnitForeColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_UnitForeColor">
             <summary>
             设置或获取单位的前景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_UnitBackColor">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_UnitBackColor">
             <summary>
             设置或获取单位的背景色
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_InputType">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_InputType">
             <summary>
             获取或设置数据输入类型
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_Maximum">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Maximum">
             <summary>
             获取或设置数值型数据最大值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_Minimum">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Minimum">
             <summary>
             获取或设置数值型数据最小值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.TextBoxEx.CP_ReadOnly">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_ReadOnly">
             <summary>
             设置或获取控件文本只读状态
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TextBoxEx.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlTextBoxEx.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TextBoxEx.ReInitControl">
+        <member name="M:CML.ToolKit.ControlEx.CmlTextBoxEx.ReInitControl">
             <summary>
             重新初始化控件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TextBoxEx.CF_Focus">
+        <member name="M:CML.ToolKit.ControlEx.CmlTextBoxEx.CF_Focus">
             <summary>
             为控件设置输入焦点
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TextBoxEx.CF_Clear">
+        <member name="M:CML.ToolKit.ControlEx.CmlTextBoxEx.CF_Clear">
             <summary>
             清除文本框控件中的所有字符
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.TextBoxEx.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlTextBoxEx.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TextBoxEx.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlTextBoxEx.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.TextBoxEx.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlTextBoxEx.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。
@@ -1515,27 +1645,27 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.FormLogin">
+        <member name="T:CML.ToolKit.ControlEx.CmlFormLogin">
             <summary>
             美化登录窗体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormLogin.CP_UserInfo">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormLogin.CP_UserInfo">
             <summary>
             用户信息
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormLogin.CP_BackgroundImage">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormLogin.CP_BackgroundImage">
             <summary>
             背景图片
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormLogin.CP_HeadImage">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormLogin.CP_HeadImage">
             <summary>
             头像图片
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.FormLogin.LoginEventHandler">
+        <member name="T:CML.ToolKit.ControlEx.CmlFormLogin.LoginEventHandler">
             <summary>
             登录事件委托
             </summary>
@@ -1543,95 +1673,95 @@
             <param name="Password">密码</param>
             <returns>登录结果</returns>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.FormLogin.CE_LoginEvent">
+        <member name="E:CML.ToolKit.ControlEx.CmlFormLogin.CE_LoginEvent">
             <summary>
             登录事件
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormLogin.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormLogin.#ctor">
             <summary>
             构造函数，请添加登录事件（LoginEvent）
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormLogin.CloseForm">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormLogin.CloseForm">
             <summary>
             动画关闭窗体
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.FormLogin.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlFormLogin.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormLogin.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormLogin.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormLogin.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormLogin.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:CML.ToolKit.ControlEx.FormValueInput">
+        <member name="T:CML.ToolKit.ControlEx.CmlFormValueInput">
             <summary>
             数值输入窗体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_Title">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_Title">
             <summary>
             获取或设置控件显示的标题文本
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_Description">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_Description">
             <summary>
             获取或设置控件显示的描述内容
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_Value">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_Value">
             <summary>
             获取用户输入的内容
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_InputType">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_InputType">
             <summary>
             获取或设置数据输入类型
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_Maximum">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_Maximum">
             <summary>
             获取或设置数值型数据最大值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_Minimum">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_Minimum">
             <summary>
             获取或设置数值型数据最小值
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.FormValueInput.CP_Unit">
+        <member name="P:CML.ToolKit.ControlEx.CmlFormValueInput.CP_Unit">
             <summary>
             获取或设置控件显示的单位
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormValueInput.#ctor">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormValueInput.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="F:CML.ToolKit.ControlEx.FormValueInput.components">
+        <member name="F:CML.ToolKit.ControlEx.CmlFormValueInput.components">
             <summary> 
             必需的设计器变量。
             </summary>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormValueInput.Dispose(System.Boolean)">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormValueInput.Dispose(System.Boolean)">
             <summary> 
             清理所有正在使用的资源。
             </summary>
             <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         </member>
-        <member name="M:CML.ToolKit.ControlEx.FormValueInput.InitializeComponent">
+        <member name="M:CML.ToolKit.ControlEx.CmlFormValueInput.InitializeComponent">
             <summary> 
             设计器支持所需的方法 - 不要修改
             使用代码编辑器修改此方法的内容。

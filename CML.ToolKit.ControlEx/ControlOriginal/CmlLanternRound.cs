@@ -11,8 +11,8 @@ namespace CML.ToolKit.ControlEx
     /// 圆形指示灯控件
     /// </summary>
     [ToolboxItem(true)]
-    [DefaultBindingProperty("LanternColor"), DefaultProperty("LanternColor")]
-    public partial class LanternRound : UserControl
+    [DefaultBindingProperty("CP_LanternColor"), DefaultProperty("CP_LanternColor")]
+    public partial class CmlLanternRound : UserControl
     {
         #region 私有变量
         private readonly StringFormat m_stringFormat = null;
@@ -117,7 +117,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public LanternRound()
+        public CmlLanternRound()
         {
             InitializeComponent();
 

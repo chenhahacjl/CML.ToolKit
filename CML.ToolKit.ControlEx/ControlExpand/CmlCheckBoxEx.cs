@@ -11,7 +11,7 @@ namespace CML.ToolKit.ControlEx
     [ToolboxItem(true)]
     [DefaultEvent("CheckedChanged")]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public class CheckBoxEx : CheckBox
+    public class CmlCheckBoxEx : CheckBox
     {
         #region 私有变量
         /// <summary>
@@ -226,7 +226,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public CheckBoxEx()
+        public CmlCheckBoxEx()
         {
             base.Text = string.Empty;
         }

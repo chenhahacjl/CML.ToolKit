@@ -11,7 +11,7 @@ namespace CML.ToolKit.ControlEx
     [ToolboxItem(true)]
     [DefaultEvent("SelectedIndexChanged")]
     [DefaultBindingProperty("TabPages"), DefaultProperty("TabPages")]
-    public class TabControlEx : TabControl
+    public class CmlTabControlEx : TabControl
     {
         #region 私有变量
         /// <summary>
@@ -132,7 +132,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public TabControlEx()
+        public CmlTabControlEx()
         {
             //固定大小
             DrawMode = TabDrawMode.OwnerDrawFixed;

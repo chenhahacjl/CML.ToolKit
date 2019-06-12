@@ -8,7 +8,7 @@ namespace CML.ToolKit.ControlEx
     /// 窗体移动工具
     /// </summary>
     [ToolboxItem(true)]
-    public partial class FormMoveTool : UserControl
+    public partial class CmlFormMoveTool : UserControl
     {
         #region 私有常量
         //透明样式
@@ -32,7 +32,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public FormMoveTool()
+        public CmlFormMoveTool()
         {
             InitializeComponent();
 
@@ -65,7 +65,7 @@ namespace CML.ToolKit.ControlEx
         #endregion
 
         #region 窗体移动事件
-        private void EvtFormMoveTool_MouseDown(object sender, MouseEventArgs e)
+        private void CmlFormMoveTool_MouseDown(object sender, MouseEventArgs e)
         {
             if (CP_Moveable)
             {
@@ -73,7 +73,7 @@ namespace CML.ToolKit.ControlEx
             }
         }
 
-        private void EvtFormMoveTool_MouseMove(object sender, MouseEventArgs e)
+        private void CmlFormMoveTool_MouseMove(object sender, MouseEventArgs e)
         {
             if (CP_Moveable && ParentForm != null && e.Button == MouseButtons.Left)
             {

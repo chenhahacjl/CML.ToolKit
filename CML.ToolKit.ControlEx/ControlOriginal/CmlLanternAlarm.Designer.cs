@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class ButtonEx
+    partial class CmlLanternAlarm
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // EvtButton
+            // CmlAlarmLantern
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Name = "EvtButton";
-            this.Size = new System.Drawing.Size(114, 46);
+            this.Name = "CmlAlarmLantern";
+            this.Size = new System.Drawing.Size(100, 130);
             this.ResumeLayout(false);
 
         }

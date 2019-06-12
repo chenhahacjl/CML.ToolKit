@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class FormValueInput
+    partial class CmlFormValueInput
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormValueInput));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CmlFormValueInput));
             this.lnlDescription = new System.Windows.Forms.Label();
-            this.btnCancel = new CML.ToolKit.ControlEx.ButtonEx();
-            this.btnEnter = new CML.ToolKit.ControlEx.ButtonEx();
-            this.utxtValue = new CML.ToolKit.ControlEx.TextBoxEx();
+            this.btnCancel = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.btnEnter = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.utxtValue = new CML.ToolKit.ControlEx.CmlTextBoxEx();
             this.SuspendLayout();
             // 
             // lnlDescription
@@ -129,9 +129,9 @@
 
         #endregion
 
-        private ButtonEx btnEnter;
-        private ButtonEx btnCancel;
+        private CmlButtonEx btnEnter;
+        private CmlButtonEx btnCancel;
         private System.Windows.Forms.Label lnlDescription;
-        private TextBoxEx utxtValue;
+        private CmlTextBoxEx utxtValue;
     }
 }

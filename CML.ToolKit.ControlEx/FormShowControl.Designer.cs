@@ -30,28 +30,37 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormShowControl));
-            this.textBoxEx1 = new CML.ToolKit.ControlEx.TextBoxEx();
-            this.tabControlEx1 = new CML.ToolKit.ControlEx.TabControlEx();
+            this.cmlLanternRound1 = new CML.ToolKit.ControlEx.CmlLanternRound();
+            this.textBoxEx1 = new CML.ToolKit.ControlEx.CmlTextBoxEx();
+            this.tabControlEx1 = new CML.ToolKit.ControlEx.CmlTabControlEx();
             this.第一页 = new System.Windows.Forms.TabPage();
             this.第二页 = new System.Windows.Forms.TabPage();
             this.第三页 = new System.Windows.Forms.TabPage();
-            this.buttonEx2 = new CML.ToolKit.ControlEx.ButtonEx();
-            this.buttonEx1 = new CML.ToolKit.ControlEx.ButtonEx();
-            this.shapeRound1 = new CML.ToolKit.ControlEx.ShapeRound();
-            this.shapeRectangle1 = new CML.ToolKit.ControlEx.ShapeRectangle();
-            this.shapeDiamond1 = new CML.ToolKit.ControlEx.ShapeDiamond();
-            this.lanternRound1 = new CML.ToolKit.ControlEx.LanternRound();
-            this.lanternAlarm1 = new CML.ToolKit.ControlEx.LanternAlarm();
-            this.formMoveTool1 = new CML.ToolKit.ControlEx.FormMoveTool();
-            this.dataGridViewEx1 = new CML.ToolKit.ControlEx.DataGridViewEx();
+            this.buttonEx2 = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.buttonEx1 = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.shapeRound1 = new CML.ToolKit.ControlEx.CmlShapeRound();
+            this.shapeRectangle1 = new CML.ToolKit.ControlEx.CmlShapeRectangle();
+            this.shapeDiamond1 = new CML.ToolKit.ControlEx.CmlShapeDiamond();
+            this.lanternAlarm1 = new CML.ToolKit.ControlEx.CmlLanternAlarm();
+            this.formMoveTool1 = new CML.ToolKit.ControlEx.CmlFormMoveTool();
+            this.dataGridViewEx1 = new CML.ToolKit.ControlEx.CmlDataGridViewEx();
             this.列1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.列2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.列3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBoxEx1 = new CML.ToolKit.ControlEx.CheckBoxEx();
-            this.chartCurve1 = new CML.ToolKit.ControlEx.ChartCurve();
+            this.checkBoxEx1 = new CML.ToolKit.ControlEx.CmlCheckBoxEx();
+            this.chartCurve1 = new CML.ToolKit.ControlEx.CmlChartCurve();
+            this.cmlButtonEx1 = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.cmlButtonEx2 = new CML.ToolKit.ControlEx.CmlButtonEx();
             this.tabControlEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // cmlLanternRound1
+            // 
+            this.cmlLanternRound1.Location = new System.Drawing.Point(177, 117);
+            this.cmlLanternRound1.Name = "cmlLanternRound1";
+            this.cmlLanternRound1.Size = new System.Drawing.Size(80, 80);
+            this.cmlLanternRound1.TabIndex = 12;
             // 
             // textBoxEx1
             // 
@@ -190,13 +199,6 @@
             this.shapeDiamond1.TabIndex = 7;
             this.shapeDiamond1.Text = "菱形";
             // 
-            // lanternRound1
-            // 
-            this.lanternRound1.Location = new System.Drawing.Point(177, 117);
-            this.lanternRound1.Name = "lanternRound1";
-            this.lanternRound1.Size = new System.Drawing.Size(80, 80);
-            this.lanternRound1.TabIndex = 6;
-            // 
             // lanternAlarm1
             // 
             this.lanternAlarm1.CP_IsFlash = true;
@@ -278,6 +280,7 @@
             // 
             this.chartCurve1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.chartCurve1.CP_DashCoordinateColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.chartCurve1.CP_IsAllowSelectSection = false;
             this.chartCurve1.CP_MarkTextColor = System.Drawing.Color.Yellow;
             this.chartCurve1.CP_ValueMaxLeft = 100F;
             this.chartCurve1.CP_ValueMaxRight = 100F;
@@ -289,11 +292,32 @@
             this.chartCurve1.TabIndex = 1;
             this.chartCurve1.Text = "曲线图";
             // 
+            // cmlButtonEx1
+            // 
+            this.cmlButtonEx1.CP_CustomerInformation = null;
+            this.cmlButtonEx1.CP_NewLineChar = '@';
+            this.cmlButtonEx1.Location = new System.Drawing.Point(52, 27);
+            this.cmlButtonEx1.Name = "cmlButtonEx1";
+            this.cmlButtonEx1.Size = new System.Drawing.Size(114, 46);
+            this.cmlButtonEx1.TabIndex = 0;
+            this.cmlButtonEx1.Text = "cmlButtonEx1";
+            // 
+            // cmlButtonEx2
+            // 
+            this.cmlButtonEx2.CP_CustomerInformation = null;
+            this.cmlButtonEx2.CP_NewLineChar = '@';
+            this.cmlButtonEx2.Location = new System.Drawing.Point(133, 58);
+            this.cmlButtonEx2.Name = "cmlButtonEx2";
+            this.cmlButtonEx2.Size = new System.Drawing.Size(114, 46);
+            this.cmlButtonEx2.TabIndex = 0;
+            this.cmlButtonEx2.Text = "cmlButtonEx2";
+            // 
             // FormShowControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 549);
+            this.Controls.Add(this.cmlLanternRound1);
             this.Controls.Add(this.textBoxEx1);
             this.Controls.Add(this.tabControlEx1);
             this.Controls.Add(this.buttonEx2);
@@ -301,7 +325,6 @@
             this.Controls.Add(this.shapeRound1);
             this.Controls.Add(this.shapeRectangle1);
             this.Controls.Add(this.shapeDiamond1);
-            this.Controls.Add(this.lanternRound1);
             this.Controls.Add(this.lanternAlarm1);
             this.Controls.Add(this.formMoveTool1);
             this.Controls.Add(this.dataGridViewEx1);
@@ -315,6 +338,7 @@
             this.Name = "FormShowControl";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "控件展示窗体";
+            this.Shown += new System.EventHandler(this.FormShowControl_Shown);
             this.tabControlEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx1)).EndInit();
             this.ResumeLayout(false);
@@ -323,24 +347,26 @@
 
         #endregion
 
-        private ButtonEx buttonEx1;
-        private ChartCurve chartCurve1;
-        private CheckBoxEx checkBoxEx1;
-        private DataGridViewEx dataGridViewEx1;
+        private CmlButtonEx buttonEx1;
+        private CmlChartCurve chartCurve1;
+        private CmlCheckBoxEx checkBoxEx1;
+        private CmlDataGridViewEx dataGridViewEx1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 列1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 列2;
         private System.Windows.Forms.DataGridViewTextBoxColumn 列3;
-        private FormMoveTool formMoveTool1;
-        private LanternAlarm lanternAlarm1;
-        private LanternRound lanternRound1;
-        private ShapeDiamond shapeDiamond1;
-        private ShapeRectangle shapeRectangle1;
-        private ShapeRound shapeRound1;
-        private TabControlEx tabControlEx1;
+        private CmlFormMoveTool formMoveTool1;
+        private CmlLanternAlarm lanternAlarm1;
+        private CmlShapeDiamond shapeDiamond1;
+        private CmlShapeRectangle shapeRectangle1;
+        private CmlShapeRound shapeRound1;
+        private CmlTabControlEx tabControlEx1;
         private System.Windows.Forms.TabPage 第一页;
         private System.Windows.Forms.TabPage 第二页;
         private System.Windows.Forms.TabPage 第三页;
-        private TextBoxEx textBoxEx1;
-        private ButtonEx buttonEx2;
+        private CmlTextBoxEx textBoxEx1;
+        private CmlButtonEx buttonEx2;
+        private CmlLanternRound cmlLanternRound1;
+        private CmlButtonEx cmlButtonEx1;
+        private CmlButtonEx cmlButtonEx2;
     }
 }

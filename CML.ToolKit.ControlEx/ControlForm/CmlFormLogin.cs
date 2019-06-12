@@ -8,7 +8,7 @@ namespace CML.ToolKit.ControlEx
     /// <summary>
     /// 美化登录窗体
     /// </summary>
-    public partial class FormLogin : Form
+    public partial class CmlFormLogin : Form
     {
         #region 私有变量
         private bool isFinishTimeEvent = false;
@@ -52,7 +52,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数，请添加登录事件（LoginEvent）
         /// </summary>
-        public FormLogin()
+        public CmlFormLogin()
         {
             InitializeComponent();
 

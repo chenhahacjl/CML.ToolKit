@@ -10,7 +10,7 @@ namespace CML.ToolKit.ControlEx
     /// </summary>
     [ToolboxItem(true)]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public class ShapeRectangle : ShapeBase
+    public class CmlShapeRectangle : ShapeBase
     {
         #region 私有变量
         private int m_nRoundCorner = 4;
@@ -38,7 +38,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public ShapeRectangle()
+        public CmlShapeRectangle()
         {
             //控件大小
             Width = 160;

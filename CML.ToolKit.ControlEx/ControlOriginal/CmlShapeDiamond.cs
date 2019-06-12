@@ -9,13 +9,13 @@ namespace CML.ToolKit.ControlEx
     /// </summary>
     [ToolboxItem(true)]
     [DefaultBindingProperty("Text"), DefaultProperty("Text")]
-    public class ShapeDiamond : ShapeBase
+    public class CmlShapeDiamond : ShapeBase
     {
         #region 构造函数
         /// <summary>
         /// 构造函数
         /// </summary>
-        public ShapeDiamond()
+        public CmlShapeDiamond()
         {
             //控件大小
             Width = 160;

@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblRange = new System.Windows.Forms.Label();
-            this.txtIndexMax = new CML.ToolKit.ControlEx.TextBoxEx();
-            this.txtIndexMin = new CML.ToolKit.ControlEx.TextBoxEx();
-            this.btnCancel = new CML.ToolKit.ControlEx.ButtonEx();
-            this.btnEnter = new CML.ToolKit.ControlEx.ButtonEx();
+            this.txtIndexMax = new CML.ToolKit.ControlEx.CmlTextBoxEx();
+            this.txtIndexMin = new CML.ToolKit.ControlEx.CmlTextBoxEx();
+            this.btnCancel = new CML.ToolKit.ControlEx.CmlButtonEx();
+            this.btnEnter = new CML.ToolKit.ControlEx.CmlButtonEx();
             this.SuspendLayout();
             // 
             // label1
@@ -184,7 +184,7 @@
             this.Name = "FormDgvRowCheckSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "数据行范围选择";
-            this.Shown += new System.EventHandler(this.EvtFormDgvRowCheckSelect_Shown);
+            this.Shown += new System.EventHandler(this.FormDgvRowCheckSelect_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,13 +192,13 @@
 
         #endregion
 
-        private ButtonEx btnCancel;
-        private ButtonEx btnEnter;
+        private CmlButtonEx btnCancel;
+        private CmlButtonEx btnEnter;
         private System.Windows.Forms.Label label1;
-        private TextBoxEx txtIndexMin;
+        private CmlTextBoxEx txtIndexMin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private TextBoxEx txtIndexMax;
+        private CmlTextBoxEx txtIndexMax;
         private System.Windows.Forms.Label lblRange;
     }
 }

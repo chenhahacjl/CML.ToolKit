@@ -52,7 +52,7 @@ namespace CML.ToolKit.ControlEx
         #endregion
 
         #region 窗体事件
-        private void EvtFormDgvRowCheckSelect_Shown(object sender, EventArgs e)
+        private void FormDgvRowCheckSelect_Shown(object sender, EventArgs e)
         {
             txtIndexMin.Focus();
         }

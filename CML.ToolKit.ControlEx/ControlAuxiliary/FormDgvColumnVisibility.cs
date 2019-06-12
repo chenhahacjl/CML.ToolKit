@@ -39,7 +39,7 @@ namespace CML.ToolKit.ControlEx
         #endregion
 
         #region 窗体事件
-        private void EvtFormDgvColumnVisibility_Shown(object sender, EventArgs e)
+        private void FormDgvColumnVisibility_Shown(object sender, EventArgs e)
         {
             if (m_DataGridView == null) return;
 
@@ -50,7 +50,7 @@ namespace CML.ToolKit.ControlEx
             }
         }
 
-        private void EvtFormDgvColumnVisibility_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormDgvColumnVisibility_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!m_DataGridView.RowHeadersVisible && m_DataGridView.DisplayedColumnCount(true) == 0)
             {

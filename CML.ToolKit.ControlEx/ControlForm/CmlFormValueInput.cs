@@ -6,7 +6,7 @@ namespace CML.ToolKit.ControlEx
     /// <summary>
     /// 数值输入窗体
     /// </summary>
-    public partial class FormValueInput : Form
+    public partial class CmlFormValueInput : Form
     {
         #region 公共属性
         /// <summary>
@@ -77,7 +77,7 @@ namespace CML.ToolKit.ControlEx
         /// <summary>
         /// 构造函数
         /// </summary>
-        public FormValueInput()
+        public CmlFormValueInput()
         {
             InitializeComponent();
 

@@ -1,6 +1,6 @@
 ﻿namespace CML.ToolKit.ControlEx
 {
-    partial class FormMoveTool
+    partial class CmlButtonEx
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,13 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // EvtFormMoveTool
+            // CMLButton
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Name = "EvtFormMoveTool";
-            this.Size = new System.Drawing.Size(200, 200);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EvtFormMoveTool_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EvtFormMoveTool_MouseMove);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Name = "CMLButton";
+            this.Size = new System.Drawing.Size(114, 46);
             this.ResumeLayout(false);
 
         }
