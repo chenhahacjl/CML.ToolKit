@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CML.ToolKit.Socket")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CML.ToolKit.SocketEx")]
+[assembly: AssemblyDescription("Socket通讯工具包")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CML.ToolKit.Socket")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("笑笑工作室")]
+[assembly: AssemblyProduct("CML.ToolKit")]
+[assembly: AssemblyCopyright("Copyright (C) 2019 Cmile_96, All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

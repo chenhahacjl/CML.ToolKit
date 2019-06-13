@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("CML.ToolKit.ThreadEx")]
-[assembly: AssemblyDescription("线程操作工具包")]
+[assembly: AssemblyTitle("CML.ToolKit.FriendEx")]
+[assembly: AssemblyDescription("娱乐包")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("笑笑工作室")]
 [assembly: AssemblyProduct("CML.ToolKit")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("bf088da8-7063-42b7-8541-b346c20b6a87")]
+[assembly: Guid("187114ef-fec2-4626-9b06-6362478ca1eb")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

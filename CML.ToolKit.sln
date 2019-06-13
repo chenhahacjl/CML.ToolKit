@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CML.ToolKit.ConfigurationEx
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CML.ToolKit.ThreadEx", "CML.ToolKit.ThreadEx\CML.ToolKit.ThreadEx.csproj", "{BF088DA8-7063-42B7-8541-B346C20B6A87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CML.ToolKit.FriendEx", "CML.ToolKit.FriendEx\CML.ToolKit.FriendEx.csproj", "{187114EF-FEC2-4626-9B06-6362478CA1EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BF088DA8-7063-42B7-8541-B346C20B6A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF088DA8-7063-42B7-8541-B346C20B6A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF088DA8-7063-42B7-8541-B346C20B6A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187114EF-FEC2-4626-9B06-6362478CA1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187114EF-FEC2-4626-9B06-6362478CA1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187114EF-FEC2-4626-9B06-6362478CA1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187114EF-FEC2-4626-9B06-6362478CA1EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

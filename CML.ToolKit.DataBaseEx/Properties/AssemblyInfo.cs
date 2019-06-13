@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("CML.ToolKit.DataBaseEx")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("数据库操作工具包")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CML.ToolKit.DataBaseEx")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("笑笑工作室")]
+[assembly: AssemblyProduct("CML.ToolKit")]
+[assembly: AssemblyCopyright("Copyright (C) 2019 Cmile_96, All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
