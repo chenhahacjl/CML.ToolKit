@@ -16,27 +16,28 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节名</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
-        /// <returns></returns>
+        /// <returns>读取结果</returns>
         public static string CF_ReadConfig(string iniPath, string section, string key, string defValue = "")
         {
-            if (File.Exists(iniPath))
-            {
-                IniFile iniFile = new IniFile(iniPath);
-                string strValue = iniFile.CF_ReadValue(section, key);
+            //读取结果
+            string result = defValue;
 
-                if (string.IsNullOrWhiteSpace(strValue))
-                {
-                    return defValue;
-                }
-                else
-                {
-                    return strValue;
-                }
-            }
-            else
+            //路径是否为空
+            if (!string.IsNullOrEmpty(iniPath))
             {
-                return defValue;
+                try
+                {
+                    string strValue = new IniFile(iniPath).CF_ReadValue(section, key);
+
+                    if (!string.IsNullOrWhiteSpace(strValue))
+                    {
+                        result = strValue;
+                    }
+                }
+                catch { }
             }
+
+            return result;
         }
 
         /// <summary>
@@ -47,31 +48,35 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节名</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
-        /// <returns></returns>
+        /// <returns>读取结果</returns>
         public static T CF_ReadConfig<T>(string iniPath, string section, string key, T defValue = default)
         {
-            if (File.Exists(iniPath))
-            {
-                IniFile iniFile = new IniFile(iniPath);
-                string value = iniFile.CF_ReadValue(section, key);
+            //读取结果
+            T result = defValue;
 
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    return defValue;
-                }
-                else if (typeof(T).IsEnum)
-                {
-                    return (T)Enum.Parse(typeof(T), value, true);
-                }
-                else
-                {
-                    return (T)Convert.ChangeType(value, typeof(T));
-                }
-            }
-            else
+            //路径是否为空
+            if (!string.IsNullOrEmpty(iniPath))
             {
-                return defValue;
+                try
+                {
+                    string value = new IniFile(iniPath).CF_ReadValue(section, key);
+
+                    if (!string.IsNullOrWhiteSpace(value))
+                    {
+                        if (typeof(T).IsEnum)
+                        {
+                            result = (T)Enum.Parse(typeof(T), value, true);
+                        }
+                        else
+                        {
+                            result = (T)Convert.ChangeType(value, typeof(T));
+                        }
+                    }
+                }
+                catch { }
             }
+
+            return result;
         }
 
         /// <summary>
@@ -81,16 +86,30 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节名</param>
         /// <param name="key">键名</param>
         /// <param name="strValue">键值</param>
-        public static void CF_WriteConfig(string iniPath, string section, string key, string strValue)
+        /// <returns>执行结果</returns>
+        public static bool CF_WriteConfig(string iniPath, string section, string key, string strValue)
         {
-            //创建文件夹
-            if (!new FileInfo(iniPath).Directory.Exists)
+            //执行结果
+            bool result = false;
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(iniPath))
             {
-                new FileInfo(iniPath).Directory.Create();
+                try
+                {
+                    //创建文件夹
+                    if (!new FileInfo(iniPath).Directory.Exists)
+                    {
+                        new FileInfo(iniPath).Directory.Create();
+                    }
+
+                    new IniFile(iniPath).CF_WriteValue(section, key, strValue);
+                    result = true;
+                }
+                catch { }
             }
 
-            IniFile iniFile = new IniFile(iniPath);
-            iniFile.CF_WriteValue(section, key, strValue);
+            return result;
         }
 
         /// <summary>
@@ -100,16 +119,30 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节名</param>
         /// <param name="key">键名</param>
         /// <param name="value">键值</param>
-        public static void CF_WriteConfig<T>(string iniPath, string section, string key, T value)
+        /// <returns>执行结果</returns>
+        public static bool CF_WriteConfig<T>(string iniPath, string section, string key, T value)
         {
-            //创建文件夹
-            if (!new FileInfo(iniPath).Directory.Exists)
+            //执行结果
+            bool result = false;
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(iniPath))
             {
-                new FileInfo(iniPath).Directory.Create();
+                try
+                {
+                    //创建文件夹
+                    if (!new FileInfo(iniPath).Directory.Exists)
+                    {
+                        new FileInfo(iniPath).Directory.Create();
+                    }
+
+                    new IniFile(iniPath).CF_WriteValue(section, key, Convert.ToString(value));
+                    result = true;
+                }
+                catch { }
             }
 
-            IniFile iniFile = new IniFile(iniPath);
-            iniFile.CF_WriteValue(section, key, Convert.ToString(value));
+            return result;
         }
         #endregion
 
@@ -140,26 +173,28 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节名</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
-        /// <returns></returns>
+        /// <returns>读取结果</returns>
         public string CF_ReadConfig(string section, string key, string defValue = "")
         {
-            if (File.Exists(m_iniFile.CP_FilePath))
-            {
-                string strValue = m_iniFile.CF_ReadValue(section, key);
+            //读取结果
+            string result = defValue;
 
-                if (string.IsNullOrWhiteSpace(strValue))
-                {
-                    return defValue;
-                }
-                else
-                {
-                    return strValue;
-                }
-            }
-            else
+            //路径是否为空
+            if (!string.IsNullOrEmpty(m_iniFile.CP_FilePath))
             {
-                return defValue;
+                try
+                {
+                    string strValue = m_iniFile.CF_ReadValue(section, key);
+
+                    if (!string.IsNullOrWhiteSpace(strValue))
+                    {
+                        result = strValue;
+                    }
+                }
+                catch { }
             }
+
+            return result;
         }
 
         /// <summary>
@@ -169,30 +204,35 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
-        /// <returns></returns>
+        /// <returns>读取结果</returns>
         public T CF_ReadConfig<T>(string section, string key, T defValue = default)
         {
-            if (File.Exists(m_iniFile.CP_FilePath))
-            {
-                string value = m_iniFile.CF_ReadValue(section, key);
+            //读取结果
+            T result = defValue;
 
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    return defValue;
-                }
-                else if (typeof(T).IsEnum)
-                {
-                    return (T)Enum.Parse(typeof(T), value, true);
-                }
-                else
-                {
-                    return (T)Convert.ChangeType(value, typeof(T));
-                }
-            }
-            else
+            //路径是否为空
+            if (!string.IsNullOrEmpty(m_iniFile.CP_FilePath))
             {
-                return defValue;
+                try
+                {
+                    string value = m_iniFile.CF_ReadValue(section, key);
+
+                    if (!string.IsNullOrWhiteSpace(value))
+                    {
+                        if (typeof(T).IsEnum)
+                        {
+                            result = (T)Enum.Parse(typeof(T), value, true);
+                        }
+                        else
+                        {
+                            result = (T)Convert.ChangeType(value, typeof(T));
+                        }
+                    }
+                }
+                catch { }
             }
+
+            return result;
         }
 
         /// <summary>
@@ -201,15 +241,30 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="strValue">键值</param>
-        public void CF_WriteConfig(string section, string key, string strValue)
+        /// <returns>执行结果</returns>
+        public bool CF_WriteConfig(string section, string key, string strValue)
         {
-            //创建文件夹
-            if (!new FileInfo(m_iniFile.CP_FilePath).Directory.Exists)
+            //执行结果
+            bool result = false;
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(m_iniFile.CP_FilePath))
             {
-                new FileInfo(m_iniFile.CP_FilePath).Directory.Create();
+                try
+                {
+                    //创建文件夹
+                    if (!new FileInfo(m_iniFile.CP_FilePath).Directory.Exists)
+                    {
+                        new FileInfo(m_iniFile.CP_FilePath).Directory.Create();
+                    }
+
+                    m_iniFile.CF_WriteValue(section, key, strValue);
+                    result = true;
+                }
+                catch { }
             }
 
-            m_iniFile.CF_WriteValue(section, key, strValue);
+            return result;
         }
 
         /// <summary>
@@ -218,15 +273,30 @@ namespace CML.ToolKit.ConfigurationEx
         /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="value">键值</param>
-        public void CF_WriteConfig<T>(string section, string key, T value)
+        /// <returns>执行结果</returns>
+        public bool CF_WriteConfig<T>(string section, string key, T value)
         {
-            //创建文件夹
-            if (!new FileInfo(m_iniFile.CP_FilePath).Directory.Exists)
+            //执行结果
+            bool result = false;
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(m_iniFile.CP_FilePath))
             {
-                new FileInfo(m_iniFile.CP_FilePath).Directory.Create();
+                try
+                {
+                    //创建文件夹
+                    if (!new FileInfo(m_iniFile.CP_FilePath).Directory.Exists)
+                    {
+                        new FileInfo(m_iniFile.CP_FilePath).Directory.Create();
+                    }
+
+                    m_iniFile.CF_WriteValue(section, key, Convert.ToString(value));
+                    result = true;
+                }
+                catch { }
             }
 
-            m_iniFile.CF_WriteValue(section, key, Convert.ToString(value));
+            return result;
         }
         #endregion
 

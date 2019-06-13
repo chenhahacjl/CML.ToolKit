@@ -57,6 +57,7 @@ namespace CML.ToolKit.ToolTest
         private void IniFileOperateTest()
         {
             string iniPath = Path.Combine(Environment.CurrentDirectory, "TestConfig.ini");
+
             PrintLogLn(MsgType.Info, $"INI文件路径: {iniPath}");
 
             PrintLogLn(MsgType.Warn, "静态方法测试！");
@@ -172,6 +173,8 @@ namespace CML.ToolKit.ToolTest
             {
                 PrintLogLn(MsgType.Error, $"写入值与读取值比对失败！");
             }
+
+            File.Delete(iniPath);
         }
 
         /// <summary>

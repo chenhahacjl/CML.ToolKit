@@ -150,7 +150,7 @@
             <param name="section">节名</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
-            <returns></returns>
+            <returns>读取结果</returns>
         </member>
         <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_ReadConfig``1(System.String,System.String,System.String,``0)">
             <summary>
@@ -161,7 +161,7 @@
             <param name="section">节名</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
-            <returns></returns>
+            <returns>读取结果</returns>
         </member>
         <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig(System.String,System.String,System.String,System.String)">
             <summary>
@@ -171,6 +171,7 @@
             <param name="section">节名</param>
             <param name="key">键名</param>
             <param name="strValue">键值</param>
+            <returns>执行结果</returns>
         </member>
         <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig``1(System.String,System.String,System.String,``0)">
             <summary>
@@ -180,6 +181,7 @@
             <param name="section">节名</param>
             <param name="key">键名</param>
             <param name="value">键值</param>
+            <returns>执行结果</returns>
         </member>
         <member name="F:CML.ToolKit.ConfigurationEx.IniOperate.m_iniFile">
             <summary>
@@ -199,7 +201,7 @@
             <param name="section">节名</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
-            <returns></returns>
+            <returns>读取结果</returns>
         </member>
         <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_ReadConfig``1(System.String,System.String,``0)">
             <summary>
@@ -209,7 +211,7 @@
             <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
-            <returns></returns>
+            <returns>读取结果</returns>
         </member>
         <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig(System.String,System.String,System.String)">
             <summary>
@@ -218,6 +220,7 @@
             <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="strValue">键值</param>
+            <returns>执行结果</returns>
         </member>
         <member name="M:CML.ToolKit.ConfigurationEx.IniOperate.CF_WriteConfig``1(System.String,System.String,``0)">
             <summary>
@@ -226,6 +229,7 @@
             <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="value">键值</param>
+            <returns>执行结果</returns>
         </member>
         <member name="T:CML.ToolKit.ConfigurationEx.RegOperate">
             <summary>

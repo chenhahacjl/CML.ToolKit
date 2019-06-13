@@ -20,7 +20,7 @@ namespace CML.ToolKit.ControlEx
         /// </summary>
         [Browsable(true), DefaultValue(false)]
         [Category("CMLAttribute"), Description("获取或设置配置文件路径")]
-        public string CP_ConfigPath { get; set; }
+        public string CP_ConfigPath { get; set; } = "";
         #endregion
 
         #region 构造函数
@@ -60,18 +60,51 @@ namespace CML.ToolKit.ControlEx
         }
 
         /// <summary>
+        /// 表格数据行添加事件
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnRowsAdded(DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < Rows.Count; i++)
+            {
+                Rows[i].HeaderCell.Value = (i + 1).ToString();
+            }
+        }
+
+        /// <summary>
         /// 单元格鼠标单击事件
         /// </summary>
         /// <param name="e">事件数据</param>
         protected override void OnCellMouseClick(DataGridViewCellMouseEventArgs e)
         {
-            //标题右键
-            if (e.RowIndex == -1 && e.Button == MouseButtons.Right)
+            //右键事件
+            if (e.Button == MouseButtons.Right)
             {
-                //菜单
-                ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
-                contextMenuStrip.Items.Add("设置表格显示列", null, (X, Y) => new FormDgvColumnVisibility(CP_ConfigPath, this).ShowDialog());
-                contextMenuStrip.Show(this, PointToClient(Cursor.Position));
+                //标题行
+                if (e.RowIndex == -1)
+                {
+                    ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+                    contextMenuStrip.Items.Add("设置表格显示列", null, (X, Y) => new FormDgvColumnVisibility(CP_ConfigPath, this).ShowDialog());
+                    contextMenuStrip.Show(this, PointToClient(Cursor.Position));
+                }
+                else
+                {
+                    //将单元格内容设置到剪贴板
+                    try
+                    {
+                        Clipboard.SetDataObject(Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                    }
+                    catch { }
+                }
+            }
+            else if (e.RowIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
+            {
+                if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+                    Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
+
+                Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !(bool)Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                EndEdit();
             }
 
             base.OnCellMouseClick(e);
@@ -83,30 +116,25 @@ namespace CML.ToolKit.ControlEx
         /// <param name="e">事件数据</param>
         protected override void OnCellMouseDoubleClick(DataGridViewCellMouseEventArgs e)
         {
-            //判断第一列是否为CheckBoxCell
-            if (e.RowIndex != -1 || e.ColumnIndex != 0 ||
-                RowCount == 0 || ColumnCount == 0 ||
-                Columns[0].CellType != typeof(DataGridViewCheckBoxCell))
+            //判断行数与列数不为空、是否为标题行的第一列、第一列类型是否为CheckBoxCell
+            if ((RowCount != 0 && ColumnCount != 0) && (e.RowIndex == -1 && e.ColumnIndex == 0) && (Columns[0].CellType == typeof(DataGridViewCheckBoxCell)))
             {
-                return;
+                FormDgvRowCheckSelect checkSelect = new FormDgvRowCheckSelect()
+                {
+                    RowCount = RowCount
+                };
+                if (checkSelect.ShowDialog() == DialogResult.OK)
+                {
+                    for (int i = 0; i < Rows.Count; i++)
+                    {
+                        Rows[i].Cells[0].Value = i >= checkSelect.RowIndexMin && i <= checkSelect.RowIndexMax;
+                    }
+                }
+
+                EndEdit();
             }
 
-            //Check选择
-            FormDgvRowCheckSelect checkSelect = new FormDgvRowCheckSelect()
-            {
-                RowCount = RowCount
-            };
-            if (checkSelect.ShowDialog() != DialogResult.OK)
-            {
-                return;
-            }
-
-            for (int i = 0; i < Rows.Count; i++)
-            {
-                Rows[i].Cells[0].Value = i >= checkSelect.RowIndexMin && i <= checkSelect.RowIndexMax;
-            }
-
-            EndEdit();
+            base.OnCellMouseDoubleClick(e);
         }
         #endregion
     }
