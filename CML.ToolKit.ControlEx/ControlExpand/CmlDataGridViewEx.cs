@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CML.ToolKit.ControlEx
@@ -87,14 +89,23 @@ namespace CML.ToolKit.ControlEx
                     contextMenuStrip.Items.Add("设置表格显示列", null, (X, Y) => new FormDgvColumnVisibility(CP_ConfigPath, this).ShowDialog());
                     contextMenuStrip.Show(this, PointToClient(Cursor.Position));
                 }
-                else
+                else if (e.ColumnIndex != -1)
                 {
-                    //将单元格内容设置到剪贴板
-                    try
+                    object obj = Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                    if (obj != null)
                     {
-                        Clipboard.SetDataObject(Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                        //将单元格内容设置到剪贴板
+                        Thread thread = new Thread(() =>
+                        {
+                            Clipboard.SetText(Convert.ToString(obj));
+                        })
+                        { IsBackground = true };
+
+                        //将当前线程设置为单个线程单元(STA)模式方可进行OLE调用。
+                        _ = thread.TrySetApartmentState(ApartmentState.STA);
+                        thread.Start();
                     }
-                    catch { }
                 }
             }
             else if (e.RowIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))

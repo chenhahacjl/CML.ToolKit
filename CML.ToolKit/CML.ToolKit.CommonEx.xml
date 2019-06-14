@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.ToolKit.CommonEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.ToolKit.CommonEx.EnumOperate">
+            <summary>
+            枚举操作类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.CommonEx.EnumOperate.GetDescription(System.Enum)">
+            <summary>
+            获取枚举的描述
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+    </members>
+</doc>

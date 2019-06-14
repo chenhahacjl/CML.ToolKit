@@ -20,13 +20,11 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 * Framework: .Net Framework 4.0
 
 ## 当前进度
-- [ ] CML.ToolKit.SocketEx
-    - [x] SocketClient
-    - [x] SocketServer
-- [ ] CML.ToolKit.DataBaseEx
-    - [x] MySQL
-    - [x] Oracle
-    - [x] SqlServer
+- [ ] CML.ToolKit.CommonEx
+    - [x] EnumOperate
+- [ ] CML.ToolKit.ConfigurationEx
+    - [x] IniOperate
+    - [x] RegOperate
 - [ ] CML.ToolKit.ControlEx
     - [ ] Expand
         - [x] CmlButtonEx
@@ -45,17 +43,21 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
     - [ ] Form
         - [x] CmlFormLogin
         - [x] CmlFormValueInput
-- [ ] CML.ToolKit.ConfigurationEx
-    - [x] IniOperate
-    - [x] RegOperate
+- [ ] CML.ToolKit.DataBaseEx
+    - [x] MySQL
+    - [x] Oracle
+    - [x] SqlServer
 - [ ] CML.ToolKit.EncodeEx
     - [x] DESEncrypt
     - [x] MD5Encrypt
+- [ ] CML.ToolKit.FriendEx
+- [ ] CML.ToolKit.SocketEx
+    - [x] SocketClient
+    - [x] SocketServer
 - [ ] CML.ToolKit.ThreadEx
     - [x] InvokeOperate
 
 ## GitHub
-
 Click Here: [https://github.com/chenhahacjl/CML.ToolKit](https://github.com/chenhahacjl/CML.ToolKit "CML.ToolKit GitHub Website")
 
 ## 版权申明
