@@ -17,20 +17,20 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\CML.ToolKit\</OutputPath>
+    <OutputPath>..\CML.ToolKit\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\CML.ToolKit\CML.ToolKit.ThreadEx.xml</DocumentationFile>
+    <DocumentationFile>..\CML.ToolKit\Debug\CML.ToolKit.ThreadEx.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\CML.ToolKit\</OutputPath>
+    <OutputPath>..\CML.ToolKit\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\CML.ToolKit\CML.ToolKit.ThreadEx.xml</DocumentationFile>
+    <DocumentationFile>..\CML.ToolKit\Release\CML.ToolKit.ThreadEx.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

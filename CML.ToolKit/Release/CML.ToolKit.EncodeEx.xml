@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.ToolKit.EncodeEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.ToolKit.EncodeEx.DESEncrypt">
+            <summary>
+            DESEncrypt加密解密操作类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.DESEncrypt.CF_Encrypt(System.String,System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="inputValue">待加密字符串</param>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+            <returns>已加密字符串（错误时返回 ERROR:{ERROR MESSAGE}）</returns>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.DESEncrypt.CF_Decrypt(System.String,System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="inputValue">待解密字符串</param>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+            <returns>已解密字符串（错误时为空）</returns>
+        </member>
+        <member name="T:CML.ToolKit.EncodeEx.MD5Encrypt">
+            <summary>
+            MD5加密操作类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.MD5Encrypt.MD5Encrypt16(System.String,System.Boolean)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="input">待加密字符串</param>
+            <param name="isUpper">大写输出</param>
+            <returns>16位MD5值</returns>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.MD5Encrypt.MD5Encrypt32(System.String,System.Boolean)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="input">待加密字符串</param>
+            <param name="isUpper">大写输出</param>
+            <returns>32位MD5值</returns>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.MD5Encrypt.MD5EncryptFile(System.String,System.Boolean)">
+            <summary>
+            文件MD5加密
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="isUpper">大写输出</param>
+            <returns>文件MD5值</returns>
+        </member>
+    </members>
+</doc>

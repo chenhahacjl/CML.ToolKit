@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace CML.ToolKit.SocketEx
+﻿namespace CML.ToolKit.SocketEx
 {
+    /// <summary>
+    /// 客户端消息
+    /// </summary>
     public struct ModClientMessage
     {
         #region 公共属性
@@ -21,7 +19,7 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 空消息标记
         /// </summary>
-        public bool IsEmptyMsg { get => Message == ISDefault.DefMessage; }
+        public bool IsEmptyMsg => Message == ISDefault.DefMessage;
         #endregion
 
         #region 构造函数

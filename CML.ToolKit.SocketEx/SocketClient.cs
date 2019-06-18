@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -9,6 +7,9 @@ using System.Threading;
 
 namespace CML.ToolKit.SocketEx
 {
+    /// <summary>
+    /// Socket客户端
+    /// </summary>
     public class SocketClient
     {
         #region 私有变量
@@ -326,7 +327,10 @@ namespace CML.ToolKit.SocketEx
                     for (int i = 0; i < m_connectSecs; i++)
                     {
                         //是否接收到停止标志
-                        if (m_isThreadStop) break;
+                        if (m_isThreadStop)
+                        {
+                            break;
+                        }
 
                         //每次等待1秒
                         CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, $"等待{m_connectSecs - i}秒重新连接"));

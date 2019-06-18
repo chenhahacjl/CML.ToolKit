@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.ToolKit.ThreadEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.ToolKit.ControlEx.InvokeOperate">
+            <summary>
+            委托帮助类
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.InvokeOperate.InvokeUI(System.Windows.Forms.Control,System.Action,System.Boolean)">
+            <summary>
+            多线程更新UI
+            </summary>
+            <param name="control">委托控件</param>
+            <param name="action">委托操作</param>
+            <param name="isThrowException">是否抛出异常</param>
+        </member>
+    </members>
+</doc>

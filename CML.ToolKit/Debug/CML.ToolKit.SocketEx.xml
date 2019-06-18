@@ -137,6 +137,11 @@
             <param name="timeOut">超时时间</param>
             <returns>是否超时</returns>
         </member>
+        <member name="T:CML.ToolKit.SocketEx.ModClientMessage">
+            <summary>
+            客户端消息
+            </summary>
+        </member>
         <member name="P:CML.ToolKit.SocketEx.ModClientMessage.MsgType">
             <summary>
             消息类型
@@ -224,6 +229,11 @@
             </summary>
             <param name="isSuccess">结果状态</param>
             <param name="result">结果内容</param>
+        </member>
+        <member name="T:CML.ToolKit.SocketEx.SocketClient">
+            <summary>
+            Socket客户端
+            </summary>
         </member>
         <member name="F:CML.ToolKit.SocketEx.SocketClient.m_ipEndPoint">
             <summary>
