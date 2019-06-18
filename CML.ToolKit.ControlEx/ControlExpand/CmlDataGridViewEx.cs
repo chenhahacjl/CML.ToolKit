@@ -108,7 +108,7 @@ namespace CML.ToolKit.ControlEx
                     }
                 }
             }
-            else if (e.RowIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
+            else if (e.RowIndex != -1 && e.ColumnIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
             {
                 if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
                     Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
