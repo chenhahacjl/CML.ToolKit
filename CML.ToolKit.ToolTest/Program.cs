@@ -23,6 +23,13 @@ namespace CML.ToolKit.ToolTest
             {
                 Console.WriteLine("测试类为空，请先编写测试类！");
             }
+            else if (args.Length == 1 && int.TryParse(args[0], out int index) && index >= 1 && index <= testClassTypes.Count)
+            {
+                ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[index - 1], true);
+                toolKitTest.GetVersionInfo();
+                toolKitTest.ExecuteTest();
+                Console.WriteLine($"[{toolKitTest.TestClassName}]测试结束！\n");
+            }
             else
             {
                 for (int i = 0; i < testClassTypes.Count; i++)
@@ -33,15 +40,6 @@ namespace CML.ToolKit.ToolTest
                 Console.WriteLine("[C]清空界面");
                 Console.WriteLine("[M]显示菜单");
                 Console.WriteLine("[Q]退出测试\n");
-
-                if (args.Length == 1 && int.TryParse(args[0], out int index) && index >= 1 && index <= testClassTypes.Count)
-                {
-                    Console.WriteLine($"请选择: {index}");
-
-                    ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[index - 1], true);
-                    toolKitTest.ExecuteTest();
-                    Console.WriteLine($"[{toolKitTest.TestClassName}]测试结束！\n");
-                }
 
                 while (true)
                 {
@@ -79,6 +77,7 @@ namespace CML.ToolKit.ToolTest
                     else
                     {
                         ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[index - 1], true);
+                        toolKitTest.GetVersionInfo();
                         toolKitTest.ExecuteTest();
                         Console.WriteLine($"[{toolKitTest.TestClassName}]测试结束！\n");
                     }

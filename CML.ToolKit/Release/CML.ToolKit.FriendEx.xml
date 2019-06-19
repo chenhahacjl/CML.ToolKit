@@ -4,5 +4,38 @@
         <name>CML.ToolKit.FriendEx</name>
     </assembly>
     <members>
+        <member name="T:CML.ToolKit.FriendEx.VersionInfo">
+            <summary>
+            娱乐包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.FriendEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.FriendEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.FriendEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.FriendEx.VersionInfo.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.FriendEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
     </members>
 </doc>

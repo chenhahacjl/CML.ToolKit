@@ -381,5 +381,38 @@
             <param name="iCmd">Command对象</param>
             <returns>DataReader对象</returns>
         </member>
+        <member name="T:CML.ToolKit.DataBaseEx.VersionInfo">
+            <summary>
+            数据库操作工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.DataBaseEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.VersionInfo.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.DataBaseEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
     </members>
 </doc>

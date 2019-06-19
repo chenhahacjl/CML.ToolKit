@@ -52,13 +52,15 @@ namespace CML.ToolKit.ControlEx
 
         #region 重写属性
         /// <summary>
-        /// 获取或设置与此控件关联的文本(隐藏属性)
+        /// 获取或设置与此关联的文本
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        [Browsable(false), DefaultValue(false)]
-        [Category("Appearance"), Description("获取或设置与此控件关联的文本")]
-        public new string Text => base.Text;
+        [Browsable(true), DefaultValue(false)]
+        [Category("CMLAttribute"), Description("获取或设置与此关联的文本")]
+        public new string Text
+        {
+            get => txtlimit.Text;
+            set => txtlimit.Text = value;
+        }
 
         /// <summary>
         /// 设置或获取控件的背景色
@@ -108,17 +110,6 @@ namespace CML.ToolKit.ControlEx
         #endregion
 
         #region 公共属性
-        /// <summary>
-        /// 获取或设置与此关联的文本
-        /// </summary>
-        [Browsable(true), DefaultValue(false)]
-        [Category("CMLAttribute"), Description("获取或设置与此关联的文本")]
-        public string CP_Text
-        {
-            get => txtlimit.Text;
-            set => txtlimit.Text = value;
-        }
-
         /// <summary>
         /// 获取或设置文本框获得焦点状态
         /// </summary>
@@ -463,9 +454,9 @@ namespace CML.ToolKit.ControlEx
             InitializeComponent();
 
             //初始化属性
+            Text = string.Empty;
             BackColor = Color.White;
             ForeColor = Color.Black;
-            CP_Text = string.Empty;
             CP_Unit = string.Empty;
             CP_CanTextFocus = true;
 

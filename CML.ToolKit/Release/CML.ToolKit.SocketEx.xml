@@ -611,5 +611,38 @@
             默认GUID
             </summary>
         </member>
+        <member name="T:CML.ToolKit.SocketEx.VersionInfo">
+            <summary>
+            Socket通讯工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.VersionInfo.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
     </members>
 </doc>

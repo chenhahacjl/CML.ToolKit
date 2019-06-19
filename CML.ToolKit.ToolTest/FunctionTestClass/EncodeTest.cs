@@ -15,6 +15,15 @@ namespace CML.ToolKit.ToolTest
         public override string TestClassName => "EncodeTest";
 
         /// <summary>
+        /// 版本信息
+        /// </summary>
+        public override void GetVersionInfo()
+        {
+            PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
+            PrintMsgLn(MsgType.Info, new VersionInfo().GetVersionInfo());
+        }
+
+        /// <summary>
         /// 执行测试
         /// </summary>
         public override void ExecuteTest()

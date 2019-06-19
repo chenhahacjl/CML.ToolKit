@@ -133,7 +133,7 @@ namespace CML.ToolKit.ControlEx
         #region 按钮事件
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUserName.CP_Text))
+            if (string.IsNullOrEmpty(txtUserName.Text))
             {
                 MessageBox.Show("请输入用户名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -141,7 +141,7 @@ namespace CML.ToolKit.ControlEx
                 return;
             }
 
-            if (string.IsNullOrEmpty(txtPassword.CP_Text))
+            if (string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("请输入登录密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -165,11 +165,11 @@ namespace CML.ToolKit.ControlEx
                     Thread.Sleep(100);
                 }
 
-                ELoginResult result = CE_LoginEvent.Invoke(txtUserName.CP_Text, txtPassword.CP_Text);
+                ELoginResult result = CE_LoginEvent.Invoke(txtUserName.Text, txtPassword.Text);
                 if (result == ELoginResult.Success)
                 {
                     m_drDialogResult = DialogResult.OK;
-                    CP_UserInfo = new ModLoginInfo(txtUserName.CP_Text, txtPassword.CP_Text);
+                    CP_UserInfo = new ModLoginInfo(txtUserName.Text, txtPassword.Text);
 
                     InvokeOperate.InvokeUI(this, new Action(() =>
                     {
@@ -264,7 +264,7 @@ namespace CML.ToolKit.ControlEx
         #region 文本框回车响应
         private void TxtUserName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtUserName.CP_Text))
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtUserName.Text))
             {
                 txtPassword.Focus();
             }
@@ -272,7 +272,7 @@ namespace CML.ToolKit.ControlEx
 
         private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtPassword.CP_Text))
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtPassword.Text))
             {
                 BtnLogin_Click(null, null);
             }

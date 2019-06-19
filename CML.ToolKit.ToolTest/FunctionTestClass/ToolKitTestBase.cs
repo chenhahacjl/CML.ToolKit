@@ -7,6 +7,7 @@ namespace CML.ToolKit.ToolTest
     /// 测试类基类
     /// 【请重载 TestClassName 属性】
     /// 【请重载 ExecuteTest() 方法】
+    /// 【请重载 VersionInfo() 方法】
     /// </summary>
     internal class ToolKitTestBase
     {
@@ -16,11 +17,19 @@ namespace CML.ToolKit.ToolTest
         public virtual string TestClassName => $"请重载 ToolKitTestBase 类 TestClassName 属性";
 
         /// <summary>
+        /// 版本信息【请重载此方法】
+        /// </summary>
+        public virtual void GetVersionInfo()
+        {
+            PrintLogLn(MsgType.Error, $"请重载 ToolKitTestBase 类 VersionInfo() 方法");
+        }
+
+        /// <summary>
         /// 执行测试【请重载此方法】
         /// </summary>
         public virtual void ExecuteTest()
         {
-            PrintLogLn(MsgType.Warn, $"请重载 ToolKitTestBase 类 ExecuteTest() 方法");
+            PrintLogLn(MsgType.Error, $"请重载 ToolKitTestBase 类 ExecuteTest() 方法");
         }
 
         /// <summary>

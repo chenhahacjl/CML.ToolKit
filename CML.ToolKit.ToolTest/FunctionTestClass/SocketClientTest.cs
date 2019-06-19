@@ -6,12 +6,21 @@ namespace CML.ToolKit.ToolTest
     /// <summary>
     /// Socket客户端测试类
     /// </summary>
-    class SocketClientTest : ToolKitTestBase
+    internal class SocketClientTest : ToolKitTestBase
     {
         /// <summary>
         /// 测试类名
         /// </summary>
         public override string TestClassName => "SocketClient";
+
+        /// <summary>
+        /// 版本信息
+        /// </summary>
+        public override void GetVersionInfo()
+        {
+            PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
+            PrintMsgLn(MsgType.Info, new VersionInfo().GetVersionInfo());
+        }
 
         /// <summary>
         /// 执行测试

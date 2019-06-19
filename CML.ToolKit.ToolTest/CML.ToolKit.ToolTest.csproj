@@ -66,10 +66,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FunctionTestClass\CommonTest.cs" />
     <Compile Include="FunctionTestClass\ConfigurationTest.cs" />
     <Compile Include="FunctionTestClass\ControlTest.cs" />
     <Compile Include="FunctionTestClass\DataBaseTest.cs" />
     <Compile Include="FunctionTestClass\EncodeTest.cs" />
+    <Compile Include="FunctionTestClass\ThreadTest.cs" />
+    <Compile Include="FunctionTestClass\FriendTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FunctionTestClass\SocketClientTest.cs" />
@@ -77,6 +80,10 @@
     <Compile Include="FunctionTestClass\ToolKitTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CML.ToolKit.CommonEx\CML.ToolKit.CommonEx.csproj">
+      <Project>{4d0cd8b9-f469-47ee-8465-bdfc2af48e9b}</Project>
+      <Name>CML.ToolKit.CommonEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CML.ToolKit.ConfigurationEx\CML.ToolKit.ConfigurationEx.csproj">
       <Project>{e385a76c-003a-47e4-9e92-4ff0acad71f2}</Project>
       <Name>CML.ToolKit.ConfigurationEx</Name>
@@ -93,9 +100,17 @@
       <Project>{f1321a4a-73b9-4ba1-8ee6-2b296e2e5ba1}</Project>
       <Name>CML.ToolKit.EncodeEx</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CML.ToolKit.FriendEx\CML.ToolKit.FriendEx.csproj">
+      <Project>{187114ef-fec2-4626-9b06-6362478ca1eb}</Project>
+      <Name>CML.ToolKit.FriendEx</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CML.ToolKit.SocketEx\CML.ToolKit.SocketEx.csproj">
       <Project>{df5363ed-9271-424a-a813-e0e85dd635c8}</Project>
       <Name>CML.ToolKit.SocketEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CML.ToolKit.ThreadEx\CML.ToolKit.ThreadEx.csproj">
+      <Project>{bf088da8-7063-42b7-8541-b346c20b6a87}</Project>
+      <Name>CML.ToolKit.ThreadEx</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

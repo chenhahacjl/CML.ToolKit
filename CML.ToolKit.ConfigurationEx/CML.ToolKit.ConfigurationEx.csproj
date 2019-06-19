@@ -48,6 +48,10 @@
     <Compile Include="IniOperate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegOperate.cs" />
+    <Compile Include="Version\VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Version\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

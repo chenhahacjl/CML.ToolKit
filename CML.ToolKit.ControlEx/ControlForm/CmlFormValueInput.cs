@@ -32,8 +32,8 @@ namespace CML.ToolKit.ControlEx
         /// </summary>
         public double CP_Value
         {
-            get => double.TryParse(utxtValue.CP_Text, out double dNum) ? dNum : 0;
-            set => utxtValue.CP_Text = value.ToString();
+            get => double.TryParse(utxtValue.Text, out double dNum) ? dNum : 0;
+            set => utxtValue.Text = value.ToString();
         }
 
         /// <summary>

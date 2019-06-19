@@ -56,5 +56,38 @@
             <param name="isUpper">大写输出</param>
             <returns>文件MD5值</returns>
         </member>
+        <member name="T:CML.ToolKit.EncodeEx.VersionInfo">
+            <summary>
+            数据编码工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.EncodeEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.EncodeEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.EncodeEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.VersionInfo.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.EncodeEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
     </members>
 </doc>

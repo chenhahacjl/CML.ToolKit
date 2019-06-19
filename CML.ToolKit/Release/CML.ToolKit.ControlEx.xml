@@ -1388,24 +1388,29 @@
             单位显示文本框
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.KeyUp">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_KeyUp">
             <summary>
             在文本框按键释放时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.KeyDown">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_KeyDown">
             <summary>
             在文本框按键按下时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.TextChanged">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_TextChanged">
             <summary>
             在内容改变时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.UnitClick">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_UnitClick">
             <summary>
             在单位单击时发生
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Text">
+            <summary>
+            获取或设置与此关联的文本
             </summary>
         </member>
         <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.BackColor">
@@ -1421,11 +1426,6 @@
         <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Font">
             <summary>
             设置或获取控件显示的文字的字体
-            </summary>
-        </member>
-        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Text">
-            <summary>
-            获取或设置与此关联的文本
             </summary>
         </member>
         <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_CanTextFocus">
@@ -2341,6 +2341,39 @@
               重写当前线程的 CurrentUICulture 属性
               重写当前线程的 CurrentUICulture 属性。
             </summary>
+        </member>
+        <member name="T:CML.ToolKit.ControlEx.VersionInfo">
+            <summary>
+            WinForm控件包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.VersionInfo.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.ControlEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
         </member>
     </members>
 </doc>

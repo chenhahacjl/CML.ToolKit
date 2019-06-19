@@ -14,6 +14,15 @@ namespace CML.ToolKit.ToolTest
         public override string TestClassName => "SocketServer";
 
         /// <summary>
+        /// 版本信息
+        /// </summary>
+        public override void GetVersionInfo()
+        {
+            PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
+            PrintMsgLn(MsgType.Info, new VersionInfo().GetVersionInfo());
+        }
+
+        /// <summary>
         /// 执行测试
         /// </summary>
         public override void ExecuteTest()
@@ -56,21 +65,36 @@ namespace CML.ToolKit.ToolTest
             {
                 case EMsgType.Infomation:
                     if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
+                    {
                         PrintLogLn(MsgType.Info, $"{msg.Message}");
+                    }
                     else
+                    {
                         PrintLogLn(MsgType.Info, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
+                    }
+
                     break;
                 case EMsgType.System:
                     if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
+                    {
                         PrintLogLn(MsgType.Warn, $"{msg.Message}");
+                    }
                     else
+                    {
                         PrintLogLn(MsgType.Warn, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
+                    }
+
                     break;
                 case EMsgType.Error:
                     if (msg.Client == null || string.IsNullOrEmpty(msg.Client.Name))
+                    {
                         PrintLogLn(MsgType.Error, $"{msg.Message}");
+                    }
                     else
+                    {
                         PrintLogLn(MsgType.Error, $"<{msg.Client.Name}/{msg.Client.Socket.RemoteEndPoint}>{msg.Message}");
+                    }
+
                     break;
             }
         }

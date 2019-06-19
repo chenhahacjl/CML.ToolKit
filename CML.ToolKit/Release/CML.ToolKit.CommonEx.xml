@@ -4,6 +4,40 @@
         <name>CML.ToolKit.CommonEx</name>
     </assembly>
     <members>
+        <member name="T:CML.ToolKit.CommonEx.VersionBase">
+            <summary>
+            版本控制基类
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.CommonEx.VersionBase.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.CommonEx.VersionBase.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.CommonEx.VersionBase.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.CommonEx.VersionBase.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.CommonEx.VersionBase.GetVersionInfo(System.String)">
+            <summary>
+            获得版本信息
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>版本信息</returns>
+        </member>
         <member name="T:CML.ToolKit.CommonEx.EnumOperate">
             <summary>
             枚举操作类
@@ -15,6 +49,39 @@
             </summary>
             <param name="en">枚举</param>
             <returns>返回枚举的描述</returns>
+        </member>
+        <member name="T:CML.ToolKit.CommonEx.VersionInfo">
+            <summary>
+            常用工具包版本信息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.CommonEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.CommonEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.CommonEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.CommonEx.VersionInfo.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.ToolKit.CommonEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
         </member>
     </members>
 </doc>

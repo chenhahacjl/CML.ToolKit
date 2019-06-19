@@ -6,12 +6,21 @@ namespace CML.ToolKit.ToolTest
     /// <summary>
     /// 数据库测试类
     /// </summary>
-    class DataBaseTest : ToolKitTestBase
+    internal class DataBaseTest : ToolKitTestBase
     {
         /// <summary>
         /// 测试类名
         /// </summary>
         public override string TestClassName => "DataBaseTest";
+
+        /// <summary>
+        /// 版本信息
+        /// </summary>
+        public override void GetVersionInfo()
+        {
+            PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
+            PrintMsgLn(MsgType.Info, new VersionInfo().GetVersionInfo());
+        }
 
         /// <summary>
         /// 执行测试
