@@ -1388,24 +1388,29 @@
             单位显示文本框
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.KeyUp">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_KeyUp">
             <summary>
             在文本框按键释放时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.KeyDown">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_KeyDown">
             <summary>
             在文本框按键按下时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.TextChanged">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_TextChanged">
             <summary>
             在内容改变时发生
             </summary>
         </member>
-        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.UnitClick">
+        <member name="E:CML.ToolKit.ControlEx.CmlTextBoxEx.CE_UnitClick">
             <summary>
             在单位单击时发生
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Text">
+            <summary>
+            获取或设置与此控件关联的文本(隐藏属性)
             </summary>
         </member>
         <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.BackColor">
@@ -1423,7 +1428,7 @@
             设置或获取控件显示的文字的字体
             </summary>
         </member>
-        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.Text">
+        <member name="P:CML.ToolKit.ControlEx.CmlTextBoxEx.CP_Text">
             <summary>
             获取或设置与此关联的文本
             </summary>

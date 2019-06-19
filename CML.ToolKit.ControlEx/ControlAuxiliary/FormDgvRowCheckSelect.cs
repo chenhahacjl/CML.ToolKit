@@ -61,7 +61,7 @@ namespace CML.ToolKit.ControlEx
         #region 按钮事件
         private void BtnEnter_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtIndexMin.Text, out int indexMin) || !int.TryParse(txtIndexMax.Text, out int indexMax))
+            if (!int.TryParse(txtIndexMin.CP_Text, out int indexMin) || !int.TryParse(txtIndexMax.CP_Text, out int indexMax))
             {
                 MessageBox.Show("数值输入错误，请重新输入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

@@ -26,31 +26,40 @@ namespace CML.ToolKit.ControlEx
         /// </summary>
         [Browsable(true), DefaultValue(false)]
         [Category("CmlEvent"), Description("在文本框按键释放时发生")]
-        public new event KeyEventHandler KeyUp;
+        public event KeyEventHandler CE_KeyUp;
 
         /// <summary>
         /// 在文本框按键按下时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
         [Category("CmlEvent"), Description("在文本框按键按下时发生")]
-        public new event KeyEventHandler KeyDown;
+        public event KeyEventHandler CE_KeyDown;
 
         /// <summary>
         /// 在内容改变时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
         [Category("CmlEvent"), Description("在内容改变时发生")]
-        public new event EventHandler TextChanged;
+        public event EventHandler CE_TextChanged;
 
         /// <summary>
         /// 在单位单击时发生
         /// </summary>
         [Browsable(true), DefaultValue(false)]
         [Category("CmlEvent"), Description("在单位单击时发生")]
-        public event EventHandler UnitClick;
+        public event EventHandler CE_UnitClick;
         #endregion
 
         #region 重写属性
+        /// <summary>
+        /// 获取或设置与此控件关联的文本(隐藏属性)
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        [Browsable(false), DefaultValue(false)]
+        [Category("Appearance"), Description("获取或设置与此控件关联的文本")]
+        public new string Text => base.Text;
+
         /// <summary>
         /// 设置或获取控件的背景色
         /// </summary>
@@ -104,7 +113,7 @@ namespace CML.ToolKit.ControlEx
         /// </summary>
         [Browsable(true), DefaultValue(false)]
         [Category("CMLAttribute"), Description("获取或设置与此关联的文本")]
-        public new string Text
+        public string CP_Text
         {
             get => txtlimit.Text;
             set => txtlimit.Text = value;
@@ -456,7 +465,7 @@ namespace CML.ToolKit.ControlEx
             //初始化属性
             BackColor = Color.White;
             ForeColor = Color.Black;
-            Text = string.Empty;
+            CP_Text = string.Empty;
             CP_Unit = string.Empty;
             CP_CanTextFocus = true;
 
@@ -600,7 +609,7 @@ namespace CML.ToolKit.ControlEx
         {
             Cursor curTemp = Cursors.Default;
 
-            if (UnitClick != null)
+            if (CE_UnitClick != null)
             {
                 curTemp = Cursors.Hand;
             }
@@ -620,22 +629,22 @@ namespace CML.ToolKit.ControlEx
         #region 自定义事件响应
         private void Txtlimit_KeyUp(object sender, KeyEventArgs e)
         {
-            KeyUp?.Invoke(sender, e);
+            CE_KeyUp?.Invoke(sender, e);
         }
 
         private void Txtlimit_KeyDown(object sender, KeyEventArgs e)
         {
-            KeyDown?.Invoke(sender, e);
+            CE_KeyDown?.Invoke(sender, e);
         }
 
         private void LblUnit_Click(object sender, EventArgs e)
         {
-            UnitClick?.Invoke(sender, e);
+            CE_UnitClick?.Invoke(sender, e);
         }
 
         private void Txtlimit_TextChanged(object sender, EventArgs e)
         {
-            TextChanged?.Invoke(sender, e);
+            CE_TextChanged?.Invoke(sender, e);
         }
         #endregion
     }
