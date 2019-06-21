@@ -65,6 +65,14 @@ namespace CML.ToolKit.SocketEx
         /// 正在连接标志
         /// </summary>
         private bool m_isConnectiong = false;
+        /// <summary>
+        /// 解析ID
+        /// </summary>
+        private string m_analyseID = "";
+        /// <summary>
+        /// 信息解析
+        /// </summary>
+        private readonly MsgAnalyseOperate m_analyseOperate = new MsgAnalyseOperate();
         #endregion
 
         #region 公共属性
@@ -128,7 +136,10 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 构造服务端对象
         /// </summary>
-        public SocketClient() { }
+        public SocketClient()
+        {
+            m_analyseOperate.MessageNotify += MessageNotify;
+        }
 
         /// <summary>
         /// 释放资源
@@ -180,6 +191,7 @@ namespace CML.ToolKit.SocketEx
                 return false;
             }
 
+            m_analyseID = Guid.NewGuid().ToString();
             m_ipEndPoint = new IPEndPoint(address, port);
 
             CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "客户端初始化成功"));
@@ -220,7 +232,7 @@ namespace CML.ToolKit.SocketEx
         /// <returns>执行结果</returns>
         public bool CF_StopConnection()
         {
-            if (!CP_IsConnected)
+            if (!CP_IsConnected && !m_isConnectiong && m_isThreadStop)
             {
                 CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "未连接到服务器"));
                 return false;
@@ -363,12 +375,7 @@ namespace CML.ToolKit.SocketEx
                     if (dataLength > 0)
                     {
                         string message = Encoding.UTF8.GetString(receiveData, 0, dataLength);
-
-                        if (!AnalyseMsg(message))
-                        {
-                            CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, "消息解析失败: " + message));
-                            break;
-                        }
+                        m_analyseOperate.AnalyseMsg(m_analyseID, message, null);
                     }
                 }
                 catch
@@ -525,60 +532,62 @@ namespace CML.ToolKit.SocketEx
 
             return result;
         }
-        #endregion
 
-        #region 消息解析
         /// <summary>
-        /// 解析消息内容
+        /// 客户端交换信息上报
         /// </summary>
-        /// <param name="message">消息内容</param>
-        private bool AnalyseMsg(string message)
+        /// <param name="swapMsg">客户端交换消息</param>
+        private void MessageNotify(ModSwapMessage swapMsg)
         {
-            //心跳包
-            if (message.Contains(ISCommand.CmdServerHB))
+            switch (swapMsg.SwapMsgType)
             {
-                m_hbReceiveTime = DateTime.Now;
-                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到心跳包"));
-            }
-
-            //PC名称
-            if (message.Contains(ISCommand.CmdGetPcName))
-            {
-                string PCInfo = Environment.UserDomainName + "/" + Environment.UserName;
-                if (SendMsg(ISMessage.MsgPcNameStart + PCInfo + ISMessage.MsgPcNameEnd, CP_ReSendTimes, true).IsSuccess)
+                case ESwapMsgType.BadMessage:
                 {
-                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "回复本机名称成功"));
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, $"收到异常消息: {swapMsg.SwapMsg}"));
+
+                    break;
                 }
-                else
+                case ESwapMsgType.UnknowMessage:
                 {
-                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "回复本机名称失败"));
-                    return false;
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Error, $"收到未知消息: {swapMsg.SwapMsgType}|{swapMsg.SwapMsg}"));
+
+                    break;
                 }
-            }
-
-            //强制下线命令
-            if (message.Contains(ISCommand.CmdClientRequShutdown))
-            {
-                CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到服务端强制下线命令"));
-                CF_StopConnection();
-            }
-
-            //消息
-            if (message.Contains(ISMessage.MsgNormalStart) && message.Contains(ISMessage.MsgNormalEnd))
-            {
-                Regex regex = new Regex(ISRegex.RegMsgNormal);
-                Match match = regex.Match(message);
-
-                while (match.Success)
+                case ESwapMsgType.NormalMessage:
                 {
-                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, "接收消息: " + match.Groups[1].Value));
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.Infomation, $"收到服务端消息: {swapMsg.SwapMsg}"));
 
-                    match = match.NextMatch();
+                    break;
+                }
+                case ESwapMsgType.HeartBeat:
+                {
+                    m_hbReceiveTime = DateTime.Now;
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到心跳包"));
+
+                    break;
+                }
+                case ESwapMsgType.ComputerName:
+                {
+                    if (SendMsg(swapMsg.SwapMsg, CP_ReSendTimes, true).IsSuccess)
+                    {
+                        CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "回复本机名称成功"));
+                    }
+                    else
+                    {
+                        CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "回复本机名称失败"));
+                    }
+
+                    break;
+                }
+                case ESwapMsgType.ShutdownCommand:
+                {
+                    CE_ReceiveMessage?.Invoke(new ModClientMessage(EMsgType.System, "收到服务端强制下线命令"));
+                    CF_StopConnection();
+
+                    break;
                 }
             }
-
-            return true;
         }
-        #endregion 
+        #endregion
     }
 }

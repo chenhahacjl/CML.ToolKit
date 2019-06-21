@@ -4,6 +4,41 @@
         <name>CML.ToolKit.SocketEx</name>
     </assembly>
     <members>
+        <member name="T:CML.ToolKit.SocketEx.ESwapMsgType">
+            <summary>
+            交换消息类型
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.ESwapMsgType.BadMessage">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.ESwapMsgType.UnknowMessage">
+            <summary>
+            未知消息
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.ESwapMsgType.NormalMessage">
+            <summary>
+            普通消息
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.ESwapMsgType.HeartBeat">
+            <summary>
+            心跳包
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.ESwapMsgType.ComputerName">
+            <summary>
+            计算机名称
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.ESwapMsgType.ShutdownCommand">
+            <summary>
+            下线命令
+            </summary>
+        </member>
         <member name="T:CML.ToolKit.SocketEx.EMsgType">
             <summary>
             消息类型
@@ -164,6 +199,33 @@
             <param name="msgType">消息类型</param>
             <param name="message">消息内容</param>
         </member>
+        <member name="T:CML.ToolKit.SocketEx.ModSwapMessage">
+            <summary>
+            交换消息
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModSwapMessage.SwapMsgType">
+            <summary>
+            交换信息类型
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModSwapMessage.SwapMsg">
+            <summary>
+            交换信息内容
+            </summary>
+        </member>
+        <member name="P:CML.ToolKit.SocketEx.ModSwapMessage.Client">
+            <summary>
+            交换信息内容
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.ModSwapMessage.#ctor(CML.ToolKit.SocketEx.ESwapMsgType,System.String,CML.ToolKit.SocketEx.ModClient)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="swapMsgType">交换信息类型</param>
+            <param name="swapMsg">交换信息内容</param>
+        </member>
         <member name="T:CML.ToolKit.SocketEx.ModServerMessage">
             <summary>
             信息模型
@@ -229,6 +291,33 @@
             </summary>
             <param name="isSuccess">结果状态</param>
             <param name="result">结果内容</param>
+        </member>
+        <member name="T:CML.ToolKit.SocketEx.MsgAnalyseOperate">
+            <summary>
+            客户端消息解析类
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.MsgAnalyseOperate.m_strUnProcessMsg">
+            <summary>
+            未处理消息
+            </summary>
+        </member>
+        <member name="T:CML.ToolKit.SocketEx.MsgAnalyseOperate.SwapMessageNotifyHandler">
+            <summary>
+            交换信息上报委托
+            </summary>
+            <param name="swapMsg">客户端交换信息</param>
+        </member>
+        <member name="E:CML.ToolKit.SocketEx.MsgAnalyseOperate.MessageNotify">
+            <summary>
+            交换信息上报事件
+            </summary>
+        </member>
+        <member name="M:CML.ToolKit.SocketEx.MsgAnalyseOperate.AnalyseMsg(System.String,System.String,CML.ToolKit.SocketEx.ModClient)">
+            <summary>
+            消息解析
+            </summary>
+            <param name="message">消息内容</param>
         </member>
         <member name="T:CML.ToolKit.SocketEx.SocketClient">
             <summary>
@@ -298,6 +387,16 @@
         <member name="F:CML.ToolKit.SocketEx.SocketClient.m_isConnectiong">
             <summary>
             正在连接标志
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_analyseID">
+            <summary>
+            解析ID
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketClient.m_analyseOperate">
+            <summary>
+            信息解析
             </summary>
         </member>
         <member name="P:CML.ToolKit.SocketEx.SocketClient.CP_IsConnected">
@@ -413,11 +512,11 @@
             <param name="innerMsg">内部消息标志</param>
             <returns></returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketClient.AnalyseMsg(System.String)">
+        <member name="M:CML.ToolKit.SocketEx.SocketClient.MessageNotify(CML.ToolKit.SocketEx.ModSwapMessage)">
             <summary>
-            解析消息内容
+            客户端交换信息上报
             </summary>
-            <param name="message">消息内容</param>
+            <param name="swapMsg">客户端交换消息</param>
         </member>
         <member name="T:CML.ToolKit.SocketEx.SocketServer">
             <summary>
@@ -462,6 +561,11 @@
         <member name="F:CML.ToolKit.SocketEx.SocketServer.m_isThreadStop">
             <summary>
             线程停止标志
+            </summary>
+        </member>
+        <member name="F:CML.ToolKit.SocketEx.SocketServer.m_analyseOperate">
+            <summary>
+            信息解析
             </summary>
         </member>
         <member name="P:CML.ToolKit.SocketEx.SocketServer.CP_IsServerOpen">
@@ -584,12 +688,11 @@
             <param name="client">客户端</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.ToolKit.SocketEx.SocketServer.AnalyseMsg(CML.ToolKit.SocketEx.ModClient,System.String)">
+        <member name="M:CML.ToolKit.SocketEx.SocketServer.MessageNotify(CML.ToolKit.SocketEx.ModSwapMessage)">
             <summary>
-            解析消息内容
+            交换信息上报
             </summary>
-            <param name="client">客户端</param>
-            <param name="message">消息内容</param>
+            <param name="swapMsg">交换消息</param>
         </member>
         <member name="T:CML.ToolKit.SocketEx.ISDefault">
             <summary>

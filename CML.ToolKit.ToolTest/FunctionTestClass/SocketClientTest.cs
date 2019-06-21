@@ -28,7 +28,7 @@ namespace CML.ToolKit.ToolTest
         public override void ExecuteTest()
         {
             //测试时间
-            int testTimeSecs = 60 * 60;
+            int testTimeSecs = 60;
 
             SocketClient client = new SocketClient()
             {
@@ -47,13 +47,22 @@ namespace CML.ToolKit.ToolTest
             Thread.Sleep(2000);
 
             PrintLogLn(MsgType.Info, $"测试时间{testTimeSecs}秒！");
-            while (testTimeSecs-- > 0 && client.CP_IsConnected)
+            while (testTimeSecs-- > 0)
             {
-                client.CF_SendMessage("Send To Server");
+                if (client.CP_IsConnected)
+                {
+                    client.CF_SendMessage("Send To Server");
+                }
+                else
+                {
+                    PrintLogLn(MsgType.Error, $"未连接到服务端！");
+                }
+
                 Thread.Sleep(1000);
             }
 
             client.CF_StopConnection();
+            Thread.Sleep(2000);
         }
 
         private void Client_ReceiveMessage(ModClientMessage msg)

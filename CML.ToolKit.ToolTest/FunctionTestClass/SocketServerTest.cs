@@ -28,7 +28,7 @@ namespace CML.ToolKit.ToolTest
         public override void ExecuteTest()
         {
             //测试时间
-            int testTimeSecs = 60 * 60;
+            int testTimeSecs = 10;
 
             SocketServer server = new SocketServer()
             {
@@ -48,11 +48,12 @@ namespace CML.ToolKit.ToolTest
             PrintLogLn(MsgType.Info, $"测试时间{testTimeSecs}秒！");
             while (testTimeSecs-- > 0 && server.CP_IsServerOpen)
             {
-                //server.CF_SendMessage("Send To Client");
+                server.CF_SendMessage("Send To Client");
                 Thread.Sleep(1000);
             }
 
             server.CF_StopService();
+            Thread.Sleep(2000);
         }
 
         /// <summary>

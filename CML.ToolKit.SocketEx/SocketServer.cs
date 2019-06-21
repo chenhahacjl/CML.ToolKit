@@ -47,6 +47,10 @@ namespace CML.ToolKit.SocketEx
         /// 线程停止标志
         /// </summary>
         private bool m_isThreadStop = true;
+        /// <summary>
+        /// 信息解析
+        /// </summary>
+        private readonly MsgAnalyseOperate m_analyseOperate = new MsgAnalyseOperate();
         #endregion
 
         #region 公共属性
@@ -105,7 +109,10 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 构造服务端对象
         /// </summary>
-        public SocketServer() { }
+        public SocketServer()
+        {
+            m_analyseOperate.MessageNotify += MessageNotify;
+        }
 
         /// <summary>
         /// 释放资源
@@ -216,7 +223,7 @@ namespace CML.ToolKit.SocketEx
         /// <returns>执行结果</returns>
         public bool CF_StopService()
         {
-            if (!CP_IsServerOpen)
+            if (!CP_IsServerOpen && m_isThreadStop)
             {
                 CE_ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.Error, "服务未开启"));
                 return false;
@@ -265,7 +272,7 @@ namespace CML.ToolKit.SocketEx
 
             if (string.IsNullOrEmpty(strErrMsg))
             {
-                CE_ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.System, "消息群发成功"));
+                CE_ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.System, "消息群发成功: " + message));
                 return true;
             }
             else
@@ -481,8 +488,7 @@ namespace CML.ToolKit.SocketEx
 
                 string message = Encoding.UTF8.GetString(data, 0, dataLength);
 
-                if (!AnalyseMsg(client, message))
-                    break;
+                m_analyseOperate.AnalyseMsg(client.GUID.ToString(), message, client);
             }
         }
 
@@ -501,70 +507,64 @@ namespace CML.ToolKit.SocketEx
             }
             catch { }
         }
-        #endregion
 
-        #region 消息解析
         /// <summary>
-        /// 解析消息内容
+        /// 交换信息上报
         /// </summary>
-        /// <param name="client">客户端</param>
-        /// <param name="message">消息内容</param>
-        private bool AnalyseMsg(ModClient client, string message)
+        /// <param name="swapMsg">交换消息</param>
+        private void MessageNotify(ModSwapMessage swapMsg)
         {
-            //心跳包
-            if (message.Contains(ISCommand.CmdClientHB))
+            switch (swapMsg.SwapMsgType)
             {
-                CE_ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.System, "收到心跳包"));
+                case ESwapMsgType.BadMessage:
+                {
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.Error, $"收到异常消息: {swapMsg.SwapMsg}"));
 
-                if (SendMsg(client.Socket, ISCommand.CmdServerHB, m_reSendTimes, true).IsSuccess)
-                {
-                    CE_ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.System, "回应心跳包成功"));
-                    client.SetHBTime();
+                    break;
                 }
-                else
+                case ESwapMsgType.UnknowMessage:
                 {
-                    CE_ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Error, "回应心跳包失败"));
-                    m_clientList.Remove(client);
-                    return false;
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.Error, $"收到未知消息: { swapMsg.SwapMsgType}|{swapMsg.SwapMsg}"));
+
+                    break;
+                }
+                case ESwapMsgType.NormalMessage:
+                {
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.Infomation, $"收到客户端消息: {swapMsg.SwapMsg}"));
+
+                    break;
+                }
+                case ESwapMsgType.HeartBeat:
+                {
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.System, "收到心跳包"));
+                    if (SendMsg(swapMsg.Client.Socket, ISCommand.CmdServerHB, m_reSendTimes, true).IsSuccess)
+                    {
+                        CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.System, "回应心跳包成功"));
+                        swapMsg.Client.SetHBTime();
+                    }
+                    else
+                    {
+                        CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.Error, "回应心跳包失败"));
+                        m_clientList.Remove(swapMsg.Client);
+                    }
+
+                    break;
+                }
+                case ESwapMsgType.ComputerName:
+                {
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.System, $"<{swapMsg.Client.GUID}>获得客户端名称: {swapMsg.SwapMsg}"));
+
+                    break;
+                }
+                case ESwapMsgType.ShutdownCommand:
+                {
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.System, "收到客户端下线命令"));
+                    m_clientList.Remove(swapMsg.Client);
+                    CE_ReceiveMessage?.Invoke(new ModServerMessage(swapMsg.Client, EMsgType.System, "客户端下线成功"));
+
+                    break;
                 }
             }
-
-            //计算机名称
-            if (message.Contains(ISMessage.MsgPcNameStart) && message.Contains(ISMessage.MsgPcNameEnd))
-            {
-                Regex regex = new Regex(ISRegex.RegMsgPcName);
-                Match match = regex.Match(message);
-                if (match.Success)
-                {
-                    CE_ReceiveMessage?.Invoke(new ModServerMessage(null, EMsgType.System, $"<{client.GUID}>获得客户端名称: {match.Groups[1].Value}"));
-                    client.Name = match.Groups[1].Value;
-                }
-
-                message = message.Replace(match.Groups[0].Value, "");
-            }
-
-            //下线命令
-            if (message.Contains(ISCommand.CmdClientNeedShutdown))
-            {
-                CE_ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.System, "收到客户端下线命令"));
-                m_clientList.Remove(client);
-                CE_ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.System, "客户端下线成功"));
-            }
-
-            //消息
-            if (message.Contains(ISMessage.MsgNormalStart) && message.Contains(ISMessage.MsgNormalEnd))
-            {
-                Regex regex = new Regex(ISRegex.RegMsgNormal);
-                Match match = regex.Match(message);
-
-                while (match.Success)
-                {
-                    CE_ReceiveMessage?.Invoke(new ModServerMessage(client, EMsgType.Infomation, $"收到客户端消息: {match.Groups[1].Value}"));
-                    match = match.NextMatch();
-                }
-            }
-
-            return true;
         }
         #endregion
     }

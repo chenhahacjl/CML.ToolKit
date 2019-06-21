@@ -13,15 +13,15 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public string VerMain => "1.2";
+        public string VerMain => "1.3";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public string VerDev => "19Y003R001";
+        public string VerDev => "19Y004R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public string VerDate => "2019年06月19日 15:30";
+        public string VerDate => "2019年06月21日 16:25";
         #endregion
 
         #region 私有方法
