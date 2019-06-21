@@ -30,7 +30,7 @@ namespace CML.ToolKit.SocketEx
         /// </summary>
         /// <param name="swapMsgType">交换信息类型</param>
         /// <param name="swapMsg">交换信息内容</param>
-        /// <param name="client">客户端</param>
+        /// <param name="client">客户端（服务端使用时写）</param>
         public ModSwapMessage(ESwapMsgType swapMsgType, string swapMsg, ModClient client)
         {
             SwapMsgType = swapMsgType;

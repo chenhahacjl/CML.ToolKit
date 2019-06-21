@@ -29,7 +29,9 @@ namespace CML.ToolKit.SocketEx
         /// <summary>
         /// 消息解析
         /// </summary>
+        /// <param name="id">消息ID</param>
         /// <param name="message">消息内容</param>
+        /// <param name="client">客户端（服务端使用时写）</param>
         public void AnalyseMsg(string id, string message, ModClient client)
         {
             //判断ID是否存在

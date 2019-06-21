@@ -225,6 +225,7 @@
             </summary>
             <param name="swapMsgType">交换信息类型</param>
             <param name="swapMsg">交换信息内容</param>
+            <param name="client">客户端（服务端使用时写）</param>
         </member>
         <member name="T:CML.ToolKit.SocketEx.ModServerMessage">
             <summary>
@@ -317,7 +318,9 @@
             <summary>
             消息解析
             </summary>
+            <param name="id">消息ID</param>
             <param name="message">消息内容</param>
+            <param name="client">客户端（服务端使用时写）</param>
         </member>
         <member name="T:CML.ToolKit.SocketEx.SocketClient">
             <summary>
