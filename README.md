@@ -35,6 +35,8 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 		- [x] EnumOperate
 	- [ ] Thread
 		- [x] InvokeOperate
+	- [ ] UIAutomation
+		- [x] UIAutomationOperate
 	- [ ] Version
 		- [x] VersionBase
 - [ ] CML.ControlEx
