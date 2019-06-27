@@ -35,7 +35,7 @@ namespace CML.ToolTest
                 for (int i = 0; i < testClassTypes.Count; i++)
                 {
                     ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[i], true);
-                    Console.WriteLine($"[{i + 1}]{toolKitTest.TestClassName}");
+                    Console.WriteLine($"[{(i + 1).ToString(new string('0', testClassTypes.Count.ToString().Length))}]{toolKitTest.TestClassName}");
                 }
                 Console.WriteLine("[C]清空界面");
                 Console.WriteLine("[M]显示菜单");
@@ -64,7 +64,7 @@ namespace CML.ToolTest
                         for (int i = 0; i < testClassTypes.Count; i++)
                         {
                             ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[i], true);
-                            Console.WriteLine($"[{i + 1}]{toolKitTest.TestClassName}");
+                            Console.WriteLine($"[{(i + 1).ToString(new string('0', testClassTypes.Count.ToString().Length))}]{toolKitTest.TestClassName}");
                         }
                         Console.WriteLine("[C]清空界面");
                         Console.WriteLine("[M]显示菜单");

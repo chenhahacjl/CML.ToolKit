@@ -14,7 +14,7 @@ namespace CML.CommonEx.EnumEx
         /// </summary>
         /// <param name="en">枚举</param>
         /// <returns>返回枚举的描述</returns>
-        public static string GetDescription(Enum en)
+        public static string CF_GetDescription(Enum en)
         {
             //获取成员
             MemberInfo[] memberInfos = en.GetType().GetMember(en.ToString());

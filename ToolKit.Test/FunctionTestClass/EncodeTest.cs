@@ -100,14 +100,14 @@ namespace CML.ToolTest
         /// </summary>
         private void MD5EncodeTest()
         {
-            PrintLogLn(MsgType.Info, "16位MD5（大写）: " + MD5Encrypt.MD5Encrypt16("MD5Tester"));
-            PrintLogLn(MsgType.Info, "16位MD5（小写）: " + MD5Encrypt.MD5Encrypt16("MD5Tester", false));
+            PrintLogLn(MsgType.Info, "16位MD5（大写）: " + MD5Encrypt.CF_MD5Encrypt16("MD5Tester"));
+            PrintLogLn(MsgType.Info, "16位MD5（小写）: " + MD5Encrypt.CF_MD5Encrypt16("MD5Tester", false));
 
-            PrintLogLn(MsgType.Info, "32位MD5（大写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester"));
-            PrintLogLn(MsgType.Info, "32位MD5（小写）: " + MD5Encrypt.MD5Encrypt32("MD5Tester", false));
+            PrintLogLn(MsgType.Info, "32位MD5（大写）: " + MD5Encrypt.CF_MD5Encrypt32("MD5Tester"));
+            PrintLogLn(MsgType.Info, "32位MD5（小写）: " + MD5Encrypt.CF_MD5Encrypt32("MD5Tester", false));
 
-            PrintLogLn(MsgType.Info, "文件MD5（大写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location));
-            PrintLogLn(MsgType.Info, "文件MD5（小写）: " + MD5Encrypt.MD5EncryptFile(Assembly.GetExecutingAssembly().Location, false));
+            PrintLogLn(MsgType.Info, "文件MD5（大写）: " + MD5Encrypt.CF_MD5EncryptFile(Assembly.GetExecutingAssembly().Location));
+            PrintLogLn(MsgType.Info, "文件MD5（小写）: " + MD5Encrypt.CF_MD5EncryptFile(Assembly.GetExecutingAssembly().Location, false));
         }
     }
 }

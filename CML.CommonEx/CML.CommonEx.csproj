@@ -49,6 +49,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationClientsideProviders" />
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuncConfiguration\AssiEnum\ERegDomain.cs" />
@@ -73,6 +76,9 @@
     <Compile Include="FuncEnum\EnumOperate.cs" />
     <Compile Include="FuncThread\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncThread\InvokeOperate.cs" />
+    <Compile Include="FuncUIAutomation\AssiEnum\ECheckBoxStatus.cs" />
+    <Compile Include="FuncUIAutomation\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncUIAutomation\UIAutomationOperate.cs" />
     <Compile Include="FuncVersion\AssiVersion\VersionInfon.cs" />
     <Compile Include="FuncVersion\VersionBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,7 +91,9 @@
     <EmbeddedResource Include="FuncDataBase\AssiVersion\UpdateInfo.LOG" />
     <EmbeddedResource Include="FuncConfiguration\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="FuncUIAutomation\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="FuncDataBase\AssiLib\MySql.Data.dll" />
     <Content Include="FuncDataBase\AssiLib\Oracle.ManagedDataAccess.dll" />

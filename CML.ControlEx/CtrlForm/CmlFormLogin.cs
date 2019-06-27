@@ -78,7 +78,7 @@ namespace CML.ControlEx
                     Thread.Sleep(100);
                 }
 
-                InvokeOperate.InvokeUI(this, new Action(() =>
+                InvokeOperate.CF_InvokeUI(this, new Action(() =>
                 {
                     Close();
                 }));
@@ -98,7 +98,7 @@ namespace CML.ControlEx
         {
             if (CE_LoginEvent == null)
             {
-                InvokeOperate.InvokeUI(this, new Action(() =>
+                InvokeOperate.CF_InvokeUI(this, new Action(() =>
                 {
                     MessageBox.Show("未定义登录事件，无法登录！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     CloseForm();
@@ -172,7 +172,7 @@ namespace CML.ControlEx
                     m_drDialogResult = DialogResult.OK;
                     CP_UserInfo = new ModLoginInfo(txtUserName.Text, txtPassword.Text);
 
-                    InvokeOperate.InvokeUI(this, new Action(() =>
+                    InvokeOperate.CF_InvokeUI(this, new Action(() =>
                     {
                         lblLoginTip.Text = "登录成功！";
                         CloseForm();
@@ -180,7 +180,7 @@ namespace CML.ControlEx
                 }
                 else
                 {
-                    InvokeOperate.InvokeUI(this, new Action(() =>
+                    InvokeOperate.CF_InvokeUI(this, new Action(() =>
                     {
                         picHead.Left = 37;
                         txtUserName.Visible = true;

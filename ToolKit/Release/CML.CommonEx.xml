@@ -818,7 +818,7 @@
             MD5加密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.MD5Encrypt16(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5Encrypt16(System.String,System.Boolean)">
             <summary>
             16位MD5加密
             </summary>
@@ -826,7 +826,7 @@
             <param name="isUpper">大写输出</param>
             <returns>16位MD5值</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.MD5Encrypt32(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5Encrypt32(System.String,System.Boolean)">
             <summary>
             32位MD5加密
             </summary>
@@ -834,7 +834,7 @@
             <param name="isUpper">大写输出</param>
             <returns>32位MD5值</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.MD5EncryptFile(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5EncryptFile(System.String,System.Boolean)">
             <summary>
             文件MD5加密
             </summary>
@@ -878,7 +878,7 @@
             枚举操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EnumEx.EnumOperate.GetDescription(System.Enum)">
+        <member name="M:CML.CommonEx.EnumEx.EnumOperate.CF_GetDescription(System.Enum)">
             <summary>
             获取枚举的描述
             </summary>
@@ -921,13 +921,259 @@
             委托帮助类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.ThreadEx.InvokeOperate.InvokeUI(System.Windows.Forms.Control,System.Action,System.Boolean)">
+        <member name="M:CML.CommonEx.ThreadEx.InvokeOperate.CF_InvokeUI(System.Windows.Forms.Control,System.Action,System.Boolean)">
             <summary>
             多线程更新UI
             </summary>
             <param name="control">委托控件</param>
             <param name="action">委托操作</param>
             <param name="isThrowException">是否抛出异常</param>
+        </member>
+        <member name="T:CML.CommonEx.UIAutomationEx.ECheckBoxStatus">
+            <summary>
+            复选框状态
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.UIAutomationEx.ECheckBoxStatus.Error">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.UIAutomationEx.ECheckBoxStatus.On">
+            <summary>
+            已选中
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.UIAutomationEx.ECheckBoxStatus.Off">
+            <summary>
+            未选中
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.UIAutomationEx.ECheckBoxStatus.Indeterminate">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.UIAutomationEx.VersionInfo">
+            <summary>
+            常用工具包UI自动化操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.UIAutomationEx.UIAutomationOperate">
+            <summary>
+            UI自动化操作类
+            【引用】UIAutomationClient
+            【引用】UIAutomationTypes
+            【引用】UIAutomationProvider
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_StartProgram(System.String)">
+            <summary>
+            启动应用程序
+            </summary>
+            <param name="progPath">应用程序路径</param>
+            <returns>进程变量</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_StartProgram(System.String,System.String)">
+            <summary>
+            启动应用程序
+            </summary>
+            <param name="progPath">应用程序路径</param>
+            <param name="args">启动参数</param>
+            <returns>进程变量</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_StartProgram(System.String,System.String,System.String)">
+            <summary>
+            启动应用程序
+            </summary>
+            <param name="progPath">应用程序路径</param>
+            <param name="args">启动参数</param>
+            <param name="workPath">工装路径</param>
+            <returns>进程变量</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetAllElements">
+            <summary>
+            获得根元素下的所有元素
+            </summary>
+            <returns>元素合集</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementCollection(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope)">
+            <summary>
+            获取窗体元素下的元素合集
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <returns>元素合集</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetRootElement">
+            <summary>
+            获取根元素
+            </summary>
+            <returns>根元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByPId(System.Int32)">
+            <summary>
+            通过进程ID获取元素
+            </summary>
+            <param name="pid">进程ID</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetFirstElement(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取窗体元素下的第一个元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <returns>第一个元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetFirstElement(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope)">
+            <summary>
+            获取窗体元素下的第一个元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <returns>第一个元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByIndex(System.Windows.Automation.AutomationElement,System.Int32)">
+            <summary>
+            通过序列ID获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="index">序列ID</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByIndex(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Int32)">
+            <summary>
+            通过序列ID获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <param name="index">序列ID</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByAutomationId(System.Windows.Automation.AutomationElement,System.String)">
+            <summary>
+            通过内部名称获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="automationId">内部名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByAutomationId(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.String)">
+            <summary>
+            通过内部名称获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <param name="automationId">内部名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByTypeName(System.Windows.Automation.AutomationElement,System.Windows.Automation.ControlType,System.String)">
+            <summary>
+            通过元素类型和元素名称获取元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="controlType">元素类型</param>
+            <param name="elementName">元素名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByTypeName(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.ControlType,System.String)">
+            <summary>
+            通过元素类型和元素名称获取元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <param name="controlType">元素类型</param>
+            <param name="elementName">元素名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetNameContent(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取元素Name属性内容
+            </summary>
+            <param name="element">元素</param>
+            <returns>Name属性</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetTextContent(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取文本框元素文本内容
+            </summary>
+            <param name="element">文本框元素</param>
+            <returns>文本内容</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_SetTextContent(System.Windows.Automation.AutomationElement,System.String,System.Int32)">
+            <summary>
+            设置文本框元素文本内容
+            </summary>
+            <param name="element">文本框元素</param>
+            <param name="content">文本内容</param>
+            <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetCheckBoxStatu(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取复选框元素选择状态
+            </summary>
+            <param name="element">复选框元素</param>
+            <returns>选择状态</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_SetCheckBoxStatu(System.Windows.Automation.AutomationElement,System.Boolean)">
+            <summary>
+            设置复选框元素选择状态
+            </summary>
+            <param name="element">复选框元素</param>
+            <param name="statu">选择状态</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetSelectListItem(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取下拉列表选择项
+            </summary>
+            <param name="element">下拉列表元素</param>
+            <returns>列表项元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_SetSelectListItem(System.Windows.Automation.AutomationElement)">
+            <summary>
+            设置下拉列表选择项
+            </summary>
+            <param name="element">列表项元素</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_ClickButton(System.Windows.Automation.AutomationElement)">
+            <summary>
+            单击按钮
+            </summary>
+            <param name="element">按钮元素</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_SendCommand(System.Windows.Automation.AutomationElement,System.String,System.Int32)">
+            <summary>
+            对指定元素发送命令
+            </summary>
+            <param name="element">元素</param>
+            <param name="command">命令</param>
+            <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
         </member>
         <member name="T:CML.CommonEx.VersionEx.VersionInfo">
             <summary>

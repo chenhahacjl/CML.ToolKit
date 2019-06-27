@@ -40,6 +40,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FunctionTestClass\ConfigurationTest.cs" />
@@ -47,6 +50,7 @@
     <Compile Include="FunctionTestClass\DataBaseTest.cs" />
     <Compile Include="FunctionTestClass\EncodeTest.cs" />
     <Compile Include="FunctionTestClass\EnumTest.cs" />
+    <Compile Include="FunctionTestClass\UIAutomationTest.cs" />
     <Compile Include="FunctionTestClass\VersionTest.cs" />
     <Compile Include="FunctionTestClass\FriendTest.cs" />
     <Compile Include="FunctionTestClass\SocketClientTest.cs" />

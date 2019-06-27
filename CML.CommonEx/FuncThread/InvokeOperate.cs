@@ -14,7 +14,7 @@ namespace CML.CommonEx.ThreadEx
         /// <param name="control">委托控件</param>
         /// <param name="action">委托操作</param>
         /// <param name="isThrowException">是否抛出异常</param>
-        public static void InvokeUI(this Control control, Action action, bool isThrowException = false)
+        public static void CF_InvokeUI(this Control control, Action action, bool isThrowException = false)
         {
             if (control.InvokeRequired)
             {
