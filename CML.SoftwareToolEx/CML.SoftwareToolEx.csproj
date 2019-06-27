@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FDACC96-9498-4F95-8E56-6BB5AB3D3421}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CML.SoftwareToolEx</RootNamespace>
+    <AssemblyName>CML.SoftwareToolEx</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\ToolKit\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\ToolKit\Debug\CML.SoftwareToolEx.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\ToolKit\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\ToolKit\Release\CML.SoftwareToolEx.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FuncSocket\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncSocket\AssiEnum\EMsgType.cs" />
+    <Compile Include="FuncSocket\AssiEnum\ESwapMsgType.cs" />
+    <Compile Include="FuncSocket\AssiInternalStatic\ISCommand.cs" />
+    <Compile Include="FuncSocket\AssiInternalStatic\ISDefault.cs" />
+    <Compile Include="FuncSocket\AssiInternalStatic\ISMessage.cs" />
+    <Compile Include="FuncSocket\AssiInternalStatic\ISRegex.cs" />
+    <Compile Include="FuncSocket\AssiModel\ModClient.cs" />
+    <Compile Include="FuncSocket\AssiModel\ModClientMessage.cs" />
+    <Compile Include="FuncSocket\AssiModel\ModResult.cs" />
+    <Compile Include="FuncSocket\AssiModel\ModServerMessage.cs" />
+    <Compile Include="FuncSocket\AssiModel\ModSwapMsg.cs" />
+    <Compile Include="FuncSocket\AssiOperate\MsgAnalyseOperate.cs" />
+    <Compile Include="FuncSocket\SocketClient.cs" />
+    <Compile Include="FuncSocket\SocketServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncSocket\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CML.CommonEx\CML.CommonEx.csproj">
+      <Project>{f176b109-7214-45ee-8670-b8860db19821}</Project>
+      <Name>CML.CommonEx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

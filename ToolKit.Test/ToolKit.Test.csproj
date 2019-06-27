@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF598401-BF9D-4624-8C7C-93B1A1BE324E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ToolKit.Test</RootNamespace>
+    <AssemblyName>ToolKit.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FunctionTestClass\ConfigurationTest.cs" />
+    <Compile Include="FunctionTestClass\ControlTest.cs" />
+    <Compile Include="FunctionTestClass\DataBaseTest.cs" />
+    <Compile Include="FunctionTestClass\EncodeTest.cs" />
+    <Compile Include="FunctionTestClass\EnumTest.cs" />
+    <Compile Include="FunctionTestClass\VersionTest.cs" />
+    <Compile Include="FunctionTestClass\FriendTest.cs" />
+    <Compile Include="FunctionTestClass\SocketClientTest.cs" />
+    <Compile Include="FunctionTestClass\SocketServerTest.cs" />
+    <Compile Include="FunctionTestClass\ThreadTest.cs" />
+    <Compile Include="FunctionTestClass\ToolKitTestBase.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CML.CommonEx\CML.CommonEx.csproj">
+      <Project>{f176b109-7214-45ee-8670-b8860db19821}</Project>
+      <Name>CML.CommonEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CML.ControlEx\CML.ControlEx.csproj">
+      <Project>{4ce4d99a-05a3-4fb1-8a45-224ed3a54af9}</Project>
+      <Name>CML.ControlEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CML.EntertainmentEx\CML.EntertainmentEx.csproj">
+      <Project>{f900e757-5a99-4e61-b2df-c3041824ee29}</Project>
+      <Name>CML.EntertainmentEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CML.SoftwareToolEx\CML.SoftwareToolEx.csproj">
+      <Project>{4fdacc96-9498-4f95-8e56-6bb5ab3d3421}</Project>
+      <Name>CML.SoftwareToolEx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

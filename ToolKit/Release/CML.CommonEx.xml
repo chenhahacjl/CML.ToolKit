@@ -1,0 +1,1003 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.CommonEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.CommonEx.ConfigurationEx.ERegDomain">
+            <summary>
+            注册表基项静态域
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegDomain.ClassesRoot">
+            <summary>
+            对应于HKEY_CLASSES_ROOT主键
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegDomain.CurrentUser">
+            <summary>
+            对应于HKEY_CURRENT_USER主键
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegDomain.LocalMachine">
+            <summary>
+            对应于 HKEY_LOCAL_MACHINE主键
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegDomain.User">
+            <summary>
+            对应于 HKEY_USER主键
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegDomain.CurrentConfig">
+            <summary>
+            对应于HEKY_CURRENT_CONFIG主键
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegDomain.PerformanceData">
+            <summary>
+            对应于HKEY_PERFORMANCE_DATA主键
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.ConfigurationEx.ERegValueKind">
+            <summary>
+            注册表数据类型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.Unknown">
+            <summary>
+            不受支持的注册表数据类型。
+            例如，不支持 Microsoft Win32 API 注册表数据类型 REG_RESOURCE_LIST，使用此值指定
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.String">
+            <summary>
+            以 Null 结尾的字符串。
+            此值与 Win32 API 注册表数据类型 REG_SZ 等效。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.ExpandString">
+            <summary>
+            以 NULL 结尾的字符串，该字符串中包含对环境变量（如 %PATH%，当值被检索时，就会展开）的未展开的引用。
+            此值与 Win32 API注册表数据类型 REG_EXPAND_SZ 等效。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.Binary">
+            <summary>
+            任意格式的二进制数据。
+            此值与 Win32 API 注册表数据类型 REG_BINARY 等效。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.DWord">
+            <summary>
+            32 位二进制数。
+            此值与 Win32 API 注册表数据类型 REG_DWORD 等效。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.MultiString">
+            <summary>
+            以 NULL 结尾的字符串数组，以两个空字符结束。
+            此值与 Win32 API 注册表数据类型 REG_MULTI_SZ 等效。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.ERegValueKind.QWord">
+            <summary>
+            64 位二进制数。
+            此值与 Win32 API 注册表数据类型 REG_QWORD 等效。
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.ConfigurationEx.IniFile">
+            <summary>
+            INI文件操作基础类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.WritePrivateProfileString(System.String,System.String,System.String,System.String)">
+            <summary>
+            写入INI文件
+            </summary>
+            <param name="section">节点名称[如[TypeName]]</param>
+            <param name="key">键名</param>
+            <param name="val">键值</param>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            读取INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="def">键值</param>
+            <param name="retVal">StringBulider对象</param>
+            <param name="size">字节大小</param>
+            <param name="filePath">文件路径</param>
+        </member>
+        <member name="P:CML.CommonEx.ConfigurationEx.IniFile.CP_FilePath">
+            <summary>
+            INI文件路径
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="filePath">INI文件路径</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.CF_WriteValue(System.String,System.String,System.String)">
+            <summary>
+            写入INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.CF_ReadValue(System.String,System.String)">
+            <summary>
+            读出INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+        </member>
+        <member name="T:CML.CommonEx.ConfigurationEx.VersionInfo">
+            <summary>
+            常用工具包配置操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.ConfigurationEx.IniOperate">
+            <summary>
+            INI操作帮助类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadConfig(System.String,System.String,System.String,System.String)">
+            <summary>
+            读取配置文件
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns>读取结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadConfig``1(System.String,System.String,System.String,``0)">
+            <summary>
+            读取配置文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns>读取结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_WriteConfig(System.String,System.String,System.String,System.String)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="strValue">键值</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_WriteConfig``1(System.String,System.String,System.String,``0)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="F:CML.CommonEx.ConfigurationEx.IniOperate.m_iniFile">
+            <summary>
+            INI文件操作基础类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iniPath">INI文件路径</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadConfig(System.String,System.String,System.String)">
+            <summary>
+            读取配置文件
+            </summary>
+            <param name="section">节名</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns>读取结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadConfig``1(System.String,System.String,``0)">
+            <summary>
+            读取配置文件
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="defValue">默认值</param>
+            <returns>读取结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_WriteConfig(System.String,System.String,System.String)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="strValue">键值</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_WriteConfig``1(System.String,System.String,``0)">
+            <summary>
+            写配置文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="value">键值</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.ConfigurationEx.RegOperate">
+            <summary>
+            注册表操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_CreateSubItem(CML.CommonEx.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            创建注册表项
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_ExistSubItem(CML.CommonEx.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            检测注册表项是否存在
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <returns>注册表项存在情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_DeleteSubItem(CML.CommonEx.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            删除注册表项
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <returns>执行情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_ExistRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            检测注册表键值是否存在
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>注册表键值存在情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_WriteRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String,CML.CommonEx.ConfigurationEx.ERegValueKind,System.Object)">
+            <summary>
+            设置指定的键值内容
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <param name="valueKind">键值类型</param>
+            <param name="value">键值内容</param>
+            <returns>执行情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_ReadRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            读取键值内容
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>键值内容</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.CF_DeleteRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            删除键值
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.GetRegDomain(CML.CommonEx.ConfigurationEx.ERegDomain)">
+            <summary>
+            获取注册表基项域对应顶级节点
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <returns>对应顶级节点</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.GetRegValueKind(CML.CommonEx.ConfigurationEx.ERegValueKind)">
+            <summary>
+            获取注册表中对应值数据类型
+            </summary>
+            <param name="regValueKind">注册表数据类型</param>
+            <returns>对应数据类型</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.RegOperate.OpenSubKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.Boolean)">
+            <summary>
+            打开注册表项节点
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="isWritable">是否需要节点Write访问权限</param>
+            <returns>若注册表节点存在，则返回节点，否则返回null</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.IDataBase">
+            <summary>
+            数据库接口
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.IDataBase.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.MySqlDataBase">
+            <summary>
+            MYSQL 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.MySqlDataBase.ConnectionString">
+            <summary>
+            MYSQL 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.#ctor">
+            <summary>
+            检测操作库文件是否存在(MySql.Data.dll)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.OracleDataBase">
+            <summary>
+            ORACLE 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.OracleDataBase.ConnectionString">
+            <summary>
+            ORACLE 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.#ctor">
+            <summary>
+            检测操作库文件是否存在(Oracle.ManagedDataAccess.dll)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.SqlServerDataBase">
+            <summary>
+            SQL SERVER 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.ConnectionString">
+            <summary>
+            SQL SERVER 数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.EDataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.NONE">
+            <summary>
+            未选择数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.MYSQL">
+            <summary>
+            MYSQL数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.ORACLE">
+            <summary>
+            ORACLE数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.SQLSERVER">
+            <summary>
+            SQL SERVER数据库
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.ModDataParameter">
+            <summary>
+            数据传输参数模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Name">
+            <summary>
+            参数名
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Value">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.ModTransactionParameter">
+            <summary>
+            事务执行参数模型
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModTransactionParameter.#ctor(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数</param>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModTransactionParameter.Sql">
+            <summary>
+            SQL语句
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModTransactionParameter.Parameters">
+            <summary>
+            SQL语句中的参数
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.VersionInfo">
+            <summary>
+            常用工具包数据库操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.DataBase">
+            <summary>
+            数据库功能帮助类
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iDataBase">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iConn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iCmd">
+            <summary>
+            数据库执行命令
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_isInitDataBase">
+            <summary>
+            数据库初始化标志
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionType">
+            <summary>
+            连接数据库类型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_IsAutoCloseConn">
+            <summary>
+            是否自动关闭数据库连接(默认开启自动关闭)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.#ctor">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.#ctor(CML.CommonEx.DataBaseEx.EDataBaseType,System.String)">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_InitDataBase">
+            <summary>
+            初始化数据库（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_OpenConnect">
+            <summary>
+            打开数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_CloseConnect">
+            <summary>
+            关闭数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行查询语句，返回DataTable（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteNonQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteTransaction(System.Collections.Generic.List{CML.CommonEx.DataBaseEx.ModTransactionParameter})">
+            <summary>
+            执行多条SQL语句，实现数据库事务（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="lstParameters">事务执行参数</param>
+            <returns>是否提交成功</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_GetSingleObject(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.VersionInfo">
+            <summary>
+            常用工具包数据编码工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.DESEncrypt">
+            <summary>
+            DESEncrypt加密解密操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_Encrypt(System.String,System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="inputValue">待加密字符串</param>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+            <returns>已加密字符串（错误时返回 ERROR:{ERROR MESSAGE}）</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_Decrypt(System.String,System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="inputValue">待解密字符串</param>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+            <returns>已解密字符串（错误时为空）</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.MD5Encrypt">
+            <summary>
+            MD5加密操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.MD5Encrypt16(System.String,System.Boolean)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="input">待加密字符串</param>
+            <param name="isUpper">大写输出</param>
+            <returns>16位MD5值</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.MD5Encrypt32(System.String,System.Boolean)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="input">待加密字符串</param>
+            <param name="isUpper">大写输出</param>
+            <returns>32位MD5值</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.MD5EncryptFile(System.String,System.Boolean)">
+            <summary>
+            文件MD5加密
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="isUpper">大写输出</param>
+            <returns>文件MD5值</returns>
+        </member>
+        <member name="T:CML.CommonEx.EnumEx.VersionInfo">
+            <summary>
+            常用工具包枚举操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.EnumEx.EnumOperate">
+            <summary>
+            枚举操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.EnumOperate.GetDescription(System.Enum)">
+            <summary>
+            获取枚举的描述
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="T:CML.CommonEx.ThreadEx.VersionInfo">
+            <summary>
+            常用工具包线程操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ThreadEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.ThreadEx.InvokeOperate">
+            <summary>
+            委托帮助类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ThreadEx.InvokeOperate.InvokeUI(System.Windows.Forms.Control,System.Action,System.Boolean)">
+            <summary>
+            多线程更新UI
+            </summary>
+            <param name="control">委托控件</param>
+            <param name="action">委托操作</param>
+            <param name="isThrowException">是否抛出异常</param>
+        </member>
+        <member name="T:CML.CommonEx.VersionEx.VersionInfo">
+            <summary>
+            常用工具包版本管控工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.VersionEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.VersionEx.VersionBase">
+            <summary>
+            版本控制基类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.VersionEx.VersionBase.GetUpdateInfo(System.String)">
+            <summary>
+            获取升级记录
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>更新记录</returns>
+        </member>
+        <member name="M:CML.CommonEx.VersionEx.VersionBase.GetVersionInfo(System.String)">
+            <summary>
+            获得版本信息
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>版本信息</returns>
+        </member>
+    </members>
+</doc>

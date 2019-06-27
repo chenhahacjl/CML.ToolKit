@@ -1,0 +1,38 @@
+﻿【1.3 - 19Y004R001】 2019年06月27日 09:45
+1.修改、优化项目结构。
+
+【1.2 - 19Y003R001】 2019年06月19日 15:05
+1.增加版本控制功能。
+
+【1.1 - 19Y002R004】 2019年06月18日 17:05
+1.修复DataGridView单击行标题报错BUG。
+
+【1.1 - 19Y002R003】 2019年06月14日 15:25
+1.修复DataGridView右键复制导致BUG。
+
+【1.1 - 19Y002R002】 2019年06月13日 10:55
+1.修复DataGridView单元格双击事件失灵BUG；
+2.增加DataGridView右键复制单元格内容功能；
+3.增加任意位置CheckBoxCell单击切换状态功能；
+4.增加行号显示功能。
+
+【1.1 - 19Y002R001】 2019年06月12日 17:25
+1.增加ChartCurve禁用选取功能；
+2.增加ChartCurve自定义横坐标类型功能；
+3.重命名控件名称；
+4.增加PanelTitle控件。
+
+【1.0 - 19Y001R001】 2019年06月09日 12:00
+1.增加ButtonEx控件；
+2.增加CheckBoxEx控件；
+3.增加DataGridViewEx控件；
+4.增加TabControlE控件；
+5.增加TextBoxEx控件；
+6.增加Login窗体；
+7.增加ChartCurve窗体；
+8.增加FormMoveTool控件；
+9.增加LanternAlarm控件；
+10.增加LanternRound控件；
+11.增加ShapeDiamond控件；
+12.增加ShapeRectangle控件；
+13.增加ShapeRound控件。

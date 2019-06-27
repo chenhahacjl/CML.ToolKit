@@ -20,17 +20,30 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 * Framework: .Net Framework 4.0
 
 ## 当前进度
-- [ ] CML.ToolKit.CommonEx
-    - [x] EnumOperate
-- [ ] CML.ToolKit.ConfigurationEx
-    - [x] IniOperate
-    - [x] RegOperate
-- [ ] CML.ToolKit.ControlEx
+- [ ] CML.CommonEx
+	- [ ] Configuration
+		- [x] IniOperate
+		- [x] RegOperate
+	- [ ] DataBase
+		- [x] MySQL
+		- [x] Oracle
+		- [x] SqlServer
+	- [ ] Encode
+		- [x] DESEncrypt
+		- [x] MD5Encrypt
+	- [ ] Enum
+		- [x] EnumOperate
+	- [ ] Thread
+		- [x] InvokeOperate
+	- [ ] Version
+		- [x] VersionBase
+- [ ] CML.ControlEx
     - [ ] Expand
         - [x] CmlButtonEx
         - [x] CmlCheckBoxEx
         - [x] CmlDataGridViewEx
         - [x] CmlTabControlEx
+        - [x] CmlTextBoxEx
     - [ ] Original
         - [x] CmlChartCurve
         - [x] CmlFormMoveTool
@@ -43,19 +56,12 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
     - [ ] Form
         - [x] CmlFormLogin
         - [x] CmlFormValueInput
-- [ ] CML.ToolKit.DataBaseEx
-    - [x] MySQL
-    - [x] Oracle
-    - [x] SqlServer
-- [ ] CML.ToolKit.EncodeEx
-    - [x] DESEncrypt
-    - [x] MD5Encrypt
-- [ ] CML.ToolKit.FriendEx
-- [ ] CML.ToolKit.SocketEx
-    - [x] SocketClient
-    - [x] SocketServer
-- [ ] CML.ToolKit.ThreadEx
-    - [x] InvokeOperate
+- [ ] CML.EntertainmentEx
+    - [ ] Friend
+- [ ] CML.SoftwareToolEx
+	- [ ] Socket
+		- [x] SocketClient
+		- [x] SocketServer
 
 ## GitHub
 Click Here: [https://github.com/chenhahacjl/CML.ToolKit](https://github.com/chenhahacjl/CML.ToolKit "CML.ToolKit GitHub Website")

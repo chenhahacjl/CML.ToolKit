@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F176B109-7214-45EE-8670-B8860DB19821}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CML.CommonEx</RootNamespace>
+    <AssemblyName>CML.CommonEx</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\ToolKit\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\ToolKit\Debug\CML.CommonEx.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\ToolKit\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\ToolKit\Release\CML.CommonEx.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.4.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>FuncDataBase\AssiLib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>FuncDataBase\AssiLib\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FuncConfiguration\AssiEnum\ERegDomain.cs" />
+    <Compile Include="FuncConfiguration\AssiEnum\ERegValueKind.cs" />
+    <Compile Include="FuncConfiguration\AssiFileBase\IniFile.cs" />
+    <Compile Include="FuncConfiguration\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncConfiguration\IniOperate.cs" />
+    <Compile Include="FuncConfiguration\RegOperate.cs" />
+    <Compile Include="FuncDataBase\AssiDatabaseBase\IDatabase.cs" />
+    <Compile Include="FuncDataBase\AssiDatabaseBase\MySqlDataBase.cs" />
+    <Compile Include="FuncDataBase\AssiDatabaseBase\OracleDataBase.cs" />
+    <Compile Include="FuncDataBase\AssiDatabaseBase\SqlServerDataBase.cs" />
+    <Compile Include="FuncDataBase\AssiEnum\EDataBaseType.cs" />
+    <Compile Include="FuncDataBase\AssiModel\ModDataParameter.cs" />
+    <Compile Include="FuncDataBase\AssiModel\ModTransactionParameter.cs" />
+    <Compile Include="FuncDataBase\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncDataBase\DataBase.cs" />
+    <Compile Include="FuncEncode\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncEncode\DESEncrypt.cs" />
+    <Compile Include="FuncEncode\MD5Encrypt.cs" />
+    <Compile Include="FuncEnum\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncEnum\EnumOperate.cs" />
+    <Compile Include="FuncThread\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncThread\InvokeOperate.cs" />
+    <Compile Include="FuncVersion\AssiVersion\VersionInfon.cs" />
+    <Compile Include="FuncVersion\VersionBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncVersion\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="FuncThread\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="FuncEnum\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="FuncEncode\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="FuncDataBase\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="FuncConfiguration\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="FuncDataBase\AssiLib\MySql.Data.dll" />
+    <Content Include="FuncDataBase\AssiLib\Oracle.ManagedDataAccess.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
