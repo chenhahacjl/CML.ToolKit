@@ -2,6 +2,9 @@
 
 namespace CML.ToolTest.FunctionTestClass
 {
+    /// <summary>
+    /// 线程操作测试类
+    /// </summary>
     internal class ThreadTest : ToolKitTestBase
     {
         /// <summary>

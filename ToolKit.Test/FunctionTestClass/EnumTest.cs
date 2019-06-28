@@ -3,6 +3,9 @@ using System.ComponentModel;
 
 namespace CML.ToolTest
 {
+    /// <summary>
+    /// 枚举操作测试类
+    /// </summary>
     internal class EnumTest : ToolKitTestBase
     {
         /// <summary>

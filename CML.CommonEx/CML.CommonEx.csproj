@@ -74,6 +74,9 @@
     <Compile Include="FuncEncode\MD5Encrypt.cs" />
     <Compile Include="FuncEnum\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncEnum\EnumOperate.cs" />
+    <Compile Include="FuncRegex\AssiEnum\ENumberVerifyType.cs" />
+    <Compile Include="FuncRegex\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncRegex\RegexOperate.cs" />
     <Compile Include="FuncThread\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncThread\InvokeOperate.cs" />
     <Compile Include="FuncUIAutomation\AssiEnum\ECheckBoxStatus.cs" />
@@ -97,6 +100,10 @@
   <ItemGroup>
     <Content Include="FuncDataBase\AssiLib\MySql.Data.dll" />
     <Content Include="FuncDataBase\AssiLib\Oracle.ManagedDataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="FuncRegex\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

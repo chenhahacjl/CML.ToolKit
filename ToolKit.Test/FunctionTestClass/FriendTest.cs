@@ -2,6 +2,9 @@
 
 namespace CML.ToolTest.FunctionTestClass
 {
+    /// <summary>
+    /// 朋友游戏测试类
+    /// </summary>
     internal class FriendTest : ToolKitTestBase
     {
         /// <summary>
