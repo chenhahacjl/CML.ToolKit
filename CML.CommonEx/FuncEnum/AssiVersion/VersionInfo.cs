@@ -11,15 +11,15 @@ namespace CML.CommonEx.EnumEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string VerMain => "1.1";
+        public override string VerMain => "1.2";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string VerDev => "19Y002R001";
+        public override string VerDev => "19Y003R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string VerDate => "2019年06月27日 09:45";
+        public override string VerDate => "2019年06月28日 10:05";
         /// <summary>
         /// 当前程序集 
         /// </summary>

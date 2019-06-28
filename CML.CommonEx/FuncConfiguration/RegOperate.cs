@@ -6,7 +6,7 @@ namespace CML.CommonEx.ConfigurationEx
     /// <summary>
     /// 注册表操作类
     /// </summary>
-    public class RegOperate
+    public static class RegOperate
     {
         #region 公有方法
         /// <summary>
@@ -14,7 +14,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// </summary>
         /// <param name="regDomain">注册表基项域</param>
         /// <param name="subItem">注册表项名称</param>
-        public static bool CF_CreateSubItem(ERegDomain regDomain, string subItem)
+        public static bool CF_CreateSubItem(this ERegDomain regDomain, string subItem)
         {
             //判断注册表项是否为空
             if (string.IsNullOrWhiteSpace(subItem))
@@ -46,7 +46,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="regDomain">注册表基项域</param>
         /// <param name="subItem">注册表项名称</param>
         /// <returns>注册表项存在情况</returns>
-        public static bool CF_ExistSubItem(ERegDomain regDomain, string subItem)
+        public static bool CF_ExistSubItem(this ERegDomain regDomain, string subItem)
         {
             //判断注册表项是否为空
             if (string.IsNullOrWhiteSpace(subItem))
@@ -69,7 +69,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="regDomain">注册表基项域</param>
         /// <param name="subItem">注册表项名称</param>
         /// <returns>执行情况</returns>
-        public static bool CF_DeleteSubItem(ERegDomain regDomain, string subItem)
+        public static bool CF_DeleteSubItem(this ERegDomain regDomain, string subItem)
         {
             //判断注册表项是否为空
             if (string.IsNullOrWhiteSpace(subItem))
@@ -104,7 +104,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="subItem">注册表项名称</param>
         /// <param name="regKey">键值名称</param>
         /// <returns>注册表键值存在情况</returns>
-        public static bool CF_ExistRegeditKey(ERegDomain regDomain, string subItem, string regKey)
+        public static bool CF_ExistRegeditKey(this ERegDomain regDomain, string subItem, string regKey)
         {
             //判断键值名称是否为空
             if (string.IsNullOrWhiteSpace(regKey))
@@ -147,7 +147,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="valueKind">键值类型</param>
         /// <param name="value">键值内容</param>
         /// <returns>执行情况</returns>
-        public static bool CF_WriteRegeditKey(ERegDomain regDomain, string subItem, string regKey, ERegValueKind valueKind, object value)
+        public static bool CF_WriteRegeditKey(this ERegDomain regDomain, string subItem, string regKey, ERegValueKind valueKind, object value)
         {
             //判断键值名称是否为空
             if (string.IsNullOrWhiteSpace(regKey))
@@ -187,7 +187,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="subItem">注册表项名称</param>
         /// <param name="regKey">键值名称</param>
         /// <returns>键值内容</returns>
-        public static object CF_ReadRegeditKey(ERegDomain regDomain, string subItem, string regKey)
+        public static object CF_ReadRegeditKey(this ERegDomain regDomain, string subItem, string regKey)
         {
             //判断键值名称是否为空
             if (string.IsNullOrWhiteSpace(regKey))
@@ -221,7 +221,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="subItem">注册表项名称</param>
         /// <param name="regKey">键值名称</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DeleteRegeditKey(ERegDomain regDomain, string subItem, string regKey)
+        public static bool CF_DeleteRegeditKey(this ERegDomain regDomain, string subItem, string regKey)
         {
             //判断注册表项和键值名称是否为空
             if (string.IsNullOrWhiteSpace(subItem) || string.IsNullOrWhiteSpace(regKey))

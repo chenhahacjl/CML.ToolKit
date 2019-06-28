@@ -24,7 +24,9 @@ namespace CML.ToolTest
         /// </summary>
         public override void ExecuteTest()
         {
-            PrintLogLn(MsgType.Info, "枚举描述信息: " + EnumOperate.CF_GetDescription(ETest.EnumTestItem));
+            PrintLogLn(MsgType.Info, "枚举数值: " + ETest.EnumTestItem.CF_ToNumber());
+            PrintLogLn(MsgType.Info, "枚举字符串: " + ETest.EnumTestItem.CF_ToString());
+            PrintLogLn(MsgType.Info, "枚举描述信息: " + ETest.EnumTestItem.CF_GetDescription());
         }
 
         private enum ETest

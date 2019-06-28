@@ -8,7 +8,7 @@ namespace CML.CommonEx.EncodeEx
     /// <summary>
     /// MD5加密操作类
     /// </summary>
-    public class MD5Encrypt
+    public static class MD5Encrypt
     {
         /// <summary>
         /// 16位MD5加密
@@ -62,6 +62,17 @@ namespace CML.CommonEx.EncodeEx
             {
                 return sbMD5.Replace("-", "").ToString().ToLower();
             }
+        }
+
+        /// <summary>
+        /// 文件MD5加密
+        /// </summary>
+        /// <param name="file">文件</param>
+        /// <param name="isUpper">大写输出</param>
+        /// <returns>文件MD5值</returns>
+        public static string CF_MD5EncryptFile(this FileInfo file, bool isUpper = true)
+        {
+            return CF_MD5EncryptFile(file.FullName, isUpper);
         }
 
         /// <summary>

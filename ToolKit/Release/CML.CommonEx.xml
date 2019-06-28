@@ -834,6 +834,14 @@
             <param name="isUpper">大写输出</param>
             <returns>32位MD5值</returns>
         </member>
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5EncryptFile(System.IO.FileInfo,System.Boolean)">
+            <summary>
+            文件MD5加密
+            </summary>
+            <param name="file">文件</param>
+            <param name="isUpper">大写输出</param>
+            <returns>文件MD5值</returns>
+        </member>
         <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5EncryptFile(System.String,System.Boolean)">
             <summary>
             文件MD5加密
@@ -881,6 +889,20 @@
         <member name="M:CML.CommonEx.EnumEx.EnumOperate.CF_GetDescription(System.Enum)">
             <summary>
             获取枚举的描述
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.EnumOperate.CF_ToNumber(System.Enum)">
+            <summary>
+            枚举转数值
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.EnumOperate.CF_ToString(System.Enum)">
+            <summary>
+            枚举转字符串
             </summary>
             <param name="en">枚举</param>
             <returns>返回枚举的描述</returns>
@@ -1036,6 +1058,13 @@
             获取根元素
             </summary>
             <returns>根元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByProcess(System.Diagnostics.Process)">
+            <summary>
+            通过进程获取元素
+            </summary>
+            <param name="process">进程</param>
+            <returns>元素</returns>
         </member>
         <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_GetElementByPId(System.Int32)">
             <summary>

@@ -29,12 +29,12 @@ namespace CML.ToolTest
         /// </summary>
         public override void ExecuteTest()
         {
-            Process process = UIAutomationOperate.CF_StartProgram(@"C:\Windows\Notepad.exe");
+            Process process = @"C:\Windows\Notepad.exe".CF_StartProgram();
 
             Thread.Sleep(1000);
-            AutomationElement app = UIAutomationOperate.CF_GetElementByPId(process.Id);
-            AutomationElement element = UIAutomationOperate.CF_GetElementByAutomationId(app, "15");
-            UIAutomationOperate.CF_SetTextContent(element,
+            AutomationElement app = process.CF_GetElementByProcess();
+            AutomationElement element = app.CF_GetElementByAutomationId("15");
+            element.CF_SetTextContent(
                 "Hello World!\n\n" +
                 "H\n" +
                 "   E\n" +

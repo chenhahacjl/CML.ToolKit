@@ -12,7 +12,7 @@ namespace CML.CommonEx.UIAutomationEx
     /// 【引用】UIAutomationTypes
     /// 【引用】UIAutomationProvider
     /// </summary>
-    public class UIAutomationOperate
+    public static class UIAutomationOperate
     {
         #region 启动应用程序
         /// <summary>
@@ -20,7 +20,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="progPath">应用程序路径</param>
         /// <returns>进程变量</returns>
-        public static Process CF_StartProgram(string progPath)
+        public static Process CF_StartProgram(this string progPath)
         {
             return CF_StartProgram(progPath, "");
         }
@@ -31,7 +31,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="progPath">应用程序路径</param>
         /// <param name="args">启动参数</param>
         /// <returns>进程变量</returns>
-        public static Process CF_StartProgram(string progPath, string args)
+        public static Process CF_StartProgram(this string progPath, string args)
         {
             return CF_StartProgram(progPath, args, new FileInfo(progPath).Directory.FullName);
         }
@@ -43,7 +43,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="args">启动参数</param>
         /// <param name="workPath">工装路径</param>
         /// <returns>进程变量</returns>
-        public static Process CF_StartProgram(string progPath, string args, string workPath)
+        public static Process CF_StartProgram(this string progPath, string args, string workPath)
         {
             if (!File.Exists(progPath))
             {
@@ -92,7 +92,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="element">窗体元素</param>
         /// <param name="treeScope">遍历模式</param>
         /// <returns>元素合集</returns>
-        public static AutomationElementCollection CF_GetElementCollection(AutomationElement element, TreeScope treeScope)
+        public static AutomationElementCollection CF_GetElementCollection(this AutomationElement element, TreeScope treeScope)
         {
             AutomationElementCollection automationElementCollection = null;
 
@@ -122,11 +122,21 @@ namespace CML.CommonEx.UIAutomationEx
         }
 
         /// <summary>
+        /// 通过进程获取元素
+        /// </summary>
+        /// <param name="process">进程</param>
+        /// <returns>元素</returns>
+        public static AutomationElement CF_GetElementByProcess(this Process process)
+        {
+            return CF_GetElementByPId(process.Id);
+        }
+
+        /// <summary>
         /// 通过进程ID获取元素
         /// </summary>
         /// <param name="pid">进程ID</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByPId(int pid)
+        public static AutomationElement CF_GetElementByPId(this int pid)
         {
             AutomationElement automationElement = null;
 
@@ -146,7 +156,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="element">窗体元素</param>
         /// <returns>第一个元素</returns>
-        public static AutomationElement CF_GetFirstElement(AutomationElement element)
+        public static AutomationElement CF_GetFirstElement(this AutomationElement element)
         {
             return CF_GetFirstElement(element, TreeScope.Subtree);
         }
@@ -157,7 +167,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="element">窗体元素</param>
         /// <param name="treeScope">遍历模式</param>
         /// <returns>第一个元素</returns>
-        public static AutomationElement CF_GetFirstElement(AutomationElement element, TreeScope treeScope)
+        public static AutomationElement CF_GetFirstElement(this AutomationElement element, TreeScope treeScope)
         {
             AutomationElement automationElement = null;
 
@@ -181,7 +191,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="element">窗体元素</param>
         /// <param name="index">序列ID</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByIndex(AutomationElement element, int index)
+        public static AutomationElement CF_GetElementByIndex(this AutomationElement element, int index)
         {
             return CF_GetElementByIndex(element, TreeScope.Subtree, index);
         }
@@ -193,7 +203,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="treeScope">遍历模式</param>
         /// <param name="index">序列ID</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByIndex(AutomationElement element, TreeScope treeScope, int index)
+        public static AutomationElement CF_GetElementByIndex(this AutomationElement element, TreeScope treeScope, int index)
         {
             AutomationElement automationElement = null;
 
@@ -217,7 +227,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="element">窗体元素</param>
         /// <param name="automationId">内部名称</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByAutomationId(AutomationElement element, string automationId)
+        public static AutomationElement CF_GetElementByAutomationId(this AutomationElement element, string automationId)
         {
             return CF_GetElementByAutomationId(element, TreeScope.Subtree, automationId);
         }
@@ -229,7 +239,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="treeScope">遍历模式</param>
         /// <param name="automationId">内部名称</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByAutomationId(AutomationElement element, TreeScope treeScope, string automationId)
+        public static AutomationElement CF_GetElementByAutomationId(this AutomationElement element, TreeScope treeScope, string automationId)
         {
             AutomationElement automationElement = null;
 
@@ -254,7 +264,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="controlType">元素类型</param>
         /// <param name="elementName">元素名称</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByTypeName(AutomationElement element, ControlType controlType, string elementName)
+        public static AutomationElement CF_GetElementByTypeName(this AutomationElement element, ControlType controlType, string elementName)
         {
             return CF_GetElementByTypeName(element, TreeScope.Subtree, controlType, elementName);
         }
@@ -267,7 +277,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="controlType">元素类型</param>
         /// <param name="elementName">元素名称</param>
         /// <returns>元素</returns>
-        public static AutomationElement CF_GetElementByTypeName(AutomationElement element, TreeScope treeScope, ControlType controlType, string elementName)
+        public static AutomationElement CF_GetElementByTypeName(this AutomationElement element, TreeScope treeScope, ControlType controlType, string elementName)
         {
             AutomationElement automationElement = null;
 
@@ -301,7 +311,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="element">元素</param>
         /// <returns>Name属性</returns>
-        public static string CF_GetNameContent(AutomationElement element)
+        public static string CF_GetNameContent(this AutomationElement element)
         {
             string elementName = "";
 
@@ -322,7 +332,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="element">文本框元素</param>
         /// <returns>文本内容</returns>
-        public static string CF_GetTextContent(AutomationElement element)
+        public static string CF_GetTextContent(this AutomationElement element)
         {
             string elementText = "";
 
@@ -348,7 +358,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="element">文本框元素</param>
         /// <param name="content">文本内容</param>
         /// <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
-        public static void CF_SetTextContent(AutomationElement element, string content, int delay = 100)
+        public static void CF_SetTextContent(this AutomationElement element, string content, int delay = 100)
         {
             if (element != null && element.Current.ControlType == ControlType.Edit)
             {
@@ -405,7 +415,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="element">复选框元素</param>
         /// <returns>选择状态</returns>
-        public static ECheckBoxStatus CF_GetCheckBoxStatu(AutomationElement element)
+        public static ECheckBoxStatus CF_GetCheckBoxStatu(this AutomationElement element)
         {
             ECheckBoxStatus checkBoxStatus = ECheckBoxStatus.Error;
 
@@ -434,7 +444,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="element">复选框元素</param>
         /// <param name="statu">选择状态</param>
-        public static void CF_SetCheckBoxStatu(AutomationElement element, bool statu)
+        public static void CF_SetCheckBoxStatu(this AutomationElement element, bool statu)
         {
             if (element != null && element.Current.ControlType == ControlType.CheckBox)
             {
@@ -460,7 +470,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// </summary>
         /// <param name="element">下拉列表元素</param>
         /// <returns>列表项元素</returns>
-        public static AutomationElement CF_GetSelectListItem(AutomationElement element)
+        public static AutomationElement CF_GetSelectListItem(this AutomationElement element)
         {
             AutomationElement automationElement = null;
 
@@ -484,7 +494,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// 设置下拉列表选择项
         /// </summary>
         /// <param name="element">列表项元素</param>
-        public static void CF_SetSelectListItem(AutomationElement element)
+        public static void CF_SetSelectListItem(this AutomationElement element)
         {
             if (element != null && element.Current.ControlType == ControlType.ListItem)
             {
@@ -504,7 +514,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// 单击按钮
         /// </summary>
         /// <param name="element">按钮元素</param>
-        public static void CF_ClickButton(AutomationElement element)
+        public static void CF_ClickButton(this AutomationElement element)
         {
             if (element != null && element.Current.ControlType == ControlType.Button)
             {
@@ -526,7 +536,7 @@ namespace CML.CommonEx.UIAutomationEx
         /// <param name="element">元素</param>
         /// <param name="command">命令</param>
         /// <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
-        public static void CF_SendCommand(AutomationElement element, string command, int delay = 100)
+        public static void CF_SendCommand(this AutomationElement element, string command, int delay = 100)
         {
             if (element != null)
             {

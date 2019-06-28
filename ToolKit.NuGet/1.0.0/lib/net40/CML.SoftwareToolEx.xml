@@ -1,0 +1,752 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CML.SoftwareToolEx</name>
+    </assembly>
+    <members>
+        <member name="T:CML.SocketEx.VersionInfo">
+            <summary>
+            软件工具包Socket通讯工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.SocketEx.EMsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.EMsgType.Infomation">
+            <summary>
+            接收消息
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.EMsgType.System">
+            <summary>
+            系统消息
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.EMsgType.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.ESwapMsgType">
+            <summary>
+            交换消息类型
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ESwapMsgType.BadMessage">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ESwapMsgType.UnknowMessage">
+            <summary>
+            未知消息
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ESwapMsgType.NormalMessage">
+            <summary>
+            普通消息
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ESwapMsgType.HeartBeat">
+            <summary>
+            心跳包
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ESwapMsgType.ComputerName">
+            <summary>
+            计算机名称
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ESwapMsgType.ShutdownCommand">
+            <summary>
+            下线命令
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.ISCommand">
+            <summary>
+            指令变量
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISCommand.CmdGetPcName">
+            <summary>
+            获取客户端PC名称命令
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISCommand.CmdClientHB">
+            <summary>
+            客户端心跳包命令
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISCommand.CmdServerHB">
+            <summary>
+            服务端心跳包命令
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISCommand.CmdClientNeedShutdown">
+            <summary>
+            客户端自主下线命令
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISCommand.CmdClientRequShutdown">
+            <summary>
+            客户端强制下线命令
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.ISDefault">
+            <summary>
+            默认变量
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISDefault.DefMessage">
+            <summary>
+            默认消息
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISDefault.DefDateTime">
+            <summary>
+            默认时间
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISDefault.DefGuid">
+            <summary>
+            默认GUID
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.ISMessage">
+            <summary>
+            消息变量
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISMessage.MsgNormalStart">
+            <summary>
+            普通消息开始标记
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISMessage.MsgNormalEnd">
+            <summary>
+            普通消息结束标记
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISMessage.MsgPcNameStart">
+            <summary>
+            计算机名称消息开始标记
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISMessage.MsgPcNameEnd">
+            <summary>
+            计算机名称消息结束标记
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.ISRegex">
+            <summary>
+            正则变量
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISRegex.RegMsgNormal">
+            <summary>
+            普通消息解析正则
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ISRegex.RegMsgPcName">
+            <summary>
+            计算机名称消息解析正则
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.ModClient">
+            <summary>
+            客户端模型
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.ModClient.m_dtLastHBTime">
+            <summary>
+            上次心跳时间
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModClient.GUID">
+            <summary>
+            客户端ID
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModClient.Socket">
+            <summary>
+            套接字
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModClient.Name">
+            <summary>
+            客户端名称
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModClient.#ctor(System.Net.Sockets.Socket)">
+            <summary>
+            构造客户端对象
+            </summary>
+            <param name="socket">套接字</param>
+        </member>
+        <member name="M:CML.SocketEx.ModClient.SetHBTime">
+            <summary>
+            设置心跳时间
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModClient.CheckHBTimeOut(System.Int32)">
+            <summary>
+            检查心跳是否超时
+            </summary>
+            <param name="timeOut">超时时间</param>
+            <returns>是否超时</returns>
+        </member>
+        <member name="T:CML.SocketEx.ModClientMessage">
+            <summary>
+            客户端消息
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModClientMessage.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModClientMessage.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModClientMessage.IsEmptyMsg">
+            <summary>
+            空消息标记
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModClientMessage.#ctor(CML.SocketEx.EMsgType,System.String)">
+            <summary>
+            构造Socket信息对象
+            </summary>
+            <param name="msgType">消息类型</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="T:CML.SocketEx.ModResult`1">
+            <summary>
+            结果模型
+            </summary>
+            <typeparam name="T">结果内容数据类型</typeparam>
+        </member>
+        <member name="P:CML.SocketEx.ModResult`1.IsSuccess">
+            <summary>
+            结果状态
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModResult`1.Result">
+            <summary>
+            结果内容
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModResult`1.#ctor">
+            <summary>
+            构造成功结果对象（默认结果内容）
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModResult`1.#ctor(System.Boolean,`0)">
+            <summary>
+            构造结果对象
+            </summary>
+            <param name="isSuccess">结果状态</param>
+            <param name="result">结果内容</param>
+        </member>
+        <member name="T:CML.SocketEx.ModServerMessage">
+            <summary>
+            信息模型
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModServerMessage.Client">
+            <summary>
+            客户端
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModServerMessage.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModServerMessage.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModServerMessage.Source">
+            <summary>
+            信息源
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModServerMessage.IsEmptyMsg">
+            <summary>
+            空消息标记
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModServerMessage.#ctor(CML.SocketEx.ModClient,CML.SocketEx.EMsgType,System.String)">
+            <summary>
+            构造Socket信息对象
+            </summary>
+            <param name="client">客户端</param>
+            <param name="msgType">消息类型</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="T:CML.SocketEx.ModSwapMessage">
+            <summary>
+            交换消息
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModSwapMessage.SwapMsgType">
+            <summary>
+            交换信息类型
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModSwapMessage.SwapMsg">
+            <summary>
+            交换信息内容
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.ModSwapMessage.Client">
+            <summary>
+            交换信息内容
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.ModSwapMessage.#ctor(CML.SocketEx.ESwapMsgType,System.String,CML.SocketEx.ModClient)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="swapMsgType">交换信息类型</param>
+            <param name="swapMsg">交换信息内容</param>
+            <param name="client">客户端（服务端使用时写）</param>
+        </member>
+        <member name="T:CML.SocketEx.MsgAnalyseOperate">
+            <summary>
+            客户端消息解析类
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.MsgAnalyseOperate.m_strUnProcessMsg">
+            <summary>
+            未处理消息
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.MsgAnalyseOperate.SwapMessageNotifyHandler">
+            <summary>
+            交换信息上报委托
+            </summary>
+            <param name="swapMsg">客户端交换信息</param>
+        </member>
+        <member name="E:CML.SocketEx.MsgAnalyseOperate.MessageNotify">
+            <summary>
+            交换信息上报事件
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.MsgAnalyseOperate.AnalyseMsg(System.String,System.String,CML.SocketEx.ModClient)">
+            <summary>
+            消息解析
+            </summary>
+            <param name="id">消息ID</param>
+            <param name="message">消息内容</param>
+            <param name="client">客户端（服务端使用时写）</param>
+        </member>
+        <member name="T:CML.SocketEx.SocketClient">
+            <summary>
+            Socket客户端
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_ipEndPoint">
+            <summary>
+            服务端网络终端
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_socket">
+            <summary>
+            客户端套接字
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_reStartSecs">
+            <summary>
+            重连间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_connectSecs">
+            <summary>
+            连接间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_heartBeatSecs">
+            <summary>
+            心跳间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_heartBeatSkipTimes">
+            <summary>
+            心跳开始跳过次数
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_reSendTimes">
+            <summary>
+            发送失败重发次数
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_lastCloseTime">
+            <summary>
+            上次连接结束时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_hbSendTime">
+            <summary>
+            发送心跳时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_hbReceiveTime">
+            <summary>
+            接收心跳时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_thread">
+            <summary>
+            通讯线程
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_isThreadStop">
+            <summary>
+            线程停止标志
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_isConnectiong">
+            <summary>
+            正在连接标志
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_analyseID">
+            <summary>
+            解析ID
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketClient.m_analyseOperate">
+            <summary>
+            信息解析
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_IsConnected">
+            <summary>
+            是否已经连接
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_IsAutoReConnect">
+            <summary>
+            是否自动重连接
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_RestartTime">
+            <summary>
+            重连间隔时间[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_ConnectTime">
+            <summary>
+            连接间隔时间(≥重连间隔时间)[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_HeartBeatTime">
+            <summary>
+            心跳间隔时间[默认值:60|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_HeartBeatSkipTimes">
+            <summary>
+            心跳开始跳过次数[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketClient.CP_ReSendTimes">
+            <summary>
+            发送失败重发次数[默认值:3|范围:0-10|单位:次]
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.#ctor">
+            <summary>
+            构造服务端对象
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.Finalize">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.SocketClient.ReceiveMessageHandle">
+            <summary>
+            获取消息委托
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="E:CML.SocketEx.SocketClient.CE_ReceiveMessage">
+            <summary>
+            获取消息事件
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.CF_InitClient(System.String,System.Int32)">
+            <summary>
+            初始化客户端
+            </summary>
+            <param name="ip">服务端IP地址</param>
+            <param name="port">服务占用端口</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.CF_StartConnection">
+            <summary>
+            打开连接
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.CF_StopConnection">
+            <summary>
+            关闭连接
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.CF_SendMessage(System.String)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="message">消息内容</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.ConnectThread">
+            <summary>
+            服务器连接线程
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.ReceiveThread">
+            <summary>
+            消息接收线程
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.HeartBeatThread">
+            <summary>
+            心跳线程
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.CloseSocketConnect">
+            <summary>
+            关闭套接字连接
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.SendMsg(System.String,System.Int32,System.Boolean)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="message">消息内容</param>
+            <param name="reSend">重发次数</param>
+            <param name="innerMsg">内部消息标志</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketClient.MessageNotify(CML.SocketEx.ModSwapMessage)">
+            <summary>
+            客户端交换信息上报
+            </summary>
+            <param name="swapMsg">客户端交换消息</param>
+        </member>
+        <member name="T:CML.SocketEx.SocketServer">
+            <summary>
+            Socket服务端类
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_ipEndPoint">
+            <summary>
+            服务端网络终端
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_socket">
+            <summary>
+            服务端套接字
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_reStartSecs">
+            <summary>
+            服务重启间隔
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_heartBeatCheckSecs">
+            <summary>
+            心跳检测间隔时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_reSendTimes">
+            <summary>
+            发送失败重发次数
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_lastCloseTime">
+            <summary>
+            上次服务结束时间
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_clientList">
+            <summary>
+            客户端列表
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_isThreadStop">
+            <summary>
+            线程停止标志
+            </summary>
+        </member>
+        <member name="F:CML.SocketEx.SocketServer.m_analyseOperate">
+            <summary>
+            信息解析
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketServer.CP_IsServerOpen">
+            <summary>
+            服务状态
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketServer.CP_RestartTime">
+            <summary>
+            服务重启间隔[默认值:5|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketServer.CP_ReSendTimes">
+            <summary>
+            发送失败重发次数[默认值:3|范围:0-10|单位:次]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketServer.CP_IsOpenHeartBeatCheck">
+            <summary>
+            是否开启心跳间隔检测
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketServer.CP_HeartBeatCheckTime">
+            <summary>
+            心跳间隔检测时间[默认值:60|最小值:1|单位:秒]
+            </summary>
+        </member>
+        <member name="P:CML.SocketEx.SocketServer.CP_ClientList">
+            <summary>
+            客户端列表
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.#ctor">
+            <summary>
+            构造服务端对象
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.Finalize">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:CML.SocketEx.SocketServer.ReceiveMessageHandle">
+            <summary>
+            获取消息委托
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="E:CML.SocketEx.SocketServer.CE_ReceiveMessage">
+            <summary>
+            获取消息事件
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.CF_InitServer(System.String,System.Int32)">
+            <summary>
+            初始化服务
+            </summary>
+            <param name="ip">服务端IP地址</param>
+            <param name="port">服务占用端口</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.CF_StartService">
+            <summary>
+            开启服务
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.CF_StopService">
+            <summary>
+            停止服务
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.CF_SendMessage(System.String)">
+            <summary>
+            群体发送消息
+            </summary>
+            <param name="message">消息内容</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.CF_SendMessage(System.String,System.Guid)">
+            <summary>
+            单独发送消息
+            </summary>
+            <param name="message">消息内容</param>
+            <param name="guid">客户端ID</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.HeartBeatThread">
+            <summary>
+            心跳包监控
+            </summary>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.CloseSocketConnect">
+            <summary>
+            关闭套接字连接
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.SendMsg(System.Net.Sockets.Socket,System.String,System.Int32,System.Boolean)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="socket">套接字</param>
+            <param name="message">消息内容</param>
+            <param name="reSend">重发次数</param>
+            <param name="innerMsg">内部消息标志</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.ReceiveMsg(System.Object)">
+            <summary>
+            接收消息
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.ExitClient(CML.SocketEx.ModClient)">
+            <summary>
+            关闭客户端连接
+            </summary>
+            <param name="client">客户端</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.SocketEx.SocketServer.MessageNotify(CML.SocketEx.ModSwapMessage)">
+            <summary>
+            交换信息上报
+            </summary>
+            <param name="swapMsg">交换消息</param>
+        </member>
+    </members>
+</doc>
