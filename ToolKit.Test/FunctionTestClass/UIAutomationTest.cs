@@ -1,6 +1,5 @@
 ﻿using CML.CommonEx.UIAutomationEx;
 using System.Diagnostics;
-using System.Threading;
 using System.Windows.Automation;
 
 namespace CML.ToolTest
@@ -30,8 +29,8 @@ namespace CML.ToolTest
         public override void ExecuteTest()
         {
             Process process = @"C:\Windows\Notepad.exe".CF_StartProgram();
+            1.CF_DelaySecond();
 
-            Thread.Sleep(1000);
             AutomationElement app = process.CF_GetElementByProcess();
             AutomationElement element = app.CF_GetElementByAutomationId("15");
             element.CF_SetTextContent(
@@ -49,7 +48,7 @@ namespace CML.ToolTest
                 "                 ------Cmile_96"
             );
 
-            Thread.Sleep(2000);
+            2.CF_DelaySecond();
             process.Kill();
         }
     }

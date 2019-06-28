@@ -15,11 +15,11 @@ namespace CML.CommonEx.UIAutomationEx
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string VerDev => "19Y002R001";
+        public override string VerDev => "19Y002R002";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string VerDate => "2019年06月28日 09:55";
+        public override string VerDate => "2019年6月28日 12:50";
         /// <summary>
         /// 当前程序集 
         /// </summary>

@@ -553,5 +553,43 @@ namespace CML.CommonEx.UIAutomationEx
             }
         }
         #endregion
+
+        #region 延时操作
+        /// <summary>
+        /// 延时等待（毫秒）
+        /// </summary>
+        /// <param name="millisecond">延时毫秒数</param>
+        public static void CF_DelayMillisecond(this int millisecond)
+        {
+            Thread.Sleep(millisecond);
+        }
+
+        /// <summary>
+        /// 延时等待（秒）
+        /// </summary>
+        /// <param name="second">延时秒数</param>
+        public static void CF_DelaySecond(this int second)
+        {
+            CF_DelayMillisecond(second * 1000);
+        }
+
+        /// <summary>
+        /// 延时等待（分钟）
+        /// </summary>
+        /// <param name="minute">延时分钟数</param>
+        public static void CF_DelayMinute(this int minute)
+        {
+            CF_DelaySecond(minute * 60);
+        }
+
+        /// <summary>
+        /// 延时等待（小时）
+        /// </summary>
+        /// <param name="hour">延时小时数</param>
+        public static void CF_DelayHour(this int hour)
+        {
+            CF_DelayMinute(hour * 60);
+        }
+        #endregion
     }
 }

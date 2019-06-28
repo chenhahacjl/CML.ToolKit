@@ -976,6 +976,18 @@
             不确定
             </summary>
         </member>
+        <member name="T:CML.CommonEx.UIAutomationEx.ECheckBoxStatusExFunction">
+            <summary>
+            复选框状态枚举扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ECheckBoxStatusExFunction.CF_IsError(CML.CommonEx.UIAutomationEx.ECheckBoxStatus)">
+            <summary>
+            复选框状态是否获取错误
+            </summary>
+            <param name="checkBoxStatus">复选框状态</param>
+            <returns>获取结果</returns>
+        </member>
         <member name="T:CML.CommonEx.UIAutomationEx.VersionInfo">
             <summary>
             常用工具包UI自动化操作工具版本信息
@@ -1203,6 +1215,30 @@
             <param name="element">元素</param>
             <param name="command">命令</param>
             <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_DelayMillisecond(System.Int32)">
+            <summary>
+            延时等待（毫秒）
+            </summary>
+            <param name="millisecond">延时毫秒数</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_DelaySecond(System.Int32)">
+            <summary>
+            延时等待（秒）
+            </summary>
+            <param name="second">延时秒数</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_DelayMinute(System.Int32)">
+            <summary>
+            延时等待（分钟）
+            </summary>
+            <param name="minute">延时分钟数</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_DelayHour(System.Int32)">
+            <summary>
+            延时等待（小时）
+            </summary>
+            <param name="hour">延时小时数</param>
         </member>
         <member name="T:CML.CommonEx.VersionEx.VersionInfo">
             <summary>
