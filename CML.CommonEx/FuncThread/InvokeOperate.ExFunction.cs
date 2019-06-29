@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CML.CommonEx.ThreadEx
+namespace CML.CommonEx.ThreadEx.ExFunction
 {
     /// <summary>
-    /// 委托帮助类
+    /// 委托帮助类(扩展方法)
     /// </summary>
-    public class InvokeOperate
+    public static class InvokeOperate
     {
         /// <summary>
         /// 多线程更新UI
@@ -14,7 +14,7 @@ namespace CML.CommonEx.ThreadEx
         /// <param name="control">委托控件</param>
         /// <param name="action">委托操作</param>
         /// <param name="isThrowException">是否抛出异常</param>
-        public static void CF_InvokeUI(Control control, Action action, bool isThrowException = false)
+        public static void CF_InvokeUI(this Control control, Action action, bool isThrowException = false)
         {
             if (control.InvokeRequired)
             {

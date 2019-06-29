@@ -1,4 +1,5 @@
 ﻿using CML.CommonEx.UIAutomationEx;
+using CML.CommonEx.UIAutomationEx.ExFunction;
 using System.Diagnostics;
 using System.Windows.Automation;
 

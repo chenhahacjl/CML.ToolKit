@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("常用工具包")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("笑笑工作室")]
-[assembly: AssemblyProduct("CML")]
+[assembly: AssemblyProduct("CML.ToolKit")]
 [assembly: AssemblyCopyright("Copyright (C) 2019 Cmile_96, All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

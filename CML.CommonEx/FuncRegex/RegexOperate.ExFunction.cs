@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace CML.CommonEx.RegexEx
+namespace CML.CommonEx.RegexEx.ExFunction
 {
     /// <summary>
-    /// 正则表达式帮助类
+    /// 正则表达式帮助类(扩展方法)
     /// </summary>
-    public class RegexOperate
+    public static class RegexOperate
     {
         #region 匹配方法
         /// <summary>
@@ -15,7 +15,7 @@ namespace CML.CommonEx.RegexEx
         /// <param name="input">待验证字符串</param>
         /// <param name="pattern">正则表达式</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsMatch(string input, string pattern)
+        public static bool CF_IsMatch(this string input, string pattern)
         {
             return CF_IsMatch(input, pattern, false);
         }
@@ -27,7 +27,7 @@ namespace CML.CommonEx.RegexEx
         /// <param name="pattern">正则表达式</param>
         /// <param name="ignoreCase">是否忽略大小写</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsMatch(string input, string pattern, bool ignoreCase)
+        public static bool CF_IsMatch(this string input, string pattern, bool ignoreCase)
         {
             return new Regex(pattern, ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None).IsMatch(input);
         }
@@ -39,7 +39,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsInterger(string input)
+        public static bool CF_IsInterger(this string input)
         {
             return CF_IsInterger(input, ENumberVerifyType.Normal);
         }
@@ -50,7 +50,7 @@ namespace CML.CommonEx.RegexEx
         /// <param name="input">待验证字符串</param>
         /// <param name="type">数值验证类型</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsInterger(string input, ENumberVerifyType type)
+        public static bool CF_IsInterger(this string input, ENumberVerifyType type)
         {
             bool result = false;
 
@@ -91,7 +91,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsFloat(string input)
+        public static bool CF_IsFloat(this string input)
         {
             return CF_IsFloat(input, ENumberVerifyType.Normal);
         }
@@ -102,7 +102,7 @@ namespace CML.CommonEx.RegexEx
         /// <param name="input">待验证字符串</param>
         /// <param name="type">数值验证类型</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsFloat(string input, ENumberVerifyType type)
+        public static bool CF_IsFloat(this string input, ENumberVerifyType type)
         {
             bool result = false;
 
@@ -143,7 +143,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsDouble(string input)
+        public static bool CF_IsDouble(this string input)
         {
             return CF_IsDouble(input, ENumberVerifyType.Normal);
         }
@@ -154,7 +154,7 @@ namespace CML.CommonEx.RegexEx
         /// <param name="input">待验证字符串</param>
         /// <param name="type">数值验证类型</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsDouble(string input, ENumberVerifyType type)
+        public static bool CF_IsDouble(this string input, ENumberVerifyType type)
         {
             bool result = false;
 
@@ -195,7 +195,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsDateTime(string input)
+        public static bool CF_IsDateTime(this string input)
         {
             return DateTime.TryParse(input, out _);
         }
@@ -207,7 +207,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsEmail(string input)
+        public static bool CF_IsEmail(this string input)
         {
             string pattern = @"^([\w-\.]+)@([\w-\.]+)(\.[a-zA-Z0-9]+)$";
             return CF_IsMatch(input, pattern);
@@ -218,7 +218,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsTelePhoneNumber(string input)
+        public static bool CF_IsTelePhoneNumber(this string input)
         {
             string pattern = @"^(((0\d2|0\d{2})[- ]?)?\d{8}|((0\d3|0\d{3})[- ]?)?\d{7})(-\d{3})?$";
             return CF_IsMatch(input, pattern);
@@ -229,7 +229,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsMobilePhoneNumber(string input)
+        public static bool CF_IsMobilePhoneNumber(this string input)
         {
             string pattern = @"^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$";
             return CF_IsMatch(input, pattern);
@@ -240,7 +240,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsPhoneNumber(string input)
+        public static bool CF_IsPhoneNumber(this string input)
         {
             string pattern = @"^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$|^(((0\d2|0\d{2})[- ]?)?\d{8}|((0\d3|0\d{3})[- ]?)?\d{7})(-\d{3})?$";
             return CF_IsMatch(input, pattern);
@@ -251,7 +251,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsZipCode(string input)
+        public static bool CF_IsZipCode(this string input)
         {
             string pattern = @"^\d{6}$";
             return CF_IsMatch(input, pattern);
@@ -262,7 +262,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIPv4(string input)
+        public static bool CF_IsIPv4(this string input)
         {
             string pattern = @"^(25[0-4]|2[0-4]\d]|[01]?\d{2}|[1-9])\.(25[0-5]|2[0-4]\d]|[01]?\d?\d)\.(25[0-5]|2[0-4]\d]|[01]?\d?\d)\.(25[0-4]|2[0-4]\d]|[01]?\d{2}|[1-9])$";
             return CF_IsMatch(input, pattern);
@@ -273,7 +273,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIPv6(string input)
+        public static bool CF_IsIPv6(this string input)
         {
             string pattern = @"^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$";
             return CF_IsMatch(input, pattern);
@@ -284,7 +284,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIDCard(string input)
+        public static bool CF_IsIDCard(this string input)
         {
             if (input.Length == 18)
             {
@@ -305,7 +305,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIDCard15(string input)
+        public static bool CF_IsIDCard15(this string input)
         {
             //验证是否可以转换为15位整数
             if (!long.TryParse(input, out long num) || num.ToString().Length != 15)
@@ -330,7 +330,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIDCard18(string input)
+        public static bool CF_IsIDCard18(this string input)
         {
             //验证是否可以转换为正确的整数
             if (!long.TryParse(input.Remove(17), out long num) || num.ToString().Length != 17 || !long.TryParse(input.Replace('x', '0').Replace('X', '0'), out _))
@@ -372,7 +372,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsLongitude(string input)
+        public static bool CF_IsLongitude(this string input)
         {
             string pattern = @"^[-\+]?((1[0-7]\d{1}|0?\d{1,2})\.\d{1,5}|180\.0{1,5})$";
             return CF_IsMatch(input, pattern);
@@ -383,7 +383,7 @@ namespace CML.CommonEx.RegexEx
         /// </summary>
         /// <param name="input">待验证的字符串</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsLatitude(string input)
+        public static bool CF_IsLatitude(this string input)
         {
             string pattern = @"^[-\+]?([0-8]?\d{1}\.\d{1,5}|90\.0{1,5})$";
             return CF_IsMatch(input, pattern);

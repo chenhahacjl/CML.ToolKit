@@ -16,6 +16,13 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 * Language: C# 7.1
 * IDE: Visual Studio 2019
 * Framework: .Net Framework 4.0</description>
+    <summary>【功能介绍】
+CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Socket通讯、配置操作、加密解密等功能。
+
+【开发环境】
+* Language: C# 7.1
+* IDE: Visual Studio 2019
+* Framework: .Net Framework 4.0</summary>
     <releaseNotes>1.0.0-beta
 1.增加增加UI自动化操作库。</releaseNotes>
     <copyright>Copyright (C) 2019 Cmile_96, All Rights Reserved.</copyright>

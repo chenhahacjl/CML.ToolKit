@@ -351,6 +351,95 @@
             <param name="isWritable">是否需要节点Write访问权限</param>
             <returns>若注册表节点存在，则返回节点，否则返回null</returns>
         </member>
+        <member name="T:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate">
+            <summary>
+            注册表操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_CreateSubItem(CML.CommonEx.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            创建注册表项
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_ExistSubItem(CML.CommonEx.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            检测注册表项是否存在
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <returns>注册表项存在情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_DeleteSubItem(CML.CommonEx.ConfigurationEx.ERegDomain,System.String)">
+            <summary>
+            删除注册表项
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <returns>执行情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_ExistRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            检测注册表键值是否存在
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>注册表键值存在情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_WriteRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String,CML.CommonEx.ConfigurationEx.ERegValueKind,System.Object)">
+            <summary>
+            设置指定的键值内容
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <param name="valueKind">键值类型</param>
+            <param name="value">键值内容</param>
+            <returns>执行情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_ReadRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            读取键值内容
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>键值内容</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.CF_DeleteRegeditKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.String)">
+            <summary>
+            删除键值
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="regKey">键值名称</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.GetRegDomain(CML.CommonEx.ConfigurationEx.ERegDomain)">
+            <summary>
+            获取注册表基项域对应顶级节点
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <returns>对应顶级节点</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.GetRegValueKind(CML.CommonEx.ConfigurationEx.ERegValueKind)">
+            <summary>
+            获取注册表中对应值数据类型
+            </summary>
+            <param name="regValueKind">注册表数据类型</param>
+            <returns>对应数据类型</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.ExFunction.RegOperate.OpenSubKey(CML.CommonEx.ConfigurationEx.ERegDomain,System.String,System.Boolean)">
+            <summary>
+            打开注册表项节点
+            </summary>
+            <param name="regDomain">注册表基项域</param>
+            <param name="subItem">注册表项名称</param>
+            <param name="isWritable">是否需要节点Write访问权限</param>
+            <returns>若注册表节点存在，则返回节点，否则返回null</returns>
+        </member>
         <member name="T:CML.CommonEx.DataBaseEx.IDataBase">
             <summary>
             数据库接口
@@ -813,6 +902,66 @@
             <param name="iv">向量（8位）</param>
             <returns>已解密字符串（错误时为空）</returns>
         </member>
+        <member name="T:CML.CommonEx.EncodeEx.ExFunction.DESEncrypt">
+            <summary>
+            DESEncrypt加密解密操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncrypt.CF_Encrypt(System.String,System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="inputValue">待加密字符串</param>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+            <returns>已加密字符串（错误时返回 ERROR:{ERROR MESSAGE}）</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncrypt.CF_Decrypt(System.String,System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="inputValue">待解密字符串</param>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+            <returns>已解密字符串（错误时为空）</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ExFunction.MD5Encrypt">
+            <summary>
+            MD5加密操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5Encrypt.CF_MD5Encrypt16(System.String,System.Boolean)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="input">待加密字符串</param>
+            <param name="isUpper">大写输出</param>
+            <returns>16位MD5值</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5Encrypt.CF_MD5Encrypt32(System.String,System.Boolean)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="input">待加密字符串</param>
+            <param name="isUpper">大写输出</param>
+            <returns>32位MD5值</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5Encrypt.CF_MD5EncryptFile(System.IO.FileInfo,System.Boolean)">
+            <summary>
+            文件MD5加密
+            </summary>
+            <param name="file">文件</param>
+            <param name="isUpper">大写输出</param>
+            <returns>文件MD5值</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5Encrypt.CF_MD5EncryptFile(System.String,System.Boolean)">
+            <summary>
+            文件MD5加密
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="isUpper">大写输出</param>
+            <returns>文件MD5值</returns>
+        </member>
         <member name="T:CML.CommonEx.EncodeEx.MD5Encrypt">
             <summary>
             MD5加密操作类
@@ -901,6 +1050,32 @@
             <returns>返回枚举的描述</returns>
         </member>
         <member name="M:CML.CommonEx.EnumEx.EnumOperate.CF_ToString(System.Enum)">
+            <summary>
+            枚举转字符串
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="T:CML.CommonEx.EnumEx.ExFunction.EnumOperate">
+            <summary>
+            枚举操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.ExFunction.EnumOperate.CF_GetDescription(System.Enum)">
+            <summary>
+            获取枚举的描述
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.ExFunction.EnumOperate.CF_ToNumber(System.Enum)">
+            <summary>
+            枚举转数值
+            </summary>
+            <param name="en">枚举</param>
+            <returns>返回枚举的描述</returns>
+        </member>
+        <member name="M:CML.CommonEx.EnumEx.ExFunction.EnumOperate.CF_ToString(System.Enum)">
             <summary>
             枚举转字符串
             </summary>
@@ -1126,6 +1301,164 @@
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
         </member>
+        <member name="T:CML.CommonEx.RegexEx.ExFunction.RegexOperate">
+            <summary>
+            正则表达式帮助类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsMatch(System.String,System.String)">
+            <summary>
+            验证字符串是否匹配正则表达式描述的规则
+            </summary>
+            <param name="input">待验证字符串</param>
+            <param name="pattern">正则表达式</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsMatch(System.String,System.String,System.Boolean)">
+            <summary>
+            验证字符串是否匹配正则表达式描述的规则
+            </summary>
+            <param name="input">待验证字符串</param>
+            <param name="pattern">正则表达式</param>
+            <param name="ignoreCase">是否忽略大小写</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsInterger(System.String)">
+            <summary>
+            验证整数
+            </summary>
+            <param name="input">待验证字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsInterger(System.String,CML.CommonEx.RegexEx.ENumberVerifyType)">
+            <summary>
+            验证整数
+            </summary>
+            <param name="input">待验证字符串</param>
+            <param name="type">数值验证类型</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsFloat(System.String)">
+            <summary>
+            验证单精度浮点数
+            </summary>
+            <param name="input">待验证字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsFloat(System.String,CML.CommonEx.RegexEx.ENumberVerifyType)">
+            <summary>
+            验证单精度浮点数
+            </summary>
+            <param name="input">待验证字符串</param>
+            <param name="type">数值验证类型</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsDouble(System.String)">
+            <summary>
+            验证双精度浮点数
+            </summary>
+            <param name="input">待验证字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsDouble(System.String,CML.CommonEx.RegexEx.ENumberVerifyType)">
+            <summary>
+            验证双精度浮点数
+            </summary>
+            <param name="input">待验证字符串</param>
+            <param name="type">数值验证类型</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsDateTime(System.String)">
+            <summary>
+            验证日期
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsEmail(System.String)">
+            <summary>
+            验证Email字符串
+            </summary>
+            <param name="input">待验证字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsTelePhoneNumber(System.String)">
+            <summary>
+            验证固定电话号码
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsMobilePhoneNumber(System.String)">
+            <summary>
+            验证手机号码
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsPhoneNumber(System.String)">
+            <summary>
+            验证电话号码 [可以是固定电话号码或手机号码]
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsZipCode(System.String)">
+            <summary>
+            验证邮政编码
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsIPv4(System.String)">
+            <summary>
+            验证IPv4地址 [第一位和最后一位数字不能是0或255，允许用0补位]
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsIPv6(System.String)">
+            <summary>
+            验证IPv6地址
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsIDCard(System.String)">
+            <summary>
+            验证身份证号
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsIDCard15(System.String)">
+            <summary>
+            验证一代身份证号 [15位数]
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsIDCard18(System.String)">
+            <summary>
+            验证二代身份证号 [18位数，GB11643-1999标准]
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsLongitude(System.String)">
+            <summary>
+            验证经度 [范围为-180～180，小数位数1-5位]
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperate.CF_IsLatitude(System.String)">
+            <summary>
+            验证纬度 [范围为-90～90，小数位数1-5位]
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
         <member name="T:CML.CommonEx.ThreadEx.VersionInfo">
             <summary>
             常用工具包线程操作工具版本信息
@@ -1163,6 +1496,19 @@
             </summary>
         </member>
         <member name="M:CML.CommonEx.ThreadEx.InvokeOperate.CF_InvokeUI(System.Windows.Forms.Control,System.Action,System.Boolean)">
+            <summary>
+            多线程更新UI
+            </summary>
+            <param name="control">委托控件</param>
+            <param name="action">委托操作</param>
+            <param name="isThrowException">是否抛出异常</param>
+        </member>
+        <member name="T:CML.CommonEx.ThreadEx.ExFunction.InvokeOperate">
+            <summary>
+            委托帮助类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ThreadEx.ExFunction.InvokeOperate.CF_InvokeUI(System.Windows.Forms.Control,System.Action,System.Boolean)">
             <summary>
             多线程更新UI
             </summary>
@@ -1454,6 +1800,227 @@
             <param name="minute">延时分钟数</param>
         </member>
         <member name="M:CML.CommonEx.UIAutomationEx.UIAutomationOperate.CF_DelayHour(System.Int32)">
+            <summary>
+            延时等待（小时）
+            </summary>
+            <param name="hour">延时小时数</param>
+        </member>
+        <member name="T:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate">
+            <summary>
+            UI自动化操作类(扩展方法)
+            【引用】UIAutomationClient
+            【引用】UIAutomationTypes
+            【引用】UIAutomationProvider
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_StartProgram(System.String)">
+            <summary>
+            启动应用程序
+            </summary>
+            <param name="progPath">应用程序路径</param>
+            <returns>进程变量</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_StartProgram(System.String,System.String)">
+            <summary>
+            启动应用程序
+            </summary>
+            <param name="progPath">应用程序路径</param>
+            <param name="args">启动参数</param>
+            <returns>进程变量</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_StartProgram(System.String,System.String,System.String)">
+            <summary>
+            启动应用程序
+            </summary>
+            <param name="progPath">应用程序路径</param>
+            <param name="args">启动参数</param>
+            <param name="workPath">工装路径</param>
+            <returns>进程变量</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetAllElements">
+            <summary>
+            获得根元素下的所有元素
+            </summary>
+            <returns>元素合集</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementCollection(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope)">
+            <summary>
+            获取窗体元素下的元素合集
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <returns>元素合集</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetRootElement">
+            <summary>
+            获取根元素
+            </summary>
+            <returns>根元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByProcess(System.Diagnostics.Process)">
+            <summary>
+            通过进程获取元素
+            </summary>
+            <param name="process">进程</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByPId(System.Int32)">
+            <summary>
+            通过进程ID获取元素
+            </summary>
+            <param name="pid">进程ID</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetFirstElement(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取窗体元素下的第一个元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <returns>第一个元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetFirstElement(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope)">
+            <summary>
+            获取窗体元素下的第一个元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <returns>第一个元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByIndex(System.Windows.Automation.AutomationElement,System.Int32)">
+            <summary>
+            通过序列ID获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="index">序列ID</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByIndex(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Int32)">
+            <summary>
+            通过序列ID获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <param name="index">序列ID</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByAutomationId(System.Windows.Automation.AutomationElement,System.String)">
+            <summary>
+            通过内部名称获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="automationId">内部名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByAutomationId(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.String)">
+            <summary>
+            通过内部名称获取窗体元素下的元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <param name="automationId">内部名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByTypeName(System.Windows.Automation.AutomationElement,System.Windows.Automation.ControlType,System.String)">
+            <summary>
+            通过元素类型和元素名称获取元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="controlType">元素类型</param>
+            <param name="elementName">元素名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetElementByTypeName(System.Windows.Automation.AutomationElement,System.Windows.Automation.TreeScope,System.Windows.Automation.ControlType,System.String)">
+            <summary>
+            通过元素类型和元素名称获取元素
+            </summary>
+            <param name="element">窗体元素</param>
+            <param name="treeScope">遍历模式</param>
+            <param name="controlType">元素类型</param>
+            <param name="elementName">元素名称</param>
+            <returns>元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetNameContent(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取元素Name属性内容
+            </summary>
+            <param name="element">元素</param>
+            <returns>Name属性</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetTextContent(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取文本框元素文本内容
+            </summary>
+            <param name="element">文本框元素</param>
+            <returns>文本内容</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_SetTextContent(System.Windows.Automation.AutomationElement,System.String,System.Int32)">
+            <summary>
+            设置文本框元素文本内容
+            </summary>
+            <param name="element">文本框元素</param>
+            <param name="content">文本内容</param>
+            <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetCheckBoxStatu(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取复选框元素选择状态
+            </summary>
+            <param name="element">复选框元素</param>
+            <returns>选择状态</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_SetCheckBoxStatu(System.Windows.Automation.AutomationElement,System.Boolean)">
+            <summary>
+            设置复选框元素选择状态
+            </summary>
+            <param name="element">复选框元素</param>
+            <param name="statu">选择状态</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_GetSelectListItem(System.Windows.Automation.AutomationElement)">
+            <summary>
+            获取下拉列表选择项
+            </summary>
+            <param name="element">下拉列表元素</param>
+            <returns>列表项元素</returns>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_SetSelectListItem(System.Windows.Automation.AutomationElement)">
+            <summary>
+            设置下拉列表选择项
+            </summary>
+            <param name="element">列表项元素</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_ClickButton(System.Windows.Automation.AutomationElement)">
+            <summary>
+            单击按钮
+            </summary>
+            <param name="element">按钮元素</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_SendCommand(System.Windows.Automation.AutomationElement,System.String,System.Int32)">
+            <summary>
+            对指定元素发送命令
+            </summary>
+            <param name="element">元素</param>
+            <param name="command">命令</param>
+            <param name="delay">Focus延时[单位:MS|默认:100MS]</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_DelayMillisecond(System.Int32)">
+            <summary>
+            延时等待（毫秒）
+            </summary>
+            <param name="millisecond">延时毫秒数</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_DelaySecond(System.Int32)">
+            <summary>
+            延时等待（秒）
+            </summary>
+            <param name="second">延时秒数</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_DelayMinute(System.Int32)">
+            <summary>
+            延时等待（分钟）
+            </summary>
+            <param name="minute">延时分钟数</param>
+        </member>
+        <member name="M:CML.CommonEx.UIAutomationEx.ExFunction.UIAutomationOperate.CF_DelayHour(System.Int32)">
             <summary>
             延时等待（小时）
             </summary>

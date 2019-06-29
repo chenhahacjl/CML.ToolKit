@@ -2,19 +2,19 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace CML.CommonEx.EnumEx
+namespace CML.CommonEx.EnumEx.ExFunction
 {
     /// <summary>
-    /// 枚举操作类
+    /// 枚举操作类(扩展方法)
     /// </summary>
-    public class EnumOperate
+    public static class EnumOperate
     {
         /// <summary>
         /// 获取枚举的描述
         /// </summary>
         /// <param name="en">枚举</param>
         /// <returns>返回枚举的描述</returns>
-        public static string CF_GetDescription(Enum en)
+        public static string CF_GetDescription(this Enum en)
         {
             //获取成员
             MemberInfo[] memberInfos = en.GetType().GetMember(en.ToString());
@@ -37,7 +37,7 @@ namespace CML.CommonEx.EnumEx
         /// </summary>
         /// <param name="en">枚举</param>
         /// <returns>返回枚举的描述</returns>
-        public static int CF_ToNumber(Enum en)
+        public static int CF_ToNumber(this Enum en)
         {
             return Convert.ToInt32(en);
         }
@@ -47,7 +47,7 @@ namespace CML.CommonEx.EnumEx
         /// </summary>
         /// <param name="en">枚举</param>
         /// <returns>返回枚举的描述</returns>
-        public static string CF_ToString(Enum en)
+        public static string CF_ToString(this Enum en)
         {
             return Convert.ToString(en);
         }

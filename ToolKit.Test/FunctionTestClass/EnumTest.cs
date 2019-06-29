@@ -1,4 +1,5 @@
 ﻿using CML.CommonEx.EnumEx;
+using CML.CommonEx.EnumEx.ExFunction;
 using System.ComponentModel;
 
 namespace CML.ToolTest

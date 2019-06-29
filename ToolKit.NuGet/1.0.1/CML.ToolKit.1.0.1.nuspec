@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata>
     <id>CML.ToolKit</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>CML ToolKit</title>
     <authors>Cmile_96</authors>
     <owners>Cmile_96</owners>
@@ -21,7 +21,12 @@
 * Language: C# 7.1
 * IDE: Visual Studio 2019
 * Framework: .Net Framework 4.0</summary>
-    <releaseNotes>1.0.0
+    <releaseNotes>1.0.1
+1.UI自动化操作类增加延时方法；
+2.增加正则表达式操作类；
+3.分离扩展方法，须在命名空间后面加上.ExFunction才能使用。
+
+1.0.0
 1.增加一些枚举操作功能；
 2.增加扩展方法。
 
@@ -56,5 +61,6 @@
     <file src="lib\net40\CML.SoftwareToolEx.xml" target="lib\net40\CML.SoftwareToolEx.xml" />
     <file src="lib\net40\MySql.Data.dll" target="lib\net40\MySql.Data.dll" />
     <file src="lib\net40\Oracle.ManagedDataAccess.dll" target="lib\net40\Oracle.ManagedDataAccess.dll" />
+    <file src="readme.txt" target="readme.txt" />
   </files>
 </package>

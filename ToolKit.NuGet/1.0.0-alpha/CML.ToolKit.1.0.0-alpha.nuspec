@@ -10,6 +10,7 @@
     <projectUrl>https://github.com/chenhahacjl/CML.ToolKit</projectUrl>
     <iconUrl>https://www.easyicon.net/api/resizeApi.php?id=1118017&amp;size=128</iconUrl>
     <description>CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Socket通讯、配置操作、加密解密等功能。</description>
+    <summary>CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Socket通讯、配置操作、加密解密等功能。</summary>
     <releaseNotes>【开发环境】
 * Language: C# 7.1
 * IDE: Visual Studio 2019

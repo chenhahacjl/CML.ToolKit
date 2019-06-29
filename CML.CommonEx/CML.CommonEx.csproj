@@ -71,17 +71,22 @@
     <Compile Include="FuncDataBase\DataBase.cs" />
     <Compile Include="FuncEncode\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncEncode\DESEncrypt.cs" />
+    <Compile Include="FuncEncode\DESEncrypt.ExFunction.cs" />
     <Compile Include="FuncEncode\MD5Encrypt.cs" />
+    <Compile Include="FuncEncode\MD5Encrypt.ExFunction.cs" />
     <Compile Include="FuncEnum\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncEnum\EnumOperate.cs" />
+    <Compile Include="FuncEnum\EnumOperate.ExFunction.cs" />
     <Compile Include="FuncRegex\AssiEnum\ENumberVerifyType.cs" />
     <Compile Include="FuncRegex\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncRegex\RegexOperate.cs" />
+    <Compile Include="FuncRegex\RegexOperate.ExFunction.cs" />
     <Compile Include="FuncThread\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncThread\InvokeOperate.cs" />
     <Compile Include="FuncUIAutomation\AssiEnum\ECheckBoxStatus.cs" />
     <Compile Include="FuncUIAutomation\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncUIAutomation\UIAutomationOperate.cs" />
+    <Compile Include="FuncUIAutomation\UIAutomationOperate.ExFunction.cs" />
     <Compile Include="FuncVersion\AssiVersion\VersionInfon.cs" />
     <Compile Include="FuncVersion\VersionBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,9 +106,14 @@
     <Content Include="FuncDataBase\AssiLib\MySql.Data.dll" />
     <Content Include="FuncDataBase\AssiLib\Oracle.ManagedDataAccess.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="FuncConfiguration\RegOperate.ExFunction.cs" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncRegex\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FuncThread\InvokeOperate.ExFunction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
