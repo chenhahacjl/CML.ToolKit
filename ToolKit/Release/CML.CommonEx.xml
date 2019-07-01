@@ -111,6 +111,17 @@
             <param name="size">字节大小</param>
             <param name="filePath">文件路径</param>
         </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.GetPrivateProfileStringA(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)">
+            <summary>
+            读取INI文件
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名</param>
+            <param name="def">键值</param>
+            <param name="retVal">字节数组</param>
+            <param name="size">字节大小</param>
+            <param name="filePath">文件路径</param>
+        </member>
         <member name="P:CML.CommonEx.ConfigurationEx.IniFile.CP_FilePath">
             <summary>
             INI文件路径
@@ -121,6 +132,19 @@
             构造函数
             </summary>
             <param name="filePath">INI文件路径</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.CF_ReadSections">
+            <summary>
+            读取所有节点名称
+            </summary>
+            <returns>节点名称</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.CF_ReadKeys(System.String)">
+            <summary>
+            读取所有键名
+            </summary>
+            <param name="section">节点名称</param>
+            <returns>键名</returns>
         </member>
         <member name="M:CML.CommonEx.ConfigurationEx.IniFile.CF_WriteValue(System.String,System.String,System.String)">
             <summary>
@@ -173,12 +197,27 @@
             INI操作帮助类
             </summary>
         </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadSections(System.String)">
+            <summary>
+            读取所有节点名称
+            </summary>
+            <param name="iniPath">文件</param>
+            <returns>节点名称</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadKeys(System.String,System.String)">
+            <summary>
+            读取所有键名
+            </summary>
+            <param name="iniPath">文件</param>
+            <param name="section">节点名称</param>
+            <returns>键名</returns>
+        </member>
         <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadConfig(System.String,System.String,System.String,System.String)">
             <summary>
             读取配置文件
             </summary>
             <param name="iniPath">文件</param>
-            <param name="section">节名</param>
+            <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
             <returns>读取结果</returns>
@@ -189,7 +228,7 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="iniPath">文件</param>
-            <param name="section">节名</param>
+            <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
             <returns>读取结果</returns>
@@ -199,7 +238,7 @@
             写配置文件
             </summary>
             <param name="iniPath">文件</param>
-            <param name="section">节名</param>
+            <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="strValue">键值</param>
             <returns>执行结果</returns>
@@ -209,7 +248,7 @@
             写配置文件
             </summary>
             <param name="iniPath">文件</param>
-            <param name="section">节名</param>
+            <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="value">键值</param>
             <returns>执行结果</returns>
@@ -225,11 +264,24 @@
             </summary>
             <param name="iniPath">INI文件路径</param>
         </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadSections">
+            <summary>
+            读取所有节点名称
+            </summary>
+            <returns>节点名称</returns>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadKeys(System.String)">
+            <summary>
+            读取所有键名
+            </summary>
+            <param name="section">节点名称</param>
+            <returns>键名</returns>
+        </member>
         <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadConfig(System.String,System.String,System.String)">
             <summary>
             读取配置文件
             </summary>
-            <param name="section">节名</param>
+            <param name="section">节点名称</param>
             <param name="key">键名</param>
             <param name="defValue">默认值</param>
             <returns>读取结果</returns>

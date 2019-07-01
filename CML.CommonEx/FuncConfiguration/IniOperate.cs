@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace CML.CommonEx.ConfigurationEx
@@ -10,10 +11,57 @@ namespace CML.CommonEx.ConfigurationEx
     {
         #region 静态
         /// <summary>
+        /// 读取所有节点名称
+        /// </summary>
+        /// <param name="iniPath">文件</param>
+        /// <returns>节点名称</returns>
+        public static List<string> CF_ReadSections(string iniPath)
+        {
+            //读取结果
+            List<string> result = new List<string>();
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(iniPath))
+            {
+                try
+                {
+                    result = new IniFile(iniPath).CF_ReadSections();
+                }
+                catch { }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 读取所有键名
+        /// </summary>
+        /// <param name="iniPath">文件</param>
+        /// <param name="section">节点名称</param>
+        /// <returns>键名</returns>
+        public static List<string> CF_ReadKeys(string iniPath, string section)
+        {
+            //读取结果
+            List<string> result = new List<string>();
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(iniPath))
+            {
+                try
+                {
+                    result = new IniFile(iniPath).CF_ReadKeys(section);
+                }
+                catch { }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// 读取配置文件
         /// </summary>
         /// <param name="iniPath">文件</param>
-        /// <param name="section">节名</param>
+        /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
         /// <returns>读取结果</returns>
@@ -45,7 +93,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="iniPath">文件</param>
-        /// <param name="section">节名</param>
+        /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
         /// <returns>读取结果</returns>
@@ -83,7 +131,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// 写配置文件
         /// </summary>
         /// <param name="iniPath">文件</param>
-        /// <param name="section">节名</param>
+        /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="strValue">键值</param>
         /// <returns>执行结果</returns>
@@ -116,7 +164,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// 写配置文件
         /// </summary>
         /// <param name="iniPath">文件</param>
-        /// <param name="section">节名</param>
+        /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="value">键值</param>
         /// <returns>执行结果</returns>
@@ -168,9 +216,54 @@ namespace CML.CommonEx.ConfigurationEx
 
         #region 公共方法
         /// <summary>
+        /// 读取所有节点名称
+        /// </summary>
+        /// <returns>节点名称</returns>
+        public List<string> CF_ReadSections()
+        {
+            //读取结果
+            List<string> result = new List<string>();
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(m_iniFile.CP_FilePath))
+            {
+                try
+                {
+                    result = m_iniFile.CF_ReadSections();
+                }
+                catch { }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 读取所有键名
+        /// </summary>
+        /// <param name="section">节点名称</param>
+        /// <returns>键名</returns>
+        public List<string> CF_ReadKeys(string section)
+        {
+            //读取结果
+            List<string> result = new List<string>();
+
+            //路径是否为空
+            if (!string.IsNullOrEmpty(m_iniFile.CP_FilePath))
+            {
+                try
+                {
+                    result = m_iniFile.CF_ReadKeys(section);
+                }
+                catch { }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// 读取配置文件
         /// </summary>
-        /// <param name="section">节名</param>
+        /// <param name="section">节点名称</param>
         /// <param name="key">键名</param>
         /// <param name="defValue">默认值</param>
         /// <returns>读取结果</returns>

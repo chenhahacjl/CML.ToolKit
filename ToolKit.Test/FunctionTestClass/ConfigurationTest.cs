@@ -1,5 +1,6 @@
 ﻿using CML.CommonEx.ConfigurationEx;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace CML.ToolTest
@@ -182,6 +183,24 @@ namespace CML.ToolTest
             {
                 PrintLogLn(MsgType.Error, $"写入值与读取值比对失败！");
             }
+
+            List<string> sections = iniOperate.CF_ReadSections();
+            PrintLogLn(MsgType.Info, $"读取节点个数:{sections.Count}");
+            PrintLog(MsgType.Info, $"读取节点:");
+            foreach (string section in sections)
+            {
+                PrintMsg(MsgType.Info, $"{section};");
+            }
+            PrintMsgLn(MsgType.Info, "");
+
+            List<string> keys = iniOperate.CF_ReadKeys("TestSection");
+            PrintLogLn(MsgType.Info, $"读取键名个数:{keys.Count}");
+            PrintLog(MsgType.Info, $"读取键名:");
+            foreach (string key in keys)
+            {
+                PrintMsg(MsgType.Info, $"{key};");
+            }
+            PrintMsgLn(MsgType.Info, "");
 
             File.Delete(iniPath);
         }
