@@ -1511,6 +1511,59 @@
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
         </member>
+        <member name="T:CML.CommonEx.SingletonEx.VersionInfo">
+            <summary>
+            常用工具包正则表达式工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.SingletonEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.SingletonEx.SingletonBase`1">
+            <summary>
+            单实例类基类
+            </summary>
+            <typeparam name="T">类</typeparam>
+        </member>
+        <member name="F:CML.CommonEx.SingletonEx.SingletonBase`1.m_instance">
+            <summary>
+            单例对象
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.SingletonEx.SingletonBase`1.m_sysLock">
+            <summary>
+            系统锁
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.SingletonEx.SingletonBase`1.CP_Instance">
+            <summary>
+            获得单例对象
+            </summary>
+            <returns>单例对象</returns>
+        </member>
         <member name="T:CML.CommonEx.ThreadEx.VersionInfo">
             <summary>
             常用工具包线程操作工具版本信息

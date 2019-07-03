@@ -81,6 +81,8 @@
     <Compile Include="FuncRegex\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncRegex\RegexOperate.cs" />
     <Compile Include="FuncRegex\RegexOperate.ExFunction.cs" />
+    <Compile Include="FuncSingleton\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncSingleton\SingletonBase.cs" />
     <Compile Include="FuncThread\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncThread\InvokeOperate.cs" />
     <Compile Include="FuncUIAutomation\AssiEnum\ECheckBoxStatus.cs" />
@@ -114,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuncThread\InvokeOperate.ExFunction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncSingleton\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
