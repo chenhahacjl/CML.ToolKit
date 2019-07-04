@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 
-namespace CML.CommonEx.SingletonEx
+namespace CML.CommonEx.NetworkEx
 {
     /// <summary>
-    /// 常用工具包单实例工具版本信息
+    /// 常用工具包网络操作工具版本信息
     /// </summary>
     public class VersionInfo : VersionEx.VersionBase
     {
@@ -19,7 +19,7 @@ namespace CML.CommonEx.SingletonEx
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string VerDate => "2019年7月3日 14:05";
+        public override string VerDate => "2019年07月04日 14:30";
         /// <summary>
         /// 当前程序集 
         /// </summary>
@@ -33,7 +33,7 @@ namespace CML.CommonEx.SingletonEx
         /// <returns>版本信息</returns>
         public string GetVersionInfo()
         {
-            string filePath = "CML.CommonEx.FuncSingleton.AssiVersion.UpdateInfo.LOG";
+            string filePath = "CML.CommonEx.FuncNetwork.AssiVersion.UpdateInfo.LOG";
             return base.GetVersionInfo(filePath);
         }
         #endregion

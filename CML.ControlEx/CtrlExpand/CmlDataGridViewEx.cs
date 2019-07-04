@@ -59,18 +59,36 @@ namespace CML.ControlEx
                     Columns[key].Visible = columns[key];
                 }
             }
+
+            base.OnCreateControl();
         }
 
         /// <summary>
         /// 表格数据行添加事件
         /// </summary>
-        /// <param name="e"></param>
+        /// <param name="e">事件数据</param>
         protected override void OnRowsAdded(DataGridViewRowsAddedEventArgs e)
         {
             for (int i = 0; i < Rows.Count; i++)
             {
                 Rows[i].HeaderCell.Value = (i + 1).ToString();
             }
+
+            base.OnRowsAdded(e);
+        }
+
+        /// <summary>
+        /// 表格排序事件
+        /// </summary>
+        /// <param name="e">事件数据</param>
+        protected override void OnSorted(EventArgs e)
+        {
+            for (int i = 0; i < Rows.Count; i++)
+            {
+                Rows[i].HeaderCell.Value = (i + 1).ToString();
+            }
+
+            base.OnSorted(e);
         }
 
         /// <summary>

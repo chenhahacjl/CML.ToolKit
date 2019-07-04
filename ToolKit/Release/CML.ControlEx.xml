@@ -1064,7 +1064,13 @@
             <summary>
             表格数据行添加事件
             </summary>
-            <param name="e"></param>
+            <param name="e">事件数据</param>
+        </member>
+        <member name="M:CML.ControlEx.CmlDataGridViewEx.OnSorted(System.EventArgs)">
+            <summary>
+            表格排序事件
+            </summary>
+            <param name="e">事件数据</param>
         </member>
         <member name="M:CML.ControlEx.CmlDataGridViewEx.OnCellMouseClick(System.Windows.Forms.DataGridViewCellMouseEventArgs)">
             <summary>
