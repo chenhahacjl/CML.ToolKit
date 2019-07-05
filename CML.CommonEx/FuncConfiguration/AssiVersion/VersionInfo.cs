@@ -11,15 +11,15 @@ namespace CML.CommonEx.ConfigurationEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string VerMain => "1.4";
+        public override string VerMain => "1.5";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string VerDev => "19Y005R001";
+        public override string VerDev => "19Y006R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string VerDate => "2019年07月01日 14:10";
+        public override string VerDate => "2019年07月05日 10:50";
         /// <summary>
         /// 当前程序集 
         /// </summary>

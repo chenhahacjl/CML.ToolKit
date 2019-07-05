@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace CML.CommonEx.ThreadEx
 {
     /// <summary>
-    /// 委托帮助类
+    /// 委托操作类
     /// </summary>
     public class InvokeOperate
     {

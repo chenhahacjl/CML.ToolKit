@@ -1,14 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
+﻿using System.IO;
 
 namespace CML.CommonEx.EncodeEx.ExFunction
 {
     /// <summary>
     /// MD5加密操作类(扩展方法)
     /// </summary>
-    public static class MD5Encrypt
+    public static class MD5EncryptEF
     {
         /// <summary>
         /// 16位MD5加密
@@ -18,20 +15,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <returns>16位MD5值</returns>
         public static string CF_MD5Encrypt16(this string input, bool isUpper = true)
         {
-            string strMD5;
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-            {
-                strMD5 = BitConverter.ToString(md5.ComputeHash(Encoding.Default.GetBytes(input)), 4, 8);
-            }
-
-            if (isUpper)
-            {
-                return strMD5.Replace("-", "").ToUpper();
-            }
-            else
-            {
-                return strMD5.Replace("-", "").ToLower();
-            }
+            return MD5Encrypt.CF_MD5Encrypt16(input, isUpper);
         }
 
         /// <summary>
@@ -42,26 +26,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <returns>32位MD5值</returns>
         public static string CF_MD5Encrypt32(this string input, bool isUpper = true)
         {
-            byte[] byteMD5;
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-            {
-                byteMD5 = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-            }
-
-            StringBuilder sbMD5 = new StringBuilder(32);
-            for (int i = 0; i < byteMD5.Length; i++)
-            {
-                _ = sbMD5.Append(byteMD5[i].ToString("X2"));
-            }
-
-            if (isUpper)
-            {
-                return sbMD5.Replace("-", "").ToString().ToUpper();
-            }
-            else
-            {
-                return sbMD5.Replace("-", "").ToString().ToLower();
-            }
+            return MD5Encrypt.CF_MD5Encrypt32(input, isUpper);
         }
 
         /// <summary>
@@ -72,7 +37,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <returns>文件MD5值</returns>
         public static string CF_MD5EncryptFile(this FileInfo file, bool isUpper = true)
         {
-            return CF_MD5EncryptFile(file.FullName, isUpper);
+            return MD5Encrypt.CF_MD5EncryptFile(file, isUpper);
         }
 
         /// <summary>
@@ -83,29 +48,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <returns>文件MD5值</returns>
         public static string CF_MD5EncryptFile(this string filePath, bool isUpper = true)
         {
-            byte[] byteMD5;
-            using (FileStream fs = File.Open(filePath, FileMode.Open, FileAccess.Read))
-            {
-                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-                {
-                    byteMD5 = md5.ComputeHash(fs);
-                }
-            }
-
-            StringBuilder sbMD5 = new StringBuilder(32);
-            for (int i = 0; i < byteMD5.Length; i++)
-            {
-                _ = sbMD5.Append(byteMD5[i].ToString("X2"));
-            }
-
-            if (isUpper)
-            {
-                return sbMD5.Replace("-", "").ToString().ToUpper();
-            }
-            else
-            {
-                return sbMD5.Replace("-", "").ToString().ToLower();
-            }
+            return MD5Encrypt.CF_MD5EncryptFile(filePath, isUpper);
         }
     }
 }

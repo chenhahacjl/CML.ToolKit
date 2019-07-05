@@ -78,10 +78,12 @@
     <Compile Include="FuncEnum\EnumOperate.cs" />
     <Compile Include="FuncEnum\EnumOperate.ExFunction.cs" />
     <Compile Include="FuncNetwork\AssiEnum\ERequestMethod.cs" />
+    <Compile Include="FuncNetwork\AssiModel\ModelProxy.cs" />
     <Compile Include="FuncNetwork\AssiModel\ModelWebRequest.cs" />
     <Compile Include="FuncNetwork\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncNetwork\DownloadOperate.ExFunction.cs" />
     <Compile Include="FuncNetwork\DownloadOperate.cs" />
+    <Compile Include="FuncNetwork\UserAgentHelper.cs" />
     <Compile Include="FuncRegex\AssiEnum\ENumberVerifyType.cs" />
     <Compile Include="FuncRegex\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncRegex\RegexOperate.cs" />

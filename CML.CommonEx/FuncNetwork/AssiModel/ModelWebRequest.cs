@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 
 namespace CML.CommonEx.NetworkEx
 {
@@ -26,9 +24,9 @@ namespace CML.CommonEx.NetworkEx
         public bool AllowAutoRedirect { get; set; } = false;
 
         /// <summary>
-        /// 代理
+        /// 代理（默认不开启）
         /// </summary>
-        public IWebProxy Proxy { get; set; } = null;
+        public ModelProxy Proxy { get; set; } = new ModelProxy();
         /// <summary>
         /// 超时时间（毫秒，默认1000毫秒）
         /// </summary>
@@ -51,6 +49,10 @@ namespace CML.CommonEx.NetworkEx
         /// </summary>
         public string Accept { get; set; } = "";
         /// <summary>
+        /// HTTP的Referer请求头
+        /// </summary>
+        public string Referer { get; set; } = "";
+        /// <summary>
         /// HTTP的UserAgent请求头
         /// </summary>
         public string UserAgent { get; set; } = "";
@@ -62,5 +64,10 @@ namespace CML.CommonEx.NetworkEx
         /// HTTP的请求头
         /// </summary>
         public Dictionary<string, string> Headers { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Cookie字符串
+        /// </summary>
+        public string Cookie { get; set; } = "";
     }
 }

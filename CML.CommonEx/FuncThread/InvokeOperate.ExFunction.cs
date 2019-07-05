@@ -4,9 +4,9 @@ using System.Windows.Forms;
 namespace CML.CommonEx.ThreadEx.ExFunction
 {
     /// <summary>
-    /// 委托帮助类(扩展方法)
+    /// 委托操作类(扩展方法)
     /// </summary>
-    public static class InvokeOperate
+    public static class InvokeOperateEF
     {
         /// <summary>
         /// 多线程更新UI
@@ -16,29 +16,7 @@ namespace CML.CommonEx.ThreadEx.ExFunction
         /// <param name="isThrowException">是否抛出异常</param>
         public static void CF_InvokeUI(this Control control, Action action, bool isThrowException = false)
         {
-            if (control.InvokeRequired)
-            {
-                while (!control.IsHandleCreated)
-                {
-                    if (control.Disposing || control.IsDisposed)
-                    {
-                        return;
-                    }
-                }
-
-                try
-                {
-                    _ = control.Invoke(action);
-                }
-                catch (Exception ex)
-                {
-                    if (isThrowException) { throw ex; }
-                }
-            }
-            else
-            {
-                action();
-            }
+            InvokeOperate.CF_InvokeUI(control, action, isThrowException);
         }
     }
 }
