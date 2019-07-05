@@ -1111,6 +1111,322 @@
             <param name="en">枚举</param>
             <returns>返回枚举的描述</returns>
         </member>
+        <member name="T:CML.CommonEx.IDNumberEx.AddressOperate">
+            <summary>
+            地址信息模型操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.AddressOperate.GetAllAddressModel">
+            <summary>
+            获得所有地址模型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.ModelAddress">
+            <summary>
+            地址信息模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.ModelAddress.AddressNumber">
+            <summary>
+            地址编号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.ModelAddress.CardIssuer">
+            <summary>
+            发卡机构
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.ModelAddress.Domicile">
+            <summary>
+            籍贯
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ModelAddress.#ctor">
+            <summary>
+            构造函数（错误）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ModelAddress.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="addressNumber">地址编号</param>
+            <param name="address">发卡地</param>
+            <param name="domicile">籍贯</param>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.EGender">
+            <summary>
+            性别（正常情况）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.IDNumberEx.EGender.Error">
+            <summary>
+            身份证号错误
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.IDNumberEx.EGender.Male">
+            <summary>
+            男性
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.IDNumberEx.EGender.Female">
+            <summary>
+            女性
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.EGenderExFunction">
+            <summary>
+            性别枚举扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.EGenderExFunction.CF_GetGender(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取性别
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>性别</returns>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.EIDNumberType">
+            <summary>
+            身份证号类型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.IDNumberEx.EIDNumberType.Error">
+            <summary>
+            身份证号错误
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.IDNumberEx.EIDNumberType.Digit15">
+            <summary>
+            15位身份证号
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.IDNumberEx.EIDNumberType.Digit18">
+            <summary>
+            18位身份证号
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.EIDNumberTypeExFunction">
+            <summary>
+            身份证号类型枚举扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.EIDNumberTypeExFunction.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModelIDNumber,System.Boolean)">
+            <summary>
+            获取身份证号类型
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <param name="isVerifyCheckCode">是否验证校检码（18位身份证号特有）</param>
+            <returns>身份证号类型</returns>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.ModelIDNumber">
+            <summary>
+            身份证号模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.ModelIDNumber.IDNumber">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.ModelIDNumber.IsLawful">
+            <summary>
+            是否合法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ModelIDNumber.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ModelIDNumber.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="idNumber">身份证号</param>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.VersionInfo">
+            <summary>
+            常用工具包身份证号工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.VersionInfo.GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF">
+            <summary>
+            身份证号操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取身份证号类型
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>身份证号类型</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetGender(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取性别
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>性别</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetBirthday(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取出生年月日
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>出生年月日</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetSpecialCode(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取验证码
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>验证码（0-9|X|E-Error）</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetCardIssuer(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取发卡机构
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>发卡单位</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetDomicile(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取籍贯
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>籍贯</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetAddressInfo(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取地址信息
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>发卡单位及籍贯</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetAge(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取年龄
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>年龄（-1为身份证号错误）</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetZodiac(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取生肖
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>生肖</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetConstellation(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取星座
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>星座</returns>
+        </member>
+        <member name="T:CML.CommonEx.IDNumberEx.IDNumberOperate">
+            <summary>
+            身份证号操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取身份证号类型
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>身份证号类型</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetGender(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取性别
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>性别</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetBirthday(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取出生年月日
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>出生年月日</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetSpecialCode(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取验证码
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>验证码（0-9|X|E-Error）</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetCardIssuer(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取发卡机构
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>发卡单位</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetDomicile(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取籍贯
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>籍贯</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetAddressInfo(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取地址信息
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>发卡单位及籍贯</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetAge(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取年龄
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>年龄（-1为身份证号错误）</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetZodiac(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取生肖
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>生肖</returns>
+        </member>
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetConstellation(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+            <summary>
+            获取星座
+            </summary>
+            <param name="idNumber">身份证号模型</param>
+            <returns>星座</returns>
+        </member>
         <member name="T:CML.CommonEx.NetworkEx.ERequestMethod">
             <summary>
             HTTP请求方式
@@ -1717,11 +2033,12 @@
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
         </member>
-        <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIDCard(System.String)">
+        <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIDCard(System.String,System.Boolean)">
             <summary>
             验证身份证号
             </summary>
             <param name="input">待验证的字符串</param>
+            <param name="isVerifyCheckCode">是否验证校检码（18位身份证号特有）</param>
             <returns>验证结果</returns>
         </member>
         <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIDCard15(System.String)">
@@ -1731,11 +2048,12 @@
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
         </member>
-        <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIDCard18(System.String)">
+        <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIDCard18(System.String,System.Boolean)">
             <summary>
             验证二代身份证号 [18位数，GB11643-1999标准]
             </summary>
             <param name="input">待验证的字符串</param>
+            <param name="isVerifyCheckCode">是否验证校检码</param>
             <returns>验证结果</returns>
         </member>
         <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsLongitude(System.String)">

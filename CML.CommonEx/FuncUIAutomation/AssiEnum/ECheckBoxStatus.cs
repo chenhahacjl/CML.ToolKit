@@ -26,7 +26,7 @@
     /// <summary>
     /// 复选框状态枚举扩展方法
     /// </summary>
-    public static class ECheckBoxStatusExFunction
+    internal static class ECheckBoxStatusExFunction
     {
         /// <summary>
         /// 复选框状态是否获取错误

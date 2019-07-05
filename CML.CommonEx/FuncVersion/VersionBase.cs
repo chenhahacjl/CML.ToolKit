@@ -45,7 +45,7 @@ namespace CML.CommonEx.VersionEx
                 {
                     using (Stream stream = RunAssembly.GetManifestResourceStream(file))
                     {
-                        using (StreamReader sr = new StreamReader(stream, Encoding.Default))
+                        using (StreamReader sr = new StreamReader(stream, Encoding.UTF8))
                         {
                             result = sr.ReadToEnd();
                         }

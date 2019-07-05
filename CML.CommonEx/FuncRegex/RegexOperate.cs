@@ -283,16 +283,17 @@ namespace CML.CommonEx.RegexEx
         /// 验证身份证号
         /// </summary>
         /// <param name="input">待验证的字符串</param>
+        /// <param name="isVerifyCheckCode">是否验证校检码（18位身份证号特有）</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIDCard(string input)
+        public static bool CF_IsIDCard(string input, bool isVerifyCheckCode = true)
         {
-            if (input.Length == 18)
-            {
-                return CF_IsIDCard18(input);
-            }
-            else if (input.Length == 15)
+            if (input.Length == 15)
             {
                 return CF_IsIDCard15(input);
+            }
+            else if (input.Length == 18)
+            {
+                return CF_IsIDCard18(input, isVerifyCheckCode);
             }
             else
             {
@@ -329,8 +330,9 @@ namespace CML.CommonEx.RegexEx
         /// 验证二代身份证号 [18位数，GB11643-1999标准]
         /// </summary>
         /// <param name="input">待验证的字符串</param>
+        /// <param name="isVerifyCheckCode">是否验证校检码</param>
         /// <returns>验证结果</returns>
-        public static bool CF_IsIDCard18(string input)
+        public static bool CF_IsIDCard18(string input, bool isVerifyCheckCode = true)
         {
             //验证是否可以转换为正确的整数
             if (!long.TryParse(input.Remove(17), out long num) || num.ToString().Length != 17 || !long.TryParse(input.Replace('x', '0').Replace('X', '0'), out _))
@@ -352,19 +354,27 @@ namespace CML.CommonEx.RegexEx
                 return false;
             }
 
-            //校验码验证
-            char[] Ai = input.Remove(17).ToCharArray();
-            string[] arrVarifyCode = ("1,0,x,9,8,7,6,5,4,3,2").Split(',');
-            string[] Wi = ("7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2").Split(',');
-
-            int sum = 0;
-            for (int i = 0; i < 17; i++)
+            if (isVerifyCheckCode)
             {
-                sum += int.Parse(Wi[i]) * int.Parse(Ai[i].ToString());
-            }
+                //校验码验证
+                char[] Ai = input.Remove(17).ToCharArray();
+                string[] arrVarifyCode = ("1,0,x,9,8,7,6,5,4,3,2").Split(',');
+                string[] Wi = ("7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2").Split(',');
 
-            Math.DivRem(sum, 11, out int y);
-            return arrVarifyCode[y] == input.Substring(17, 1).ToLower();
+                int sum = 0;
+                for (int i = 0; i < 17; i++)
+                {
+                    sum += int.Parse(Wi[i]) * int.Parse(Ai[i].ToString());
+                }
+
+                Math.DivRem(sum, 11, out int y);
+
+                return arrVarifyCode[y] == input.Substring(17, 1).ToLower();
+            }
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>
