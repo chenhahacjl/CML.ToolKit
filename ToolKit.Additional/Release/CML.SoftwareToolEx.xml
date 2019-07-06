@@ -9,27 +9,27 @@
             软件工具包Socket通讯工具版本信息
             </summary>
         </member>
-        <member name="P:CML.SocketEx.VersionInfo.VerMain">
+        <member name="P:CML.SocketEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.SocketEx.VersionInfo.VerDev">
+        <member name="P:CML.SocketEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.SocketEx.VersionInfo.VerDate">
+        <member name="P:CML.SocketEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.SocketEx.VersionInfo.RunAssembly">
+        <member name="P:CML.SocketEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.SocketEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.SocketEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>

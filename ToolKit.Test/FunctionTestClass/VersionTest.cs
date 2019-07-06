@@ -13,10 +13,10 @@ namespace CML.ToolTest.FunctionTestClass
         /// <summary>
         /// 版本信息
         /// </summary>
-        public override void GetVersionInfo()
+        public override void CF_GetVersionInfo()
         {
             PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
-            PrintMsgLn(MsgType.Info, new VersionInfo().GetVersionInfo());
+            PrintMsgLn(MsgType.Info, new VersionInfo().CF_GetVersionInfo());
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace CML.ToolTest.FunctionTestClass
         /// </summary>
         public override void ExecuteTest()
         {
-            PrintMsgLn(MsgType.Info, new TestVersion().GetVersionInfo());
+            PrintMsgLn(MsgType.Info, new TestVersion().CF_GetVersionInfo());
         }
 
         /// <summary>
@@ -36,15 +36,15 @@ namespace CML.ToolTest.FunctionTestClass
             /// <summary>
             /// 主版本号
             /// </summary>
-            public override string VerMain => "9.6";
+            public override string CP_VerMain => "9.6";
             /// <summary>
             /// 研发版本号
             /// </summary>
-            public override string VerDev => "96Y001R001";
+            public override string CP_VerDev => "96Y001R001";
             /// <summary>
             /// 更新时间
             /// </summary>
-            public override string VerDate => DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+            public override string CP_VerDate => DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
             #endregion
         }
     }

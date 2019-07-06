@@ -13,6 +13,11 @@ namespace CML.CommonEx.DataBaseEx
         string ConnectionString { get; set; }
 
         /// <summary>
+        /// 运行依赖
+        /// </summary>
+        string RuntimeDepend { get; }
+
+        /// <summary>
         /// 建立Connection对象
         /// </summary>
         /// <returns>Connection对象</returns>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 
 namespace CML.CommonEx.DataBaseEx
 {
@@ -70,20 +71,29 @@ namespace CML.CommonEx.DataBaseEx
             switch (CP_ConnectionType)
             {
                 case EDataBaseType.SQLSERVER:
+                {
                     m_iDataBase = new SqlServerDataBase();
                     break;
+                }
                 case EDataBaseType.MYSQL:
+                {
                     m_iDataBase = new MySqlDataBase();
                     break;
+                }
                 case EDataBaseType.ORACLE:
+                {
                     m_iDataBase = new OracleDataBase();
                     break;
+                }
                 default:
+                {
                     m_isInitDataBase = false;
-                    throw new Exception(
-                        $"数据库类型错误或未设置！\n" +
-                        $"DBType: {CP_ConnectionType.ToString()}\n");
+                    throw new Exception($"数据库类型错误或未设置！数据库类型: {CP_ConnectionType.ToString()}");
+                }
             }
+
+            //异常
+            Exception exception = null;
 
             try
             {
@@ -94,15 +104,27 @@ namespace CML.CommonEx.DataBaseEx
 
                 m_isInitDataBase = true;
             }
+            catch (FileNotFoundException)
+            {
+                exception = new Exception($"缺少运行依赖程序: {m_iDataBase.RuntimeDepend}。");
+            }
             catch (Exception ex)
             {
-                m_iDataBase = null;
-                m_iConn = null;
-                m_iCmd = null;
+                exception = ex;
+            }
+            finally
+            {
+                //存在异常
+                if (exception != null)
+                {
+                    m_iDataBase = null;
+                    m_iConn = null;
+                    m_iCmd = null;
 
-                m_isInitDataBase = false;
+                    m_isInitDataBase = false;
 
-                throw ex;
+                    throw exception;
+                }
             }
         }
 
@@ -113,16 +135,15 @@ namespace CML.CommonEx.DataBaseEx
         {
             if (!m_isInitDataBase)
             {
-                throw new Exception(
-                    $"数据库未初始化！\n");
+                throw new Exception($"数据库未初始化！\n");
             }
 
             if (string.IsNullOrEmpty(CP_ConnectionString))
             {
                 throw new Exception(
-                    $"数据库连接配置错误！\n" +
-                    $"DBType: {CP_ConnectionType.ToString()}\n" +
-                    $"ConnStr: {CP_ConnectionString}");
+                    $"数据库连接配置错误！" +
+                    $"数据库类型: {CP_ConnectionType.ToString()}；" +
+                    $"连接字符串: {CP_ConnectionString}。");
             }
 
             try

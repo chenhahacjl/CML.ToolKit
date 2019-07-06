@@ -26,7 +26,7 @@ namespace CML.ToolTest
             else if (args.Length == 1 && int.TryParse(args[0], out int index) && index >= 1 && index <= testClassTypes.Count)
             {
                 ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[index - 1], true);
-                toolKitTest.GetVersionInfo();
+                toolKitTest.CF_GetVersionInfo();
                 toolKitTest.ExecuteTest();
                 Console.WriteLine($"[{toolKitTest.TestClassName}]测试结束！\n");
             }
@@ -77,7 +77,7 @@ namespace CML.ToolTest
                     else
                     {
                         ToolKitTestBase toolKitTest = (ToolKitTestBase)Activator.CreateInstance(testClassTypes[index - 1], true);
-                        toolKitTest.GetVersionInfo();
+                        toolKitTest.CF_GetVersionInfo();
                         Console.Write($"是否进行测试(Y/N): ");
                         if (Console.ReadKey(true).Key == ConsoleKey.Y)
                         {

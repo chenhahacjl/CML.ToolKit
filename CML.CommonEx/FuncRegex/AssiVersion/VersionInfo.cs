@@ -11,19 +11,19 @@ namespace CML.CommonEx.RegexEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string VerMain => "1.1";
+        public override string CP_VerMain => "1.1";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string VerDev => "19Y002R001";
+        public override string CP_VerDev => "19Y002R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string VerDate => "2019年07月05日 11:10";
+        public override string CP_VerDate => "2019年07月05日 11:10";
         /// <summary>
         /// 当前程序集 
         /// </summary>
-        protected override Assembly RunAssembly => Assembly.GetExecutingAssembly();
+        protected override Assembly CP_RunAssembly => Assembly.GetExecutingAssembly();
         #endregion
 
         #region 公共方法
@@ -31,10 +31,10 @@ namespace CML.CommonEx.RegexEx
         /// 获得版本信息
         /// </summary>
         /// <returns>版本信息</returns>
-        public string GetVersionInfo()
+        public string CF_GetVersionInfo()
         {
             string filePath = "CML.CommonEx.FuncRegex.AssiVersion.UpdateInfo.LOG";
-            return base.GetVersionInfo(filePath);
+            return base.CF_GetVersionInfo(filePath);
         }
         #endregion
     }

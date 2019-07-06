@@ -1,8 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Data;
-using System.IO;
-using System.Reflection;
 
 namespace CML.CommonEx.DataBaseEx
 {
@@ -17,18 +14,9 @@ namespace CML.CommonEx.DataBaseEx
         public string ConnectionString { get; set; }
 
         /// <summary>
-        /// 检测操作库文件是否存在(MySql.Data.dll)
+        /// 运行依赖
         /// </summary>
-        public MySqlDataBase()
-        {
-            string strCurDllDir = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
-            string strExDllPath = Path.Combine(strCurDllDir, "MySql.Data.dll");
-
-            if (!File.Exists(strExDllPath))
-            {
-                throw new Exception("缺少运行文件（MySql.Data.dll）！");
-            }
-        }
+        public string RuntimeDepend => "MySql.Data.DLL";
 
         /// <summary>
         /// 建立Connection对象

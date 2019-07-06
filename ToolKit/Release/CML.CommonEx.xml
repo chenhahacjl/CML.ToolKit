@@ -166,27 +166,27 @@
             常用工具包配置操作工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.ConfigurationEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.ConfigurationEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.ConfigurationEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -479,6 +479,11 @@
             数据库连接字符串
             </summary>
         </member>
+        <member name="P:CML.CommonEx.DataBaseEx.IDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
         <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection">
             <summary>
             建立Connection对象
@@ -528,9 +533,9 @@
             MYSQL 数据库连接字符串
             </summary>
         </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.#ctor">
+        <member name="P:CML.CommonEx.DataBaseEx.MySqlDataBase.RuntimeDepend">
             <summary>
-            检测操作库文件是否存在(MySql.Data.dll)
+            运行依赖
             </summary>
         </member>
         <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection">
@@ -582,9 +587,9 @@
             ORACLE 数据库连接字符串
             </summary>
         </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.#ctor">
+        <member name="P:CML.CommonEx.DataBaseEx.OracleDataBase.RuntimeDepend">
             <summary>
-            检测操作库文件是否存在(Oracle.ManagedDataAccess.dll)
+            运行依赖
             </summary>
         </member>
         <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection">
@@ -634,6 +639,11 @@
         <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.ConnectionString">
             <summary>
             SQL SERVER 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
             </summary>
         </member>
         <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection">
@@ -755,27 +765,27 @@
             常用工具包数据库操作工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.DataBaseEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.DataBaseEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -882,27 +892,27 @@
             常用工具包数据编码工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.EncodeEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.EncodeEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -1033,27 +1043,27 @@
             常用工具包枚举操作工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EnumEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EnumEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EnumEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EnumEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.EnumEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EnumEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.EnumEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -1251,27 +1261,27 @@
             常用工具包身份证号工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.IDNumberEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.IDNumberEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -1554,27 +1564,27 @@
             常用工具包网络操作工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.NetworkEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -1884,27 +1894,27 @@
             常用工具包正则表达式工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.RegexEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.RegexEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.RegexEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.RegexEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.RegexEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.RegexEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.RegexEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.RegexEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.RegexEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.RegexEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -2233,27 +2243,27 @@
             常用工具包单实例工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.SingletonEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.SingletonEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.SingletonEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -2286,27 +2296,27 @@
             常用工具包线程操作工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.ThreadEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.ThreadEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.ThreadEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -2380,27 +2390,27 @@
             常用工具包UI自动化操作工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.UIAutomationEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.UIAutomationEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.UIAutomationEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -2853,27 +2863,27 @@
             常用工具包版本管控工具版本信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionInfo.VerMain">
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionInfo.VerDev">
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionInfo.VerDate">
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionInfo.RunAssembly">
+        <member name="P:CML.CommonEx.VersionEx.VersionInfo.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
         </member>
-        <member name="M:CML.CommonEx.VersionEx.VersionInfo.GetVersionInfo">
+        <member name="M:CML.CommonEx.VersionEx.VersionInfo.CF_GetVersionInfo">
             <summary>
             获得版本信息
             </summary>
@@ -2884,25 +2894,32 @@
             版本控制基类
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionBase.VerMain">
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.CP_VerMain">
             <summary>
             主版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionBase.VerDev">
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.CP_VerDev">
             <summary>
             研发版本号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionBase.VerDate">
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.CP_VerDate">
             <summary>
             更新时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.VersionEx.VersionBase.RunAssembly">
+        <member name="P:CML.CommonEx.VersionEx.VersionBase.CP_RunAssembly">
             <summary>
             当前程序集 
             </summary>
+        </member>
+        <member name="M:CML.CommonEx.VersionEx.VersionBase.CF_GetVersionInfo(System.String)">
+            <summary>
+            获得版本信息
+            </summary>
+            <param name="file">嵌入资源路径</param>
+            <returns>版本信息</returns>
         </member>
         <member name="M:CML.CommonEx.VersionEx.VersionBase.GetUpdateInfo(System.String)">
             <summary>
@@ -2910,13 +2927,6 @@
             </summary>
             <param name="file">嵌入资源路径</param>
             <returns>更新记录</returns>
-        </member>
-        <member name="M:CML.CommonEx.VersionEx.VersionBase.GetVersionInfo(System.String)">
-            <summary>
-            获得版本信息
-            </summary>
-            <param name="file">嵌入资源路径</param>
-            <returns>版本信息</returns>
         </member>
     </members>
 </doc>

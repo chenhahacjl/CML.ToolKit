@@ -1,8 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using System;
 using System.Data;
-using System.IO;
-using System.Reflection;
 
 namespace CML.CommonEx.DataBaseEx
 {
@@ -17,18 +14,9 @@ namespace CML.CommonEx.DataBaseEx
         public string ConnectionString { get; set; }
 
         /// <summary>
-        /// 检测操作库文件是否存在(Oracle.ManagedDataAccess.dll)
+        /// 运行依赖
         /// </summary>
-        public OracleDataBase()
-        {
-            string strCurDllDir = new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName;
-            string strExDllPath = Path.Combine(strCurDllDir, "Oracle.ManagedDataAccess.dll");
-
-            if (!File.Exists(strExDllPath))
-            {
-                throw new Exception("缺少运行文件（Oracle.ManagedDataAccess.dll）！");
-            }
-        }
+        public string RuntimeDepend => "Oracle.ManagedDataAccess.DLL";
 
         /// <summary>
         /// 建立Connection对象

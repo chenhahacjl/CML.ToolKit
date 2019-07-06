@@ -19,7 +19,7 @@ namespace CML.ToolTest
         /// <summary>
         /// 版本信息【请重载此方法】
         /// </summary>
-        public virtual void GetVersionInfo()
+        public virtual void CF_GetVersionInfo()
         {
             PrintLogLn(MsgType.Error, $"请重载 ToolKitTestBase 类 VersionInfo() 方法");
         }

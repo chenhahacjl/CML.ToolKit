@@ -20,10 +20,10 @@ namespace CML.ToolTest.FunctionTestClass
         /// <summary>
         /// 版本信息
         /// </summary>
-        public override void GetVersionInfo()
+        public override void CF_GetVersionInfo()
         {
             PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
-            PrintMsgLn(MsgType.Info, new VersionInfo().GetVersionInfo());
+            PrintMsgLn(MsgType.Info, new VersionInfo().CF_GetVersionInfo());
         }
 
         /// <summary>
