@@ -139,7 +139,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FuncNetwork\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FuncSocket\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncIDNumber\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>

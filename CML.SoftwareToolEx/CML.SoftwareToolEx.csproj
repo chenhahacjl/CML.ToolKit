@@ -42,25 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FuncSocket\AssiVersion\VersionInfo.cs" />
-    <Compile Include="FuncSocket\AssiEnum\EMsgType.cs" />
-    <Compile Include="FuncSocket\AssiEnum\ESwapMsgType.cs" />
-    <Compile Include="FuncSocket\AssiInternalStatic\ISCommand.cs" />
-    <Compile Include="FuncSocket\AssiInternalStatic\ISDefault.cs" />
-    <Compile Include="FuncSocket\AssiInternalStatic\ISMessage.cs" />
-    <Compile Include="FuncSocket\AssiInternalStatic\ISRegex.cs" />
-    <Compile Include="FuncSocket\AssiModel\ModClient.cs" />
-    <Compile Include="FuncSocket\AssiModel\ModClientMessage.cs" />
-    <Compile Include="FuncSocket\AssiModel\ModResult.cs" />
-    <Compile Include="FuncSocket\AssiModel\ModServerMessage.cs" />
-    <Compile Include="FuncSocket\AssiModel\ModSwapMsg.cs" />
-    <Compile Include="FuncSocket\AssiOperate\MsgAnalyseOperate.cs" />
-    <Compile Include="FuncSocket\SocketClient.cs" />
-    <Compile Include="FuncSocket\SocketServer.cs" />
+    <Compile Include="ToolSocket\AssiVersion\VersionInfo.cs" />
+    <Compile Include="ToolSocket\AssiEnum\EMsgType.cs" />
+    <Compile Include="ToolSocket\AssiEnum\ESwapMsgType.cs" />
+    <Compile Include="ToolSocket\AssiInternalStatic\ISCommand.cs" />
+    <Compile Include="ToolSocket\AssiInternalStatic\ISDefault.cs" />
+    <Compile Include="ToolSocket\AssiInternalStatic\ISMessage.cs" />
+    <Compile Include="ToolSocket\AssiInternalStatic\ISRegex.cs" />
+    <Compile Include="ToolSocket\AssiModel\ModClient.cs" />
+    <Compile Include="ToolSocket\AssiModel\ModClientMessage.cs" />
+    <Compile Include="ToolSocket\AssiModel\ModResult.cs" />
+    <Compile Include="ToolSocket\AssiModel\ModServerMessage.cs" />
+    <Compile Include="ToolSocket\AssiModel\ModSwapMsg.cs" />
+    <Compile Include="ToolSocket\AssiOperate\MsgAnalyseOperate.cs" />
+    <Compile Include="ToolSocket\SocketClient.cs" />
+    <Compile Include="ToolSocket\SocketServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FuncSocket\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="ToolSocket\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CML.CommonEx\CML.CommonEx.csproj">
