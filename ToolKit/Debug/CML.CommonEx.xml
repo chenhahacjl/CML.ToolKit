@@ -1121,6 +1121,753 @@
             <param name="en">枚举</param>
             <returns>返回枚举的描述</returns>
         </member>
+        <member name="T:CML.CommonEx.FTPEx.EExistence">
+            <summary>
+            存在情况
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EExistence.Error">
+            <summary>
+            执行错误
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EExistence.NotExist">
+            <summary>
+            不存在
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EExistence.Exist">
+            <summary>
+            存在
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.EFtpRequestMethod">
+            <summary>
+            FTP请求方式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.AppendFile">
+            <summary>
+            将文件追加到现有文件
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.DeleteFile">
+            <summary>
+            删除文件
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.DownloadFile">
+            <summary>
+            下载文件
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.GetDateTimestamp">
+            <summary>
+            获取文件时间戳
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.GetFileSize">
+            <summary>
+            获得文件大小
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.ListDirectory">
+            <summary>
+            枚举目录文件简要信息
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.ListDirectoryDetails">
+            <summary>
+            枚举目录文件详细信息
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.MakeDirectory">
+            <summary>
+            创建文件夹
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.PrintWorkingDirectory">
+            <summary>
+            打印当前工作目录名称
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.RemoveDirectory">
+            <summary>
+            删除文件夹
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.Rename">
+            <summary>
+            重命名目录
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.UploadFile">
+            <summary>
+            上传文件
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.EFtpRequestMethod.UploadFileWithUniqueName">
+            <summary>
+            上传唯一名称的文件
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.EFtpRequestMethodExFunction">
+            <summary>
+            FTP请求方式扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.EFtpRequestMethodExFunction.GetProtocol(CML.CommonEx.FTPEx.EFtpRequestMethod)">
+            <summary>
+            取得协议字符串
+            </summary>
+            <param name="ftpRequestMethod"></param>
+            <returns>协议字符串</returns>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ModelFileInfo">
+            <summary>
+            文件信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.IsDirectory">
+            <summary>
+            是否为文件夹
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.Name">
+            <summary>
+            文件（夹）名称
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.Length">
+            <summary>
+            文件大小（文件夹为空）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.Path">
+            <summary>
+            文件（夹）路径
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFileInfo.#ctor(System.Boolean,System.String,System.Int64,System.DateTime,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="isDirectory">是否为文件夹</param>
+            <param name="name">文件（夹）名称</param>
+            <param name="length">文件大小（文件夹为0）</param>
+            <param name="createTime">创建时间</param>
+            <param name="path">文件（夹）路径</param>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ModelFtpReqInfo">
+            <summary>
+            FTP请求信息模型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.FTPEx.ModelFtpReqInfo.m_bakRequestPath">
+            <summary>
+            备份的请求路径
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.RequestPath">
+            <summary>
+            请求路径（默认为根目录）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.Method">
+            <summary>
+            请求方式（默认ListDirectory）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.RenameTo">
+            <summary>
+            目标文件名（Method = Rename时使用）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor">
+            <summary>
+            构造函数（默认构造）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="requestPath">请求路径</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor(CML.CommonEx.FTPEx.EFtpRequestMethod)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="method">请求方式</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor(System.String,CML.CommonEx.FTPEx.EFtpRequestMethod)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="requestPath">请求路径</param>
+            <param name="method">请求方式</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.CF_PushRequestPath">
+            <summary>
+            备份请求路径
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.CF_PopRequestPath">
+            <summary>
+            还原请求路径
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ModelFtpInfomation">
+            <summary>
+            FTP信息模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.IP">
+            <summary>
+            服务器IP
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.Port">
+            <summary>
+            服务端口
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.FtpReqInfo">
+            <summary>
+            FTP请求信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.FtpExtendInfo">
+            <summary>
+            FTP扩展信息
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ip">服务器IP</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ip">服务器IP</param>
+            <param name="port">服务端口</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ip">服务器IP</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ip">服务器IP</param>
+            <param name="port">服务端口</param>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction">
+            <summary>
+            FTP基本信息扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetCurrentName(CML.CommonEx.FTPEx.ModelFtpInfomation)">
+            <summary>
+            获取当前文件（夹）名称
+            </summary>
+            <param name="ftpInfomation">FTP基本信息</param>
+            <returns>URL地址</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetParentPath(CML.CommonEx.FTPEx.ModelFtpInfomation)">
+            <summary>
+            获取父路径（/{RequestPath}/../）
+            </summary>
+            <param name="ftpInfomation">FTP基本信息</param>
+            <returns>URL地址</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetCombinePath(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String)">
+            <summary>
+            获取合并地址（/{RequestPath}/{path}）
+            </summary>
+            <param name="ftpInfomation">FTP基本信息</param>
+            <param name="path">子路径</param>
+            <returns>URL地址</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetUrl(CML.CommonEx.FTPEx.ModelFtpInfomation)">
+            <summary>
+            获取URL地址（ftp://{IP}:{Port}/{RequestPath}）
+            </summary>
+            <param name="ftpInfomation">FTP基本信息</param>
+            <returns>URL地址</returns>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ModelFtpExtendInfo">
+            <summary>
+            FTP扩展信息模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.Timeout">
+            <summary>
+            请求超时（毫秒，默认5秒）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.ReadWriteTimeout">
+            <summary>
+            读写超时（毫秒，默认5秒）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.EnableSsl">
+            <summary>
+            是否启用SSL连接（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.UseBinary">
+            <summary>
+            是否启用二进制传输（默认true）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.UsePassive">
+            <summary>
+            是否为被动模式请求（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.KeepAlive">
+            <summary>
+            请求完成之后是否保持连接（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.Proxy">
+            <summary>
+            代理（默认不开启）
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ModelProxy">
+            <summary>
+            代理模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelProxy.Enable">
+            <summary>
+            是否启用代理
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelProxy.Host">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModelProxy.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelProxy.#ctor">
+            <summary>
+            默认构造函数（不启用代理）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ModelProxy.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数（启用代理）
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.VersionInfo">
+            <summary>
+            常用工具包FTP工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF">
+            <summary>
+            FTP操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_CanConnect(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            检测能否连接服务器
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（根目录）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            检测文件是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（检测文件路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            检测文件夹是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（检测文件夹路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExist(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            检测文件（夹）是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="tarName">检测文件（夹）名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            检测文件是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="fileName">检测文件名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            检测文件夹是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="dirName">检测文件夹名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_UploadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（目标文件路径）</param>
+            <param name="fileName">FTP文件名</param>
+            <param name="filePath">本地文件路径</param>
+            <param name="overwrite">是否覆盖文件</param>
+            <param name="errMsg">[OUT]错误信息</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DownloadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="fileName">FTP文件名</param>
+            <param name="filePath">本地文件路径</param>
+            <param name="overwrite">是否覆盖文件</param>
+            <param name="errMsg">[OUT]错误信息</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DeleteFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="fileName">文件名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>删除情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DeleteDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            删除文件夹
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="dirName">文件夹名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>删除情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_RenameFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+            <summary>
+            重命名文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="orgFileName">原始文件名</param>
+            <param name="tarFileName">目标文件名</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>重命名情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_RenameDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+            <summary>
+            重命名文件夹
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="orgDirName">原始文件夹名</param>
+            <param name="tarDirName">目标文件夹名</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>重命名情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_MakeDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            创建文件夹
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="dirName">文件夹名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFileSize(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            获取文件大小
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="fileName">文件名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件大小</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取文件夹列表
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件夹列表</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取文件列表
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（文件夹路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件列表</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFileAndDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取文件和文件夹列表
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（文件夹路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件和文件夹列表</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFtpResponse(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取FTP请求响应
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>FTP请求响应</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFtpRequest(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取FTP请求
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>FTP请求</returns>
+        </member>
+        <member name="T:CML.CommonEx.FTPEx.FTPOperate">
+            <summary>
+            FTP操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_CanConnect(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            检测能否连接服务器
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（根目录）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            检测文件是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（检测文件路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            检测文件夹是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（检测文件夹路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExist(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            检测文件（夹）是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="tarName">检测文件（夹）名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            检测文件是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="fileName">检测文件名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            检测文件夹是否存在
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="dirName">检测文件夹名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检测情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_UploadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（目标文件路径）</param>
+            <param name="fileName">FTP文件名</param>
+            <param name="filePath">本地文件路径</param>
+            <param name="overwrite">是否覆盖文件</param>
+            <param name="errMsg">[OUT]错误信息</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DownloadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="fileName">FTP文件名</param>
+            <param name="filePath">本地文件路径</param>
+            <param name="overwrite">是否覆盖文件</param>
+            <param name="errMsg">[OUT]错误信息</param>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DeleteFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="fileName">文件名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>删除情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DeleteDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            删除文件夹
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="dirName">文件夹名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>删除情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_RenameFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+            <summary>
+            重命名文件
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="orgFileName">原始文件名</param>
+            <param name="tarFileName">目标文件名</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>重命名情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_RenameDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+            <summary>
+            重命名文件夹
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="orgDirName">原始文件夹名</param>
+            <param name="tarDirName">目标文件夹名</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>重命名情况</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_MakeDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            创建文件夹
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="dirName">文件夹名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFileSize(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+            <summary>
+            获取文件大小
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（父文件夹路径）</param>
+            <param name="fileName">文件名称</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件大小</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取文件夹列表
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件夹列表</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取文件列表
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（文件夹路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件列表</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFileAndDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取文件和文件夹列表
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型（文件夹路径）</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>文件和文件夹列表</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFtpResponse(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取FTP请求响应
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>FTP请求响应</returns>
+        </member>
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFtpRequest(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+            <summary>
+            获取FTP请求
+            </summary>
+            <param name="ftpInfomation">FTP基本信息模型</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>FTP请求</returns>
+        </member>
         <member name="T:CML.CommonEx.IDNumberEx.AddressOperate">
             <summary>
             地址信息模型操作类
@@ -1496,7 +2243,7 @@
         </member>
         <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.KeepAlive">
             <summary>
-             保持存活（默认false）
+             请求完成之后是否保持连接（默认false）
             </summary>
         </member>
         <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.AllowAutoRedirect">
@@ -1600,7 +2347,7 @@
             获取HTML代码（UTF-8 编码）
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.String@)">
@@ -1609,7 +2356,7 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
@@ -1619,7 +2366,7 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
@@ -1628,8 +2375,8 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
@@ -1639,8 +2386,8 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
@@ -1649,7 +2396,7 @@
             </summary>
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
@@ -1659,7 +2406,7 @@
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
@@ -1668,8 +2415,8 @@
             </summary>
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
@@ -1679,8 +2426,8 @@
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
@@ -1688,7 +2435,7 @@
             获取数据流
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
@@ -1697,7 +2444,7 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
@@ -1705,8 +2452,8 @@
             获取数据流
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
@@ -1715,8 +2462,8 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="T:CML.CommonEx.NetworkEx.DownloadOperate">
@@ -1729,7 +2476,7 @@
             获取HTML代码（UTF-8 编码）
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.String@)">
@@ -1738,7 +2485,7 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
@@ -1748,7 +2495,7 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
@@ -1758,7 +2505,7 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="encoding">编码方式</param>
             <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
@@ -1769,7 +2516,7 @@
             <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
@@ -1778,7 +2525,7 @@
             </summary>
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
@@ -1788,7 +2535,7 @@
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
@@ -1798,7 +2545,7 @@
             <param name="savePath">保存路径</param>
             <param name="webRequest">WEB请求信息</param>
             <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
@@ -1809,7 +2556,7 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
@@ -1817,7 +2564,7 @@
             获取数据流
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
@@ -1826,7 +2573,7 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
@@ -1835,7 +2582,7 @@
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
@@ -1845,7 +2592,7 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">错误信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
         <member name="T:CML.CommonEx.NetworkEx.UserAgentHelper">

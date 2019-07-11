@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnteFriend\AssiVersion\VersionInfo.cs" />
+    <Compile Include="EttmFriend\AssiVersion\VersionInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EnteFriend\AssiVersion\UpdateInfo.LOG" />
+    <EmbeddedResource Include="EttmFriend\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CML.CommonEx\CML.CommonEx.csproj">

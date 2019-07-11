@@ -349,7 +349,7 @@ namespace CML.CommonEx.RegexEx
 
             //验证生日是否匹配
             string birthdate = input.Substring(6, 8).Insert(6, "/").Insert(4, "/");
-            if (!DateTime.TryParse(birthdate, out DateTime dt))
+            if (!DateTime.TryParse(birthdate, out _))
             {
                 return false;
             }

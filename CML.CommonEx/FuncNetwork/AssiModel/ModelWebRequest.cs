@@ -15,7 +15,7 @@ namespace CML.CommonEx.NetworkEx
         public string RequestUrl { get; set; } = "";
 
         /// <summary>
-        ///  保持存活（默认false）
+        ///  请求完成之后是否保持连接（默认false）
         /// </summary>
         public bool KeepAlive { get; set; } = false;
         /// <summary>
@@ -30,7 +30,7 @@ namespace CML.CommonEx.NetworkEx
         /// <summary>
         /// 超时时间（毫秒，默认1000毫秒）
         /// </summary>
-        public int TimeOut { get; set; } = 1000;
+        public int TimeOut { get; set; } = 5000;
         /// <summary>
         /// 请求方式（默认GET）
         /// </summary>

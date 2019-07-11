@@ -77,6 +77,16 @@
     <Compile Include="FuncEnum\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncEnum\EnumOperate.cs" />
     <Compile Include="FuncEnum\EnumOperate.ExFunction.cs" />
+    <Compile Include="FuncFTP\AssiEnum\EExistence.cs" />
+    <Compile Include="FuncFTP\AssiEnum\ERequestMethod.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModelFileStruct.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModelFtpReqInfo.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModelFtpInfomation.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModelFtpExtendInfo.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModelProxy.cs" />
+    <Compile Include="FuncFTP\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncFTP\FTPOperate.ExFunction.cs" />
+    <Compile Include="FuncFTP\FTPOperate.cs" />
     <Compile Include="FuncIDNumber\AssiOperate\AddressOperate.cs" />
     <Compile Include="FuncIDNumber\AssiModel\ModelAddress.cs" />
     <Compile Include="FuncIDNumber\AssiEnum\EGender.cs" />
@@ -144,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncIDNumber\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncFTP\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
