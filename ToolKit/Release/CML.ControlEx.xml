@@ -1066,6 +1066,12 @@
             </summary>
             <param name="e">事件数据</param>
         </member>
+        <member name="M:CML.ControlEx.CmlDataGridViewEx.OnRowsRemoved(System.Windows.Forms.DataGridViewRowsRemovedEventArgs)">
+            <summary>
+            表格数据行删除事件
+            </summary>
+            <param name="e">事件数据</param>
+        </member>
         <member name="M:CML.ControlEx.CmlDataGridViewEx.OnSorted(System.EventArgs)">
             <summary>
             表格排序事件

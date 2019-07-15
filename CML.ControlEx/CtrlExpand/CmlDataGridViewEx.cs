@@ -69,12 +69,48 @@ namespace CML.ControlEx
         /// <param name="e">事件数据</param>
         protected override void OnRowsAdded(DataGridViewRowsAddedEventArgs e)
         {
-            for (int i = 0; i < Rows.Count; i++)
+            try
             {
-                Rows[i].HeaderCell.Value = (i + 1).ToString();
+                for (int i = 0; i < e.RowCount; i++)
+                {
+                    Rows[e.RowIndex + i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Rows[e.RowIndex + i].HeaderCell.Value = (e.RowIndex + i + 1).ToString();
+                }
+
+                for (int i = e.RowIndex + e.RowCount; i < Rows.Count; i++)
+                {
+                    Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Rows[i].HeaderCell.Value = (i + 1).ToString();
+                }
             }
+            catch { }
 
             base.OnRowsAdded(e);
+        }
+
+        /// <summary>
+        /// 表格数据行删除事件
+        /// </summary>
+        /// <param name="e">事件数据</param>
+        protected override void OnRowsRemoved(DataGridViewRowsRemovedEventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < e.RowCount; i++)
+                {
+                    Rows[e.RowIndex + i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Rows[e.RowIndex + i].HeaderCell.Value = (e.RowIndex + i + 1).ToString();
+                }
+
+                for (int i = e.RowIndex + e.RowCount; i < Rows.Count; i++)
+                {
+                    Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Rows[i].HeaderCell.Value = (i + 1).ToString();
+                }
+            }
+            catch { }
+
+            base.OnRowsRemoved(e);
         }
 
         /// <summary>
@@ -83,10 +119,15 @@ namespace CML.ControlEx
         /// <param name="e">事件数据</param>
         protected override void OnSorted(EventArgs e)
         {
-            for (int i = 0; i < Rows.Count; i++)
+            try
             {
-                Rows[i].HeaderCell.Value = (i + 1).ToString();
+                for (int i = 0; i < Rows.Count; i++)
+                {
+                    Rows[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                    Rows[i].HeaderCell.Value = (i + 1).ToString();
+                }
             }
+            catch { }
 
             base.OnSorted(e);
         }
@@ -110,13 +151,14 @@ namespace CML.ControlEx
                 else if (e.ColumnIndex != -1)
                 {
                     object obj = Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                    string value = obj as string;
 
-                    if (obj != null)
+                    if (!string.IsNullOrEmpty(value))
                     {
                         //将单元格内容设置到剪贴板
                         Thread thread = new Thread(() =>
                         {
-                            Clipboard.SetText(Convert.ToString(obj));
+                            Clipboard.SetText(value);
                         })
                         { IsBackground = true };
 
@@ -129,7 +171,9 @@ namespace CML.ControlEx
             else if (e.RowIndex != -1 && e.ColumnIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
             {
                 if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+                {
                     Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
+                }
 
                 Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !(bool)Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
