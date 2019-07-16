@@ -69,5 +69,10 @@ namespace CML.CommonEx.NetworkEx
         /// Cookie字符串
         /// </summary>
         public string Cookie { get; set; } = "";
+
+        /// <summary>
+        /// POST传输信息
+        /// </summary>
+        public Dictionary<string, string> PostData { get; set; } = new Dictionary<string, string>();
     }
 }

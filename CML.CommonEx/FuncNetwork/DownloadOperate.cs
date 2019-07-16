@@ -269,6 +269,27 @@ namespace CML.CommonEx.NetworkEx
 
                     httpWebRequest.CookieContainer = requestCookie;
 
+                    if (webRequest.Method == ERequestMethod.POST)
+                    {
+                        StringBuilder postString = new StringBuilder();
+                        foreach (string key in webRequest.PostData.Keys)
+                        {
+                            if (!string.IsNullOrEmpty(key))
+                            {
+                                postString.Append($"{key}={ webRequest.PostData[key]}&");
+                            }
+                        }
+
+                        byte[] postData = Encoding.UTF8.GetBytes(postString.ToString().TrimEnd('&'));
+
+                        httpWebRequest.ContentLength = postData.Length;
+                        using (Stream requestStream = httpWebRequest.GetRequestStream())
+                        {
+                            requestStream.Write(postData, 0, postData.Length);
+                            requestStream.Close();
+                        }
+                    }
+
                     HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                     if (httpWebResponse.StatusCode == HttpStatusCode.OK)
                     {

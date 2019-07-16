@@ -2306,6 +2306,11 @@
             Cookie字符串
             </summary>
         </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.PostData">
+            <summary>
+            POST传输信息
+            </summary>
+        </member>
         <member name="T:CML.CommonEx.NetworkEx.VersionInfo">
             <summary>
             常用工具包网络操作工具版本信息
