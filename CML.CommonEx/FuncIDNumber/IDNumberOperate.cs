@@ -83,7 +83,7 @@ namespace CML.CommonEx.IDNumberEx
             char number = 'E';
             if (!string.IsNullOrEmpty(strIDNumber))
             {
-                string[] arrVarifyCode = ("1,0,x,9,8,7,6,5,4,3,2").Split(',');
+                string[] arrVarifyCode = ("1,0,X,9,8,7,6,5,4,3,2").Split(',');
                 string[] Wi = ("7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2").Split(',');
                 char[] Ai = strIDNumber.ToCharArray();
 
@@ -106,7 +106,15 @@ namespace CML.CommonEx.IDNumberEx
         /// <returns>发卡单位</returns>
         public static string CF_GetCardIssuer(ModelIDNumber idNumber)
         {
-            return CF_GetAddressInfo(idNumber).CardIssuer;
+            string cardIssuer = "该区行政区编号未收录！";
+
+            ModelAddress address = CF_GetAddressInfo(idNumber);
+            if (address != null)
+            {
+                cardIssuer = CF_GetAddressInfo(idNumber).CardIssuer;
+            }
+
+            return cardIssuer;
         }
 
         /// <summary>
@@ -116,7 +124,15 @@ namespace CML.CommonEx.IDNumberEx
         /// <returns>籍贯</returns>
         public static string CF_GetDomicile(ModelIDNumber idNumber)
         {
-            return CF_GetAddressInfo(idNumber).Domicile;
+            string domicile = "该区行政区编号未收录！";
+
+            ModelAddress address = CF_GetAddressInfo(idNumber);
+            if (address != null)
+            {
+                domicile = CF_GetAddressInfo(idNumber).Domicile;
+            }
+
+            return domicile;
         }
 
         /// <summary>

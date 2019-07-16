@@ -11,15 +11,15 @@ namespace CML.CommonEx.IDNumberEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string CP_VerMain => "1.0";
+        public override string CP_VerMain => "1.1";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y001R001";
+        public override string CP_VerDev => "19Y002R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string CP_VerDate => "2019年07月05日 16:25";
+        public override string CP_VerDate => "2019年07月16日 17:40";
         /// <summary>
         /// 当前程序集 
         /// </summary>
