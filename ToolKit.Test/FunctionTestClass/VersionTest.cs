@@ -3,6 +3,9 @@ using System;
 
 namespace CML.ToolTest.FunctionTestClass
 {
+    /// <summary>
+    /// 版本控制测试类
+    /// </summary>
     internal class VersionTest : ToolKitTestBase
     {
         /// <summary>
@@ -28,7 +31,7 @@ namespace CML.ToolTest.FunctionTestClass
         }
 
         /// <summary>
-        /// 版本控制测试类
+        /// 测试类
         /// </summary>
         public class TestVersion : VersionBase
         {

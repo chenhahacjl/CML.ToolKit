@@ -1,10 +1,9 @@
-﻿using CML.CommonEx.ConfigurationEx;
-using CML.CommonEx.SingletonEx;
+﻿using CML.CommonEx.SingletonEx;
 
 namespace CML.ToolTest.FunctionTestClass
 {
     /// <summary>
-    /// 朋友游戏测试类
+    /// 单实例测试类
     /// </summary>
     internal class SingletonTest : ToolKitTestBase
     {

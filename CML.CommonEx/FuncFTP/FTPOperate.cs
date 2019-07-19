@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
+using CML.CommonEx.EnumEx.ExFunction;
 
 namespace CML.CommonEx.FTPEx
 {
@@ -260,7 +262,31 @@ namespace CML.CommonEx.FTPEx
                                 {
                                     using (FileStream fileStream = new FileStream(file.FullName, FileMode.Open, FileAccess.Read))
                                     {
-                                        fileStream.CopyTo(stream);
+                                        ModelTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
+                                        if (transmissionSpeed.EnableLimit)
+                                        {
+                                            //缓存字节数
+                                            int bufferSize = transmissionSpeed.Speed * (int)Math.Pow(2, transmissionSpeed.Unit.CF_ToNumber());
+                                            //缓存
+                                            byte[] btBuffer = new byte[bufferSize];
+
+                                            //读取的字节数
+                                            int readSize = fileStream.Read(btBuffer, 0, bufferSize);
+                                            while (readSize > 0)
+                                            {
+                                                //写入本地文件
+                                                stream.Write(btBuffer, 0, readSize);
+
+                                                //延时
+                                                Thread.Sleep(transmissionSpeed.Delay);
+
+                                                readSize = fileStream.Read(btBuffer, 0, bufferSize);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            fileStream.CopyTo(stream);
+                                        }
                                     }
                                 }
                             }
@@ -342,7 +368,31 @@ namespace CML.CommonEx.FTPEx
                             {
                                 using (FileStream fileStream = new FileStream(file.FullName, FileMode.Create, FileAccess.Write))
                                 {
-                                    stream.CopyTo(fileStream);
+                                    ModelTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
+                                    if (transmissionSpeed.EnableLimit)
+                                    {
+                                        //缓存字节数
+                                        int bufferSize = transmissionSpeed.Speed * (int)Math.Pow(2, transmissionSpeed.Unit.CF_ToNumber());
+                                        //缓存
+                                        byte[] btBuffer = new byte[bufferSize];
+
+                                        //读取的字节数
+                                        int readSize = stream.Read(btBuffer, 0, bufferSize);
+                                        while (readSize > 0)
+                                        {
+                                            //写入服务器
+                                            fileStream.Write(btBuffer, 0, readSize);
+
+                                            //延时
+                                            Thread.Sleep(transmissionSpeed.Delay);
+
+                                            readSize = stream.Read(btBuffer, 0, bufferSize);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        stream.CopyTo(fileStream);
+                                    }
                                 }
                             }
                         }

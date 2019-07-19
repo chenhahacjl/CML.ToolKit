@@ -77,13 +77,25 @@
     <Compile Include="FuncEnum\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncEnum\EnumOperate.cs" />
     <Compile Include="FuncEnum\EnumOperate.ExFunction.cs" />
+    <Compile Include="FuncEverything\AssiEnum\EExecuteError.cs" />
+    <Compile Include="FuncEverything\AssiEnum\EFileAttribute.cs" />
+    <Compile Include="FuncEverything\AssiEnum\EPlatform.cs" />
+    <Compile Include="FuncEverything\AssiEnum\ERequest.cs" />
+    <Compile Include="FuncEverything\AssiEnum\ESortMode.cs" />
+    <Compile Include="FuncEverything\AssiEnum\ETarget.cs" />
+    <Compile Include="FuncEverything\AssiModel\ModelEverything32.cs" />
+    <Compile Include="FuncEverything\AssiModel\ModelEverything64.cs" />
+    <Compile Include="FuncEverything\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncEverything\EverythingOperate.cs" />
     <Compile Include="FuncFTP\AssiEnum\EExistence.cs" />
     <Compile Include="FuncFTP\AssiEnum\ERequestMethod.cs" />
+    <Compile Include="FuncFTP\AssiEnum\ESpeedUnit.cs" />
     <Compile Include="FuncFTP\AssiModel\ModelFileStruct.cs" />
     <Compile Include="FuncFTP\AssiModel\ModelFtpReqInfo.cs" />
     <Compile Include="FuncFTP\AssiModel\ModelFtpInfomation.cs" />
     <Compile Include="FuncFTP\AssiModel\ModelFtpExtendInfo.cs" />
     <Compile Include="FuncFTP\AssiModel\ModelProxy.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModelTransmissionSpeed.cs" />
     <Compile Include="FuncFTP\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncFTP\FTPOperate.ExFunction.cs" />
     <Compile Include="FuncFTP\FTPOperate.cs" />
@@ -157,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncFTP\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncEverything\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

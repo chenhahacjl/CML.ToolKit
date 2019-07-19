@@ -32,7 +32,12 @@ namespace CML.ToolTest.FunctionTestClass
                 Port = 9695,
                 FtpReqInfo = new ModelFtpReqInfo()
                 {
-
+                    TransmissionSpeed = new ModelTransmissionSpeed()
+                    {
+                        Speed = 3,
+                        Unit = ESpeedUnit.MB,
+                        Delay = 950,
+                    }
                 },
                 FtpExtendInfo = new ModelFtpExtendInfo()
                 {
@@ -40,7 +45,7 @@ namespace CML.ToolTest.FunctionTestClass
                 },
             };
 
-            bool result = ftpInfomation.CF_DownloadFile("Test.txt", @"Test.txt", false, out string errMsg);
+            bool result = ftpInfomation.CF_UploadFile("1.rar", @"1.rar", true, out string errMsg);
             if (result)
             {
                 PrintLogLn(MsgType.Success, "执行成功: " + result);

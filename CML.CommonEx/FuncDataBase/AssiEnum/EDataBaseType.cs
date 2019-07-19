@@ -10,11 +10,11 @@
         /// </summary>
         NONE,
         /// <summary>
-        /// MYSQL数据库
+        /// MYSQL数据库（需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件）
         /// </summary>
         MYSQL,
         /// <summary>
-        /// ORACLE数据库
+        /// ORACLE数据库（需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件）
         /// </summary>
         ORACLE,
         /// <summary>

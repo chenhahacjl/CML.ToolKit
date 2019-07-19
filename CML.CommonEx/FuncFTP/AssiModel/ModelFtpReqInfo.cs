@@ -23,9 +23,14 @@ namespace CML.CommonEx.FTPEx
         public EFtpRequestMethod Method { get; set; } = EFtpRequestMethod.ListDirectory;
 
         /// <summary>
-        /// 目标文件名（Method = Rename时使用）
+        /// 目标文件名（重命名时使用）
         /// </summary>
         public string RenameTo { get; set; } = "";
+
+        /// <summary>
+        /// 传输限速（上传、下载时使用）
+        /// </summary>
+        public ModelTransmissionSpeed TransmissionSpeed { get; set; } = new ModelTransmissionSpeed();
 
         /// <summary>
         /// 构造函数（默认构造）

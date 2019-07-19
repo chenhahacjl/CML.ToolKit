@@ -1,15 +1,10 @@
-# C#工具包 CML.ToolKit
-```
- _______  __   __  ___           _______  _______  _______  ___      ___   _  ____  _______
+﻿ _______  __   __  ___           _______  _______  _______  ___      ___   _  ____  _______
 |       ||  |_|  ||   |         |       ||       ||       ||   |    |   | | ||    ||       |
 |    ___||       ||   |         |_     _||   _   ||   _   ||   |    |   |_| ||    ||_     _|
 |   |    |       ||   |           |   |  |  | |  ||  | |  ||   |    |     __||    |  |   |
 |   |    | || || ||   |___  ___   |   |  |  |_|  ||  |_|  ||   |___ |    |__ |    |  |   |
 |   |___ | ||_|| ||       ||   |  |   |  |       ||       ||       ||    _  ||    |  |   |
 |_______||_|   |_||_______||___|  |___|  |_______||_______||_______||___| |_||____|  |___|
-
-                                                                                              Present by Cmile_96
-```
 
 ## 简介
 CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Socket通讯、配置操作、加密解密等功能。
@@ -26,8 +21,8 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 		- [x] RegOperate <注册表操作类>
 		- [x] RegOperateEF(ExFunction) <注册表操作类(扩展方法)>
 	- [ ] DataBase <数据库操作工具>
-		- [x] MySQL <MySQL数据库支持库>
-		- [x] Oracle <Oracle数据库支持库>
+		- [x] MySQL <MySQL数据库支持库>（需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件）
+		- [x] Oracle <Oracle数据库支持库>（需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件）
 		- [x] SqlServer <SqlServer数据库支持库>
 	- [ ] Encode <数据编码工具>
 		- [x] DESEncrypt <DES加密解密操作类>
@@ -37,8 +32,6 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 	- [ ] Enum <枚举操作工具>
 		- [x] EnumOperate <枚举操作类>
 		- [x] EnumOperateEF(ExFunction) <枚举操作类(扩展方法)>
-	- [ ] Everything <Everything软件搜索操作工具>
-		- [x] EnumOperate <Everything软件搜索操作类>
 	- [ ] FTP <FTP操作工具>
 		- [x] FTPOperate <FTP操作类>
 		- [x] FTPOperateEF(ExFunction) <FTP操作类(扩展方法)>
@@ -57,7 +50,7 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 	- [ ] Thread <线程操作工具>
 		- [x] InvokeOperate <委托操作类>
 		- [x] InvokeOperateEF(ExFunction) <委托操作类(扩展方法)>
-	- [ ] UIAutomation <UI自动化操作工具>
+	- [ ] UIAutomation <UI自动化操作工具>（需要引用UIAutomationClient、UIAutomationTypes、UIAutomationProvider）
 		- [x] UIAutomationOperate <UI自动化操作类>
 		- [x] UIAutomationOperateEF(ExFunction) <UI自动化操作类(扩展方法)>
 	- [ ] Version <版本管控工具>
@@ -88,19 +81,8 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 		- [x] SocketClient <Socket客户端>
 		- [x] SocketServer <Socket服务端>
 
-## 额外文件
-* [CML.CommonEx.DataBase.MySQL]
-  需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件。
-* [CML.CommonEx.DataBase.Oracle]
-  需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件。
-* [CML.CommonEx.Everything]
-  需要[Everything32.dll/Everything64.dll]文件，运行[Everything]软件。
-  Everything软件官网: https://www.voidtools.com/
-* [CML.CommonEx.UIAutomation]
-  需要引用[UIAutomationClient、UIAutomationTypes、UIAutomationProvider]库。
-
 ## GitHub
-Click Here: [https://github.com/chenhahacjl/CML.ToolKit](https://github.com/chenhahacjl/CML.ToolKit "CML.ToolKit GitHub Website")
+https://github.com/chenhahacjl/CML.ToolKit](https://github.com/chenhahacjl/CML.ToolKit
 
 ## 版权申明
 Copyright (C) 2019 Cmile_96, All Rights Reserved.
