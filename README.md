@@ -92,17 +92,6 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 		- [x] SocketClient <Socket客户端>
 		- [x] SocketServer <Socket服务端>
 
-## 额外文件
-* [CML.CommonEx.DataBase.MySQL]
-  需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件。
-* [CML.CommonEx.DataBase.Oracle]
-  需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件。
-* [CML.CommonEx.Everything]
-  需要[Everything32.dll/Everything64.dll]文件，运行[Everything]软件。
-  Everything软件官网: https://www.voidtools.com/
-* [CML.CommonEx.UIAutomation]
-  需要引用[UIAutomationClient、UIAutomationTypes、UIAutomationProvider]库。
-
 ## GitHub
 Click Here: [https://github.com/chenhahacjl/CML.ToolKit](https://github.com/chenhahacjl/CML.ToolKit "CML.ToolKit GitHub Website")
 
