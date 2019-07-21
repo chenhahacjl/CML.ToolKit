@@ -8,47 +8,42 @@ namespace CML.CommonEx.EncodeEx.ExFunction
     public static class MD5EncryptEF
     {
         /// <summary>
+        /// DES加密文件
+        /// </summary>
+        /// <param name="md5Para">MD5加密参数</param>
+        /// <param name="inFilePath">待加密文件路径</param>
+        /// <param name="outString">[OUT]已加密字符串</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_EncryptFile(this ModelMD5Parameter md5Para, string inFilePath, out string outString, out string errMsg)
+        {
+            return MD5Encrypt.CF_EncryptFile(md5Para, inFilePath, out outString, out errMsg);
+        }
+
+        /// <summary>
         /// 16位MD5加密
         /// </summary>
-        /// <param name="input">待加密字符串</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>16位MD5值</returns>
-        public static string CF_MD5Encrypt16(this string input, bool isUpper = true)
+        /// <param name="md5Para">MD5加密参数</param>
+        /// <param name="inString">待加密字符串</param>
+        /// <param name="outString">[OUT]已加密字符串</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_EncryptString(this ModelMD5Parameter md5Para, string inString, out string outString, out string errMsg)
         {
-            return MD5Encrypt.CF_MD5Encrypt16(input, isUpper);
+            return MD5Encrypt.CF_EncryptString(md5Para, inString, out outString, out errMsg);
         }
 
         /// <summary>
-        /// 32位MD5加密
+        /// MD5加密字节数组
         /// </summary>
-        /// <param name="input">待加密字符串</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>32位MD5值</returns>
-        public static string CF_MD5Encrypt32(this string input, bool isUpper = true)
+        /// <param name="md5Para">MD5加密参数</param>
+        /// <param name="inBytes">待加密字节数组</param>
+        /// <param name="outString">[OUT]已加密字符串</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_EncryptBytes(this ModelMD5Parameter md5Para, byte[] inBytes, out string outString, out string errMsg)
         {
-            return MD5Encrypt.CF_MD5Encrypt32(input, isUpper);
-        }
-
-        /// <summary>
-        /// 文件MD5加密
-        /// </summary>
-        /// <param name="file">文件</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>文件MD5值</returns>
-        public static string CF_MD5EncryptFile(this FileInfo file, bool isUpper = true)
-        {
-            return MD5Encrypt.CF_MD5EncryptFile(file, isUpper);
-        }
-
-        /// <summary>
-        /// 文件MD5加密
-        /// </summary>
-        /// <param name="filePath">文件路径</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>文件MD5值</returns>
-        public static string CF_MD5EncryptFile(this string filePath, bool isUpper = true)
-        {
-            return MD5Encrypt.CF_MD5EncryptFile(filePath, isUpper);
+            return MD5Encrypt.CF_EncryptBytes(md5Para, inBytes, out outString, out errMsg);
         }
     }
 }

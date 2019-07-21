@@ -887,6 +887,589 @@
             <param name="parameters">参数数组</param>
             <returns>结果集中的第一行的第一列</returns>
         </member>
+        <member name="T:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF">
+            <summary>
+            AES加密解密操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+            <summary>
+            AES加密文件
+            </summary>
+            <param name="aesPara">AES加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outFilePath">[OUT]已加密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+            <summary>
+            AES解密文件
+            </summary>
+            <param name="aesPara">AES解密参数</param>
+            <param name="inFilePath">待解密文件路径</param>
+            <param name="outFilePath">[OUT]已解密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            AES加密字符串
+            </summary>
+            <param name="aesPara">AES加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            AES解密字符串
+            </summary>
+            <param name="aesPara">AES解密参数</param>
+            <param name="inString">待解密字符串</param>
+            <param name="outString">[OUT]已解密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            AES加密字节数组
+            </summary>
+            <param name="aesPara">AES加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outBytes">[OUT]已加密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            AES解密字节数组
+            </summary>
+            <param name="aesPara">AES解密参数</param>
+            <param name="inBytes">待解密字节数组</param>
+            <param name="outBytes">[OUT]已解密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF">
+            <summary>
+            3DES加密解密操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
+            <summary>
+            3DES加密文件
+            </summary>
+            <param name="desPara">3DES加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outFilePath">[OUT]已加密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
+            <summary>
+            3DES解密文件
+            </summary>
+            <param name="desPara">3DES解密参数</param>
+            <param name="inFilePath">待解密文件路径</param>
+            <param name="outFilePath">[OUT]已解密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
+            <summary>
+            3DES加密字符串
+            </summary>
+            <param name="desPara">3DES加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
+            <summary>
+            3DES解密字符串
+            </summary>
+            <param name="desPara">3DES解密参数</param>
+            <param name="inString">待解密字符串</param>
+            <param name="outString">[OUT]已解密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            3DES加密字节数组
+            </summary>
+            <param name="desPara">3DES加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outBytes">[OUT]已加密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            3DES解密字节数组
+            </summary>
+            <param name="desPara">3DES解密参数</param>
+            <param name="inBytes">待解密字节数组</param>
+            <param name="outBytes">[OUT]已解密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF">
+            <summary>
+            DES加密解密操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
+            <summary>
+            DES加密文件
+            </summary>
+            <param name="desPara">DES加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outFilePath">[OUT]已加密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
+            <summary>
+            DES解密文件
+            </summary>
+            <param name="desPara">DES解密参数</param>
+            <param name="inFilePath">待解密文件路径</param>
+            <param name="outFilePath">[OUT]已解密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            DES加密字符串
+            </summary>
+            <param name="desPara">DES加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            DES解密字符串
+            </summary>
+            <param name="desPara">DES解密参数</param>
+            <param name="inString">待解密字符串</param>
+            <param name="outString">[OUT]已解密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            DES加密字节数组
+            </summary>
+            <param name="desPara">DES加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outBytes">[OUT]已加密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            DES解密字节数组
+            </summary>
+            <param name="desPara">DES解密参数</param>
+            <param name="inBytes">待解密字节数组</param>
+            <param name="outBytes">[OUT]已解密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF">
+            <summary>
+            MD5加密操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+            <summary>
+            DES加密文件
+            </summary>
+            <param name="md5Para">MD5加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="md5Para">MD5加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.Byte[],System.String@,System.String@)">
+            <summary>
+            MD5加密字节数组
+            </summary>
+            <param name="md5Para">MD5加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.AESEncrypt">
+            <summary>
+            AES加密解密操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+            <summary>
+            AES加密文件
+            </summary>
+            <param name="aesPara">AES加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outFilePath">[OUT]已加密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+            <summary>
+            AES解密文件
+            </summary>
+            <param name="aesPara">AES解密参数</param>
+            <param name="inFilePath">待解密文件路径</param>
+            <param name="outFilePath">[OUT]已解密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            AES加密字符串
+            </summary>
+            <param name="aesPara">AES加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            AES解密字符串
+            </summary>
+            <param name="aesPara">AES解密参数</param>
+            <param name="inString">待解密字符串</param>
+            <param name="outString">[OUT]已解密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            AES加密字节数组
+            </summary>
+            <param name="aesPara">AES加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outBytes">[OUT]已加密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            AES解密字节数组
+            </summary>
+            <param name="aesPara">AES解密参数</param>
+            <param name="inBytes">待解密字节数组</param>
+            <param name="outBytes">[OUT]已解密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ECipherMode">
+            <summary>
+            加密模式枚举
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ECipherMode.CBC">
+            <summary>
+            密码块链模式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ECipherMode.ECB">
+            <summary>
+            电子密码本模式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ECipherMode.OFB">
+            <summary>
+            输出反馈模式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ECipherMode.CFB">
+            <summary>
+            密码反馈模式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ECipherMode.CTS">
+            <summary>
+            密码文本窃用模式
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ECipherModeExFunction">
+            <summary>
+            加密模式枚举扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ECipherModeExFunction.Convert(CML.CommonEx.EncodeEx.ECipherMode)">
+            <summary>
+            转换类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.EMD5Length">
+            <summary>
+            MD5加密输出长度
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EMD5Length.L16">
+            <summary>
+            16位
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EMD5Length.L32">
+            <summary>
+            32位
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.EPaddingMode">
+            <summary>
+            填充模式枚举
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EPaddingMode.None">
+            <summary>
+            不填充
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EPaddingMode.PKCS7">
+            <summary>
+            PKCS #7 填充字符串由一个字节序列组成，每个字节填充该字节序列的长度。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EPaddingMode.Zeros">
+            <summary>
+            填充字符串由设置为零的字节组成。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EPaddingMode.ANSIX923">
+            <summary>
+            ANSIX923 填充字符串由一个字节序列组成，此字节序列的最后一个字节填充字节序列的长度，其余字节均填充数字零。
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.EPaddingMode.ISO10126">
+            <summary>
+            ISO10126 填充字符串由一个字节序列组成，此字节序列的最后一个字节填充字节序列的长度，其余字节填充随机数据。
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.EPaddingModeExFunction">
+            <summary>
+            填充模式枚举扩展方法
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.EPaddingModeExFunction.Convert(CML.CommonEx.EncodeEx.EPaddingMode)">
+            <summary>
+            转换类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ModelAESParameter">
+            <summary>
+            AES参数模型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ModelAESParameter.key">
+            <summary>
+            密钥存储
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ModelAESParameter.iv">
+            <summary>
+            向量存储
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.Key">
+            <summary>
+            密钥（16位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.IV">
+            <summary>
+            向量（16位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.PaddingChar">
+            <summary>
+            填充字符
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.CipherMode">
+            <summary>
+            加密模式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.PaddingMode">
+            <summary>
+            填充模式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.Encode">
+            <summary>
+            字符编码
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ModelAESParameter.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ModelAESParameter.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="key">密钥（16位）</param>
+            <param name="iv">向量（16位）</param>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ModelDESTripleParameter">
+            <summary>
+            3DES参数模型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ModelDESTripleParameter.key">
+            <summary>
+            密钥存储
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ModelDESTripleParameter.iv">
+            <summary>
+            向量存储
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.Key">
+            <summary>
+            密钥（24位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.IV">
+            <summary>
+            向量（8位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.PaddingChar">
+            <summary>
+            填充字符
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.CipherMode">
+            <summary>
+            加密模式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.PaddingMode">
+            <summary>
+            填充模式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.Encode">
+            <summary>
+            字符编码
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ModelDESTripleParameter.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ModelDESTripleParameter.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="key">密钥（24位）</param>
+            <param name="iv">向量（8位）</param>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ModelDESParameter">
+            <summary>
+            DES参数模型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ModelDESParameter.key">
+            <summary>
+            密钥存储
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.EncodeEx.ModelDESParameter.iv">
+            <summary>
+            向量存储
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.Key">
+            <summary>
+            密钥（8位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.IV">
+            <summary>
+            向量（8位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.PaddingChar">
+            <summary>
+            填充字符
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.CipherMode">
+            <summary>
+            加密模式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.PaddingMode">
+            <summary>
+            填充模式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.Encode">
+            <summary>
+            字符编码
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ModelDESParameter.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.ModelDESParameter.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="key">密钥（8位）</param>
+            <param name="iv">向量（8位）</param>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.ModelMD5Parameter">
+            <summary>
+            MD5参数模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelMD5Parameter.MD5Length">
+            <summary>
+            输出长度（默认32位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelMD5Parameter.IsUppercase">
+            <summary>
+            大写输出
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModelMD5Parameter.Encode">
+            <summary>
+            字符编码
+            </summary>
+        </member>
         <member name="T:CML.CommonEx.EncodeEx.VersionInfo">
             <summary>
             常用工具包数据编码工具版本信息
@@ -920,123 +1503,168 @@
         </member>
         <member name="T:CML.CommonEx.EncodeEx.DESEncrypt">
             <summary>
-            DESEncrypt加密解密操作类
+            DES加密解密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_Encrypt(System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
             <summary>
-            DES加密
+            DES加密文件
             </summary>
-            <param name="inputValue">待加密字符串</param>
-            <param name="key">密钥（8位）</param>
-            <param name="iv">向量（8位）</param>
-            <returns>已加密字符串（错误时返回 ERROR:{ERROR MESSAGE}）</returns>
+            <param name="desPara">DES加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outFilePath">[OUT]已加密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_Decrypt(System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
             <summary>
-            DES解密
+            DES解密文件
             </summary>
-            <param name="inputValue">待解密字符串</param>
-            <param name="key">密钥（8位）</param>
-            <param name="iv">向量（8位）</param>
-            <returns>已解密字符串（错误时为空）</returns>
+            <param name="desPara">DES解密参数</param>
+            <param name="inFilePath">待解密文件路径</param>
+            <param name="outFilePath">[OUT]已解密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="T:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
             <summary>
-            DESEncrypt加密解密操作类(扩展方法)
+            DES加密字符串
+            </summary>
+            <param name="desPara">DES加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+            <summary>
+            DES解密字符串
+            </summary>
+            <param name="desPara">DES解密参数</param>
+            <param name="inString">待解密字符串</param>
+            <param name="outString">[OUT]已解密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            DES加密字节数组
+            </summary>
+            <param name="desPara">DES加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outBytes">[OUT]已加密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+            <summary>
+            DES解密字节数组
+            </summary>
+            <param name="desPara">DES解密参数</param>
+            <param name="inBytes">待解密字节数组</param>
+            <param name="outBytes">[OUT]已解密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EncodeEx.DESTripleEncrypt">
+            <summary>
+            3DES加密解密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_Encrypt(System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
             <summary>
-            DES加密
+            3DES加密文件
             </summary>
-            <param name="inputValue">待加密字符串</param>
-            <param name="key">密钥（8位）</param>
-            <param name="iv">向量（8位）</param>
-            <returns>已加密字符串（错误时返回 ERROR:{ERROR MESSAGE}）</returns>
+            <param name="desPara">3DES加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outFilePath">[OUT]已加密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_Decrypt(System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
             <summary>
-            DES解密
+            3DES解密文件
             </summary>
-            <param name="inputValue">待解密字符串</param>
-            <param name="key">密钥（8位）</param>
-            <param name="iv">向量（8位）</param>
-            <returns>已解密字符串（错误时为空）</returns>
+            <param name="desPara">3DES解密参数</param>
+            <param name="inFilePath">待解密文件路径</param>
+            <param name="outFilePath">[OUT]已解密文件存储路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="T:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
             <summary>
-            MD5加密操作类(扩展方法)
+            3DES加密字符串
             </summary>
+            <param name="desPara">3DES加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_MD5Encrypt16(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
             <summary>
-            16位MD5加密
+            3DES解密字符串
             </summary>
-            <param name="input">待加密字符串</param>
-            <param name="isUpper">大写输出</param>
-            <returns>16位MD5值</returns>
+            <param name="desPara">3DES解密参数</param>
+            <param name="inString">待解密字符串</param>
+            <param name="outString">[OUT]已解密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_MD5Encrypt32(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
-            32位MD5加密
+            3DES加密字节数组
             </summary>
-            <param name="input">待加密字符串</param>
-            <param name="isUpper">大写输出</param>
-            <returns>32位MD5值</returns>
+            <param name="desPara">3DES加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outBytes">[OUT]已加密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_MD5EncryptFile(System.IO.FileInfo,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
-            文件MD5加密
+            3DES解密字节数组
             </summary>
-            <param name="file">文件</param>
-            <param name="isUpper">大写输出</param>
-            <returns>文件MD5值</returns>
-        </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_MD5EncryptFile(System.String,System.Boolean)">
-            <summary>
-            文件MD5加密
-            </summary>
-            <param name="filePath">文件路径</param>
-            <param name="isUpper">大写输出</param>
-            <returns>文件MD5值</returns>
+            <param name="desPara">3DES解密参数</param>
+            <param name="inBytes">待解密字节数组</param>
+            <param name="outBytes">[OUT]已解密字节数组</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
         <member name="T:CML.CommonEx.EncodeEx.MD5Encrypt">
             <summary>
             MD5加密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5Encrypt16(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+            <summary>
+            DES加密文件
+            </summary>
+            <param name="md5Para">MD5加密参数</param>
+            <param name="inFilePath">待加密文件路径</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
             <summary>
             16位MD5加密
             </summary>
-            <param name="input">待加密字符串</param>
-            <param name="isUpper">大写输出</param>
-            <returns>16位MD5值</returns>
+            <param name="md5Para">MD5加密参数</param>
+            <param name="inString">待加密字符串</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5Encrypt32(System.String,System.Boolean)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.Byte[],System.String@,System.String@)">
             <summary>
-            32位MD5加密
+            MD5加密字节数组
             </summary>
-            <param name="input">待加密字符串</param>
-            <param name="isUpper">大写输出</param>
-            <returns>32位MD5值</returns>
-        </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5EncryptFile(System.IO.FileInfo,System.Boolean)">
-            <summary>
-            文件MD5加密
-            </summary>
-            <param name="file">文件</param>
-            <param name="isUpper">大写输出</param>
-            <returns>文件MD5值</returns>
-        </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_MD5EncryptFile(System.String,System.Boolean)">
-            <summary>
-            文件MD5加密
-            </summary>
-            <param name="filePath">文件路径</param>
-            <param name="isUpper">大写输出</param>
-            <returns>文件MD5值</returns>
+            <param name="md5Para">MD5加密参数</param>
+            <param name="inBytes">待加密字节数组</param>
+            <param name="outString">[OUT]已加密字符串</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
         </member>
         <member name="T:CML.CommonEx.EnumEx.VersionInfo">
             <summary>

@@ -19,6 +19,8 @@ namespace CML.ToolTest
                 }
             }
 
+            testClassTypes.Sort((x, y) => x.Name.CompareTo(y.Name));
+
             if (testClassTypes.Count == 0)
             {
                 Console.WriteLine("测试类为空，请先编写测试类！");

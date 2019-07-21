@@ -1,6 +1,8 @@
 ﻿using CML.CommonEx.EncodeEx;
+using CML.CommonEx.EncodeEx.ExFunction;
 using System;
 using System.Reflection;
+using System.Text;
 
 namespace CML.ToolTest
 {
@@ -40,6 +42,30 @@ namespace CML.ToolTest
                 PrintMsgLn(MsgType.Warn, "N");
             }
 
+            PrintLog(MsgType.Warn, "是否执行3DES加密解密测试(Y/N):");
+            if (Console.ReadKey(true).Key == ConsoleKey.Y)
+            {
+                PrintMsgLn(MsgType.Warn, "Y");
+                PrintLogLn(MsgType.Info, "开始3DES加密解密测试！");
+                DESTripleEncryptTest();
+            }
+            else
+            {
+                PrintMsgLn(MsgType.Warn, "N");
+            }
+
+            PrintLog(MsgType.Warn, "是否执行AES加密解密测试(Y/N):");
+            if (Console.ReadKey(true).Key == ConsoleKey.Y)
+            {
+                PrintMsgLn(MsgType.Warn, "Y");
+                PrintLogLn(MsgType.Info, "开始AES加密解密测试！");
+                AESEncryptTest();
+            }
+            else
+            {
+                PrintMsgLn(MsgType.Warn, "N");
+            }
+
             PrintLog(MsgType.Warn, "是否执行MD5加密测试(Y/N):");
             if (Console.ReadKey(true).Key == ConsoleKey.Y)
             {
@@ -58,31 +84,127 @@ namespace CML.ToolTest
         /// </summary>
         private void DESEncryptTest()
         {
+            ModelDESParameter desParameter = new ModelDESParameter()
+            {
+                Key = GetRandomString(10),
+                IV = GetRandomString(6),
+                Encode = Encoding.ASCII,
+                PaddingChar = 'X',
+            };
+
             string input = GetRandomString(10);
             PrintLogLn(MsgType.Info, $"待加密字符串: {input}");
-            string key = GetRandomString(8);
-            PrintLogLn(MsgType.Info, $"加密密钥: {key}");
-            string iv = GetRandomString(8);
-            PrintLogLn(MsgType.Info, $"加密向量: {iv}");
+            PrintLogLn(MsgType.Info, $"加密密钥: {desParameter.Key}");
+            PrintLogLn(MsgType.Info, $"加密向量: {desParameter.IV}");
 
-            string encode = DESEncrypt.CF_Encrypt(input, key, iv);
-            if (encode.StartsWith("ERROR:"))
-            {
-                PrintLogLn(MsgType.Error, $"加密字符串失败: {encode.Substring(6)}");
-            }
-            else
+            if (desParameter.CF_EncryptString(input, out string encode, out string errMsg))
             {
                 PrintLogLn(MsgType.Success, $"加密字符串成功: {encode}");
             }
-
-            string decode = DESEncrypt.CF_Decrypt(encode, key, iv);
-            if (decode.StartsWith("ERROR:"))
+            else
             {
-                PrintLogLn(MsgType.Error, $"解密字符串失败: {decode.Substring(6)}");
+                PrintLogLn(MsgType.Error, $"加密字符串失败: {errMsg}");
+            }
+
+            if (desParameter.CF_DecryptString(encode, out string decode, out errMsg))
+            {
+                PrintLogLn(MsgType.Success, $"解密字符串成功: {decode}");
             }
             else
             {
+                PrintLogLn(MsgType.Error, $"解密字符串失败: {errMsg}");
+            }
+
+            if (input == decode)
+            {
+                PrintLogLn(MsgType.Success, "原字符串与解密字符串比对成功！");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, "原字符串与解密字符串比对失败！");
+            }
+        }
+
+        /// <summary>
+        /// 3DES加密解密测试
+        /// </summary>
+        private void DESTripleEncryptTest()
+        {
+            ModelDESTripleParameter desParameter = new ModelDESTripleParameter()
+            {
+                Key = GetRandomString(26),
+                IV = GetRandomString(6),
+                Encode = Encoding.ASCII,
+                PaddingChar = 'X',
+            };
+
+            string input = GetRandomString(10);
+            PrintLogLn(MsgType.Info, $"待加密字符串: {input}");
+            PrintLogLn(MsgType.Info, $"加密密钥: {desParameter.Key}");
+            PrintLogLn(MsgType.Info, $"加密向量: {desParameter.IV}");
+
+            if (desParameter.CF_EncryptString(input, out string encode, out string errMsg))
+            {
+                PrintLogLn(MsgType.Success, $"加密字符串成功: {encode}");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, $"加密字符串失败: {errMsg}");
+            }
+
+            if (desParameter.CF_DecryptString(encode, out string decode, out errMsg))
+            {
                 PrintLogLn(MsgType.Success, $"解密字符串成功: {decode}");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, $"解密字符串失败: {errMsg}");
+            }
+
+            if (input == decode)
+            {
+                PrintLogLn(MsgType.Success, "原字符串与解密字符串比对成功！");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, "原字符串与解密字符串比对失败！");
+            }
+        }
+
+        /// <summary>
+        /// AES加密解密测试
+        /// </summary>
+        private void AESEncryptTest()
+        {
+            ModelAESParameter aesParameter = new ModelAESParameter()
+            {
+                Key = GetRandomString(18),
+                IV = GetRandomString(14),
+                Encode = Encoding.UTF8,
+                PaddingChar = 'a',
+            };
+
+            string input = GetRandomString(10);
+            PrintLogLn(MsgType.Info, $"待加密字符串: {input}");
+            PrintLogLn(MsgType.Info, $"加密密钥: {aesParameter.Key}");
+            PrintLogLn(MsgType.Info, $"加密向量: {aesParameter.IV}");
+
+            if (aesParameter.CF_EncryptString(input, out string encode, out string errMsg))
+            {
+                PrintLogLn(MsgType.Success, $"加密字符串成功: {encode}");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, $"加密字符串失败: {errMsg}");
+            }
+
+            if (aesParameter.CF_DecryptString(encode, out string decode, out errMsg))
+            {
+                PrintLogLn(MsgType.Success, $"解密字符串成功: {decode}");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, $"解密字符串失败: {errMsg}");
             }
 
             if (input == decode)
@@ -100,14 +222,30 @@ namespace CML.ToolTest
         /// </summary>
         private void MD5EncodeTest()
         {
-            PrintLogLn(MsgType.Info, "16位MD5（大写）: " + MD5Encrypt.CF_MD5Encrypt16("MD5Tester"));
-            PrintLogLn(MsgType.Info, "16位MD5（小写）: " + MD5Encrypt.CF_MD5Encrypt16("MD5Tester", false));
+            ModelMD5Parameter md5Parameter = new ModelMD5Parameter()
+            {
+                IsUppercase = true,
+                Encode = Encoding.UTF8,
+                MD5Length = EMD5Length.L32,
+            };
 
-            PrintLogLn(MsgType.Info, "32位MD5（大写）: " + MD5Encrypt.CF_MD5Encrypt32("MD5Tester"));
-            PrintLogLn(MsgType.Info, "32位MD5（小写）: " + MD5Encrypt.CF_MD5Encrypt32("MD5Tester", false));
+            if (md5Parameter.CF_EncryptString("MD5Tester", out string encode, out string errMsg))
+            {
+                PrintLogLn(MsgType.Success, "加密字符串成功: " + encode);
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, "加密字符串失败: " + errMsg);
+            }
 
-            PrintLogLn(MsgType.Info, "文件MD5（大写）: " + MD5Encrypt.CF_MD5EncryptFile(Assembly.GetExecutingAssembly().Location));
-            PrintLogLn(MsgType.Info, "文件MD5（小写）: " + MD5Encrypt.CF_MD5EncryptFile(Assembly.GetExecutingAssembly().Location, false));
+            if (md5Parameter.CF_EncryptFile(Assembly.GetExecutingAssembly().Location, out  encode, out  errMsg))
+            {
+                PrintLogLn(MsgType.Success, "加密文件成功: " + encode);
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, "加密文件失败: " + errMsg);
+            }
         }
     }
 }

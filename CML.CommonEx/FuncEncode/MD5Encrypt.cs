@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace CML.CommonEx.EncodeEx
 {
@@ -11,101 +10,116 @@ namespace CML.CommonEx.EncodeEx
     public class MD5Encrypt
     {
         /// <summary>
+        /// DES加密文件
+        /// </summary>
+        /// <param name="md5Para">MD5加密参数</param>
+        /// <param name="inFilePath">待加密文件路径</param>
+        /// <param name="outString">[OUT]已加密字符串</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_EncryptFile(ModelMD5Parameter md5Para, string inFilePath, out string outString, out string errMsg)
+        {
+            bool result;
+
+            try
+            {
+                byte[] bts = File.ReadAllBytes(inFilePath);
+
+                result = CF_EncryptBytes(md5Para, bts, out outString, out errMsg);
+            }
+            catch (Exception ex)
+            {
+                outString = "";
+                errMsg = ex.Message;
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// 16位MD5加密
         /// </summary>
-        /// <param name="input">待加密字符串</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>16位MD5值</returns>
-        public static string CF_MD5Encrypt16(string input, bool isUpper = true)
+        /// <param name="md5Para">MD5加密参数</param>
+        /// <param name="inString">待加密字符串</param>
+        /// <param name="outString">[OUT]已加密字符串</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_EncryptString(ModelMD5Parameter md5Para, string inString, out string outString, out string errMsg)
         {
-            string strMD5;
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            bool result;
+
+            try
             {
-                strMD5 = BitConverter.ToString(md5.ComputeHash(Encoding.Default.GetBytes(input)), 4, 8);
+                byte[] bts = md5Para.Encode.GetBytes(inString);
+
+                result = CF_EncryptBytes(md5Para, bts, out outString, out errMsg);
+            }
+            catch (Exception ex)
+            {
+                outString = "";
+                errMsg = ex.Message;
+                result = false;
             }
 
-            if (isUpper)
-            {
-                return strMD5.Replace("-", "").ToUpper();
-            }
-            else
-            {
-                return strMD5.Replace("-", "").ToLower();
-            }
+            return result;
         }
 
         /// <summary>
-        /// 32位MD5加密
+        /// MD5加密字节数组
         /// </summary>
-        /// <param name="input">待加密字符串</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>32位MD5值</returns>
-        public static string CF_MD5Encrypt32(string input, bool isUpper = true)
+        /// <param name="md5Para">MD5加密参数</param>
+        /// <param name="inBytes">待加密字节数组</param>
+        /// <param name="outString">[OUT]已加密字符串</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_EncryptBytes(ModelMD5Parameter md5Para, byte[] inBytes, out string outString, out string errMsg)
         {
-            byte[] byteMD5;
-            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
-            {
-                byteMD5 = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-            }
+            bool result;
 
-            StringBuilder sbMD5 = new StringBuilder(32);
-            for (int i = 0; i < byteMD5.Length; i++)
+            try
             {
-                _ = sbMD5.Append(byteMD5[i].ToString("X2"));
-            }
-
-            if (isUpper)
-            {
-                return sbMD5.Replace("-", "").ToString().ToUpper();
-            }
-            else
-            {
-                return sbMD5.Replace("-", "").ToString().ToLower();
-            }
-        }
-
-        /// <summary>
-        /// 文件MD5加密
-        /// </summary>
-        /// <param name="file">文件</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>文件MD5值</returns>
-        public static string CF_MD5EncryptFile(FileInfo file, bool isUpper = true)
-        {
-            return CF_MD5EncryptFile(file.FullName, isUpper);
-        }
-
-        /// <summary>
-        /// 文件MD5加密
-        /// </summary>
-        /// <param name="filePath">文件路径</param>
-        /// <param name="isUpper">大写输出</param>
-        /// <returns>文件MD5值</returns>
-        public static string CF_MD5EncryptFile(string filePath, bool isUpper = true)
-        {
-            byte[] byteMD5;
-            using (FileStream fs = File.Open(filePath, FileMode.Open, FileAccess.Read))
-            {
+                byte[] outBytes;
                 using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
                 {
-                    byteMD5 = md5.ComputeHash(fs);
+                    outBytes = md5.ComputeHash(inBytes);
                 }
+
+                string strMD5 = "";
+                if (md5Para.MD5Length == EMD5Length.L16)
+                {
+                    strMD5 = BitConverter.ToString(outBytes, 4, 8);
+                }
+                else
+                {
+                    for (int i = 0; i < outBytes.Length; i++)
+                    {
+                        strMD5 += outBytes[i].ToString("X2");
+                    }
+                }
+
+                if (md5Para.IsUppercase)
+                {
+                    outString = strMD5.Replace("-", "").ToUpper();
+                }
+                else
+                {
+                    outString = strMD5.Replace("-", "").ToLower();
+                }
+
+                result = true;
+
+                errMsg = "";
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                outString = "";
+                errMsg = ex.Message;
+                result = true;
             }
 
-            StringBuilder sbMD5 = new StringBuilder(32);
-            for (int i = 0; i < byteMD5.Length; i++)
-            {
-                _ = sbMD5.Append(byteMD5[i].ToString("X2"));
-            }
-
-            if (isUpper)
-            {
-                return sbMD5.Replace("-", "").ToString().ToUpper();
-            }
-            else
-            {
-                return sbMD5.Replace("-", "").ToString().ToLower();
-            }
+            return result;
         }
     }
 }
