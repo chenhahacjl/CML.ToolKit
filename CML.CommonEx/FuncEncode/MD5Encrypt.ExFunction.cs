@@ -15,7 +15,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptFile(this ModelMD5Parameter md5Para, string inFilePath, out string outString, out string errMsg)
+        public static bool CF_EncryptFile(this ModMD5Parameter md5Para, string inFilePath, out string outString, out string errMsg)
         {
             return MD5Encrypt.CF_EncryptFile(md5Para, inFilePath, out outString, out errMsg);
         }
@@ -28,7 +28,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptString(this ModelMD5Parameter md5Para, string inString, out string outString, out string errMsg)
+        public static bool CF_EncryptString(this ModMD5Parameter md5Para, string inString, out string outString, out string errMsg)
         {
             return MD5Encrypt.CF_EncryptString(md5Para, inString, out outString, out errMsg);
         }
@@ -41,7 +41,7 @@ namespace CML.CommonEx.EncodeEx.ExFunction
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptBytes(this ModelMD5Parameter md5Para, byte[] inBytes, out string outString, out string errMsg)
+        public static bool CF_EncryptBytes(this ModMD5Parameter md5Para, byte[] inBytes, out string outString, out string errMsg)
         {
             return MD5Encrypt.CF_EncryptBytes(md5Para, inBytes, out outString, out errMsg);
         }

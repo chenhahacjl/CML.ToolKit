@@ -5,7 +5,7 @@ namespace CML.CommonEx.FTPEx
     /// <summary>
     /// FTP请求信息模型
     /// </summary>
-    public class ModelFtpReqInfo
+    public class ModFtpReqInfo
     {
         /// <summary>
         /// 备份的请求路径
@@ -30,18 +30,18 @@ namespace CML.CommonEx.FTPEx
         /// <summary>
         /// 传输限速（上传、下载时使用）
         /// </summary>
-        public ModelTransmissionSpeed TransmissionSpeed { get; set; } = new ModelTransmissionSpeed();
+        public ModTransmissionSpeed TransmissionSpeed { get; set; } = new ModTransmissionSpeed();
 
         /// <summary>
         /// 构造函数（默认构造）
         /// </summary>
-        public ModelFtpReqInfo() { }
+        public ModFtpReqInfo() { }
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="requestPath">请求路径</param>
-        public ModelFtpReqInfo(string requestPath)
+        public ModFtpReqInfo(string requestPath)
         {
             RequestPath = requestPath;
         }
@@ -50,7 +50,7 @@ namespace CML.CommonEx.FTPEx
         /// 构造函数
         /// </summary>
         /// <param name="method">请求方式</param>
-        public ModelFtpReqInfo(EFtpRequestMethod method)
+        public ModFtpReqInfo(EFtpRequestMethod method)
         {
             Method = method;
         }
@@ -60,7 +60,7 @@ namespace CML.CommonEx.FTPEx
         /// </summary>
         /// <param name="requestPath">请求路径</param>
         /// <param name="method">请求方式</param>
-        public ModelFtpReqInfo(string requestPath, EFtpRequestMethod method)
+        public ModFtpReqInfo(string requestPath, EFtpRequestMethod method)
         {
             RequestPath = requestPath;
             Method = method;

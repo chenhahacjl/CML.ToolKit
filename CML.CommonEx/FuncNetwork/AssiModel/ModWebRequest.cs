@@ -7,7 +7,7 @@ namespace CML.CommonEx.NetworkEx
     /// <summary>
     /// WEB请求模型
     /// </summary>
-    public class ModelWebRequest
+    public class ModWebRequest
     {
         /// <summary>
         /// 请求网址
@@ -26,7 +26,7 @@ namespace CML.CommonEx.NetworkEx
         /// <summary>
         /// 代理（默认不开启）
         /// </summary>
-        public ModelProxy Proxy { get; set; } = new ModelProxy();
+        public ModProxy Proxy { get; set; } = new ModProxy();
         /// <summary>
         /// 超时时间（毫秒，默认1000毫秒）
         /// </summary>

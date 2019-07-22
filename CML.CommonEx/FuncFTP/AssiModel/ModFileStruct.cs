@@ -5,7 +5,7 @@ namespace CML.CommonEx.FTPEx
     /// <summary>
     /// 文件信息
     /// </summary>
-    public class ModelFileInfo
+    public class ModFileInfo
     {
         /// <summary>
         /// 是否为文件夹
@@ -36,7 +36,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="length">文件大小（文件夹为0）</param>
         /// <param name="createTime">创建时间</param>
         /// <param name="path">文件（夹）路径</param>
-        public ModelFileInfo(bool isDirectory, string name, long length, DateTime createTime, string path)
+        public ModFileInfo(bool isDirectory, string name, long length, DateTime createTime, string path)
         {
             IsDirectory = isDirectory;
             Name = name;

@@ -5,7 +5,7 @@ namespace CML.CommonEx.FTPEx
     /// <summary>
     /// FTP信息模型
     /// </summary>
-    public class ModelFtpInfomation
+    public class ModFtpInfomation
     {
         /// <summary>
         /// 服务器IP
@@ -30,18 +30,18 @@ namespace CML.CommonEx.FTPEx
         /// <summary>
         /// FTP请求信息
         /// </summary>
-        public ModelFtpReqInfo FtpReqInfo { get; set; } = new ModelFtpReqInfo();
+        public ModFtpReqInfo FtpReqInfo { get; set; } = new ModFtpReqInfo();
 
         /// <summary>
         /// FTP扩展信息
         /// </summary>
-        public ModelFtpExtendInfo FtpExtendInfo { get; set; } = new ModelFtpExtendInfo();
+        public ModFtpExtendInfo FtpExtendInfo { get; set; } = new ModFtpExtendInfo();
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="ip">服务器IP</param>
-        public ModelFtpInfomation(string ip)
+        public ModFtpInfomation(string ip)
         {
             IP = ip;
         }
@@ -51,7 +51,7 @@ namespace CML.CommonEx.FTPEx
         /// </summary>
         /// <param name="ip">服务器IP</param>
         /// <param name="port">服务端口</param>
-        public ModelFtpInfomation(string ip, int port)
+        public ModFtpInfomation(string ip, int port)
         {
             IP = ip;
             Port = port;
@@ -63,7 +63,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ip">服务器IP</param>
         /// <param name="username">用户名</param>
         /// <param name="password">密码</param>
-        public ModelFtpInfomation(string ip, string username, string password)
+        public ModFtpInfomation(string ip, string username, string password)
         {
             IP = ip;
             Username = username;
@@ -77,7 +77,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="port">服务端口</param>
         /// <param name="username">用户名</param>
         /// <param name="password">密码</param>
-        public ModelFtpInfomation(string ip, int port, string username, string password)
+        public ModFtpInfomation(string ip, int port, string username, string password)
         {
             IP = ip;
             Port = port;
@@ -96,7 +96,7 @@ namespace CML.CommonEx.FTPEx
         /// </summary>
         /// <param name="ftpInfomation">FTP基本信息</param>
         /// <returns>URL地址</returns>
-        public static string GetCurrentName(this ModelFtpInfomation ftpInfomation)
+        public static string GetCurrentName(this ModFtpInfomation ftpInfomation)
         {
             //目录结构格式化
             string directory = ftpInfomation.FtpReqInfo.RequestPath.Replace("\\", "/").Trim('/');
@@ -116,7 +116,7 @@ namespace CML.CommonEx.FTPEx
         /// </summary>
         /// <param name="ftpInfomation">FTP基本信息</param>
         /// <returns>URL地址</returns>
-        public static string GetParentPath(this ModelFtpInfomation ftpInfomation)
+        public static string GetParentPath(this ModFtpInfomation ftpInfomation)
         {
             //目录结构格式化
             string directory = ftpInfomation.FtpReqInfo.RequestPath.Replace("\\", "/").Trim('/');
@@ -137,7 +137,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息</param>
         /// <param name="path">子路径</param>
         /// <returns>URL地址</returns>
-        public static string GetCombinePath(this ModelFtpInfomation ftpInfomation, string path = "")
+        public static string GetCombinePath(this ModFtpInfomation ftpInfomation, string path = "")
         {
             //目录结构格式化
             string directory = ftpInfomation.FtpReqInfo.RequestPath.Replace("\\", "/").Trim('/');
@@ -150,7 +150,7 @@ namespace CML.CommonEx.FTPEx
         /// </summary>
         /// <param name="ftpInfomation">FTP基本信息</param>
         /// <returns>URL地址</returns>
-        public static Uri GetUrl(this ModelFtpInfomation ftpInfomation)
+        public static Uri GetUrl(this ModFtpInfomation ftpInfomation)
         {
             //目录结构格式化
             string directory = ftpInfomation.FtpReqInfo.RequestPath.Replace("\\", "/").Trim('/');

@@ -13,7 +13,7 @@
         /// <param name="outFilePath">[OUT]已加密文件存储路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptFile(this ModelDESParameter desPara, string inFilePath, string outFilePath, out string errMsg)
+        public static bool CF_EncryptFile(this ModDESParameter desPara, string inFilePath, string outFilePath, out string errMsg)
         {
             return DESEncrypt.CF_EncryptFile(desPara, inFilePath, outFilePath, out errMsg);
         }
@@ -26,7 +26,7 @@
         /// <param name="outFilePath">[OUT]已解密文件存储路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptFile(this ModelDESParameter desPara, string inFilePath, string outFilePath, out string errMsg)
+        public static bool CF_DecryptFile(this ModDESParameter desPara, string inFilePath, string outFilePath, out string errMsg)
         {
             return DESEncrypt.CF_DecryptFile(desPara, inFilePath, outFilePath, out errMsg);
         }
@@ -39,7 +39,7 @@
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptString(this ModelDESParameter desPara, string inString, out string outString, out string errMsg)
+        public static bool CF_EncryptString(this ModDESParameter desPara, string inString, out string outString, out string errMsg)
         {
             return DESEncrypt.CF_EncryptString(desPara, inString, out outString, out errMsg);
         }
@@ -52,7 +52,7 @@
         /// <param name="outString">[OUT]已解密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptString(this ModelDESParameter desPara, string inString, out string outString, out string errMsg)
+        public static bool CF_DecryptString(this ModDESParameter desPara, string inString, out string outString, out string errMsg)
         {
             return DESEncrypt.CF_DecryptString(desPara, inString, out outString, out errMsg);
         }
@@ -65,7 +65,7 @@
         /// <param name="outBytes">[OUT]已加密字节数组</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptBytes(this ModelDESParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
+        public static bool CF_EncryptBytes(this ModDESParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
         {
             return DESEncrypt.CF_EncryptBytes(desPara, inBytes, out outBytes, out errMsg);
         }
@@ -78,7 +78,7 @@
         /// <param name="outBytes">[OUT]已解密字节数组</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptBytes(this ModelDESParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
+        public static bool CF_DecryptBytes(this ModDESParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
         {
             return DESEncrypt.CF_DecryptBytes(desPara, inBytes, out outBytes, out errMsg);
         }

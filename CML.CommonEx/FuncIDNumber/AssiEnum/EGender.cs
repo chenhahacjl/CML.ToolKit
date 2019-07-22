@@ -35,7 +35,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>性别</returns>
-        public static EGender CF_GetGender(this ModelIDNumber idNumber)
+        public static EGender CF_GetGender(this ModIDNumber idNumber)
         {
             EGender gender = EGender.Error;
 

@@ -35,11 +35,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsAdmin();
+                    return ModEverything32.Everything_IsAdmin();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsAdmin();
+                    return ModEverything64.Everything_IsAdmin();
                 }
             }
             catch (Exception ex)
@@ -58,11 +58,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsAppData();
+                    return ModEverything32.Everything_IsAppData();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsAppData();
+                    return ModEverything64.Everything_IsAppData();
                 }
             }
             catch (Exception ex)
@@ -81,11 +81,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsDBLoaded();
+                    return ModEverything32.Everything_IsDBLoaded();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsDBLoaded();
+                    return ModEverything64.Everything_IsDBLoaded();
                 }
             }
             catch (Exception ex)
@@ -104,11 +104,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetMajorVersion();
+                    return ModEverything32.Everything_GetMajorVersion();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetMajorVersion();
+                    return ModEverything64.Everything_GetMajorVersion();
                 }
             }
             catch (Exception ex)
@@ -127,11 +127,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetMinorVersion();
+                    return ModEverything32.Everything_GetMinorVersion();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetMinorVersion();
+                    return ModEverything64.Everything_GetMinorVersion();
                 }
             }
             catch (Exception ex)
@@ -150,11 +150,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetRevision();
+                    return ModEverything32.Everything_GetRevision();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetRevision();
+                    return ModEverything64.Everything_GetRevision();
                 }
             }
             catch (Exception ex)
@@ -173,11 +173,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetBuildNumber();
+                    return ModEverything32.Everything_GetBuildNumber();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetBuildNumber();
+                    return ModEverything64.Everything_GetBuildNumber();
                 }
             }
             catch (Exception ex)
@@ -196,11 +196,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (ETarget)ModelEverything32.Everything_GetTargetMachine();
+                    return (ETarget)ModEverything32.Everything_GetTargetMachine();
                 }
                 else
                 {
-                    return (ETarget)ModelEverything64.Everything_GetTargetMachine();
+                    return (ETarget)ModEverything64.Everything_GetTargetMachine();
                 }
             }
             catch (Exception ex)
@@ -219,11 +219,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_Exit();
+                    return ModEverything32.Everything_Exit();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_Exit();
+                    return ModEverything64.Everything_Exit();
                 }
             }
             catch (Exception ex)
@@ -242,11 +242,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_SaveDB();
+                    return ModEverything32.Everything_SaveDB();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_SaveDB();
+                    return ModEverything64.Everything_SaveDB();
                 }
             }
             catch (Exception ex)
@@ -265,11 +265,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_RebuildDB();
+                    return ModEverything32.Everything_RebuildDB();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_RebuildDB();
+                    return ModEverything64.Everything_RebuildDB();
                 }
             }
             catch (Exception ex)
@@ -288,11 +288,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_UpdateAllFolderIndexes();
+                    return ModEverything32.Everything_UpdateAllFolderIndexes();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_UpdateAllFolderIndexes();
+                    return ModEverything64.Everything_UpdateAllFolderIndexes();
                 }
             }
             catch (Exception ex)
@@ -311,11 +311,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_SaveRunHistory();
+                    return ModEverything32.Everything_SaveRunHistory();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_SaveRunHistory();
+                    return ModEverything64.Everything_SaveRunHistory();
                 }
             }
             catch (Exception ex)
@@ -334,11 +334,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_DeleteRunHistory();
+                    return ModEverything32.Everything_DeleteRunHistory();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_DeleteRunHistory();
+                    return ModEverything64.Everything_DeleteRunHistory();
                 }
             }
             catch (Exception ex)
@@ -359,11 +359,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (EExecuteError)ModelEverything32.Everything_GetLastError();
+                    return (EExecuteError)ModEverything32.Everything_GetLastError();
                 }
                 else
                 {
-                    return (EExecuteError)ModelEverything64.Everything_GetLastError();
+                    return (EExecuteError)ModEverything64.Everything_GetLastError();
                 }
             }
             catch (Exception ex)
@@ -384,11 +384,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetSearchW(lpSearchString);
+                    ModEverything32.Everything_SetSearchW(lpSearchString);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetSearchW(lpSearchString);
+                    ModEverything64.Everything_SetSearchW(lpSearchString);
                 }
             }
             catch (Exception ex)
@@ -407,11 +407,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetSearchW());
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetSearchW());
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetSearchW());
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetSearchW());
                 }
             }
             catch (Exception ex)
@@ -430,11 +430,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetMatchPath(bEnable);
+                    ModEverything32.Everything_SetMatchPath(bEnable);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetMatchPath(bEnable);
+                    ModEverything64.Everything_SetMatchPath(bEnable);
                 }
             }
             catch (Exception ex)
@@ -453,11 +453,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetMatchPath();
+                    return ModEverything32.Everything_GetMatchPath();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetMatchPath();
+                    return ModEverything64.Everything_GetMatchPath();
                 }
             }
             catch (Exception ex)
@@ -476,11 +476,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetMatchCase(bEnable);
+                    ModEverything32.Everything_SetMatchCase(bEnable);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetMatchCase(bEnable);
+                    ModEverything64.Everything_SetMatchCase(bEnable);
                 }
             }
             catch (Exception ex)
@@ -499,11 +499,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetMatchCase();
+                    return ModEverything32.Everything_GetMatchCase();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetMatchCase();
+                    return ModEverything64.Everything_GetMatchCase();
                 }
             }
             catch (Exception ex)
@@ -522,11 +522,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetMatchWholeWord(bEnable);
+                    ModEverything32.Everything_SetMatchWholeWord(bEnable);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetMatchWholeWord(bEnable);
+                    ModEverything64.Everything_SetMatchWholeWord(bEnable);
                 }
             }
             catch (Exception ex)
@@ -545,11 +545,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetMatchWholeWord();
+                    return ModEverything32.Everything_GetMatchWholeWord();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetMatchWholeWord();
+                    return ModEverything64.Everything_GetMatchWholeWord();
                 }
             }
             catch (Exception ex)
@@ -568,11 +568,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetRegex(bEnable);
+                    ModEverything32.Everything_SetRegex(bEnable);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetRegex(bEnable);
+                    ModEverything64.Everything_SetRegex(bEnable);
                 }
             }
             catch (Exception ex)
@@ -591,11 +591,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetRegex();
+                    return ModEverything32.Everything_GetRegex();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetRegex();
+                    return ModEverything64.Everything_GetRegex();
                 }
             }
             catch (Exception ex)
@@ -614,11 +614,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetMax(dwMax);
+                    ModEverything32.Everything_SetMax(dwMax);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetMax(dwMax);
+                    ModEverything64.Everything_SetMax(dwMax);
                 }
             }
             catch (Exception ex)
@@ -637,11 +637,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetMax();
+                    return ModEverything32.Everything_GetMax();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetMax();
+                    return ModEverything64.Everything_GetMax();
                 }
             }
             catch (Exception ex)
@@ -660,11 +660,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetOffset(dwOffset);
+                    ModEverything32.Everything_SetOffset(dwOffset);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetOffset(dwOffset);
+                    ModEverything64.Everything_SetOffset(dwOffset);
                 }
             }
             catch (Exception ex)
@@ -683,11 +683,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetOffset();
+                    return ModEverything32.Everything_GetOffset();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetOffset();
+                    return ModEverything64.Everything_GetOffset();
                 }
             }
             catch (Exception ex)
@@ -709,11 +709,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_QueryW(bWait);
+                    return ModEverything32.Everything_QueryW(bWait);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_QueryW(bWait);
+                    return ModEverything64.Everything_QueryW(bWait);
                 }
             }
             catch (Exception ex)
@@ -731,11 +731,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SortResultsByPath();
+                    ModEverything32.Everything_SortResultsByPath();
                 }
                 else
                 {
-                    ModelEverything64.Everything_SortResultsByPath();
+                    ModEverything64.Everything_SortResultsByPath();
                 }
             }
             catch (Exception ex)
@@ -753,11 +753,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_Reset();
+                    ModEverything32.Everything_Reset();
                 }
                 else
                 {
-                    ModelEverything64.Everything_Reset();
+                    ModEverything64.Everything_Reset();
                 }
             }
             catch (Exception ex)
@@ -775,11 +775,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_CleanUp();
+                    ModEverything32.Everything_CleanUp();
                 }
                 else
                 {
-                    ModelEverything64.Everything_CleanUp();
+                    ModEverything64.Everything_CleanUp();
                 }
             }
             catch (Exception ex)
@@ -800,11 +800,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetSort((uint)eSortType);
+                    ModEverything32.Everything_SetSort((uint)eSortType);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetSort((uint)eSortType);
+                    ModEverything64.Everything_SetSort((uint)eSortType);
                 }
             }
             catch (Exception ex)
@@ -823,11 +823,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (ESortMode)ModelEverything32.Everything_GetSort();
+                    return (ESortMode)ModEverything32.Everything_GetSort();
                 }
                 else
                 {
-                    return (ESortMode)ModelEverything64.Everything_GetSort();
+                    return (ESortMode)ModEverything64.Everything_GetSort();
                 }
             }
             catch (Exception ex)
@@ -846,11 +846,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (ESortMode)ModelEverything32.Everything_GetResultListSort();
+                    return (ESortMode)ModEverything32.Everything_GetResultListSort();
                 }
                 else
                 {
-                    return (ESortMode)ModelEverything64.Everything_GetResultListSort();
+                    return (ESortMode)ModEverything64.Everything_GetResultListSort();
                 }
             }
             catch (Exception ex)
@@ -869,11 +869,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetRequestFlags((uint)eRequestFlags);
+                    ModEverything32.Everything_SetRequestFlags((uint)eRequestFlags);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetRequestFlags((uint)eRequestFlags);
+                    ModEverything64.Everything_SetRequestFlags((uint)eRequestFlags);
                 }
             }
             catch (Exception ex)
@@ -892,11 +892,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (ERequest)ModelEverything32.Everything_GetRequestFlags();
+                    return (ERequest)ModEverything32.Everything_GetRequestFlags();
                 }
                 else
                 {
-                    return (ERequest)ModelEverything64.Everything_GetRequestFlags();
+                    return (ERequest)ModEverything64.Everything_GetRequestFlags();
                 }
             }
             catch (Exception ex)
@@ -915,11 +915,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (ERequest)ModelEverything32.Everything_GetResultListRequestFlags();
+                    return (ERequest)ModEverything32.Everything_GetResultListRequestFlags();
                 }
                 else
                 {
-                    return (ERequest)ModelEverything64.Everything_GetResultListRequestFlags();
+                    return (ERequest)ModEverything64.Everything_GetResultListRequestFlags();
                 }
             }
             catch (Exception ex)
@@ -940,11 +940,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetNumFileResults();
+                    return ModEverything32.Everything_GetNumFileResults();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetNumFileResults();
+                    return ModEverything64.Everything_GetNumFileResults();
                 }
             }
             catch (Exception ex)
@@ -963,11 +963,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetNumFolderResults();
+                    return ModEverything32.Everything_GetNumFolderResults();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetNumFolderResults();
+                    return ModEverything64.Everything_GetNumFolderResults();
                 }
             }
             catch (Exception ex)
@@ -986,11 +986,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetNumResults();
+                    return ModEverything32.Everything_GetNumResults();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetNumResults();
+                    return ModEverything64.Everything_GetNumResults();
                 }
             }
             catch (Exception ex)
@@ -1009,11 +1009,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetTotFileResults();
+                    return ModEverything32.Everything_GetTotFileResults();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetTotFileResults();
+                    return ModEverything64.Everything_GetTotFileResults();
                 }
             }
             catch (Exception ex)
@@ -1032,11 +1032,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetTotFolderResults();
+                    return ModEverything32.Everything_GetTotFolderResults();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetTotFolderResults();
+                    return ModEverything64.Everything_GetTotFolderResults();
                 }
             }
             catch (Exception ex)
@@ -1055,11 +1055,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetTotResults();
+                    return ModEverything32.Everything_GetTotResults();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetTotResults();
+                    return ModEverything64.Everything_GetTotResults();
                 }
             }
             catch (Exception ex)
@@ -1079,11 +1079,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsVolumeResult(nIndex);
+                    return ModEverything32.Everything_IsVolumeResult(nIndex);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsVolumeResult(nIndex);
+                    return ModEverything64.Everything_IsVolumeResult(nIndex);
                 }
             }
             catch (Exception ex)
@@ -1103,11 +1103,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsFolderResult(nIndex);
+                    return ModEverything32.Everything_IsFolderResult(nIndex);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsFolderResult(nIndex);
+                    return ModEverything64.Everything_IsFolderResult(nIndex);
                 }
             }
             catch (Exception ex)
@@ -1127,11 +1127,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsFileResult(nIndex);
+                    return ModEverything32.Everything_IsFileResult(nIndex);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsFileResult(nIndex);
+                    return ModEverything64.Everything_IsFileResult(nIndex);
                 }
             }
             catch (Exception ex)
@@ -1154,11 +1154,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_GetResultFullPathName(nIndex, lpString, nMaxCount);
+                    ModEverything32.Everything_GetResultFullPathName(nIndex, lpString, nMaxCount);
                 }
                 else
                 {
-                    ModelEverything64.Everything_GetResultFullPathName(nIndex, lpString, nMaxCount);
+                    ModEverything64.Everything_GetResultFullPathName(nIndex, lpString, nMaxCount);
                 }
             }
             catch (Exception ex)
@@ -1180,11 +1180,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultPath(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultPath(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultPath(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultPath(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1204,11 +1204,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultFileName(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultFileName(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1228,11 +1228,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultExtension(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultExtension(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultExtension(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultExtension(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1253,11 +1253,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetResultSize(nIndex, out lpFileSize);
+                    return ModEverything32.Everything_GetResultSize(nIndex, out lpFileSize);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetResultSize(nIndex, out lpFileSize);
+                    return ModEverything64.Everything_GetResultSize(nIndex, out lpFileSize);
                 }
             }
             catch (Exception ex)
@@ -1281,11 +1281,11 @@ namespace CML.CommonEx.EverythingEx
                 long lpDateCreated;
                 if (CP_Platform == EPlatform.X86)
                 {
-                    result = ModelEverything32.Everything_GetResultDateCreated(nIndex, out lpDateCreated);
+                    result = ModEverything32.Everything_GetResultDateCreated(nIndex, out lpDateCreated);
                 }
                 else
                 {
-                    result = ModelEverything64.Everything_GetResultDateCreated(nIndex, out lpDateCreated);
+                    result = ModEverything64.Everything_GetResultDateCreated(nIndex, out lpDateCreated);
                 }
 
                 dtFileTime = DateTime.FromFileTime(lpDateCreated);
@@ -1313,11 +1313,11 @@ namespace CML.CommonEx.EverythingEx
                 long lpDateCreated;
                 if (CP_Platform == EPlatform.X86)
                 {
-                    result = ModelEverything32.Everything_GetResultDateModified(nIndex, out lpDateCreated);
+                    result = ModEverything32.Everything_GetResultDateModified(nIndex, out lpDateCreated);
                 }
                 else
                 {
-                    result = ModelEverything64.Everything_GetResultDateModified(nIndex, out lpDateCreated);
+                    result = ModEverything64.Everything_GetResultDateModified(nIndex, out lpDateCreated);
                 }
 
                 dtFileTime = DateTime.FromFileTime(lpDateCreated);
@@ -1345,11 +1345,11 @@ namespace CML.CommonEx.EverythingEx
                 long lpDateCreated;
                 if (CP_Platform == EPlatform.X86)
                 {
-                    result = ModelEverything32.Everything_GetResultDateAccessed(nIndex, out lpDateCreated);
+                    result = ModEverything32.Everything_GetResultDateAccessed(nIndex, out lpDateCreated);
                 }
                 else
                 {
-                    result = ModelEverything64.Everything_GetResultDateAccessed(nIndex, out lpDateCreated);
+                    result = ModEverything64.Everything_GetResultDateAccessed(nIndex, out lpDateCreated);
                 }
 
                 dtFileTime = DateTime.FromFileTime(lpDateCreated);
@@ -1373,11 +1373,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return (EFileAttribute)ModelEverything32.Everything_GetResultAttributes(nIndex);
+                    return (EFileAttribute)ModEverything32.Everything_GetResultAttributes(nIndex);
                 }
                 else
                 {
-                    return (EFileAttribute)ModelEverything64.Everything_GetResultAttributes(nIndex);
+                    return (EFileAttribute)ModEverything64.Everything_GetResultAttributes(nIndex);
                 }
             }
             catch (Exception ex)
@@ -1397,11 +1397,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultFileListFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultFileListFileName(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultFileListFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultFileListFileName(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1421,11 +1421,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetResultRunCount(nIndex);
+                    return ModEverything32.Everything_GetResultRunCount(nIndex);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetResultRunCount(nIndex);
+                    return ModEverything64.Everything_GetResultRunCount(nIndex);
                 }
             }
             catch (Exception ex)
@@ -1449,11 +1449,11 @@ namespace CML.CommonEx.EverythingEx
                 long lpDateCreated;
                 if (CP_Platform == EPlatform.X86)
                 {
-                    result = ModelEverything32.Everything_GetResultDateRun(nIndex, out lpDateCreated);
+                    result = ModEverything32.Everything_GetResultDateRun(nIndex, out lpDateCreated);
                 }
                 else
                 {
-                    result = ModelEverything64.Everything_GetResultDateRun(nIndex, out lpDateCreated);
+                    result = ModEverything64.Everything_GetResultDateRun(nIndex, out lpDateCreated);
                 }
 
                 dtFileTime = DateTime.FromFileTime(lpDateCreated);
@@ -1481,11 +1481,11 @@ namespace CML.CommonEx.EverythingEx
                 long lpDateCreated;
                 if (CP_Platform == EPlatform.X86)
                 {
-                    result = ModelEverything32.Everything_GetResultDateRecentlyChanged(nIndex, out lpDateCreated);
+                    result = ModEverything32.Everything_GetResultDateRecentlyChanged(nIndex, out lpDateCreated);
                 }
                 else
                 {
-                    result = ModelEverything64.Everything_GetResultDateRecentlyChanged(nIndex, out lpDateCreated);
+                    result = ModEverything64.Everything_GetResultDateRecentlyChanged(nIndex, out lpDateCreated);
                 }
 
                 dtFileTime = DateTime.FromFileTime(lpDateCreated);
@@ -1509,11 +1509,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultHighlightedFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultHighlightedFileName(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultHighlightedFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultHighlightedFileName(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1533,11 +1533,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultHighlightedPath(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultHighlightedPath(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultHighlightedPath(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultHighlightedPath(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1557,11 +1557,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return Marshal.PtrToStringUni(ModelEverything32.Everything_GetResultHighlightedFullPathAndFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything32.Everything_GetResultHighlightedFullPathAndFileName(nIndex));
                 }
                 else
                 {
-                    return Marshal.PtrToStringUni(ModelEverything64.Everything_GetResultHighlightedFullPathAndFileName(nIndex));
+                    return Marshal.PtrToStringUni(ModEverything64.Everything_GetResultHighlightedFullPathAndFileName(nIndex));
                 }
             }
             catch (Exception ex)
@@ -1581,11 +1581,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetRunCountFromFileName(lpFileName);
+                    return ModEverything32.Everything_GetRunCountFromFileName(lpFileName);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetRunCountFromFileName(lpFileName);
+                    return ModEverything64.Everything_GetRunCountFromFileName(lpFileName);
                 }
             }
             catch (Exception ex)
@@ -1606,11 +1606,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_SetRunCountFromFileName(lpFileName, dwRunCount);
+                    return ModEverything32.Everything_SetRunCountFromFileName(lpFileName, dwRunCount);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_SetRunCountFromFileName(lpFileName, dwRunCount);
+                    return ModEverything64.Everything_SetRunCountFromFileName(lpFileName, dwRunCount);
                 }
             }
             catch (Exception ex)
@@ -1630,11 +1630,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IncRunCountFromFileName(lpFileName);
+                    return ModEverything32.Everything_IncRunCountFromFileName(lpFileName);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IncRunCountFromFileName(lpFileName);
+                    return ModEverything64.Everything_IncRunCountFromFileName(lpFileName);
                 }
             }
             catch (Exception ex)
@@ -1655,11 +1655,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetReplyID(nId);
+                    ModEverything32.Everything_SetReplyID(nId);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetReplyID(nId);
+                    ModEverything64.Everything_SetReplyID(nId);
                 }
             }
             catch (Exception ex)
@@ -1678,11 +1678,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetReplyID();
+                    return ModEverything32.Everything_GetReplyID();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetReplyID();
+                    return ModEverything64.Everything_GetReplyID();
                 }
             }
             catch (Exception ex)
@@ -1701,11 +1701,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    ModelEverything32.Everything_SetReplyWindow(hWnd);
+                    ModEverything32.Everything_SetReplyWindow(hWnd);
                 }
                 else
                 {
-                    ModelEverything64.Everything_SetReplyWindow(hWnd);
+                    ModEverything64.Everything_SetReplyWindow(hWnd);
                 }
             }
             catch (Exception ex)
@@ -1724,11 +1724,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_GetReplyWindow();
+                    return ModEverything32.Everything_GetReplyWindow();
                 }
                 else
                 {
-                    return ModelEverything64.Everything_GetReplyWindow();
+                    return ModEverything64.Everything_GetReplyWindow();
                 }
             }
             catch (Exception ex)
@@ -1751,11 +1751,11 @@ namespace CML.CommonEx.EverythingEx
             {
                 if (CP_Platform == EPlatform.X86)
                 {
-                    return ModelEverything32.Everything_IsQueryReply(message, wParam, lParam, nId);
+                    return ModEverything32.Everything_IsQueryReply(message, wParam, lParam, nId);
                 }
                 else
                 {
-                    return ModelEverything64.Everything_IsQueryReply(message, wParam, lParam, nId);
+                    return ModEverything64.Everything_IsQueryReply(message, wParam, lParam, nId);
                 }
             }
             catch (Exception ex)

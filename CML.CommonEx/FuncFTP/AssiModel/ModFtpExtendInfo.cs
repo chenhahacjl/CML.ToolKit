@@ -3,7 +3,7 @@
     /// <summary>
     /// FTP扩展信息模型
     /// </summary>
-    public class ModelFtpExtendInfo
+    public class ModFtpExtendInfo
     {
         /// <summary>
         /// 请求超时（毫秒，默认5秒）
@@ -38,6 +38,6 @@
         /// <summary>
         /// 代理（默认不开启）
         /// </summary>
-        public ModelProxy Proxy { get; set; } = new ModelProxy();
+        public ModProxy Proxy { get; set; } = new ModProxy();
     }
 }

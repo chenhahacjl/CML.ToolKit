@@ -27,19 +27,19 @@ namespace CML.ToolTest.FunctionTestClass
         /// </summary>
         public override void ExecuteTest()
         {
-            ModelFtpInfomation ftpInfomation = new ModelFtpInfomation("192.168.20.15")
+            ModFtpInfomation ftpInfomation = new ModFtpInfomation("192.168.20.15")
             {
                 Port = 9695,
-                FtpReqInfo = new ModelFtpReqInfo()
+                FtpReqInfo = new ModFtpReqInfo()
                 {
-                    TransmissionSpeed = new ModelTransmissionSpeed()
+                    TransmissionSpeed = new ModTransmissionSpeed()
                     {
                         Speed = 3,
                         Unit = ESpeedUnit.MB,
                         Delay = 950,
                     }
                 },
-                FtpExtendInfo = new ModelFtpExtendInfo()
+                FtpExtendInfo = new ModFtpExtendInfo()
                 {
 
                 },

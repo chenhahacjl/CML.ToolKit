@@ -13,7 +13,7 @@
         /// <param name="outFilePath">[OUT]已加密文件存储路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptFile(this ModelAESParameter aesPara, string inFilePath, string outFilePath, out string errMsg)
+        public static bool CF_EncryptFile(this ModAESParameter aesPara, string inFilePath, string outFilePath, out string errMsg)
         {
             return AESEncrypt.CF_EncryptFile(aesPara, inFilePath, outFilePath, out errMsg);
         }
@@ -26,7 +26,7 @@
         /// <param name="outFilePath">[OUT]已解密文件存储路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptFile(this ModelAESParameter aesPara, string inFilePath, string outFilePath, out string errMsg)
+        public static bool CF_DecryptFile(this ModAESParameter aesPara, string inFilePath, string outFilePath, out string errMsg)
         {
             return AESEncrypt.CF_DecryptFile(aesPara, inFilePath, outFilePath, out errMsg);
         }
@@ -39,7 +39,7 @@
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptString(this ModelAESParameter aesPara, string inString, out string outString, out string errMsg)
+        public static bool CF_EncryptString(this ModAESParameter aesPara, string inString, out string outString, out string errMsg)
         {
             return AESEncrypt.CF_EncryptString(aesPara, inString, out outString, out errMsg);
         }
@@ -52,7 +52,7 @@
         /// <param name="outString">[OUT]已解密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptString(this ModelAESParameter aesPara, string inString, out string outString, out string errMsg)
+        public static bool CF_DecryptString(this ModAESParameter aesPara, string inString, out string outString, out string errMsg)
         {
             return AESEncrypt.CF_DecryptString(aesPara, inString, out outString, out errMsg);
         }
@@ -65,7 +65,7 @@
         /// <param name="outBytes">[OUT]已加密字节数组</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptBytes(this ModelAESParameter aesPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
+        public static bool CF_EncryptBytes(this ModAESParameter aesPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
         {
             return AESEncrypt.CF_EncryptBytes(aesPara, inBytes, out outBytes, out errMsg);
         }
@@ -78,7 +78,7 @@
         /// <param name="outBytes">[OUT]已解密字节数组</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptBytes(this ModelAESParameter aesPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
+        public static bool CF_DecryptBytes(this ModAESParameter aesPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
         {
             return AESEncrypt.CF_DecryptBytes(aesPara, inBytes, out outBytes, out errMsg);
         }

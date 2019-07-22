@@ -15,7 +15,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="webRequest">WEB请求信息</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(this ModelWebRequest webRequest, out string errMsg)
+        public static string CF_GetHtmlCode(this ModWebRequest webRequest, out string errMsg)
         {
             return DownloadOperate.CF_GetHtmlCode(webRequest, out errMsg);
         }
@@ -27,7 +27,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="encoding">编码方式</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(this ModelWebRequest webRequest, Encoding encoding, out string errMsg)
+        public static string CF_GetHtmlCode(this ModWebRequest webRequest, Encoding encoding, out string errMsg)
         {
             return DownloadOperate.CF_GetHtmlCode(webRequest, encoding, out errMsg);
         }
@@ -40,7 +40,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(this ModelWebRequest webRequest, Encoding encoding, CookieContainer requestCookie, out string errMsg)
+        public static string CF_GetHtmlCode(this ModWebRequest webRequest, Encoding encoding, CookieContainer requestCookie, out string errMsg)
         {
             return DownloadOperate.CF_GetHtmlCode(webRequest, encoding, requestCookie, out errMsg);
         }
@@ -53,7 +53,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="responseCookie">[OUT]响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(this ModelWebRequest webRequest, Encoding encoding, out CookieContainer responseCookie, out string errMsg)
+        public static string CF_GetHtmlCode(this ModWebRequest webRequest, Encoding encoding, out CookieContainer responseCookie, out string errMsg)
         {
             return DownloadOperate.CF_GetHtmlCode(webRequest, encoding, out responseCookie, out errMsg);
         }
@@ -67,7 +67,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="responseCookie">[OUT]响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(this ModelWebRequest webRequest, Encoding encoding, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static string CF_GetHtmlCode(this ModWebRequest webRequest, Encoding encoding, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
             return DownloadOperate.CF_GetHtmlCode(webRequest, encoding, requestCookie, out responseCookie, out errMsg);
         }
@@ -79,7 +79,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="webRequest">WEB请求信息</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(this string savePath, ModelWebRequest webRequest, out string errMsg)
+        public static bool CF_DownloadFile(this string savePath, ModWebRequest webRequest, out string errMsg)
         {
             return DownloadOperate.CF_DownloadFile(savePath, webRequest, out errMsg);
         }
@@ -92,7 +92,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(this string savePath, ModelWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
+        public static bool CF_DownloadFile(this string savePath, ModWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
         {
             return DownloadOperate.CF_DownloadFile(savePath, webRequest, requestCookie, out errMsg);
         }
@@ -105,7 +105,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="responseCookie">[OUT]响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(this string savePath, ModelWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_DownloadFile(this string savePath, ModWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
         {
             return DownloadOperate.CF_DownloadFile(savePath, webRequest, out responseCookie, out errMsg);
         }
@@ -119,7 +119,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="responseCookie">[OUT]响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(this string savePath, ModelWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_DownloadFile(this string savePath, ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
             return DownloadOperate.CF_DownloadFile(savePath, webRequest, requestCookie, out responseCookie, out errMsg);
         }
@@ -130,7 +130,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="webRequest">WEB请求信息</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>数据流</returns>
-        public static Stream CF_GetWebStream(this ModelWebRequest webRequest, out string errMsg)
+        public static Stream CF_GetWebStream(this ModWebRequest webRequest, out string errMsg)
         {
             return DownloadOperate.CF_GetWebStream(webRequest, out errMsg);
         }
@@ -142,7 +142,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>数据流</returns>
-        public static Stream CF_GetWebStream(this ModelWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
+        public static Stream CF_GetWebStream(this ModWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
         {
             return DownloadOperate.CF_GetWebStream(webRequest, requestCookie, out errMsg);
         }
@@ -154,7 +154,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="responseCookie">[OUT]响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>数据流</returns>
-        public static Stream CF_GetWebStream(this ModelWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
+        public static Stream CF_GetWebStream(this ModWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
         {
             return DownloadOperate.CF_GetWebStream(webRequest, out responseCookie, out errMsg);
         }
@@ -167,7 +167,7 @@ namespace CML.CommonEx.NetworkEx.ExFunction
         /// <param name="responseCookie">[OUT]响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>数据流</returns>
-        public static Stream CF_GetWebStream(this ModelWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static Stream CF_GetWebStream(this ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
             return DownloadOperate.CF_GetWebStream(webRequest, requestCookie, out responseCookie, out errMsg);
         }

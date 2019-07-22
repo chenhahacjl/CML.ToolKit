@@ -5,7 +5,7 @@ namespace CML.CommonEx.EncodeEx
     /// <summary>
     /// DES参数模型
     /// </summary>
-    public class ModelDESParameter
+    public class ModDESParameter
     {
         /// <summary>
         /// 密钥存储
@@ -87,14 +87,14 @@ namespace CML.CommonEx.EncodeEx
         /// <summary>
         /// 默认构造函数
         /// </summary>
-        public ModelDESParameter() { }
+        public ModDESParameter() { }
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="key">密钥（8位）</param>
         /// <param name="iv">向量（8位）</param>
-        public ModelDESParameter(string key, string iv)
+        public ModDESParameter(string key, string iv)
         {
             Key = key;
             IV = iv;

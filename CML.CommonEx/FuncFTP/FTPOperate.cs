@@ -19,7 +19,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型（根目录）</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>检测情况</returns>
-        public static bool CF_CanConnect(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static bool CF_CanConnect(ModFtpInfomation ftpInfomation, out string errMsg)
         {
             bool result = false;
 
@@ -49,7 +49,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型（检测文件路径）</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>检测情况</returns>
-        public static EExistence CF_IsExistFile(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static EExistence CF_IsExistFile(ModFtpInfomation ftpInfomation, out string errMsg)
         {
             EExistence result;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -77,7 +77,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型（检测文件夹路径）</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>检测情况</returns>
-        public static EExistence CF_IsExistDirectory(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static EExistence CF_IsExistDirectory(ModFtpInfomation ftpInfomation, out string errMsg)
         {
             EExistence result;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -106,13 +106,13 @@ namespace CML.CommonEx.FTPEx
         /// <param name="tarName">检测文件（夹）名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>检测情况</returns>
-        public static EExistence CF_IsExist(ModelFtpInfomation ftpInfomation, string tarName, out string errMsg)
+        public static EExistence CF_IsExist(ModFtpInfomation ftpInfomation, string tarName, out string errMsg)
         {
             EExistence result = EExistence.Error;
 
             try
             {
-                List<ModelFileInfo> files = CF_GetFileAndDirectory(ftpInfomation, out errMsg);
+                List<ModFileInfo> files = CF_GetFileAndDirectory(ftpInfomation, out errMsg);
 
                 if (files != null)
                 {
@@ -142,13 +142,13 @@ namespace CML.CommonEx.FTPEx
         /// <param name="fileName">检测文件名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>检测情况</returns>
-        public static EExistence CF_IsExistFile(ModelFtpInfomation ftpInfomation, string fileName, out string errMsg)
+        public static EExistence CF_IsExistFile(ModFtpInfomation ftpInfomation, string fileName, out string errMsg)
         {
             EExistence result = EExistence.Error;
 
             try
             {
-                List<ModelFileInfo> files = CF_GetFile(ftpInfomation, out errMsg);
+                List<ModFileInfo> files = CF_GetFile(ftpInfomation, out errMsg);
 
                 if (files != null)
                 {
@@ -178,13 +178,13 @@ namespace CML.CommonEx.FTPEx
         /// <param name="dirName">检测文件夹名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>检测情况</returns>
-        public static EExistence CF_IsExistDirectory(ModelFtpInfomation ftpInfomation, string dirName, out string errMsg)
+        public static EExistence CF_IsExistDirectory(ModFtpInfomation ftpInfomation, string dirName, out string errMsg)
         {
             EExistence result = EExistence.Error;
 
             try
             {
-                List<ModelFileInfo> files = CF_GetDirectory(ftpInfomation, out errMsg);
+                List<ModFileInfo> files = CF_GetDirectory(ftpInfomation, out errMsg);
 
                 if (files != null)
                 {
@@ -215,7 +215,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="filePath">本地文件路径</param>
         /// <param name="overwrite">是否覆盖文件</param>
         /// <param name="errMsg">[OUT]错误信息</param>
-        public static bool CF_UploadFile(ModelFtpInfomation ftpInfomation, string fileName, string filePath, bool overwrite, out string errMsg)
+        public static bool CF_UploadFile(ModFtpInfomation ftpInfomation, string fileName, string filePath, bool overwrite, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -262,7 +262,7 @@ namespace CML.CommonEx.FTPEx
                                 {
                                     using (FileStream fileStream = new FileStream(file.FullName, FileMode.Open, FileAccess.Read))
                                     {
-                                        ModelTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
+                                        ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
                                         if (transmissionSpeed.EnableLimit)
                                         {
                                             //缓存字节数
@@ -319,7 +319,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="filePath">本地文件路径</param>
         /// <param name="overwrite">是否覆盖文件</param>
         /// <param name="errMsg">[OUT]错误信息</param>
-        public static bool CF_DownloadFile(ModelFtpInfomation ftpInfomation, string fileName, string filePath, bool overwrite, out string errMsg)
+        public static bool CF_DownloadFile(ModFtpInfomation ftpInfomation, string fileName, string filePath, bool overwrite, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -368,7 +368,7 @@ namespace CML.CommonEx.FTPEx
                             {
                                 using (FileStream fileStream = new FileStream(file.FullName, FileMode.Create, FileAccess.Write))
                                 {
-                                    ModelTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
+                                    ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
                                     if (transmissionSpeed.EnableLimit)
                                     {
                                         //缓存字节数
@@ -418,7 +418,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="fileName">文件名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>删除情况</returns>
-        public static bool CF_DeleteFile(ModelFtpInfomation ftpInfomation, string fileName, out string errMsg)
+        public static bool CF_DeleteFile(ModFtpInfomation ftpInfomation, string fileName, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -464,7 +464,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="dirName">文件夹名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>删除情况</returns>
-        public static bool CF_DeleteDirectory(ModelFtpInfomation ftpInfomation, string dirName, out string errMsg)
+        public static bool CF_DeleteDirectory(ModFtpInfomation ftpInfomation, string dirName, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -511,7 +511,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="tarFileName">目标文件名</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>重命名情况</returns>
-        public static bool CF_RenameFile(ModelFtpInfomation ftpInfomation, string orgFileName, string tarFileName, out string errMsg)
+        public static bool CF_RenameFile(ModFtpInfomation ftpInfomation, string orgFileName, string tarFileName, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -580,7 +580,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="tarDirName">目标文件夹名</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>重命名情况</returns>
-        public static bool CF_RenameDirectory(ModelFtpInfomation ftpInfomation, string orgDirName, string tarDirName, out string errMsg)
+        public static bool CF_RenameDirectory(ModFtpInfomation ftpInfomation, string orgDirName, string tarDirName, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -648,7 +648,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="dirName">文件夹名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns></returns>
-        public static bool CF_MakeDirectory(ModelFtpInfomation ftpInfomation, string dirName, out string errMsg)
+        public static bool CF_MakeDirectory(ModFtpInfomation ftpInfomation, string dirName, out string errMsg)
         {
             bool result = false;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -693,7 +693,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="fileName">文件名称</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>文件大小</returns>
-        public static long CF_GetFileSize(ModelFtpInfomation ftpInfomation, string fileName, out string errMsg)
+        public static long CF_GetFileSize(ModFtpInfomation ftpInfomation, string fileName, out string errMsg)
         {
             long result = -1;
             ftpInfomation.FtpReqInfo.CF_PushRequestPath();
@@ -737,12 +737,12 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>文件夹列表</returns>
-        public static List<ModelFileInfo> CF_GetDirectory(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static List<ModFileInfo> CF_GetDirectory(ModFtpInfomation ftpInfomation, out string errMsg)
         {
-            List<ModelFileInfo> result = null;
+            List<ModFileInfo> result = null;
             try
             {
-                List<ModelFileInfo> fileList = CF_GetFileAndDirectory(ftpInfomation, out errMsg);
+                List<ModFileInfo> fileList = CF_GetFileAndDirectory(ftpInfomation, out errMsg);
 
                 if (fileList != null)
                 {
@@ -764,12 +764,12 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型（文件夹路径）</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>文件列表</returns>
-        public static List<ModelFileInfo> CF_GetFile(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static List<ModFileInfo> CF_GetFile(ModFtpInfomation ftpInfomation, out string errMsg)
         {
-            List<ModelFileInfo> result = null;
+            List<ModFileInfo> result = null;
             try
             {
-                List<ModelFileInfo> fileList = CF_GetFileAndDirectory(ftpInfomation, out errMsg);
+                List<ModFileInfo> fileList = CF_GetFileAndDirectory(ftpInfomation, out errMsg);
 
                 if (fileList != null)
                 {
@@ -791,9 +791,9 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型（文件夹路径）</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>文件和文件夹列表</returns>
-        public static List<ModelFileInfo> CF_GetFileAndDirectory(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static List<ModFileInfo> CF_GetFileAndDirectory(ModFtpInfomation ftpInfomation, out string errMsg)
         {
-            List<ModelFileInfo> result = null;
+            List<ModFileInfo> result = null;
 
             try
             {
@@ -817,7 +817,7 @@ namespace CML.CommonEx.FTPEx
 
                     ftpWebResponse.Close();
 
-                    result = new List<ModelFileInfo>();
+                    result = new List<ModFileInfo>();
                     foreach (string fileLine in fileLines)
                     {
                         //分离项目
@@ -838,7 +838,7 @@ namespace CML.CommonEx.FTPEx
                         tmpStr = tmpStr.Substring(tmpStr.IndexOf(arrItem[2]) + arrItem[2].Length);
                         string name = tmpStr.Substring(tmpStr.IndexOf(arrItem[3]));
 
-                        result.Add(new ModelFileInfo(
+                        result.Add(new ModFileInfo(
                             fileLine.IndexOf("<DIR>") > 0 ? true : false,
                             name,
                             fileLine.IndexOf("<DIR>") > 0 ? 0 : Convert.ToInt64(arrItem[2]),
@@ -863,7 +863,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>FTP请求响应</returns>
-        public static FtpWebResponse CF_GetFtpResponse(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static FtpWebResponse CF_GetFtpResponse(ModFtpInfomation ftpInfomation, out string errMsg)
         {
             FtpWebResponse result = null;
 
@@ -895,7 +895,7 @@ namespace CML.CommonEx.FTPEx
         /// <param name="ftpInfomation">FTP基本信息模型</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>FTP请求</returns>
-        public static FtpWebRequest CF_GetFtpRequest(ModelFtpInfomation ftpInfomation, out string errMsg)
+        public static FtpWebRequest CF_GetFtpRequest(ModFtpInfomation ftpInfomation, out string errMsg)
         {
             FtpWebRequest result;
             try

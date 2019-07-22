@@ -3,7 +3,7 @@
     /// <summary>
     /// 地址信息模型
     /// </summary>
-    public class ModelAddress
+    public class ModAddress
     {
         /// <summary>
         /// 地址编号
@@ -21,7 +21,7 @@
         /// <summary>
         /// 构造函数（错误）
         /// </summary>
-        public ModelAddress()
+        public ModAddress()
         {
             AddressNumber = "";
             CardIssuer = "";
@@ -34,7 +34,7 @@
         /// <param name="addressNumber">地址编号</param>
         /// <param name="address">发卡地</param>
         /// <param name="domicile">籍贯</param>
-        public ModelAddress(string addressNumber, string address, string domicile)
+        public ModAddress(string addressNumber, string address, string domicile)
         {
             AddressNumber = addressNumber;
             CardIssuer = address;

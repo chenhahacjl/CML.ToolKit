@@ -28,7 +28,7 @@ namespace CML.ToolTest
         /// </summary>
         public override void ExecuteTest()
         {
-            ModelIDNumber modelIDNumber = new ModelIDNumber("33152120000101001X");
+            ModIDNumber modelIDNumber = new ModIDNumber("33152120000101001X");
 
             PrintLogLn(MsgType.Info, $"校验位: {modelIDNumber.CF_GetSpecialCode()}");
             PrintLogLn(MsgType.Info, $"籍贯: {modelIDNumber.CF_GetDomicile()}");

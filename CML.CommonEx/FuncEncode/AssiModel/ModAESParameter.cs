@@ -3,33 +3,33 @@
 namespace CML.CommonEx.EncodeEx
 {
     /// <summary>
-    /// 3DES参数模型
+    /// AES参数模型
     /// </summary>
-    public class ModelDESTripleParameter
+    public class ModAESParameter
     {
         /// <summary>
         /// 密钥存储
         /// </summary>
-        private string key = "Cmile_9669_elimCCmile_96";
+        private string key = "Cmile_9669_elimC";
         /// <summary>
         /// 向量存储
         /// </summary>
-        private string iv = "Cmile_96";
+        private string iv = "Cmile_9669_elimC";
 
         /// <summary>
-        /// 密钥（24位）
+        /// 密钥（16位）
         /// </summary>
         public string Key
         {
             get
             {
-                if (key.Length < 24)
+                if (key.Length < 16)
                 {
-                    return key.PadLeft(24, PaddingChar);
+                    return key.PadLeft(16, PaddingChar);
                 }
-                else if (key.Length > 24)
+                else if (key.Length > 16)
                 {
-                    return key.Substring(key.Length - 24);
+                    return key.Substring(key.Length - 16);
                 }
                 else
                 {
@@ -41,19 +41,19 @@ namespace CML.CommonEx.EncodeEx
         }
 
         /// <summary>
-        /// 向量（8位）
+        /// 向量（16位）
         /// </summary>
         public string IV
         {
             get
             {
-                if (iv.Length < 8)
+                if (iv.Length < 16)
                 {
-                    return iv.PadLeft(8, PaddingChar);
+                    return iv.PadLeft(16, PaddingChar);
                 }
-                else if (iv.Length > 8)
+                else if (iv.Length > 16)
                 {
-                    return iv.Substring(iv.Length - 8);
+                    return iv.Substring(iv.Length - 16);
                 }
                 else
                 {
@@ -87,14 +87,14 @@ namespace CML.CommonEx.EncodeEx
         /// <summary>
         /// 默认构造函数
         /// </summary>
-        public ModelDESTripleParameter() { }
+        public ModAESParameter() { }
 
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="key">密钥（24位）</param>
-        /// <param name="iv">向量（8位）</param>
-        public ModelDESTripleParameter(string key, string iv)
+        /// <param name="key">密钥（16位）</param>
+        /// <param name="iv">向量（16位）</param>
+        public ModAESParameter(string key, string iv)
         {
             Key = key;
             IV = iv;

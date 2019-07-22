@@ -15,9 +15,9 @@ namespace CML.CommonEx.IDNumberEx
         /// 获得所有地址模型
         /// </summary>
         /// <returns></returns>
-        public static ModelAddress[] GetAllAddressModel()
+        public static ModAddress[] GetAllAddressModel()
         {
-            List<ModelAddress> address = new List<ModelAddress>();
+            List<ModAddress> address = new List<ModAddress>();
 
             try
             {
@@ -33,7 +33,7 @@ namespace CML.CommonEx.IDNumberEx
                             {
                                 string[] addInfo = sr.ReadLine().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                                 if (addInfo.Length != 3) { continue; }
-                                address.Add(new ModelAddress(addInfo[0], addInfo[1], addInfo[2]));
+                                address.Add(new ModAddress(addInfo[0], addInfo[1], addInfo[2]));
                             }
                         }
                     }

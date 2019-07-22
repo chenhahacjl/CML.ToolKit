@@ -35,7 +35,7 @@ namespace CML.CommonEx.IDNumberEx
         /// <param name="idNumber">身份证号模型</param>
         /// <param name="isVerifyCheckCode">是否验证校检码（18位身份证号特有）</param>
         /// <returns>身份证号类型</returns>
-        public static EIDNumberType CF_GetIDNumberType(this ModelIDNumber idNumber, bool isVerifyCheckCode = true)
+        public static EIDNumberType CF_GetIDNumberType(this ModIDNumber idNumber, bool isVerifyCheckCode = true)
         {
             return !RegexEx.RegexOperate.CF_IsIDCard(idNumber.IDNumber, isVerifyCheckCode) ?
                 EIDNumberType.Error : idNumber.IDNumber.Length == 15 ?

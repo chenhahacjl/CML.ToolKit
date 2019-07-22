@@ -17,7 +17,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outFilePath">[OUT]已加密文件存储路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptFile(ModelDESTripleParameter desPara, string inFilePath, string outFilePath, out string errMsg)
+        public static bool CF_EncryptFile(ModDESTripleParameter desPara, string inFilePath, string outFilePath, out string errMsg)
         {
             bool result;
 
@@ -51,7 +51,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outFilePath">[OUT]已解密文件存储路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptFile(ModelDESTripleParameter desPara, string inFilePath, string outFilePath, out string errMsg)
+        public static bool CF_DecryptFile(ModDESTripleParameter desPara, string inFilePath, string outFilePath, out string errMsg)
         {
             bool result;
 
@@ -85,7 +85,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptString(ModelDESTripleParameter desPara, string inString, out string outString, out string errMsg)
+        public static bool CF_EncryptString(ModDESTripleParameter desPara, string inString, out string outString, out string errMsg)
         {
             bool result;
 
@@ -121,7 +121,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outString">[OUT]已解密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptString(ModelDESTripleParameter desPara, string inString, out string outString, out string errMsg)
+        public static bool CF_DecryptString(ModDESTripleParameter desPara, string inString, out string outString, out string errMsg)
         {
             bool result;
 
@@ -157,7 +157,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outBytes">[OUT]已加密字节数组</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptBytes(ModelDESTripleParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
+        public static bool CF_EncryptBytes(ModDESTripleParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
         {
             bool result;
 
@@ -207,7 +207,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outBytes">[OUT]已解密字节数组</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DecryptBytes(ModelDESTripleParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
+        public static bool CF_DecryptBytes(ModDESTripleParameter desPara, byte[] inBytes, out byte[] outBytes, out string errMsg)
         {
             bool result;
 

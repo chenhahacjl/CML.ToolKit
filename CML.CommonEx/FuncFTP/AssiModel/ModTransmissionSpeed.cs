@@ -3,7 +3,7 @@
     /// <summary>
     /// 传输速率模型
     /// </summary>
-    public class ModelTransmissionSpeed
+    public class ModTransmissionSpeed
     {
         /// <summary>
         /// 传输速率值（数值大于0时启用）
@@ -28,14 +28,14 @@
         /// <summary>
         /// 默认构造函数（不限速）
         /// </summary>
-        public ModelTransmissionSpeed() { }
+        public ModTransmissionSpeed() { }
 
         /// <summary>
         /// 构造函数（默认延时100MS）
         /// </summary>
         /// <param name="speed">传输速率值（数值大于0时启用）</param>
         /// <param name="unit">传输速率单位</param>
-        public ModelTransmissionSpeed(int speed, ESpeedUnit unit)
+        public ModTransmissionSpeed(int speed, ESpeedUnit unit)
         {
             Speed = speed;
             Unit = unit;
@@ -47,7 +47,7 @@
         /// <param name="speed">传输速率值（数值大于0时启用）</param>
         /// <param name="unit">传输速率单位</param>
         /// <param name="delay">传输间隔毫秒数</param>
-        public ModelTransmissionSpeed(int speed, ESpeedUnit unit, int delay)
+        public ModTransmissionSpeed(int speed, ESpeedUnit unit, int delay)
         {
             Speed = speed;
             Unit = unit;

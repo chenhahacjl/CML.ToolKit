@@ -31,7 +31,7 @@ namespace CML.ToolTest.FunctionTestClass
         /// </summary>
         public override void ExecuteTest()
         {
-            ModelWebRequest modelWebRequest = new ModelWebRequest()
+            ModWebRequest modelWebRequest = new ModWebRequest()
             {
                 RequestUrl = "https://www.baidu.com",
                 TimeOut = 5000

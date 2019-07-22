@@ -13,7 +13,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>身份证号类型</returns>
-        public static EIDNumberType CF_GetIDNumberType(ModelIDNumber idNumber)
+        public static EIDNumberType CF_GetIDNumberType(ModIDNumber idNumber)
         {
             return idNumber.CF_GetIDNumberType();
         }
@@ -23,7 +23,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>性别</returns>
-        public static EGender CF_GetGender(ModelIDNumber idNumber)
+        public static EGender CF_GetGender(ModIDNumber idNumber)
         {
             return idNumber.CF_GetGender();
         }
@@ -33,7 +33,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>出生年月日</returns>
-        public static DateTime CF_GetBirthday(ModelIDNumber idNumber)
+        public static DateTime CF_GetBirthday(ModIDNumber idNumber)
         {
             DateTime birthday = new DateTime(0001, 1, 1);
 
@@ -64,7 +64,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>验证码（0-9|X|E-Error）</returns>
-        public static char CF_GetSpecialCode(ModelIDNumber idNumber)
+        public static char CF_GetSpecialCode(ModIDNumber idNumber)
         {
             string strIDNumber = "";
 
@@ -104,11 +104,11 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>发卡单位</returns>
-        public static string CF_GetCardIssuer(ModelIDNumber idNumber)
+        public static string CF_GetCardIssuer(ModIDNumber idNumber)
         {
             string cardIssuer = "该区行政区编号未收录！";
 
-            ModelAddress address = CF_GetAddressInfo(idNumber);
+            ModAddress address = CF_GetAddressInfo(idNumber);
             if (address != null)
             {
                 cardIssuer = CF_GetAddressInfo(idNumber).CardIssuer;
@@ -122,11 +122,11 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>籍贯</returns>
-        public static string CF_GetDomicile(ModelIDNumber idNumber)
+        public static string CF_GetDomicile(ModIDNumber idNumber)
         {
             string domicile = "该区行政区编号未收录！";
 
-            ModelAddress address = CF_GetAddressInfo(idNumber);
+            ModAddress address = CF_GetAddressInfo(idNumber);
             if (address != null)
             {
                 domicile = CF_GetAddressInfo(idNumber).Domicile;
@@ -140,9 +140,9 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>发卡单位及籍贯</returns>
-        public static ModelAddress CF_GetAddressInfo(ModelIDNumber idNumber)
+        public static ModAddress CF_GetAddressInfo(ModIDNumber idNumber)
         {
-            ModelAddress address = new ModelAddress();
+            ModAddress address = new ModAddress();
 
             if (idNumber.IsLawful)
             {
@@ -157,7 +157,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>年龄（-1为身份证号错误）</returns>
-        public static int CF_GetAge(ModelIDNumber idNumber)
+        public static int CF_GetAge(ModIDNumber idNumber)
         {
             int age = -1;
 
@@ -182,7 +182,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>生肖</returns>
-        public static string CF_GetZodiac(ModelIDNumber idNumber)
+        public static string CF_GetZodiac(ModIDNumber idNumber)
         {
             string zodiac = "身份证号错误";
 
@@ -201,7 +201,7 @@ namespace CML.CommonEx.IDNumberEx
         /// </summary>
         /// <param name="idNumber">身份证号模型</param>
         /// <returns>星座</returns>
-        public static string CF_GetConstellation(ModelIDNumber idNumber)
+        public static string CF_GetConstellation(ModIDNumber idNumber)
         {
             string constellation = "身份证号错误";
 

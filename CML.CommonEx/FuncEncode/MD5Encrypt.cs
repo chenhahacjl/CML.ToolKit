@@ -17,7 +17,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptFile(ModelMD5Parameter md5Para, string inFilePath, out string outString, out string errMsg)
+        public static bool CF_EncryptFile(ModMD5Parameter md5Para, string inFilePath, out string outString, out string errMsg)
         {
             bool result;
 
@@ -45,7 +45,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptString(ModelMD5Parameter md5Para, string inString, out string outString, out string errMsg)
+        public static bool CF_EncryptString(ModMD5Parameter md5Para, string inString, out string outString, out string errMsg)
         {
             bool result;
 
@@ -73,7 +73,7 @@ namespace CML.CommonEx.EncodeEx
         /// <param name="outString">[OUT]已加密字符串</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_EncryptBytes(ModelMD5Parameter md5Para, byte[] inBytes, out string outString, out string errMsg)
+        public static bool CF_EncryptBytes(ModMD5Parameter md5Para, byte[] inBytes, out string outString, out string errMsg)
         {
             bool result;
 

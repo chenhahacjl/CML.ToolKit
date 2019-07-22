@@ -5,7 +5,7 @@ namespace CML.CommonEx.EncodeEx
     /// <summary>
     /// MD5参数模型
     /// </summary>
-    public class ModelMD5Parameter
+    public class ModMD5Parameter
     {
         /// <summary>
         /// 输出长度（默认32位）

@@ -3,7 +3,7 @@
     /// <summary>
     /// 身份证号模型
     /// </summary>
-    public class ModelIDNumber
+    public class ModIDNumber
     {
         /// <summary>
         /// 身份证号
@@ -18,13 +18,13 @@
         /// <summary>
         /// 默认构造函数
         /// </summary>
-        public ModelIDNumber() { }
+        public ModIDNumber() { }
 
         /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="idNumber">身份证号</param>
-        public ModelIDNumber(string idNumber)
+        public ModIDNumber(string idNumber)
         {
             IDNumber = idNumber;
         }

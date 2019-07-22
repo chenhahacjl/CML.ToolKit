@@ -892,7 +892,7 @@
             AES加密解密操作类(扩展方法)
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String,System.String@)">
             <summary>
             AES加密文件
             </summary>
@@ -902,7 +902,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String,System.String@)">
             <summary>
             AES解密文件
             </summary>
@@ -912,7 +912,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String@,System.String@)">
             <summary>
             AES加密字符串
             </summary>
@@ -922,7 +922,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String@,System.String@)">
             <summary>
             AES解密字符串
             </summary>
@@ -932,7 +932,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModAESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             AES加密字节数组
             </summary>
@@ -942,7 +942,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModAESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             AES解密字节数组
             </summary>
@@ -957,7 +957,7 @@
             3DES加密解密操作类(扩展方法)
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String,System.String@)">
             <summary>
             3DES加密文件
             </summary>
@@ -967,7 +967,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String,System.String@)">
             <summary>
             3DES解密文件
             </summary>
@@ -977,7 +977,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String@,System.String@)">
             <summary>
             3DES加密字符串
             </summary>
@@ -987,7 +987,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String@,System.String@)">
             <summary>
             3DES解密字符串
             </summary>
@@ -997,7 +997,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             3DES加密字节数组
             </summary>
@@ -1007,7 +1007,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESTripleEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             3DES解密字节数组
             </summary>
@@ -1022,7 +1022,7 @@
             DES加密解密操作类(扩展方法)
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String,System.String@)">
             <summary>
             DES加密文件
             </summary>
@@ -1032,7 +1032,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptFile(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String,System.String@)">
             <summary>
             DES解密文件
             </summary>
@@ -1042,7 +1042,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String@,System.String@)">
             <summary>
             DES加密字符串
             </summary>
@@ -1052,7 +1052,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptString(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String@,System.String@)">
             <summary>
             DES解密字符串
             </summary>
@@ -1062,7 +1062,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModDESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             DES加密字节数组
             </summary>
@@ -1072,7 +1072,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.DESEncryptEF.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModDESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             DES解密字节数组
             </summary>
@@ -1087,7 +1087,7 @@
             MD5加密操作类(扩展方法)
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptFile(CML.CommonEx.EncodeEx.ModMD5Parameter,System.String,System.String@,System.String@)">
             <summary>
             DES加密文件
             </summary>
@@ -1097,7 +1097,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptString(CML.CommonEx.EncodeEx.ModMD5Parameter,System.String,System.String@,System.String@)">
             <summary>
             16位MD5加密
             </summary>
@@ -1107,7 +1107,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.Byte[],System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.ExFunction.MD5EncryptEF.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModMD5Parameter,System.Byte[],System.String@,System.String@)">
             <summary>
             MD5加密字节数组
             </summary>
@@ -1122,7 +1122,7 @@
             AES加密解密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String,System.String@)">
             <summary>
             AES加密文件
             </summary>
@@ -1132,7 +1132,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String,System.String@)">
             <summary>
             AES解密文件
             </summary>
@@ -1142,7 +1142,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String@,System.String@)">
             <summary>
             AES加密字符串
             </summary>
@@ -1152,7 +1152,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModelAESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModAESParameter,System.String,System.String@,System.String@)">
             <summary>
             AES解密字符串
             </summary>
@@ -1162,7 +1162,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModAESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             AES加密字节数组
             </summary>
@@ -1172,7 +1172,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelAESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.AESEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModAESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             AES解密字节数组
             </summary>
@@ -1279,193 +1279,193 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:CML.CommonEx.EncodeEx.ModelAESParameter">
+        <member name="T:CML.CommonEx.EncodeEx.ModAESParameter">
             <summary>
             AES参数模型
             </summary>
         </member>
-        <member name="F:CML.CommonEx.EncodeEx.ModelAESParameter.key">
+        <member name="F:CML.CommonEx.EncodeEx.ModAESParameter.key">
             <summary>
             密钥存储
             </summary>
         </member>
-        <member name="F:CML.CommonEx.EncodeEx.ModelAESParameter.iv">
+        <member name="F:CML.CommonEx.EncodeEx.ModAESParameter.iv">
             <summary>
             向量存储
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.Key">
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.Key">
             <summary>
             密钥（16位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.IV">
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.IV">
             <summary>
             向量（16位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.PaddingChar">
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.PaddingChar">
             <summary>
             填充字符
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.CipherMode">
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.CipherMode">
             <summary>
             加密模式
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.PaddingMode">
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.PaddingMode">
             <summary>
             填充模式
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelAESParameter.Encode">
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.Encode">
             <summary>
             字符编码
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ModelAESParameter.#ctor">
+        <member name="M:CML.CommonEx.EncodeEx.ModAESParameter.#ctor">
             <summary>
             默认构造函数
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ModelAESParameter.#ctor(System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.ModAESParameter.#ctor(System.String,System.String)">
             <summary>
             构造函数
             </summary>
             <param name="key">密钥（16位）</param>
             <param name="iv">向量（16位）</param>
         </member>
-        <member name="T:CML.CommonEx.EncodeEx.ModelDESTripleParameter">
+        <member name="T:CML.CommonEx.EncodeEx.ModDESTripleParameter">
             <summary>
             3DES参数模型
             </summary>
         </member>
-        <member name="F:CML.CommonEx.EncodeEx.ModelDESTripleParameter.key">
+        <member name="F:CML.CommonEx.EncodeEx.ModDESTripleParameter.key">
             <summary>
             密钥存储
             </summary>
         </member>
-        <member name="F:CML.CommonEx.EncodeEx.ModelDESTripleParameter.iv">
+        <member name="F:CML.CommonEx.EncodeEx.ModDESTripleParameter.iv">
             <summary>
             向量存储
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.Key">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESTripleParameter.Key">
             <summary>
             密钥（24位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.IV">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESTripleParameter.IV">
             <summary>
             向量（8位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.PaddingChar">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESTripleParameter.PaddingChar">
             <summary>
             填充字符
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.CipherMode">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESTripleParameter.CipherMode">
             <summary>
             加密模式
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.PaddingMode">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESTripleParameter.PaddingMode">
             <summary>
             填充模式
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESTripleParameter.Encode">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESTripleParameter.Encode">
             <summary>
             字符编码
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ModelDESTripleParameter.#ctor">
+        <member name="M:CML.CommonEx.EncodeEx.ModDESTripleParameter.#ctor">
             <summary>
             默认构造函数
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ModelDESTripleParameter.#ctor(System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.ModDESTripleParameter.#ctor(System.String,System.String)">
             <summary>
             构造函数
             </summary>
             <param name="key">密钥（24位）</param>
             <param name="iv">向量（8位）</param>
         </member>
-        <member name="T:CML.CommonEx.EncodeEx.ModelDESParameter">
+        <member name="T:CML.CommonEx.EncodeEx.ModDESParameter">
             <summary>
             DES参数模型
             </summary>
         </member>
-        <member name="F:CML.CommonEx.EncodeEx.ModelDESParameter.key">
+        <member name="F:CML.CommonEx.EncodeEx.ModDESParameter.key">
             <summary>
             密钥存储
             </summary>
         </member>
-        <member name="F:CML.CommonEx.EncodeEx.ModelDESParameter.iv">
+        <member name="F:CML.CommonEx.EncodeEx.ModDESParameter.iv">
             <summary>
             向量存储
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.Key">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESParameter.Key">
             <summary>
             密钥（8位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.IV">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESParameter.IV">
             <summary>
             向量（8位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.PaddingChar">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESParameter.PaddingChar">
             <summary>
             填充字符
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.CipherMode">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESParameter.CipherMode">
             <summary>
             加密模式
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.PaddingMode">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESParameter.PaddingMode">
             <summary>
             填充模式
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelDESParameter.Encode">
+        <member name="P:CML.CommonEx.EncodeEx.ModDESParameter.Encode">
             <summary>
             字符编码
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ModelDESParameter.#ctor">
+        <member name="M:CML.CommonEx.EncodeEx.ModDESParameter.#ctor">
             <summary>
             默认构造函数
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.ModelDESParameter.#ctor(System.String,System.String)">
+        <member name="M:CML.CommonEx.EncodeEx.ModDESParameter.#ctor(System.String,System.String)">
             <summary>
             构造函数
             </summary>
             <param name="key">密钥（8位）</param>
             <param name="iv">向量（8位）</param>
         </member>
-        <member name="T:CML.CommonEx.EncodeEx.ModelMD5Parameter">
+        <member name="T:CML.CommonEx.EncodeEx.ModMD5Parameter">
             <summary>
             MD5参数模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelMD5Parameter.MD5Length">
+        <member name="P:CML.CommonEx.EncodeEx.ModMD5Parameter.MD5Length">
             <summary>
             输出长度（默认32位）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelMD5Parameter.IsUppercase">
+        <member name="P:CML.CommonEx.EncodeEx.ModMD5Parameter.IsUppercase">
             <summary>
             大写输出
             </summary>
         </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModelMD5Parameter.Encode">
+        <member name="P:CML.CommonEx.EncodeEx.ModMD5Parameter.Encode">
             <summary>
             字符编码
             </summary>
@@ -1506,7 +1506,7 @@
             DES加密解密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String,System.String@)">
             <summary>
             DES加密文件
             </summary>
@@ -1516,7 +1516,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String,System.String@)">
             <summary>
             DES解密文件
             </summary>
@@ -1526,7 +1526,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String@,System.String@)">
             <summary>
             DES加密字符串
             </summary>
@@ -1536,7 +1536,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModDESParameter,System.String,System.String@,System.String@)">
             <summary>
             DES解密字符串
             </summary>
@@ -1546,7 +1546,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModDESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             DES加密字节数组
             </summary>
@@ -1556,7 +1556,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModDESParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             DES解密字节数组
             </summary>
@@ -1571,7 +1571,7 @@
             3DES加密解密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String,System.String@)">
             <summary>
             3DES加密文件
             </summary>
@@ -1581,7 +1581,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptFile(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String,System.String@)">
             <summary>
             3DES解密文件
             </summary>
@@ -1591,7 +1591,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String@,System.String@)">
             <summary>
             3DES加密字符串
             </summary>
@@ -1601,7 +1601,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptString(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.String,System.String@,System.String@)">
             <summary>
             3DES解密字符串
             </summary>
@@ -1611,7 +1611,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             3DES加密字节数组
             </summary>
@@ -1621,7 +1621,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModelDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.DESTripleEncrypt.CF_DecryptBytes(CML.CommonEx.EncodeEx.ModDESTripleParameter,System.Byte[],System.Byte[]@,System.String@)">
             <summary>
             3DES解密字节数组
             </summary>
@@ -1636,7 +1636,7 @@
             MD5加密操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptFile(CML.CommonEx.EncodeEx.ModMD5Parameter,System.String,System.String@,System.String@)">
             <summary>
             DES加密文件
             </summary>
@@ -1646,7 +1646,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.String,System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptString(CML.CommonEx.EncodeEx.ModMD5Parameter,System.String,System.String@,System.String@)">
             <summary>
             16位MD5加密
             </summary>
@@ -1656,7 +1656,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModelMD5Parameter,System.Byte[],System.String@,System.String@)">
+        <member name="M:CML.CommonEx.EncodeEx.MD5Encrypt.CF_EncryptBytes(CML.CommonEx.EncodeEx.ModMD5Parameter,System.Byte[],System.String@,System.String@)">
             <summary>
             MD5加密字节数组
             </summary>
@@ -2149,7 +2149,7 @@
             ARM
             </summary>
         </member>
-        <member name="T:CML.CommonEx.EverythingEx.ModelEverything64">
+        <member name="T:CML.CommonEx.EverythingEx.ModEverything64">
             <summary>
             64位外部方法引用
             </summary>
@@ -2788,37 +2788,37 @@
             兆字节（2^20 Byte）
             </summary>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModelFileInfo">
+        <member name="T:CML.CommonEx.FTPEx.ModFileInfo">
             <summary>
             文件信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.IsDirectory">
+        <member name="P:CML.CommonEx.FTPEx.ModFileInfo.IsDirectory">
             <summary>
             是否为文件夹
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.Name">
+        <member name="P:CML.CommonEx.FTPEx.ModFileInfo.Name">
             <summary>
             文件（夹）名称
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.Length">
+        <member name="P:CML.CommonEx.FTPEx.ModFileInfo.Length">
             <summary>
             文件大小（文件夹为空）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.CreateTime">
+        <member name="P:CML.CommonEx.FTPEx.ModFileInfo.CreateTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFileInfo.Path">
+        <member name="P:CML.CommonEx.FTPEx.ModFileInfo.Path">
             <summary>
             文件（夹）路径
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFileInfo.#ctor(System.Boolean,System.String,System.Int64,System.DateTime,System.String)">
+        <member name="M:CML.CommonEx.FTPEx.ModFileInfo.#ctor(System.Boolean,System.String,System.Int64,System.DateTime,System.String)">
             <summary>
             构造函数
             </summary>
@@ -2828,119 +2828,119 @@
             <param name="createTime">创建时间</param>
             <param name="path">文件（夹）路径</param>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModelFtpReqInfo">
+        <member name="T:CML.CommonEx.FTPEx.ModFtpReqInfo">
             <summary>
             FTP请求信息模型
             </summary>
         </member>
-        <member name="F:CML.CommonEx.FTPEx.ModelFtpReqInfo.m_bakRequestPath">
+        <member name="F:CML.CommonEx.FTPEx.ModFtpReqInfo.m_bakRequestPath">
             <summary>
             备份的请求路径
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.RequestPath">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.RequestPath">
             <summary>
             请求路径（默认为根目录）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.Method">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.Method">
             <summary>
             请求方式（默认ListDirectory）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.RenameTo">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.RenameTo">
             <summary>
             目标文件名（重命名时使用）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpReqInfo.TransmissionSpeed">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.TransmissionSpeed">
             <summary>
             传输限速（上传、下载时使用）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.#ctor">
             <summary>
             构造函数（默认构造）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor(System.String)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.#ctor(System.String)">
             <summary>
             构造函数
             </summary>
             <param name="requestPath">请求路径</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor(CML.CommonEx.FTPEx.EFtpRequestMethod)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.#ctor(CML.CommonEx.FTPEx.EFtpRequestMethod)">
             <summary>
             构造函数
             </summary>
             <param name="method">请求方式</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.#ctor(System.String,CML.CommonEx.FTPEx.EFtpRequestMethod)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.#ctor(System.String,CML.CommonEx.FTPEx.EFtpRequestMethod)">
             <summary>
             构造函数
             </summary>
             <param name="requestPath">请求路径</param>
             <param name="method">请求方式</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.CF_PushRequestPath">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.CF_PushRequestPath">
             <summary>
             备份请求路径
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpReqInfo.CF_PopRequestPath">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.CF_PopRequestPath">
             <summary>
             还原请求路径
             </summary>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModelFtpInfomation">
+        <member name="T:CML.CommonEx.FTPEx.ModFtpInfomation">
             <summary>
             FTP信息模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.IP">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpInfomation.IP">
             <summary>
             服务器IP
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.Username">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpInfomation.Username">
             <summary>
             用户名
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.Password">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpInfomation.Password">
             <summary>
             密码
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.Port">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpInfomation.Port">
             <summary>
             服务端口
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.FtpReqInfo">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpInfomation.FtpReqInfo">
             <summary>
             FTP请求信息
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpInfomation.FtpExtendInfo">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpInfomation.FtpExtendInfo">
             <summary>
             FTP扩展信息
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpInfomation.#ctor(System.String)">
             <summary>
             构造函数
             </summary>
             <param name="ip">服务器IP</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String,System.Int32)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpInfomation.#ctor(System.String,System.Int32)">
             <summary>
             构造函数
             </summary>
             <param name="ip">服务器IP</param>
             <param name="port">服务端口</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpInfomation.#ctor(System.String,System.String,System.String)">
             <summary>
             构造函数
             </summary>
@@ -2948,7 +2948,7 @@
             <param name="username">用户名</param>
             <param name="password">密码</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpInfomation.#ctor(System.String,System.Int32,System.String,System.String)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpInfomation.#ctor(System.String,System.Int32,System.String,System.String)">
             <summary>
             构造函数
             </summary>
@@ -2962,21 +2962,21 @@
             FTP基本信息扩展方法
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetCurrentName(CML.CommonEx.FTPEx.ModelFtpInfomation)">
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetCurrentName(CML.CommonEx.FTPEx.ModFtpInfomation)">
             <summary>
             获取当前文件（夹）名称
             </summary>
             <param name="ftpInfomation">FTP基本信息</param>
             <returns>URL地址</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetParentPath(CML.CommonEx.FTPEx.ModelFtpInfomation)">
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetParentPath(CML.CommonEx.FTPEx.ModFtpInfomation)">
             <summary>
             获取父路径（/{RequestPath}/../）
             </summary>
             <param name="ftpInfomation">FTP基本信息</param>
             <returns>URL地址</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetCombinePath(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String)">
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetCombinePath(CML.CommonEx.FTPEx.ModFtpInfomation,System.String)">
             <summary>
             获取合并地址（/{RequestPath}/{path}）
             </summary>
@@ -2984,123 +2984,123 @@
             <param name="path">子路径</param>
             <returns>URL地址</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetUrl(CML.CommonEx.FTPEx.ModelFtpInfomation)">
+        <member name="M:CML.CommonEx.FTPEx.ModelFtpBaseInfoExFunction.GetUrl(CML.CommonEx.FTPEx.ModFtpInfomation)">
             <summary>
             获取URL地址（ftp://{IP}:{Port}/{RequestPath}）
             </summary>
             <param name="ftpInfomation">FTP基本信息</param>
             <returns>URL地址</returns>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModelFtpExtendInfo">
+        <member name="T:CML.CommonEx.FTPEx.ModFtpExtendInfo">
             <summary>
             FTP扩展信息模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.Timeout">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.Timeout">
             <summary>
             请求超时（毫秒，默认5秒）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.ReadWriteTimeout">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.ReadWriteTimeout">
             <summary>
             读写超时（毫秒，默认5秒）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.EnableSsl">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.EnableSsl">
             <summary>
             是否启用SSL连接（默认false）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.UseBinary">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.UseBinary">
             <summary>
             是否启用二进制传输（默认true）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.UsePassive">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.UsePassive">
             <summary>
             是否为被动模式请求（默认false）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.KeepAlive">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.KeepAlive">
             <summary>
             请求完成之后是否保持连接（默认false）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelFtpExtendInfo.Proxy">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpExtendInfo.Proxy">
             <summary>
             代理（默认不开启）
             </summary>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModelProxy">
+        <member name="T:CML.CommonEx.FTPEx.ModProxy">
             <summary>
             代理模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelProxy.Enable">
+        <member name="P:CML.CommonEx.FTPEx.ModProxy.Enable">
             <summary>
             是否启用代理
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelProxy.Host">
+        <member name="P:CML.CommonEx.FTPEx.ModProxy.Host">
             <summary>
             主机
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelProxy.Port">
+        <member name="P:CML.CommonEx.FTPEx.ModProxy.Port">
             <summary>
             端口
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelProxy.#ctor">
+        <member name="M:CML.CommonEx.FTPEx.ModProxy.#ctor">
             <summary>
             默认构造函数（不启用代理）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelProxy.#ctor(System.String,System.Int32)">
+        <member name="M:CML.CommonEx.FTPEx.ModProxy.#ctor(System.String,System.Int32)">
             <summary>
             构造函数（启用代理）
             </summary>
             <param name="host"></param>
             <param name="port"></param>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModelTransmissionSpeed">
+        <member name="T:CML.CommonEx.FTPEx.ModTransmissionSpeed">
             <summary>
             传输速率模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelTransmissionSpeed.Speed">
+        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.Speed">
             <summary>
             传输速率值（数值大于0时启用）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelTransmissionSpeed.Unit">
+        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.Unit">
             <summary>
             传输速率单位
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelTransmissionSpeed.Delay">
+        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.Delay">
             <summary>
             传输间隔毫秒数（默认为100MS）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModelTransmissionSpeed.EnableLimit">
+        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.EnableLimit">
             <summary>
             是否启用限速
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelTransmissionSpeed.#ctor">
+        <member name="M:CML.CommonEx.FTPEx.ModTransmissionSpeed.#ctor">
             <summary>
             默认构造函数（不限速）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelTransmissionSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.ESpeedUnit)">
+        <member name="M:CML.CommonEx.FTPEx.ModTransmissionSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.ESpeedUnit)">
             <summary>
             构造函数（默认延时100MS）
             </summary>
             <param name="speed">传输速率值（数值大于0时启用）</param>
             <param name="unit">传输速率单位</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModelTransmissionSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.ESpeedUnit,System.Int32)">
+        <member name="M:CML.CommonEx.FTPEx.ModTransmissionSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.ESpeedUnit,System.Int32)">
             <summary>
             构造函数
             </summary>
@@ -3144,7 +3144,7 @@
             FTP操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_CanConnect(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_CanConnect(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             检测能否连接服务器
             </summary>
@@ -3152,7 +3152,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             检测文件是否存在
             </summary>
@@ -3160,7 +3160,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             检测文件夹是否存在
             </summary>
@@ -3168,7 +3168,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExist(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExist(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             检测文件（夹）是否存在
             </summary>
@@ -3177,7 +3177,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             检测文件是否存在
             </summary>
@@ -3186,7 +3186,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             检测文件夹是否存在
             </summary>
@@ -3195,7 +3195,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_UploadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_UploadFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
             <summary>
             上传文件
             </summary>
@@ -3205,7 +3205,7 @@
             <param name="overwrite">是否覆盖文件</param>
             <param name="errMsg">[OUT]错误信息</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DownloadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DownloadFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -3215,7 +3215,7 @@
             <param name="overwrite">是否覆盖文件</param>
             <param name="errMsg">[OUT]错误信息</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DeleteFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DeleteFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             删除文件
             </summary>
@@ -3224,7 +3224,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>删除情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DeleteDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_DeleteDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             删除文件夹
             </summary>
@@ -3233,7 +3233,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>删除情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_RenameFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_RenameFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.String@)">
             <summary>
             重命名文件
             </summary>
@@ -3243,7 +3243,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>重命名情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_RenameDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_RenameDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.String@)">
             <summary>
             重命名文件夹
             </summary>
@@ -3253,7 +3253,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>重命名情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_MakeDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_MakeDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             创建文件夹
             </summary>
@@ -3262,7 +3262,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns></returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFileSize(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFileSize(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             获取文件大小
             </summary>
@@ -3271,7 +3271,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件大小</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取文件夹列表
             </summary>
@@ -3279,7 +3279,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件夹列表</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取文件列表
             </summary>
@@ -3287,7 +3287,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件列表</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFileAndDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFileAndDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取文件和文件夹列表
             </summary>
@@ -3295,7 +3295,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件和文件夹列表</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFtpResponse(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFtpResponse(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取FTP请求响应
             </summary>
@@ -3303,7 +3303,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>FTP请求响应</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFtpRequest(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.ExFunction.FTPOperateEF.CF_GetFtpRequest(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取FTP请求
             </summary>
@@ -3316,7 +3316,7 @@
             FTP操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_CanConnect(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_CanConnect(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             检测能否连接服务器
             </summary>
@@ -3324,7 +3324,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             检测文件是否存在
             </summary>
@@ -3332,7 +3332,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             检测文件夹是否存在
             </summary>
@@ -3340,7 +3340,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExist(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExist(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             检测文件（夹）是否存在
             </summary>
@@ -3349,7 +3349,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             检测文件是否存在
             </summary>
@@ -3358,7 +3358,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_IsExistDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             检测文件夹是否存在
             </summary>
@@ -3367,7 +3367,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>检测情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_UploadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_UploadFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
             <summary>
             上传文件
             </summary>
@@ -3377,7 +3377,7 @@
             <param name="overwrite">是否覆盖文件</param>
             <param name="errMsg">[OUT]错误信息</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DownloadFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DownloadFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.Boolean,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -3387,7 +3387,7 @@
             <param name="overwrite">是否覆盖文件</param>
             <param name="errMsg">[OUT]错误信息</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DeleteFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DeleteFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             删除文件
             </summary>
@@ -3396,7 +3396,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>删除情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DeleteDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_DeleteDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             删除文件夹
             </summary>
@@ -3405,7 +3405,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>删除情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_RenameFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_RenameFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.String@)">
             <summary>
             重命名文件
             </summary>
@@ -3415,7 +3415,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>重命名情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_RenameDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_RenameDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String,System.String@)">
             <summary>
             重命名文件夹
             </summary>
@@ -3425,7 +3425,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>重命名情况</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_MakeDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_MakeDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             创建文件夹
             </summary>
@@ -3434,7 +3434,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns></returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFileSize(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFileSize(CML.CommonEx.FTPEx.ModFtpInfomation,System.String,System.String@)">
             <summary>
             获取文件大小
             </summary>
@@ -3443,7 +3443,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件大小</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取文件夹列表
             </summary>
@@ -3451,7 +3451,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件夹列表</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFile(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFile(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取文件列表
             </summary>
@@ -3459,7 +3459,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件列表</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFileAndDirectory(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFileAndDirectory(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取文件和文件夹列表
             </summary>
@@ -3467,7 +3467,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>文件和文件夹列表</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFtpResponse(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFtpResponse(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取FTP请求响应
             </summary>
@@ -3475,7 +3475,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>FTP请求响应</returns>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFtpRequest(CML.CommonEx.FTPEx.ModelFtpInfomation,System.String@)">
+        <member name="M:CML.CommonEx.FTPEx.FTPOperate.CF_GetFtpRequest(CML.CommonEx.FTPEx.ModFtpInfomation,System.String@)">
             <summary>
             获取FTP请求
             </summary>
@@ -3494,32 +3494,32 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:CML.CommonEx.IDNumberEx.ModelAddress">
+        <member name="T:CML.CommonEx.IDNumberEx.ModAddress">
             <summary>
             地址信息模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.ModelAddress.AddressNumber">
+        <member name="P:CML.CommonEx.IDNumberEx.ModAddress.AddressNumber">
             <summary>
             地址编号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.ModelAddress.CardIssuer">
+        <member name="P:CML.CommonEx.IDNumberEx.ModAddress.CardIssuer">
             <summary>
             发卡机构
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.ModelAddress.Domicile">
+        <member name="P:CML.CommonEx.IDNumberEx.ModAddress.Domicile">
             <summary>
             籍贯
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ModelAddress.#ctor">
+        <member name="M:CML.CommonEx.IDNumberEx.ModAddress.#ctor">
             <summary>
             构造函数（错误）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ModelAddress.#ctor(System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.IDNumberEx.ModAddress.#ctor(System.String,System.String,System.String)">
             <summary>
             构造函数
             </summary>
@@ -3552,7 +3552,7 @@
             性别枚举扩展方法
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.EGenderExFunction.CF_GetGender(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.EGenderExFunction.CF_GetGender(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取性别
             </summary>
@@ -3584,7 +3584,7 @@
             身份证号类型枚举扩展方法
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.EIDNumberTypeExFunction.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModelIDNumber,System.Boolean)">
+        <member name="M:CML.CommonEx.IDNumberEx.EIDNumberTypeExFunction.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModIDNumber,System.Boolean)">
             <summary>
             获取身份证号类型
             </summary>
@@ -3592,27 +3592,27 @@
             <param name="isVerifyCheckCode">是否验证校检码（18位身份证号特有）</param>
             <returns>身份证号类型</returns>
         </member>
-        <member name="T:CML.CommonEx.IDNumberEx.ModelIDNumber">
+        <member name="T:CML.CommonEx.IDNumberEx.ModIDNumber">
             <summary>
             身份证号模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.ModelIDNumber.IDNumber">
+        <member name="P:CML.CommonEx.IDNumberEx.ModIDNumber.IDNumber">
             <summary>
             身份证号
             </summary>
         </member>
-        <member name="P:CML.CommonEx.IDNumberEx.ModelIDNumber.IsLawful">
+        <member name="P:CML.CommonEx.IDNumberEx.ModIDNumber.IsLawful">
             <summary>
             是否合法
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ModelIDNumber.#ctor">
+        <member name="M:CML.CommonEx.IDNumberEx.ModIDNumber.#ctor">
             <summary>
             默认构造函数
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ModelIDNumber.#ctor(System.String)">
+        <member name="M:CML.CommonEx.IDNumberEx.ModIDNumber.#ctor(System.String)">
             <summary>
             构造函数
             </summary>
@@ -3654,70 +3654,70 @@
             身份证号操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取身份证号类型
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>身份证号类型</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetGender(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetGender(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取性别
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>性别</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetBirthday(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetBirthday(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取出生年月日
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>出生年月日</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetSpecialCode(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetSpecialCode(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取验证码
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>验证码（0-9|X|E-Error）</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetCardIssuer(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetCardIssuer(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取发卡机构
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>发卡单位</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetDomicile(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetDomicile(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取籍贯
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>籍贯</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetAddressInfo(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetAddressInfo(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取地址信息
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>发卡单位及籍贯</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetAge(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetAge(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取年龄
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>年龄（-1为身份证号错误）</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetZodiac(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetZodiac(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取生肖
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>生肖</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetConstellation(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.ExFunction.IDNumberOperateEF.CF_GetConstellation(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取星座
             </summary>
@@ -3729,70 +3729,70 @@
             身份证号操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetIDNumberType(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取身份证号类型
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>身份证号类型</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetGender(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetGender(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取性别
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>性别</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetBirthday(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetBirthday(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取出生年月日
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>出生年月日</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetSpecialCode(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetSpecialCode(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取验证码
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>验证码（0-9|X|E-Error）</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetCardIssuer(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetCardIssuer(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取发卡机构
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>发卡单位</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetDomicile(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetDomicile(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取籍贯
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>籍贯</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetAddressInfo(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetAddressInfo(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取地址信息
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>发卡单位及籍贯</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetAge(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetAge(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取年龄
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>年龄（-1为身份证号错误）</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetZodiac(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetZodiac(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取生肖
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>生肖</returns>
         </member>
-        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetConstellation(CML.CommonEx.IDNumberEx.ModelIDNumber)">
+        <member name="M:CML.CommonEx.IDNumberEx.IDNumberOperate.CF_GetConstellation(CML.CommonEx.IDNumberEx.ModIDNumber)">
             <summary>
             获取星座
             </summary>
@@ -3814,114 +3814,114 @@
             POST方式
             </summary>
         </member>
-        <member name="T:CML.CommonEx.NetworkEx.ModelProxy">
+        <member name="T:CML.CommonEx.NetworkEx.ModProxy">
             <summary>
             代理模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelProxy.Enable">
+        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Enable">
             <summary>
             是否启用代理
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelProxy.Host">
+        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Host">
             <summary>
             主机
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelProxy.Port">
+        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Port">
             <summary>
             端口
             </summary>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ModelProxy.#ctor">
+        <member name="M:CML.CommonEx.NetworkEx.ModProxy.#ctor">
             <summary>
             默认构造函数（不启用代理）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ModelProxy.#ctor(System.String,System.Int32)">
+        <member name="M:CML.CommonEx.NetworkEx.ModProxy.#ctor(System.String,System.Int32)">
             <summary>
             构造函数（启用代理）
             </summary>
             <param name="host"></param>
             <param name="port"></param>
         </member>
-        <member name="T:CML.CommonEx.NetworkEx.ModelWebRequest">
+        <member name="T:CML.CommonEx.NetworkEx.ModWebRequest">
             <summary>
             WEB请求模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.RequestUrl">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.RequestUrl">
             <summary>
             请求网址
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.KeepAlive">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.KeepAlive">
             <summary>
              请求完成之后是否保持连接（默认false）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.AllowAutoRedirect">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.AllowAutoRedirect">
             <summary>
              允许自动重定向（默认false）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Proxy">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Proxy">
             <summary>
             代理（默认不开启）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.TimeOut">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.TimeOut">
             <summary>
             超时时间（毫秒，默认1000毫秒）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Method">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Method">
             <summary>
             请求方式（默认GET）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.ProtocolVersion">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.ProtocolVersion">
             <summary>
             HTTP版本（默认Version10）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Host">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Host">
             <summary>
             HTTP的Host请求头
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Accept">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Accept">
             <summary>
             HTTP的Accept请求头
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Referer">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Referer">
             <summary>
             HTTP的Referer请求头
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.UserAgent">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.UserAgent">
             <summary>
             HTTP的UserAgent请求头
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.ContentType">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.ContentType">
             <summary>
             HTTP的ContentType请求头
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Headers">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Headers">
             <summary>
             HTTP的请求头
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.Cookie">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Cookie">
             <summary>
             Cookie字符串
             </summary>
         </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModelWebRequest.PostData">
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostData">
             <summary>
             POST传输信息
             </summary>
@@ -3962,7 +3962,7 @@
             下载操作类(扩展方法)
             </summary>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
             获取HTML代码（UTF-8 编码）
             </summary>
@@ -3970,7 +3970,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -3979,7 +3979,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -3989,7 +3989,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -3999,7 +3999,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -4010,7 +4010,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4019,7 +4019,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4029,7 +4029,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4039,7 +4039,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4050,7 +4050,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4058,7 +4058,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4067,7 +4067,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4076,7 +4076,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4091,7 +4091,7 @@
             下载操作类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
             获取HTML代码（UTF-8 编码）
             </summary>
@@ -4099,7 +4099,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -4108,7 +4108,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -4118,7 +4118,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -4128,7 +4128,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModelWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
@@ -4139,7 +4139,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4148,7 +4148,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4158,7 +4158,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4168,7 +4168,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             下载文件
             </summary>
@@ -4179,7 +4179,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4187,7 +4187,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4196,7 +4196,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取数据流
             </summary>
@@ -4205,7 +4205,7 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>数据流</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModelWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取数据流
             </summary>

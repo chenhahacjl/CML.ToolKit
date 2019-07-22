@@ -84,7 +84,7 @@ namespace CML.ToolTest
         /// </summary>
         private void DESEncryptTest()
         {
-            ModelDESParameter desParameter = new ModelDESParameter()
+            ModDESParameter desParameter = new ModDESParameter()
             {
                 Key = GetRandomString(10),
                 IV = GetRandomString(6),
@@ -130,7 +130,7 @@ namespace CML.ToolTest
         /// </summary>
         private void DESTripleEncryptTest()
         {
-            ModelDESTripleParameter desParameter = new ModelDESTripleParameter()
+            ModDESTripleParameter desParameter = new ModDESTripleParameter()
             {
                 Key = GetRandomString(26),
                 IV = GetRandomString(6),
@@ -176,7 +176,7 @@ namespace CML.ToolTest
         /// </summary>
         private void AESEncryptTest()
         {
-            ModelAESParameter aesParameter = new ModelAESParameter()
+            ModAESParameter aesParameter = new ModAESParameter()
             {
                 Key = GetRandomString(18),
                 IV = GetRandomString(14),
@@ -222,7 +222,7 @@ namespace CML.ToolTest
         /// </summary>
         private void MD5EncodeTest()
         {
-            ModelMD5Parameter md5Parameter = new ModelMD5Parameter()
+            ModMD5Parameter md5Parameter = new ModMD5Parameter()
             {
                 IsUppercase = true,
                 Encode = Encoding.UTF8,
