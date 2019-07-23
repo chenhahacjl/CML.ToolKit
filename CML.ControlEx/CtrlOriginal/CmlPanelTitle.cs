@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace CML.ControlEx
@@ -20,15 +16,15 @@ namespace CML.ControlEx
         /// <summary>
         /// 标题Label控件
         /// </summary>
-        private Label m_ctlTitleLabel = new Label();
+        private readonly Label m_ctlTitleLabel = new Label();
         /// <summary>
         /// 容器Panel控件
         /// </summary>
-        private Panel m_ctlContainerPanel = new Panel();
+        private readonly Panel m_ctlContainerPanel = new Panel();
         /// <summary>
         /// 外层Panel控件
         /// </summary>
-        private Panel m_ctlExternalPanel = new Panel();
+        private readonly Panel m_ctlExternalPanel = new Panel();
         #endregion
 
         #region 重写属性
@@ -164,6 +160,8 @@ namespace CML.ControlEx
             m_ctlTitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             m_ctlTitleLabel.Dock = DockStyle.Top;
             m_ctlExternalPanel.Controls.Add(m_ctlTitleLabel);
+
+            MessageBox.Show("CmlPanelTitle控件有BUG，无法使用！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

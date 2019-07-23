@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmlLanternRound1 = new CML.ControlEx.CmlLanternRound();
             this.textBoxEx1 = new CML.ControlEx.CmlTextBoxEx();
             this.tabControlEx1 = new CML.ControlEx.CmlTabControlEx();
@@ -51,23 +50,13 @@
             this.chartCurve1 = new CML.ControlEx.CmlChartCurve();
             this.cmlButtonEx1 = new CML.ControlEx.CmlButtonEx();
             this.cmlButtonEx2 = new CML.ControlEx.CmlButtonEx();
-            this.cmlPanelTitle1 = new CML.ControlEx.CmlPanelTitle();
-            this.dgvTriggerParaRelationOBC = new CML.ControlEx.CmlDataGridViewEx();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewLinkColumn11 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewLinkColumn12 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTriggerParaRelationOBC)).BeginInit();
             this.SuspendLayout();
             // 
             // cmlLanternRound1
             // 
-            this.cmlLanternRound1.Location = new System.Drawing.Point(177, 117);
+            this.cmlLanternRound1.Location = new System.Drawing.Point(213, 117);
             this.cmlLanternRound1.Name = "cmlLanternRound1";
             this.cmlLanternRound1.Size = new System.Drawing.Size(80, 80);
             this.cmlLanternRound1.TabIndex = 12;
@@ -94,10 +83,10 @@
             this.textBoxEx1.CP_UnitForeColor = System.Drawing.Color.Black;
             this.textBoxEx1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxEx1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxEx1.Location = new System.Drawing.Point(295, 117);
+            this.textBoxEx1.Location = new System.Drawing.Point(316, 117);
             this.textBoxEx1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEx1.Name = "textBoxEx1";
-            this.textBoxEx1.Size = new System.Drawing.Size(181, 26);
+            this.textBoxEx1.Size = new System.Drawing.Size(213, 26);
             this.textBoxEx1.TabIndex = 11;
             // 
             // tabControlEx1
@@ -109,11 +98,11 @@
             this.tabControlEx1.CP_SelectedBackColor = System.Drawing.Color.WhiteSmoke;
             this.tabControlEx1.CP_SelectedBorderColor = System.Drawing.Color.Gray;
             this.tabControlEx1.CP_TabPageBackColors = new System.Drawing.Color[] {
-        System.Drawing.Color.LightGray,
-        System.Drawing.Color.DarkGray};
+                System.Drawing.Color.LightGray,
+                System.Drawing.Color.DarkGray};
             this.tabControlEx1.CP_TabPageForeColors = new System.Drawing.Color[] {
-        System.Drawing.Color.Red,
-        System.Drawing.Color.Lime};
+                System.Drawing.Color.Red,
+                System.Drawing.Color.Lime};
             this.tabControlEx1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControlEx1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControlEx1.ItemSize = new System.Drawing.Size(10, 60);
@@ -157,9 +146,9 @@
             // 
             this.buttonEx2.CP_CustomerInformation = null;
             this.buttonEx2.CP_NewLineChar = '@';
-            this.buttonEx2.Location = new System.Drawing.Point(295, 64);
+            this.buttonEx2.Location = new System.Drawing.Point(316, 64);
             this.buttonEx2.Name = "buttonEx2";
-            this.buttonEx2.Size = new System.Drawing.Size(114, 46);
+            this.buttonEx2.Size = new System.Drawing.Size(213, 46);
             this.buttonEx2.TabIndex = 0;
             this.buttonEx2.Text = "数值输入";
             this.buttonEx2.Click += new System.EventHandler(this.ButtonEx2_Click);
@@ -168,9 +157,9 @@
             // 
             this.buttonEx1.CP_CustomerInformation = null;
             this.buttonEx1.CP_NewLineChar = '@';
-            this.buttonEx1.Location = new System.Drawing.Point(295, 12);
+            this.buttonEx1.Location = new System.Drawing.Point(316, 12);
             this.buttonEx1.Name = "buttonEx1";
-            this.buttonEx1.Size = new System.Drawing.Size(114, 46);
+            this.buttonEx1.Size = new System.Drawing.Size(213, 46);
             this.buttonEx1.TabIndex = 0;
             this.buttonEx1.Text = "登录";
             this.buttonEx1.Click += new System.EventHandler(this.ButtonEx1_Click);
@@ -181,7 +170,7 @@
             this.shapeRound1.CP_Radius = 80;
             this.shapeRound1.CP_ShapeStyle = CML.ControlEx.EShapeStyleType.PresetStyle;
             this.shapeRound1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.shapeRound1.Location = new System.Drawing.Point(11, 12);
+            this.shapeRound1.Location = new System.Drawing.Point(26, 12);
             this.shapeRound1.Name = "shapeRound1";
             this.shapeRound1.Size = new System.Drawing.Size(160, 160);
             this.shapeRound1.TabIndex = 9;
@@ -192,7 +181,7 @@
             this.shapeRectangle1.CP_PresetStyle = CML.ControlEx.EShapePresetStyle.Yellow;
             this.shapeRectangle1.CP_ShapeStyle = CML.ControlEx.EShapeStyleType.PresetStyle;
             this.shapeRectangle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.shapeRectangle1.Location = new System.Drawing.Point(11, 264);
+            this.shapeRectangle1.Location = new System.Drawing.Point(26, 264);
             this.shapeRectangle1.Name = "shapeRectangle1";
             this.shapeRectangle1.Size = new System.Drawing.Size(160, 80);
             this.shapeRectangle1.TabIndex = 8;
@@ -203,7 +192,7 @@
             this.shapeDiamond1.CP_PresetStyle = CML.ControlEx.EShapePresetStyle.Gray;
             this.shapeDiamond1.CP_ShapeStyle = CML.ControlEx.EShapeStyleType.PresetStyle;
             this.shapeDiamond1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.shapeDiamond1.Location = new System.Drawing.Point(11, 178);
+            this.shapeDiamond1.Location = new System.Drawing.Point(26, 178);
             this.shapeDiamond1.Name = "shapeDiamond1";
             this.shapeDiamond1.Size = new System.Drawing.Size(160, 80);
             this.shapeDiamond1.TabIndex = 7;
@@ -212,7 +201,7 @@
             // lanternAlarm1
             // 
             this.lanternAlarm1.CP_IsFlash = true;
-            this.lanternAlarm1.Location = new System.Drawing.Point(177, 12);
+            this.lanternAlarm1.Location = new System.Drawing.Point(213, 12);
             this.lanternAlarm1.Name = "lanternAlarm1";
             this.lanternAlarm1.Size = new System.Drawing.Size(80, 98);
             this.lanternAlarm1.TabIndex = 5;
@@ -234,14 +223,14 @@
             this.列2,
             this.列3});
             this.dataGridViewEx1.CP_ConfigPath = null;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEx1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEx1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEx1.Location = new System.Drawing.Point(316, 361);
             this.dataGridViewEx1.Name = "dataGridViewEx1";
             this.dataGridViewEx1.RowTemplate.Height = 23;
@@ -280,9 +269,9 @@
             this.checkBoxEx1.CP_UnCheckedFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.checkBoxEx1.CP_UnCheckedForeColor = System.Drawing.Color.Red;
             this.checkBoxEx1.CP_UnCheckedText = "没选中";
-            this.checkBoxEx1.Location = new System.Drawing.Point(295, 150);
+            this.checkBoxEx1.Location = new System.Drawing.Point(316, 150);
             this.checkBoxEx1.Name = "checkBoxEx1";
-            this.checkBoxEx1.Size = new System.Drawing.Size(104, 24);
+            this.checkBoxEx1.Size = new System.Drawing.Size(213, 24);
             this.checkBoxEx1.TabIndex = 2;
             this.checkBoxEx1.UseVisualStyleBackColor = true;
             // 
@@ -322,115 +311,11 @@
             this.cmlButtonEx2.TabIndex = 0;
             this.cmlButtonEx2.Text = "cmlButtonEx2";
             // 
-            // cmlPanelTitle1
-            // 
-            this.cmlPanelTitle1.CP_Title = "标题";
-            this.cmlPanelTitle1.Location = new System.Drawing.Point(276, 190);
-            this.cmlPanelTitle1.Name = "cmlPanelTitle1";
-            this.cmlPanelTitle1.Size = new System.Drawing.Size(228, 150);
-            this.cmlPanelTitle1.TabIndex = 13;
-            // 
-            // dgvTriggerParaRelationOBC
-            // 
-            this.dgvTriggerParaRelationOBC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTriggerParaRelationOBC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewLinkColumn11,
-            this.dataGridViewLinkColumn12,
-            this.dataGridViewTextBoxColumn26});
-            this.dgvTriggerParaRelationOBC.CP_ConfigPath = "";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTriggerParaRelationOBC.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTriggerParaRelationOBC.Location = new System.Drawing.Point(12, 22);
-            this.dgvTriggerParaRelationOBC.Name = "dgvTriggerParaRelationOBC";
-            this.dgvTriggerParaRelationOBC.RowHeadersWidth = 60;
-            this.dgvTriggerParaRelationOBC.RowTemplate.Height = 23;
-            this.dgvTriggerParaRelationOBC.Size = new System.Drawing.Size(723, 207);
-            this.dgvTriggerParaRelationOBC.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "参数名称";
-            this.dataGridViewTextBoxColumn22.MinimumWidth = 120;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn22.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.HeaderText = "DBC消息ID";
-            this.dataGridViewTextBoxColumn23.MinimumWidth = 100;
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.HeaderText = "DBC信号名";
-            this.dataGridViewTextBoxColumn24.MinimumWidth = 150;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn24.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn24.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.HeaderText = "触发数值";
-            this.dataGridViewTextBoxColumn25.MinimumWidth = 100;
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewLinkColumn11
-            // 
-            this.dataGridViewLinkColumn11.HeaderText = "";
-            this.dataGridViewLinkColumn11.LinkColor = System.Drawing.Color.Blue;
-            this.dataGridViewLinkColumn11.MinimumWidth = 50;
-            this.dataGridViewLinkColumn11.Name = "dataGridViewLinkColumn11";
-            this.dataGridViewLinkColumn11.ReadOnly = true;
-            this.dataGridViewLinkColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLinkColumn11.Text = "设置";
-            this.dataGridViewLinkColumn11.UseColumnTextForLinkValue = true;
-            this.dataGridViewLinkColumn11.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.dataGridViewLinkColumn11.Width = 50;
-            // 
-            // dataGridViewLinkColumn12
-            // 
-            this.dataGridViewLinkColumn12.HeaderText = "";
-            this.dataGridViewLinkColumn12.LinkColor = System.Drawing.Color.Blue;
-            this.dataGridViewLinkColumn12.MinimumWidth = 50;
-            this.dataGridViewLinkColumn12.Name = "dataGridViewLinkColumn12";
-            this.dataGridViewLinkColumn12.ReadOnly = true;
-            this.dataGridViewLinkColumn12.Text = "清除";
-            this.dataGridViewLinkColumn12.UseColumnTextForLinkValue = true;
-            this.dataGridViewLinkColumn12.VisitedLinkColor = System.Drawing.Color.Blue;
-            this.dataGridViewLinkColumn12.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.HeaderText = "参数属性";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn26.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn26.Visible = false;
-            // 
             // FormShowControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 549);
-            this.Controls.Add(this.dgvTriggerParaRelationOBC);
-            this.Controls.Add(this.cmlPanelTitle1);
             this.Controls.Add(this.cmlLanternRound1);
             this.Controls.Add(this.textBoxEx1);
             this.Controls.Add(this.tabControlEx1);
@@ -454,7 +339,6 @@
             this.Shown += new System.EventHandler(this.FormShowControl_Shown);
             this.tabControlEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEx1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTriggerParaRelationOBC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,14 +366,5 @@
         private CmlLanternRound cmlLanternRound1;
         private CmlButtonEx cmlButtonEx1;
         private CmlButtonEx cmlButtonEx2;
-        private CmlPanelTitle cmlPanelTitle1;
-        private CmlDataGridViewEx dgvTriggerParaRelationOBC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn11;
-        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
     }
 }

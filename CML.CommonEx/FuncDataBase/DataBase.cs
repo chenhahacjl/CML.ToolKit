@@ -286,10 +286,8 @@ namespace CML.CommonEx.DataBaseEx
         /// </summary>
         /// <param name="lstParameters">事务执行参数</param>
         /// <returns>是否提交成功</returns>
-        public bool CF_ExecuteTransaction(List<ModTransactionParameter> lstParameters)
+        public void CF_ExecuteTransaction(List<ModTransactionParameter> lstParameters)
         {
-            bool isResult = false;
-
             try
             {
                 if (m_iConn.State == ConnectionState.Broken || m_iConn.State == ConnectionState.Closed)
@@ -328,7 +326,6 @@ namespace CML.CommonEx.DataBaseEx
                 }
 
                 iTransaction.Commit();
-                isResult = true;
             }
             catch (Exception ex)
             {
@@ -340,8 +337,6 @@ namespace CML.CommonEx.DataBaseEx
                 if (CP_IsAutoCloseConn)
                     m_iConn.Close();
             }
-
-            return isResult;
         }
 
         /// <summary>

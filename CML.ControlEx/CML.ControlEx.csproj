@@ -130,9 +130,6 @@
     <Compile Include="CtrlOriginal\CmlLanternRound.Designer.cs">
       <DependentUpon>CmlLanternRound.cs</DependentUpon>
     </Compile>
-    <Compile Include="CtrlOriginal\CmlPanelTitle.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CtrlOriginal\CmlShapeDiamond.cs">
       <SubType>Component</SubType>
     </Compile>
