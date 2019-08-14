@@ -272,12 +272,20 @@ namespace CML.CommonEx.NetworkEx
                     if (webRequest.Method == ERequestMethod.POST)
                     {
                         StringBuilder postString = new StringBuilder();
-                        foreach (string key in webRequest.PostData.Keys)
+
+                        if (string.IsNullOrEmpty(webRequest.PostString))
                         {
-                            if (!string.IsNullOrEmpty(key))
+                            foreach (string key in webRequest.PostData.Keys)
                             {
-                                postString.Append($"{key}={ webRequest.PostData[key]}&");
+                                if (!string.IsNullOrEmpty(key))
+                                {
+                                    postString.Append($"{key}={ webRequest.PostData[key]}&");
+                                }
                             }
+                        }
+                        else
+                        {
+                            postString.Append(webRequest.PostString);
                         }
 
                         byte[] postData = Encoding.UTF8.GetBytes(postString.ToString().TrimEnd('&'));

@@ -36,8 +36,9 @@ namespace CML.ToolTest
             try
             {
                 dataBase.CF_InitDataBase();
+
                 object count = dataBase.CF_GetSingleObject("SELECT COUNT(*) FROM T_AGING_RESULT_INFO");
-                PrintLogLn(MsgType.Info, $"一共有{count}组老化数据！");
+                PrintLogLn(MsgType.Info, $"{count}");
             }
             catch (Exception ex)
             {

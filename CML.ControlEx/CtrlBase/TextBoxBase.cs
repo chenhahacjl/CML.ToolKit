@@ -158,7 +158,7 @@ namespace CML.ControlEx
         {
             if (!char.IsControl(e.KeyChar))
             {
-                if (e.KeyChar.ToString() == " ")
+                if (e.KeyChar.ToString() == " " && CP_InputType != EInputTypes.String)
                 {
                     e.Handled = true;
                     return;

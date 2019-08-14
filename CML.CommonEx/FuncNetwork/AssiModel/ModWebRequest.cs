@@ -71,7 +71,11 @@ namespace CML.CommonEx.NetworkEx
         public string Cookie { get; set; } = "";
 
         /// <summary>
-        /// POST传输信息
+        /// POST传输信息（优先使用PostString，再使用PostData）
+        /// </summary>
+        public string PostString { get; set; } = "";
+        /// <summary>
+        /// POST传输信息（优先使用PostString，再使用PostData）
         /// </summary>
         public Dictionary<string, string> PostData { get; set; } = new Dictionary<string, string>();
     }

@@ -3921,9 +3921,14 @@
             Cookie字符串
             </summary>
         </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostString">
+            <summary>
+            POST传输信息（优先使用PostString，再使用PostData）
+            </summary>
+        </member>
         <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostData">
             <summary>
-            POST传输信息
+            POST传输信息（优先使用PostString，再使用PostData）
             </summary>
         </member>
         <member name="T:CML.CommonEx.NetworkEx.VersionInfo">
