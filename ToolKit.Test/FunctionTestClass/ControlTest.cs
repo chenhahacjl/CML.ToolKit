@@ -1,7 +1,7 @@
 ﻿using CML.ControlEx;
 using System.Windows.Forms;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 控件测试类

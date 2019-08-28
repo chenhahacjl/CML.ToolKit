@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +55,10 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FuncPermissionControl\AssiModel\ModDiskPermission.cs" />
+    <Compile Include="FuncPermissionControl\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncPermissionControl\DiskControl.ExFunction.cs" />
+    <Compile Include="FuncPermissionControl\DiskControl.cs" />
     <Compile Include="FuncConfiguration\AssiEnum\ERegDomain.cs" />
     <Compile Include="FuncConfiguration\AssiEnum\ERegValueKind.cs" />
     <Compile Include="FuncConfiguration\AssiFileBase\IniFile.cs" />
@@ -184,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncEverything\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncPermissionControl\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

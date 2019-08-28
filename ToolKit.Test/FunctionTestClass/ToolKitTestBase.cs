@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 测试类基类

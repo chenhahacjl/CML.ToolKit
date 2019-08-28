@@ -4,7 +4,7 @@ using System;
 using System.Reflection;
 using System.Text;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 编码测试类

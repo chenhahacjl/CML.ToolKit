@@ -1,7 +1,7 @@
 ﻿using CML.CommonEx.FTPEx;
 using CML.CommonEx.FTPEx.ExFunction;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// FTP测试类

@@ -1,7 +1,7 @@
 ﻿using CML.CommonEx.RegexEx;
 using CML.CommonEx.RegexEx.ExFunction;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 正则表达式测试类

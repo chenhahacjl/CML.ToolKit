@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// 网络操作测试类

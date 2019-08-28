@@ -53,6 +53,7 @@
     <Compile Include="FunctionTestClass\FTPTest.cs" />
     <Compile Include="FunctionTestClass\IDNumberTest.cs" />
     <Compile Include="FunctionTestClass\NetworkTest.cs" />
+    <Compile Include="FunctionTestClass\PermissionControlTest.cs" />
     <Compile Include="FunctionTestClass\SingletonTest.cs" />
     <Compile Include="FunctionTestClass\RegexTest.cs" />
     <Compile Include="FunctionTestClass\EnumTest.cs" />

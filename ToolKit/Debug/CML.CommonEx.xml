@@ -4,6 +4,139 @@
         <name>CML.CommonEx</name>
     </assembly>
     <members>
+        <member name="T:CML.CommonEx.PermissionControlEx.ModDiskPermission">
+            <summary>
+            磁盘权限模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.ModDiskPermission.VerificationContent">
+            <summary>
+            验证内容
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.ModDiskPermission.EnableSerialNumberControl">
+            <summary>
+            启用磁盘序列号控制
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.ModDiskPermission.EnableModelControl">
+            <summary>
+            启用磁盘型号控制
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.ModDiskPermission.EnableVolumeLabelControl">
+            <summary>
+            启用卷标名控制
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.ModDiskPermission.VolumeLabel">
+            <summary>
+            卷标名（留空为不控制）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.ModDiskPermission.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="verificationContent">验证内容</param>
+        </member>
+        <member name="T:CML.CommonEx.PermissionControlEx.VersionInfo">
+            <summary>
+            常用工具包权限控制工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.PermissionControlEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.PermissionControlEx.DiskControl">
+            <summary>
+            磁盘权限控制
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.PermissionControlEx.DiskControl.m_ControlFolderPath">
+            <summary>
+            控制文件夹路径
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.PermissionControlEx.DiskControl.m_ControlFilePath">
+            <summary>
+            控制文件路径
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.PermissionControlEx.DiskControl.m_VolumeLabelFilePath">
+            <summary>
+            控制文件路径
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.DiskControl.CF_IsExistPermission(System.IO.DriveInfo)">
+            <summary>
+            检查是否设置磁盘权限
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <returns>检查结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.DiskControl.CF_SetPermission(System.IO.DriveInfo,CML.CommonEx.PermissionControlEx.ModDiskPermission,System.String@)">
+            <summary>
+            设置磁盘权限
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <param name="diskPermission">磁盘权限</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>设置结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.DiskControl.CF_CheckPermission(CML.CommonEx.PermissionControlEx.ModDiskPermission,System.String@)">
+            <summary>
+            检查磁盘权限
+            </summary>
+            <param name="diskPermission">磁盘权限</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检查结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.DiskControl.CF_ClearPermission(System.IO.DriveInfo,System.String@)">
+            <summary>
+            清除磁盘权限
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>清除结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.DiskControl.GetSerialNumber(System.IO.DriveInfo)">
+            <summary>
+            获取磁盘序列号
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <returns>磁盘序列号</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.DiskControl.GetModel(System.IO.DriveInfo)">
+            <summary>
+            获取磁盘型号
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <returns>磁盘型号</returns>
+        </member>
         <member name="T:CML.CommonEx.ConfigurationEx.ERegDomain">
             <summary>
             注册表基项静态域

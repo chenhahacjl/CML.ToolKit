@@ -1,7 +1,7 @@
 ﻿using CML.CommonEx.DataBaseEx;
 using System;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 数据库测试类

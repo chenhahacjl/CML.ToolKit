@@ -1,7 +1,7 @@
 ﻿using CML.SocketEx;
 using System.Threading;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// Socket服务端测试类

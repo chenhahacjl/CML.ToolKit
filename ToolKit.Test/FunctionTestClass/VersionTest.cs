@@ -1,7 +1,7 @@
 ﻿using CML.CommonEx.VersionEx;
 using System;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// 版本控制测试类

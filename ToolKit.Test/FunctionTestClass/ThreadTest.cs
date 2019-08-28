@@ -1,6 +1,6 @@
 ﻿using CML.CommonEx.ThreadEx;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// 线程操作测试类

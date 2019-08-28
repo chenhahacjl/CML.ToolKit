@@ -3,7 +3,7 @@ using CML.CommonEx.UIAutomationEx.ExFunction;
 using System.Diagnostics;
 using System.Windows.Automation;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// UI自动化操作测试类

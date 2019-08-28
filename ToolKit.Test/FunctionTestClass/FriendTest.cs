@@ -1,6 +1,6 @@
 ﻿using CML.EntertainmentEx.FriendEx;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// 朋友游戏测试类

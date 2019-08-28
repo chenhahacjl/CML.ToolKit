@@ -2,7 +2,7 @@
 using CML.CommonEx.IDNumberEx.ExFunction;
 using CML.CommonEx.EnumEx.ExFunction;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 身份证号操作测试类

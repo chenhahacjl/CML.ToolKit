@@ -2,7 +2,7 @@
 using CML.CommonEx.EnumEx.ExFunction;
 using System.ComponentModel;
 
-namespace CML.ToolTest
+namespace ToolKit.Test
 {
     /// <summary>
     /// 枚举操作测试类

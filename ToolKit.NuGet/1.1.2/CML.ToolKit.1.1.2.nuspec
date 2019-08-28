@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata>
+    <id>CML.ToolKit</id>
+    <version>1.1.2</version>
+    <title>CML ToolKit</title>
+    <authors>Cmile_96</authors>
+    <owners>Cmile_96</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/chenhahacjl/CML.ToolKit</projectUrl>
+    <iconUrl>https://www.easyicon.net/api/resizeApi.php?id=1118017&amp;size=128</iconUrl>
+    <description>CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、配置操作、加密解密、数据库操作等功能。
+
+【开发环境】
+* Language: C# 7.1
+* IDE: Visual Studio 2019
+* Framework: .Net Framework 4.0</description>
+    <summary>CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、配置操作、加密解密、数据库操作等功能。
+
+【开发环境】
+* Language: C# 7.1
+* IDE: Visual Studio 2019
+* Framework: .Net Framework 4.0</summary>
+    <releaseNotes>【1.1.2】
+1.增加磁盘权限控制功能。
+
+【1.1.1】
+1.修复TextBox控件在String模式下无法输入空格问题；
+2.增加POST请求中传输数据为字符串的参数。
+
+【1.1.0】
+1.修改模型命名方式从Model至Mod；
+2.修改事务执行返回值为void；
+3.删除PanelTitle控件。
+
+【1.0.12】
+1.修改与增加MD5加密方法；
+2.修改与增加DES加密解密方法；
+3.增加3DES加密解密操作类；
+4.增加AES加密解密操作类。
+
+【1.0.11】
+1.增加FTP操作类文件上传、下载限速功能；
+2.增加Everything搜索操作类。
+
+【1.0.10】
+1.增加Download操作类POST请求方法的支持；
+2.修复身份证号操作类搜索未收录行政区编号时报错BUG。
+
+【1.0.9】
+1.优化DataGridView的行号显示；
+2.修复DataGridView插入、删除行时行号错误BUG；
+3.修复DataGridView右键复制提示参数为空的BUG；
+4.删除包含的数据库DLL文件。
+
+*若需使用数据库操作类，请根据需要自行引用MySql.Data与Oracle.ManagedDataAccess的NuGet项目或dll文件。
+
+【1.0.8】
+1.增加FTP操作类。
+
+【1.0.7】
+1.优化数据库操作依赖文件检测功能；
+2.将数据库依赖文件当作资源文件嵌入项目。
+
+【1.0.6】
+1.增加身份证信息解析类；
+2.扩展方法类名末尾增加EF。
+
+【1.0.5】
+1.优化扩展方法；
+2.增加UserAgent帮助类；
+3.优化网页请求模型；
+4.移除UIAutomation相关引用；
+5.移除娱乐包与软件包。
+
+【1.0.4】
+1.增加下载帮助类；
+2.修复DataGridView在排序时行号错误问题。
+
+【1.0.3】
+1.增加单实例类基类。
+
+【1.0.2】
+1.增加读取INI文件所有节点名称功能；
+2.增加读取INI文件所有键名功能。
+
+【1.0.1】
+1.UI自动化操作类增加延时方法；
+2.增加正则表达式操作类；
+3.分离扩展方法，须在命名空间后面加上.ExFunction才能使用。
+
+【1.0.0】
+1.增加一些枚举操作功能；
+2.增加扩展方法。
+
+【1.0.0-beta】
+1.增加增加UI自动化操作库。</releaseNotes>
+    <copyright>Copyright (C) 2019 Cmile_96, All Rights Reserved.</copyright>
+    <language>zh-CN</language>
+    <tags>CML, ToolKit, C#, WinForm</tags>
+    <serviceable>true</serviceable>
+    <references>
+      <group targetFramework=".NETFramework4.0">
+        <reference file="CML.CommonEx.dll" />
+        <reference file="CML.ControlEx.dll" />
+      </group>
+    </references>
+  </metadata>
+  <files>
+    <file src="lib\net40\CML.CommonEx.dll" target="lib\net40\CML.CommonEx.dll" />
+    <file src="lib\net40\CML.CommonEx.xml" target="lib\net40\CML.CommonEx.xml" />
+    <file src="lib\net40\CML.ControlEx.dll" target="lib\net40\CML.ControlEx.dll" />
+    <file src="lib\net40\CML.ControlEx.xml" target="lib\net40\CML.ControlEx.xml" />
+    <file src="readme.txt" target="readme.txt" />
+  </files>
+</package>

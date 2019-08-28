@@ -1,6 +1,6 @@
 ﻿using CML.CommonEx.SingletonEx;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// 单实例测试类
@@ -18,7 +18,7 @@ namespace CML.ToolTest.FunctionTestClass
         public override void CF_GetVersionInfo()
         {
             PrintMsgLn(MsgType.Success, "⊙日志信息⊙");
-            PrintMsgLn(MsgType.Info, new CommonEx.SingletonEx.VersionInfo().CF_GetVersionInfo());
+            PrintMsgLn(MsgType.Info, new VersionInfo().CF_GetVersionInfo());
         }
 
         /// <summary>

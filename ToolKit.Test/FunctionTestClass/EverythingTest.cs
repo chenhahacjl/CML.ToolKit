@@ -1,7 +1,7 @@
 ﻿using CML.CommonEx.EverythingEx;
 using System;
 
-namespace CML.ToolTest.FunctionTestClass
+namespace ToolKit.Test
 {
     /// <summary>
     /// Everything软件搜索测试类
