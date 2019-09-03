@@ -1,5 +1,6 @@
 ﻿using CML.CommonEx.EnumEx.ExFunction;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -80,43 +81,49 @@ namespace CML.CommonEx.NetworkEx
 
                 if (string.IsNullOrEmpty(errMsg))
                 {
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    //判断是否限速
+                    ModHttpTransSpeed transmissionSpeed = webRequest.DownloadSpeed;
+                    if (transmissionSpeed.EnableLimit)
                     {
-                        ModTransmissionSpeed transmissionSpeed = webRequest.DownloadSpeed;
-                        if (transmissionSpeed.EnableLimit)
+                        //数据列表
+                        List<byte> lstBytes = new List<byte>();
+
+                        //缓存字节数
+                        int bufferSize = transmissionSpeed.Speed * (int)Math.Pow(2, transmissionSpeed.Unit.CF_ToNumber());
+                        //缓存
+                        byte[] btBuffer = new byte[bufferSize];
+
+                        //读取的字节数
+                        int readSize = stream.Read(btBuffer, 0, bufferSize);
+                        while (readSize > 0)
                         {
-                            //缓存字节数
-                            int bufferSize = transmissionSpeed.Speed * (int)Math.Pow(2, transmissionSpeed.Unit.CF_ToNumber());
-                            //缓存
-                            byte[] btBuffer = new byte[bufferSize];
+                            //从服务器读取
+                            stream.Read(btBuffer, 0, readSize);
+                            //记入列表
+                            lstBytes.AddRange(btBuffer);
 
-                            //读取的字节数
-                            int readSize = stream.Read(btBuffer, 0, bufferSize);
-                            while (readSize > 0)
+                            readSize = stream.Read(btBuffer, 0, bufferSize);
+
+                            //延时
+                            if (readSize > 0)
                             {
-                                //写入服务器
-                                memoryStream.Write(btBuffer, 0, readSize);
-
-                                readSize = stream.Read(btBuffer, 0, bufferSize);
-
-                                //延时
-                                if (readSize > 0)
-                                {
-                                    Thread.Sleep(transmissionSpeed.Delay);
-                                }
+                                Thread.Sleep(transmissionSpeed.Delay);
                             }
                         }
-                        else
-                        {
-                            stream.CopyTo(memoryStream);
-                        }
 
-                        using (StreamReader streamReader = new StreamReader(memoryStream, encoding))
+                        //转化为字符串
+                        result = encoding.GetString(lstBytes.ToArray());
+                    }
+                    else
+                    {
+                        using (StreamReader streamReader = new StreamReader(stream, encoding))
                         {
                             result = streamReader.ReadToEnd();
                         }
                     }
                 }
+
+                stream.Close();
             }
             catch (Exception ex)
             {
@@ -130,55 +137,58 @@ namespace CML.CommonEx.NetworkEx
         /// <summary>
         /// 上传文件
         /// </summary>
-        /// <param name="filePath">文件路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_UploadFile(string filePath, ModWebRequest webRequest, out string errMsg)
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, out string errMsg)
         {
-            return CF_UploadFile(filePath, webRequest, null, out _, out errMsg);
+            return CF_UploadFile(webRequest, filePath, null, out _, out errMsg);
         }
 
         /// <summary>
         /// 上传文件
         /// </summary>
-        /// <param name="filePath">文件路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_UploadFile(string filePath, ModWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out string errMsg)
         {
-            return CF_UploadFile(filePath, webRequest, requestCookie, out _, out errMsg);
+            return CF_UploadFile(webRequest, filePath, requestCookie, out _, out errMsg);
         }
 
         /// <summary>
         /// 上传文件
         /// </summary>
-        /// <param name="filePath">文件路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
         /// <param name="responseCookie">响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_UploadFile(string filePath, ModWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, out CookieContainer responseCookie, out string errMsg)
         {
-            return CF_UploadFile(filePath, webRequest, null, out responseCookie, out errMsg);
+            return CF_UploadFile(webRequest, filePath, null, out responseCookie, out errMsg);
         }
 
         /// <summary>
         /// 上传文件
         /// </summary>
-        /// <param name="filePath">文件路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="responseCookie">响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_UploadFile(string filePath, ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
             bool result = false;
 
-            if (!File.Exists(filePath))
+            //本地文件
+            FileInfo file = new FileInfo(filePath);
+
+            if (!file.Exists)
             {
                 result = false;
                 responseCookie = null;
@@ -188,10 +198,33 @@ namespace CML.CommonEx.NetworkEx
             {
                 try
                 {
-                    webRequest.PostBytes = File.ReadAllBytes(filePath);
-                    Stream stream = CF_GetWebStream(webRequest, requestCookie, out responseCookie, out errMsg);
+                    // 随机分隔线
+                    string boundary = "CML.ToolKit.NetworkEx." + DateTime.Now.Ticks.ToString("X");
 
-                    result = true;
+                    //请求头
+                    string strPostHeader =
+                         $"--{boundary}\r\n" +
+                         $"Content-Disposition: form-data; name=\"file\"; filename=\"{file.Name}\"\r\n" +
+                         $"Content-Type: application/octet-stream\r\n\r\n";
+
+                    //请求尾
+                    string strPostEnder = $"\r\n--{boundary}--\r\n";
+
+                    //请求数据
+                    List<byte> bytePostData = new List<byte>();
+                    bytePostData.AddRange(Encoding.ASCII.GetBytes(strPostHeader));
+                    bytePostData.AddRange(File.ReadAllBytes(file.FullName));
+                    bytePostData.AddRange(Encoding.ASCII.GetBytes(strPostEnder));
+
+                    //构造请求信息模型
+                    webRequest.ContentType = $"multipart/form-data;boundary={boundary}";
+                    webRequest.PostBytes = bytePostData.ToArray();
+                    webRequest.Method = ERequestMethod.POST;
+
+                    using (Stream stream = CF_GetWebStream(webRequest, requestCookie, out responseCookie, out errMsg))
+                    {
+                        result = stream != null;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -206,51 +239,51 @@ namespace CML.CommonEx.NetworkEx
         /// <summary>
         /// 下载文件
         /// </summary>
-        /// <param name="savePath">保存路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="savePath">保存路径</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(string savePath, ModWebRequest webRequest, out string errMsg)
+        public static bool CF_DownloadFile(ModWebRequest webRequest, string savePath, out string errMsg)
         {
-            return CF_DownloadFile(savePath, webRequest, null, out CookieContainer _, out errMsg);
+            return CF_DownloadFile(webRequest, savePath, null, out CookieContainer _, out errMsg);
         }
 
         /// <summary>
         /// 下载文件
         /// </summary>
-        /// <param name="savePath">保存路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="savePath">保存路径</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(string savePath, ModWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
+        public static bool CF_DownloadFile(ModWebRequest webRequest, string savePath, CookieContainer requestCookie, out string errMsg)
         {
-            return CF_DownloadFile(savePath, webRequest, requestCookie, out CookieContainer _, out errMsg);
+            return CF_DownloadFile(webRequest, savePath, requestCookie, out CookieContainer _, out errMsg);
         }
 
         /// <summary>
         /// 下载文件
         /// </summary>
-        /// <param name="savePath">保存路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="savePath">保存路径</param>
         /// <param name="responseCookie">响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(string savePath, ModWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_DownloadFile(ModWebRequest webRequest, string savePath, out CookieContainer responseCookie, out string errMsg)
         {
-            return CF_DownloadFile(savePath, webRequest, null, out responseCookie, out errMsg);
+            return CF_DownloadFile(webRequest, savePath, null, out responseCookie, out errMsg);
         }
 
         /// <summary>
         /// 下载文件
         /// </summary>
-        /// <param name="savePath">保存路径</param>
         /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="savePath">保存路径</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="responseCookie">响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_DownloadFile(string savePath, ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_DownloadFile(ModWebRequest webRequest, string savePath, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
             bool result = false;
 
@@ -262,7 +295,7 @@ namespace CML.CommonEx.NetworkEx
                 {
                     using (FileStream fileStream = new FileStream(savePath, FileMode.Create))
                     {
-                        ModTransmissionSpeed transmissionSpeed = webRequest.DownloadSpeed;
+                        ModHttpTransSpeed transmissionSpeed = webRequest.DownloadSpeed;
                         if (transmissionSpeed.EnableLimit)
                         {
                             //缓存字节数
@@ -443,7 +476,7 @@ namespace CML.CommonEx.NetworkEx
                         httpWebRequest.ContentLength = postData.Length;
                         using (Stream requestStream = httpWebRequest.GetRequestStream())
                         {
-                            ModTransmissionSpeed transmissionSpeed = webRequest.UploadSpeed;
+                            ModHttpTransSpeed transmissionSpeed = webRequest.UploadSpeed;
                             if (transmissionSpeed.EnableLimit)
                             {
                                 //单次发送字节数

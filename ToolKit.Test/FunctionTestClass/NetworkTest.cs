@@ -1,9 +1,5 @@
 ﻿using CML.CommonEx.NetworkEx;
 using CML.CommonEx.NetworkEx.ExFunction;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
 
 namespace ToolKit.Test
 {
@@ -34,18 +30,52 @@ namespace ToolKit.Test
             ModWebRequest modelWebRequest = new ModWebRequest()
             {
                 RequestUrl = "https://www.baidu.com",
-                TimeOut = 5000
+                TimeOut = 5000,
             };
 
             string html = modelWebRequest.CF_GetHtmlCode(out string errMsg);
             if (string.IsNullOrEmpty(errMsg))
             {
-                PrintMsgLn(MsgType.Info, html);
-                PrintLogLn(MsgType.Success, $"HTML代码获取成功！");
+                PrintLogLn(MsgType.Success, $"HTML代码获取成功: {html.Length}");
             }
             else
             {
-                PrintLogLn(MsgType.Success, $"HTML代码获取失败: {errMsg}");
+                PrintLogLn(MsgType.Error, $"HTML代码获取失败: {errMsg}");
+            }
+
+            modelWebRequest = new ModWebRequest()
+            {
+                RequestUrl = "http://192.168.40.161:8001/TEST.txt",
+                TimeOut = 5000,
+            };
+
+            bool rlt = modelWebRequest.CF_DownloadFile(@"E:\Test_1.txt", out errMsg);
+            if (rlt)
+            {
+                PrintLogLn(MsgType.Success, $"文件下载成功！");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, $"文件下载失败: {errMsg}");
+            }
+
+            modelWebRequest = new ModWebRequest()
+            {
+                RequestUrl = "http://192.168.40.161:280/IIS_UpdateSlotion/",
+                TimeOut = 5000
+            };
+
+            rlt = modelWebRequest.CF_UploadFile(
+                @"C:\Users\admin\Desktop\TEST_2.txt",
+                out errMsg
+            );
+            if (rlt)
+            {
+                PrintLogLn(MsgType.Success, $"文件上传成功！");
+            }
+            else
+            {
+                PrintLogLn(MsgType.Error, $"文件上传失败: {errMsg}");
             }
         }
     }

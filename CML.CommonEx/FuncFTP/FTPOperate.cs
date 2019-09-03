@@ -262,7 +262,7 @@ namespace CML.CommonEx.FTPEx
                                 {
                                     using (FileStream fileStream = new FileStream(file.FullName, FileMode.Open, FileAccess.Read))
                                     {
-                                        ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.UploadSpeed;
+                                        ModFtpTransSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.UploadSpeed;
                                         if (transmissionSpeed.EnableLimit)
                                         {
                                             //缓存字节数
@@ -371,7 +371,7 @@ namespace CML.CommonEx.FTPEx
                             {
                                 using (FileStream fileStream = new FileStream(file.FullName, FileMode.Create, FileAccess.Write))
                                 {
-                                    ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.DownloadSpeed;
+                                    ModFtpTransSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.DownloadSpeed;
                                     if (transmissionSpeed.EnableLimit)
                                     {
                                         //缓存字节数

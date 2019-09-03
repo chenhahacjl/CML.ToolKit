@@ -1,9 +1,9 @@
-﻿namespace CML.CommonEx.NetworkEx
+﻿namespace CML.CommonEx.FTPEx
 {
     /// <summary>
     /// 传输速率单位
     /// </summary>
-    public enum ESpeedUnit
+    public enum EFtpSpeedUnit
     {
         /// <summary>
         /// 字节
@@ -17,13 +17,5 @@
         /// 兆字节（2^20 Byte）
         /// </summary>
         MB = 20,
-        /// <summary>
-        /// 吉字节（2^30 Byte）
-        /// </summary>
-        GB = 30,
-        /// <summary>
-        /// 太字节（2^40 Byte）
-        /// </summary>
-        TB = 40,
     }
 }

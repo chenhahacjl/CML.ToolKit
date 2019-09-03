@@ -30,12 +30,12 @@ namespace CML.CommonEx.FTPEx
         /// <summary>
         /// 上传限速（上传时使用）
         /// </summary>
-        public ModTransmissionSpeed UploadSpeed { get; set; } = new ModTransmissionSpeed();
+        public ModFtpTransSpeed UploadSpeed { get; set; } = new ModFtpTransSpeed();
 
         /// <summary>
         /// 下载限速（下载时使用）
         /// </summary>
-        public ModTransmissionSpeed DownloadSpeed { get; set; } = new ModTransmissionSpeed();
+        public ModFtpTransSpeed DownloadSpeed { get; set; } = new ModFtpTransSpeed();
 
         /// <summary>
         /// 构造函数（默认构造）

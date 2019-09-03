@@ -73,11 +73,11 @@ namespace CML.CommonEx.NetworkEx
         /// <summary>
         /// 上传限速
         /// </summary>
-        public ModTransmissionSpeed UploadSpeed { get; set; } = new ModTransmissionSpeed();
+        public ModHttpTransSpeed UploadSpeed { get; set; } = new ModHttpTransSpeed();
         /// <summary>
         /// 下载限速
         /// </summary>
-        public ModTransmissionSpeed DownloadSpeed { get; set; } = new ModTransmissionSpeed();
+        public ModHttpTransSpeed DownloadSpeed { get; set; } = new ModHttpTransSpeed();
 
         /// <summary>
         /// POST传输信息（优先级: PostBytes->PostString->PostDictionary）

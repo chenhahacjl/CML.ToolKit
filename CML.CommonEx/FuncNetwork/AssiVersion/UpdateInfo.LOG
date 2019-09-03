@@ -1,4 +1,8 @@
-﻿【1.4 - 19Y005R001】 2019年09月03日 10:15
+﻿【1.5 - 19Y006R001】 2019年09月03日 13:20
+1.修复文件无法上传上传BUG；
+2.修复无法获取HTML代码BUG。
+
+【1.4 - 19Y005R001】 2019年09月03日 10:15
 1.修改DownloadOperate类名为NetworkOperate；
 2.修改NetworkOperateEF类名为NetworkOperateEF；
 3.增加文件上传功能（未测试）。

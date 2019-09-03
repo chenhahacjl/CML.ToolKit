@@ -11,15 +11,15 @@ namespace CML.CommonEx.NetworkEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string CP_VerMain => "1.3";
+        public override string CP_VerMain => "1.5";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y004R001";
+        public override string CP_VerDev => "19Y006R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string CP_VerDate => "2019年8月14日 14:30";
+        public override string CP_VerDate => "2019年09月03日 13:20";
         /// <summary>
         /// 当前程序集 
         /// </summary>

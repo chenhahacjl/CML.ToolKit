@@ -55,8 +55,8 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FuncNetwork\AssiEnum\ESpeedUnit.cs" />
-    <Compile Include="FuncNetwork\AssiModel\ModTransmissionSpeed.cs" />
+    <Compile Include="FuncNetwork\AssiEnum\EHttpSpeedUnit.cs" />
+    <Compile Include="FuncNetwork\AssiModel\ModHttpTransSpeed.cs" />
     <Compile Include="FuncPermissionControl\AssiModel\ModDiskPermission.cs" />
     <Compile Include="FuncPermissionControl\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncPermissionControl\DiskControl.ExFunction.cs" />
@@ -107,13 +107,13 @@
     <Compile Include="FuncEverything\EverythingOperate.cs" />
     <Compile Include="FuncFTP\AssiEnum\EExistence.cs" />
     <Compile Include="FuncFTP\AssiEnum\ERequestMethod.cs" />
-    <Compile Include="FuncFTP\AssiEnum\ESpeedUnit.cs" />
+    <Compile Include="FuncFTP\AssiEnum\EFtpSpeedUnit.cs" />
     <Compile Include="FuncFTP\AssiModel\ModFileStruct.cs" />
     <Compile Include="FuncFTP\AssiModel\ModFtpReqInfo.cs" />
     <Compile Include="FuncFTP\AssiModel\ModFtpInfomation.cs" />
     <Compile Include="FuncFTP\AssiModel\ModFtpExtendInfo.cs" />
     <Compile Include="FuncFTP\AssiModel\ModProxy.cs" />
-    <Compile Include="FuncFTP\AssiModel\ModTransmissionSpeed.cs" />
+    <Compile Include="FuncFTP\AssiModel\ModFtpTransSpeed.cs" />
     <Compile Include="FuncFTP\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncFTP\FTPOperate.ExFunction.cs" />
     <Compile Include="FuncFTP\FTPOperate.cs" />

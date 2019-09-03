@@ -4,6 +4,608 @@
         <name>CML.CommonEx</name>
     </assembly>
     <members>
+        <member name="T:CML.CommonEx.NetworkEx.EHttpSpeedUnit">
+            <summary>
+            传输速率单位
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.EHttpSpeedUnit.Byte">
+            <summary>
+            字节
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.EHttpSpeedUnit.KB">
+            <summary>
+            千字节（2^10 Byte）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.EHttpSpeedUnit.MB">
+            <summary>
+            兆字节（2^20 Byte）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.EHttpSpeedUnit.GB">
+            <summary>
+            吉字节（2^30 Byte）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.EHttpSpeedUnit.TB">
+            <summary>
+            太字节（2^40 Byte）
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.ModHttpTransSpeed">
+            <summary>
+            传输速率模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModHttpTransSpeed.Speed">
+            <summary>
+            传输速率值（数值大于0时启用）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModHttpTransSpeed.Unit">
+            <summary>
+            传输速率单位
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModHttpTransSpeed.Delay">
+            <summary>
+            传输间隔毫秒数（默认为100MS）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModHttpTransSpeed.EnableLimit">
+            <summary>
+            是否启用限速
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ModHttpTransSpeed.#ctor">
+            <summary>
+            默认构造函数（不限速）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ModHttpTransSpeed.#ctor(System.Int32,CML.CommonEx.NetworkEx.EHttpSpeedUnit)">
+            <summary>
+            构造函数（默认延时100MS）
+            </summary>
+            <param name="speed">传输速率值（数值大于0时启用）</param>
+            <param name="unit">传输速率单位</param>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ModHttpTransSpeed.#ctor(System.Int32,CML.CommonEx.NetworkEx.EHttpSpeedUnit,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="speed">传输速率值（数值大于0时启用）</param>
+            <param name="unit">传输速率单位</param>
+            <param name="delay">传输间隔毫秒数</param>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.ERequestMethod">
+            <summary>
+            HTTP请求方式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.ERequestMethod.GET">
+            <summary>
+            GET方式
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.NetworkEx.ERequestMethod.POST">
+            <summary>
+            POST方式
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.ModProxy">
+            <summary>
+            代理模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Enable">
+            <summary>
+            是否启用代理
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Host">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ModProxy.#ctor">
+            <summary>
+            默认构造函数（不启用代理）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ModProxy.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数（启用代理）
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.ModWebRequest">
+            <summary>
+            WEB请求模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.RequestUrl">
+            <summary>
+            请求网址
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.KeepAlive">
+            <summary>
+             请求完成之后是否保持连接（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.AllowAutoRedirect">
+            <summary>
+             允许自动重定向（默认false）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Proxy">
+            <summary>
+            代理（默认不开启）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.TimeOut">
+            <summary>
+            超时时间（毫秒，默认1000毫秒）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Method">
+            <summary>
+            请求方式（默认GET）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.ProtocolVersion">
+            <summary>
+            HTTP版本（默认Version10）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Host">
+            <summary>
+            HTTP的Host请求头
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Accept">
+            <summary>
+            HTTP的Accept请求头
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Referer">
+            <summary>
+            HTTP的Referer请求头
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.UserAgent">
+            <summary>
+            HTTP的UserAgent请求头
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.ContentType">
+            <summary>
+            HTTP的ContentType请求头
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Headers">
+            <summary>
+            HTTP的请求头
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Cookie">
+            <summary>
+            Cookie字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.UploadSpeed">
+            <summary>
+            上传限速
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.DownloadSpeed">
+            <summary>
+            下载限速
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostBytes">
+            <summary>
+            POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostString">
+            <summary>
+            POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostDictionary">
+            <summary>
+            POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.VersionInfo">
+            <summary>
+            常用工具包网络操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF">
+            <summary>
+            网络操作类(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
+            <summary>
+            获取HTML代码（UTF-8 编码）
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">[OUT]响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.NetworkOperate">
+            <summary>
+            网络操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
+            <summary>
+            获取HTML代码（UTF-8 编码）
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取HTML代码
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="encoding">编码方式</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>HTML代码</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_DownloadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="savePath">保存路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+            <summary>
+            获取数据流
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>数据流</returns>
+        </member>
+        <member name="T:CML.CommonEx.NetworkEx.UserAgentHelper">
+            <summary>
+            UserAgent帮助类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.UserAgentHelper.CF_GetUserAgents">
+            <summary>
+            获取随机UserAgent
+            </summary>
+            <returns>UserAgent</returns>
+        </member>
         <member name="T:CML.CommonEx.PermissionControlEx.ModDiskPermission">
             <summary>
             磁盘权限模型
@@ -70,6 +672,43 @@
             获得版本信息
             </summary>
             <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.PermissionControlEx.ExFunction.DiskControlEF">
+            <summary>
+            磁盘权限控制(扩展方法)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.ExFunction.DiskControlEF.CF_IsExistPermission(System.IO.DriveInfo)">
+            <summary>
+            检查是否设置磁盘权限
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <returns>检查结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.ExFunction.DiskControlEF.CF_SetPermission(System.IO.DriveInfo,CML.CommonEx.PermissionControlEx.ModDiskPermission,System.String@)">
+            <summary>
+            设置磁盘权限
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <param name="diskPermission">磁盘权限</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>设置结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.ExFunction.DiskControlEF.CF_CheckPermission(CML.CommonEx.PermissionControlEx.ModDiskPermission,System.String@)">
+            <summary>
+            检查磁盘权限
+            </summary>
+            <param name="diskPermission">磁盘权限</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>检查结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.PermissionControlEx.ExFunction.DiskControlEF.CF_ClearPermission(System.IO.DriveInfo,System.String@)">
+            <summary>
+            清除磁盘权限
+            </summary>
+            <param name="driveInfo">磁盘信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>清除结果</returns>
         </member>
         <member name="T:CML.CommonEx.PermissionControlEx.DiskControl">
             <summary>
@@ -2901,22 +3540,22 @@
             <param name="ftpRequestMethod"></param>
             <returns>协议字符串</returns>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ESpeedUnit">
+        <member name="T:CML.CommonEx.FTPEx.EFtpSpeedUnit">
             <summary>
             传输速率单位
             </summary>
         </member>
-        <member name="F:CML.CommonEx.FTPEx.ESpeedUnit.Byte">
+        <member name="F:CML.CommonEx.FTPEx.EFtpSpeedUnit.Byte">
             <summary>
             字节
             </summary>
         </member>
-        <member name="F:CML.CommonEx.FTPEx.ESpeedUnit.KB">
+        <member name="F:CML.CommonEx.FTPEx.EFtpSpeedUnit.KB">
             <summary>
             千字节（2^10 Byte）
             </summary>
         </member>
-        <member name="F:CML.CommonEx.FTPEx.ESpeedUnit.MB">
+        <member name="F:CML.CommonEx.FTPEx.EFtpSpeedUnit.MB">
             <summary>
             兆字节（2^20 Byte）
             </summary>
@@ -2986,9 +3625,14 @@
             目标文件名（重命名时使用）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.TransmissionSpeed">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.UploadSpeed">
             <summary>
-            传输限速（上传、下载时使用）
+            上传限速（上传时使用）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.FTPEx.ModFtpReqInfo.DownloadSpeed">
+            <summary>
+            下载限速（下载时使用）
             </summary>
         </member>
         <member name="M:CML.CommonEx.FTPEx.ModFtpReqInfo.#ctor">
@@ -3196,44 +3840,44 @@
             <param name="host"></param>
             <param name="port"></param>
         </member>
-        <member name="T:CML.CommonEx.FTPEx.ModTransmissionSpeed">
+        <member name="T:CML.CommonEx.FTPEx.ModFtpTransSpeed">
             <summary>
             传输速率模型
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.Speed">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpTransSpeed.Speed">
             <summary>
             传输速率值（数值大于0时启用）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.Unit">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpTransSpeed.Unit">
             <summary>
             传输速率单位
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.Delay">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpTransSpeed.Delay">
             <summary>
             传输间隔毫秒数（默认为100MS）
             </summary>
         </member>
-        <member name="P:CML.CommonEx.FTPEx.ModTransmissionSpeed.EnableLimit">
+        <member name="P:CML.CommonEx.FTPEx.ModFtpTransSpeed.EnableLimit">
             <summary>
             是否启用限速
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModTransmissionSpeed.#ctor">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpTransSpeed.#ctor">
             <summary>
             默认构造函数（不限速）
             </summary>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModTransmissionSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.ESpeedUnit)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpTransSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.EFtpSpeedUnit)">
             <summary>
             构造函数（默认延时100MS）
             </summary>
             <param name="speed">传输速率值（数值大于0时启用）</param>
             <param name="unit">传输速率单位</param>
         </member>
-        <member name="M:CML.CommonEx.FTPEx.ModTransmissionSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.ESpeedUnit,System.Int32)">
+        <member name="M:CML.CommonEx.FTPEx.ModFtpTransSpeed.#ctor(System.Int32,CML.CommonEx.FTPEx.EFtpSpeedUnit,System.Int32)">
             <summary>
             构造函数
             </summary>
@@ -3931,438 +4575,6 @@
             </summary>
             <param name="idNumber">身份证号模型</param>
             <returns>星座</returns>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.ERequestMethod">
-            <summary>
-            HTTP请求方式
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.NetworkEx.ERequestMethod.GET">
-            <summary>
-            GET方式
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.NetworkEx.ERequestMethod.POST">
-            <summary>
-            POST方式
-            </summary>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.ModProxy">
-            <summary>
-            代理模型
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Enable">
-            <summary>
-            是否启用代理
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Host">
-            <summary>
-            主机
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModProxy.Port">
-            <summary>
-            端口
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ModProxy.#ctor">
-            <summary>
-            默认构造函数（不启用代理）
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ModProxy.#ctor(System.String,System.Int32)">
-            <summary>
-            构造函数（启用代理）
-            </summary>
-            <param name="host"></param>
-            <param name="port"></param>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.ModWebRequest">
-            <summary>
-            WEB请求模型
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.RequestUrl">
-            <summary>
-            请求网址
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.KeepAlive">
-            <summary>
-             请求完成之后是否保持连接（默认false）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.AllowAutoRedirect">
-            <summary>
-             允许自动重定向（默认false）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Proxy">
-            <summary>
-            代理（默认不开启）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.TimeOut">
-            <summary>
-            超时时间（毫秒，默认1000毫秒）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Method">
-            <summary>
-            请求方式（默认GET）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.ProtocolVersion">
-            <summary>
-            HTTP版本（默认Version10）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Host">
-            <summary>
-            HTTP的Host请求头
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Accept">
-            <summary>
-            HTTP的Accept请求头
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Referer">
-            <summary>
-            HTTP的Referer请求头
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.UserAgent">
-            <summary>
-            HTTP的UserAgent请求头
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.ContentType">
-            <summary>
-            HTTP的ContentType请求头
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Headers">
-            <summary>
-            HTTP的请求头
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Cookie">
-            <summary>
-            Cookie字符串
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostString">
-            <summary>
-            POST传输信息（优先使用PostString，再使用PostData）
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostData">
-            <summary>
-            POST传输信息（优先使用PostString，再使用PostData）
-            </summary>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.VersionInfo">
-            <summary>
-            常用工具包网络操作工具版本信息
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerMain">
-            <summary>
-            主版本号
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerDev">
-            <summary>
-            研发版本号
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_VerDate">
-            <summary>
-            更新时间
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.NetworkEx.VersionInfo.CP_RunAssembly">
-            <summary>
-            当前程序集 
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.VersionInfo.CF_GetVersionInfo">
-            <summary>
-            获得版本信息
-            </summary>
-            <returns>版本信息</returns>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF">
-            <summary>
-            下载操作类(扩展方法)
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
-            <summary>
-            获取HTML代码（UTF-8 编码）
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="responseCookie">[OUT]响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">[OUT]响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="responseCookie">[OUT]响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">[OUT]响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="responseCookie">[OUT]响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.DownloadOperateEF.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">[OUT]响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.DownloadOperate">
-            <summary>
-            下载操作类
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
-            <summary>
-            获取HTML代码（UTF-8 编码）
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_DownloadFile(System.String,CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            下载文件
-            </summary>
-            <param name="savePath">保存路径</param>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>执行结果</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.DownloadOperate.CF_GetWebStream(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
-            <summary>
-            获取数据流
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="requestCookie">请求Cookie</param>
-            <param name="responseCookie">响应Cookie</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>数据流</returns>
-        </member>
-        <member name="T:CML.CommonEx.NetworkEx.UserAgentHelper">
-            <summary>
-            UserAgent帮助类
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.UserAgentHelper.CF_GetUserAgents">
-            <summary>
-            获取随机UserAgent
-            </summary>
-            <returns>UserAgent</returns>
         </member>
         <member name="T:CML.CommonEx.RegexEx.ENumberVerifyType">
             <summary>
