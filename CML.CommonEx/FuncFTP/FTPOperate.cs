@@ -1,10 +1,10 @@
-﻿using System;
+﻿using CML.CommonEx.EnumEx.ExFunction;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
-using CML.CommonEx.EnumEx.ExFunction;
 
 namespace CML.CommonEx.FTPEx
 {
@@ -262,7 +262,7 @@ namespace CML.CommonEx.FTPEx
                                 {
                                     using (FileStream fileStream = new FileStream(file.FullName, FileMode.Open, FileAccess.Read))
                                     {
-                                        ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
+                                        ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.UploadSpeed;
                                         if (transmissionSpeed.EnableLimit)
                                         {
                                             //缓存字节数
@@ -277,10 +277,13 @@ namespace CML.CommonEx.FTPEx
                                                 //写入本地文件
                                                 stream.Write(btBuffer, 0, readSize);
 
-                                                //延时
-                                                Thread.Sleep(transmissionSpeed.Delay);
-
                                                 readSize = fileStream.Read(btBuffer, 0, bufferSize);
+
+                                                //延时
+                                                if (readSize > 0)
+                                                {
+                                                    Thread.Sleep(transmissionSpeed.Delay);
+                                                }
                                             }
                                         }
                                         else
@@ -368,7 +371,7 @@ namespace CML.CommonEx.FTPEx
                             {
                                 using (FileStream fileStream = new FileStream(file.FullName, FileMode.Create, FileAccess.Write))
                                 {
-                                    ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.TransmissionSpeed;
+                                    ModTransmissionSpeed transmissionSpeed = ftpInfomation.FtpReqInfo.DownloadSpeed;
                                     if (transmissionSpeed.EnableLimit)
                                     {
                                         //缓存字节数
@@ -383,10 +386,13 @@ namespace CML.CommonEx.FTPEx
                                             //写入服务器
                                             fileStream.Write(btBuffer, 0, readSize);
 
-                                            //延时
-                                            Thread.Sleep(transmissionSpeed.Delay);
-
                                             readSize = stream.Read(btBuffer, 0, bufferSize);
+
+                                            //延时
+                                            if (readSize > 0)
+                                            {
+                                                Thread.Sleep(transmissionSpeed.Delay);
+                                            }
                                         }
                                     }
                                     else

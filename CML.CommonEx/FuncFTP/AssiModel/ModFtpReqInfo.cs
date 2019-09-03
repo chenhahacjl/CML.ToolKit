@@ -28,9 +28,14 @@ namespace CML.CommonEx.FTPEx
         public string RenameTo { get; set; } = "";
 
         /// <summary>
-        /// 传输限速（上传、下载时使用）
+        /// 上传限速（上传时使用）
         /// </summary>
-        public ModTransmissionSpeed TransmissionSpeed { get; set; } = new ModTransmissionSpeed();
+        public ModTransmissionSpeed UploadSpeed { get; set; } = new ModTransmissionSpeed();
+
+        /// <summary>
+        /// 下载限速（下载时使用）
+        /// </summary>
+        public ModTransmissionSpeed DownloadSpeed { get; set; } = new ModTransmissionSpeed();
 
         /// <summary>
         /// 构造函数（默认构造）

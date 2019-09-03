@@ -55,6 +55,8 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FuncNetwork\AssiEnum\ESpeedUnit.cs" />
+    <Compile Include="FuncNetwork\AssiModel\ModTransmissionSpeed.cs" />
     <Compile Include="FuncPermissionControl\AssiModel\ModDiskPermission.cs" />
     <Compile Include="FuncPermissionControl\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncPermissionControl\DiskControl.ExFunction.cs" />
@@ -127,8 +129,8 @@
     <Compile Include="FuncNetwork\AssiModel\ModProxy.cs" />
     <Compile Include="FuncNetwork\AssiModel\ModWebRequest.cs" />
     <Compile Include="FuncNetwork\AssiVersion\VersionInfo.cs" />
-    <Compile Include="FuncNetwork\DownloadOperate.ExFunction.cs" />
-    <Compile Include="FuncNetwork\DownloadOperate.cs" />
+    <Compile Include="FuncNetwork\NetworkOperate.ExFunction.cs" />
+    <Compile Include="FuncNetwork\NetworkOperate.cs" />
     <Compile Include="FuncNetwork\UserAgentHelper.cs" />
     <Compile Include="FuncRegex\AssiEnum\ENumberVerifyType.cs" />
     <Compile Include="FuncRegex\AssiVersion\VersionInfo.cs" />

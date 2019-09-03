@@ -71,12 +71,25 @@ namespace CML.CommonEx.NetworkEx
         public string Cookie { get; set; } = "";
 
         /// <summary>
-        /// POST传输信息（优先使用PostString，再使用PostData）
+        /// 上传限速
+        /// </summary>
+        public ModTransmissionSpeed UploadSpeed { get; set; } = new ModTransmissionSpeed();
+        /// <summary>
+        /// 下载限速
+        /// </summary>
+        public ModTransmissionSpeed DownloadSpeed { get; set; } = new ModTransmissionSpeed();
+
+        /// <summary>
+        /// POST传输信息（优先级: PostBytes->PostString->PostDictionary）
+        /// </summary>
+        public byte[] PostBytes { get; set; } = null;
+        /// <summary>
+        /// POST传输信息（优先级: PostBytes->PostString->PostDictionary）
         /// </summary>
         public string PostString { get; set; } = "";
         /// <summary>
-        /// POST传输信息（优先使用PostString，再使用PostData）
+        /// POST传输信息（优先级: PostBytes->PostString->PostDictionary）
         /// </summary>
-        public Dictionary<string, string> PostData { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> PostDictionary { get; set; } = null;
     }
 }

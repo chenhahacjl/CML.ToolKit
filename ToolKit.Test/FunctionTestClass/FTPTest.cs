@@ -32,7 +32,13 @@ namespace ToolKit.Test
                 Port = 9695,
                 FtpReqInfo = new ModFtpReqInfo()
                 {
-                    TransmissionSpeed = new ModTransmissionSpeed()
+                    UploadSpeed = new ModTransmissionSpeed()
+                    {
+                        Speed = 3,
+                        Unit = ESpeedUnit.MB,
+                        Delay = 950,
+                    },
+                    DownloadSpeed = new ModTransmissionSpeed()
                     {
                         Speed = 3,
                         Unit = ESpeedUnit.MB,
