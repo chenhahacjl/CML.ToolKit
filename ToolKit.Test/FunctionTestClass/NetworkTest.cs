@@ -61,17 +61,20 @@ namespace ToolKit.Test
 
             modelWebRequest = new ModWebRequest()
             {
-                RequestUrl = "http://192.168.40.161:280/IIS_UpdateSlotion/",
+                RequestUrl = "http://localhost:64489/SaveForm.aspx",
                 TimeOut = 5000
             };
+            modelWebRequest.Headers.Add("SAVEPATH", @"\");
+            modelWebRequest.Headers.Add("FILENAME", @"HELP.txt");
 
             rlt = modelWebRequest.CF_UploadFile(
-                @"C:\Users\admin\Desktop\TEST_2.txt",
+                @"E:\TEST_2.txt",
+                out string retMsg,
                 out errMsg
             );
             if (rlt)
             {
-                PrintLogLn(MsgType.Success, $"文件上传成功！");
+                PrintLogLn(MsgType.Success, $"文件上传成功: {retMsg.Substring(0, retMsg.IndexOf('\r'))}");
             }
             else
             {

@@ -14,64 +14,49 @@ namespace CML.CommonEx.NetworkEx
     public class NetworkOperate
     {
         /// <summary>
-        /// 获取HTML代码（UTF-8 编码）
+        /// 获取HTML代码
         /// </summary>
         /// <param name="webRequest">WEB请求信息</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
         public static string CF_GetHtmlCode(ModWebRequest webRequest, out string errMsg)
         {
-            return CF_GetHtmlCode(webRequest, Encoding.UTF8, null, out CookieContainer _, out errMsg);
+            return CF_GetHtmlCode(webRequest, null, out CookieContainer _, out errMsg);
         }
 
         /// <summary>
         /// 获取HTML代码
         /// </summary>
         /// <param name="webRequest">WEB请求信息</param>
-        /// <param name="encoding">编码方式</param>
-        /// <param name="errMsg">[OUT]错误信息</param>
-        /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(ModWebRequest webRequest, Encoding encoding, out string errMsg)
-        {
-            return CF_GetHtmlCode(webRequest, encoding, null, out CookieContainer _, out errMsg);
-        }
-
-        /// <summary>
-        /// 获取HTML代码
-        /// </summary>
-        /// <param name="webRequest">WEB请求信息</param>
-        /// <param name="encoding">编码方式</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(ModWebRequest webRequest, Encoding encoding, CookieContainer requestCookie, out string errMsg)
+        public static string CF_GetHtmlCode(ModWebRequest webRequest, CookieContainer requestCookie, out string errMsg)
         {
-            return CF_GetHtmlCode(webRequest, encoding, requestCookie, out CookieContainer _, out errMsg);
+            return CF_GetHtmlCode(webRequest, requestCookie, out CookieContainer _, out errMsg);
         }
 
         /// <summary>
         /// 获取HTML代码
         /// </summary>
         /// <param name="webRequest">WEB请求信息</param>
-        /// <param name="encoding">编码方式</param>
         /// <param name="responseCookie">响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(ModWebRequest webRequest, Encoding encoding, out CookieContainer responseCookie, out string errMsg)
+        public static string CF_GetHtmlCode(ModWebRequest webRequest, out CookieContainer responseCookie, out string errMsg)
         {
-            return CF_GetHtmlCode(webRequest, encoding, null, out responseCookie, out errMsg);
+            return CF_GetHtmlCode(webRequest, null, out responseCookie, out errMsg);
         }
 
         /// <summary>
         /// 获取HTML代码
         /// </summary>
         /// <param name="webRequest">WEB请求信息</param>
-        /// <param name="encoding">编码方式</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="responseCookie">响应Cookie</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>HTML代码</returns>
-        public static string CF_GetHtmlCode(ModWebRequest webRequest, Encoding encoding, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static string CF_GetHtmlCode(ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
             string result = string.Empty;
 
@@ -112,11 +97,11 @@ namespace CML.CommonEx.NetworkEx
                         }
 
                         //转化为字符串
-                        result = encoding.GetString(lstBytes.ToArray());
+                        result = webRequest.Encoding.GetString(lstBytes.ToArray());
                     }
                     else
                     {
-                        using (StreamReader streamReader = new StreamReader(stream, encoding))
+                        using (StreamReader streamReader = new StreamReader(stream, webRequest.Encoding))
                         {
                             result = streamReader.ReadToEnd();
                         }
@@ -143,7 +128,20 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>执行结果</returns>
         public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, out string errMsg)
         {
-            return CF_UploadFile(webRequest, filePath, null, out _, out errMsg);
+            return CF_UploadFile(webRequest, filePath, null, out _, out _, out errMsg);
+        }
+
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="returnMsg">[OUT]返回消息</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, out string returnMsg, out string errMsg)
+        {
+            return CF_UploadFile(webRequest, filePath, null, out _, out returnMsg, out errMsg);
         }
 
         /// <summary>
@@ -156,7 +154,21 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>执行结果</returns>
         public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out string errMsg)
         {
-            return CF_UploadFile(webRequest, filePath, requestCookie, out _, out errMsg);
+            return CF_UploadFile(webRequest, filePath, requestCookie, out _, out _, out errMsg);
+        }
+
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="requestCookie">请求Cookie</param>
+        /// <param name="returnMsg">[OUT]返回消息</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out string returnMsg, out string errMsg)
+        {
+            return CF_UploadFile(webRequest, filePath, requestCookie, out _, out returnMsg, out errMsg);
         }
 
         /// <summary>
@@ -169,7 +181,21 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>执行结果</returns>
         public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, out CookieContainer responseCookie, out string errMsg)
         {
-            return CF_UploadFile(webRequest, filePath, null, out responseCookie, out errMsg);
+            return CF_UploadFile(webRequest, filePath, null, out responseCookie, out _, out errMsg);
+        }
+
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        /// <param name="webRequest">WEB请求信息</param>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="responseCookie">响应Cookie</param>
+        /// <param name="returnMsg">[OUT]返回消息</param>
+        /// <param name="errMsg">[OUT]错误信息</param>
+        /// <returns>执行结果</returns>
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, out CookieContainer responseCookie, out string returnMsg, out string errMsg)
+        {
+            return CF_UploadFile(webRequest, filePath, null, out responseCookie, out returnMsg, out errMsg);
         }
 
         /// <summary>
@@ -179,9 +205,10 @@ namespace CML.CommonEx.NetworkEx
         /// <param name="filePath">文件路径</param>
         /// <param name="requestCookie">请求Cookie</param>
         /// <param name="responseCookie">响应Cookie</param>
+        /// <param name="returnMsg">[OUT]返回消息</param>
         /// <param name="errMsg">[OUT]错误信息</param>
         /// <returns>执行结果</returns>
-        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
+        public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out CookieContainer responseCookie, out string returnMsg, out string errMsg)
         {
             bool result = false;
 
@@ -192,6 +219,7 @@ namespace CML.CommonEx.NetworkEx
             {
                 result = false;
                 responseCookie = null;
+                returnMsg = "";
                 errMsg = "本地文件不存在！";
             }
             else
@@ -224,11 +252,24 @@ namespace CML.CommonEx.NetworkEx
                     using (Stream stream = CF_GetWebStream(webRequest, requestCookie, out responseCookie, out errMsg))
                     {
                         result = stream != null;
+
+                        if (result)
+                        {
+                            using (StreamReader streamReader = new StreamReader(stream, webRequest.Encoding))
+                            {
+                                returnMsg = streamReader.ReadToEnd();
+                            }
+                        }
+                        else
+                        {
+                            returnMsg = "";
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
                     responseCookie = null;
+                    returnMsg = "";
                     errMsg = ex.Message;
                 }
             }

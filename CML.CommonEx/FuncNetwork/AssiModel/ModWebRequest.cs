@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Text;
 
 namespace CML.CommonEx.NetworkEx
 {
@@ -78,6 +79,11 @@ namespace CML.CommonEx.NetworkEx
         /// 下载限速
         /// </summary>
         public ModHttpTransSpeed DownloadSpeed { get; set; } = new ModHttpTransSpeed();
+
+        /// <summary>
+        /// 网页编码
+        /// </summary>
+        public Encoding Encoding { get; set; } = Encoding.UTF8;
 
         /// <summary>
         /// POST传输信息（优先级: PostBytes->PostString->PostDictionary）

@@ -211,6 +211,11 @@
             下载限速
             </summary>
         </member>
+        <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.Encoding">
+            <summary>
+            网页编码
+            </summary>
+        </member>
         <member name="P:CML.CommonEx.NetworkEx.ModWebRequest.PostBytes">
             <summary>
             POST传输信息（优先级: PostBytes->PostString->PostDictionary）
@@ -264,47 +269,35 @@
         </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
-            获取HTML代码（UTF-8 编码）
+            获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
             <summary>
             获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
             <param name="responseCookie">[OUT]响应Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">[OUT]响应Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
@@ -319,6 +312,16 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.String@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@)">
             <summary>
             上传文件
@@ -329,17 +332,39 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
         <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@)">
             <summary>
             上传文件
             </summary>
-            <param name="filePath">文件路径</param>
             <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
             <param name="responseCookie">响应Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.ExFunction.NetworkOperateEF.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@,System.String@)">
             <summary>
             上传文件
             </summary>
@@ -347,6 +372,7 @@
             <param name="filePath">文件路径</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
@@ -433,47 +459,35 @@
         </member>
         <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.String@)">
             <summary>
-            获取HTML代码（UTF-8 编码）
+            获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.String@)">
             <summary>
             获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
-            <param name="errMsg">[OUT]错误信息</param>
-            <returns>HTML代码</returns>
-        </member>
-        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.String@)">
-            <summary>
-            获取HTML代码
-            </summary>
-            <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
             <param name="responseCookie">响应Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>HTML代码</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Text.Encoding,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_GetHtmlCode(CML.CommonEx.NetworkEx.ModWebRequest,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
             <summary>
             获取HTML代码
             </summary>
             <param name="webRequest">WEB请求信息</param>
-            <param name="encoding">编码方式</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">响应Cookie</param>
             <param name="errMsg">[OUT]错误信息</param>
@@ -488,6 +502,16 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.String@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
         <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@)">
             <summary>
             上传文件
@@ -495,6 +519,17 @@
             <param name="webRequest">WEB请求信息</param>
             <param name="filePath">文件路径</param>
             <param name="requestCookie">请求Cookie</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.String@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="requestCookie">请求Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
@@ -508,7 +543,18 @@
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
-        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@)">
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer@,System.String@,System.String@)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="webRequest">WEB请求信息</param>
+            <param name="filePath">文件路径</param>
+            <param name="responseCookie">响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.NetworkEx.NetworkOperate.CF_UploadFile(CML.CommonEx.NetworkEx.ModWebRequest,System.String,System.Net.CookieContainer,System.Net.CookieContainer@,System.String@,System.String@)">
             <summary>
             上传文件
             </summary>
@@ -516,6 +562,7 @@
             <param name="filePath">文件路径</param>
             <param name="requestCookie">请求Cookie</param>
             <param name="responseCookie">响应Cookie</param>
+            <param name="returnMsg">[OUT]返回消息</param>
             <param name="errMsg">[OUT]错误信息</param>
             <returns>执行结果</returns>
         </member>
