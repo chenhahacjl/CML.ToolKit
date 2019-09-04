@@ -1,7 +1,12 @@
+# 排除生成文件夹BIN和OBJ
 [Bb]in
 [Oo]bj
-
+# 排除VS临时文件夹
 .vs/
-
+# 排除用户文件
+*.suo
 *.user
+# 排除调试文件
 *.pdb
+*.cache
+TemporaryGeneratedFile_*

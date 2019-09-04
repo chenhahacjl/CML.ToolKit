@@ -16,20 +16,27 @@ namespace CML.CommonEx.EnumEx
         /// <returns>返回枚举的描述</returns>
         public static string CF_GetDescription(Enum en)
         {
-            //获取成员
-            MemberInfo[] memberInfos = en.GetType().GetMember(en.ToString());
-
-            if (memberInfos != null && memberInfos.Length > 0)
+            if (en != null)
             {
-                //获取描述特性
-                if (memberInfos[0].GetCustomAttributes(typeof(DescriptionAttribute), false) is DescriptionAttribute[] attribute && attribute.Length > 0)
-                {
-                    //返回当前描述
-                    return attribute[0].Description;
-                }
-            }
+                //获取成员
+                MemberInfo[] memberInfos = en.GetType().GetMember(en.ToString());
 
-            return en.ToString();
+                if (memberInfos != null && memberInfos.Length > 0)
+                {
+                    //获取描述特性
+                    if (memberInfos[0].GetCustomAttributes(typeof(DescriptionAttribute), false) is DescriptionAttribute[] attribute && attribute.Length > 0)
+                    {
+                        //返回当前描述
+                        return attribute[0].Description;
+                    }
+                }
+
+                return en.ToString();
+            }
+            else
+            {
+                return "";
+            }
         }
 
         /// <summary>
@@ -37,19 +44,13 @@ namespace CML.CommonEx.EnumEx
         /// </summary>
         /// <param name="en">枚举</param>
         /// <returns>返回枚举的描述</returns>
-        public static int CF_ToNumber(Enum en)
-        {
-            return Convert.ToInt32(en);
-        }
+        public static int CF_ToNumber(Enum en) => en == null ? -1 : Convert.ToInt32(en);
 
         /// <summary>
         /// 枚举转字符串
         /// </summary>
         /// <param name="en">枚举</param>
         /// <returns>返回枚举的描述</returns>
-        public static string CF_ToString(Enum en)
-        {
-            return Convert.ToString(en);
-        }
+        public static string CF_ToString(Enum en) => Convert.ToString(en);
     }
 }

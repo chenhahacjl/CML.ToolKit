@@ -59,6 +59,9 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 		- [x] RegexOperate <正则表达式操作类>
 		- [x] RegexOperateEF(ExFunction) <正则表达式操作类(扩展方法)>
 		- [x] UserAgentHelper <UserAgent帮助类>
+	- [ ] Result <操作结果工具>
+		- [x] TResultBase <操作结果基类>
+		- [x] TResult <泛型操作结果类>
 	- [ ] Singleton <单实例工具>
 		- [x] SingletonBase <单实例类基类>
 	- [ ] Thread <线程操作工具>

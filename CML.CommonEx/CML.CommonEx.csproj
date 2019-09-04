@@ -136,6 +136,9 @@
     <Compile Include="FuncRegex\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncRegex\RegexOperate.cs" />
     <Compile Include="FuncRegex\RegexOperate.ExFunction.cs" />
+    <Compile Include="FuncResult\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncResult\TResult.cs" />
+    <Compile Include="FuncResult\TResultBase.cs" />
     <Compile Include="FuncSingleton\AssiVersion\VersionInfo.cs" />
     <Compile Include="FuncSingleton\SingletonBase.cs" />
     <Compile Include="FuncThread\AssiVersion\VersionInfo.cs" />
@@ -180,7 +183,6 @@
     <EmbeddedResource Include="FuncNetwork\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FuncResult\" />
     <Folder Include="FuncSocket\" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncPermissionControl\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncResult\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

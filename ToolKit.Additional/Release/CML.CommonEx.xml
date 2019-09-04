@@ -5002,6 +5002,135 @@
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
         </member>
+        <member name="T:CML.CommonEx.ResultEx.VersionInfo">
+            <summary>
+            常用工具包泛型结果版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.ResultEx.TResult`1">
+            <summary>
+            泛型操作结果类
+            </summary>
+            <typeparam name="T">结果类型</typeparam>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.TResult`1.Result">
+            <summary>
+            泛型结果数据
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.GetExceptionString(System.Exception)">
+            <summary>
+            获得异常信息字符串
+            </summary>
+            <param name="exception">异常对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.#ctor(`0)">
+            <summary>
+            构造成功操作结果
+            </summary>
+            <param name="result">结果数据</param>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.#ctor(`0,System.String)">
+            <summary>
+            构造失败操作结果（错误代码为-1）
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="errMsg">错误描述</param>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.#ctor(`0,System.Exception)">
+            <summary>
+            构造失败操作结果（错误代码为-1）
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="exception">异常信息对象</param>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.#ctor(`0,System.Int32,System.String)">
+            <summary>
+            构造操作结果
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="errCode">错误代码(0代表调用成功)</param>
+            <param name="errMsg">错误描述</param>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.#ctor(`0,System.Enum)">
+            <summary>
+            构造操作结果
+            </summary>
+            <param name="result">结果数据</param>
+            <param name="errEnum">描述枚举（取数值与描述）</param>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.ToString">
+            <summary>
+            重写ToString方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResult`1.op_LogicalNot(CML.CommonEx.ResultEx.TResult{`0})">
+            <summary>
+            重载!操作符
+            </summary>
+            <param name="result">操作结果</param>
+            <returns></returns>
+        </member>
+        <member name="T:CML.CommonEx.ResultEx.TResultBase">
+            <summary>
+            操作结果基类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.TResultBase.IsSuccess">
+            <summary>
+            是否调用成功
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.TResultBase.ErrorCode">
+            <summary>
+            错误代码(0代表调用成功)
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ResultEx.TResultBase.ErrorMessage">
+            <summary>
+            错误描述
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResultBase.#ctor">
+            <summary>
+            构造操作成功结果
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.ResultEx.TResultBase.#ctor(System.Int32,System.String)">
+            <summary>
+            构造操作结果
+            </summary>
+            <param name="errCode">错误代码</param>
+            <param name="errMsg">错误描述</param>
+        </member>
         <member name="T:CML.CommonEx.SingletonEx.VersionInfo">
             <summary>
             常用工具包单实例工具版本信息
