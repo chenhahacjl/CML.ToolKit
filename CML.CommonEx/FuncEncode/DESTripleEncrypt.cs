@@ -165,12 +165,13 @@ namespace CML.CommonEx.EncodeEx
             {
                 using (TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider
                 {
-                    Key = desPara.Encode.GetBytes(desPara.Key),
-                    IV = desPara.Encode.GetBytes(desPara.IV),
                     Mode = desPara.CipherMode.Convert(),
                     Padding = desPara.PaddingMode.Convert(),
                 })
                 {
+                    des.Key = desPara.Encode.GetBytes(desPara.Key);
+                    des.IV = desPara.Encode.GetBytes(desPara.IV);
+
                     using (ICryptoTransform ct = des.CreateEncryptor())
                     {
                         using (MemoryStream ms = new MemoryStream())
@@ -215,12 +216,13 @@ namespace CML.CommonEx.EncodeEx
             {
                 using (TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider
                 {
-                    Key = desPara.Encode.GetBytes(desPara.Key),
-                    IV = desPara.Encode.GetBytes(desPara.IV),
                     Mode = desPara.CipherMode.Convert(),
                     Padding = desPara.PaddingMode.Convert(),
                 })
                 {
+                    des.Key = desPara.Encode.GetBytes(desPara.Key);
+                    des.IV = desPara.Encode.GetBytes(desPara.IV);
+
                     using (ICryptoTransform ct = des.CreateDecryptor())
                     {
                         using (MemoryStream ms = new MemoryStream())

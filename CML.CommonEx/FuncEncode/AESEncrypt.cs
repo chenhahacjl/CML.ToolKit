@@ -165,12 +165,16 @@ namespace CML.CommonEx.EncodeEx
             {
                 using (RijndaelManaged aes = new RijndaelManaged
                 {
-                    Key = aesPara.Encode.GetBytes(aesPara.Key),
-                    IV = aesPara.Encode.GetBytes(aesPara.IV),
                     Mode = aesPara.CipherMode.Convert(),
                     Padding = aesPara.PaddingMode.Convert(),
+                    KeySize = aesPara.KeySize,
+                    BlockSize = aesPara.BlockSize,
+                    FeedbackSize = aesPara.FeedbackSize
                 })
                 {
+                    aes.Key = aesPara.Encode.GetBytes(aesPara.Key);
+                    aes.IV = aesPara.Encode.GetBytes(aesPara.IV);
+
                     using (MemoryStream ms = new MemoryStream())
                     {
                         using (CryptoStream cryptoStream = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
@@ -212,12 +216,16 @@ namespace CML.CommonEx.EncodeEx
             {
                 using (RijndaelManaged aes = new RijndaelManaged
                 {
-                    Key = aesPara.Encode.GetBytes(aesPara.Key),
-                    IV = aesPara.Encode.GetBytes(aesPara.IV),
                     Mode = aesPara.CipherMode.Convert(),
                     Padding = aesPara.PaddingMode.Convert(),
+                    KeySize = aesPara.KeySize,
+                    BlockSize = aesPara.BlockSize,
+                    FeedbackSize = aesPara.FeedbackSize,
                 })
                 {
+                    aes.Key = aesPara.Encode.GetBytes(aesPara.Key);
+                    aes.IV = aesPara.Encode.GetBytes(aesPara.IV);
+
                     using (MemoryStream ms = new MemoryStream())
                     {
                         using (CryptoStream cryptoStream = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Write))

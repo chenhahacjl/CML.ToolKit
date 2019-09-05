@@ -11,15 +11,15 @@ namespace CML.CommonEx.EncodeEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string CP_VerMain => "1.5";
+        public override string CP_VerMain => "1.7";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y006R001";
+        public override string CP_VerDev => "19Y008R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string CP_VerDate => "2019年07月05日 10:55";
+        public override string CP_VerDate => "2019年09月05日 16:45";
         /// <summary>
         /// 当前程序集 
         /// </summary>

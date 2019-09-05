@@ -2115,12 +2115,12 @@
         </member>
         <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.Key">
             <summary>
-            密钥（16位）
+            密钥
             </summary>
         </member>
         <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.IV">
             <summary>
-            向量（16位）
+            向量
             </summary>
         </member>
         <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.PaddingChar">
@@ -2141,6 +2141,21 @@
         <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.Encode">
             <summary>
             字符编码
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.KeySize">
+            <summary>
+            获取或设置对称算法所用密钥的大小（以位为单位）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.BlockSize">
+            <summary>
+            获取或设置加密操作的块大小（以位为单位）。
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.FeedbackSize">
+            <summary>
+            获取或设置加密操作的反馈大小（以位为单位）
             </summary>
         </member>
         <member name="M:CML.CommonEx.EncodeEx.ModAESParameter.#ctor">

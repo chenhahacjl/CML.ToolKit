@@ -178,10 +178,9 @@ namespace ToolKit.Test
         {
             ModAESParameter aesParameter = new ModAESParameter()
             {
-                Key = GetRandomString(18),
-                IV = GetRandomString(14),
+                Key = GetRandomString(32),
+                IV = GetRandomString(16),
                 Encode = Encoding.UTF8,
-                PaddingChar = 'a',
             };
 
             string input = GetRandomString(10);
