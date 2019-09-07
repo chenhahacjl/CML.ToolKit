@@ -29,6 +29,9 @@ CML.ToolKit是一个基于C#的编程工具包，其中包含WinForm控件、Soc
 		- [x] MySQL <MySQL数据库支持库>
 		- [x] Oracle <Oracle数据库支持库>
 		- [x] SqlServer <SqlServer数据库支持库>
+	- [ ] Email <Email工具>
+		- [x] EmailOperate <Email操作类>
+		- [x] EmailOperateEF(ExFunction) <AESEmail操作类(扩展方法)>
 	- [ ] Encode <数据编码工具>
 		- [x] AESEncrypt <AES加密解密操作类>
 		- [x] AESEncryptEF(ExFunction) <AES加密解密操作类(扩展方法)>

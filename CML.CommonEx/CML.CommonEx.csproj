@@ -55,6 +55,11 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FuncEmail\AssiModel\ModEmailInfo.cs" />
+    <Compile Include="FuncEmail\AssiModel\ModServerInfo.cs" />
+    <Compile Include="FuncEmail\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncEmail\EmailOperate.ExFunction.cs" />
+    <Compile Include="FuncEmail\EmailOperate.cs" />
     <Compile Include="FuncNetwork\AssiEnum\EHttpSpeedUnit.cs" />
     <Compile Include="FuncNetwork\AssiModel\ModHttpTransSpeed.cs" />
     <Compile Include="FuncPermissionControl\AssiModel\ModDiskPermission.cs" />
@@ -199,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncResult\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncEmail\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

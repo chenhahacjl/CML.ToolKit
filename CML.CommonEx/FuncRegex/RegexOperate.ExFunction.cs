@@ -177,6 +177,16 @@
         }
 
         /// <summary>
+        /// 验证Mac地址 [分隔符:或者-]
+        /// </summary>
+        /// <param name="input">待验证的字符串</param>
+        /// <returns>验证结果</returns>
+        public static bool CF_IsMacAddress(this string input)
+        {
+            return RegexOperate.CF_IsMacAddress(input);
+        }
+
+        /// <summary>
         /// 验证身份证号
         /// </summary>
         /// <param name="input">待验证的字符串</param>

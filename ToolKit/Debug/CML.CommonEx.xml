@@ -4,6 +4,155 @@
         <name>CML.CommonEx</name>
     </assembly>
     <members>
+        <member name="T:CML.CommonEx.EmailEx.ModEmailInfo">
+            <summary>
+            邮件信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.FromEmail">
+            <summary>
+            发送者
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.FromName">
+            <summary>
+            发送者显示名称
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.ToEmail">
+            <summary>
+            收件者列表
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.CCEmail">
+            <summary>
+            抄送者列表
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.BCCEmail">
+            <summary>
+            密送者列表
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.Subject">
+            <summary>
+            邮件标题
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.Body">
+            <summary>
+            邮件正文
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.IsBodyHtml">
+            <summary>
+            邮件正文是否为HTML格式（默认为True）
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.AttachmentList">
+            <summary>
+            附件列表
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.Encoding">
+            <summary>
+            文本编码格式
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModEmailInfo.MailPriority">
+            <summary>
+            邮件优先级
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.EmailEx.ModServerInfo">
+            <summary>
+            发送信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModServerInfo.SmtpHost">
+            <summary>
+            SMTP服务器
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModServerInfo.SmtpPort">
+            <summary>
+            SMTP服务器端口(默认25)
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModServerInfo.SmtpUser">
+            <summary>
+            SMTP服务器用户名
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModServerInfo.SmtpPwd">
+            <summary>
+            SMTP服务器密码
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.ModServerInfo.EnableSsl">
+            <summary>
+            是否启用SSL加密连接（默认为False）
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.EmailEx.VersionInfo">
+            <summary>
+            常用工具包Email工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.EmailEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EmailEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.EmailEx.ExFunction.EmailOperateEF">
+            <summary>
+            Email操作类（扩展方法）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EmailEx.ExFunction.EmailOperateEF.CF_SendEmail(CML.CommonEx.EmailEx.ModServerInfo,CML.CommonEx.EmailEx.ModEmailInfo,System.String@)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="sendInfo">发送信息</param>
+            <param name="emailInfo">邮件信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:CML.CommonEx.EmailEx.EmailOperate">
+            <summary>
+            Email操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.EmailEx.EmailOperate.CF_SendEmail(CML.CommonEx.EmailEx.ModServerInfo,CML.CommonEx.EmailEx.ModEmailInfo,System.String@)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="sendInfo">发送信息</param>
+            <param name="emailInfo">邮件信息</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
         <member name="T:CML.CommonEx.NetworkEx.EHttpSpeedUnit">
             <summary>
             传输速率单位
@@ -2121,11 +2270,6 @@
         <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.IV">
             <summary>
             向量
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.PaddingChar">
-            <summary>
-            填充字符
             </summary>
         </member>
         <member name="P:CML.CommonEx.EncodeEx.ModAESParameter.CipherMode">
@@ -4810,7 +4954,7 @@
         </member>
         <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIPv4(System.String)">
             <summary>
-            验证IPv4地址 [第一位和最后一位数字不能是0或255，允许用0补位]
+            验证IPv4地址
             </summary>
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
@@ -4818,6 +4962,13 @@
         <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsIPv6(System.String)">
             <summary>
             验证IPv6地址
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.RegexOperate.CF_IsMacAddress(System.String)">
+            <summary>
+            验证Mac地址 [分隔符:或者-]
             </summary>
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>
@@ -4978,6 +5129,13 @@
         <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperateEF.CF_IsIPv6(System.String)">
             <summary>
             验证IPv6地址
+            </summary>
+            <param name="input">待验证的字符串</param>
+            <returns>验证结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.RegexEx.ExFunction.RegexOperateEF.CF_IsMacAddress(System.String)">
+            <summary>
+            验证Mac地址 [分隔符:或者-]
             </summary>
             <param name="input">待验证的字符串</param>
             <returns>验证结果</returns>

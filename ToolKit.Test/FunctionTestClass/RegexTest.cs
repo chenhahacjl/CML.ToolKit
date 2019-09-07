@@ -41,6 +41,7 @@ namespace ToolKit.Test
             PrintResult("310000", "310000".CF_IsZipCode());
             PrintResult("192.168.20.9", "192.168.20.9".CF_IsIPv4());
             PrintResult("fe80::3c14:32ce:2221:1305%14", "fe80::3c14:32ce:2221:1305%14".CF_IsIPv6());
+            PrintResult("01:23:45:67:89:AB", "01:23:45:67:89:AB".CF_IsMacAddress());
             PrintResult("115.70800", "115.70800".CF_IsLongitude());
             PrintResult("41.54147", "41.54147".CF_IsLatitude());
         }
