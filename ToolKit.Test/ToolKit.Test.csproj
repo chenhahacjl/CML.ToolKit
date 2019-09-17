@@ -49,6 +49,7 @@
     <Compile Include="FunctionTestClass\ControlTest.cs" />
     <Compile Include="FunctionTestClass\DataBaseTest.cs" />
     <Compile Include="FunctionTestClass\EncodeTest.cs" />
+    <Compile Include="FunctionTestClass\DebugTest.cs" />
     <Compile Include="FunctionTestClass\EverythingTest.cs" />
     <Compile Include="FunctionTestClass\EmailTest.cs" />
     <Compile Include="FunctionTestClass\FTPTest.cs" />

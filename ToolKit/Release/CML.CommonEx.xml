@@ -4,6 +4,280 @@
         <name>CML.CommonEx</name>
     </assembly>
     <members>
+        <member name="T:CML.CommonEx.DebugEx.FormCommonDebugModel">
+            <summary>
+            通用调试模块窗体
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DebugEx.FormCommonDebugModel.m_projectObject">
+            <summary>
+            项目实例
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.InitInfomation">
+            <summary>
+            初始化信息
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadControl(System.Data.DataTable,System.Windows.Forms.Control)">
+            <summary>
+            加载控件
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadField(System.String)">
+            <summary>
+            加载变量
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadProperty(System.String)">
+            <summary>
+            加载属性
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.CreateFunctionString(System.Reflection.MethodInfo)">
+            <summary>
+            创建方法字符串
+            </summary>
+            <param name="methodInfo">方法变量</param>
+            <returns>方法字符串</returns>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.SetFieldPropertyValue(System.String,System.String,System.Object)">
+            <summary>
+            设置变量/属性值
+            </summary>
+            <param name="type">变量/属性</param>
+            <param name="name">参数名称</param>
+            <param name="value">参数值</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="F:CML.CommonEx.DebugEx.FormCommonDebugModel.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DebugEx.FormModelSelect">
+            <summary>
+            调试模块选择窗体
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DebugEx.FormModelSelect.m_lstDebugModel">
+            <summary>
+            模块列表
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.FormModelSelect.SelectedIndex">
+            <summary>
+            选择模块序号
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormModelSelect.#ctor(System.Collections.Generic.List{System.Object})">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DebugEx.FormModelSelect.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormModelSelect.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormModelSelect.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DebugEx.VersionInfo">
+            <summary>
+            常用工具包调试工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.DebugEx.CommonDebugModel">
+            <summary>
+            通用调试模块
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.CommonDebugModel.ModelName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.CommonDebugModel.ModelDesc">
+            <summary>
+            模块描述
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.CommonDebugModel.ModelID">
+            <summary>
+            模块识别码
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.CommonDebugModel.ProjectObject">
+            <summary>
+            项目实例
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.CommonDebugModel.ExecuteDebug">
+            <summary>
+            执行调试
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DebugEx.DebugOperate">
+            <summary>
+            调试操作类
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.OpenDebugDll(System.String,System.String,System.Object,System.String@)">
+            <summary>
+            打开调试DLL文件
+            </summary>
+            <param name="dllFilePath">DLL文件路径</param>
+            <param name="modelID">模块识别码（留空不筛选）</param>
+            <param name="projectObj">项目实例</param>
+            <param name="errMsg">[OUT]错误信息</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.GetField(System.Object,System.String)">
+            <summary>
+            获取变量值
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="fieldName">变量名</param>
+            <returns>变量值</returns>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.SetField(System.Object,System.String,System.Object)">
+            <summary>
+            设置变量值
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="fieldName">变量名</param>
+            <param name="value">变量值</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.SetField(System.Object,System.String,System.Object,System.String@)">
+            <summary>
+            设置变量值
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="fieldName">变量名</param>
+            <param name="value">变量值</param>
+            <param name="errMsg">[OUT]错误信息</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.GetProperty(System.Object,System.String)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="propName">属性名</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="propName">属性名</param>
+            <param name="value">属性值</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.SetProperty(System.Object,System.String,System.Object,System.String@)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="propName">属性名</param>
+            <param name="value">属性值</param>
+            <param name="errMsg">[OUT]错误信息</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.InvokeMethod(System.Object,System.String,System.Object[])">
+            <summary>
+            调用动态方法
+            </summary>
+            <param name="instance">对象实例</param>
+            <param name="methodName">方法名</param>
+            <param name="parameters">调用参数</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.DebugOperate.InvokeMethod(System.Type,System.String,System.Object[])">
+            <summary>
+            调用静态方法
+            </summary>
+            <param name="type">对象类型</param>
+            <param name="methodName">方法名</param>
+            <param name="parameters">调用参数</param>
+        </member>
+        <member name="T:CML.CommonEx.DebugEx.IDebugDev">
+            <summary>
+            调试模块开发接口
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.IDebugDev.ModelName">
+            <summary>
+            模块名称
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.IDebugDev.ModelDesc">
+            <summary>
+            模块描述
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.IDebugDev.ModelID">
+            <summary>
+            模块识别码
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DebugEx.IDebugDev.ProjectObject">
+            <summary>
+            项目实例
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.IDebugDev.ExecuteDebug">
+            <summary>
+            执行调试
+            </summary>
+        </member>
         <member name="T:CML.CommonEx.EmailEx.ModEmailInfo">
             <summary>
             邮件信息

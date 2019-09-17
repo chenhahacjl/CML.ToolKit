@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +56,22 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FuncDebug\AssiForm\FormCommonDebugModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuncDebug\AssiForm\FormCommonDebugModel.Designer.cs">
+      <DependentUpon>FormCommonDebugModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuncDebug\AssiForm\FormModelSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuncDebug\AssiForm\FormModelSelect.Designer.cs">
+      <DependentUpon>FormModelSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuncDebug\AssiVersion\VersionInfo.cs" />
+    <Compile Include="FuncDebug\DebugModel\CommonDebugModel.cs" />
+    <Compile Include="FuncDebug\DebugOperate.cs" />
+    <Compile Include="FuncDebug\IDebugDev.cs" />
     <Compile Include="FuncEmail\AssiModel\ModEmailInfo.cs" />
     <Compile Include="FuncEmail\AssiModel\ModServerInfo.cs" />
     <Compile Include="FuncEmail\AssiVersion\VersionInfo.cs" />
@@ -157,6 +174,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FuncDebug\AssiForm\FormCommonDebugModel.resx">
+      <DependentUpon>FormCommonDebugModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuncDebug\AssiForm\FormModelSelect.resx">
+      <DependentUpon>FormModelSelect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FuncVersion\AssiVersion\UpdateInfo.LOG" />
     <EmbeddedResource Include="FuncThread\AssiVersion\UpdateInfo.LOG" />
     <EmbeddedResource Include="FuncEnum\AssiVersion\UpdateInfo.LOG" />
@@ -207,6 +230,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FuncEmail\AssiVersion\UpdateInfo.LOG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FuncDebug\AssiVersion\UpdateInfo.LOG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
