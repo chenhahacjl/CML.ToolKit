@@ -33,7 +33,7 @@ namespace CML.CommonEx.DebugEx
         /// </summary>
         public void ExecuteDebug()
         {
-            DialogResult dr = MessageBox.Show("使用ShowDialog显示通用调试模块窗体？", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("使用模态对话框显示通用调试模块窗体？", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 new FormCommonDebugModel(ProjectObject).ShowDialog();

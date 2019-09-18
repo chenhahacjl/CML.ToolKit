@@ -62,22 +62,28 @@ namespace CML.CommonEx.DebugEx
             FieldInfo[] fields = m_projectObject.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
             foreach (var item in fields)
             {
-                if (!typeof(Control).IsAssignableFrom(item.FieldType))
+                if (typeof(Control).IsAssignableFrom(item.FieldType))
+                {
+                    dtFieldProperty.Rows.Add("变量(控件)", item.FieldType.Name, item.Name, item.GetValue(m_projectObject));
+                }
+                else
                 {
                     dtFieldProperty.Rows.Add("变量", item.FieldType.Name, item.Name, item.GetValue(m_projectObject));
                 }
             }
 
-            //加载属性
-            PropertyInfo[] properties = m_projectObject.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            //加载公共属性
+            PropertyInfo[] properties = m_projectObject.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
             foreach (var item in properties)
             {
-                dtFieldProperty.Rows.Add("属性", item.PropertyType.Name, item.Name, item.GetValue(m_projectObject, null));
-            }
-            properties = m_projectObject.GetType().GetProperties(BindingFlags.Instance | BindingFlags.NonPublic);
-            foreach (var item in properties)
-            {
-                dtFieldProperty.Rows.Add("属性", item.PropertyType.Name, item.Name, item.GetValue(m_projectObject, null));
+                if (typeof(Control).IsAssignableFrom(item.PropertyType))
+                {
+                    dtFieldProperty.Rows.Add("属性（控件）", item.PropertyType.Name, item.Name, item.GetValue(m_projectObject, null));
+                }
+                else
+                {
+                    dtFieldProperty.Rows.Add("属性", item.PropertyType.Name, item.Name, item.GetValue(m_projectObject, null));
+                }
             }
 
             //设置显示格式
@@ -340,7 +346,7 @@ namespace CML.CommonEx.DebugEx
                 else
                 {
                     dgvFieldProperty.Rows[index].Cells[0].Selected = true;
-                    dgvFieldProperty.CurrentCell = dgvControl.Rows[index].Cells[0];
+                    dgvFieldProperty.CurrentCell = dgvFieldProperty.Rows[index].Cells[0];
                 }
             }
         }
@@ -348,14 +354,10 @@ namespace CML.CommonEx.DebugEx
         private void DgvFieldProperty_SelectionChanged(object sender, EventArgs e)
         {
             //隐藏所有窗体
-            pnlNoSelect.Visible = false;
-            pnlField.Visible = false;
-            pnlProperty.Visible = false;
-            pnlMdfFPOther.Visible = false;
-            pnlMdfFPBoolean.Visible = false;
-            pnlMdfFPString.Visible = false;
-            pnlMdfFPNumber.Visible = false;
-            pnlMdfFPDateTime.Visible = false;
+            foreach (Control control in pnlMdfFP.Controls)
+            {
+                control.Visible = false;
+            }
 
             //判断是否选择行
             if (dgvFieldProperty.SelectedRows.Count == 0)
@@ -366,7 +368,7 @@ namespace CML.CommonEx.DebugEx
             }
 
             //类型判断
-            if (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string == "变量")
+            if ((dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2) == "变量")
             {
                 LoadField(dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string);
                 pnlField.Visible = true;
@@ -382,60 +384,197 @@ namespace CML.CommonEx.DebugEx
             object value = dgvFieldProperty.SelectedRows[0].Cells["Value"].Value;
 
             //根据不同类型做不同操作
-            switch (dataType.Name)
+            if (value is Enum)
             {
-                case "Boolean":
+                pnlMdfFPEnum.Visible = true;
+                cmbMdfFPEnum.Items.Clear();
+
+                int index = -1;
+                string[] arrNames = Enum.GetNames(dataType);
+                for (int i = 0; i < arrNames.Length; i++)
                 {
-                    pnlMdfFPBoolean.Visible = true;
-                    rbMdfFPBooleanT.Checked = Convert.ToBoolean(value);
-                    rbMdfFPBooleanF.Checked = !Convert.ToBoolean(value);
-                    break;
+                    if (value.ToString() == arrNames[i]) { index = i; }
+                    string desc = EnumEx.EnumOperate.CF_GetDescription(Enum.Parse(dataType, arrNames[i]) as Enum);
+                    cmbMdfFPEnum.Items.Add(arrNames[i] == desc ? arrNames[i] : $"{arrNames[i]} [{desc}]");
                 }
-                case "String":
+                cmbMdfFPEnum.SelectedIndex = index;
+                btnMdfFPEnum.Enabled = cmbMdfFPEnum.Items.Count != 0;
+            }
+            else
+            {
+                switch (dataType.Name)
                 {
-                    pnlMdfFPString.Visible = true;
-                    txtMdfFPString.Text = value as string;
-                    chkMdfFPStringNull.Checked = value is null;
-                    break;
-                }
-                case "Char":
-                case "Byte":
-                case "SByte":
-                case "Int16":
-                case "Int32":
-                case "Int64":
-                case "UInt16":
-                case "UInt32":
-                case "UInt64":
-                case "Single":
-                case "Double":
-                case "Decimal":
-                {
-                    pnlMdfFPNumber.Visible = true;
-                    txtMdfFPNumber.Tag = dataType.Name;
-                    txtMdfFPNumber.Text = value.ToString();
-                    break;
-                }
-                case "DateTime":
-                {
-                    pnlMdfFPDateTime.Visible = true;
-                    txtMdfFPDateTime.Text = Convert.ToDateTime(value).ToString("yyyy/MM/dd HH:mm:ss");
-                    if (Convert.ToDateTime(value) < dtpMdfFPDateTimeDate.MinDate || Convert.ToDateTime(value) > dtpMdfFPDateTimeDate.MaxDate)
+                    case "Boolean":
                     {
-                        dtpMdfFPDateTimeDate.Value = Convert.ToDateTime(DateTime.Now);
-                        dtpMdfFPDateTimeTime.Value = Convert.ToDateTime(DateTime.Now);
+                        pnlMdfFPBoolean.Visible = true;
+                        rbMdfFPBooleanT.Checked = Convert.ToBoolean(value);
+                        rbMdfFPBooleanF.Checked = !Convert.ToBoolean(value);
+                        break;
                     }
-                    else
+                    case "String":
                     {
-                        dtpMdfFPDateTimeDate.Value = Convert.ToDateTime(value);
-                        dtpMdfFPDateTimeTime.Value = Convert.ToDateTime(value);
+                        pnlMdfFPString.Visible = true;
+                        txtMdfFPString.Text = value as string;
+                        chkMdfFPStringNull.Checked = value is null;
+                        break;
                     }
-                    break;
-                }
-                default:
-                {
-                    pnlMdfFPOther.Visible = true;
-                    break;
+                    case "Char":
+                    case "Byte":
+                    case "SByte":
+                    case "Int16":
+                    case "UInt16":
+                    case "Int32":
+                    case "UInt32":
+                    case "Int64":
+                    case "UInt64":
+                    case "Single":
+                    case "Double":
+                    case "Decimal":
+                    case "IntPtr":
+                    case "UIntPtr":
+                    {
+                        pnlMdfFPNumber.Visible = true;
+                        txtMdfFPNumber.Text = value.ToString();
+                        btnMdfFPNumber.Tag = dataType.Name;
+                        break;
+                    }
+                    case "DateTime":
+                    {
+                        pnlMdfFPDateTime.Visible = true;
+                        txtMdfFPDateTime.Text = Convert.ToDateTime(value).ToString("yyyy/MM/dd HH:mm:ss");
+                        if (Convert.ToDateTime(value) < dtpMdfFPDateTimeDate.MinDate || Convert.ToDateTime(value) > dtpMdfFPDateTimeDate.MaxDate)
+                        {
+                            dtpMdfFPDateTimeDate.Value = Convert.ToDateTime(DateTime.Now);
+                            dtpMdfFPDateTimeTime.Value = Convert.ToDateTime(DateTime.Now);
+                        }
+                        else
+                        {
+                            dtpMdfFPDateTimeDate.Value = Convert.ToDateTime(value);
+                            dtpMdfFPDateTimeTime.Value = Convert.ToDateTime(value);
+                        }
+                        break;
+                    }
+                    case "Size":
+                    {
+                        pnlMdfFPSize.Visible = true;
+                        lblMdfFPSizeOne.Text = "W";
+                        txtMdfFPSizeOne.Text = ((Size)value).Width.ToString();
+                        lblMdfFPSizeTwo.Text = "H";
+                        txtMdfFPSizeTwo.Text = ((Size)value).Height.ToString();
+                        btnMdfFPSize.Tag = dataType.Name;
+                        break;
+                    }
+                    case "SizeF":
+                    {
+                        pnlMdfFPSize.Visible = true;
+                        lblMdfFPSizeOne.Text = "W";
+                        txtMdfFPSizeOne.Text = ((SizeF)value).Width.ToString();
+                        lblMdfFPSizeTwo.Text = "H";
+                        txtMdfFPSizeTwo.Text = ((SizeF)value).Height.ToString();
+                        btnMdfFPSize.Tag = dataType.Name;
+                        break;
+                    }
+                    case "Point":
+                    {
+                        pnlMdfFPSize.Visible = true;
+                        lblMdfFPSizeOne.Text = "X";
+                        txtMdfFPSizeOne.Text = ((Point)value).X.ToString();
+                        lblMdfFPSizeTwo.Text = "Y";
+                        txtMdfFPSizeTwo.Text = ((Point)value).Y.ToString();
+                        btnMdfFPSize.Tag = dataType.Name;
+                        break;
+                    }
+                    case "PointF":
+                    {
+                        pnlMdfFPSize.Visible = true;
+                        lblMdfFPSizeOne.Text = "X";
+                        txtMdfFPSizeOne.Text = ((PointF)value).X.ToString();
+                        lblMdfFPSizeTwo.Text = "Y";
+                        txtMdfFPSizeTwo.Text = ((PointF)value).Y.ToString();
+                        btnMdfFPSize.Tag = dataType.Name;
+                        break;
+                    }
+                    case "Rectangle":
+                    {
+                        pnlMdfFPRectangle.Visible = true;
+                        lblMdfFPRectangleOne.Text = "X";
+                        txtMdfFPRectangleOne.Text = ((Rectangle)value).X.ToString();
+                        lblMdfFPRectangleTwo.Text = "Y";
+                        txtMdfFPRectangleTwo.Text = ((Rectangle)value).Y.ToString();
+                        lblMdfFPRectangleThree.Text = "W";
+                        txtMdfFPRectangleThree.Text = ((Rectangle)value).Width.ToString();
+                        lblMdfFPRectangleFour.Text = "H";
+                        txtMdfFPRectangleFour.Text = ((Rectangle)value).Height.ToString();
+                        btnMdfFPRectangle.Tag = dataType.Name;
+                        break;
+                    }
+                    case "RectangleF":
+                    {
+                        pnlMdfFPRectangle.Visible = true;
+                        lblMdfFPRectangleOne.Text = "X";
+                        txtMdfFPRectangleOne.Text = ((RectangleF)value).X.ToString();
+                        lblMdfFPRectangleTwo.Text = "Y";
+                        txtMdfFPRectangleTwo.Text = ((RectangleF)value).Y.ToString();
+                        lblMdfFPRectangleThree.Text = "W";
+                        txtMdfFPRectangleThree.Text = ((RectangleF)value).Width.ToString();
+                        lblMdfFPRectangleFour.Text = "H";
+                        txtMdfFPRectangleFour.Text = ((RectangleF)value).Height.ToString();
+                        btnMdfFPRectangle.Tag = dataType.Name;
+                        break;
+                    }
+                    case "Padding":
+                    {
+                        pnlMdfFPRectangle.Visible = true;
+                        lblMdfFPRectangleOne.Text = "L";
+                        txtMdfFPRectangleOne.Text = ((Padding)value).Left.ToString();
+                        lblMdfFPRectangleTwo.Text = "T";
+                        txtMdfFPRectangleTwo.Text = ((Padding)value).Top.ToString();
+                        lblMdfFPRectangleThree.Text = "R";
+                        txtMdfFPRectangleThree.Text = ((Padding)value).Right.ToString();
+                        lblMdfFPRectangleFour.Text = "B";
+                        txtMdfFPRectangleFour.Text = ((Padding)value).Bottom.ToString();
+                        btnMdfFPRectangle.Tag = dataType.Name;
+                        break;
+                    }
+                    case "Color":
+                    {
+                        pnlMdfFPColor.Visible = true;
+
+                        int index = -1;
+                        string[] arrNames = Enum.GetNames(typeof(KnownColor));
+                        for (int i = 0; i < arrNames.Length; i++)
+                        {
+                            if (value.ToString().Contains(arrNames[i])) { index = i; }
+                            cmbMdfFPNameSelected.Items.Add(arrNames[i]);
+                        }
+
+                        if (index == -1)
+                        {
+                            rbMdfFPColor.Checked = true;
+                            rbMdfFPName.Checked = false;
+                            btnMdfFPColorSelected.BackColor = (Color)value;
+                            cmbMdfFPNameSelected.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            rbMdfFPColor.Checked = false;
+                            rbMdfFPName.Checked = true;
+                            btnMdfFPColorSelected.BackColor = Color.FromKnownColor(KnownColor.Transparent);
+                            cmbMdfFPNameSelected.SelectedIndex = index;
+                        }
+                        break;
+                    }
+                    case "Font":
+                    {
+                        pnlMdfFPFont.Visible = true;
+                        btnMdfFPFontSelect.Font = (Font)value;
+                        break;
+                    }
+                    default:
+                    {
+                        pnlMdfFPOther.Visible = true;
+                        break;
+                    }
                 }
             }
         }
@@ -443,7 +582,7 @@ namespace CML.CommonEx.DebugEx
         private void BtnMdfFPBoolean_Click(object sender, EventArgs e)
         {
             object value = rbMdfFPBooleanT.Checked;
-            string type = dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string;
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
             string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
@@ -506,17 +645,17 @@ namespace CML.CommonEx.DebugEx
         private void BtnMdfFPString_Click(object sender, EventArgs e)
         {
             object value = chkMdfFPStringNull.Checked ? null : txtMdfFPString.Text;
-            string type = dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string;
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
             string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
 
-        private void BtnMdfFPMumber_Click(object sender, EventArgs e)
+        private void BtnMdfFPNumber_Click(object sender, EventArgs e)
         {
             object value = null;
 
-            switch (txtMdfFPNumber.Tag as string)
+            switch ((sender as Button).Tag as string)
             {
                 case "Char":
                 {
@@ -538,24 +677,24 @@ namespace CML.CommonEx.DebugEx
                     value = short.TryParse(txtMdfFPNumber.Text, out short o) ? o as object : null;
                     break;
                 }
-                case "Int32":
-                {
-                    value = int.TryParse(txtMdfFPNumber.Text, out int o) ? o as object : null;
-                    break;
-                }
-                case "Int64":
-                {
-                    value = long.TryParse(txtMdfFPNumber.Text, out long o) ? o as object : null;
-                    break;
-                }
                 case "UInt16":
                 {
                     value = ushort.TryParse(txtMdfFPNumber.Text, out ushort o) ? o as object : null;
                     break;
                 }
+                case "Int32":
+                {
+                    value = int.TryParse(txtMdfFPNumber.Text, out int o) ? o as object : null;
+                    break;
+                }
                 case "UInt32":
                 {
                     value = uint.TryParse(txtMdfFPNumber.Text, out uint o) ? o as object : null;
+                    break;
+                }
+                case "Int64":
+                {
+                    value = long.TryParse(txtMdfFPNumber.Text, out long o) ? o as object : null;
                     break;
                 }
                 case "UInt64":
@@ -578,6 +717,16 @@ namespace CML.CommonEx.DebugEx
                     value = decimal.TryParse(txtMdfFPNumber.Text, out decimal o) ? o as object : null;
                     break;
                 }
+                case "IntPtr":
+                {
+                    value = long.TryParse(txtMdfFPNumber.Text, out long o) ? new IntPtr(o) as object : null;
+                    break;
+                }
+                case "UIntPtr":
+                {
+                    value = ulong.TryParse(txtMdfFPNumber.Text, out ulong o) ? new UIntPtr(o) as object : null;
+                    break;
+                }
                 default:
                 {
                     break;
@@ -590,7 +739,7 @@ namespace CML.CommonEx.DebugEx
                 return;
             }
 
-            string type = dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string;
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
             string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
@@ -606,13 +755,195 @@ namespace CML.CommonEx.DebugEx
                 dtpMdfFPDateTimeTime.Value.Minute,
                 dtpMdfFPDateTimeTime.Value.Second
             );
-            string type = dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string;
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
             string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
 
             if (SetFieldPropertyValue(type, name, value))
             {
                 txtMdfFPDateTime.Text = Convert.ToDateTime(value).ToString("yyyy/MM/dd HH:mm:ss");
             }
+        }
+
+        private void BtnMdfFPSize_Click(object sender, EventArgs e)
+        {
+            object value = null;
+
+            switch ((sender as Button).Tag as string)
+            {
+                case "Size":
+                {
+                    value =
+                        int.TryParse(txtMdfFPSizeOne.Text, out int o) ?
+                        int.TryParse(txtMdfFPSizeTwo.Text, out int t) ?
+                        new Size(o, t) as object : null : null;
+                    break;
+                }
+                case "SizeF":
+                {
+                    value =
+                        float.TryParse(txtMdfFPSizeOne.Text, out float o) ?
+                        float.TryParse(txtMdfFPSizeTwo.Text, out float t) ?
+                        new SizeF(o, t) as object : null : null;
+                    break;
+                }
+                case "Point":
+                {
+                    value =
+                        int.TryParse(txtMdfFPSizeOne.Text, out int o) ?
+                        int.TryParse(txtMdfFPSizeTwo.Text, out int t) ?
+                        new Point(o, t) as object : null : null;
+                    break;
+                }
+                case "PointF":
+                {
+                    value =
+                        float.TryParse(txtMdfFPSizeOne.Text, out float o) ?
+                        float.TryParse(txtMdfFPSizeTwo.Text, out float t) ?
+                        new PointF(o, t) as object : null : null;
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+
+            if (value == null)
+            {
+                MessageBox.Show("数值输入错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+
+            SetFieldPropertyValue(type, name, value);
+        }
+
+        private void BtnMdfFPRectangle_Click(object sender, EventArgs e)
+        {
+            object value = null;
+
+            switch ((sender as Button).Tag as string)
+            {
+                case "Rectangle":
+                {
+                    value =
+                        int.TryParse(txtMdfFPRectangleOne.Text, out int o) ?
+                        int.TryParse(txtMdfFPRectangleTwo.Text, out int t) ?
+                        int.TryParse(txtMdfFPRectangleTwo.Text, out int th) ?
+                        int.TryParse(txtMdfFPRectangleTwo.Text, out int f) ?
+                        new Rectangle(o, t, th, f) as object : null : null : null : null;
+                    break;
+                }
+                case "RectangleF":
+                {
+                    value =
+                        float.TryParse(txtMdfFPRectangleOne.Text, out float o) ?
+                        float.TryParse(txtMdfFPRectangleTwo.Text, out float t) ?
+                        float.TryParse(txtMdfFPRectangleTwo.Text, out float th) ?
+                        float.TryParse(txtMdfFPRectangleTwo.Text, out float f) ?
+                        new RectangleF(o, t, th, f) as object : null : null : null : null;
+                    break;
+                }
+                case "Padding":
+                {
+                    value =
+                        int.TryParse(txtMdfFPRectangleOne.Text, out int o) ?
+                        int.TryParse(txtMdfFPRectangleTwo.Text, out int t) ?
+                        int.TryParse(txtMdfFPRectangleTwo.Text, out int th) ?
+                        int.TryParse(txtMdfFPRectangleTwo.Text, out int f) ?
+                        new Padding(o, t, th, f) as object : null : null : null : null;
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+
+            if (value == null)
+            {
+                MessageBox.Show("数值输入错误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+
+            SetFieldPropertyValue(type, name, value);
+        }
+
+        private void RbMdfFPColor_CheckedChanged(object sender, EventArgs e)
+        {
+            btnMdfFPColorSelected.Enabled = rbMdfFPColor.Checked;
+            cmbMdfFPNameSelected.Enabled = rbMdfFPName.Checked;
+        }
+
+        private void BtnMdfFPColorSelected_Click(object sender, EventArgs e)
+        {
+            using (ColorDialog colorDialog = new ColorDialog()
+            {
+                Color = (sender as Button).BackColor,
+            })
+            {
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    (sender as Button).BackColor = colorDialog.Color;
+                }
+            }
+        }
+
+        private void CmbMdfFPNameSelected_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            picMdfFPNameColor.BackColor = cmbMdfFPNameSelected.SelectedIndex == -1 ?
+                Color.Transparent : Color.FromName(cmbMdfFPNameSelected.SelectedItem.ToString());
+        }
+
+        private void BtnMdfFPColor_Click(object sender, EventArgs e)
+        {
+            object value = rbMdfFPColor.Checked ?
+                btnMdfFPColorSelected.BackColor as object :
+                Color.FromName(cmbMdfFPNameSelected.SelectedItem.ToString()) as object;
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+
+            SetFieldPropertyValue(type, name, value);
+        }
+
+        private void BtnMdfFPEnum_Click(object sender, EventArgs e)
+        {
+            string select = cmbMdfFPEnum.SelectedItem.ToString();
+            select = select.Contains('[') ? select.Substring(0, select.IndexOf('[') - 1) : select;
+
+            object value = Enum.Parse(dgvFieldProperty.SelectedRows[0].Cells["Value"].Value.GetType(), select);
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+
+            SetFieldPropertyValue(type, name, value);
+        }
+
+        private void BtnMdfFPFontSelect_Click(object sender, EventArgs e)
+        {
+            using (FontDialog fontDialog = new FontDialog()
+            {
+                Font = (sender as Button).Font,
+            })
+            {
+                if (fontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    (sender as Button).Font = fontDialog.Font;
+                }
+            }
+        }
+
+        private void BtnMdfFPFont_Click(object sender, EventArgs e)
+        {
+            object value = btnMdfFPFontSelect.Font;
+            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+
+            SetFieldPropertyValue(type, name, value);
         }
         #endregion
 
@@ -642,7 +973,7 @@ namespace CML.CommonEx.DebugEx
             //刷新变量属性数值
             for (int i = 0; i < dgvFieldProperty.Rows.Count; i++)
             {
-                string type = dgvFieldProperty.Rows[i].Cells["类型"].Value as string;
+                string type = (dgvFieldProperty.Rows[i].Cells["类型"].Value as string).Substring(0, 2);
                 string name = dgvFieldProperty.Rows[i].Cells["Name"].Value as string;
 
                 if (type == "变量")

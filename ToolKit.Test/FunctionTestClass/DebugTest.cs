@@ -1,4 +1,8 @@
 ﻿using CML.CommonEx.DebugEx;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace ToolKit.Test
 {
@@ -38,22 +42,43 @@ namespace ToolKit.Test
         }
 
         #region 测试内容
-        public int m_testField1 = 9696;
-        private bool m_testField2 = false;
-        internal string m_testField3 = "TestField";
-        public char m_testField4 = 'T';
-        public short m_testField5 = 96;
-        public long m_testField6 = 969696;
-        public byte m_testField7 = 128;
-        public decimal m_testField8 = 96969696;
-        public double m_testField9 = 9696.9696;
-        public float m_testField10 = 9696.96f;
-        public sbyte m_testField11 = -96;
-        public uint m_testField12 = 969696;
-        public ulong m_testField13 = 969696;
-        public ushort m_testField14 = 9696;
+        private bool m_testField1 = false;
 
-        public int TestProperty1
+        internal string m_testField2 = "TestField";
+
+        public char m_testField3_1 = 'T';
+        public byte m_testField3_2 = 128;
+        public sbyte m_testField3_3 = -128;
+        public short m_testField3_4 = -128;
+        public ushort m_testField13_5 = 128;
+        public int m_testField3_6 = -1024;
+        public uint m_testField3_7 = 1024;
+        public long m_testField3_8 = -40960;
+        public ulong m_testField3_9 = 40960;
+        public float m_testField3_10 = 1024.96F;
+        public double m_testField3_11 = 1024.9696;
+        public decimal m_testField3_12 = 96969696;
+        public IntPtr m_testField13_13 = new IntPtr(9696);
+        public UIntPtr m_testField3_14 = new UIntPtr(9696);
+
+        public DateTime m_testField4 = DateTime.Now;
+
+        public Size m_testField5_1 = new Size(96, 96);
+        public SizeF m_testField5_2 = new SizeF(9.6F, 6.9F);
+        public Point m_testField5_3 = new Point(96, 96);
+        public PointF m_testField5_4 = new PointF(9.6F, 9.6F);
+
+        public Rectangle m_testField6_1 = new Rectangle(9, 6, 9, 6);
+        public RectangleF m_testField6_2 = new RectangleF(9.6F, 6.9F, 9.6F, 6.9F);
+        public Padding m_testField6_3 = new Padding(9, 6, 9, 6);
+
+        public Color m_testField7 = Color.FromKnownColor(KnownColor.MenuHighlight);
+
+        public ETest m_testField8 = ETest.A;
+
+        public Font m_testField9 = new Font("宋体", 12);
+
+        public bool TestProperty1
         {
             get
             {
@@ -67,7 +92,7 @@ namespace ToolKit.Test
             }
         }
 
-        private bool TestProperty2
+        private string TestProperty2
         {
             get
             {
@@ -81,18 +106,30 @@ namespace ToolKit.Test
             }
         }
 
-        internal string TestProperty3
+        internal int TestProperty3
         {
             get
             {
-                PrintLogLn(MsgType.Info, $"获取TestProperty3属性值: {m_testField3}");
-                return m_testField3;
+                PrintLogLn(MsgType.Info, $"获取TestProperty3属性值: {m_testField3_6}");
+                return m_testField3_6;
             }
             set
             {
-                PrintLogLn(MsgType.Info, $"设置TestProperty3属性值: {m_testField3} -> {value}");
-                m_testField3 = value;
+                PrintLogLn(MsgType.Info, $"设置TestProperty3属性值: {m_testField3_6} -> {value}");
+                m_testField3_6 = value;
             }
+        }
+
+        public enum ETest
+        {
+            [Description("AA")]
+            A,
+            [Description("BB")]
+            B,
+            [Description("CC")]
+            C,
+            [Description("DD")]
+            D,
         }
         #endregion
     }

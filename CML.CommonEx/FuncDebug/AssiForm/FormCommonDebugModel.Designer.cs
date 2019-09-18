@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpFormControl = new System.Windows.Forms.TabPage();
             this.sptControl = new System.Windows.Forms.SplitContainer();
@@ -40,8 +40,6 @@
             this.sptFieldProperty = new System.Windows.Forms.SplitContainer();
             this.dgvFieldProperty = new System.Windows.Forms.DataGridView();
             this.txtFieldPropertySearch = new System.Windows.Forms.TextBox();
-            this.pnlNoSelect = new System.Windows.Forms.Panel();
-            this.label39 = new System.Windows.Forms.Label();
             this.pnlProperty = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -88,34 +86,70 @@
             this.txtFieldFullName = new System.Windows.Forms.TextBox();
             this.txtFieldDataType = new System.Windows.Forms.TextBox();
             this.txtFieldReadOnly = new System.Windows.Forms.TextBox();
+            this.pnlNoSelect = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
             this.pnlMdfFP = new System.Windows.Forms.Panel();
+            this.pnlMdfFPColor = new System.Windows.Forms.Panel();
+            this.picMdfFPNameColor = new System.Windows.Forms.PictureBox();
+            this.rbMdfFPColor = new System.Windows.Forms.RadioButton();
+            this.btnMdfFPColorSelected = new System.Windows.Forms.Button();
+            this.rbMdfFPName = new System.Windows.Forms.RadioButton();
+            this.cmbMdfFPNameSelected = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.btnMdfFPColor = new System.Windows.Forms.Button();
+            this.pnlMdfFPEnum = new System.Windows.Forms.Panel();
+            this.cmbMdfFPEnum = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnMdfFPEnum = new System.Windows.Forms.Button();
+            this.pnlMdfFPRectangle = new System.Windows.Forms.Panel();
+            this.lblMdfFPRectangleOne = new System.Windows.Forms.Label();
+            this.lblMdfFPRectangleTwo = new System.Windows.Forms.Label();
+            this.lblMdfFPRectangleThree = new System.Windows.Forms.Label();
+            this.lblMdfFPRectangleFour = new System.Windows.Forms.Label();
+            this.txtMdfFPRectangleOne = new System.Windows.Forms.TextBox();
+            this.txtMdfFPRectangleTwo = new System.Windows.Forms.TextBox();
+            this.txtMdfFPRectangleThree = new System.Windows.Forms.TextBox();
+            this.txtMdfFPRectangleFour = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.btnMdfFPRectangle = new System.Windows.Forms.Button();
+            this.pnlMdfFPSize = new System.Windows.Forms.Panel();
+            this.lblMdfFPSizeOne = new System.Windows.Forms.Label();
+            this.lblMdfFPSizeTwo = new System.Windows.Forms.Label();
+            this.txtMdfFPSizeOne = new System.Windows.Forms.TextBox();
+            this.txtMdfFPSizeTwo = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.btnMdfFPSize = new System.Windows.Forms.Button();
             this.pnlMdfFPDateTime = new System.Windows.Forms.Panel();
+            this.txtMdfFPDateTime = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.dtpMdfFPDateTimeDate = new System.Windows.Forms.DateTimePicker();
             this.dtpMdfFPDateTimeTime = new System.Windows.Forms.DateTimePicker();
             this.btnMdfFPDateTime = new System.Windows.Forms.Button();
-            this.pnlMdfFPOther = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlMdfFPBoolean = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rbMdfFPBooleanF = new System.Windows.Forms.RadioButton();
-            this.rbMdfFPBooleanT = new System.Windows.Forms.RadioButton();
-            this.btnMdfFPBoolean = new System.Windows.Forms.Button();
+            this.pnlMdfFPNumber = new System.Windows.Forms.Panel();
+            this.txtMdfFPNumber = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.btnMdfFPNumber = new System.Windows.Forms.Button();
             this.pnlMdfFPString = new System.Windows.Forms.Panel();
             this.btnMdfFPStringMaxSize = new System.Windows.Forms.Button();
             this.chkMdfFPStringNull = new System.Windows.Forms.CheckBox();
             this.txtMdfFPString = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.btnMdfFPString = new System.Windows.Forms.Button();
-            this.pnlMdfFPNumber = new System.Windows.Forms.Panel();
-            this.txtMdfFPNumber = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.btnMdfFPMumber = new System.Windows.Forms.Button();
+            this.pnlMdfFPBoolean = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rbMdfFPBooleanF = new System.Windows.Forms.RadioButton();
+            this.rbMdfFPBooleanT = new System.Windows.Forms.RadioButton();
+            this.btnMdfFPBoolean = new System.Windows.Forms.Button();
+            this.pnlMdfFPOther = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlOperate = new System.Windows.Forms.Panel();
             this.btnTopMost = new System.Windows.Forms.Button();
             this.btnRefreshAll = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.txtMdfFPDateTime = new System.Windows.Forms.TextBox();
+            this.pnlMdfFPFont = new System.Windows.Forms.Panel();
+            this.btnMdfFPFontSelect = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btnMdfFPFont = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tpFormControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sptControl)).BeginInit();
@@ -129,16 +163,22 @@
             this.sptFieldProperty.Panel2.SuspendLayout();
             this.sptFieldProperty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFieldProperty)).BeginInit();
-            this.pnlNoSelect.SuspendLayout();
             this.pnlProperty.SuspendLayout();
             this.pnlField.SuspendLayout();
+            this.pnlNoSelect.SuspendLayout();
             this.pnlMdfFP.SuspendLayout();
+            this.pnlMdfFPColor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMdfFPNameColor)).BeginInit();
+            this.pnlMdfFPEnum.SuspendLayout();
+            this.pnlMdfFPRectangle.SuspendLayout();
+            this.pnlMdfFPSize.SuspendLayout();
             this.pnlMdfFPDateTime.SuspendLayout();
-            this.pnlMdfFPOther.SuspendLayout();
-            this.pnlMdfFPBoolean.SuspendLayout();
-            this.pnlMdfFPString.SuspendLayout();
             this.pnlMdfFPNumber.SuspendLayout();
+            this.pnlMdfFPString.SuspendLayout();
+            this.pnlMdfFPBoolean.SuspendLayout();
+            this.pnlMdfFPOther.SuspendLayout();
             this.pnlOperate.SuspendLayout();
+            this.pnlMdfFPFont.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -189,14 +229,14 @@
             this.dgvControl.AllowUserToResizeRows = false;
             this.dgvControl.BackgroundColor = System.Drawing.Color.White;
             this.dgvControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvControl.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvControl.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvControl.Location = new System.Drawing.Point(0, 26);
@@ -251,9 +291,9 @@
             // 
             // sptFieldProperty.Panel2
             // 
-            this.sptFieldProperty.Panel2.Controls.Add(this.pnlNoSelect);
             this.sptFieldProperty.Panel2.Controls.Add(this.pnlProperty);
             this.sptFieldProperty.Panel2.Controls.Add(this.pnlField);
+            this.sptFieldProperty.Panel2.Controls.Add(this.pnlNoSelect);
             this.sptFieldProperty.Panel2.Controls.Add(this.pnlMdfFP);
             this.sptFieldProperty.Panel2MinSize = 415;
             this.sptFieldProperty.Size = new System.Drawing.Size(778, 466);
@@ -267,14 +307,14 @@
             this.dgvFieldProperty.AllowUserToResizeRows = false;
             this.dgvFieldProperty.BackgroundColor = System.Drawing.Color.White;
             this.dgvFieldProperty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFieldProperty.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFieldProperty.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvFieldProperty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFieldProperty.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvFieldProperty.Location = new System.Drawing.Point(0, 26);
@@ -296,29 +336,6 @@
             this.txtFieldPropertySearch.Size = new System.Drawing.Size(359, 26);
             this.txtFieldPropertySearch.TabIndex = 0;
             this.txtFieldPropertySearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtFieldPropertySearch_KeyUp);
-            // 
-            // pnlNoSelect
-            // 
-            this.pnlNoSelect.BackColor = System.Drawing.Color.White;
-            this.pnlNoSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNoSelect.Controls.Add(this.label39);
-            this.pnlNoSelect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNoSelect.Location = new System.Drawing.Point(0, 0);
-            this.pnlNoSelect.Name = "pnlNoSelect";
-            this.pnlNoSelect.Size = new System.Drawing.Size(215, 466);
-            this.pnlNoSelect.TabIndex = 22;
-            this.pnlNoSelect.Visible = false;
-            // 
-            // label39
-            // 
-            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label39.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label39.Location = new System.Drawing.Point(0, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(213, 31);
-            this.label39.TabIndex = 1;
-            this.label39.Text = "未选择";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlProperty
             // 
@@ -834,20 +851,366 @@
             this.txtFieldReadOnly.Size = new System.Drawing.Size(117, 26);
             this.txtFieldReadOnly.TabIndex = 4;
             // 
+            // pnlNoSelect
+            // 
+            this.pnlNoSelect.BackColor = System.Drawing.Color.White;
+            this.pnlNoSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNoSelect.Controls.Add(this.label39);
+            this.pnlNoSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNoSelect.Location = new System.Drawing.Point(0, 0);
+            this.pnlNoSelect.Name = "pnlNoSelect";
+            this.pnlNoSelect.Size = new System.Drawing.Size(215, 466);
+            this.pnlNoSelect.TabIndex = 22;
+            this.pnlNoSelect.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label39.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label39.Location = new System.Drawing.Point(0, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(213, 31);
+            this.label39.TabIndex = 1;
+            this.label39.Text = "未选择";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pnlMdfFP
             // 
             this.pnlMdfFP.BackColor = System.Drawing.Color.White;
             this.pnlMdfFP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPFont);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPEnum);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPColor);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPRectangle);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPSize);
             this.pnlMdfFP.Controls.Add(this.pnlMdfFPDateTime);
-            this.pnlMdfFP.Controls.Add(this.pnlMdfFPOther);
-            this.pnlMdfFP.Controls.Add(this.pnlMdfFPBoolean);
-            this.pnlMdfFP.Controls.Add(this.pnlMdfFPString);
             this.pnlMdfFP.Controls.Add(this.pnlMdfFPNumber);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPString);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPBoolean);
+            this.pnlMdfFP.Controls.Add(this.pnlMdfFPOther);
             this.pnlMdfFP.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlMdfFP.Location = new System.Drawing.Point(215, 0);
             this.pnlMdfFP.Name = "pnlMdfFP";
             this.pnlMdfFP.Size = new System.Drawing.Size(200, 466);
             this.pnlMdfFP.TabIndex = 1;
+            // 
+            // pnlMdfFPColor
+            // 
+            this.pnlMdfFPColor.Controls.Add(this.picMdfFPNameColor);
+            this.pnlMdfFPColor.Controls.Add(this.rbMdfFPColor);
+            this.pnlMdfFPColor.Controls.Add(this.btnMdfFPColorSelected);
+            this.pnlMdfFPColor.Controls.Add(this.rbMdfFPName);
+            this.pnlMdfFPColor.Controls.Add(this.cmbMdfFPNameSelected);
+            this.pnlMdfFPColor.Controls.Add(this.label30);
+            this.pnlMdfFPColor.Controls.Add(this.btnMdfFPColor);
+            this.pnlMdfFPColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPColor.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPColor.Name = "pnlMdfFPColor";
+            this.pnlMdfFPColor.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPColor.TabIndex = 8;
+            this.pnlMdfFPColor.Visible = false;
+            // 
+            // picMdfFPNameColor
+            // 
+            this.picMdfFPNameColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picMdfFPNameColor.Location = new System.Drawing.Point(41, 102);
+            this.picMdfFPNameColor.Name = "picMdfFPNameColor";
+            this.picMdfFPNameColor.Size = new System.Drawing.Size(139, 24);
+            this.picMdfFPNameColor.TabIndex = 6;
+            this.picMdfFPNameColor.TabStop = false;
+            // 
+            // rbMdfFPColor
+            // 
+            this.rbMdfFPColor.AutoSize = true;
+            this.rbMdfFPColor.Location = new System.Drawing.Point(19, 46);
+            this.rbMdfFPColor.Name = "rbMdfFPColor";
+            this.rbMdfFPColor.Size = new System.Drawing.Size(14, 13);
+            this.rbMdfFPColor.TabIndex = 5;
+            this.rbMdfFPColor.TabStop = true;
+            this.rbMdfFPColor.UseVisualStyleBackColor = true;
+            this.rbMdfFPColor.CheckedChanged += new System.EventHandler(this.RbMdfFPColor_CheckedChanged);
+            // 
+            // btnMdfFPColorSelected
+            // 
+            this.btnMdfFPColorSelected.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMdfFPColorSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMdfFPColorSelected.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPColorSelected.Location = new System.Drawing.Point(41, 37);
+            this.btnMdfFPColorSelected.Name = "btnMdfFPColorSelected";
+            this.btnMdfFPColorSelected.Size = new System.Drawing.Size(139, 30);
+            this.btnMdfFPColorSelected.TabIndex = 0;
+            this.btnMdfFPColorSelected.UseVisualStyleBackColor = true;
+            this.btnMdfFPColorSelected.Click += new System.EventHandler(this.BtnMdfFPColorSelected_Click);
+            // 
+            // rbMdfFPName
+            // 
+            this.rbMdfFPName.AutoSize = true;
+            this.rbMdfFPName.Location = new System.Drawing.Point(19, 81);
+            this.rbMdfFPName.Name = "rbMdfFPName";
+            this.rbMdfFPName.Size = new System.Drawing.Size(14, 13);
+            this.rbMdfFPName.TabIndex = 5;
+            this.rbMdfFPName.TabStop = true;
+            this.rbMdfFPName.UseVisualStyleBackColor = true;
+            this.rbMdfFPName.CheckedChanged += new System.EventHandler(this.RbMdfFPColor_CheckedChanged);
+            // 
+            // cmbMdfFPNameSelected
+            // 
+            this.cmbMdfFPNameSelected.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbMdfFPNameSelected.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMdfFPNameSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMdfFPNameSelected.FormattingEnabled = true;
+            this.cmbMdfFPNameSelected.Location = new System.Drawing.Point(41, 75);
+            this.cmbMdfFPNameSelected.Name = "cmbMdfFPNameSelected";
+            this.cmbMdfFPNameSelected.Size = new System.Drawing.Size(139, 24);
+            this.cmbMdfFPNameSelected.TabIndex = 4;
+            this.cmbMdfFPNameSelected.SelectedIndexChanged += new System.EventHandler(this.CmbMdfFPNameSelected_SelectedIndexChanged);
+            // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Location = new System.Drawing.Point(0, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(198, 31);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "数值修改";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPColor
+            // 
+            this.btnMdfFPColor.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPColor.Location = new System.Drawing.Point(54, 133);
+            this.btnMdfFPColor.Name = "btnMdfFPColor";
+            this.btnMdfFPColor.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPColor.TabIndex = 0;
+            this.btnMdfFPColor.Text = "修改数值";
+            this.btnMdfFPColor.UseVisualStyleBackColor = true;
+            this.btnMdfFPColor.Click += new System.EventHandler(this.BtnMdfFPColor_Click);
+            // 
+            // pnlMdfFPEnum
+            // 
+            this.pnlMdfFPEnum.Controls.Add(this.cmbMdfFPEnum);
+            this.pnlMdfFPEnum.Controls.Add(this.label31);
+            this.pnlMdfFPEnum.Controls.Add(this.btnMdfFPEnum);
+            this.pnlMdfFPEnum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPEnum.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPEnum.Name = "pnlMdfFPEnum";
+            this.pnlMdfFPEnum.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPEnum.TabIndex = 9;
+            this.pnlMdfFPEnum.Visible = false;
+            // 
+            // cmbMdfFPEnum
+            // 
+            this.cmbMdfFPEnum.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbMdfFPEnum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMdfFPEnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMdfFPEnum.FormattingEnabled = true;
+            this.cmbMdfFPEnum.Location = new System.Drawing.Point(19, 40);
+            this.cmbMdfFPEnum.Name = "cmbMdfFPEnum";
+            this.cmbMdfFPEnum.Size = new System.Drawing.Size(161, 24);
+            this.cmbMdfFPEnum.TabIndex = 3;
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label31.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label31.Location = new System.Drawing.Point(0, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(198, 31);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "数值修改";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPEnum
+            // 
+            this.btnMdfFPEnum.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPEnum.Location = new System.Drawing.Point(54, 72);
+            this.btnMdfFPEnum.Name = "btnMdfFPEnum";
+            this.btnMdfFPEnum.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPEnum.TabIndex = 0;
+            this.btnMdfFPEnum.Text = "修改数值";
+            this.btnMdfFPEnum.UseVisualStyleBackColor = true;
+            this.btnMdfFPEnum.Click += new System.EventHandler(this.BtnMdfFPEnum_Click);
+            // 
+            // pnlMdfFPRectangle
+            // 
+            this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleOne);
+            this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleTwo);
+            this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleThree);
+            this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleFour);
+            this.pnlMdfFPRectangle.Controls.Add(this.txtMdfFPRectangleOne);
+            this.pnlMdfFPRectangle.Controls.Add(this.txtMdfFPRectangleTwo);
+            this.pnlMdfFPRectangle.Controls.Add(this.txtMdfFPRectangleThree);
+            this.pnlMdfFPRectangle.Controls.Add(this.txtMdfFPRectangleFour);
+            this.pnlMdfFPRectangle.Controls.Add(this.label32);
+            this.pnlMdfFPRectangle.Controls.Add(this.btnMdfFPRectangle);
+            this.pnlMdfFPRectangle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPRectangle.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPRectangle.Name = "pnlMdfFPRectangle";
+            this.pnlMdfFPRectangle.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPRectangle.TabIndex = 7;
+            this.pnlMdfFPRectangle.Visible = false;
+            // 
+            // lblMdfFPRectangleOne
+            // 
+            this.lblMdfFPRectangleOne.AutoSize = true;
+            this.lblMdfFPRectangleOne.Location = new System.Drawing.Point(19, 47);
+            this.lblMdfFPRectangleOne.Name = "lblMdfFPRectangleOne";
+            this.lblMdfFPRectangleOne.Size = new System.Drawing.Size(16, 16);
+            this.lblMdfFPRectangleOne.TabIndex = 6;
+            this.lblMdfFPRectangleOne.Text = "X";
+            // 
+            // lblMdfFPRectangleTwo
+            // 
+            this.lblMdfFPRectangleTwo.AutoSize = true;
+            this.lblMdfFPRectangleTwo.Location = new System.Drawing.Point(19, 79);
+            this.lblMdfFPRectangleTwo.Name = "lblMdfFPRectangleTwo";
+            this.lblMdfFPRectangleTwo.Size = new System.Drawing.Size(16, 16);
+            this.lblMdfFPRectangleTwo.TabIndex = 6;
+            this.lblMdfFPRectangleTwo.Text = "Y";
+            // 
+            // lblMdfFPRectangleThree
+            // 
+            this.lblMdfFPRectangleThree.AutoSize = true;
+            this.lblMdfFPRectangleThree.Location = new System.Drawing.Point(19, 112);
+            this.lblMdfFPRectangleThree.Name = "lblMdfFPRectangleThree";
+            this.lblMdfFPRectangleThree.Size = new System.Drawing.Size(16, 16);
+            this.lblMdfFPRectangleThree.TabIndex = 6;
+            this.lblMdfFPRectangleThree.Text = "W";
+            // 
+            // lblMdfFPRectangleFour
+            // 
+            this.lblMdfFPRectangleFour.AutoSize = true;
+            this.lblMdfFPRectangleFour.Location = new System.Drawing.Point(19, 144);
+            this.lblMdfFPRectangleFour.Name = "lblMdfFPRectangleFour";
+            this.lblMdfFPRectangleFour.Size = new System.Drawing.Size(16, 16);
+            this.lblMdfFPRectangleFour.TabIndex = 6;
+            this.lblMdfFPRectangleFour.Text = "H";
+            // 
+            // txtMdfFPRectangleOne
+            // 
+            this.txtMdfFPRectangleOne.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPRectangleOne.Location = new System.Drawing.Point(41, 42);
+            this.txtMdfFPRectangleOne.Name = "txtMdfFPRectangleOne";
+            this.txtMdfFPRectangleOne.Size = new System.Drawing.Size(139, 26);
+            this.txtMdfFPRectangleOne.TabIndex = 5;
+            // 
+            // txtMdfFPRectangleTwo
+            // 
+            this.txtMdfFPRectangleTwo.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPRectangleTwo.Location = new System.Drawing.Point(41, 74);
+            this.txtMdfFPRectangleTwo.Name = "txtMdfFPRectangleTwo";
+            this.txtMdfFPRectangleTwo.Size = new System.Drawing.Size(139, 26);
+            this.txtMdfFPRectangleTwo.TabIndex = 5;
+            // 
+            // txtMdfFPRectangleThree
+            // 
+            this.txtMdfFPRectangleThree.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPRectangleThree.Location = new System.Drawing.Point(41, 107);
+            this.txtMdfFPRectangleThree.Name = "txtMdfFPRectangleThree";
+            this.txtMdfFPRectangleThree.Size = new System.Drawing.Size(139, 26);
+            this.txtMdfFPRectangleThree.TabIndex = 5;
+            // 
+            // txtMdfFPRectangleFour
+            // 
+            this.txtMdfFPRectangleFour.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPRectangleFour.Location = new System.Drawing.Point(41, 139);
+            this.txtMdfFPRectangleFour.Name = "txtMdfFPRectangleFour";
+            this.txtMdfFPRectangleFour.Size = new System.Drawing.Size(139, 26);
+            this.txtMdfFPRectangleFour.TabIndex = 5;
+            // 
+            // label32
+            // 
+            this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label32.Location = new System.Drawing.Point(0, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(198, 31);
+            this.label32.TabIndex = 2;
+            this.label32.Text = "数值修改";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPRectangle
+            // 
+            this.btnMdfFPRectangle.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPRectangle.Location = new System.Drawing.Point(54, 173);
+            this.btnMdfFPRectangle.Name = "btnMdfFPRectangle";
+            this.btnMdfFPRectangle.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPRectangle.TabIndex = 0;
+            this.btnMdfFPRectangle.Text = "修改数值";
+            this.btnMdfFPRectangle.UseVisualStyleBackColor = true;
+            this.btnMdfFPRectangle.Click += new System.EventHandler(this.BtnMdfFPRectangle_Click);
+            // 
+            // pnlMdfFPSize
+            // 
+            this.pnlMdfFPSize.Controls.Add(this.lblMdfFPSizeOne);
+            this.pnlMdfFPSize.Controls.Add(this.lblMdfFPSizeTwo);
+            this.pnlMdfFPSize.Controls.Add(this.txtMdfFPSizeOne);
+            this.pnlMdfFPSize.Controls.Add(this.txtMdfFPSizeTwo);
+            this.pnlMdfFPSize.Controls.Add(this.label29);
+            this.pnlMdfFPSize.Controls.Add(this.btnMdfFPSize);
+            this.pnlMdfFPSize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPSize.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPSize.Name = "pnlMdfFPSize";
+            this.pnlMdfFPSize.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPSize.TabIndex = 6;
+            this.pnlMdfFPSize.Visible = false;
+            // 
+            // lblMdfFPSizeOne
+            // 
+            this.lblMdfFPSizeOne.AutoSize = true;
+            this.lblMdfFPSizeOne.Location = new System.Drawing.Point(19, 47);
+            this.lblMdfFPSizeOne.Name = "lblMdfFPSizeOne";
+            this.lblMdfFPSizeOne.Size = new System.Drawing.Size(16, 16);
+            this.lblMdfFPSizeOne.TabIndex = 6;
+            this.lblMdfFPSizeOne.Text = "W";
+            // 
+            // lblMdfFPSizeTwo
+            // 
+            this.lblMdfFPSizeTwo.AutoSize = true;
+            this.lblMdfFPSizeTwo.Location = new System.Drawing.Point(19, 79);
+            this.lblMdfFPSizeTwo.Name = "lblMdfFPSizeTwo";
+            this.lblMdfFPSizeTwo.Size = new System.Drawing.Size(16, 16);
+            this.lblMdfFPSizeTwo.TabIndex = 6;
+            this.lblMdfFPSizeTwo.Text = "H";
+            // 
+            // txtMdfFPSizeOne
+            // 
+            this.txtMdfFPSizeOne.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPSizeOne.Location = new System.Drawing.Point(41, 42);
+            this.txtMdfFPSizeOne.Name = "txtMdfFPSizeOne";
+            this.txtMdfFPSizeOne.Size = new System.Drawing.Size(139, 26);
+            this.txtMdfFPSizeOne.TabIndex = 5;
+            // 
+            // txtMdfFPSizeTwo
+            // 
+            this.txtMdfFPSizeTwo.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPSizeTwo.Location = new System.Drawing.Point(41, 74);
+            this.txtMdfFPSizeTwo.Name = "txtMdfFPSizeTwo";
+            this.txtMdfFPSizeTwo.Size = new System.Drawing.Size(139, 26);
+            this.txtMdfFPSizeTwo.TabIndex = 5;
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label29.Location = new System.Drawing.Point(0, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(198, 31);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "数值修改";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPSize
+            // 
+            this.btnMdfFPSize.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPSize.Location = new System.Drawing.Point(54, 108);
+            this.btnMdfFPSize.Name = "btnMdfFPSize";
+            this.btnMdfFPSize.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPSize.TabIndex = 0;
+            this.btnMdfFPSize.Text = "修改数值";
+            this.btnMdfFPSize.UseVisualStyleBackColor = true;
+            this.btnMdfFPSize.Click += new System.EventHandler(this.BtnMdfFPSize_Click);
             // 
             // pnlMdfFPDateTime
             // 
@@ -862,6 +1225,15 @@
             this.pnlMdfFPDateTime.Size = new System.Drawing.Size(198, 464);
             this.pnlMdfFPDateTime.TabIndex = 4;
             this.pnlMdfFPDateTime.Visible = false;
+            // 
+            // txtMdfFPDateTime
+            // 
+            this.txtMdfFPDateTime.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPDateTime.Location = new System.Drawing.Point(19, 42);
+            this.txtMdfFPDateTime.Name = "txtMdfFPDateTime";
+            this.txtMdfFPDateTime.ReadOnly = true;
+            this.txtMdfFPDateTime.Size = new System.Drawing.Size(161, 26);
+            this.txtMdfFPDateTime.TabIndex = 5;
             // 
             // label28
             // 
@@ -904,84 +1276,47 @@
             this.btnMdfFPDateTime.UseVisualStyleBackColor = true;
             this.btnMdfFPDateTime.Click += new System.EventHandler(this.BtnMdfFPDateTime_Click);
             // 
-            // pnlMdfFPOther
+            // pnlMdfFPNumber
             // 
-            this.pnlMdfFPOther.Controls.Add(this.label1);
-            this.pnlMdfFPOther.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMdfFPOther.Location = new System.Drawing.Point(0, 0);
-            this.pnlMdfFPOther.Name = "pnlMdfFPOther";
-            this.pnlMdfFPOther.Size = new System.Drawing.Size(198, 464);
-            this.pnlMdfFPOther.TabIndex = 1;
-            this.pnlMdfFPOther.Visible = false;
+            this.pnlMdfFPNumber.Controls.Add(this.txtMdfFPNumber);
+            this.pnlMdfFPNumber.Controls.Add(this.label26);
+            this.pnlMdfFPNumber.Controls.Add(this.btnMdfFPNumber);
+            this.pnlMdfFPNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPNumber.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPNumber.Name = "pnlMdfFPNumber";
+            this.pnlMdfFPNumber.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPNumber.TabIndex = 2;
+            this.pnlMdfFPNumber.Visible = false;
             // 
-            // label1
+            // txtMdfFPNumber
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "该类型暂时无法修改";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtMdfFPNumber.BackColor = System.Drawing.Color.White;
+            this.txtMdfFPNumber.Location = new System.Drawing.Point(19, 39);
+            this.txtMdfFPNumber.Name = "txtMdfFPNumber";
+            this.txtMdfFPNumber.Size = new System.Drawing.Size(161, 26);
+            this.txtMdfFPNumber.TabIndex = 3;
             // 
-            // pnlMdfFPBoolean
+            // label26
             // 
-            this.pnlMdfFPBoolean.Controls.Add(this.label2);
-            this.pnlMdfFPBoolean.Controls.Add(this.rbMdfFPBooleanF);
-            this.pnlMdfFPBoolean.Controls.Add(this.rbMdfFPBooleanT);
-            this.pnlMdfFPBoolean.Controls.Add(this.btnMdfFPBoolean);
-            this.pnlMdfFPBoolean.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMdfFPBoolean.Location = new System.Drawing.Point(0, 0);
-            this.pnlMdfFPBoolean.Name = "pnlMdfFPBoolean";
-            this.pnlMdfFPBoolean.Size = new System.Drawing.Size(198, 464);
-            this.pnlMdfFPBoolean.TabIndex = 0;
-            this.pnlMdfFPBoolean.Visible = false;
+            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label26.Location = new System.Drawing.Point(0, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(198, 31);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "数值修改";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // btnMdfFPNumber
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "数值修改";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rbMdfFPBooleanF
-            // 
-            this.rbMdfFPBooleanF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbMdfFPBooleanF.AutoSize = true;
-            this.rbMdfFPBooleanF.Location = new System.Drawing.Point(114, 42);
-            this.rbMdfFPBooleanF.Name = "rbMdfFPBooleanF";
-            this.rbMdfFPBooleanF.Size = new System.Drawing.Size(66, 20);
-            this.rbMdfFPBooleanF.TabIndex = 1;
-            this.rbMdfFPBooleanF.TabStop = true;
-            this.rbMdfFPBooleanF.Text = "False";
-            this.rbMdfFPBooleanF.UseVisualStyleBackColor = true;
-            // 
-            // rbMdfFPBooleanT
-            // 
-            this.rbMdfFPBooleanT.AutoSize = true;
-            this.rbMdfFPBooleanT.Location = new System.Drawing.Point(19, 42);
-            this.rbMdfFPBooleanT.Name = "rbMdfFPBooleanT";
-            this.rbMdfFPBooleanT.Size = new System.Drawing.Size(58, 20);
-            this.rbMdfFPBooleanT.TabIndex = 1;
-            this.rbMdfFPBooleanT.TabStop = true;
-            this.rbMdfFPBooleanT.Text = "True";
-            this.rbMdfFPBooleanT.UseVisualStyleBackColor = true;
-            // 
-            // btnMdfFPBoolean
-            // 
-            this.btnMdfFPBoolean.Font = new System.Drawing.Font("宋体", 12F);
-            this.btnMdfFPBoolean.Location = new System.Drawing.Point(54, 72);
-            this.btnMdfFPBoolean.Name = "btnMdfFPBoolean";
-            this.btnMdfFPBoolean.Size = new System.Drawing.Size(91, 30);
-            this.btnMdfFPBoolean.TabIndex = 0;
-            this.btnMdfFPBoolean.Text = "修改数值";
-            this.btnMdfFPBoolean.UseVisualStyleBackColor = true;
-            this.btnMdfFPBoolean.Click += new System.EventHandler(this.BtnMdfFPBoolean_Click);
+            this.btnMdfFPNumber.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPNumber.Location = new System.Drawing.Point(54, 72);
+            this.btnMdfFPNumber.Name = "btnMdfFPNumber";
+            this.btnMdfFPNumber.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPNumber.TabIndex = 0;
+            this.btnMdfFPNumber.Text = "修改数值";
+            this.btnMdfFPNumber.UseVisualStyleBackColor = true;
+            this.btnMdfFPNumber.Click += new System.EventHandler(this.BtnMdfFPNumber_Click);
             // 
             // pnlMdfFPString
             // 
@@ -1049,47 +1384,84 @@
             this.btnMdfFPString.UseVisualStyleBackColor = true;
             this.btnMdfFPString.Click += new System.EventHandler(this.BtnMdfFPString_Click);
             // 
-            // pnlMdfFPNumber
+            // pnlMdfFPBoolean
             // 
-            this.pnlMdfFPNumber.Controls.Add(this.txtMdfFPNumber);
-            this.pnlMdfFPNumber.Controls.Add(this.label26);
-            this.pnlMdfFPNumber.Controls.Add(this.btnMdfFPMumber);
-            this.pnlMdfFPNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMdfFPNumber.Location = new System.Drawing.Point(0, 0);
-            this.pnlMdfFPNumber.Name = "pnlMdfFPNumber";
-            this.pnlMdfFPNumber.Size = new System.Drawing.Size(198, 464);
-            this.pnlMdfFPNumber.TabIndex = 2;
-            this.pnlMdfFPNumber.Visible = false;
+            this.pnlMdfFPBoolean.Controls.Add(this.label2);
+            this.pnlMdfFPBoolean.Controls.Add(this.rbMdfFPBooleanF);
+            this.pnlMdfFPBoolean.Controls.Add(this.rbMdfFPBooleanT);
+            this.pnlMdfFPBoolean.Controls.Add(this.btnMdfFPBoolean);
+            this.pnlMdfFPBoolean.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPBoolean.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPBoolean.Name = "pnlMdfFPBoolean";
+            this.pnlMdfFPBoolean.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPBoolean.TabIndex = 0;
+            this.pnlMdfFPBoolean.Visible = false;
             // 
-            // txtMdfFPNumber
+            // label2
             // 
-            this.txtMdfFPNumber.BackColor = System.Drawing.Color.White;
-            this.txtMdfFPNumber.Location = new System.Drawing.Point(19, 39);
-            this.txtMdfFPNumber.Name = "txtMdfFPNumber";
-            this.txtMdfFPNumber.Size = new System.Drawing.Size(161, 26);
-            this.txtMdfFPNumber.TabIndex = 3;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 31);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "数值修改";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label26
+            // rbMdfFPBooleanF
             // 
-            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label26.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label26.Location = new System.Drawing.Point(0, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(198, 31);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "数值修改";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbMdfFPBooleanF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbMdfFPBooleanF.AutoSize = true;
+            this.rbMdfFPBooleanF.Location = new System.Drawing.Point(114, 42);
+            this.rbMdfFPBooleanF.Name = "rbMdfFPBooleanF";
+            this.rbMdfFPBooleanF.Size = new System.Drawing.Size(66, 20);
+            this.rbMdfFPBooleanF.TabIndex = 1;
+            this.rbMdfFPBooleanF.TabStop = true;
+            this.rbMdfFPBooleanF.Text = "False";
+            this.rbMdfFPBooleanF.UseVisualStyleBackColor = true;
             // 
-            // btnMdfFPMumber
+            // rbMdfFPBooleanT
             // 
-            this.btnMdfFPMumber.Font = new System.Drawing.Font("宋体", 12F);
-            this.btnMdfFPMumber.Location = new System.Drawing.Point(54, 72);
-            this.btnMdfFPMumber.Name = "btnMdfFPMumber";
-            this.btnMdfFPMumber.Size = new System.Drawing.Size(91, 30);
-            this.btnMdfFPMumber.TabIndex = 0;
-            this.btnMdfFPMumber.Text = "修改数值";
-            this.btnMdfFPMumber.UseVisualStyleBackColor = true;
-            this.btnMdfFPMumber.Click += new System.EventHandler(this.BtnMdfFPMumber_Click);
+            this.rbMdfFPBooleanT.AutoSize = true;
+            this.rbMdfFPBooleanT.Location = new System.Drawing.Point(19, 42);
+            this.rbMdfFPBooleanT.Name = "rbMdfFPBooleanT";
+            this.rbMdfFPBooleanT.Size = new System.Drawing.Size(58, 20);
+            this.rbMdfFPBooleanT.TabIndex = 1;
+            this.rbMdfFPBooleanT.TabStop = true;
+            this.rbMdfFPBooleanT.Text = "True";
+            this.rbMdfFPBooleanT.UseVisualStyleBackColor = true;
+            // 
+            // btnMdfFPBoolean
+            // 
+            this.btnMdfFPBoolean.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPBoolean.Location = new System.Drawing.Point(54, 72);
+            this.btnMdfFPBoolean.Name = "btnMdfFPBoolean";
+            this.btnMdfFPBoolean.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPBoolean.TabIndex = 0;
+            this.btnMdfFPBoolean.Text = "修改数值";
+            this.btnMdfFPBoolean.UseVisualStyleBackColor = true;
+            this.btnMdfFPBoolean.Click += new System.EventHandler(this.BtnMdfFPBoolean_Click);
+            // 
+            // pnlMdfFPOther
+            // 
+            this.pnlMdfFPOther.Controls.Add(this.label1);
+            this.pnlMdfFPOther.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPOther.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPOther.Name = "pnlMdfFPOther";
+            this.pnlMdfFPOther.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPOther.TabIndex = 1;
+            this.pnlMdfFPOther.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "该类型暂时无法修改";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlOperate
             // 
@@ -1135,14 +1507,52 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
-            // txtMdfFPDateTime
+            // pnlMdfFPFont
             // 
-            this.txtMdfFPDateTime.BackColor = System.Drawing.Color.White;
-            this.txtMdfFPDateTime.Location = new System.Drawing.Point(19, 42);
-            this.txtMdfFPDateTime.Name = "txtMdfFPDateTime";
-            this.txtMdfFPDateTime.ReadOnly = true;
-            this.txtMdfFPDateTime.Size = new System.Drawing.Size(161, 26);
-            this.txtMdfFPDateTime.TabIndex = 5;
+            this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFontSelect);
+            this.pnlMdfFPFont.Controls.Add(this.label33);
+            this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFont);
+            this.pnlMdfFPFont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPFont.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPFont.Name = "pnlMdfFPFont";
+            this.pnlMdfFPFont.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPFont.TabIndex = 10;
+            this.pnlMdfFPFont.Visible = false;
+            // 
+            // btnMdfFPFontSelect
+            // 
+            this.btnMdfFPFontSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMdfFPFontSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMdfFPFontSelect.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPFontSelect.Location = new System.Drawing.Point(19, 37);
+            this.btnMdfFPFontSelect.Name = "btnMdfFPFontSelect";
+            this.btnMdfFPFontSelect.Size = new System.Drawing.Size(161, 30);
+            this.btnMdfFPFontSelect.TabIndex = 0;
+            this.btnMdfFPFontSelect.Text = "ぁぃ测试ABcd?!";
+            this.btnMdfFPFontSelect.UseVisualStyleBackColor = true;
+            this.btnMdfFPFontSelect.Click += new System.EventHandler(this.BtnMdfFPFontSelect_Click);
+            // 
+            // label33
+            // 
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label33.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label33.Location = new System.Drawing.Point(0, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(198, 31);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "数值修改";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPFont
+            // 
+            this.btnMdfFPFont.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPFont.Location = new System.Drawing.Point(54, 75);
+            this.btnMdfFPFont.Name = "btnMdfFPFont";
+            this.btnMdfFPFont.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPFont.TabIndex = 0;
+            this.btnMdfFPFont.Text = "修改数值";
+            this.btnMdfFPFont.UseVisualStyleBackColor = true;
+            this.btnMdfFPFont.Click += new System.EventHandler(this.BtnMdfFPFont_Click);
             // 
             // FormCommonDebugModel
             // 
@@ -1172,22 +1582,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.sptFieldProperty)).EndInit();
             this.sptFieldProperty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFieldProperty)).EndInit();
-            this.pnlNoSelect.ResumeLayout(false);
             this.pnlProperty.ResumeLayout(false);
             this.pnlProperty.PerformLayout();
             this.pnlField.ResumeLayout(false);
             this.pnlField.PerformLayout();
+            this.pnlNoSelect.ResumeLayout(false);
             this.pnlMdfFP.ResumeLayout(false);
+            this.pnlMdfFPColor.ResumeLayout(false);
+            this.pnlMdfFPColor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMdfFPNameColor)).EndInit();
+            this.pnlMdfFPEnum.ResumeLayout(false);
+            this.pnlMdfFPRectangle.ResumeLayout(false);
+            this.pnlMdfFPRectangle.PerformLayout();
+            this.pnlMdfFPSize.ResumeLayout(false);
+            this.pnlMdfFPSize.PerformLayout();
             this.pnlMdfFPDateTime.ResumeLayout(false);
             this.pnlMdfFPDateTime.PerformLayout();
-            this.pnlMdfFPOther.ResumeLayout(false);
-            this.pnlMdfFPBoolean.ResumeLayout(false);
-            this.pnlMdfFPBoolean.PerformLayout();
-            this.pnlMdfFPString.ResumeLayout(false);
-            this.pnlMdfFPString.PerformLayout();
             this.pnlMdfFPNumber.ResumeLayout(false);
             this.pnlMdfFPNumber.PerformLayout();
+            this.pnlMdfFPString.ResumeLayout(false);
+            this.pnlMdfFPString.PerformLayout();
+            this.pnlMdfFPBoolean.ResumeLayout(false);
+            this.pnlMdfFPBoolean.PerformLayout();
+            this.pnlMdfFPOther.ResumeLayout(false);
             this.pnlOperate.ResumeLayout(false);
+            this.pnlMdfFPFont.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1262,7 +1681,7 @@
         private System.Windows.Forms.TextBox txtPropertyCanWrite;
         private System.Windows.Forms.Panel pnlMdfFPNumber;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button btnMdfFPMumber;
+        private System.Windows.Forms.Button btnMdfFPNumber;
         private System.Windows.Forms.TextBox txtFieldPropertySearch;
         private System.Windows.Forms.TextBox txtControlSearch;
         private System.Windows.Forms.Panel pnlNoSelect;
@@ -1280,5 +1699,39 @@
         private System.Windows.Forms.DateTimePicker dtpMdfFPDateTimeDate;
         private System.Windows.Forms.DateTimePicker dtpMdfFPDateTimeTime;
         private System.Windows.Forms.TextBox txtMdfFPDateTime;
+        private System.Windows.Forms.Panel pnlMdfFPSize;
+        private System.Windows.Forms.TextBox txtMdfFPSizeOne;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button btnMdfFPSize;
+        private System.Windows.Forms.TextBox txtMdfFPSizeTwo;
+        private System.Windows.Forms.Label lblMdfFPSizeTwo;
+        private System.Windows.Forms.Label lblMdfFPSizeOne;
+        private System.Windows.Forms.Panel pnlMdfFPRectangle;
+        private System.Windows.Forms.Label lblMdfFPRectangleThree;
+        private System.Windows.Forms.Label lblMdfFPRectangleOne;
+        private System.Windows.Forms.Label lblMdfFPRectangleFour;
+        private System.Windows.Forms.Label lblMdfFPRectangleTwo;
+        private System.Windows.Forms.TextBox txtMdfFPRectangleFour;
+        private System.Windows.Forms.TextBox txtMdfFPRectangleTwo;
+        private System.Windows.Forms.TextBox txtMdfFPRectangleThree;
+        private System.Windows.Forms.TextBox txtMdfFPRectangleOne;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button btnMdfFPRectangle;
+        private System.Windows.Forms.Panel pnlMdfFPColor;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button btnMdfFPColor;
+        private System.Windows.Forms.Button btnMdfFPColorSelected;
+        private System.Windows.Forms.Panel pnlMdfFPEnum;
+        private System.Windows.Forms.ComboBox cmbMdfFPEnum;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnMdfFPEnum;
+        private System.Windows.Forms.ComboBox cmbMdfFPNameSelected;
+        private System.Windows.Forms.RadioButton rbMdfFPColor;
+        private System.Windows.Forms.RadioButton rbMdfFPName;
+        private System.Windows.Forms.PictureBox picMdfFPNameColor;
+        private System.Windows.Forms.Panel pnlMdfFPFont;
+        private System.Windows.Forms.Button btnMdfFPFontSelect;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btnMdfFPFont;
     }
 }
