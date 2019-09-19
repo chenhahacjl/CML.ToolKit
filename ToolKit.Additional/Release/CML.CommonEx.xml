@@ -28,20 +28,47 @@
             <summary>
             加载变量
             </summary>
-            <param name="name"></param>
+            <param name="name">变量名称</param>
         </member>
         <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadProperty(System.String)">
             <summary>
             加载属性
             </summary>
-            <param name="name"></param>
+            <param name="name">属性名称</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadConstructor(System.Type[])">
+            <summary>
+            加载构造函数
+            </summary>
+            <param name="type">参数类型</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadEvent(System.String)">
+            <summary>
+            加载事件
+            </summary>
+            <param name="name">事件名称</param>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.LoadMethod(System.String,System.Type[])">
+            <summary>
+            加载方法
+            </summary>
+            <param name="name">方法名称</param>
+            <param name="type">参数类型</param>
         </member>
         <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.CreateFunctionString(System.Reflection.MethodInfo)">
             <summary>
             创建方法字符串
             </summary>
-            <param name="methodInfo">方法变量</param>
+            <param name="methodInfo">方法信息</param>
             <returns>方法字符串</returns>
+        </member>
+        <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.CreateParasString(System.Reflection.ParameterInfo[],System.Type[]@)">
+            <summary>
+            创建参数字符串
+            </summary>
+            <param name="arrParaInfo">参数信息</param>
+            <param name="types">参数类型</param>
+            <returns>参数字符串</returns>
         </member>
         <member name="M:CML.CommonEx.DebugEx.FormCommonDebugModel.SetFieldPropertyValue(System.String,System.String,System.Object)">
             <summary>

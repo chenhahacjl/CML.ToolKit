@@ -15,11 +15,11 @@ namespace CML.CommonEx.DebugEx
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y001R002";
+        public override string CP_VerDev => "19Y001R003";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string CP_VerDate => "2019年09月18日 21:30";
+        public override string CP_VerDate => "2019年09月19日 16:15";
         /// <summary>
         /// 当前程序集 
         /// </summary>

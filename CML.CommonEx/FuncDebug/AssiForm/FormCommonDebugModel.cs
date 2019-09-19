@@ -48,7 +48,7 @@ namespace CML.CommonEx.DebugEx
             dgvControl.Columns["Name"].MinimumWidth = 100;
             dgvControl.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvControl.Columns["Text"].MinimumWidth = 100;
-            dgvControl.Columns["Text"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvControl.Columns["Text"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvControl.Columns["Object"].Visible = false;
 
             //初始化表格
@@ -72,7 +72,7 @@ namespace CML.CommonEx.DebugEx
                 }
             }
 
-            //加载公共属性
+            //加载属性
             PropertyInfo[] properties = m_projectObject.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
             foreach (var item in properties)
             {
@@ -87,15 +87,54 @@ namespace CML.CommonEx.DebugEx
             }
 
             //设置显示格式
-            dgvFieldProperty.DataSource = dtFieldProperty;
-            dgvFieldProperty.Columns["类型"].MinimumWidth = 100;
-            dgvFieldProperty.Columns["类型"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvFieldProperty.Columns["数据类型"].MinimumWidth = 100;
-            dgvFieldProperty.Columns["数据类型"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvFieldProperty.Columns["Name"].MinimumWidth = 100;
-            dgvFieldProperty.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvFieldProperty.Columns["Value"].MinimumWidth = 100;
-            dgvFieldProperty.Columns["Value"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvFP.DataSource = dtFieldProperty;
+            dgvFP.Columns["类型"].MinimumWidth = 100;
+            dgvFP.Columns["类型"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvFP.Columns["数据类型"].MinimumWidth = 100;
+            dgvFP.Columns["数据类型"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvFP.Columns["Name"].MinimumWidth = 100;
+            dgvFP.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvFP.Columns["Value"].MinimumWidth = 100;
+            dgvFP.Columns["Value"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            DataTable dtFunction = new DataTable();
+            dtFunction.Columns.Add("类型", Type.GetType("System.String"));
+            dtFunction.Columns.Add("数据类型", Type.GetType("System.String"));
+            dtFunction.Columns.Add("Name", Type.GetType("System.String"));
+            dtFunction.Columns.Add("Parameter", Type.GetType("System.String"));
+            dtFunction.Columns.Add("Types", Type.GetType("System.Object"));
+
+            //加载构造函数
+            ConstructorInfo[] constructors = m_projectObject.GetType().GetConstructors(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            foreach (var constructor in constructors)
+            {
+                dtFunction.Rows.Add("构造函数", "Void", m_projectObject.GetType().Name, CreateParasString(constructor.GetParameters(), out Type[] types), types);
+            }
+
+            //加载事件
+            EventInfo[] events = m_projectObject.GetType().GetEvents(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            foreach (var @event in events)
+            {
+                dtFunction.Rows.Add("事件", @event.EventHandlerType.Name, @event.Name, "", null);
+            }
+
+            //加载方法
+            MethodInfo[] methods = m_projectObject.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            foreach (var method in methods)
+            {
+                dtFunction.Rows.Add("方法", method.ReturnType.Name, method.Name, CreateParasString(method.GetParameters(), out Type[] types), types);
+            }
+
+            dgvCEM.DataSource = dtFunction;
+            dgvCEM.Columns["类型"].MinimumWidth = 100;
+            dgvCEM.Columns["类型"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCEM.Columns["数据类型"].MinimumWidth = 100;
+            dgvCEM.Columns["数据类型"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCEM.Columns["Name"].MinimumWidth = 100;
+            dgvCEM.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCEM.Columns["Parameter"].MinimumWidth = 100;
+            dgvCEM.Columns["Parameter"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvCEM.Columns["Types"].Visible = false;
         }
 
         /// <summary>
@@ -121,7 +160,7 @@ namespace CML.CommonEx.DebugEx
         /// <summary>
         /// 加载变量
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">变量名称</param>
         private void LoadField(string name)
         {
             FieldInfo field = m_projectObject.GetType().GetField(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
@@ -155,7 +194,7 @@ namespace CML.CommonEx.DebugEx
         /// <summary>
         /// 加载属性
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">属性名称</param>
         private void LoadProperty(string name)
         {
             bool isPublic = true;
@@ -199,32 +238,139 @@ namespace CML.CommonEx.DebugEx
         }
 
         /// <summary>
+        /// 加载构造函数
+        /// </summary>
+        /// <param name="type">参数类型</param>
+        private void LoadConstructor(Type[] type)
+        {
+            ConstructorInfo constructor = m_projectObject.GetType().GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, type, null);
+
+            if (constructor == null)
+            {
+                txtCtorName.Clear();
+                txtCtorFullName.Clear();
+                txtCtorStatic.Clear();
+                txtCtorAbstract.Clear();
+                txtCtorVirtual.Clear();
+                txtCtorFinal.Clear();
+                txtCtorPublic.Clear();
+                txtCtorPrivate.Clear();
+                txtCtorToken.Clear();
+            }
+            else
+            {
+                txtCtorName.Text = constructor.DeclaringType.Name;
+                txtCtorFullName.Text = constructor.DeclaringType.FullName;
+                txtCtorStatic.Text = constructor.IsStatic.ToString();
+                txtCtorAbstract.Text = constructor.IsAbstract.ToString();
+                txtCtorVirtual.Text = constructor.IsVirtual.ToString();
+                txtCtorFinal.Text = constructor.IsFinal.ToString();
+                txtCtorPublic.Text = constructor.IsPublic.ToString();
+                txtCtorPrivate.Text = constructor.IsPrivate.ToString();
+                txtCtorParas.Text = CreateParasString(constructor.GetParameters(), out _);
+                txtCtorToken.Text = constructor.MetadataToken.ToString();
+            }
+        }
+
+        /// <summary>
+        /// 加载事件
+        /// </summary>
+        /// <param name="name">事件名称</param>
+        private void LoadEvent(string name)
+        {
+            bool isPublic = true;
+            EventInfo @event = m_projectObject.GetType().GetEvent(name, BindingFlags.Instance | BindingFlags.Public);
+            if (@event == null)
+            {
+                isPublic = false;
+                @event = m_projectObject.GetType().GetEvent(name, BindingFlags.Instance | BindingFlags.NonPublic);
+            }
+
+            if (@event == null)
+            {
+                txtEventName.Clear();
+                txtEventFullName.Clear();
+                txtEventMulticast.Clear();
+                txtEventPublic.Clear();
+                txtEventEventType.Clear();
+                txtEventToken.Clear();
+            }
+            else
+            {
+                txtEventName.Text = @event.Name;
+                txtEventFullName.Text = @event.DeclaringType.FullName + "." + @event.Name;
+                txtEventMulticast.Text = @event.IsMulticast.ToString();
+                txtEventPublic.Text = isPublic ? "Public" : "NonPublic";
+                txtEventEventType.Text = @event.EventHandlerType.FullName;
+                txtEventToken.Text = @event.MetadataToken.ToString();
+            }
+        }
+
+        /// <summary>
+        /// 加载方法
+        /// </summary>
+        /// <param name="name">方法名称</param>
+        /// <param name="type">参数类型</param>
+        private void LoadMethod(string name, Type[] type)
+        {
+            var method = m_projectObject.GetType().GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, type, null);
+
+            txtMethodName.Text = method.Name;
+            txtMethodFullName.Text = method.DeclaringType.FullName + "." + method.Name;
+            txtMethodStatic.Text = method.IsStatic.ToString();
+            txtMethodAbstract.Text = method.IsAbstract.ToString();
+            txtMethodVirtual.Text = method.IsVirtual.ToString();
+            txtMethodFinal.Text = method.IsFinal.ToString();
+            txtMethodPublic.Text = method.IsPublic.ToString();
+            txtMethodPrivate.Text = method.IsPrivate.ToString();
+            txtMethodReturn.Text = method.ReturnType.FullName;
+            txtMethodParas.Text = CreateParasString(method.GetParameters(), out _);
+            txtMethodToken.Text = method.MetadataToken.ToString();
+        }
+
+        /// <summary>
         /// 创建方法字符串
         /// </summary>
-        /// <param name="methodInfo">方法变量</param>
+        /// <param name="methodInfo">方法信息</param>
         /// <returns>方法字符串</returns>
         private string CreateFunctionString(MethodInfo methodInfo)
         {
             if (methodInfo == null) { return "Null"; }
 
-            string function = methodInfo.IsPublic ? "public " : methodInfo.IsPrivate ? "private " : "internal ";
+            string function = methodInfo.IsPublic ? "public " : methodInfo.IsPrivate ? "private " : "protected/internal ";
             function += methodInfo.IsStatic ? "static " : "";
             function += methodInfo.ReturnType.Name + " ";
             function += methodInfo.Name + "(";
+            function += CreateParasString(methodInfo.GetParameters(), out _);
+            function += ")";
 
-            List<ParameterInfo> parameters = new List<ParameterInfo>(methodInfo.GetParameters());
+            return function;
+        }
+
+        /// <summary>
+        /// 创建参数字符串
+        /// </summary>
+        /// <param name="arrParaInfo">参数信息</param>
+        /// <param name="types">参数类型</param>
+        /// <returns>参数字符串</returns>
+        private string CreateParasString(ParameterInfo[] arrParaInfo, out Type[] types)
+        {
+            string paras = "";
+            List<Type> lstType = new List<Type>();
+
+            List<ParameterInfo> parameters = new List<ParameterInfo>(arrParaInfo);
             for (int i = 0; i < parameters.Count; i++)
             {
                 ParameterInfo parameter = parameters.FirstOrDefault(item => item.Position == i);
                 if (parameter != null)
                 {
-                    function += parameter.ParameterType.Name + " " + parameter.Name + ",";
+                    paras += parameter.ParameterType.Name + " " + parameter.Name + ", ";
+                    lstType.Add(parameter.ParameterType);
                 }
             }
 
-            function = function.TrimEnd(',') + ")";
-
-            return function;
+            types = lstType.ToArray();
+            return paras.TrimEnd(' ').TrimEnd(',');
         }
 
         /// <summary>
@@ -248,7 +394,7 @@ namespace CML.CommonEx.DebugEx
 
             if (string.IsNullOrEmpty(errMsg))
             {
-                dgvFieldProperty.SelectedRows[0].Cells["Value"].Value = value;
+                dgvFP.SelectedRows[0].Cells["Value"].Value = value;
                 return true;
             }
             else
@@ -320,68 +466,76 @@ namespace CML.CommonEx.DebugEx
         #endregion
 
         #region 变量/属性标签页事件
-        private void TxtFieldPropertySearch_KeyUp(object sender, KeyEventArgs e)
+        private void TxtFPSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFieldPropertySearch.Text) && e.KeyCode == Keys.Enter)
+            if (!string.IsNullOrEmpty(txtFPSearch.Text) && e.KeyCode == Keys.Enter)
             {
                 int index = 969696;
-                for (int i = 0; i < dgvFieldProperty.Rows.Count; i++)
+                for (int i = 0; i < dgvFP.Rows.Count; i++)
                 {
-                    string name = dgvFieldProperty.Rows[i].Cells["Name"].Value as string;
-                    if (name.ToUpper().Contains(txtFieldPropertySearch.Text.ToUpper()) ||
-                        RegexOperateEF.CF_IsMatch(name, txtFieldPropertySearch.Text))
+                    string name = dgvFP.Rows[i].Cells["Name"].Value as string;
+                    if (name.ToUpper().Contains(txtFPSearch.Text.ToUpper()) ||
+                        RegexOperateEF.CF_IsMatch(name, txtFPSearch.Text))
                     {
                         if (index > i) index = i;
-                        dgvFieldProperty.Rows[i].Cells["Name"].Style.BackColor = Color.PaleGreen;
+                        dgvFP.Rows[i].Cells["Name"].Style.BackColor = Color.PaleGreen;
                     }
                     else
                     {
-                        dgvFieldProperty.Rows[i].Cells["Name"].Style.BackColor = Color.White;
+                        dgvFP.Rows[i].Cells["Name"].Style.BackColor = Color.White;
                     }
                 }
                 if (index == 969696)
                 {
-                    dgvFieldProperty.ClearSelection();
+                    dgvFP.ClearSelection();
                 }
                 else
                 {
-                    dgvFieldProperty.Rows[index].Cells[0].Selected = true;
-                    dgvFieldProperty.CurrentCell = dgvFieldProperty.Rows[index].Cells[0];
+                    dgvFP.Rows[index].Cells[0].Selected = true;
+                    dgvFP.CurrentCell = dgvFP.Rows[index].Cells[0];
                 }
             }
         }
 
-        private void DgvFieldProperty_SelectionChanged(object sender, EventArgs e)
+        private void DgvFP_SelectionChanged(object sender, EventArgs e)
         {
             //隐藏所有窗体
+            foreach (Control control in pnlTypeFP.Controls)
+            {
+                control.Visible = false;
+            }
             foreach (Control control in pnlMdfFP.Controls)
             {
                 control.Visible = false;
             }
 
             //判断是否选择行
-            if (dgvFieldProperty.SelectedRows.Count == 0)
+            if (dgvFP.SelectedRows.Count == 0)
             {
-                pnlNoSelect.Visible = true;
+                pnlNoSelectFP.Visible = true;
                 pnlMdfFPOther.Visible = true;
                 return;
             }
 
             //类型判断
-            if ((dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2) == "变量")
+            if ((dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2) == "变量")
             {
-                LoadField(dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string);
+                LoadField(dgvFP.SelectedRows[0].Cells["Name"].Value as string);
                 pnlField.Visible = true;
+            }
+            else if ((dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2) == "属性")
+            {
+                LoadProperty(dgvFP.SelectedRows[0].Cells["Name"].Value as string);
+                pnlProperty.Visible = true;
             }
             else
             {
-                LoadProperty(dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string);
-                pnlProperty.Visible = true;
+                pnlNoSelectFP.Visible = true;
             }
 
             //数据
-            Type dataType = dgvFieldProperty.SelectedRows[0].Cells["Value"].Value.GetType();
-            object value = dgvFieldProperty.SelectedRows[0].Cells["Value"].Value;
+            Type dataType = dgvFP.SelectedRows[0].Cells["Value"].Value.GetType();
+            object value = dgvFP.SelectedRows[0].Cells["Value"].Value;
 
             //根据不同类型做不同操作
             if (value is Enum)
@@ -582,8 +736,8 @@ namespace CML.CommonEx.DebugEx
         private void BtnMdfFPBoolean_Click(object sender, EventArgs e)
         {
             object value = rbMdfFPBooleanT.Checked;
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -645,8 +799,8 @@ namespace CML.CommonEx.DebugEx
         private void BtnMdfFPString_Click(object sender, EventArgs e)
         {
             object value = chkMdfFPStringNull.Checked ? null : txtMdfFPString.Text;
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -739,8 +893,8 @@ namespace CML.CommonEx.DebugEx
                 return;
             }
 
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -755,8 +909,8 @@ namespace CML.CommonEx.DebugEx
                 dtpMdfFPDateTimeTime.Value.Minute,
                 dtpMdfFPDateTimeTime.Value.Second
             );
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             if (SetFieldPropertyValue(type, name, value))
             {
@@ -814,8 +968,8 @@ namespace CML.CommonEx.DebugEx
                 return;
             }
 
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -868,8 +1022,8 @@ namespace CML.CommonEx.DebugEx
                 return;
             }
 
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -905,8 +1059,8 @@ namespace CML.CommonEx.DebugEx
             object value = rbMdfFPColor.Checked ?
                 btnMdfFPColorSelected.BackColor as object :
                 Color.FromName(cmbMdfFPNameSelected.SelectedItem.ToString()) as object;
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -916,9 +1070,9 @@ namespace CML.CommonEx.DebugEx
             string select = cmbMdfFPEnum.SelectedItem.ToString();
             select = select.Contains('[') ? select.Substring(0, select.IndexOf('[') - 1) : select;
 
-            object value = Enum.Parse(dgvFieldProperty.SelectedRows[0].Cells["Value"].Value.GetType(), select);
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            object value = Enum.Parse(dgvFP.SelectedRows[0].Cells["Value"].Value.GetType(), select);
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
         }
@@ -940,10 +1094,80 @@ namespace CML.CommonEx.DebugEx
         private void BtnMdfFPFont_Click(object sender, EventArgs e)
         {
             object value = btnMdfFPFontSelect.Font;
-            string type = (dgvFieldProperty.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
-            string name = dgvFieldProperty.SelectedRows[0].Cells["Name"].Value as string;
+            string type = (dgvFP.SelectedRows[0].Cells["类型"].Value as string).Substring(0, 2);
+            string name = dgvFP.SelectedRows[0].Cells["Name"].Value as string;
 
             SetFieldPropertyValue(type, name, value);
+        }
+        #endregion
+
+        #region 构造函数/事件/方法标签页事件
+        private void TxtCEMSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCEMSearch.Text) && e.KeyCode == Keys.Enter)
+            {
+                int index = 969696;
+                for (int i = 0; i < dgvCEM.Rows.Count; i++)
+                {
+                    string name = dgvCEM.Rows[i].Cells["Name"].Value as string;
+                    if (name.ToUpper().Contains(txtCEMSearch.Text.ToUpper()) ||
+                        RegexOperateEF.CF_IsMatch(name, txtCEMSearch.Text))
+                    {
+                        if (index > i) index = i;
+                        dgvCEM.Rows[i].Cells["Name"].Style.BackColor = Color.PaleGreen;
+                    }
+                    else
+                    {
+                        dgvCEM.Rows[i].Cells["Name"].Style.BackColor = Color.White;
+                    }
+                }
+                if (index == 969696)
+                {
+                    dgvCEM.ClearSelection();
+                }
+                else
+                {
+                    dgvCEM.Rows[index].Cells[0].Selected = true;
+                    dgvCEM.CurrentCell = dgvCEM.Rows[index].Cells[0];
+                }
+            }
+        }
+
+        private void DgvCEM_SelectionChanged(object sender, EventArgs e)
+        {
+            //隐藏所有窗体
+            foreach (Control control in pnlTypeCEF.Controls)
+            {
+                control.Visible = false;
+            }
+
+            //判断是否选择行
+            if (dgvCEM.SelectedRows.Count == 0)
+            {
+                pnlNoSelectCEF.Visible = true;
+                return;
+            }
+
+            //类型判断
+            if (dgvCEM.SelectedRows[0].Cells["类型"].Value as string == "构造函数")
+            {
+                LoadConstructor(dgvCEM.SelectedRows[0].Cells["Types"].Value as Type[]);
+                pnlConstructor.Visible = true;
+            }
+            else if (dgvCEM.SelectedRows[0].Cells["类型"].Value as string == "事件")
+            {
+                LoadEvent(dgvCEM.SelectedRows[0].Cells["Name"].Value as string);
+                pnlEvent.Visible = true;
+            }
+            else if (dgvCEM.SelectedRows[0].Cells["类型"].Value as string == "方法")
+            {
+                LoadMethod(dgvCEM.SelectedRows[0].Cells["Name"].Value as string, dgvCEM.SelectedRows[0].Cells["Types"].Value as Type[]);
+                pnlMethod.Visible = true;
+            }
+            else
+            {
+                pnlNoSelectCEF.Visible = true;
+            }
         }
         #endregion
 
@@ -957,7 +1181,7 @@ namespace CML.CommonEx.DebugEx
         private void BtnRefreshAll_Click(object sender, EventArgs e)
         {
             txtControlSearch.Clear();
-            txtFieldPropertySearch.Clear();
+            txtFPSearch.Clear();
 
             InitInfomation();
         }
@@ -971,18 +1195,18 @@ namespace CML.CommonEx.DebugEx
             }
 
             //刷新变量属性数值
-            for (int i = 0; i < dgvFieldProperty.Rows.Count; i++)
+            for (int i = 0; i < dgvFP.Rows.Count; i++)
             {
-                string type = (dgvFieldProperty.Rows[i].Cells["类型"].Value as string).Substring(0, 2);
-                string name = dgvFieldProperty.Rows[i].Cells["Name"].Value as string;
+                string type = (dgvFP.Rows[i].Cells["类型"].Value as string).Substring(0, 2);
+                string name = dgvFP.Rows[i].Cells["Name"].Value as string;
 
                 if (type == "变量")
                 {
-                    dgvFieldProperty.Rows[i].Cells["Value"].Value = DebugOperate.GetField(m_projectObject, name);
+                    dgvFP.Rows[i].Cells["Value"].Value = DebugOperate.GetField(m_projectObject, name);
                 }
                 else
                 {
-                    dgvFieldProperty.Rows[i].Cells["Value"].Value = DebugOperate.GetProperty(m_projectObject, name);
+                    dgvFP.Rows[i].Cells["Value"].Value = DebugOperate.GetProperty(m_projectObject, name);
                 }
             }
         }

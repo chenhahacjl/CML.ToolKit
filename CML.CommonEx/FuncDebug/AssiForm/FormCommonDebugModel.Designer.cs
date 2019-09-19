@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpFormControl = new System.Windows.Forms.TabPage();
             this.sptControl = new System.Windows.Forms.SplitContainer();
@@ -38,8 +39,9 @@
             this.propertyGrid = new System.Windows.Forms.PropertyGrid();
             this.tpField = new System.Windows.Forms.TabPage();
             this.sptFieldProperty = new System.Windows.Forms.SplitContainer();
-            this.dgvFieldProperty = new System.Windows.Forms.DataGridView();
-            this.txtFieldPropertySearch = new System.Windows.Forms.TextBox();
+            this.dgvFP = new System.Windows.Forms.DataGridView();
+            this.txtFPSearch = new System.Windows.Forms.TextBox();
+            this.pnlTypeFP = new System.Windows.Forms.Panel();
             this.pnlProperty = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -86,9 +88,17 @@
             this.txtFieldFullName = new System.Windows.Forms.TextBox();
             this.txtFieldDataType = new System.Windows.Forms.TextBox();
             this.txtFieldReadOnly = new System.Windows.Forms.TextBox();
-            this.pnlNoSelect = new System.Windows.Forms.Panel();
+            this.pnlNoSelectFP = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.pnlMdfFP = new System.Windows.Forms.Panel();
+            this.pnlMdfFPFont = new System.Windows.Forms.Panel();
+            this.btnMdfFPFontSelect = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btnMdfFPFont = new System.Windows.Forms.Button();
+            this.pnlMdfFPEnum = new System.Windows.Forms.Panel();
+            this.cmbMdfFPEnum = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnMdfFPEnum = new System.Windows.Forms.Button();
             this.pnlMdfFPColor = new System.Windows.Forms.Panel();
             this.picMdfFPNameColor = new System.Windows.Forms.PictureBox();
             this.rbMdfFPColor = new System.Windows.Forms.RadioButton();
@@ -97,10 +107,6 @@
             this.cmbMdfFPNameSelected = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.btnMdfFPColor = new System.Windows.Forms.Button();
-            this.pnlMdfFPEnum = new System.Windows.Forms.Panel();
-            this.cmbMdfFPEnum = new System.Windows.Forms.ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.btnMdfFPEnum = new System.Windows.Forms.Button();
             this.pnlMdfFPRectangle = new System.Windows.Forms.Panel();
             this.lblMdfFPRectangleOne = new System.Windows.Forms.Label();
             this.lblMdfFPRectangleTwo = new System.Windows.Forms.Label();
@@ -142,14 +148,77 @@
             this.btnMdfFPBoolean = new System.Windows.Forms.Button();
             this.pnlMdfFPOther = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.tpMethod = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgvCEM = new System.Windows.Forms.DataGridView();
+            this.txtCEMSearch = new System.Windows.Forms.TextBox();
+            this.pnlTypeCEF = new System.Windows.Forms.Panel();
+            this.pnlMethod = new System.Windows.Forms.Panel();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtMethodPublic = new System.Windows.Forms.TextBox();
+            this.txtMethodStatic = new System.Windows.Forms.TextBox();
+            this.txtMethodFinal = new System.Windows.Forms.TextBox();
+            this.txtMethodVirtual = new System.Windows.Forms.TextBox();
+            this.txtMethodAbstract = new System.Windows.Forms.TextBox();
+            this.txtMethodName = new System.Windows.Forms.TextBox();
+            this.txtMethodToken = new System.Windows.Forms.TextBox();
+            this.txtMethodFullName = new System.Windows.Forms.TextBox();
+            this.txtMethodParas = new System.Windows.Forms.TextBox();
+            this.txtMethodReturn = new System.Windows.Forms.TextBox();
+            this.txtMethodPrivate = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.pnlEvent = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.txtEventEventType = new System.Windows.Forms.TextBox();
+            this.txtEventPublic = new System.Windows.Forms.TextBox();
+            this.txtEventName = new System.Windows.Forms.TextBox();
+            this.txtEventToken = new System.Windows.Forms.TextBox();
+            this.txtEventMulticast = new System.Windows.Forms.TextBox();
+            this.txtEventFullName = new System.Windows.Forms.TextBox();
+            this.pnlConstructor = new System.Windows.Forms.Panel();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtCtorFinal = new System.Windows.Forms.TextBox();
+            this.txtCtorAbstract = new System.Windows.Forms.TextBox();
+            this.txtCtorVirtual = new System.Windows.Forms.TextBox();
+            this.txtCtorStatic = new System.Windows.Forms.TextBox();
+            this.txtCtorPublic = new System.Windows.Forms.TextBox();
+            this.txtCtorParas = new System.Windows.Forms.TextBox();
+            this.txtCtorPrivate = new System.Windows.Forms.TextBox();
+            this.txtCtorName = new System.Windows.Forms.TextBox();
+            this.txtCtorToken = new System.Windows.Forms.TextBox();
+            this.txtCtorFullName = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.pnlNoSelectCEF = new System.Windows.Forms.Panel();
+            this.label58 = new System.Windows.Forms.Label();
             this.pnlOperate = new System.Windows.Forms.Panel();
             this.btnTopMost = new System.Windows.Forms.Button();
             this.btnRefreshAll = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.pnlMdfFPFont = new System.Windows.Forms.Panel();
-            this.btnMdfFPFontSelect = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.btnMdfFPFont = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tpFormControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sptControl)).BeginInit();
@@ -162,14 +231,16 @@
             this.sptFieldProperty.Panel1.SuspendLayout();
             this.sptFieldProperty.Panel2.SuspendLayout();
             this.sptFieldProperty.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFieldProperty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFP)).BeginInit();
+            this.pnlTypeFP.SuspendLayout();
             this.pnlProperty.SuspendLayout();
             this.pnlField.SuspendLayout();
-            this.pnlNoSelect.SuspendLayout();
+            this.pnlNoSelectFP.SuspendLayout();
             this.pnlMdfFP.SuspendLayout();
+            this.pnlMdfFPFont.SuspendLayout();
+            this.pnlMdfFPEnum.SuspendLayout();
             this.pnlMdfFPColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMdfFPNameColor)).BeginInit();
-            this.pnlMdfFPEnum.SuspendLayout();
             this.pnlMdfFPRectangle.SuspendLayout();
             this.pnlMdfFPSize.SuspendLayout();
             this.pnlMdfFPDateTime.SuspendLayout();
@@ -177,14 +248,25 @@
             this.pnlMdfFPString.SuspendLayout();
             this.pnlMdfFPBoolean.SuspendLayout();
             this.pnlMdfFPOther.SuspendLayout();
+            this.tpMethod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCEM)).BeginInit();
+            this.pnlTypeCEF.SuspendLayout();
+            this.pnlMethod.SuspendLayout();
+            this.pnlEvent.SuspendLayout();
+            this.pnlConstructor.SuspendLayout();
+            this.pnlNoSelectCEF.SuspendLayout();
             this.pnlOperate.SuspendLayout();
-            this.pnlMdfFPFont.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tpFormControl);
             this.tabControl.Controls.Add(this.tpField);
+            this.tabControl.Controls.Add(this.tpMethod);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("宋体", 12F);
             this.tabControl.Location = new System.Drawing.Point(0, 0);
@@ -229,14 +311,14 @@
             this.dgvControl.AllowUserToResizeRows = false;
             this.dgvControl.BackgroundColor = System.Drawing.Color.White;
             this.dgvControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvControl.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvControl.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvControl.Location = new System.Drawing.Point(0, 26);
@@ -272,6 +354,7 @@
             this.tpField.Controls.Add(this.sptFieldProperty);
             this.tpField.Location = new System.Drawing.Point(4, 26);
             this.tpField.Name = "tpField";
+            this.tpField.Padding = new System.Windows.Forms.Padding(3);
             this.tpField.Size = new System.Drawing.Size(778, 466);
             this.tpField.TabIndex = 1;
             this.tpField.Text = "变量/属性";
@@ -280,62 +363,71 @@
             // sptFieldProperty
             // 
             this.sptFieldProperty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sptFieldProperty.Location = new System.Drawing.Point(0, 0);
+            this.sptFieldProperty.Location = new System.Drawing.Point(3, 3);
             this.sptFieldProperty.Name = "sptFieldProperty";
             // 
             // sptFieldProperty.Panel1
             // 
-            this.sptFieldProperty.Panel1.Controls.Add(this.dgvFieldProperty);
-            this.sptFieldProperty.Panel1.Controls.Add(this.txtFieldPropertySearch);
+            this.sptFieldProperty.Panel1.Controls.Add(this.dgvFP);
+            this.sptFieldProperty.Panel1.Controls.Add(this.txtFPSearch);
             this.sptFieldProperty.Panel1MinSize = 300;
             // 
             // sptFieldProperty.Panel2
             // 
-            this.sptFieldProperty.Panel2.Controls.Add(this.pnlProperty);
-            this.sptFieldProperty.Panel2.Controls.Add(this.pnlField);
-            this.sptFieldProperty.Panel2.Controls.Add(this.pnlNoSelect);
+            this.sptFieldProperty.Panel2.Controls.Add(this.pnlTypeFP);
             this.sptFieldProperty.Panel2.Controls.Add(this.pnlMdfFP);
             this.sptFieldProperty.Panel2MinSize = 415;
-            this.sptFieldProperty.Size = new System.Drawing.Size(778, 466);
-            this.sptFieldProperty.SplitterDistance = 359;
+            this.sptFieldProperty.Size = new System.Drawing.Size(772, 460);
+            this.sptFieldProperty.SplitterDistance = 353;
             this.sptFieldProperty.TabIndex = 5;
             // 
-            // dgvFieldProperty
+            // dgvFP
             // 
-            this.dgvFieldProperty.AllowUserToAddRows = false;
-            this.dgvFieldProperty.AllowUserToDeleteRows = false;
-            this.dgvFieldProperty.AllowUserToResizeRows = false;
-            this.dgvFieldProperty.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFieldProperty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFieldProperty.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvFieldProperty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFieldProperty.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvFieldProperty.Location = new System.Drawing.Point(0, 26);
-            this.dgvFieldProperty.MultiSelect = false;
-            this.dgvFieldProperty.Name = "dgvFieldProperty";
-            this.dgvFieldProperty.RowHeadersVisible = false;
-            this.dgvFieldProperty.RowTemplate.Height = 23;
-            this.dgvFieldProperty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFieldProperty.Size = new System.Drawing.Size(359, 440);
-            this.dgvFieldProperty.TabIndex = 1;
-            this.dgvFieldProperty.SelectionChanged += new System.EventHandler(this.DgvFieldProperty_SelectionChanged);
+            this.dgvFP.AllowUserToAddRows = false;
+            this.dgvFP.AllowUserToDeleteRows = false;
+            this.dgvFP.AllowUserToResizeRows = false;
+            this.dgvFP.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFP.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvFP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFP.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvFP.Location = new System.Drawing.Point(0, 26);
+            this.dgvFP.MultiSelect = false;
+            this.dgvFP.Name = "dgvFP";
+            this.dgvFP.RowHeadersVisible = false;
+            this.dgvFP.RowTemplate.Height = 23;
+            this.dgvFP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFP.Size = new System.Drawing.Size(353, 434);
+            this.dgvFP.TabIndex = 1;
+            this.dgvFP.SelectionChanged += new System.EventHandler(this.DgvFP_SelectionChanged);
             // 
-            // txtFieldPropertySearch
+            // txtFPSearch
             // 
-            this.txtFieldPropertySearch.BackColor = System.Drawing.Color.White;
-            this.txtFieldPropertySearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtFieldPropertySearch.Location = new System.Drawing.Point(0, 0);
-            this.txtFieldPropertySearch.Name = "txtFieldPropertySearch";
-            this.txtFieldPropertySearch.Size = new System.Drawing.Size(359, 26);
-            this.txtFieldPropertySearch.TabIndex = 0;
-            this.txtFieldPropertySearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtFieldPropertySearch_KeyUp);
+            this.txtFPSearch.BackColor = System.Drawing.Color.White;
+            this.txtFPSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtFPSearch.Location = new System.Drawing.Point(0, 0);
+            this.txtFPSearch.Name = "txtFPSearch";
+            this.txtFPSearch.Size = new System.Drawing.Size(353, 26);
+            this.txtFPSearch.TabIndex = 0;
+            this.txtFPSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtFPSearch_KeyUp);
+            // 
+            // pnlTypeFP
+            // 
+            this.pnlTypeFP.Controls.Add(this.pnlProperty);
+            this.pnlTypeFP.Controls.Add(this.pnlField);
+            this.pnlTypeFP.Controls.Add(this.pnlNoSelectFP);
+            this.pnlTypeFP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTypeFP.Location = new System.Drawing.Point(0, 0);
+            this.pnlTypeFP.Name = "pnlTypeFP";
+            this.pnlTypeFP.Size = new System.Drawing.Size(215, 460);
+            this.pnlTypeFP.TabIndex = 22;
             // 
             // pnlProperty
             // 
@@ -369,7 +461,7 @@
             this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProperty.Location = new System.Drawing.Point(0, 0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(215, 466);
+            this.pnlProperty.Size = new System.Drawing.Size(215, 460);
             this.pnlProperty.TabIndex = 0;
             this.pnlProperty.Visible = false;
             // 
@@ -558,7 +650,7 @@
             this.txtPropertyValue.Name = "txtPropertyValue";
             this.txtPropertyValue.ReadOnly = true;
             this.txtPropertyValue.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtPropertyValue.Size = new System.Drawing.Size(117, 75);
+            this.txtPropertyValue.Size = new System.Drawing.Size(117, 69);
             this.txtPropertyValue.TabIndex = 11;
             // 
             // txtPropertyToken
@@ -653,7 +745,7 @@
             this.pnlField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlField.Location = new System.Drawing.Point(0, 0);
             this.pnlField.Name = "pnlField";
-            this.pnlField.Size = new System.Drawing.Size(215, 466);
+            this.pnlField.Size = new System.Drawing.Size(215, 460);
             this.pnlField.TabIndex = 0;
             this.pnlField.Visible = false;
             // 
@@ -804,7 +896,7 @@
             this.txtFieldValue.Name = "txtFieldValue";
             this.txtFieldValue.ReadOnly = true;
             this.txtFieldValue.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtFieldValue.Size = new System.Drawing.Size(117, 171);
+            this.txtFieldValue.Size = new System.Drawing.Size(117, 165);
             this.txtFieldValue.TabIndex = 8;
             // 
             // txtFieldToken
@@ -851,17 +943,17 @@
             this.txtFieldReadOnly.Size = new System.Drawing.Size(117, 26);
             this.txtFieldReadOnly.TabIndex = 4;
             // 
-            // pnlNoSelect
+            // pnlNoSelectFP
             // 
-            this.pnlNoSelect.BackColor = System.Drawing.Color.White;
-            this.pnlNoSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNoSelect.Controls.Add(this.label39);
-            this.pnlNoSelect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNoSelect.Location = new System.Drawing.Point(0, 0);
-            this.pnlNoSelect.Name = "pnlNoSelect";
-            this.pnlNoSelect.Size = new System.Drawing.Size(215, 466);
-            this.pnlNoSelect.TabIndex = 22;
-            this.pnlNoSelect.Visible = false;
+            this.pnlNoSelectFP.BackColor = System.Drawing.Color.White;
+            this.pnlNoSelectFP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNoSelectFP.Controls.Add(this.label39);
+            this.pnlNoSelectFP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNoSelectFP.Location = new System.Drawing.Point(0, 0);
+            this.pnlNoSelectFP.Name = "pnlNoSelectFP";
+            this.pnlNoSelectFP.Size = new System.Drawing.Size(215, 460);
+            this.pnlNoSelectFP.TabIndex = 22;
+            this.pnlNoSelectFP.Visible = false;
             // 
             // label39
             // 
@@ -891,8 +983,100 @@
             this.pnlMdfFP.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlMdfFP.Location = new System.Drawing.Point(215, 0);
             this.pnlMdfFP.Name = "pnlMdfFP";
-            this.pnlMdfFP.Size = new System.Drawing.Size(200, 466);
+            this.pnlMdfFP.Size = new System.Drawing.Size(200, 460);
             this.pnlMdfFP.TabIndex = 1;
+            // 
+            // pnlMdfFPFont
+            // 
+            this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFontSelect);
+            this.pnlMdfFPFont.Controls.Add(this.label33);
+            this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFont);
+            this.pnlMdfFPFont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPFont.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPFont.Name = "pnlMdfFPFont";
+            this.pnlMdfFPFont.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPFont.TabIndex = 10;
+            this.pnlMdfFPFont.Visible = false;
+            // 
+            // btnMdfFPFontSelect
+            // 
+            this.btnMdfFPFontSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMdfFPFontSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMdfFPFontSelect.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPFontSelect.Location = new System.Drawing.Point(19, 37);
+            this.btnMdfFPFontSelect.Name = "btnMdfFPFontSelect";
+            this.btnMdfFPFontSelect.Size = new System.Drawing.Size(161, 30);
+            this.btnMdfFPFontSelect.TabIndex = 0;
+            this.btnMdfFPFontSelect.Text = "ぁぃ测试ABcd?!";
+            this.btnMdfFPFontSelect.UseVisualStyleBackColor = true;
+            this.btnMdfFPFontSelect.Click += new System.EventHandler(this.BtnMdfFPFontSelect_Click);
+            // 
+            // label33
+            // 
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label33.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label33.Location = new System.Drawing.Point(0, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(198, 31);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "数值修改";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPFont
+            // 
+            this.btnMdfFPFont.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPFont.Location = new System.Drawing.Point(54, 75);
+            this.btnMdfFPFont.Name = "btnMdfFPFont";
+            this.btnMdfFPFont.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPFont.TabIndex = 0;
+            this.btnMdfFPFont.Text = "修改数值";
+            this.btnMdfFPFont.UseVisualStyleBackColor = true;
+            this.btnMdfFPFont.Click += new System.EventHandler(this.BtnMdfFPFont_Click);
+            // 
+            // pnlMdfFPEnum
+            // 
+            this.pnlMdfFPEnum.Controls.Add(this.cmbMdfFPEnum);
+            this.pnlMdfFPEnum.Controls.Add(this.label31);
+            this.pnlMdfFPEnum.Controls.Add(this.btnMdfFPEnum);
+            this.pnlMdfFPEnum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMdfFPEnum.Location = new System.Drawing.Point(0, 0);
+            this.pnlMdfFPEnum.Name = "pnlMdfFPEnum";
+            this.pnlMdfFPEnum.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPEnum.TabIndex = 9;
+            this.pnlMdfFPEnum.Visible = false;
+            // 
+            // cmbMdfFPEnum
+            // 
+            this.cmbMdfFPEnum.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbMdfFPEnum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMdfFPEnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbMdfFPEnum.FormattingEnabled = true;
+            this.cmbMdfFPEnum.Location = new System.Drawing.Point(19, 40);
+            this.cmbMdfFPEnum.Name = "cmbMdfFPEnum";
+            this.cmbMdfFPEnum.Size = new System.Drawing.Size(161, 24);
+            this.cmbMdfFPEnum.TabIndex = 3;
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label31.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label31.Location = new System.Drawing.Point(0, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(198, 31);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "数值修改";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnMdfFPEnum
+            // 
+            this.btnMdfFPEnum.Font = new System.Drawing.Font("宋体", 12F);
+            this.btnMdfFPEnum.Location = new System.Drawing.Point(54, 72);
+            this.btnMdfFPEnum.Name = "btnMdfFPEnum";
+            this.btnMdfFPEnum.Size = new System.Drawing.Size(91, 30);
+            this.btnMdfFPEnum.TabIndex = 0;
+            this.btnMdfFPEnum.Text = "修改数值";
+            this.btnMdfFPEnum.UseVisualStyleBackColor = true;
+            this.btnMdfFPEnum.Click += new System.EventHandler(this.BtnMdfFPEnum_Click);
             // 
             // pnlMdfFPColor
             // 
@@ -906,7 +1090,7 @@
             this.pnlMdfFPColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPColor.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPColor.Name = "pnlMdfFPColor";
-            this.pnlMdfFPColor.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPColor.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPColor.TabIndex = 8;
             this.pnlMdfFPColor.Visible = false;
             // 
@@ -987,51 +1171,6 @@
             this.btnMdfFPColor.UseVisualStyleBackColor = true;
             this.btnMdfFPColor.Click += new System.EventHandler(this.BtnMdfFPColor_Click);
             // 
-            // pnlMdfFPEnum
-            // 
-            this.pnlMdfFPEnum.Controls.Add(this.cmbMdfFPEnum);
-            this.pnlMdfFPEnum.Controls.Add(this.label31);
-            this.pnlMdfFPEnum.Controls.Add(this.btnMdfFPEnum);
-            this.pnlMdfFPEnum.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMdfFPEnum.Location = new System.Drawing.Point(0, 0);
-            this.pnlMdfFPEnum.Name = "pnlMdfFPEnum";
-            this.pnlMdfFPEnum.Size = new System.Drawing.Size(198, 464);
-            this.pnlMdfFPEnum.TabIndex = 9;
-            this.pnlMdfFPEnum.Visible = false;
-            // 
-            // cmbMdfFPEnum
-            // 
-            this.cmbMdfFPEnum.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbMdfFPEnum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMdfFPEnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbMdfFPEnum.FormattingEnabled = true;
-            this.cmbMdfFPEnum.Location = new System.Drawing.Point(19, 40);
-            this.cmbMdfFPEnum.Name = "cmbMdfFPEnum";
-            this.cmbMdfFPEnum.Size = new System.Drawing.Size(161, 24);
-            this.cmbMdfFPEnum.TabIndex = 3;
-            // 
-            // label31
-            // 
-            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label31.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label31.Location = new System.Drawing.Point(0, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(198, 31);
-            this.label31.TabIndex = 2;
-            this.label31.Text = "数值修改";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnMdfFPEnum
-            // 
-            this.btnMdfFPEnum.Font = new System.Drawing.Font("宋体", 12F);
-            this.btnMdfFPEnum.Location = new System.Drawing.Point(54, 72);
-            this.btnMdfFPEnum.Name = "btnMdfFPEnum";
-            this.btnMdfFPEnum.Size = new System.Drawing.Size(91, 30);
-            this.btnMdfFPEnum.TabIndex = 0;
-            this.btnMdfFPEnum.Text = "修改数值";
-            this.btnMdfFPEnum.UseVisualStyleBackColor = true;
-            this.btnMdfFPEnum.Click += new System.EventHandler(this.BtnMdfFPEnum_Click);
-            // 
             // pnlMdfFPRectangle
             // 
             this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleOne);
@@ -1047,7 +1186,7 @@
             this.pnlMdfFPRectangle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPRectangle.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPRectangle.Name = "pnlMdfFPRectangle";
-            this.pnlMdfFPRectangle.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPRectangle.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPRectangle.TabIndex = 7;
             this.pnlMdfFPRectangle.Visible = false;
             // 
@@ -1152,7 +1291,7 @@
             this.pnlMdfFPSize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPSize.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPSize.Name = "pnlMdfFPSize";
-            this.pnlMdfFPSize.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPSize.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPSize.TabIndex = 6;
             this.pnlMdfFPSize.Visible = false;
             // 
@@ -1222,7 +1361,7 @@
             this.pnlMdfFPDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPDateTime.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPDateTime.Name = "pnlMdfFPDateTime";
-            this.pnlMdfFPDateTime.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPDateTime.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPDateTime.TabIndex = 4;
             this.pnlMdfFPDateTime.Visible = false;
             // 
@@ -1284,7 +1423,7 @@
             this.pnlMdfFPNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPNumber.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPNumber.Name = "pnlMdfFPNumber";
-            this.pnlMdfFPNumber.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPNumber.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPNumber.TabIndex = 2;
             this.pnlMdfFPNumber.Visible = false;
             // 
@@ -1328,7 +1467,7 @@
             this.pnlMdfFPString.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPString.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPString.Name = "pnlMdfFPString";
-            this.pnlMdfFPString.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPString.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPString.TabIndex = 3;
             this.pnlMdfFPString.Visible = false;
             // 
@@ -1393,7 +1532,7 @@
             this.pnlMdfFPBoolean.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPBoolean.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPBoolean.Name = "pnlMdfFPBoolean";
-            this.pnlMdfFPBoolean.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPBoolean.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPBoolean.TabIndex = 0;
             this.pnlMdfFPBoolean.Visible = false;
             // 
@@ -1448,7 +1587,7 @@
             this.pnlMdfFPOther.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPOther.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPOther.Name = "pnlMdfFPOther";
-            this.pnlMdfFPOther.Size = new System.Drawing.Size(198, 464);
+            this.pnlMdfFPOther.Size = new System.Drawing.Size(198, 458);
             this.pnlMdfFPOther.TabIndex = 1;
             this.pnlMdfFPOther.Visible = false;
             // 
@@ -1462,6 +1601,772 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "该类型暂时无法修改";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tpMethod
+            // 
+            this.tpMethod.Controls.Add(this.splitContainer1);
+            this.tpMethod.Location = new System.Drawing.Point(4, 26);
+            this.tpMethod.Name = "tpMethod";
+            this.tpMethod.Padding = new System.Windows.Forms.Padding(3);
+            this.tpMethod.Size = new System.Drawing.Size(778, 466);
+            this.tpMethod.TabIndex = 2;
+            this.tpMethod.Text = "构造函数/事件/方法";
+            this.tpMethod.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvCEM);
+            this.splitContainer1.Panel1.Controls.Add(this.txtCEMSearch);
+            this.splitContainer1.Panel1MinSize = 300;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pnlTypeCEF);
+            this.splitContainer1.Panel2MinSize = 415;
+            this.splitContainer1.Size = new System.Drawing.Size(772, 460);
+            this.splitContainer1.SplitterDistance = 353;
+            this.splitContainer1.TabIndex = 6;
+            // 
+            // dgvCEM
+            // 
+            this.dgvCEM.AllowUserToAddRows = false;
+            this.dgvCEM.AllowUserToDeleteRows = false;
+            this.dgvCEM.AllowUserToResizeRows = false;
+            this.dgvCEM.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCEM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCEM.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCEM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCEM.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvCEM.Location = new System.Drawing.Point(0, 26);
+            this.dgvCEM.MultiSelect = false;
+            this.dgvCEM.Name = "dgvCEM";
+            this.dgvCEM.RowHeadersVisible = false;
+            this.dgvCEM.RowTemplate.Height = 23;
+            this.dgvCEM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCEM.Size = new System.Drawing.Size(353, 434);
+            this.dgvCEM.TabIndex = 2;
+            this.dgvCEM.SelectionChanged += new System.EventHandler(this.DgvCEM_SelectionChanged);
+            // 
+            // txtCEMSearch
+            // 
+            this.txtCEMSearch.BackColor = System.Drawing.Color.White;
+            this.txtCEMSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCEMSearch.Location = new System.Drawing.Point(0, 0);
+            this.txtCEMSearch.Name = "txtCEMSearch";
+            this.txtCEMSearch.Size = new System.Drawing.Size(353, 26);
+            this.txtCEMSearch.TabIndex = 0;
+            this.txtCEMSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCEMSearch_KeyUp);
+            // 
+            // pnlTypeCEF
+            // 
+            this.pnlTypeCEF.Controls.Add(this.pnlMethod);
+            this.pnlTypeCEF.Controls.Add(this.pnlEvent);
+            this.pnlTypeCEF.Controls.Add(this.pnlConstructor);
+            this.pnlTypeCEF.Controls.Add(this.pnlNoSelectCEF);
+            this.pnlTypeCEF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTypeCEF.Location = new System.Drawing.Point(0, 0);
+            this.pnlTypeCEF.Name = "pnlTypeCEF";
+            this.pnlTypeCEF.Size = new System.Drawing.Size(415, 460);
+            this.pnlTypeCEF.TabIndex = 22;
+            // 
+            // pnlMethod
+            // 
+            this.pnlMethod.BackColor = System.Drawing.Color.White;
+            this.pnlMethod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMethod.Controls.Add(this.label59);
+            this.pnlMethod.Controls.Add(this.label60);
+            this.pnlMethod.Controls.Add(this.label61);
+            this.pnlMethod.Controls.Add(this.label62);
+            this.pnlMethod.Controls.Add(this.label63);
+            this.pnlMethod.Controls.Add(this.label64);
+            this.pnlMethod.Controls.Add(this.label66);
+            this.pnlMethod.Controls.Add(this.label67);
+            this.pnlMethod.Controls.Add(this.label68);
+            this.pnlMethod.Controls.Add(this.label69);
+            this.pnlMethod.Controls.Add(this.label70);
+            this.pnlMethod.Controls.Add(this.txtMethodPublic);
+            this.pnlMethod.Controls.Add(this.txtMethodStatic);
+            this.pnlMethod.Controls.Add(this.txtMethodFinal);
+            this.pnlMethod.Controls.Add(this.txtMethodVirtual);
+            this.pnlMethod.Controls.Add(this.txtMethodAbstract);
+            this.pnlMethod.Controls.Add(this.txtMethodName);
+            this.pnlMethod.Controls.Add(this.txtMethodToken);
+            this.pnlMethod.Controls.Add(this.txtMethodFullName);
+            this.pnlMethod.Controls.Add(this.txtMethodParas);
+            this.pnlMethod.Controls.Add(this.txtMethodReturn);
+            this.pnlMethod.Controls.Add(this.txtMethodPrivate);
+            this.pnlMethod.Controls.Add(this.label71);
+            this.pnlMethod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMethod.Location = new System.Drawing.Point(0, 0);
+            this.pnlMethod.Name = "pnlMethod";
+            this.pnlMethod.Size = new System.Drawing.Size(415, 460);
+            this.pnlMethod.TabIndex = 23;
+            this.pnlMethod.Visible = false;
+            // 
+            // label59
+            // 
+            this.label59.Location = new System.Drawing.Point(5, 226);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(79, 26);
+            this.label59.TabIndex = 12;
+            this.label59.Text = "Public";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label60
+            // 
+            this.label60.Location = new System.Drawing.Point(5, 98);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(79, 26);
+            this.label60.TabIndex = 20;
+            this.label60.Text = "Static";
+            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label61
+            // 
+            this.label61.Location = new System.Drawing.Point(5, 194);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(79, 26);
+            this.label61.TabIndex = 19;
+            this.label61.Text = "Final";
+            this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label62
+            // 
+            this.label62.Location = new System.Drawing.Point(5, 162);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(79, 26);
+            this.label62.TabIndex = 19;
+            this.label62.Text = "Virtual";
+            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label63
+            // 
+            this.label63.Location = new System.Drawing.Point(5, 130);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(79, 26);
+            this.label63.TabIndex = 19;
+            this.label63.Text = "Abstract";
+            this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label64
+            // 
+            this.label64.Location = new System.Drawing.Point(5, 34);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(79, 26);
+            this.label64.TabIndex = 18;
+            this.label64.Text = "Name";
+            this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label66
+            // 
+            this.label66.Location = new System.Drawing.Point(5, 354);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(79, 26);
+            this.label66.TabIndex = 16;
+            this.label66.Text = "Token";
+            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label67
+            // 
+            this.label67.Location = new System.Drawing.Point(5, 66);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(79, 26);
+            this.label67.TabIndex = 21;
+            this.label67.Text = "FullName";
+            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label68
+            // 
+            this.label68.Location = new System.Drawing.Point(5, 322);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(79, 26);
+            this.label68.TabIndex = 14;
+            this.label68.Text = "Paras";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label69
+            // 
+            this.label69.Location = new System.Drawing.Point(8, 290);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(76, 26);
+            this.label69.TabIndex = 15;
+            this.label69.Text = "Return";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label70
+            // 
+            this.label70.Location = new System.Drawing.Point(5, 258);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(79, 26);
+            this.label70.TabIndex = 15;
+            this.label70.Text = "Private";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMethodPublic
+            // 
+            this.txtMethodPublic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodPublic.BackColor = System.Drawing.Color.White;
+            this.txtMethodPublic.Location = new System.Drawing.Point(90, 226);
+            this.txtMethodPublic.Name = "txtMethodPublic";
+            this.txtMethodPublic.ReadOnly = true;
+            this.txtMethodPublic.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodPublic.TabIndex = 6;
+            // 
+            // txtMethodStatic
+            // 
+            this.txtMethodStatic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodStatic.BackColor = System.Drawing.Color.White;
+            this.txtMethodStatic.Location = new System.Drawing.Point(90, 98);
+            this.txtMethodStatic.Name = "txtMethodStatic";
+            this.txtMethodStatic.ReadOnly = true;
+            this.txtMethodStatic.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodStatic.TabIndex = 2;
+            // 
+            // txtMethodFinal
+            // 
+            this.txtMethodFinal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodFinal.BackColor = System.Drawing.Color.White;
+            this.txtMethodFinal.Location = new System.Drawing.Point(90, 194);
+            this.txtMethodFinal.Name = "txtMethodFinal";
+            this.txtMethodFinal.ReadOnly = true;
+            this.txtMethodFinal.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodFinal.TabIndex = 5;
+            // 
+            // txtMethodVirtual
+            // 
+            this.txtMethodVirtual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodVirtual.BackColor = System.Drawing.Color.White;
+            this.txtMethodVirtual.Location = new System.Drawing.Point(90, 162);
+            this.txtMethodVirtual.Name = "txtMethodVirtual";
+            this.txtMethodVirtual.ReadOnly = true;
+            this.txtMethodVirtual.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodVirtual.TabIndex = 4;
+            // 
+            // txtMethodAbstract
+            // 
+            this.txtMethodAbstract.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodAbstract.BackColor = System.Drawing.Color.White;
+            this.txtMethodAbstract.Location = new System.Drawing.Point(90, 130);
+            this.txtMethodAbstract.Name = "txtMethodAbstract";
+            this.txtMethodAbstract.ReadOnly = true;
+            this.txtMethodAbstract.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodAbstract.TabIndex = 3;
+            // 
+            // txtMethodName
+            // 
+            this.txtMethodName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodName.BackColor = System.Drawing.Color.White;
+            this.txtMethodName.Location = new System.Drawing.Point(90, 34);
+            this.txtMethodName.Name = "txtMethodName";
+            this.txtMethodName.ReadOnly = true;
+            this.txtMethodName.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodName.TabIndex = 0;
+            // 
+            // txtMethodToken
+            // 
+            this.txtMethodToken.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodToken.BackColor = System.Drawing.Color.White;
+            this.txtMethodToken.Location = new System.Drawing.Point(90, 354);
+            this.txtMethodToken.Name = "txtMethodToken";
+            this.txtMethodToken.ReadOnly = true;
+            this.txtMethodToken.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodToken.TabIndex = 10;
+            // 
+            // txtMethodFullName
+            // 
+            this.txtMethodFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodFullName.BackColor = System.Drawing.Color.White;
+            this.txtMethodFullName.Location = new System.Drawing.Point(90, 66);
+            this.txtMethodFullName.Name = "txtMethodFullName";
+            this.txtMethodFullName.ReadOnly = true;
+            this.txtMethodFullName.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodFullName.TabIndex = 1;
+            // 
+            // txtMethodParas
+            // 
+            this.txtMethodParas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodParas.BackColor = System.Drawing.Color.White;
+            this.txtMethodParas.Location = new System.Drawing.Point(90, 322);
+            this.txtMethodParas.Name = "txtMethodParas";
+            this.txtMethodParas.ReadOnly = true;
+            this.txtMethodParas.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodParas.TabIndex = 9;
+            // 
+            // txtMethodReturn
+            // 
+            this.txtMethodReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodReturn.BackColor = System.Drawing.Color.White;
+            this.txtMethodReturn.Location = new System.Drawing.Point(90, 290);
+            this.txtMethodReturn.Name = "txtMethodReturn";
+            this.txtMethodReturn.ReadOnly = true;
+            this.txtMethodReturn.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodReturn.TabIndex = 9;
+            // 
+            // txtMethodPrivate
+            // 
+            this.txtMethodPrivate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMethodPrivate.BackColor = System.Drawing.Color.White;
+            this.txtMethodPrivate.Location = new System.Drawing.Point(90, 258);
+            this.txtMethodPrivate.Name = "txtMethodPrivate";
+            this.txtMethodPrivate.ReadOnly = true;
+            this.txtMethodPrivate.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodPrivate.TabIndex = 7;
+            // 
+            // label71
+            // 
+            this.label71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label71.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label71.Location = new System.Drawing.Point(0, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(413, 31);
+            this.label71.TabIndex = 1;
+            this.label71.Text = "方法内容";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlEvent
+            // 
+            this.pnlEvent.BackColor = System.Drawing.Color.White;
+            this.pnlEvent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlEvent.Controls.Add(this.label48);
+            this.pnlEvent.Controls.Add(this.label49);
+            this.pnlEvent.Controls.Add(this.label51);
+            this.pnlEvent.Controls.Add(this.label52);
+            this.pnlEvent.Controls.Add(this.label54);
+            this.pnlEvent.Controls.Add(this.label45);
+            this.pnlEvent.Controls.Add(this.label55);
+            this.pnlEvent.Controls.Add(this.txtEventEventType);
+            this.pnlEvent.Controls.Add(this.txtEventPublic);
+            this.pnlEvent.Controls.Add(this.txtEventName);
+            this.pnlEvent.Controls.Add(this.txtEventToken);
+            this.pnlEvent.Controls.Add(this.txtEventMulticast);
+            this.pnlEvent.Controls.Add(this.txtEventFullName);
+            this.pnlEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlEvent.Location = new System.Drawing.Point(0, 0);
+            this.pnlEvent.Name = "pnlEvent";
+            this.pnlEvent.Size = new System.Drawing.Size(415, 460);
+            this.pnlEvent.TabIndex = 0;
+            this.pnlEvent.Visible = false;
+            // 
+            // label48
+            // 
+            this.label48.Location = new System.Drawing.Point(2, 162);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(82, 26);
+            this.label48.TabIndex = 3;
+            this.label48.Text = "EventType";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label49
+            // 
+            this.label49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label49.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label49.Location = new System.Drawing.Point(0, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(413, 31);
+            this.label49.TabIndex = 1;
+            this.label49.Text = "事件内容";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label51
+            // 
+            this.label51.Location = new System.Drawing.Point(5, 130);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(79, 26);
+            this.label51.TabIndex = 3;
+            this.label51.Text = "Public";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label52
+            // 
+            this.label52.Location = new System.Drawing.Point(5, 34);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(79, 26);
+            this.label52.TabIndex = 3;
+            this.label52.Text = "Name";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label54
+            // 
+            this.label54.Location = new System.Drawing.Point(5, 194);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(79, 26);
+            this.label54.TabIndex = 3;
+            this.label54.Text = "Token";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label45
+            // 
+            this.label45.Location = new System.Drawing.Point(-1, 98);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(85, 26);
+            this.label45.TabIndex = 3;
+            this.label45.Text = "Multicast";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label55
+            // 
+            this.label55.Location = new System.Drawing.Point(5, 66);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(79, 26);
+            this.label55.TabIndex = 3;
+            this.label55.Text = "FullName";
+            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtEventEventType
+            // 
+            this.txtEventEventType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEventEventType.BackColor = System.Drawing.Color.White;
+            this.txtEventEventType.Location = new System.Drawing.Point(90, 162);
+            this.txtEventEventType.Name = "txtEventEventType";
+            this.txtEventEventType.ReadOnly = true;
+            this.txtEventEventType.Size = new System.Drawing.Size(317, 26);
+            this.txtEventEventType.TabIndex = 3;
+            // 
+            // txtEventPublic
+            // 
+            this.txtEventPublic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEventPublic.BackColor = System.Drawing.Color.White;
+            this.txtEventPublic.Location = new System.Drawing.Point(90, 130);
+            this.txtEventPublic.Name = "txtEventPublic";
+            this.txtEventPublic.ReadOnly = true;
+            this.txtEventPublic.Size = new System.Drawing.Size(317, 26);
+            this.txtEventPublic.TabIndex = 2;
+            // 
+            // txtEventName
+            // 
+            this.txtEventName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEventName.BackColor = System.Drawing.Color.White;
+            this.txtEventName.Location = new System.Drawing.Point(90, 34);
+            this.txtEventName.Name = "txtEventName";
+            this.txtEventName.ReadOnly = true;
+            this.txtEventName.Size = new System.Drawing.Size(317, 26);
+            this.txtEventName.TabIndex = 0;
+            // 
+            // txtEventToken
+            // 
+            this.txtEventToken.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEventToken.BackColor = System.Drawing.Color.White;
+            this.txtEventToken.Location = new System.Drawing.Point(90, 194);
+            this.txtEventToken.Name = "txtEventToken";
+            this.txtEventToken.ReadOnly = true;
+            this.txtEventToken.Size = new System.Drawing.Size(317, 26);
+            this.txtEventToken.TabIndex = 7;
+            // 
+            // txtEventMulticast
+            // 
+            this.txtEventMulticast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEventMulticast.BackColor = System.Drawing.Color.White;
+            this.txtEventMulticast.Location = new System.Drawing.Point(90, 98);
+            this.txtEventMulticast.Name = "txtEventMulticast";
+            this.txtEventMulticast.ReadOnly = true;
+            this.txtEventMulticast.Size = new System.Drawing.Size(317, 26);
+            this.txtEventMulticast.TabIndex = 5;
+            // 
+            // txtEventFullName
+            // 
+            this.txtEventFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEventFullName.BackColor = System.Drawing.Color.White;
+            this.txtEventFullName.Location = new System.Drawing.Point(90, 66);
+            this.txtEventFullName.Name = "txtEventFullName";
+            this.txtEventFullName.ReadOnly = true;
+            this.txtEventFullName.Size = new System.Drawing.Size(317, 26);
+            this.txtEventFullName.TabIndex = 5;
+            // 
+            // pnlConstructor
+            // 
+            this.pnlConstructor.BackColor = System.Drawing.Color.White;
+            this.pnlConstructor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlConstructor.Controls.Add(this.label44);
+            this.pnlConstructor.Controls.Add(this.label37);
+            this.pnlConstructor.Controls.Add(this.label41);
+            this.pnlConstructor.Controls.Add(this.label36);
+            this.pnlConstructor.Controls.Add(this.label35);
+            this.pnlConstructor.Controls.Add(this.label34);
+            this.pnlConstructor.Controls.Add(this.label38);
+            this.pnlConstructor.Controls.Add(this.label40);
+            this.pnlConstructor.Controls.Add(this.label42);
+            this.pnlConstructor.Controls.Add(this.label43);
+            this.pnlConstructor.Controls.Add(this.txtCtorFinal);
+            this.pnlConstructor.Controls.Add(this.txtCtorAbstract);
+            this.pnlConstructor.Controls.Add(this.txtCtorVirtual);
+            this.pnlConstructor.Controls.Add(this.txtCtorStatic);
+            this.pnlConstructor.Controls.Add(this.txtCtorPublic);
+            this.pnlConstructor.Controls.Add(this.txtCtorParas);
+            this.pnlConstructor.Controls.Add(this.txtCtorPrivate);
+            this.pnlConstructor.Controls.Add(this.txtCtorName);
+            this.pnlConstructor.Controls.Add(this.txtCtorToken);
+            this.pnlConstructor.Controls.Add(this.txtCtorFullName);
+            this.pnlConstructor.Controls.Add(this.label47);
+            this.pnlConstructor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConstructor.Location = new System.Drawing.Point(0, 0);
+            this.pnlConstructor.Name = "pnlConstructor";
+            this.pnlConstructor.Size = new System.Drawing.Size(415, 460);
+            this.pnlConstructor.TabIndex = 0;
+            this.pnlConstructor.Visible = false;
+            // 
+            // label44
+            // 
+            this.label44.Location = new System.Drawing.Point(5, 194);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(79, 26);
+            this.label44.TabIndex = 20;
+            this.label44.Text = "Final";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label37
+            // 
+            this.label37.Location = new System.Drawing.Point(5, 130);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(79, 26);
+            this.label37.TabIndex = 20;
+            this.label37.Text = "Abstract";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label41
+            // 
+            this.label41.Location = new System.Drawing.Point(5, 162);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(79, 26);
+            this.label41.TabIndex = 20;
+            this.label41.Text = "Virtual";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label36
+            // 
+            this.label36.Location = new System.Drawing.Point(5, 98);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(79, 26);
+            this.label36.TabIndex = 20;
+            this.label36.Text = "Static";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label35
+            // 
+            this.label35.Location = new System.Drawing.Point(5, 226);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(79, 26);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Public";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label34
+            // 
+            this.label34.Location = new System.Drawing.Point(5, 290);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(79, 26);
+            this.label34.TabIndex = 19;
+            this.label34.Text = "Paras";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label38
+            // 
+            this.label38.Location = new System.Drawing.Point(5, 258);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(79, 26);
+            this.label38.TabIndex = 19;
+            this.label38.Text = "Private";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label40
+            // 
+            this.label40.Location = new System.Drawing.Point(5, 34);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(79, 26);
+            this.label40.TabIndex = 18;
+            this.label40.Text = "Name";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label42
+            // 
+            this.label42.Location = new System.Drawing.Point(5, 322);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(79, 26);
+            this.label42.TabIndex = 16;
+            this.label42.Text = "Token";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label43
+            // 
+            this.label43.Location = new System.Drawing.Point(5, 66);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(79, 26);
+            this.label43.TabIndex = 21;
+            this.label43.Text = "FullName";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtCtorFinal
+            // 
+            this.txtCtorFinal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorFinal.BackColor = System.Drawing.Color.White;
+            this.txtCtorFinal.Location = new System.Drawing.Point(90, 194);
+            this.txtCtorFinal.Name = "txtCtorFinal";
+            this.txtCtorFinal.ReadOnly = true;
+            this.txtCtorFinal.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorFinal.TabIndex = 2;
+            // 
+            // txtCtorAbstract
+            // 
+            this.txtCtorAbstract.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorAbstract.BackColor = System.Drawing.Color.White;
+            this.txtCtorAbstract.Location = new System.Drawing.Point(90, 130);
+            this.txtCtorAbstract.Name = "txtCtorAbstract";
+            this.txtCtorAbstract.ReadOnly = true;
+            this.txtCtorAbstract.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorAbstract.TabIndex = 2;
+            // 
+            // txtCtorVirtual
+            // 
+            this.txtCtorVirtual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorVirtual.BackColor = System.Drawing.Color.White;
+            this.txtCtorVirtual.Location = new System.Drawing.Point(90, 162);
+            this.txtCtorVirtual.Name = "txtCtorVirtual";
+            this.txtCtorVirtual.ReadOnly = true;
+            this.txtCtorVirtual.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorVirtual.TabIndex = 2;
+            // 
+            // txtCtorStatic
+            // 
+            this.txtCtorStatic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorStatic.BackColor = System.Drawing.Color.White;
+            this.txtCtorStatic.Location = new System.Drawing.Point(90, 98);
+            this.txtCtorStatic.Name = "txtCtorStatic";
+            this.txtCtorStatic.ReadOnly = true;
+            this.txtCtorStatic.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorStatic.TabIndex = 2;
+            // 
+            // txtCtorPublic
+            // 
+            this.txtCtorPublic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorPublic.BackColor = System.Drawing.Color.White;
+            this.txtCtorPublic.Location = new System.Drawing.Point(90, 226);
+            this.txtCtorPublic.Name = "txtCtorPublic";
+            this.txtCtorPublic.ReadOnly = true;
+            this.txtCtorPublic.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorPublic.TabIndex = 2;
+            // 
+            // txtCtorParas
+            // 
+            this.txtCtorParas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorParas.BackColor = System.Drawing.Color.White;
+            this.txtCtorParas.Location = new System.Drawing.Point(90, 290);
+            this.txtCtorParas.Name = "txtCtorParas";
+            this.txtCtorParas.ReadOnly = true;
+            this.txtCtorParas.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorParas.TabIndex = 3;
+            // 
+            // txtCtorPrivate
+            // 
+            this.txtCtorPrivate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorPrivate.BackColor = System.Drawing.Color.White;
+            this.txtCtorPrivate.Location = new System.Drawing.Point(90, 258);
+            this.txtCtorPrivate.Name = "txtCtorPrivate";
+            this.txtCtorPrivate.ReadOnly = true;
+            this.txtCtorPrivate.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorPrivate.TabIndex = 3;
+            // 
+            // txtCtorName
+            // 
+            this.txtCtorName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorName.BackColor = System.Drawing.Color.White;
+            this.txtCtorName.Location = new System.Drawing.Point(90, 34);
+            this.txtCtorName.Name = "txtCtorName";
+            this.txtCtorName.ReadOnly = true;
+            this.txtCtorName.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorName.TabIndex = 0;
+            // 
+            // txtCtorToken
+            // 
+            this.txtCtorToken.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorToken.BackColor = System.Drawing.Color.White;
+            this.txtCtorToken.Location = new System.Drawing.Point(90, 322);
+            this.txtCtorToken.Name = "txtCtorToken";
+            this.txtCtorToken.ReadOnly = true;
+            this.txtCtorToken.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorToken.TabIndex = 10;
+            // 
+            // txtCtorFullName
+            // 
+            this.txtCtorFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCtorFullName.BackColor = System.Drawing.Color.White;
+            this.txtCtorFullName.Location = new System.Drawing.Point(90, 66);
+            this.txtCtorFullName.Name = "txtCtorFullName";
+            this.txtCtorFullName.ReadOnly = true;
+            this.txtCtorFullName.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorFullName.TabIndex = 1;
+            // 
+            // label47
+            // 
+            this.label47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label47.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label47.Location = new System.Drawing.Point(0, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(413, 31);
+            this.label47.TabIndex = 1;
+            this.label47.Text = "构造函数内容";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlNoSelectCEF
+            // 
+            this.pnlNoSelectCEF.BackColor = System.Drawing.Color.White;
+            this.pnlNoSelectCEF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNoSelectCEF.Controls.Add(this.label58);
+            this.pnlNoSelectCEF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNoSelectCEF.Location = new System.Drawing.Point(0, 0);
+            this.pnlNoSelectCEF.Name = "pnlNoSelectCEF";
+            this.pnlNoSelectCEF.Size = new System.Drawing.Size(415, 460);
+            this.pnlNoSelectCEF.TabIndex = 22;
+            this.pnlNoSelectCEF.Visible = false;
+            // 
+            // label58
+            // 
+            this.label58.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label58.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label58.Location = new System.Drawing.Point(0, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(413, 31);
+            this.label58.TabIndex = 1;
+            this.label58.Text = "未选择";
+            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlOperate
             // 
@@ -1507,53 +2412,6 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
-            // pnlMdfFPFont
-            // 
-            this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFontSelect);
-            this.pnlMdfFPFont.Controls.Add(this.label33);
-            this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFont);
-            this.pnlMdfFPFont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMdfFPFont.Location = new System.Drawing.Point(0, 0);
-            this.pnlMdfFPFont.Name = "pnlMdfFPFont";
-            this.pnlMdfFPFont.Size = new System.Drawing.Size(198, 464);
-            this.pnlMdfFPFont.TabIndex = 10;
-            this.pnlMdfFPFont.Visible = false;
-            // 
-            // btnMdfFPFontSelect
-            // 
-            this.btnMdfFPFontSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMdfFPFontSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMdfFPFontSelect.Font = new System.Drawing.Font("宋体", 12F);
-            this.btnMdfFPFontSelect.Location = new System.Drawing.Point(19, 37);
-            this.btnMdfFPFontSelect.Name = "btnMdfFPFontSelect";
-            this.btnMdfFPFontSelect.Size = new System.Drawing.Size(161, 30);
-            this.btnMdfFPFontSelect.TabIndex = 0;
-            this.btnMdfFPFontSelect.Text = "ぁぃ测试ABcd?!";
-            this.btnMdfFPFontSelect.UseVisualStyleBackColor = true;
-            this.btnMdfFPFontSelect.Click += new System.EventHandler(this.BtnMdfFPFontSelect_Click);
-            // 
-            // label33
-            // 
-            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label33.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label33.Location = new System.Drawing.Point(0, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(198, 31);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "数值修改";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnMdfFPFont
-            // 
-            this.btnMdfFPFont.Font = new System.Drawing.Font("宋体", 12F);
-            this.btnMdfFPFont.Location = new System.Drawing.Point(54, 75);
-            this.btnMdfFPFont.Name = "btnMdfFPFont";
-            this.btnMdfFPFont.Size = new System.Drawing.Size(91, 30);
-            this.btnMdfFPFont.TabIndex = 0;
-            this.btnMdfFPFont.Text = "修改数值";
-            this.btnMdfFPFont.UseVisualStyleBackColor = true;
-            this.btnMdfFPFont.Click += new System.EventHandler(this.BtnMdfFPFont_Click);
-            // 
             // FormCommonDebugModel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1581,17 +2439,19 @@
             this.sptFieldProperty.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sptFieldProperty)).EndInit();
             this.sptFieldProperty.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFieldProperty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFP)).EndInit();
+            this.pnlTypeFP.ResumeLayout(false);
             this.pnlProperty.ResumeLayout(false);
             this.pnlProperty.PerformLayout();
             this.pnlField.ResumeLayout(false);
             this.pnlField.PerformLayout();
-            this.pnlNoSelect.ResumeLayout(false);
+            this.pnlNoSelectFP.ResumeLayout(false);
             this.pnlMdfFP.ResumeLayout(false);
+            this.pnlMdfFPFont.ResumeLayout(false);
+            this.pnlMdfFPEnum.ResumeLayout(false);
             this.pnlMdfFPColor.ResumeLayout(false);
             this.pnlMdfFPColor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMdfFPNameColor)).EndInit();
-            this.pnlMdfFPEnum.ResumeLayout(false);
             this.pnlMdfFPRectangle.ResumeLayout(false);
             this.pnlMdfFPRectangle.PerformLayout();
             this.pnlMdfFPSize.ResumeLayout(false);
@@ -1605,8 +2465,22 @@
             this.pnlMdfFPBoolean.ResumeLayout(false);
             this.pnlMdfFPBoolean.PerformLayout();
             this.pnlMdfFPOther.ResumeLayout(false);
+            this.tpMethod.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCEM)).EndInit();
+            this.pnlTypeCEF.ResumeLayout(false);
+            this.pnlMethod.ResumeLayout(false);
+            this.pnlMethod.PerformLayout();
+            this.pnlEvent.ResumeLayout(false);
+            this.pnlEvent.PerformLayout();
+            this.pnlConstructor.ResumeLayout(false);
+            this.pnlConstructor.PerformLayout();
+            this.pnlNoSelectCEF.ResumeLayout(false);
             this.pnlOperate.ResumeLayout(false);
-            this.pnlMdfFPFont.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1619,7 +2493,7 @@
         private System.Windows.Forms.DataGridView dgvControl;
         private System.Windows.Forms.PropertyGrid propertyGrid;
         private System.Windows.Forms.TabPage tpField;
-        private System.Windows.Forms.DataGridView dgvFieldProperty;
+        private System.Windows.Forms.DataGridView dgvFP;
         private System.Windows.Forms.Panel pnlOperate;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnTopMost;
@@ -1682,9 +2556,9 @@
         private System.Windows.Forms.Panel pnlMdfFPNumber;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnMdfFPNumber;
-        private System.Windows.Forms.TextBox txtFieldPropertySearch;
+        private System.Windows.Forms.TextBox txtFPSearch;
         private System.Windows.Forms.TextBox txtControlSearch;
-        private System.Windows.Forms.Panel pnlNoSelect;
+        private System.Windows.Forms.Panel pnlNoSelectFP;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtMdfFPNumber;
         private System.Windows.Forms.Panel pnlMdfFPString;
@@ -1733,5 +2607,73 @@
         private System.Windows.Forms.Button btnMdfFPFontSelect;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btnMdfFPFont;
+        private System.Windows.Forms.TabPage tpMethod;
+        private System.Windows.Forms.DataGridView dgvCEM;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TextBox txtCEMSearch;
+        private System.Windows.Forms.Panel pnlConstructor;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtCtorPublic;
+        private System.Windows.Forms.TextBox txtCtorPrivate;
+        private System.Windows.Forms.TextBox txtCtorName;
+        private System.Windows.Forms.TextBox txtCtorToken;
+        private System.Windows.Forms.TextBox txtCtorFullName;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Panel pnlEvent;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox txtEventEventType;
+        private System.Windows.Forms.TextBox txtEventPublic;
+        private System.Windows.Forms.TextBox txtEventName;
+        private System.Windows.Forms.TextBox txtEventToken;
+        private System.Windows.Forms.TextBox txtEventFullName;
+        private System.Windows.Forms.Panel pnlNoSelectCEF;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Panel pnlTypeFP;
+        private System.Windows.Forms.Panel pnlTypeCEF;
+        private System.Windows.Forms.Panel pnlMethod;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TextBox txtMethodPublic;
+        private System.Windows.Forms.TextBox txtMethodStatic;
+        private System.Windows.Forms.TextBox txtMethodFinal;
+        private System.Windows.Forms.TextBox txtMethodVirtual;
+        private System.Windows.Forms.TextBox txtMethodAbstract;
+        private System.Windows.Forms.TextBox txtMethodName;
+        private System.Windows.Forms.TextBox txtMethodToken;
+        private System.Windows.Forms.TextBox txtMethodFullName;
+        private System.Windows.Forms.TextBox txtMethodParas;
+        private System.Windows.Forms.TextBox txtMethodReturn;
+        private System.Windows.Forms.TextBox txtMethodPrivate;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtCtorStatic;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtCtorParas;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txtCtorFinal;
+        private System.Windows.Forms.TextBox txtCtorAbstract;
+        private System.Windows.Forms.TextBox txtCtorVirtual;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox txtEventMulticast;
     }
 }
