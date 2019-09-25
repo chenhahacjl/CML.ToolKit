@@ -1434,7 +1434,17 @@
             获取或设置控件显示的描述内容
             </summary>
         </member>
-        <member name="P:CML.ControlEx.CmlFormValueInput.CP_Value">
+        <member name="P:CML.ControlEx.CmlFormValueInput.CP_DoubleValue">
+            <summary>
+            获取用户输入的内容
+            </summary>
+        </member>
+        <member name="P:CML.ControlEx.CmlFormValueInput.CP_IntValue">
+            <summary>
+            获取用户输入的内容
+            </summary>
+        </member>
+        <member name="P:CML.ControlEx.CmlFormValueInput.CP_StringValue">
             <summary>
             获取用户输入的内容
             </summary>
@@ -1457,6 +1467,11 @@
         <member name="P:CML.ControlEx.CmlFormValueInput.CP_Unit">
             <summary>
             获取或设置控件显示的单位
+            </summary>
+        </member>
+        <member name="P:CML.ControlEx.CmlFormValueInput.CP_Password">
+            <summary>
+            获取或设置是否密码输入模式
             </summary>
         </member>
         <member name="M:CML.ControlEx.CmlFormValueInput.#ctor">

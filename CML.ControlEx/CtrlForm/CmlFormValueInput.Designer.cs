@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CmlFormValueInput));
             this.lnlDescription = new System.Windows.Forms.Label();
             this.btnCancel = new CML.ControlEx.CmlButtonEx();
             this.btnEnter = new CML.ControlEx.CmlButtonEx();
@@ -102,7 +101,7 @@
             this.utxtValue.Size = new System.Drawing.Size(287, 31);
             this.utxtValue.TabIndex = 3;
             // 
-            // FormValueInput
+            // CmlFormValueInput
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(404, 191);
@@ -110,13 +109,13 @@
             this.Controls.Add(this.lnlDescription);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEnter);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(420, 230);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(420, 230);
-            this.Name = "FormValueInput";
+            this.Name = "CmlFormValueInput";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "请输入数据";

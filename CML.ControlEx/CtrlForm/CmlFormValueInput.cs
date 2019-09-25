@@ -30,10 +30,28 @@ namespace CML.ControlEx
         /// <summary>
         /// 获取用户输入的内容
         /// </summary>
-        public double CP_Value
+        public double CP_DoubleValue
         {
             get => double.TryParse(utxtValue.Text, out double dNum) ? dNum : 0;
             set => utxtValue.Text = value.ToString();
+        }
+
+        /// <summary>
+        /// 获取用户输入的内容
+        /// </summary>
+        public int CP_IntValue
+        {
+            get => int.TryParse(utxtValue.Text, out int dNum) ? dNum : 0;
+            set => utxtValue.Text = value.ToString();
+        }
+
+        /// <summary>
+        /// 获取用户输入的内容
+        /// </summary>
+        public string CP_StringValue
+        {
+            get => utxtValue.Text;
+            set => utxtValue.Text = value;
         }
 
         /// <summary>
@@ -70,6 +88,15 @@ namespace CML.ControlEx
         {
             get => utxtValue.CP_Unit;
             set => utxtValue.CP_Unit = value;
+        }
+
+        /// <summary>
+        /// 获取或设置是否密码输入模式
+        /// </summary>
+        public bool CP_Password
+        {
+            get => utxtValue.CP_PasswordChar == '●';
+            set => utxtValue.CP_PasswordChar = value ? '●' : '\0';
         }
         #endregion
 
