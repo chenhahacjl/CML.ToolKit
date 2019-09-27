@@ -170,12 +170,14 @@ namespace CML.ControlEx
             }
             else if (e.RowIndex != -1 && e.ColumnIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
             {
-                if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+                if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == DBNull.Value)
                 {
-                    Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
+                    Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
                 }
-
-                Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !(bool)Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                else
+                {
+                    Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !(bool)Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                }
 
                 EndEdit();
             }
