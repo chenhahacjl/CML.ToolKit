@@ -15,11 +15,11 @@ namespace CML.ControlEx
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y008R003";
+        public override string CP_VerDev => "19Y008R004";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string CP_VerDate => "2019年09月27日 16:10";
+        public override string CP_VerDate => "2019年10月12日 11:25";
         /// <summary>
         /// 当前程序集 
         /// </summary>

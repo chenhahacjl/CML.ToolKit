@@ -151,7 +151,7 @@ namespace CML.ControlEx
                 else if (e.ColumnIndex != -1)
                 {
                     object obj = Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-                    string value = obj as string;
+                    string value = obj?.ToString();
 
                     if (!string.IsNullOrEmpty(value))
                     {
@@ -170,7 +170,7 @@ namespace CML.ControlEx
             }
             else if (e.RowIndex != -1 && e.ColumnIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
             {
-                if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == DBNull.Value)
+                if (Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null || Rows[e.RowIndex].Cells[e.ColumnIndex].Value == DBNull.Value)
                 {
                     Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
                 }
