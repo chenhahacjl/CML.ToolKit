@@ -366,6 +366,13 @@ namespace CML.ControlEx
         public string CP_AxisRightFormat { get; set; } = "0";
 
         /// <summary>
+        /// 获取或设置时间轴显示状态
+        /// </summary>
+        [Browsable(true), DefaultValue(true)]
+        [Category("CMLAttribute"), Description("获取或设置时间轴显示状态")]
+        public bool CP_ShowTimeAxis { get; set; } = true;
+
+        /// <summary>
         /// 获取或设置时间显示的格式
         /// </summary>
         [Browsable(true), DefaultValue("yyyy-MM-dd HH:mm:ss")]
@@ -839,8 +846,22 @@ namespace CML.ControlEx
 
                         if (markForeSection.IsRenderTimeText)
                         {
-                            g.DrawString("开始:" + m_lstDateTime[markForeSection.StartIndex].ToString(CP_DateTimeFormat), font, markForeSection.FontBrush, new PointF((num4 + 5), num - 27f));
-                            g.DrawString("结束:" + m_lstDateTime[markForeSection.EndIndex].ToString(CP_DateTimeFormat), font, markForeSection.FontBrush, new PointF((num4 + 5), num - 8f));
+                            string dtStart;
+                            try
+                            {
+                                dtStart = m_lstDateTime[markForeSection.StartIndex].ToString(CP_DateTimeFormat);
+                            }
+                            catch { dtStart = m_lstDateTime[markForeSection.StartIndex].ToString(); }
+
+                            string dtEnd;
+                            try
+                            {
+                                dtEnd = m_lstDateTime[markForeSection.EndIndex].ToString(CP_DateTimeFormat);
+                            }
+                            catch { dtEnd = m_lstDateTime[markForeSection.EndIndex].ToString(); }
+
+                            g.DrawString("开始:" + dtStart, font, markForeSection.FontBrush, new PointF((num4 + 5), num - 27f));
+                            g.DrawString("结束:" + dtEnd, font, markForeSection.FontBrush, new PointF((num4 + 5), num - 8f));
 
                             string strTimsSpain = "";
                             TimeSpan ts = m_lstDateTime[markForeSection.EndIndex] - m_lstDateTime[markForeSection.StartIndex];
@@ -977,23 +998,32 @@ namespace CML.ControlEx
             }
 
             //绘制X轴时间
-            for (int i = m_nAbscissaTextInterval; i < nWidth; i += m_nAbscissaTextInterval)
+            if (CP_ShowTimeAxis)
             {
-                g.DrawLine(m_penCoordinateDash, i, pnlAxis.Height - 38, i, 0);
+                for (int i = m_nAbscissaTextInterval; i < nWidth; i += m_nAbscissaTextInterval)
+                {
+                    g.DrawLine(m_penCoordinateDash, i, pnlAxis.Height - 38, i, 0);
 
-                int num = Convert.ToInt32(i / m_fDataScaleRender);
-                if (m_isRenderTimeData)
-                {
-                    if (num < m_lstDateTime.Count)
+                    int num = Convert.ToInt32(i / m_fDataScaleRender);
+                    if (m_isRenderTimeData)
                     {
-                        g.DrawString(m_lstDateTime[num].ToString(CP_DateTimeFormat), Font, m_brushCoordinate, new Rectangle(i - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
+                        if (num < m_lstDateTime.Count)
+                        {
+                            string dateTime = "";
+                            try
+                            {
+                                dateTime = m_lstDateTime[num].ToString(CP_DateTimeFormat);
+                            }
+                            catch { dateTime = m_lstDateTime[num].ToString(); }
+                            g.DrawString(dateTime, Font, m_brushCoordinate, new Rectangle(i - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
+                        }
                     }
-                }
-                else
-                {
-                    if (num < m_lstDateCustomer.Count)
+                    else
                     {
-                        g.DrawString(m_lstDateCustomer[num], Font, m_brushCoordinate, new Rectangle(i - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
+                        if (num < m_lstDateCustomer.Count)
+                        {
+                            g.DrawString(m_lstDateCustomer[num], Font, m_brushCoordinate, new Rectangle(i - 100, pnlAxis.Height - 40, 200, 22), m_sfMain);
+                        }
                     }
                 }
             }
@@ -2021,23 +2051,26 @@ namespace CML.ControlEx
                         }
 
                         //下方的时间提示
-                        Rectangle rectangle = new Rectangle(m_ptMouseLocation.X - 50, pnlAxis.Height - 38, 100, 18);
-                        if (m_isRenderTimeData)
+                        if (CP_ShowTimeAxis)
                         {
-                            if (num < m_lstDateTime.Count)
+                            Rectangle rectangle = new Rectangle(m_ptMouseLocation.X - 50, pnlAxis.Height - 38, 100, 18);
+                            if (m_isRenderTimeData)
                             {
-                                graphics.FillRectangle(brush, rectangle);
-                                graphics.DrawRectangle(Pens.HotPink, rectangle);
-                                graphics.DrawString(m_lstDateTime[num].ToString("HH:mm:ss"), Font, Brushes.Cyan, rectangle, m_sfMain);
+                                if (num < m_lstDateTime.Count)
+                                {
+                                    graphics.FillRectangle(brush, rectangle);
+                                    graphics.DrawRectangle(Pens.HotPink, rectangle);
+                                    graphics.DrawString(m_lstDateTime[num].ToString("HH:mm:ss"), Font, Brushes.Cyan, rectangle, m_sfMain);
+                                }
                             }
-                        }
-                        else
-                        {
-                            if (num < m_lstDateCustomer.Count)
+                            else
                             {
-                                graphics.FillRectangle(brush, rectangle);
-                                graphics.DrawRectangle(Pens.HotPink, rectangle);
-                                graphics.DrawString(m_lstDateCustomer[num], Font, Brushes.Cyan, rectangle, m_sfMain);
+                                if (num < m_lstDateCustomer.Count)
+                                {
+                                    graphics.FillRectangle(brush, rectangle);
+                                    graphics.DrawRectangle(Pens.HotPink, rectangle);
+                                    graphics.DrawString(m_lstDateCustomer[num], Font, Brushes.Cyan, rectangle, m_sfMain);
+                                }
                             }
                         }
                     }
