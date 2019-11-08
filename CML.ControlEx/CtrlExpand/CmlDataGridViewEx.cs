@@ -150,22 +150,26 @@ namespace CML.ControlEx
                 }
                 else if (e.ColumnIndex != -1)
                 {
-                    object obj = Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-                    string value = obj?.ToString();
-
-                    if (!string.IsNullOrEmpty(value))
+                    try
                     {
-                        //将单元格内容设置到剪贴板
-                        Thread thread = new Thread(() =>
-                        {
-                            Clipboard.SetText(value);
-                        })
-                        { IsBackground = true };
+                        object obj = Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                        string value = obj?.ToString();
 
-                        //将当前线程设置为单个线程单元(STA)模式方可进行OLE调用。
-                        _ = thread.TrySetApartmentState(ApartmentState.STA);
-                        thread.Start();
+                        if (!string.IsNullOrEmpty(value))
+                        {
+                            //将单元格内容设置到剪贴板
+                            Thread thread = new Thread(() =>
+                            {
+                                Clipboard.SetText(value);
+                            })
+                            { IsBackground = true };
+
+                            //将当前线程设置为单个线程单元(STA)模式方可进行OLE调用。
+                            _ = thread.TrySetApartmentState(ApartmentState.STA);
+                            thread.Start();
+                        }
                     }
+                    catch { }
                 }
             }
             else if (e.RowIndex != -1 && e.ColumnIndex != -1 && Columns[e.ColumnIndex].CellType == typeof(DataGridViewCheckBoxCell))
