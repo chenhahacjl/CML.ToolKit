@@ -36,6 +36,8 @@
             this.txtIndexMin = new CML.ControlEx.CmlTextBoxEx();
             this.btnCancel = new CML.ControlEx.CmlButtonEx();
             this.btnEnter = new CML.ControlEx.CmlButtonEx();
+            this.btnAll = new CML.ControlEx.CmlButtonEx();
+            this.btnClear = new CML.ControlEx.CmlButtonEx();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +48,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(494, 42);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "请输入选择范围";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -57,7 +59,7 @@
             this.label2.Location = new System.Drawing.Point(44, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 19);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 1;
             this.label2.Text = "从";
             // 
             // label3
@@ -67,7 +69,7 @@
             this.label3.Location = new System.Drawing.Point(167, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 19);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 3;
             this.label3.Text = "到";
             // 
             // lblRange
@@ -77,7 +79,7 @@
             this.lblRange.Location = new System.Drawing.Point(304, 93);
             this.lblRange.Name = "lblRange";
             this.lblRange.Size = new System.Drawing.Size(122, 19);
-            this.lblRange.TabIndex = 6;
+            this.lblRange.TabIndex = 5;
             this.lblRange.Text = "（范围1-N）";
             // 
             // txtIndexMax
@@ -106,7 +108,7 @@
             this.txtIndexMax.Margin = new System.Windows.Forms.Padding(4);
             this.txtIndexMax.Name = "txtIndexMax";
             this.txtIndexMax.Size = new System.Drawing.Size(81, 30);
-            this.txtIndexMax.TabIndex = 1;
+            this.txtIndexMax.TabIndex = 4;
             // 
             // txtIndexMin
             // 
@@ -134,7 +136,7 @@
             this.txtIndexMin.Margin = new System.Windows.Forms.Padding(4);
             this.txtIndexMin.Name = "txtIndexMin";
             this.txtIndexMin.Size = new System.Drawing.Size(81, 30);
-            this.txtIndexMin.TabIndex = 0;
+            this.txtIndexMin.TabIndex = 2;
             // 
             // btnCancel
             // 
@@ -146,7 +148,7 @@
             this.btnCancel.Location = new System.Drawing.Point(402, 153);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 46);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "取消";
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
@@ -160,14 +162,41 @@
             this.btnEnter.Location = new System.Drawing.Point(316, 153);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(80, 46);
-            this.btnEnter.TabIndex = 2;
+            this.btnEnter.TabIndex = 8;
             this.btnEnter.Text = "确认";
             this.btnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
+            // btnAll
+            // 
+            this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAll.CP_CustomerInformation = null;
+            this.btnAll.CP_NewLineChar = '@';
+            this.btnAll.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAll.ForeColor = System.Drawing.Color.Blue;
+            this.btnAll.Location = new System.Drawing.Point(98, 153);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(80, 46);
+            this.btnAll.TabIndex = 7;
+            this.btnAll.Text = "全选";
+            this.btnAll.Click += new System.EventHandler(this.BtnAll_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.CP_CustomerInformation = null;
+            this.btnClear.CP_NewLineChar = '@';
+            this.btnClear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClear.ForeColor = System.Drawing.Color.Blue;
+            this.btnClear.Location = new System.Drawing.Point(12, 153);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(80, 46);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "清空";
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
             // FormDgvRowCheckSelect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(494, 211);
             this.Controls.Add(this.lblRange);
             this.Controls.Add(this.label3);
@@ -176,12 +205,17 @@
             this.Controls.Add(this.txtIndexMin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAll);
             this.Controls.Add(this.btnEnter);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(510, 250);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(510, 250);
             this.Name = "FormDgvRowCheckSelect";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "数据行范围选择";
             this.Shown += new System.EventHandler(this.FormDgvRowCheckSelect_Shown);
@@ -200,5 +234,7 @@
         private System.Windows.Forms.Label label3;
         private CmlTextBoxEx txtIndexMax;
         private System.Windows.Forms.Label lblRange;
+        private CmlButtonEx btnAll;
+        private CmlButtonEx btnClear;
     }
 }

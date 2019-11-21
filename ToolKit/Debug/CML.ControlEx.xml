@@ -1605,6 +1605,11 @@
             获取或设置右侧坐标轴数值的格式
             </summary>
         </member>
+        <member name="P:CML.ControlEx.CmlChartCurve.CP_ShowTimeAxis">
+            <summary>
+            获取或设置时间轴显示状态
+            </summary>
+        </member>
         <member name="P:CML.ControlEx.CmlChartCurve.CP_DateTimeFormat">
             <summary>
             获取或设置时间显示的格式

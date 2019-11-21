@@ -55,6 +55,7 @@
             // 
             this.btnEnter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEnter.CP_CustomerInformation = null;
+            this.btnEnter.CP_NewLineChar = '@';
             this.btnEnter.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnEnter.ForeColor = System.Drawing.Color.Blue;
             this.btnEnter.Location = new System.Drawing.Point(10, 8);
@@ -79,6 +80,7 @@
             // 
             this.btnSelectNone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSelectNone.CP_CustomerInformation = null;
+            this.btnSelectNone.CP_NewLineChar = '@';
             this.btnSelectNone.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSelectNone.Location = new System.Drawing.Point(178, 58);
             this.btnSelectNone.Name = "btnSelectNone";
@@ -91,6 +93,7 @@
             // 
             this.btnSelectAll.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSelectAll.CP_CustomerInformation = null;
+            this.btnSelectAll.CP_NewLineChar = '@';
             this.btnSelectAll.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSelectAll.Location = new System.Drawing.Point(178, 8);
             this.btnSelectAll.Name = "btnSelectAll";
@@ -101,14 +104,16 @@
             // 
             // FormDgvColumnVisibility
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(268, 354);
             this.Controls.Add(this.chksColumns);
             this.Controls.Add(this.pnlOperate);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormDgvColumnVisibility";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "数据列可见性选择";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDgvColumnVisibility_FormClosing);

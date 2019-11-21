@@ -59,6 +59,24 @@ namespace CML.ControlEx
         #endregion
 
         #region 按钮事件
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            RowIndexMin = -1;
+            RowIndexMax = -1;
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void BtnAll_Click(object sender, EventArgs e)
+        {
+            RowIndexMin = 0;
+            RowIndexMax = RowCount - 1;
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
         private void BtnEnter_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(txtIndexMin.Text, out int indexMin) || !int.TryParse(txtIndexMax.Text, out int indexMax))
