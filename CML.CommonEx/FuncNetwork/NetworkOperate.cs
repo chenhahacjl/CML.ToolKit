@@ -58,6 +58,7 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>HTML代码</returns>
         public static string CF_GetHtmlCode(ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
+            errMsg = "";
             string result = string.Empty;
 
             try
@@ -113,7 +114,7 @@ namespace CML.CommonEx.NetworkEx
             catch (Exception ex)
             {
                 responseCookie = null;
-                errMsg = ex.Message;
+                errMsg = string.IsNullOrEmpty(errMsg) ? ex.Message : errMsg;
             }
 
             return result;
@@ -210,6 +211,7 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>执行结果</returns>
         public static bool CF_UploadFile(ModWebRequest webRequest, string filePath, CookieContainer requestCookie, out CookieContainer responseCookie, out string returnMsg, out string errMsg)
         {
+            errMsg = "";
             bool result = false;
 
             //本地文件
@@ -270,7 +272,7 @@ namespace CML.CommonEx.NetworkEx
                 {
                     responseCookie = null;
                     returnMsg = "";
-                    errMsg = ex.Message;
+                    errMsg = string.IsNullOrEmpty(errMsg) ? ex.Message : errMsg;
                 }
             }
 
@@ -326,6 +328,7 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>执行结果</returns>
         public static bool CF_DownloadFile(ModWebRequest webRequest, string savePath, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
+            errMsg = "";
             bool result = false;
 
             try
@@ -372,7 +375,7 @@ namespace CML.CommonEx.NetworkEx
             catch (Exception ex)
             {
                 responseCookie = null;
-                errMsg = ex.Message;
+                errMsg = string.IsNullOrEmpty(errMsg) ? ex.Message : errMsg;
             }
 
             return result;
@@ -423,6 +426,7 @@ namespace CML.CommonEx.NetworkEx
         /// <returns>数据流</returns>
         public static Stream CF_GetWebStream(ModWebRequest webRequest, CookieContainer requestCookie, out CookieContainer responseCookie, out string errMsg)
         {
+            errMsg = "";
             Stream result = null;
 
             try
@@ -580,7 +584,7 @@ namespace CML.CommonEx.NetworkEx
             catch (Exception ex)
             {
                 responseCookie = null;
-                errMsg = ex.Message;
+                errMsg = string.IsNullOrEmpty(errMsg) ? ex.Message : errMsg;
             }
 
             return result;

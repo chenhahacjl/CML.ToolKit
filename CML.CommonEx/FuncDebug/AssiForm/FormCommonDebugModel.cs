@@ -244,6 +244,7 @@ namespace CML.CommonEx.DebugEx
         private void LoadConstructor(Type[] type)
         {
             ConstructorInfo constructor = m_projectObject.GetType().GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, type, null);
+            propCEMProperty.SelectedObject = constructor;
 
             if (constructor == null)
             {
@@ -280,6 +281,8 @@ namespace CML.CommonEx.DebugEx
         {
             bool isPublic = true;
             EventInfo @event = m_projectObject.GetType().GetEvent(name, BindingFlags.Instance | BindingFlags.Public);
+            propCEMProperty.SelectedObject = @event;
+
             if (@event == null)
             {
                 isPublic = false;
@@ -314,6 +317,7 @@ namespace CML.CommonEx.DebugEx
         private void LoadMethod(string name, Type[] type)
         {
             var method = m_projectObject.GetType().GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, type, null);
+            propCEMProperty.SelectedObject = method;
 
             txtMethodName.Text = method.Name;
             txtMethodFullName.Text = method.DeclaringType.FullName + "." + method.Name;
@@ -514,6 +518,8 @@ namespace CML.CommonEx.DebugEx
             {
                 pnlNoSelectFP.Visible = true;
                 pnlMdfFPOther.Visible = true;
+                propFieldProperty.SelectedObject = null;
+
                 return;
             }
 
@@ -536,6 +542,9 @@ namespace CML.CommonEx.DebugEx
             //数据
             Type dataType = dgvFP.SelectedRows[0].Cells["Value"].Value.GetType();
             object value = dgvFP.SelectedRows[0].Cells["Value"].Value;
+
+            //加载到属性窗格
+            propFieldProperty.SelectedObject = value;
 
             //根据不同类型做不同操作
             if (value is Enum)
@@ -1145,6 +1154,8 @@ namespace CML.CommonEx.DebugEx
             if (dgvCEM.SelectedRows.Count == 0)
             {
                 pnlNoSelectCEF.Visible = true;
+                propCEMProperty.SelectedObject = null;
+
                 return;
             }
 
@@ -1167,6 +1178,7 @@ namespace CML.CommonEx.DebugEx
             else
             {
                 pnlNoSelectCEF.Visible = true;
+                propCEMProperty.SelectedObject = null;
             }
         }
         #endregion

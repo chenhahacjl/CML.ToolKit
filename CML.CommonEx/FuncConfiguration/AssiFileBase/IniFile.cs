@@ -17,7 +17,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="key">键名</param>
         /// <param name="val">键值</param>
         /// <param name="filePath">文件路径</param>
-        [DllImport("kernel32")]
+        [DllImport("kernel32", CharSet = CharSet.Unicode)]
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="retVal">StringBulider对象</param>
         /// <param name="size">字节大小</param>
         /// <param name="filePath">文件路径</param>
-        [DllImport("kernel32", EntryPoint = "GetPrivateProfileString")]
+        [DllImport("kernel32", EntryPoint = "GetPrivateProfileString", CharSet = CharSet.Unicode)]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace CML.CommonEx.ConfigurationEx
         /// <param name="retVal">字节数组</param>
         /// <param name="size">字节大小</param>
         /// <param name="filePath">文件路径</param>
-        [DllImport("kernel32", EntryPoint = "GetPrivateProfileString")]
+        [DllImport("kernel32", EntryPoint = "GetPrivateProfileString", CharSet = CharSet.Unicode)]
         private static extern uint GetPrivateProfileStringA(string section, string key, string def, byte[] retVal, int size, string filePath);
         #endregion
 

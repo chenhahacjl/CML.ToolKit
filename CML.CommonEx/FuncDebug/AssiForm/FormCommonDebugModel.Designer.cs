@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpFormControl = new System.Windows.Forms.TabPage();
             this.sptControl = new System.Windows.Forms.SplitContainer();
@@ -41,6 +41,7 @@
             this.sptFieldProperty = new System.Windows.Forms.SplitContainer();
             this.dgvFP = new System.Windows.Forms.DataGridView();
             this.txtFPSearch = new System.Windows.Forms.TextBox();
+            this.sptFieldPropertyDetail = new System.Windows.Forms.SplitContainer();
             this.pnlTypeFP = new System.Windows.Forms.Panel();
             this.pnlProperty = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -148,10 +149,12 @@
             this.btnMdfFPBoolean = new System.Windows.Forms.Button();
             this.pnlMdfFPOther = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.propFieldProperty = new System.Windows.Forms.PropertyGrid();
             this.tpMethod = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.sptCEMProperty = new System.Windows.Forms.SplitContainer();
             this.dgvCEM = new System.Windows.Forms.DataGridView();
             this.txtCEMSearch = new System.Windows.Forms.TextBox();
+            this.sptCEMPropertyDetail = new System.Windows.Forms.SplitContainer();
             this.pnlTypeCEF = new System.Windows.Forms.Panel();
             this.pnlMethod = new System.Windows.Forms.Panel();
             this.label59 = new System.Windows.Forms.Label();
@@ -215,6 +218,7 @@
             this.label47 = new System.Windows.Forms.Label();
             this.pnlNoSelectCEF = new System.Windows.Forms.Panel();
             this.label58 = new System.Windows.Forms.Label();
+            this.propCEMProperty = new System.Windows.Forms.PropertyGrid();
             this.pnlOperate = new System.Windows.Forms.Panel();
             this.btnTopMost = new System.Windows.Forms.Button();
             this.btnRefreshAll = new System.Windows.Forms.Button();
@@ -232,6 +236,10 @@
             this.sptFieldProperty.Panel2.SuspendLayout();
             this.sptFieldProperty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sptFieldPropertyDetail)).BeginInit();
+            this.sptFieldPropertyDetail.Panel1.SuspendLayout();
+            this.sptFieldPropertyDetail.Panel2.SuspendLayout();
+            this.sptFieldPropertyDetail.SuspendLayout();
             this.pnlTypeFP.SuspendLayout();
             this.pnlProperty.SuspendLayout();
             this.pnlField.SuspendLayout();
@@ -249,11 +257,15 @@
             this.pnlMdfFPBoolean.SuspendLayout();
             this.pnlMdfFPOther.SuspendLayout();
             this.tpMethod.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sptCEMProperty)).BeginInit();
+            this.sptCEMProperty.Panel1.SuspendLayout();
+            this.sptCEMProperty.Panel2.SuspendLayout();
+            this.sptCEMProperty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCEM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sptCEMPropertyDetail)).BeginInit();
+            this.sptCEMPropertyDetail.Panel1.SuspendLayout();
+            this.sptCEMPropertyDetail.Panel2.SuspendLayout();
+            this.sptCEMPropertyDetail.SuspendLayout();
             this.pnlTypeCEF.SuspendLayout();
             this.pnlMethod.SuspendLayout();
             this.pnlEvent.SuspendLayout();
@@ -272,7 +284,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(786, 496);
+            this.tabControl.Size = new System.Drawing.Size(934, 558);
             this.tabControl.TabIndex = 0;
             // 
             // tpFormControl
@@ -311,14 +323,14 @@
             this.dgvControl.AllowUserToResizeRows = false;
             this.dgvControl.BackgroundColor = System.Drawing.Color.White;
             this.dgvControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvControl.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvControl.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvControl.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvControl.Location = new System.Drawing.Point(0, 26);
@@ -355,7 +367,7 @@
             this.tpField.Location = new System.Drawing.Point(4, 26);
             this.tpField.Name = "tpField";
             this.tpField.Padding = new System.Windows.Forms.Padding(3);
-            this.tpField.Size = new System.Drawing.Size(778, 466);
+            this.tpField.Size = new System.Drawing.Size(926, 528);
             this.tpField.TabIndex = 1;
             this.tpField.Text = "变量/属性";
             this.tpField.UseVisualStyleBackColor = true;
@@ -374,11 +386,10 @@
             // 
             // sptFieldProperty.Panel2
             // 
-            this.sptFieldProperty.Panel2.Controls.Add(this.pnlTypeFP);
-            this.sptFieldProperty.Panel2.Controls.Add(this.pnlMdfFP);
+            this.sptFieldProperty.Panel2.Controls.Add(this.sptFieldPropertyDetail);
             this.sptFieldProperty.Panel2MinSize = 415;
-            this.sptFieldProperty.Size = new System.Drawing.Size(772, 460);
-            this.sptFieldProperty.SplitterDistance = 353;
+            this.sptFieldProperty.Size = new System.Drawing.Size(920, 522);
+            this.sptFieldProperty.SplitterDistance = 420;
             this.sptFieldProperty.TabIndex = 5;
             // 
             // dgvFP
@@ -388,14 +399,14 @@
             this.dgvFP.AllowUserToResizeRows = false;
             this.dgvFP.BackgroundColor = System.Drawing.Color.White;
             this.dgvFP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFP.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFP.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFP.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvFP.Location = new System.Drawing.Point(0, 26);
@@ -404,7 +415,7 @@
             this.dgvFP.RowHeadersVisible = false;
             this.dgvFP.RowTemplate.Height = 23;
             this.dgvFP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFP.Size = new System.Drawing.Size(353, 434);
+            this.dgvFP.Size = new System.Drawing.Size(420, 496);
             this.dgvFP.TabIndex = 1;
             this.dgvFP.SelectionChanged += new System.EventHandler(this.DgvFP_SelectionChanged);
             // 
@@ -414,9 +425,28 @@
             this.txtFPSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtFPSearch.Location = new System.Drawing.Point(0, 0);
             this.txtFPSearch.Name = "txtFPSearch";
-            this.txtFPSearch.Size = new System.Drawing.Size(353, 26);
+            this.txtFPSearch.Size = new System.Drawing.Size(420, 26);
             this.txtFPSearch.TabIndex = 0;
             this.txtFPSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtFPSearch_KeyUp);
+            // 
+            // sptFieldPropertyDetail
+            // 
+            this.sptFieldPropertyDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sptFieldPropertyDetail.Location = new System.Drawing.Point(0, 0);
+            this.sptFieldPropertyDetail.Name = "sptFieldPropertyDetail";
+            this.sptFieldPropertyDetail.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // sptFieldPropertyDetail.Panel1
+            // 
+            this.sptFieldPropertyDetail.Panel1.Controls.Add(this.pnlTypeFP);
+            this.sptFieldPropertyDetail.Panel1.Controls.Add(this.pnlMdfFP);
+            // 
+            // sptFieldPropertyDetail.Panel2
+            // 
+            this.sptFieldPropertyDetail.Panel2.Controls.Add(this.propFieldProperty);
+            this.sptFieldPropertyDetail.Size = new System.Drawing.Size(496, 522);
+            this.sptFieldPropertyDetail.SplitterDistance = 374;
+            this.sptFieldPropertyDetail.TabIndex = 2;
             // 
             // pnlTypeFP
             // 
@@ -426,11 +456,12 @@
             this.pnlTypeFP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTypeFP.Location = new System.Drawing.Point(0, 0);
             this.pnlTypeFP.Name = "pnlTypeFP";
-            this.pnlTypeFP.Size = new System.Drawing.Size(215, 460);
+            this.pnlTypeFP.Size = new System.Drawing.Size(296, 374);
             this.pnlTypeFP.TabIndex = 22;
             // 
             // pnlProperty
             // 
+            this.pnlProperty.AutoScroll = true;
             this.pnlProperty.BackColor = System.Drawing.Color.White;
             this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlProperty.Controls.Add(this.label14);
@@ -461,7 +492,7 @@
             this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProperty.Location = new System.Drawing.Point(0, 0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(215, 460);
+            this.pnlProperty.Size = new System.Drawing.Size(296, 374);
             this.pnlProperty.TabIndex = 0;
             this.pnlProperty.Visible = false;
             // 
@@ -581,7 +612,7 @@
             this.txtPropertyNPSet.Location = new System.Drawing.Point(90, 226);
             this.txtPropertyNPSet.Name = "txtPropertyNPSet";
             this.txtPropertyNPSet.ReadOnly = true;
-            this.txtPropertyNPSet.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyNPSet.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyNPSet.TabIndex = 6;
             // 
             // txtPropertyPublic
@@ -592,7 +623,7 @@
             this.txtPropertyPublic.Location = new System.Drawing.Point(90, 98);
             this.txtPropertyPublic.Name = "txtPropertyPublic";
             this.txtPropertyPublic.ReadOnly = true;
-            this.txtPropertyPublic.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyPublic.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyPublic.TabIndex = 2;
             // 
             // txtPropertyPSet
@@ -603,7 +634,7 @@
             this.txtPropertyPSet.Location = new System.Drawing.Point(90, 194);
             this.txtPropertyPSet.Name = "txtPropertyPSet";
             this.txtPropertyPSet.ReadOnly = true;
-            this.txtPropertyPSet.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyPSet.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyPSet.TabIndex = 5;
             // 
             // txtPropertyNPGet
@@ -614,7 +645,7 @@
             this.txtPropertyNPGet.Location = new System.Drawing.Point(90, 162);
             this.txtPropertyNPGet.Name = "txtPropertyNPGet";
             this.txtPropertyNPGet.ReadOnly = true;
-            this.txtPropertyNPGet.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyNPGet.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyNPGet.TabIndex = 4;
             // 
             // txtPropertyPGet
@@ -625,7 +656,7 @@
             this.txtPropertyPGet.Location = new System.Drawing.Point(90, 130);
             this.txtPropertyPGet.Name = "txtPropertyPGet";
             this.txtPropertyPGet.ReadOnly = true;
-            this.txtPropertyPGet.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyPGet.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyPGet.TabIndex = 3;
             // 
             // txtPropertyName
@@ -636,13 +667,12 @@
             this.txtPropertyName.Location = new System.Drawing.Point(90, 34);
             this.txtPropertyName.Name = "txtPropertyName";
             this.txtPropertyName.ReadOnly = true;
-            this.txtPropertyName.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyName.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyName.TabIndex = 0;
             // 
             // txtPropertyValue
             // 
-            this.txtPropertyValue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPropertyValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPropertyValue.BackColor = System.Drawing.Color.White;
             this.txtPropertyValue.Location = new System.Drawing.Point(90, 386);
@@ -650,7 +680,7 @@
             this.txtPropertyValue.Name = "txtPropertyValue";
             this.txtPropertyValue.ReadOnly = true;
             this.txtPropertyValue.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtPropertyValue.Size = new System.Drawing.Size(117, 69);
+            this.txtPropertyValue.Size = new System.Drawing.Size(184, 200);
             this.txtPropertyValue.TabIndex = 11;
             // 
             // txtPropertyToken
@@ -661,7 +691,7 @@
             this.txtPropertyToken.Location = new System.Drawing.Point(90, 354);
             this.txtPropertyToken.Name = "txtPropertyToken";
             this.txtPropertyToken.ReadOnly = true;
-            this.txtPropertyToken.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyToken.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyToken.TabIndex = 10;
             // 
             // txtPropertyFullName
@@ -672,7 +702,7 @@
             this.txtPropertyFullName.Location = new System.Drawing.Point(90, 66);
             this.txtPropertyFullName.Name = "txtPropertyFullName";
             this.txtPropertyFullName.ReadOnly = true;
-            this.txtPropertyFullName.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyFullName.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyFullName.TabIndex = 1;
             // 
             // txtPropertyDataType
@@ -683,7 +713,7 @@
             this.txtPropertyDataType.Location = new System.Drawing.Point(90, 322);
             this.txtPropertyDataType.Name = "txtPropertyDataType";
             this.txtPropertyDataType.ReadOnly = true;
-            this.txtPropertyDataType.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyDataType.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyDataType.TabIndex = 9;
             // 
             // txtPropertyCanWrite
@@ -694,7 +724,7 @@
             this.txtPropertyCanWrite.Location = new System.Drawing.Point(90, 290);
             this.txtPropertyCanWrite.Name = "txtPropertyCanWrite";
             this.txtPropertyCanWrite.ReadOnly = true;
-            this.txtPropertyCanWrite.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyCanWrite.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyCanWrite.TabIndex = 8;
             // 
             // txtPropertyCanRead
@@ -705,7 +735,7 @@
             this.txtPropertyCanRead.Location = new System.Drawing.Point(90, 258);
             this.txtPropertyCanRead.Name = "txtPropertyCanRead";
             this.txtPropertyCanRead.ReadOnly = true;
-            this.txtPropertyCanRead.Size = new System.Drawing.Size(117, 26);
+            this.txtPropertyCanRead.Size = new System.Drawing.Size(184, 26);
             this.txtPropertyCanRead.TabIndex = 7;
             // 
             // label4
@@ -714,13 +744,14 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(213, 31);
+            this.label4.Size = new System.Drawing.Size(277, 31);
             this.label4.TabIndex = 1;
             this.label4.Text = "属性内容";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlField
             // 
+            this.pnlField.AutoScroll = true;
             this.pnlField.BackColor = System.Drawing.Color.White;
             this.pnlField.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlField.Controls.Add(this.label7);
@@ -745,7 +776,7 @@
             this.pnlField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlField.Location = new System.Drawing.Point(0, 0);
             this.pnlField.Name = "pnlField";
-            this.pnlField.Size = new System.Drawing.Size(215, 460);
+            this.pnlField.Size = new System.Drawing.Size(296, 374);
             this.pnlField.TabIndex = 0;
             this.pnlField.Visible = false;
             // 
@@ -764,7 +795,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(213, 31);
+            this.label5.Size = new System.Drawing.Size(294, 31);
             this.label5.TabIndex = 1;
             this.label5.Text = "变量内容";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -849,7 +880,7 @@
             this.txtFieldPrivate.Location = new System.Drawing.Point(90, 162);
             this.txtFieldPrivate.Name = "txtFieldPrivate";
             this.txtFieldPrivate.ReadOnly = true;
-            this.txtFieldPrivate.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldPrivate.Size = new System.Drawing.Size(158, 26);
             this.txtFieldPrivate.TabIndex = 3;
             // 
             // txtFieldStatic
@@ -860,7 +891,7 @@
             this.txtFieldStatic.Location = new System.Drawing.Point(90, 98);
             this.txtFieldStatic.Name = "txtFieldStatic";
             this.txtFieldStatic.ReadOnly = true;
-            this.txtFieldStatic.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldStatic.Size = new System.Drawing.Size(158, 26);
             this.txtFieldStatic.TabIndex = 1;
             // 
             // txtFieldPublic
@@ -871,7 +902,7 @@
             this.txtFieldPublic.Location = new System.Drawing.Point(90, 130);
             this.txtFieldPublic.Name = "txtFieldPublic";
             this.txtFieldPublic.ReadOnly = true;
-            this.txtFieldPublic.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldPublic.Size = new System.Drawing.Size(158, 26);
             this.txtFieldPublic.TabIndex = 2;
             // 
             // txtFieldName
@@ -882,7 +913,7 @@
             this.txtFieldName.Location = new System.Drawing.Point(90, 34);
             this.txtFieldName.Name = "txtFieldName";
             this.txtFieldName.ReadOnly = true;
-            this.txtFieldName.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldName.Size = new System.Drawing.Size(158, 26);
             this.txtFieldName.TabIndex = 0;
             // 
             // txtFieldValue
@@ -896,7 +927,7 @@
             this.txtFieldValue.Name = "txtFieldValue";
             this.txtFieldValue.ReadOnly = true;
             this.txtFieldValue.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtFieldValue.Size = new System.Drawing.Size(117, 165);
+            this.txtFieldValue.Size = new System.Drawing.Size(158, 79);
             this.txtFieldValue.TabIndex = 8;
             // 
             // txtFieldToken
@@ -907,7 +938,7 @@
             this.txtFieldToken.Location = new System.Drawing.Point(90, 258);
             this.txtFieldToken.Name = "txtFieldToken";
             this.txtFieldToken.ReadOnly = true;
-            this.txtFieldToken.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldToken.Size = new System.Drawing.Size(158, 26);
             this.txtFieldToken.TabIndex = 7;
             // 
             // txtFieldFullName
@@ -918,7 +949,7 @@
             this.txtFieldFullName.Location = new System.Drawing.Point(90, 66);
             this.txtFieldFullName.Name = "txtFieldFullName";
             this.txtFieldFullName.ReadOnly = true;
-            this.txtFieldFullName.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldFullName.Size = new System.Drawing.Size(158, 26);
             this.txtFieldFullName.TabIndex = 5;
             // 
             // txtFieldDataType
@@ -929,7 +960,7 @@
             this.txtFieldDataType.Location = new System.Drawing.Point(90, 226);
             this.txtFieldDataType.Name = "txtFieldDataType";
             this.txtFieldDataType.ReadOnly = true;
-            this.txtFieldDataType.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldDataType.Size = new System.Drawing.Size(158, 26);
             this.txtFieldDataType.TabIndex = 6;
             // 
             // txtFieldReadOnly
@@ -940,7 +971,7 @@
             this.txtFieldReadOnly.Location = new System.Drawing.Point(90, 194);
             this.txtFieldReadOnly.Name = "txtFieldReadOnly";
             this.txtFieldReadOnly.ReadOnly = true;
-            this.txtFieldReadOnly.Size = new System.Drawing.Size(117, 26);
+            this.txtFieldReadOnly.Size = new System.Drawing.Size(158, 26);
             this.txtFieldReadOnly.TabIndex = 4;
             // 
             // pnlNoSelectFP
@@ -951,7 +982,7 @@
             this.pnlNoSelectFP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNoSelectFP.Location = new System.Drawing.Point(0, 0);
             this.pnlNoSelectFP.Name = "pnlNoSelectFP";
-            this.pnlNoSelectFP.Size = new System.Drawing.Size(215, 460);
+            this.pnlNoSelectFP.Size = new System.Drawing.Size(296, 374);
             this.pnlNoSelectFP.TabIndex = 22;
             this.pnlNoSelectFP.Visible = false;
             // 
@@ -961,7 +992,7 @@
             this.label39.Dock = System.Windows.Forms.DockStyle.Top;
             this.label39.Location = new System.Drawing.Point(0, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(213, 31);
+            this.label39.Size = new System.Drawing.Size(294, 31);
             this.label39.TabIndex = 1;
             this.label39.Text = "未选择";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -981,20 +1012,21 @@
             this.pnlMdfFP.Controls.Add(this.pnlMdfFPBoolean);
             this.pnlMdfFP.Controls.Add(this.pnlMdfFPOther);
             this.pnlMdfFP.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlMdfFP.Location = new System.Drawing.Point(215, 0);
+            this.pnlMdfFP.Location = new System.Drawing.Point(296, 0);
             this.pnlMdfFP.Name = "pnlMdfFP";
-            this.pnlMdfFP.Size = new System.Drawing.Size(200, 460);
+            this.pnlMdfFP.Size = new System.Drawing.Size(200, 374);
             this.pnlMdfFP.TabIndex = 1;
             // 
             // pnlMdfFPFont
             // 
+            this.pnlMdfFPFont.AutoScroll = true;
             this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFontSelect);
             this.pnlMdfFPFont.Controls.Add(this.label33);
             this.pnlMdfFPFont.Controls.Add(this.btnMdfFPFont);
             this.pnlMdfFPFont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPFont.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPFont.Name = "pnlMdfFPFont";
-            this.pnlMdfFPFont.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPFont.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPFont.TabIndex = 10;
             this.pnlMdfFPFont.Visible = false;
             // 
@@ -1035,13 +1067,14 @@
             // 
             // pnlMdfFPEnum
             // 
+            this.pnlMdfFPEnum.AutoScroll = true;
             this.pnlMdfFPEnum.Controls.Add(this.cmbMdfFPEnum);
             this.pnlMdfFPEnum.Controls.Add(this.label31);
             this.pnlMdfFPEnum.Controls.Add(this.btnMdfFPEnum);
             this.pnlMdfFPEnum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPEnum.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPEnum.Name = "pnlMdfFPEnum";
-            this.pnlMdfFPEnum.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPEnum.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPEnum.TabIndex = 9;
             this.pnlMdfFPEnum.Visible = false;
             // 
@@ -1080,6 +1113,7 @@
             // 
             // pnlMdfFPColor
             // 
+            this.pnlMdfFPColor.AutoScroll = true;
             this.pnlMdfFPColor.Controls.Add(this.picMdfFPNameColor);
             this.pnlMdfFPColor.Controls.Add(this.rbMdfFPColor);
             this.pnlMdfFPColor.Controls.Add(this.btnMdfFPColorSelected);
@@ -1090,7 +1124,7 @@
             this.pnlMdfFPColor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPColor.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPColor.Name = "pnlMdfFPColor";
-            this.pnlMdfFPColor.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPColor.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPColor.TabIndex = 8;
             this.pnlMdfFPColor.Visible = false;
             // 
@@ -1173,6 +1207,7 @@
             // 
             // pnlMdfFPRectangle
             // 
+            this.pnlMdfFPRectangle.AutoScroll = true;
             this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleOne);
             this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleTwo);
             this.pnlMdfFPRectangle.Controls.Add(this.lblMdfFPRectangleThree);
@@ -1186,7 +1221,7 @@
             this.pnlMdfFPRectangle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPRectangle.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPRectangle.Name = "pnlMdfFPRectangle";
-            this.pnlMdfFPRectangle.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPRectangle.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPRectangle.TabIndex = 7;
             this.pnlMdfFPRectangle.Visible = false;
             // 
@@ -1282,6 +1317,7 @@
             // 
             // pnlMdfFPSize
             // 
+            this.pnlMdfFPSize.AutoScroll = true;
             this.pnlMdfFPSize.Controls.Add(this.lblMdfFPSizeOne);
             this.pnlMdfFPSize.Controls.Add(this.lblMdfFPSizeTwo);
             this.pnlMdfFPSize.Controls.Add(this.txtMdfFPSizeOne);
@@ -1291,7 +1327,7 @@
             this.pnlMdfFPSize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPSize.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPSize.Name = "pnlMdfFPSize";
-            this.pnlMdfFPSize.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPSize.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPSize.TabIndex = 6;
             this.pnlMdfFPSize.Visible = false;
             // 
@@ -1353,6 +1389,7 @@
             // 
             // pnlMdfFPDateTime
             // 
+            this.pnlMdfFPDateTime.AutoScroll = true;
             this.pnlMdfFPDateTime.Controls.Add(this.txtMdfFPDateTime);
             this.pnlMdfFPDateTime.Controls.Add(this.label28);
             this.pnlMdfFPDateTime.Controls.Add(this.dtpMdfFPDateTimeDate);
@@ -1361,7 +1398,7 @@
             this.pnlMdfFPDateTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPDateTime.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPDateTime.Name = "pnlMdfFPDateTime";
-            this.pnlMdfFPDateTime.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPDateTime.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPDateTime.TabIndex = 4;
             this.pnlMdfFPDateTime.Visible = false;
             // 
@@ -1417,13 +1454,14 @@
             // 
             // pnlMdfFPNumber
             // 
+            this.pnlMdfFPNumber.AutoScroll = true;
             this.pnlMdfFPNumber.Controls.Add(this.txtMdfFPNumber);
             this.pnlMdfFPNumber.Controls.Add(this.label26);
             this.pnlMdfFPNumber.Controls.Add(this.btnMdfFPNumber);
             this.pnlMdfFPNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPNumber.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPNumber.Name = "pnlMdfFPNumber";
-            this.pnlMdfFPNumber.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPNumber.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPNumber.TabIndex = 2;
             this.pnlMdfFPNumber.Visible = false;
             // 
@@ -1459,6 +1497,7 @@
             // 
             // pnlMdfFPString
             // 
+            this.pnlMdfFPString.AutoScroll = true;
             this.pnlMdfFPString.Controls.Add(this.btnMdfFPStringMaxSize);
             this.pnlMdfFPString.Controls.Add(this.chkMdfFPStringNull);
             this.pnlMdfFPString.Controls.Add(this.txtMdfFPString);
@@ -1467,7 +1506,7 @@
             this.pnlMdfFPString.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPString.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPString.Name = "pnlMdfFPString";
-            this.pnlMdfFPString.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPString.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPString.TabIndex = 3;
             this.pnlMdfFPString.Visible = false;
             // 
@@ -1525,6 +1564,7 @@
             // 
             // pnlMdfFPBoolean
             // 
+            this.pnlMdfFPBoolean.AutoScroll = true;
             this.pnlMdfFPBoolean.Controls.Add(this.label2);
             this.pnlMdfFPBoolean.Controls.Add(this.rbMdfFPBooleanF);
             this.pnlMdfFPBoolean.Controls.Add(this.rbMdfFPBooleanT);
@@ -1532,7 +1572,7 @@
             this.pnlMdfFPBoolean.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPBoolean.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPBoolean.Name = "pnlMdfFPBoolean";
-            this.pnlMdfFPBoolean.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPBoolean.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPBoolean.TabIndex = 0;
             this.pnlMdfFPBoolean.Visible = false;
             // 
@@ -1587,7 +1627,7 @@
             this.pnlMdfFPOther.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMdfFPOther.Location = new System.Drawing.Point(0, 0);
             this.pnlMdfFPOther.Name = "pnlMdfFPOther";
-            this.pnlMdfFPOther.Size = new System.Drawing.Size(198, 458);
+            this.pnlMdfFPOther.Size = new System.Drawing.Size(198, 372);
             this.pnlMdfFPOther.TabIndex = 1;
             this.pnlMdfFPOther.Visible = false;
             // 
@@ -1602,36 +1642,44 @@
             this.label1.Text = "该类型暂时无法修改";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // propFieldProperty
+            // 
+            this.propFieldProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propFieldProperty.Location = new System.Drawing.Point(0, 0);
+            this.propFieldProperty.Name = "propFieldProperty";
+            this.propFieldProperty.Size = new System.Drawing.Size(496, 144);
+            this.propFieldProperty.TabIndex = 0;
+            // 
             // tpMethod
             // 
-            this.tpMethod.Controls.Add(this.splitContainer1);
+            this.tpMethod.Controls.Add(this.sptCEMProperty);
             this.tpMethod.Location = new System.Drawing.Point(4, 26);
             this.tpMethod.Name = "tpMethod";
             this.tpMethod.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMethod.Size = new System.Drawing.Size(778, 466);
+            this.tpMethod.Size = new System.Drawing.Size(926, 528);
             this.tpMethod.TabIndex = 2;
             this.tpMethod.Text = "构造函数/事件/方法";
             this.tpMethod.UseVisualStyleBackColor = true;
             // 
-            // splitContainer1
+            // sptCEMProperty
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
+            this.sptCEMProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sptCEMProperty.Location = new System.Drawing.Point(3, 3);
+            this.sptCEMProperty.Name = "sptCEMProperty";
             // 
-            // splitContainer1.Panel1
+            // sptCEMProperty.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dgvCEM);
-            this.splitContainer1.Panel1.Controls.Add(this.txtCEMSearch);
-            this.splitContainer1.Panel1MinSize = 300;
+            this.sptCEMProperty.Panel1.Controls.Add(this.dgvCEM);
+            this.sptCEMProperty.Panel1.Controls.Add(this.txtCEMSearch);
+            this.sptCEMProperty.Panel1MinSize = 300;
             // 
-            // splitContainer1.Panel2
+            // sptCEMProperty.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.pnlTypeCEF);
-            this.splitContainer1.Panel2MinSize = 415;
-            this.splitContainer1.Size = new System.Drawing.Size(772, 460);
-            this.splitContainer1.SplitterDistance = 353;
-            this.splitContainer1.TabIndex = 6;
+            this.sptCEMProperty.Panel2.Controls.Add(this.sptCEMPropertyDetail);
+            this.sptCEMProperty.Panel2MinSize = 415;
+            this.sptCEMProperty.Size = new System.Drawing.Size(920, 522);
+            this.sptCEMProperty.SplitterDistance = 420;
+            this.sptCEMProperty.TabIndex = 6;
             // 
             // dgvCEM
             // 
@@ -1640,14 +1688,14 @@
             this.dgvCEM.AllowUserToResizeRows = false;
             this.dgvCEM.BackgroundColor = System.Drawing.Color.White;
             this.dgvCEM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCEM.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCEM.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCEM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCEM.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCEM.Location = new System.Drawing.Point(0, 26);
@@ -1656,7 +1704,7 @@
             this.dgvCEM.RowHeadersVisible = false;
             this.dgvCEM.RowTemplate.Height = 23;
             this.dgvCEM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCEM.Size = new System.Drawing.Size(353, 434);
+            this.dgvCEM.Size = new System.Drawing.Size(420, 496);
             this.dgvCEM.TabIndex = 2;
             this.dgvCEM.SelectionChanged += new System.EventHandler(this.DgvCEM_SelectionChanged);
             // 
@@ -1666,9 +1714,27 @@
             this.txtCEMSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtCEMSearch.Location = new System.Drawing.Point(0, 0);
             this.txtCEMSearch.Name = "txtCEMSearch";
-            this.txtCEMSearch.Size = new System.Drawing.Size(353, 26);
+            this.txtCEMSearch.Size = new System.Drawing.Size(420, 26);
             this.txtCEMSearch.TabIndex = 0;
             this.txtCEMSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCEMSearch_KeyUp);
+            // 
+            // sptCEMPropertyDetail
+            // 
+            this.sptCEMPropertyDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sptCEMPropertyDetail.Location = new System.Drawing.Point(0, 0);
+            this.sptCEMPropertyDetail.Name = "sptCEMPropertyDetail";
+            this.sptCEMPropertyDetail.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // sptCEMPropertyDetail.Panel1
+            // 
+            this.sptCEMPropertyDetail.Panel1.Controls.Add(this.pnlTypeCEF);
+            // 
+            // sptCEMPropertyDetail.Panel2
+            // 
+            this.sptCEMPropertyDetail.Panel2.Controls.Add(this.propCEMProperty);
+            this.sptCEMPropertyDetail.Size = new System.Drawing.Size(496, 522);
+            this.sptCEMPropertyDetail.SplitterDistance = 374;
+            this.sptCEMPropertyDetail.TabIndex = 4;
             // 
             // pnlTypeCEF
             // 
@@ -1679,11 +1745,12 @@
             this.pnlTypeCEF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTypeCEF.Location = new System.Drawing.Point(0, 0);
             this.pnlTypeCEF.Name = "pnlTypeCEF";
-            this.pnlTypeCEF.Size = new System.Drawing.Size(415, 460);
+            this.pnlTypeCEF.Size = new System.Drawing.Size(496, 374);
             this.pnlTypeCEF.TabIndex = 22;
             // 
             // pnlMethod
             // 
+            this.pnlMethod.AutoScroll = true;
             this.pnlMethod.BackColor = System.Drawing.Color.White;
             this.pnlMethod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMethod.Controls.Add(this.label59);
@@ -1712,7 +1779,7 @@
             this.pnlMethod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMethod.Location = new System.Drawing.Point(0, 0);
             this.pnlMethod.Name = "pnlMethod";
-            this.pnlMethod.Size = new System.Drawing.Size(415, 460);
+            this.pnlMethod.Size = new System.Drawing.Size(496, 374);
             this.pnlMethod.TabIndex = 23;
             this.pnlMethod.Visible = false;
             // 
@@ -1823,7 +1890,7 @@
             this.txtMethodPublic.Location = new System.Drawing.Point(90, 226);
             this.txtMethodPublic.Name = "txtMethodPublic";
             this.txtMethodPublic.ReadOnly = true;
-            this.txtMethodPublic.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodPublic.Size = new System.Drawing.Size(384, 26);
             this.txtMethodPublic.TabIndex = 6;
             // 
             // txtMethodStatic
@@ -1834,7 +1901,7 @@
             this.txtMethodStatic.Location = new System.Drawing.Point(90, 98);
             this.txtMethodStatic.Name = "txtMethodStatic";
             this.txtMethodStatic.ReadOnly = true;
-            this.txtMethodStatic.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodStatic.Size = new System.Drawing.Size(384, 26);
             this.txtMethodStatic.TabIndex = 2;
             // 
             // txtMethodFinal
@@ -1845,7 +1912,7 @@
             this.txtMethodFinal.Location = new System.Drawing.Point(90, 194);
             this.txtMethodFinal.Name = "txtMethodFinal";
             this.txtMethodFinal.ReadOnly = true;
-            this.txtMethodFinal.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodFinal.Size = new System.Drawing.Size(384, 26);
             this.txtMethodFinal.TabIndex = 5;
             // 
             // txtMethodVirtual
@@ -1856,7 +1923,7 @@
             this.txtMethodVirtual.Location = new System.Drawing.Point(90, 162);
             this.txtMethodVirtual.Name = "txtMethodVirtual";
             this.txtMethodVirtual.ReadOnly = true;
-            this.txtMethodVirtual.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodVirtual.Size = new System.Drawing.Size(384, 26);
             this.txtMethodVirtual.TabIndex = 4;
             // 
             // txtMethodAbstract
@@ -1867,7 +1934,7 @@
             this.txtMethodAbstract.Location = new System.Drawing.Point(90, 130);
             this.txtMethodAbstract.Name = "txtMethodAbstract";
             this.txtMethodAbstract.ReadOnly = true;
-            this.txtMethodAbstract.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodAbstract.Size = new System.Drawing.Size(384, 26);
             this.txtMethodAbstract.TabIndex = 3;
             // 
             // txtMethodName
@@ -1878,7 +1945,7 @@
             this.txtMethodName.Location = new System.Drawing.Point(90, 34);
             this.txtMethodName.Name = "txtMethodName";
             this.txtMethodName.ReadOnly = true;
-            this.txtMethodName.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodName.Size = new System.Drawing.Size(384, 26);
             this.txtMethodName.TabIndex = 0;
             // 
             // txtMethodToken
@@ -1889,7 +1956,7 @@
             this.txtMethodToken.Location = new System.Drawing.Point(90, 354);
             this.txtMethodToken.Name = "txtMethodToken";
             this.txtMethodToken.ReadOnly = true;
-            this.txtMethodToken.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodToken.Size = new System.Drawing.Size(384, 26);
             this.txtMethodToken.TabIndex = 10;
             // 
             // txtMethodFullName
@@ -1900,7 +1967,7 @@
             this.txtMethodFullName.Location = new System.Drawing.Point(90, 66);
             this.txtMethodFullName.Name = "txtMethodFullName";
             this.txtMethodFullName.ReadOnly = true;
-            this.txtMethodFullName.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodFullName.Size = new System.Drawing.Size(384, 26);
             this.txtMethodFullName.TabIndex = 1;
             // 
             // txtMethodParas
@@ -1911,7 +1978,7 @@
             this.txtMethodParas.Location = new System.Drawing.Point(90, 322);
             this.txtMethodParas.Name = "txtMethodParas";
             this.txtMethodParas.ReadOnly = true;
-            this.txtMethodParas.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodParas.Size = new System.Drawing.Size(384, 26);
             this.txtMethodParas.TabIndex = 9;
             // 
             // txtMethodReturn
@@ -1922,7 +1989,7 @@
             this.txtMethodReturn.Location = new System.Drawing.Point(90, 290);
             this.txtMethodReturn.Name = "txtMethodReturn";
             this.txtMethodReturn.ReadOnly = true;
-            this.txtMethodReturn.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodReturn.Size = new System.Drawing.Size(384, 26);
             this.txtMethodReturn.TabIndex = 9;
             // 
             // txtMethodPrivate
@@ -1933,7 +2000,7 @@
             this.txtMethodPrivate.Location = new System.Drawing.Point(90, 258);
             this.txtMethodPrivate.Name = "txtMethodPrivate";
             this.txtMethodPrivate.ReadOnly = true;
-            this.txtMethodPrivate.Size = new System.Drawing.Size(317, 26);
+            this.txtMethodPrivate.Size = new System.Drawing.Size(384, 26);
             this.txtMethodPrivate.TabIndex = 7;
             // 
             // label71
@@ -1942,13 +2009,14 @@
             this.label71.Dock = System.Windows.Forms.DockStyle.Top;
             this.label71.Location = new System.Drawing.Point(0, 0);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(413, 31);
+            this.label71.Size = new System.Drawing.Size(477, 31);
             this.label71.TabIndex = 1;
             this.label71.Text = "方法内容";
             this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlEvent
             // 
+            this.pnlEvent.AutoScroll = true;
             this.pnlEvent.BackColor = System.Drawing.Color.White;
             this.pnlEvent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEvent.Controls.Add(this.label48);
@@ -1967,7 +2035,7 @@
             this.pnlEvent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEvent.Location = new System.Drawing.Point(0, 0);
             this.pnlEvent.Name = "pnlEvent";
-            this.pnlEvent.Size = new System.Drawing.Size(415, 460);
+            this.pnlEvent.Size = new System.Drawing.Size(496, 374);
             this.pnlEvent.TabIndex = 0;
             this.pnlEvent.Visible = false;
             // 
@@ -1986,7 +2054,7 @@
             this.label49.Dock = System.Windows.Forms.DockStyle.Top;
             this.label49.Location = new System.Drawing.Point(0, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(413, 31);
+            this.label49.Size = new System.Drawing.Size(494, 31);
             this.label49.TabIndex = 1;
             this.label49.Text = "事件内容";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2044,7 +2112,7 @@
             this.txtEventEventType.Location = new System.Drawing.Point(90, 162);
             this.txtEventEventType.Name = "txtEventEventType";
             this.txtEventEventType.ReadOnly = true;
-            this.txtEventEventType.Size = new System.Drawing.Size(317, 26);
+            this.txtEventEventType.Size = new System.Drawing.Size(375, 26);
             this.txtEventEventType.TabIndex = 3;
             // 
             // txtEventPublic
@@ -2055,7 +2123,7 @@
             this.txtEventPublic.Location = new System.Drawing.Point(90, 130);
             this.txtEventPublic.Name = "txtEventPublic";
             this.txtEventPublic.ReadOnly = true;
-            this.txtEventPublic.Size = new System.Drawing.Size(317, 26);
+            this.txtEventPublic.Size = new System.Drawing.Size(375, 26);
             this.txtEventPublic.TabIndex = 2;
             // 
             // txtEventName
@@ -2066,7 +2134,7 @@
             this.txtEventName.Location = new System.Drawing.Point(90, 34);
             this.txtEventName.Name = "txtEventName";
             this.txtEventName.ReadOnly = true;
-            this.txtEventName.Size = new System.Drawing.Size(317, 26);
+            this.txtEventName.Size = new System.Drawing.Size(375, 26);
             this.txtEventName.TabIndex = 0;
             // 
             // txtEventToken
@@ -2077,7 +2145,7 @@
             this.txtEventToken.Location = new System.Drawing.Point(90, 194);
             this.txtEventToken.Name = "txtEventToken";
             this.txtEventToken.ReadOnly = true;
-            this.txtEventToken.Size = new System.Drawing.Size(317, 26);
+            this.txtEventToken.Size = new System.Drawing.Size(375, 26);
             this.txtEventToken.TabIndex = 7;
             // 
             // txtEventMulticast
@@ -2088,7 +2156,7 @@
             this.txtEventMulticast.Location = new System.Drawing.Point(90, 98);
             this.txtEventMulticast.Name = "txtEventMulticast";
             this.txtEventMulticast.ReadOnly = true;
-            this.txtEventMulticast.Size = new System.Drawing.Size(317, 26);
+            this.txtEventMulticast.Size = new System.Drawing.Size(375, 26);
             this.txtEventMulticast.TabIndex = 5;
             // 
             // txtEventFullName
@@ -2099,11 +2167,12 @@
             this.txtEventFullName.Location = new System.Drawing.Point(90, 66);
             this.txtEventFullName.Name = "txtEventFullName";
             this.txtEventFullName.ReadOnly = true;
-            this.txtEventFullName.Size = new System.Drawing.Size(317, 26);
+            this.txtEventFullName.Size = new System.Drawing.Size(375, 26);
             this.txtEventFullName.TabIndex = 5;
             // 
             // pnlConstructor
             // 
+            this.pnlConstructor.AutoScroll = true;
             this.pnlConstructor.BackColor = System.Drawing.Color.White;
             this.pnlConstructor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlConstructor.Controls.Add(this.label44);
@@ -2130,7 +2199,7 @@
             this.pnlConstructor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConstructor.Location = new System.Drawing.Point(0, 0);
             this.pnlConstructor.Name = "pnlConstructor";
-            this.pnlConstructor.Size = new System.Drawing.Size(415, 460);
+            this.pnlConstructor.Size = new System.Drawing.Size(496, 374);
             this.pnlConstructor.TabIndex = 0;
             this.pnlConstructor.Visible = false;
             // 
@@ -2232,7 +2301,7 @@
             this.txtCtorFinal.Location = new System.Drawing.Point(90, 194);
             this.txtCtorFinal.Name = "txtCtorFinal";
             this.txtCtorFinal.ReadOnly = true;
-            this.txtCtorFinal.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorFinal.Size = new System.Drawing.Size(358, 26);
             this.txtCtorFinal.TabIndex = 2;
             // 
             // txtCtorAbstract
@@ -2243,7 +2312,7 @@
             this.txtCtorAbstract.Location = new System.Drawing.Point(90, 130);
             this.txtCtorAbstract.Name = "txtCtorAbstract";
             this.txtCtorAbstract.ReadOnly = true;
-            this.txtCtorAbstract.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorAbstract.Size = new System.Drawing.Size(358, 26);
             this.txtCtorAbstract.TabIndex = 2;
             // 
             // txtCtorVirtual
@@ -2254,7 +2323,7 @@
             this.txtCtorVirtual.Location = new System.Drawing.Point(90, 162);
             this.txtCtorVirtual.Name = "txtCtorVirtual";
             this.txtCtorVirtual.ReadOnly = true;
-            this.txtCtorVirtual.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorVirtual.Size = new System.Drawing.Size(358, 26);
             this.txtCtorVirtual.TabIndex = 2;
             // 
             // txtCtorStatic
@@ -2265,7 +2334,7 @@
             this.txtCtorStatic.Location = new System.Drawing.Point(90, 98);
             this.txtCtorStatic.Name = "txtCtorStatic";
             this.txtCtorStatic.ReadOnly = true;
-            this.txtCtorStatic.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorStatic.Size = new System.Drawing.Size(358, 26);
             this.txtCtorStatic.TabIndex = 2;
             // 
             // txtCtorPublic
@@ -2276,7 +2345,7 @@
             this.txtCtorPublic.Location = new System.Drawing.Point(90, 226);
             this.txtCtorPublic.Name = "txtCtorPublic";
             this.txtCtorPublic.ReadOnly = true;
-            this.txtCtorPublic.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorPublic.Size = new System.Drawing.Size(358, 26);
             this.txtCtorPublic.TabIndex = 2;
             // 
             // txtCtorParas
@@ -2287,7 +2356,7 @@
             this.txtCtorParas.Location = new System.Drawing.Point(90, 290);
             this.txtCtorParas.Name = "txtCtorParas";
             this.txtCtorParas.ReadOnly = true;
-            this.txtCtorParas.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorParas.Size = new System.Drawing.Size(358, 26);
             this.txtCtorParas.TabIndex = 3;
             // 
             // txtCtorPrivate
@@ -2298,7 +2367,7 @@
             this.txtCtorPrivate.Location = new System.Drawing.Point(90, 258);
             this.txtCtorPrivate.Name = "txtCtorPrivate";
             this.txtCtorPrivate.ReadOnly = true;
-            this.txtCtorPrivate.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorPrivate.Size = new System.Drawing.Size(358, 26);
             this.txtCtorPrivate.TabIndex = 3;
             // 
             // txtCtorName
@@ -2309,7 +2378,7 @@
             this.txtCtorName.Location = new System.Drawing.Point(90, 34);
             this.txtCtorName.Name = "txtCtorName";
             this.txtCtorName.ReadOnly = true;
-            this.txtCtorName.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorName.Size = new System.Drawing.Size(358, 26);
             this.txtCtorName.TabIndex = 0;
             // 
             // txtCtorToken
@@ -2320,7 +2389,7 @@
             this.txtCtorToken.Location = new System.Drawing.Point(90, 322);
             this.txtCtorToken.Name = "txtCtorToken";
             this.txtCtorToken.ReadOnly = true;
-            this.txtCtorToken.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorToken.Size = new System.Drawing.Size(358, 26);
             this.txtCtorToken.TabIndex = 10;
             // 
             // txtCtorFullName
@@ -2331,7 +2400,7 @@
             this.txtCtorFullName.Location = new System.Drawing.Point(90, 66);
             this.txtCtorFullName.Name = "txtCtorFullName";
             this.txtCtorFullName.ReadOnly = true;
-            this.txtCtorFullName.Size = new System.Drawing.Size(317, 26);
+            this.txtCtorFullName.Size = new System.Drawing.Size(358, 26);
             this.txtCtorFullName.TabIndex = 1;
             // 
             // label47
@@ -2340,7 +2409,7 @@
             this.label47.Dock = System.Windows.Forms.DockStyle.Top;
             this.label47.Location = new System.Drawing.Point(0, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(413, 31);
+            this.label47.Size = new System.Drawing.Size(494, 31);
             this.label47.TabIndex = 1;
             this.label47.Text = "构造函数内容";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2353,7 +2422,7 @@
             this.pnlNoSelectCEF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNoSelectCEF.Location = new System.Drawing.Point(0, 0);
             this.pnlNoSelectCEF.Name = "pnlNoSelectCEF";
-            this.pnlNoSelectCEF.Size = new System.Drawing.Size(415, 460);
+            this.pnlNoSelectCEF.Size = new System.Drawing.Size(496, 374);
             this.pnlNoSelectCEF.TabIndex = 22;
             this.pnlNoSelectCEF.Visible = false;
             // 
@@ -2363,10 +2432,18 @@
             this.label58.Dock = System.Windows.Forms.DockStyle.Top;
             this.label58.Location = new System.Drawing.Point(0, 0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(413, 31);
+            this.label58.Size = new System.Drawing.Size(494, 31);
             this.label58.TabIndex = 1;
             this.label58.Text = "未选择";
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // propCEMProperty
+            // 
+            this.propCEMProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propCEMProperty.Location = new System.Drawing.Point(0, 0);
+            this.propCEMProperty.Name = "propCEMProperty";
+            this.propCEMProperty.Size = new System.Drawing.Size(496, 144);
+            this.propCEMProperty.TabIndex = 3;
             // 
             // pnlOperate
             // 
@@ -2374,9 +2451,9 @@
             this.pnlOperate.Controls.Add(this.btnRefreshAll);
             this.pnlOperate.Controls.Add(this.btnRefresh);
             this.pnlOperate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlOperate.Location = new System.Drawing.Point(0, 496);
+            this.pnlOperate.Location = new System.Drawing.Point(0, 558);
             this.pnlOperate.Name = "pnlOperate";
-            this.pnlOperate.Size = new System.Drawing.Size(786, 53);
+            this.pnlOperate.Size = new System.Drawing.Size(934, 53);
             this.pnlOperate.TabIndex = 0;
             // 
             // btnTopMost
@@ -2416,7 +2493,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 549);
+            this.ClientSize = new System.Drawing.Size(934, 611);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.pnlOperate);
             this.Name = "FormCommonDebugModel";
@@ -2440,6 +2517,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sptFieldProperty)).EndInit();
             this.sptFieldProperty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFP)).EndInit();
+            this.sptFieldPropertyDetail.Panel1.ResumeLayout(false);
+            this.sptFieldPropertyDetail.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sptFieldPropertyDetail)).EndInit();
+            this.sptFieldPropertyDetail.ResumeLayout(false);
             this.pnlTypeFP.ResumeLayout(false);
             this.pnlProperty.ResumeLayout(false);
             this.pnlProperty.PerformLayout();
@@ -2466,12 +2547,16 @@
             this.pnlMdfFPBoolean.PerformLayout();
             this.pnlMdfFPOther.ResumeLayout(false);
             this.tpMethod.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.sptCEMProperty.Panel1.ResumeLayout(false);
+            this.sptCEMProperty.Panel1.PerformLayout();
+            this.sptCEMProperty.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sptCEMProperty)).EndInit();
+            this.sptCEMProperty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCEM)).EndInit();
+            this.sptCEMPropertyDetail.Panel1.ResumeLayout(false);
+            this.sptCEMPropertyDetail.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sptCEMPropertyDetail)).EndInit();
+            this.sptCEMPropertyDetail.ResumeLayout(false);
             this.pnlTypeCEF.ResumeLayout(false);
             this.pnlMethod.ResumeLayout(false);
             this.pnlMethod.PerformLayout();
@@ -2609,7 +2694,7 @@
         private System.Windows.Forms.Button btnMdfFPFont;
         private System.Windows.Forms.TabPage tpMethod;
         private System.Windows.Forms.DataGridView dgvCEM;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer sptCEMProperty;
         private System.Windows.Forms.TextBox txtCEMSearch;
         private System.Windows.Forms.Panel pnlConstructor;
         private System.Windows.Forms.Label label35;
@@ -2675,5 +2760,9 @@
         private System.Windows.Forms.TextBox txtCtorVirtual;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtEventMulticast;
+        private System.Windows.Forms.SplitContainer sptFieldPropertyDetail;
+        private System.Windows.Forms.PropertyGrid propFieldProperty;
+        private System.Windows.Forms.SplitContainer sptCEMPropertyDetail;
+        private System.Windows.Forms.PropertyGrid propCEMProperty;
     }
 }
