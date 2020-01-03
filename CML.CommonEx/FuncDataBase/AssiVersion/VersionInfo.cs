@@ -11,15 +11,15 @@ namespace CML.CommonEx.DataBaseEx
         /// <summary>
         /// 主版本号
         /// </summary>
-        public override string CP_VerMain => "1.4";
+        public override string CP_VerMain => "1.5";
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y005R001";
+        public override string CP_VerDev => "20Y001R001";
         /// <summary>
         /// 更新时间
         /// </summary>
-        public override string CP_VerDate => "2019年07月23日 08:45";
+        public override string CP_VerDate => "2020年01月03日 11:20";
         /// <summary>
         /// 当前程序集 
         /// </summary>

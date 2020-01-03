@@ -15,7 +15,7 @@ namespace CML.CommonEx.DebugEx
         /// <summary>
         /// 研发版本号
         /// </summary>
-        public override string CP_VerDev => "19Y001R004";
+        public override string CP_VerDev => "20Y001R004";
         /// <summary>
         /// 更新时间
         /// </summary>

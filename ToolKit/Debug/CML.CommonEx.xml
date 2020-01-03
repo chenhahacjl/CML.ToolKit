@@ -4,6 +4,483 @@
         <name>CML.CommonEx</name>
     </assembly>
     <members>
+        <member name="T:CML.CommonEx.DataBaseEx.AccessDataBase">
+            <summary>
+            ACCESS 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.AccessDataBase.ConnectionString">
+            <summary>
+            ACCESS 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.AccessDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.AccessDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.AccessDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.AccessDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.AccessDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.AccessDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.AccessDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.IDataBase">
+            <summary>
+            数据库接口
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.IDataBase.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.IDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.MySqlDataBase">
+            <summary>
+            MYSQL 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.MySqlDataBase.ConnectionString">
+            <summary>
+            MYSQL 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.MySqlDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.OracleDataBase">
+            <summary>
+            ORACLE 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.OracleDataBase.ConnectionString">
+            <summary>
+            ORACLE 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.OracleDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.SqlServerDataBase">
+            <summary>
+            SQL SERVER 数据库操作类
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.ConnectionString">
+            <summary>
+            SQL SERVER 数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.RuntimeDepend">
+            <summary>
+            运行依赖
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection">
+            <summary>
+            建立Connection对象
+            </summary>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection(System.String)">
+            <summary>
+            根据连接字符串建立Connection对象
+            </summary>
+            <param name="strConn">连接字符串</param>
+            <returns>Connection对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateCommand">
+            <summary>
+            建立Command对象
+            </summary>
+            <returns>Command对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateDataAdapter">
+            <summary>
+            建立DataAdapter对象
+            </summary>
+            <returns>DataAdapter对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateTransaction(System.Data.IDbConnection)">
+            <summary>
+            根据Connection建立Transaction
+            </summary>
+            <param name="iConn">Connection对象</param>
+            <returns>Transaction对象</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateDataParameter(System.Data.IDbCommand)">
+            <summary>
+            根据Command对象建立DataReader
+            </summary>
+            <param name="iCmd">Command对象</param>
+            <returns>DataReader对象</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.EDataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.NONE">
+            <summary>
+            未选择数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.MYSQL">
+            <summary>
+            MYSQL数据库（需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.ORACLE">
+            <summary>
+            ORACLE数据库（需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.SQLSERVER">
+            <summary>
+            SQL SERVER数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.ACCESS">
+            <summary>
+            ACCESS数据库
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.ModDataParameter">
+            <summary>
+            数据传输参数模型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Name">
+            <summary>
+            参数名
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Value">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.ModTransactionParameter">
+            <summary>
+            事务执行参数模型
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModTransactionParameter.#ctor(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            构造函数
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数</param>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModTransactionParameter.Sql">
+            <summary>
+            SQL语句
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModTransactionParameter.Parameters">
+            <summary>
+            SQL语句中的参数
+            </summary>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.VersionInfo">
+            <summary>
+            常用工具包数据库操作工具版本信息
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerMain">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerDev">
+            <summary>
+            研发版本号
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_RunAssembly">
+            <summary>
+            当前程序集 
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.VersionInfo.CF_GetVersionInfo">
+            <summary>
+            获得版本信息
+            </summary>
+            <returns>版本信息</returns>
+        </member>
+        <member name="T:CML.CommonEx.DataBaseEx.DataBase">
+            <summary>
+            数据库功能帮助类
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iDataBase">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iConn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iCmd">
+            <summary>
+            数据库执行命令
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_isInitDataBase">
+            <summary>
+            数据库初始化标志
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionType">
+            <summary>
+            连接数据库类型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_IsAutoCloseConn">
+            <summary>
+            是否自动关闭数据库连接(默认开启自动关闭)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.#ctor">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.#ctor(CML.CommonEx.DataBaseEx.EDataBaseType,System.String)">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_InitDataBase">
+            <summary>
+            初始化数据库（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_OpenConnect">
+            <summary>
+            打开数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_CloseConnect">
+            <summary>
+            关闭数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行查询语句，返回DataTable（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteNonQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteTransaction(System.Collections.Generic.List{CML.CommonEx.DataBaseEx.ModTransactionParameter})">
+            <summary>
+            执行多条SQL语句，实现数据库事务（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="lstParameters">事务执行参数</param>
+            <returns>是否提交成功</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_GetSingleObject(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
         <member name="T:CML.CommonEx.DebugEx.FormCommonDebugModel">
             <summary>
             通用调试模块窗体
@@ -1737,424 +2214,6 @@
             <param name="subItem">注册表项名称</param>
             <param name="regKey">键值名称</param>
             <returns>执行结果</returns>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.IDataBase">
-            <summary>
-            数据库接口
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.IDataBase.ConnectionString">
-            <summary>
-            数据库连接字符串
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.IDataBase.RuntimeDepend">
-            <summary>
-            运行依赖
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection">
-            <summary>
-            建立Connection对象
-            </summary>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateConnection(System.String)">
-            <summary>
-            根据连接字符串建立Connection对象
-            </summary>
-            <param name="strConn">连接字符串</param>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateCommand">
-            <summary>
-            建立Command对象
-            </summary>
-            <returns>Command对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateDataAdapter">
-            <summary>
-            建立DataAdapter对象
-            </summary>
-            <returns>DataAdapter对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateTransaction(System.Data.IDbConnection)">
-            <summary>
-            根据Connection建立Transaction
-            </summary>
-            <param name="iConn">Connection对象</param>
-            <returns>Transaction对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.IDataBase.CreateDataParameter(System.Data.IDbCommand)">
-            <summary>
-            根据Command对象建立DataReader
-            </summary>
-            <param name="iCmd">Command对象</param>
-            <returns>DataReader对象</returns>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.MySqlDataBase">
-            <summary>
-            MYSQL 数据库操作类
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.MySqlDataBase.ConnectionString">
-            <summary>
-            MYSQL 数据库连接字符串
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.MySqlDataBase.RuntimeDepend">
-            <summary>
-            运行依赖
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection">
-            <summary>
-            建立Connection对象
-            </summary>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateConnection(System.String)">
-            <summary>
-            根据连接字符串建立Connection对象
-            </summary>
-            <param name="strConn">连接字符串</param>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateCommand">
-            <summary>
-            建立Command对象
-            </summary>
-            <returns>Command对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateDataAdapter">
-            <summary>
-            建立DataAdapter对象
-            </summary>
-            <returns>DataAdapter对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateTransaction(System.Data.IDbConnection)">
-            <summary>
-            根据Connection建立Transaction
-            </summary>
-            <param name="iConn">Connection对象</param>
-            <returns>Transaction对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.MySqlDataBase.CreateDataParameter(System.Data.IDbCommand)">
-            <summary>
-            根据Command对象建立DataReader
-            </summary>
-            <param name="iCmd">Command对象</param>
-            <returns>DataReader对象</returns>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.OracleDataBase">
-            <summary>
-            ORACLE 数据库操作类
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.OracleDataBase.ConnectionString">
-            <summary>
-            ORACLE 数据库连接字符串
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.OracleDataBase.RuntimeDepend">
-            <summary>
-            运行依赖
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection">
-            <summary>
-            建立Connection对象
-            </summary>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateConnection(System.String)">
-            <summary>
-            根据连接字符串建立Connection对象
-            </summary>
-            <param name="strConn">连接字符串</param>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateCommand">
-            <summary>
-            建立Command对象
-            </summary>
-            <returns>Command对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateDataAdapter">
-            <summary>
-            建立DataAdapter对象
-            </summary>
-            <returns>DataAdapter对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateTransaction(System.Data.IDbConnection)">
-            <summary>
-            根据Connection建立Transaction
-            </summary>
-            <param name="iConn">Connection对象</param>
-            <returns>Transaction对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.OracleDataBase.CreateDataParameter(System.Data.IDbCommand)">
-            <summary>
-            根据Command对象建立DataReader
-            </summary>
-            <param name="iCmd">Command对象</param>
-            <returns>DataReader对象</returns>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.SqlServerDataBase">
-            <summary>
-            SQL SERVER 数据库操作类
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.ConnectionString">
-            <summary>
-            SQL SERVER 数据库连接字符串
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.SqlServerDataBase.RuntimeDepend">
-            <summary>
-            运行依赖
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection">
-            <summary>
-            建立Connection对象
-            </summary>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateConnection(System.String)">
-            <summary>
-            根据连接字符串建立Connection对象
-            </summary>
-            <param name="strConn">连接字符串</param>
-            <returns>Connection对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateCommand">
-            <summary>
-            建立Command对象
-            </summary>
-            <returns>Command对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateDataAdapter">
-            <summary>
-            建立DataAdapter对象
-            </summary>
-            <returns>DataAdapter对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateTransaction(System.Data.IDbConnection)">
-            <summary>
-            根据Connection建立Transaction
-            </summary>
-            <param name="iConn">Connection对象</param>
-            <returns>Transaction对象</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.SqlServerDataBase.CreateDataParameter(System.Data.IDbCommand)">
-            <summary>
-            根据Command对象建立DataReader
-            </summary>
-            <param name="iCmd">Command对象</param>
-            <returns>DataReader对象</returns>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.EDataBaseType">
-            <summary>
-            数据库类型
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.NONE">
-            <summary>
-            未选择数据库
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.MYSQL">
-            <summary>
-            MYSQL数据库（需要引用[MySql.Data]NuGet项目或[MySql.Data.dll]文件）
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.ORACLE">
-            <summary>
-            ORACLE数据库（需要引用[Oracle.ManagedDataAccess]NuGet项目或[Oracle.ManagedDataAccess.dll]文件）
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.EDataBaseType.SQLSERVER">
-            <summary>
-            SQL SERVER数据库
-            </summary>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.ModDataParameter">
-            <summary>
-            数据传输参数模型
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Name">
-            <summary>
-            参数名
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Value">
-            <summary>
-            参数值
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.DataType">
-            <summary>
-            数据类型
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType)">
-            <summary>
-            数据传输参数
-            </summary>
-            <param name="name">参数名</param>
-            <param name="value">参数值</param>
-            <param name="type">数据类型</param>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.ModTransactionParameter">
-            <summary>
-            事务执行参数模型
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.ModTransactionParameter.#ctor(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
-            <summary>
-            构造函数
-            </summary>
-            <param name="strSql">SQL语句</param>
-            <param name="parameters">参数</param>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.ModTransactionParameter.Sql">
-            <summary>
-            SQL语句
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.ModTransactionParameter.Parameters">
-            <summary>
-            SQL语句中的参数
-            </summary>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.VersionInfo">
-            <summary>
-            常用工具包数据库操作工具版本信息
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerMain">
-            <summary>
-            主版本号
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerDev">
-            <summary>
-            研发版本号
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_VerDate">
-            <summary>
-            更新时间
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.VersionInfo.CP_RunAssembly">
-            <summary>
-            当前程序集 
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.VersionInfo.CF_GetVersionInfo">
-            <summary>
-            获得版本信息
-            </summary>
-            <returns>版本信息</returns>
-        </member>
-        <member name="T:CML.CommonEx.DataBaseEx.DataBase">
-            <summary>
-            数据库功能帮助类
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iDataBase">
-            <summary>
-            数据库
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iConn">
-            <summary>
-            数据库连接
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_iCmd">
-            <summary>
-            数据库执行命令
-            </summary>
-        </member>
-        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_isInitDataBase">
-            <summary>
-            数据库初始化标志
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionType">
-            <summary>
-            连接数据库类型
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionString">
-            <summary>
-            数据库连接字符串
-            </summary>
-        </member>
-        <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_IsAutoCloseConn">
-            <summary>
-            是否自动关闭数据库连接(默认开启自动关闭)
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.#ctor">
-            <summary>
-            建立数据库连接
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.#ctor(CML.CommonEx.DataBaseEx.EDataBaseType,System.String)">
-            <summary>
-            建立数据库连接
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_InitDataBase">
-            <summary>
-            初始化数据库（报错直接抛出异常，请主动捕获）
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_OpenConnect">
-            <summary>
-            打开数据库连接（报错直接抛出异常，请主动捕获）
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_CloseConnect">
-            <summary>
-            关闭数据库连接（报错直接抛出异常，请主动捕获）
-            </summary>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
-            <summary>
-            执行查询语句，返回DataTable（报错直接抛出异常，请主动捕获）
-            </summary>
-            <param name="strSql">SQL语句</param>
-            <param name="parameters">参数数组</param>
-            <returns>DataTable</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteNonQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
-            <summary>
-            执行SQL语句，返回影响的记录数（报错直接抛出异常，请主动捕获）
-            </summary>
-            <param name="strSql">SQL语句</param>
-            <param name="parameters">参数数组</param>
-            <returns>影响的记录数</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteTransaction(System.Collections.Generic.List{CML.CommonEx.DataBaseEx.ModTransactionParameter})">
-            <summary>
-            执行多条SQL语句，实现数据库事务（报错直接抛出异常，请主动捕获）
-            </summary>
-            <param name="lstParameters">事务执行参数</param>
-            <returns>是否提交成功</returns>
-        </member>
-        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_GetSingleObject(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
-            <summary>
-            执行SQL语句，返回结果集中的第一行的第一列（报错直接抛出异常，请主动捕获）
-            </summary>
-            <param name="strSql">SQL语句</param>
-            <param name="parameters">参数数组</param>
-            <returns>结果集中的第一行的第一列</returns>
         </member>
         <member name="T:CML.CommonEx.EncodeEx.ExFunction.AESEncryptEF">
             <summary>

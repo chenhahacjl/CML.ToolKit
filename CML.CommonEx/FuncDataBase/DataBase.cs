@@ -85,6 +85,11 @@ namespace CML.CommonEx.DataBaseEx
                     m_iDataBase = new OracleDataBase();
                     break;
                 }
+                case EDataBaseType.ACCESS:
+                {
+                    m_iDataBase = new AccessDataBase();
+                    break;
+                }
                 default:
                 {
                     m_isInitDataBase = false;
@@ -228,7 +233,9 @@ namespace CML.CommonEx.DataBaseEx
             finally
             {
                 if (CP_IsAutoCloseConn)
+                {
                     m_iConn.Close();
+                }
             }
 
             return dtResult;
@@ -275,7 +282,9 @@ namespace CML.CommonEx.DataBaseEx
             finally
             {
                 if (CP_IsAutoCloseConn)
+                {
                     m_iConn.Close();
+                }
             }
 
             return nResult;
@@ -303,7 +312,7 @@ namespace CML.CommonEx.DataBaseEx
             IDbTransaction iTransaction = m_iConn.BeginTransaction();
             try
             {
-                foreach (var item in lstParameters)
+                foreach (ModTransactionParameter item in lstParameters)
                 {
                     m_iCmd.CommandText = item.Sql;
                     m_iCmd.Transaction = iTransaction;
@@ -335,7 +344,9 @@ namespace CML.CommonEx.DataBaseEx
             finally
             {
                 if (CP_IsAutoCloseConn)
+                {
                     m_iConn.Close();
+                }
             }
         }
 
@@ -380,7 +391,9 @@ namespace CML.CommonEx.DataBaseEx
             finally
             {
                 if (CP_IsAutoCloseConn)
+                {
                     m_iConn.Close();
+                }
             }
 
             return objResult;

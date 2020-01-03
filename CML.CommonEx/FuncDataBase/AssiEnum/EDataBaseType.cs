@@ -20,6 +20,10 @@
         /// <summary>
         /// SQL SERVER数据库
         /// </summary>
-        SQLSERVER
+        SQLSERVER,
+        /// <summary>
+        /// ACCESS数据库
+        /// </summary>
+        ACCESS,
     }
 }
