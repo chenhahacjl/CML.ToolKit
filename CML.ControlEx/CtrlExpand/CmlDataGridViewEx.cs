@@ -160,7 +160,15 @@ namespace CML.ControlEx
                             //将单元格内容设置到剪贴板
                             Thread thread = new Thread(() =>
                             {
-                                Clipboard.SetText(value);
+                                try
+                                {
+                                    Clipboard.Clear();
+                                    Clipboard.SetText(value, TextDataFormat.Text);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("内容复制失败: " + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             })
                             { IsBackground = true };
 
