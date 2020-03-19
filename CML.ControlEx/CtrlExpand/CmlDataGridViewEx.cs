@@ -163,7 +163,7 @@ namespace CML.ControlEx
                                 try
                                 {
                                     Clipboard.Clear();
-                                    Clipboard.SetText(value, TextDataFormat.Text);
+                                    Clipboard.SetText(value, TextDataFormat.UnicodeText);
                                 }
                                 catch (Exception ex)
                                 {
