@@ -410,6 +410,11 @@
             数据库初始化标志
             </summary>
         </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBase.m_objLock">
+            <summary>
+            执行锁
+            </summary>
+        </member>
         <member name="P:CML.CommonEx.DataBaseEx.DataBase.CP_ConnectionType">
             <summary>
             连接数据库类型
