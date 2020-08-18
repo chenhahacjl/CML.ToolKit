@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("笑笑工作室")]
 [assembly: AssemblyProduct("CML.ToolKit")]
-[assembly: AssemblyCopyright("Copyright (C) 2019 Cmile_96, All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright (C) 2019 - 2020 Cmile_96, All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.6.3.7")]
-[assembly: AssemblyFileVersion("1.6.3.7")]
+[assembly: AssemblyVersion("1.6.3.8")]
+[assembly: AssemblyFileVersion("1.6.3.8")]

@@ -1,4 +1,5 @@
 ﻿using CML.CommonEx.ThreadEx;
+using CML.CommonEx.ThreadEx.ExFunction;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -12,6 +13,7 @@ namespace CML.ControlEx
     public partial class CmlFormLogin : Form
     {
         #region 私有变量
+        private bool isFinishShowEvent = false;
         private bool isFinishTimeEvent = false;
         private Point m_ptLocation = new Point(0, 0);
         private DialogResult m_drDialogResult = DialogResult.Cancel;
@@ -47,6 +49,18 @@ namespace CML.ControlEx
         /// 登录事件
         /// </summary>
         public event LoginEventHandler CE_LoginEvent;
+
+        /// <summary>
+        /// 快速登录事件委托
+        /// </summary>
+        /// <param name="loginInfo">登录信息</param>
+        /// <returns>获取结果</returns>
+        public delegate bool QuickLoginHandler(out ModLoginInfo loginInfo);
+
+        /// <summary>
+        /// 快速登录事件
+        /// </summary>
+        public event QuickLoginHandler CE_QuickLogin;
         #endregion
 
         #region 构造函数
@@ -103,6 +117,29 @@ namespace CML.ControlEx
                     MessageBox.Show("未定义登录事件，无法登录！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     CloseForm();
                 }));
+            }
+            else if (CE_QuickLogin != null)
+            {
+                if (CE_QuickLogin != null && CE_QuickLogin.Invoke(out ModLoginInfo loginInfo))
+                {
+                    if (!string.IsNullOrEmpty(loginInfo.Username) && !string.IsNullOrEmpty(loginInfo.Password))
+                    {
+                        new Thread(() =>
+                        {
+                            while (!isFinishShowEvent)
+                            {
+                                Thread.Sleep(50);
+                            }
+                            this.CF_InvokeUI(new Action(() =>
+                            {
+                                txtUserName.Text = loginInfo.Username;
+                                txtPassword.Text = loginInfo.Password;
+
+                                BtnLogin_Click(null, null);
+                            }));
+                        }).Start();
+                    }
+                }
             }
         }
 
@@ -219,6 +256,7 @@ namespace CML.ControlEx
             }
             else
             {
+                isFinishShowEvent = true;
                 timerFormShow.Stop();
             }
         }
