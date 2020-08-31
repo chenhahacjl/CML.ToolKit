@@ -212,10 +212,8 @@ namespace CML.CommonEx.DataBaseEx
                     {
                         foreach (ModDataParameter parameter in parameters)
                         {
-                            IDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
-                            iParameter.DbType = parameter.DataType;
-                            iParameter.ParameterName = parameter.Name;
-                            iParameter.Value = parameter.Value;
+                            IDbDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
+                            parameter.LoadDataParameter(ref iParameter);
 
                             m_iCmd.Parameters.Add(iParameter);
                         }
@@ -274,10 +272,9 @@ namespace CML.CommonEx.DataBaseEx
                     {
                         foreach (ModDataParameter parameter in parameters)
                         {
-                            IDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
-                            iParameter.DbType = parameter.DataType;
-                            iParameter.ParameterName = parameter.Name;
-                            iParameter.Value = parameter.Value;
+                            IDbDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
+                            parameter.LoadDataParameter(ref iParameter);
+
                             m_iCmd.Parameters.Add(iParameter);
                         }
                     }
@@ -334,10 +331,8 @@ namespace CML.CommonEx.DataBaseEx
                         {
                             foreach (ModDataParameter parameter in item.Parameters)
                             {
-                                IDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
-                                iParameter.DbType = parameter.DataType;
-                                iParameter.ParameterName = parameter.Name;
-                                iParameter.Value = parameter.Value;
+                                IDbDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
+                                parameter.LoadDataParameter(ref iParameter);
 
                                 m_iCmd.Parameters.Add(iParameter);
                             }
@@ -360,6 +355,65 @@ namespace CML.CommonEx.DataBaseEx
                         m_iConn.Close();
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// 执行存储过程（报错直接抛出异常，请主动捕获）
+        /// </summary>
+        /// <param name="procName">存储过程名称</param>
+        /// <param name="parameters">存储过程执行参数</param>
+        /// <returns>Dictionary</returns>
+        public Dictionary<string, object> CF_ExecuteStoredProcedure(string procName, ModDataParameter[] parameters = null)
+        {
+            lock (m_objLock)
+            {
+                Dictionary<string, object> dicResult = new Dictionary<string, object>();
+
+                try
+                {
+                    if (m_iConn.State == ConnectionState.Broken || m_iConn.State == ConnectionState.Closed)
+                    {
+                        m_iConn.Open();
+                    }
+
+                    m_iCmd.CommandText = procName;
+                    m_iCmd.CommandType = CommandType.StoredProcedure;
+                    m_iCmd.Parameters.Clear();
+                    if (parameters != null && parameters.Length != 0)
+                    {
+                        foreach (ModDataParameter parameter in parameters)
+                        {
+                            IDbDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
+                            parameter.LoadDataParameter(ref iParameter);
+
+                            m_iCmd.Parameters.Add(iParameter);
+                        }
+                    }
+
+                    dicResult.Add("__NUMBER__", m_iCmd.ExecuteNonQuery());
+
+                    if (parameters != null && parameters.Length != 0)
+                    {
+                        foreach (IDataParameter parameter in m_iCmd.Parameters)
+                        {
+                            dicResult.Add(parameter.ParameterName, parameter.Value);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    if (CP_IsAutoCloseConn)
+                    {
+                        m_iConn.Close();
+                    }
+                }
+
+                return dicResult;
             }
         }
 
@@ -389,10 +443,9 @@ namespace CML.CommonEx.DataBaseEx
                     {
                         foreach (ModDataParameter parameter in parameters)
                         {
-                            IDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
-                            iParameter.DbType = parameter.DataType;
-                            iParameter.ParameterName = parameter.Name;
-                            iParameter.Value = parameter.Value;
+                            IDbDataParameter iParameter = m_iDataBase.CreateDataParameter(m_iCmd);
+                            parameter.LoadDataParameter(ref iParameter);
+
                             m_iCmd.Parameters.Add(iParameter);
                         }
                     }

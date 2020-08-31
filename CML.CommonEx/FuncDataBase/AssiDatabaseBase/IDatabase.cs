@@ -54,6 +54,6 @@ namespace CML.CommonEx.DataBaseEx
         /// </summary>
         /// <param name="iCmd">Command对象</param>
         /// <returns>DataReader对象</returns>
-        IDataParameter CreateDataParameter(IDbCommand iCmd);
+        IDbDataParameter CreateDataParameter(IDbCommand iCmd);
     }
 }

@@ -324,6 +324,16 @@
             数据类型
             </summary>
         </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.DataSize">
+            <summary>
+            数据长度
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.ModDataParameter.Direction">
+            <summary>
+            数据方向（存储过程用）
+            </summary>
+        </member>
         <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType)">
             <summary>
             数据传输参数
@@ -331,6 +341,40 @@
             <param name="name">参数名</param>
             <param name="value">参数值</param>
             <param name="type">数据类型</param>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType,System.Int32)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+            <param name="size">数据长度</param>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+            <param name="direction">数据方向</param>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.#ctor(System.String,System.Object,System.Data.DbType,System.Int32,System.Data.ParameterDirection)">
+            <summary>
+            数据传输参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="value">参数值</param>
+            <param name="type">数据类型</param>
+            <param name="size">数据长度</param>
+            <param name="direction">数据方向</param>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.ModDataParameter.LoadDataParameter(System.Data.IDbDataParameter@)">
+            <summary>
+            加载数据参数
+            </summary>
+            <param name="parameter">[REF]数据参数</param>
         </member>
         <member name="T:CML.CommonEx.DataBaseEx.ModTransactionParameter">
             <summary>
@@ -477,6 +521,14 @@
             </summary>
             <param name="lstParameters">事务执行参数</param>
             <returns>是否提交成功</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_ExecuteStoredProcedure(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行存储过程（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="procName">存储过程名称</param>
+            <param name="parameters">存储过程执行参数</param>
+            <returns>Dictionary</returns>
         </member>
         <member name="M:CML.CommonEx.DataBaseEx.DataBase.CF_GetSingleObject(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
             <summary>

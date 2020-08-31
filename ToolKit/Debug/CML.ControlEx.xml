@@ -1392,6 +1392,18 @@
             登录事件
             </summary>
         </member>
+        <member name="T:CML.ControlEx.CmlFormLogin.QuickLoginHandler">
+            <summary>
+            快速登录事件委托
+            </summary>
+            <param name="loginInfo">登录信息</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="E:CML.ControlEx.CmlFormLogin.CE_QuickLogin">
+            <summary>
+            快速登录事件
+            </summary>
+        </member>
         <member name="M:CML.ControlEx.CmlFormLogin.#ctor">
             <summary>
             构造函数，请添加登录事件（LoginEvent）
