@@ -95,9 +95,9 @@ namespace CML.CommonEx.DataBaseEx
         /// <param name="parameter">[REF]数据参数</param>
         public void LoadDataParameter(ref IDbDataParameter parameter)
         {
+            parameter.DbType = DataType;
             parameter.ParameterName = Name;
             parameter.Value = Value;
-            parameter.DbType = DataType;
             parameter.Direction = Direction;
             if (DataSize != -1)
             {
