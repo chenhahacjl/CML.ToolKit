@@ -1973,6 +1973,10 @@ namespace CML.ControlEx
                     if (m_isMouseOnPicture && !m_isShowTextInfomation)
                     {
                         graphics.DrawLine(m_PenMoveLine, m_ptMouseLocation.X, 15, m_ptMouseLocation.X, pnlAxis.Height - 38);
+                        if (m_ptMouseLocation.Y < picChart.Height - 21)
+                        {
+                            graphics.DrawLine(m_PenMoveLine, 0, m_ptMouseLocation.Y, picChart.Width, m_ptMouseLocation.Y);
+                        }
 
                         if (num >= m_nDataCount || num < 0)
                         {
@@ -1990,7 +1994,7 @@ namespace CML.ControlEx
                         }
 
                         //绘制数值提示
-                        if (dicVisiable.Count != 0 && CP_ShowDataTip)
+                        if (dicVisiable.Count != 0 && CP_ShowDataTip && m_ptMouseLocation.Y < picChart.Height - 21)
                         {
                             bool isleft = false;
                             int xBase = m_ptMouseLocation.X;
@@ -2006,10 +2010,15 @@ namespace CML.ControlEx
                                 yBase = 5;
                             }
 
-                            Rectangle rect1 = new Rectangle(isleft ? xBase - 5 : xBase + 5, yBase - 5, m_nDataTipWidth, dicVisiable.Count * 20 + 10);
+                            Rectangle rect1 = new Rectangle(isleft ? xBase - 5 : xBase + 5, yBase - 5, m_nDataTipWidth, (dicVisiable.Count + 1) * 20 + 10);
 
                             graphics.FillRectangle(brush, rect1);
                             graphics.DrawRectangle(Pens.HotPink, rect1);
+
+                            Rectangle rHead = new Rectangle(isleft ? xBase - 2 : xBase + 8, yBase, this.m_nDataTipWidth - 6, 20);
+                            double value = (m_fLeftLimitMax - this.m_fLeftLimitMin) / (picChart.Height - 40) * (picChart.Height - m_ptMouseLocation.Y - 20) + m_fLeftLimitMin;
+                            graphics.DrawString("当前数值: " + value.ToString("0.00"), font, Brushes.Cyan, rHead, this.m_sfLeft);
+                            yBase += 20;
 
                             foreach (KeyValuePair<string, ModCurveItem> keyValuePair in dicVisiable)
                             {
@@ -2053,7 +2062,8 @@ namespace CML.ControlEx
                         //下方的时间提示
                         if (CP_ShowTimeAxis)
                         {
-                            Rectangle rectangle = new Rectangle(m_ptMouseLocation.X - 50, pnlAxis.Height - 38, 100, 18);
+                            int timeX = m_ptMouseLocation.X - 50 < 0 ? 0 : m_ptMouseLocation.X + 50 > picChart.Width ? picChart.Width - 100 : m_ptMouseLocation.X - 50;
+                            Rectangle rectangle = new Rectangle(timeX, pnlAxis.Height - 38, 100, 18);
                             if (m_isRenderTimeData)
                             {
                                 if (num < m_lstDateTime.Count)

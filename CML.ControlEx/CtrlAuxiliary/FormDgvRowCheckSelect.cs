@@ -79,7 +79,9 @@ namespace CML.ControlEx
 
         private void BtnEnter_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtIndexMin.Text, out int indexMin) || !int.TryParse(txtIndexMax.Text, out int indexMax))
+
+            if (!int.TryParse(string.IsNullOrEmpty(txtIndexMin.Text) ? "1" : txtIndexMin.Text, out int indexMin) ||
+                !int.TryParse(string.IsNullOrEmpty(txtIndexMax.Text) ? $"{RowCount}" : txtIndexMax.Text, out int indexMax))
             {
                 MessageBox.Show("数值输入错误，请重新输入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

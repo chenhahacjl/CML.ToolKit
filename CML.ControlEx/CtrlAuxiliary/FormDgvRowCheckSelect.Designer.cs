@@ -38,13 +38,15 @@
             this.btnEnter = new CML.ControlEx.CmlButtonEx();
             this.btnAll = new CML.ControlEx.CmlButtonEx();
             this.btnClear = new CML.ControlEx.CmlButtonEx();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Gainsboro;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(494, 42);
@@ -55,8 +57,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(44, 93);
+            this.label2.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(44, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 19);
             this.label2.TabIndex = 1;
@@ -65,8 +67,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(167, 93);
+            this.label3.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(167, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 19);
             this.label3.TabIndex = 3;
@@ -75,8 +77,8 @@
             // lblRange
             // 
             this.lblRange.AutoSize = true;
-            this.lblRange.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblRange.Location = new System.Drawing.Point(304, 93);
+            this.lblRange.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRange.Location = new System.Drawing.Point(304, 86);
             this.lblRange.Name = "lblRange";
             this.lblRange.Size = new System.Drawing.Size(122, 19);
             this.lblRange.TabIndex = 5;
@@ -95,16 +97,16 @@
             this.txtIndexMax.CP_Title = "";
             this.txtIndexMax.CP_TitleAlignment = CML.ControlEx.ETextAlignment.Center;
             this.txtIndexMax.CP_TitleBackColor = System.Drawing.Color.LightGray;
-            this.txtIndexMax.CP_TitleFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIndexMax.CP_TitleFont = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtIndexMax.CP_TitleForeColor = System.Drawing.Color.Black;
             this.txtIndexMax.CP_Unit = "";
             this.txtIndexMax.CP_UnitAlignment = CML.ControlEx.ETextAlignment.Center;
             this.txtIndexMax.CP_UnitBackColor = System.Drawing.Color.LightGray;
-            this.txtIndexMax.CP_UnitFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIndexMax.CP_UnitFont = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtIndexMax.CP_UnitForeColor = System.Drawing.Color.Black;
-            this.txtIndexMax.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIndexMax.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtIndexMax.ForeColor = System.Drawing.Color.Black;
-            this.txtIndexMax.Location = new System.Drawing.Point(203, 87);
+            this.txtIndexMax.Location = new System.Drawing.Point(203, 80);
             this.txtIndexMax.Margin = new System.Windows.Forms.Padding(4);
             this.txtIndexMax.Name = "txtIndexMax";
             this.txtIndexMax.Size = new System.Drawing.Size(81, 30);
@@ -123,16 +125,16 @@
             this.txtIndexMin.CP_Title = "";
             this.txtIndexMin.CP_TitleAlignment = CML.ControlEx.ETextAlignment.Center;
             this.txtIndexMin.CP_TitleBackColor = System.Drawing.Color.LightGray;
-            this.txtIndexMin.CP_TitleFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIndexMin.CP_TitleFont = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtIndexMin.CP_TitleForeColor = System.Drawing.Color.Black;
             this.txtIndexMin.CP_Unit = "";
             this.txtIndexMin.CP_UnitAlignment = CML.ControlEx.ETextAlignment.Center;
             this.txtIndexMin.CP_UnitBackColor = System.Drawing.Color.LightGray;
-            this.txtIndexMin.CP_UnitFont = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIndexMin.CP_UnitFont = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtIndexMin.CP_UnitForeColor = System.Drawing.Color.Black;
-            this.txtIndexMin.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIndexMin.Font = new System.Drawing.Font("SimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtIndexMin.ForeColor = System.Drawing.Color.Black;
-            this.txtIndexMin.Location = new System.Drawing.Point(80, 87);
+            this.txtIndexMin.Location = new System.Drawing.Point(80, 80);
             this.txtIndexMin.Margin = new System.Windows.Forms.Padding(4);
             this.txtIndexMin.Name = "txtIndexMin";
             this.txtIndexMin.Size = new System.Drawing.Size(81, 30);
@@ -143,7 +145,7 @@
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.CP_CustomerInformation = null;
             this.btnCancel.CP_NewLineChar = '@';
-            this.btnCancel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCancel.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCancel.ForeColor = System.Drawing.Color.Maroon;
             this.btnCancel.Location = new System.Drawing.Point(402, 153);
             this.btnCancel.Name = "btnCancel";
@@ -157,7 +159,7 @@
             this.btnEnter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnter.CP_CustomerInformation = null;
             this.btnEnter.CP_NewLineChar = '@';
-            this.btnEnter.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnEnter.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnEnter.ForeColor = System.Drawing.Color.Blue;
             this.btnEnter.Location = new System.Drawing.Point(316, 153);
             this.btnEnter.Name = "btnEnter";
@@ -171,7 +173,7 @@
             this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAll.CP_CustomerInformation = null;
             this.btnAll.CP_NewLineChar = '@';
-            this.btnAll.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAll.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAll.ForeColor = System.Drawing.Color.Blue;
             this.btnAll.Location = new System.Drawing.Point(98, 153);
             this.btnAll.Name = "btnAll";
@@ -185,7 +187,7 @@
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.CP_CustomerInformation = null;
             this.btnClear.CP_NewLineChar = '@';
-            this.btnClear.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClear.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnClear.ForeColor = System.Drawing.Color.Blue;
             this.btnClear.Location = new System.Drawing.Point(12, 153);
             this.btnClear.Name = "btnClear";
@@ -194,10 +196,34 @@
             this.btnClear.Text = "清空";
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(57, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "（不填默认为最小值）";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(180, 114);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "（不填默认为最大值）";
+            // 
             // FormDgvRowCheckSelect
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(494, 211);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblRange);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -236,5 +262,7 @@
         private System.Windows.Forms.Label lblRange;
         private CmlButtonEx btnAll;
         private CmlButtonEx btnClear;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

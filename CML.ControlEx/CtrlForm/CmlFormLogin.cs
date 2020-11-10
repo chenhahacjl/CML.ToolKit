@@ -249,7 +249,7 @@ namespace CML.ControlEx
 
         #region 计时器事件
         private void TimerFormShow_Tick(object sender, EventArgs e)
-        {
+        {   
             if (Opacity < 0.95)
             {
                 Opacity += 0.03;
