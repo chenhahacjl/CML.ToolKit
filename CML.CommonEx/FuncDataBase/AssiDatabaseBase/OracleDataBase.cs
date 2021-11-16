@@ -43,7 +43,7 @@ namespace CML.CommonEx.DataBaseEx
         /// <returns>Command对象</returns>
         public IDbCommand CreateCommand()
         {
-            return new OracleCommand();
+            return new OracleCommand() { FetchSize = 0x20000 * 100 };
         }
 
         /// <summary>
