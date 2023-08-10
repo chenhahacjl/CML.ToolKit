@@ -34,6 +34,17 @@ namespace CML.ControlEx
         /// 头像图片
         /// </summary>
         public Image CP_HeadImage { set => picHead.Image = value; }
+
+        /// <summary>
+        /// 用户名（默认显示）
+        /// </summary>
+        public string Username { get; set; }
+
+        /// <summary>
+        /// 密码（默认显示）
+        /// </summary>
+        public string Password { get; set; }
+
         #endregion
 
         #region 登录委托事件
@@ -140,6 +151,14 @@ namespace CML.ControlEx
                         }).Start();
                     }
                 }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(Username)) { txtUserName.Text = Username; }
+                if (!string.IsNullOrEmpty(Password)) { txtPassword.Text = Password; }
+
+                if (string.IsNullOrEmpty(txtUserName.Text)) { txtUserName.Focus(); }
+                else if (string.IsNullOrEmpty(txtPassword.Text)) { txtPassword.Focus(); }
             }
         }
 
@@ -249,7 +268,7 @@ namespace CML.ControlEx
 
         #region 计时器事件
         private void TimerFormShow_Tick(object sender, EventArgs e)
-        {   
+        {
             if (Opacity < 0.95)
             {
                 Opacity += 0.03;
