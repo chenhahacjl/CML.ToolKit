@@ -58,6 +58,110 @@
             <param name="iCmd">Command对象</param>
             <returns>DataReader对象</returns>
         </member>
+        <member name="T:CML.CommonEx.DataBaseEx.DataBaseMC">
+            <summary>
+            数据库功能帮助类（多连接）
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBaseMC.m_iDataBase">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBaseMC.m_iConn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBaseMC.m_iCmd">
+            <summary>
+            数据库执行命令
+            </summary>
+        </member>
+        <member name="F:CML.CommonEx.DataBaseEx.DataBaseMC.m_isInitDataBase">
+            <summary>
+            数据库初始化标志
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBaseMC.CP_ConnectionType">
+            <summary>
+            连接数据库类型
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBaseMC.CP_ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.DataBaseEx.DataBaseMC.CP_IsAutoCloseConn">
+            <summary>
+            是否自动关闭数据库连接(默认开启自动关闭)
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.#ctor">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.#ctor(CML.CommonEx.DataBaseEx.EDataBaseType,System.String)">
+            <summary>
+            建立数据库连接
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_InitDataBase">
+            <summary>
+            初始化数据库（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_OpenConnect">
+            <summary>
+            打开数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_CloseConnect">
+            <summary>
+            关闭数据库连接（报错直接抛出异常，请主动捕获）
+            </summary>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_ExecuteQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行查询语句，返回DataTable（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_ExecuteNonQuery(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_ExecuteTransaction(System.Collections.Generic.List{CML.CommonEx.DataBaseEx.ModTransactionParameter})">
+            <summary>
+            执行多条SQL语句，实现数据库事务（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="lstParameters">事务执行参数</param>
+            <returns>是否提交成功</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_ExecuteStoredProcedure(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行存储过程（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="procName">存储过程名称</param>
+            <param name="parameters">存储过程执行参数</param>
+            <returns>Dictionary</returns>
+        </member>
+        <member name="M:CML.CommonEx.DataBaseEx.DataBaseMC.CF_GetSingleObject(System.String,CML.CommonEx.DataBaseEx.ModDataParameter[])">
+            <summary>
+            执行SQL语句，返回结果集中的第一行的第一列（报错直接抛出异常，请主动捕获）
+            </summary>
+            <param name="strSql">SQL语句</param>
+            <param name="parameters">参数数组</param>
+            <returns>结果集中的第一行的第一列</returns>
+        </member>
         <member name="T:CML.CommonEx.DataBaseEx.IDataBase">
             <summary>
             数据库接口
@@ -1894,40 +1998,36 @@
             INI文件操作基础类
             </summary>
         </member>
-        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.WritePrivateProfileString(System.String,System.String,System.String,System.String)">
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.WritePrivateProfileString(System.Byte[],System.Byte[],System.Byte[],System.String)">
             <summary>
-            写入INI文件
+            写入配置文件
             </summary>
-            <param name="section">节点名称[如[TypeName]]</param>
-            <param name="key">键名</param>
-            <param name="val">键值</param>
+            <param name="section">节点名称（比如: [<see langword="CONFIG"/>]）</param>
+            <param name="key">键名（若此参数为 <see langword="null"/>，则删除整节点）（比如: <see langword="KEY"/>=VALUE）</param>
+            <param name="value">键值（若此参数为 <see langword="null"/>，则删除整个键值）（比如: KEY=<see langword="VALUE"/>）</param>
             <param name="filePath">文件路径</param>
+            <returns>返回值（若执行成功，则返回非 0 值）</returns>
         </member>
-        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.GetPrivateProfileString(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Int32,System.String)">
             <summary>
-            读取INI文件
+            读取配置文件，获取键值字符串
             </summary>
-            <param name="section">节点名称</param>
-            <param name="key">键名</param>
-            <param name="def">键值</param>
-            <param name="retVal">StringBulider对象</param>
-            <param name="size">字节大小</param>
+            <param name="section">节点名称（比如: [<see langword="CONFIG"/>]）</param>
+            <param name="key">键名（若此参数为 <see langword="null"/>，则删除整节点）（比如: <see langword="KEY"/>=VALUE）</param>
+            <param name="defValue">默认值</param>
+            <param name="retValue">[OUT] 缓冲区（接收读取值）</param>
+            <param name="size">缓冲区大小</param>
             <param name="filePath">文件路径</param>
-        </member>
-        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.GetPrivateProfileStringA(System.String,System.String,System.String,System.Byte[],System.Int32,System.String)">
-            <summary>
-            读取INI文件
-            </summary>
-            <param name="section">节点名称</param>
-            <param name="key">键名</param>
-            <param name="def">键值</param>
-            <param name="retVal">字节数组</param>
-            <param name="size">字节大小</param>
-            <param name="filePath">文件路径</param>
+            <returns>复制到缓冲区的字符数</returns>
         </member>
         <member name="P:CML.CommonEx.ConfigurationEx.IniFile.CP_FilePath">
             <summary>
             INI文件路径
+            </summary>
+        </member>
+        <member name="P:CML.CommonEx.ConfigurationEx.IniFile.CP_Encoding">
+            <summary>
+            编码方式
             </summary>
         </member>
         <member name="M:CML.CommonEx.ConfigurationEx.IniFile.#ctor(System.String)">
@@ -1935,6 +2035,13 @@
             构造函数
             </summary>
             <param name="filePath">INI文件路径</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniFile.#ctor(System.String,System.Text.Encoding)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="filePath">INI文件路径</param>
+            <param name="encoding">编码方式</param>
         </member>
         <member name="M:CML.CommonEx.ConfigurationEx.IniFile.CF_ReadSections">
             <summary>
@@ -2066,6 +2173,13 @@
             构造函数
             </summary>
             <param name="iniPath">INI文件路径</param>
+        </member>
+        <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.#ctor(System.String,System.Text.Encoding)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="iniPath">INI文件路径</param>
+            <param name="encoding">编码方式</param>
         </member>
         <member name="M:CML.CommonEx.ConfigurationEx.IniOperate.CF_ReadSections">
             <summary>

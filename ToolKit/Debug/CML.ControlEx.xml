@@ -1379,6 +1379,16 @@
             头像图片
             </summary>
         </member>
+        <member name="P:CML.ControlEx.CmlFormLogin.Username">
+            <summary>
+            用户名（默认显示）
+            </summary>
+        </member>
+        <member name="P:CML.ControlEx.CmlFormLogin.Password">
+            <summary>
+            密码（默认显示）
+            </summary>
+        </member>
         <member name="T:CML.ControlEx.CmlFormLogin.LoginEventHandler">
             <summary>
             登录事件委托

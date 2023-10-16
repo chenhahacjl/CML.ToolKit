@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace CML.CommonEx.ConfigurationEx
 {
@@ -211,6 +212,15 @@ namespace CML.CommonEx.ConfigurationEx
         public IniOperate(string iniPath)
         {
             m_iniFile = new IniFile(iniPath);
+        }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="iniPath">INI文件路径</param>
+        /// <param name="encoding">编码方式</param>
+        public IniOperate(string iniPath, Encoding encoding)
+        {
+            m_iniFile = new IniFile(iniPath, encoding);
         }
         #endregion
 

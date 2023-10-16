@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuncDataBase\AssiDatabaseBase\AccessDataBase.cs" />
+    <Compile Include="FuncDataBase\DataBaseMC.cs" />
     <Compile Include="FuncDebug\AssiForm\FormCommonDebugModel.cs">
       <SubType>Form</SubType>
     </Compile>
